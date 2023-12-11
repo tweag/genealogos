@@ -1,0 +1,31 @@
+{
+  "attribute_path": "hello.src.out.nativeBuildInputs.0.propagatedBuildInputs.4",
+  "derivation_path": "/nix/store/s0x9isga3zazydkrqhkqly010dwp484i-zlib-1.3.drv",
+  "output_path": "/nix/store/9a4ivnm2hwggi6qjg0gcpk05f5hsw5r5-zlib-1.3-dev",
+  "outputs": [
+    {
+      "name": "out",
+      "output_path": "/nix/store/8xgb8phqmfn9h971q7dg369h647i1aa0-zlib-1.3"
+    },
+    {
+      "name": "dev",
+      "output_path": "/nix/store/9a4ivnm2hwggi6qjg0gcpk05f5hsw5r5-zlib-1.3-dev"
+    },
+    {
+      "name": "static",
+      "output_path": "/nix/store/3j3slzx2viszssbq6vcp254b5kvlv92k-zlib-1.3-static"
+    }
+  ],
+  "name": "zlib-1.3",
+  "parsed_name": {
+    "name": "zlib",
+    "version": "1.3"
+  },
+  "nixpkgs_metadata": {
+    "pname": "zlib",
+    "version": "1.3",
+    "broken": false,
+    "license": "zlib License"
+  },
+  "build_inputs": []
+}
