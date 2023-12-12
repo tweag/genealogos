@@ -53,6 +53,7 @@ impl Model {
             .bom_format("CycloneDX")
             .spec_version("1.5")
             .version(1)
+            .serial_number(format!("urn:uuid:{}", uuid::Uuid::new_v4()))
             .components(components)
             .build()
             .unwrap()
