@@ -19,8 +19,10 @@ fn main() -> Result<(), io::Error> {
     };
 
     let model: Model = nixtract.into();
+    let cyclonedx = model.to_cyclonedx();
+    let json_out = serde_json::to_string(&cyclonedx).unwrap();
 
-    println!("{:#?}", model);
+    println!("{}", json_out);
 
     Ok(())
 }
