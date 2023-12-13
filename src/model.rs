@@ -29,24 +29,24 @@ impl Into<String> for ModelType {
     }
 }
 
-impl ModelComponent {
+impl From<ModelComponent> for cyclonedx::Component {
     // TODO: Error
-    pub(crate) fn to_cyclonedx(self) -> cyclonedx::Component {
+    fn from(model_component: ModelComponent) -> Self {
         cyclonedx::ComponentBuilder::default()
-            .type_(self.r#type)
-            .name(self.name)
+            .type_(model_component.r#type)
+            .name(model_component.name)
             .build()
             .unwrap()
     }
 }
 
-impl Model {
+impl From<Model> for cyclonedx::CycloneDx {
     // TODO: Error
-    pub(crate) fn to_cyclonedx(self) -> cyclonedx::CycloneDx {
-        let components: Vec<cyclonedx::Component> = self
+    fn from(model: Model) -> Self {
+        let components: Vec<cyclonedx::Component> = model
             .components
             .into_iter()
-            .map(|component| component.to_cyclonedx())
+            .map(|component| component.into())
             .collect();
 
         cyclonedx::CycloneDxBuilder::default()
