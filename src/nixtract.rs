@@ -58,7 +58,7 @@ impl From<Nixtract> for Model {
             .into_iter()
             .map(|entry| ModelComponent {
                 r#type: ModelType::Application,
-                name: entry.name,
+                name: entry.parsed_name.name,
             })
             .collect();
 
