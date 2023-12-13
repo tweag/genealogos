@@ -11,6 +11,10 @@ pub(crate) struct Model {
 pub(crate) struct ModelComponent {
     pub(crate) r#type: ModelType,
     pub(crate) name: String,
+    /// A unique identifier op the component to be used as a reference elsewhere in the sbom
+    pub(crate) r#ref: String,
+    pub(crate) version: String,
+    pub(crate) description: String,
 }
 
 #[derive(Debug)]
@@ -35,6 +39,9 @@ impl From<ModelComponent> for cyclonedx::Component {
         cyclonedx::ComponentBuilder::default()
             .type_(model_component.r#type)
             .name(model_component.name)
+            .bom_ref(model_component.r#ref)
+            .version(model_component.version)
+            .description(model_component.description)
             .build()
             .unwrap()
     }

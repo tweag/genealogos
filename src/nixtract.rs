@@ -38,6 +38,7 @@ pub(crate) struct NixtractParsedName {
 
 #[derive(Deserialize, Debug)]
 pub(crate) struct NixtractNixpkgsMetadata {
+    pub(crate) description: String,
     pub(crate) pname: String,
     pub(crate) version: String,
     pub(crate) broken: bool,
@@ -48,7 +49,7 @@ pub(crate) struct NixtractNixpkgsMetadata {
 pub(crate) struct NixtractBuiltInput {
     pub(crate) attribute_path: String,
     pub(crate) build_input_type: String,
-    pub(crate) output_path: String,
+    pub(crate) output_path: Option<String>,
 }
 
 impl From<Nixtract> for Model {
@@ -59,6 +60,9 @@ impl From<Nixtract> for Model {
             .map(|entry| ModelComponent {
                 r#type: ModelType::Application,
                 name: entry.parsed_name.name,
+                r#ref: entry.output_path,
+                version: entry.nixpkgs_metadata.version,
+                description: entry.nixpkgs_metadata.description,
             })
             .collect();
 
