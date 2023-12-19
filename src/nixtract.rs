@@ -5,7 +5,7 @@
 
 use serde::Deserialize;
 
-use crate::model::{Model, ModelComponent, ModelType};
+use crate::model::{Model, ModelComponent, ModelDependency, ModelType};
 
 #[derive(Deserialize, Debug)]
 pub(crate) struct Nixtract {
@@ -56,16 +56,32 @@ impl From<Nixtract> for Model {
     fn from(nixtract: Nixtract) -> Self {
         let components: Vec<ModelComponent> = nixtract
             .entries
-            .into_iter()
+            .iter()
             .map(|entry| ModelComponent {
                 r#type: ModelType::Application,
-                name: entry.parsed_name.name,
-                r#ref: entry.output_path,
-                version: entry.nixpkgs_metadata.version,
-                description: entry.nixpkgs_metadata.description,
+                name: entry.parsed_name.name.clone(),
+                r#ref: entry.output_path.clone(),
+                version: entry.nixpkgs_metadata.version.clone(),
+                description: entry.nixpkgs_metadata.description.clone(),
             })
             .collect();
 
-        Model { components }
+        let dependencies: Vec<ModelDependency> = nixtract
+            .entries
+            .into_iter()
+            .map(|entry| ModelDependency {
+                r#ref: entry.output_path,
+                depends_on: entry
+                    .build_inputs
+                    .into_iter()
+                    .filter_map(|bi| bi.output_path)
+                    .collect(),
+            })
+            .collect();
+
+        Model {
+            components,
+            dependencies,
+        }
     }
 }

@@ -5,6 +5,7 @@ use serde_cyclonedx::cyclonedx::v_1_5 as cyclonedx;
 #[derive(Debug)]
 pub(crate) struct Model {
     pub(crate) components: Vec<ModelComponent>,
+    pub(crate) dependencies: Vec<ModelDependency>,
 }
 
 #[derive(Debug)]
@@ -23,6 +24,12 @@ pub(crate) enum ModelType {
     /// appropriate classification is available or cannot be determined for the
     /// component.
     Application,
+}
+
+#[derive(Debug)]
+pub(crate) struct ModelDependency {
+    pub(crate) r#ref: String,
+    pub(crate) depends_on: Vec<String>,
 }
 
 impl Into<String> for ModelType {
@@ -47,14 +54,30 @@ impl From<ModelComponent> for cyclonedx::Component {
     }
 }
 
+impl From<ModelDependency> for cyclonedx::Dependency {
+    fn from(model_dependency: ModelDependency) -> Self {
+        let depends_on: Vec<serde_json::Value> = model_dependency
+            .depends_on
+            .into_iter()
+            .map(Into::into)
+            .collect();
+
+        cyclonedx::DependencyBuilder::default()
+            .ref_(model_dependency.r#ref)
+            .depends_on(depends_on)
+            .build()
+            .unwrap()
+    }
+}
+
 impl From<Model> for cyclonedx::CycloneDx {
     // TODO: Error
     fn from(model: Model) -> Self {
-        let components: Vec<cyclonedx::Component> = model
-            .components
-            .into_iter()
-            .map(|component| component.into())
-            .collect();
+        let components: Vec<cyclonedx::Component> =
+            model.components.into_iter().map(Into::into).collect();
+
+        let dependencies: Vec<cyclonedx::Dependency> =
+            model.dependencies.into_iter().map(Into::into).collect();
 
         cyclonedx::CycloneDxBuilder::default()
             .bom_format("CycloneDX")
@@ -62,6 +85,7 @@ impl From<Model> for cyclonedx::CycloneDx {
             .version(1)
             .serial_number(format!("urn:uuid:{}", uuid::Uuid::new_v4()))
             .components(components)
+            .dependencies(dependencies)
             .build()
             .unwrap()
     }
