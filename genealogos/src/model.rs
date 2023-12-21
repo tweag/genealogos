@@ -78,7 +78,7 @@ impl From<ModelComponent> for cyclonedx::Component {
         let mut builder = cyclonedx::ComponentBuilder::default();
         let mut builder = builder
             .type_(model_component.r#type)
-            .name(model_component.name)
+            .name(model_component.name.clone())
             .bom_ref(model_component.r#ref)
             .description(model_component.description);
 
@@ -98,6 +98,15 @@ impl From<ModelComponent> for cyclonedx::Component {
         }
 
         builder.external_references(external_references);
+
+        if !model_component.name.is_empty() && !model_component.version.is_empty() {
+            let purl: String = format!(
+                "pkg:generic/{}@{}",
+                model_component.name, model_component.version
+            )
+            .to_owned();
+            builder = builder.purl(purl);
+        }
 
         builder.build().unwrap()
     }
