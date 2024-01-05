@@ -16,6 +16,7 @@ pub(crate) struct ModelComponent {
     pub(crate) r#ref: String,
     pub(crate) version: String,
     pub(crate) description: String,
+    pub(crate) external_references: Vec<ModelExternalReference>,
 }
 
 #[derive(Debug)]
@@ -24,6 +25,17 @@ pub(crate) enum ModelType {
     /// appropriate classification is available or cannot be determined for the
     /// component.
     Application,
+}
+
+#[derive(Debug)]
+pub(crate) struct ModelExternalReference {
+    pub(crate) url: String,
+    pub(crate) r#type: ModelExternalReferenceType,
+}
+
+#[derive(Debug)]
+pub(crate) enum ModelExternalReferenceType {
+    Website,
 }
 
 #[derive(Debug)]
@@ -40,15 +52,45 @@ impl Into<String> for ModelType {
     }
 }
 
+impl Into<String> for ModelExternalReferenceType {
+    fn into(self) -> String {
+        match self {
+            ModelExternalReferenceType::Website => "website".to_owned(),
+        }
+    }
+}
+
 impl From<ModelComponent> for cyclonedx::Component {
     // TODO: Error
     fn from(model_component: ModelComponent) -> Self {
-        cyclonedx::ComponentBuilder::default()
+        let mut builder = cyclonedx::ComponentBuilder::default();
+        let mut builder = builder
             .type_(model_component.r#type)
             .name(model_component.name)
             .bom_ref(model_component.r#ref)
-            .version(model_component.version)
-            .description(model_component.description)
+            .description(model_component.description);
+
+        if !model_component.version.is_empty() {
+            builder = builder.version(model_component.version.clone());
+        }
+
+        let external_references: Vec<cyclonedx::ExternalReference> = model_component
+            .external_references
+            .into_iter()
+            .map(Into::into)
+            .collect();
+
+        builder.external_references(external_references);
+
+        builder.build().unwrap()
+    }
+}
+
+impl From<ModelExternalReference> for cyclonedx::ExternalReference {
+    fn from(model_external_reference: ModelExternalReference) -> Self {
+        cyclonedx::ExternalReferenceBuilder::default()
+            .url(model_external_reference.url)
+            .type_(model_external_reference.r#type)
             .build()
             .unwrap()
     }
