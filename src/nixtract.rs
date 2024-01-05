@@ -5,7 +5,10 @@
 
 use serde::Deserialize;
 
-use crate::model::{Model, ModelComponent, ModelDependency, ModelType};
+use crate::model::{
+    Model, ModelComponent, ModelDependency, ModelExternalReference, ModelExternalReferenceType,
+    ModelType,
+};
 
 #[derive(Deserialize, Debug)]
 pub(crate) struct Nixtract {
@@ -43,6 +46,7 @@ pub(crate) struct NixtractNixpkgsMetadata {
     pub(crate) version: String,
     pub(crate) broken: bool,
     pub(crate) license: String,
+    pub(crate) homepage: String,
 }
 
 #[derive(Deserialize, Debug)]
@@ -57,12 +61,25 @@ impl From<Nixtract> for Model {
         let components: Vec<ModelComponent> = nixtract
             .entries
             .iter()
-            .map(|entry| ModelComponent {
-                r#type: ModelType::Application,
-                name: entry.parsed_name.name.clone(),
-                r#ref: entry.output_path.clone(),
-                version: entry.nixpkgs_metadata.version.clone(),
-                description: entry.nixpkgs_metadata.description.clone(),
+            .map(|entry| {
+                let external_references = {
+                    let mut acc = vec![];
+                    if !entry.nixpkgs_metadata.homepage.is_empty() {
+                        acc.push(ModelExternalReference {
+                            url: entry.nixpkgs_metadata.homepage.clone(),
+                            r#type: ModelExternalReferenceType::Website,
+                        })
+                    }
+                    acc
+                };
+                ModelComponent {
+                    r#type: ModelType::Application,
+                    name: entry.parsed_name.name.clone(),
+                    r#ref: entry.output_path.clone(),
+                    version: entry.nixpkgs_metadata.version.clone(),
+                    description: entry.nixpkgs_metadata.description.clone(),
+                    external_references,
+                }
             })
             .collect();
 
