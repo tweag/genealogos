@@ -17,6 +17,7 @@ pub(crate) struct ModelComponent {
     pub(crate) version: String,
     pub(crate) description: String,
     pub(crate) external_references: Vec<ModelExternalReference>,
+    pub(crate) licenses: Option<Vec<ModelLicense>>,
 }
 
 #[derive(Debug)]
@@ -36,6 +37,15 @@ pub(crate) struct ModelExternalReference {
 #[derive(Debug)]
 pub(crate) enum ModelExternalReferenceType {
     Website,
+}
+
+// TODO: Consider if it is worth splitting this struct up into 2 different
+// structs like the cyclone spec. For now, just make id and name both Options
+#[derive(Debug)]
+pub(crate) struct ModelLicense {
+    // SPDX id
+    pub(crate) id: Option<String>,
+    pub(crate) name: Option<String>,
 }
 
 #[derive(Debug)]
@@ -80,6 +90,11 @@ impl From<ModelComponent> for cyclonedx::Component {
             .map(Into::into)
             .collect();
 
+        if let Some(model_licenses) = model_component.licenses {
+            let licenses = model_licenses.into_iter().map(Into::into).collect();
+            builder.licenses(cyclonedx::LicenseChoiceUrl::Variant0(licenses));
+        }
+
         builder.external_references(external_references);
 
         builder.build().unwrap()
@@ -93,6 +108,22 @@ impl From<ModelExternalReference> for cyclonedx::ExternalReference {
             .type_(model_external_reference.r#type)
             .build()
             .unwrap()
+    }
+}
+
+impl From<ModelLicense> for cyclonedx::LicenseChoiceUrlVariant0ItemUrl {
+    fn from(model_license: ModelLicense) -> Self {
+        let mut builder = cyclonedx::LicenseBuilder::default();
+
+        if let Some(id) = model_license.id {
+            builder.id(id);
+        }
+        if let Some(name) = model_license.name {
+            builder.name(name);
+        }
+        cyclonedx::LicenseChoiceUrlVariant0ItemUrl {
+            license: builder.build().unwrap(),
+        }
     }
 }
 

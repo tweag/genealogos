@@ -7,7 +7,7 @@ use serde::Deserialize;
 
 use crate::model::{
     Model, ModelComponent, ModelDependency, ModelExternalReference, ModelExternalReferenceType,
-    ModelType,
+    ModelLicense, ModelType,
 };
 
 #[derive(Deserialize, Debug)]
@@ -45,8 +45,15 @@ pub(crate) struct NixtractNixpkgsMetadata {
     pub(crate) pname: String,
     pub(crate) version: String,
     pub(crate) broken: bool,
-    pub(crate) license: String,
     pub(crate) homepage: String,
+    pub(crate) licenses: Option<Vec<NixtractLicense>>,
+}
+
+#[derive(Deserialize, Debug)]
+pub(crate) struct NixtractLicense {
+    // Not all licenses in nixpkgs have an associated spdx id
+    pub(crate) spdx_id: Option<String>,
+    pub(crate) full_name: String,
 }
 
 #[derive(Deserialize, Debug)]
@@ -72,6 +79,12 @@ impl From<Nixtract> for Model {
                     }
                     acc
                 };
+                let licenses = entry
+                    .nixpkgs_metadata
+                    .licenses
+                    .as_ref()
+                    .map(|v| v.into_iter().map(Into::into).collect());
+
                 ModelComponent {
                     r#type: ModelType::Application,
                     name: entry.parsed_name.name.clone(),
@@ -79,6 +92,7 @@ impl From<Nixtract> for Model {
                     version: entry.nixpkgs_metadata.version.clone(),
                     description: entry.nixpkgs_metadata.description.clone(),
                     external_references,
+                    licenses,
                 }
             })
             .collect();
@@ -99,6 +113,15 @@ impl From<Nixtract> for Model {
         Model {
             components,
             dependencies,
+        }
+    }
+}
+
+impl From<&NixtractLicense> for ModelLicense {
+    fn from(nixtract_license: &NixtractLicense) -> Self {
+        ModelLicense {
+            id: nixtract_license.spdx_id.clone(),
+            name: Some(nixtract_license.full_name.clone()),
         }
     }
 }
