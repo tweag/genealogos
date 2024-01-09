@@ -54,17 +54,17 @@ pub(crate) struct ModelDependency {
     pub(crate) depends_on: Vec<String>,
 }
 
-impl Into<String> for ModelType {
-    fn into(self) -> String {
-        match self {
+impl From<ModelType> for String {
+    fn from(val: ModelType) -> Self {
+        match val {
             ModelType::Application => "application".to_owned(),
         }
     }
 }
 
-impl Into<String> for ModelExternalReferenceType {
-    fn into(self) -> String {
-        match self {
+impl From<ModelExternalReferenceType> for String {
+    fn from(val: ModelExternalReferenceType) -> Self {
+        match val {
             ModelExternalReferenceType::Website => "website".to_owned(),
         }
     }

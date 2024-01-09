@@ -25,7 +25,7 @@ fn main() -> Result<(), io::Error> {
     let mut entries = vec![];
 
     for line in io::BufReader::new(file).lines().flatten() {
-        let entry: nixtract::NixtractEntry = serde_json::from_str(&line.trim()).unwrap();
+        let entry: nixtract::NixtractEntry = serde_json::from_str(line.trim()).unwrap();
         entries.push(entry);
     }
     let nixtract: Nixtract = Nixtract { entries };
