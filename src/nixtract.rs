@@ -3,6 +3,9 @@
 //!   - Parsing the incoming output of Nixtract
 //!   - Converting that input into the internal representation of Genealogos
 
+// In this module, one might see that we do deserialize unused fields. This is
+// to ensure we stay complient with nixtract output.
+
 use serde::Deserialize;
 
 use crate::model::{
@@ -17,11 +20,15 @@ pub(crate) struct Nixtract {
 
 #[derive(Deserialize, Debug)]
 pub(crate) struct NixtractEntry {
-    pub(crate) attribute_path: String,
-    pub(crate) derivation_path: String,
+    #[serde(rename(deserialize = "attribute_path"))]
+    pub(crate) _attribute_path: String,
+    #[serde(rename(deserialize = "derivation_path"))]
+    pub(crate) _derivation_path: String,
     pub(crate) output_path: String,
-    pub(crate) outputs: Vec<NixtractOutput>,
-    pub(crate) name: String,
+    #[serde(rename(deserialize = "outputs"))]
+    pub(crate) _outputs: Vec<NixtractOutput>,
+    #[serde(rename(deserialize = "name"))]
+    pub(crate) _name: String,
     pub(crate) parsed_name: NixtractParsedName,
     pub(crate) nixpkgs_metadata: NixtractNixpkgsMetadata,
     pub(crate) build_inputs: Vec<NixtractBuiltInput>,
@@ -29,22 +36,27 @@ pub(crate) struct NixtractEntry {
 
 #[derive(Deserialize, Debug)]
 pub(crate) struct NixtractOutput {
-    pub(crate) name: String,
-    pub(crate) output_path: String,
+    #[serde(rename(deserialize = "name"))]
+    pub(crate) _name: String,
+    #[serde(rename(deserialize = "output_path"))]
+    pub(crate) _output_path: String,
 }
 
 #[derive(Deserialize, Debug)]
 pub(crate) struct NixtractParsedName {
     pub(crate) name: String,
-    pub(crate) version: String,
+    #[serde(rename(deserialize = "version"))]
+    pub(crate) _version: String,
 }
 
 #[derive(Deserialize, Debug)]
 pub(crate) struct NixtractNixpkgsMetadata {
     pub(crate) description: String,
-    pub(crate) pname: String,
+    #[serde(rename(deserialize = "pname"))]
+    pub(crate) _pname: String,
     pub(crate) version: String,
-    pub(crate) broken: bool,
+    #[serde(rename(deserialize = "broken"))]
+    pub(crate) _broken: bool,
     pub(crate) homepage: String,
     pub(crate) licenses: Option<Vec<NixtractLicense>>,
 }
@@ -58,8 +70,10 @@ pub(crate) struct NixtractLicense {
 
 #[derive(Deserialize, Debug)]
 pub(crate) struct NixtractBuiltInput {
-    pub(crate) attribute_path: String,
-    pub(crate) build_input_type: String,
+    #[serde(rename(deserialize = "attribute_path"))]
+    pub(crate) _attribute_path: String,
+    #[serde(rename(deserialize = "build_input_type"))]
+    pub(crate) _build_input_type: String,
     pub(crate) output_path: Option<String>,
 }
 
@@ -83,7 +97,7 @@ impl From<Nixtract> for Model {
                     .nixpkgs_metadata
                     .licenses
                     .as_ref()
-                    .map(|v| v.into_iter().map(Into::into).collect());
+                    .map(|v| v.iter().map(Into::into).collect());
 
                 ModelComponent {
                     r#type: ModelType::Application,

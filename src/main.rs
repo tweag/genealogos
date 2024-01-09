@@ -1,27 +1,32 @@
-mod model;
-mod nixtract;
-
+use std::fs::File;
 use std::io::{self, BufRead};
+use std::path::PathBuf;
 
+use clap::Parser;
 use serde_cyclonedx::cyclonedx::v_1_5 as cyclonedx;
 
 use crate::model::Model;
 use crate::nixtract::Nixtract;
 
+mod model;
+mod nixtract;
+
+#[derive(Parser, Debug)]
+#[command(author, version, about, long_about = None)]
+struct Args {
+    file: PathBuf,
+}
+
 fn main() -> Result<(), io::Error> {
-    let mut input_reader = std::io::stdin().lock();
+    let args = Args::parse();
+
+    let file = File::open(args.file)?;
+
     let mut entries = vec![];
 
-    loop {
-        let mut buffer = String::new();
-        match input_reader.read_line(&mut buffer) {
-            Ok(0) => break,
-            Ok(_n) => {
-                let entry: nixtract::NixtractEntry = serde_json::from_str(&buffer.trim()).unwrap();
-                entries.push(entry);
-            }
-            Err(_) => todo!(),
-        }
+    for line in io::BufReader::new(file).lines().flatten() {
+        let entry: nixtract::NixtractEntry = serde_json::from_str(line.trim()).unwrap();
+        entries.push(entry);
     }
     let nixtract: Nixtract = Nixtract { entries };
 
