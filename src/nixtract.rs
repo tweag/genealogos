@@ -133,9 +133,12 @@ impl From<Nixtract> for Model {
 
 impl From<&NixtractLicense> for ModelLicense {
     fn from(nixtract_license: &NixtractLicense) -> Self {
-        ModelLicense {
-            id: nixtract_license.spdx_id.clone(),
-            name: Some(nixtract_license.full_name.clone()),
-        }
+        let id = nixtract_license.spdx_id.clone();
+        let name = if id.is_some() {
+            None
+        } else {
+            Some(nixtract_license.full_name.clone())
+        };
+        ModelLicense { id, name }
     }
 }

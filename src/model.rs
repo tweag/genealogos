@@ -1,5 +1,7 @@
 //! This module contains Genealogos' internal representation of incomming data.
 //! Since the initial target of Genealogos is CycloneDX, this model is largely based on their representation.
+use std::collections::HashSet;
+
 use serde_cyclonedx::cyclonedx::v_1_5 as cyclonedx;
 
 #[derive(Debug)]
@@ -51,7 +53,7 @@ pub(crate) struct ModelLicense {
 #[derive(Debug)]
 pub(crate) struct ModelDependency {
     pub(crate) r#ref: String,
-    pub(crate) depends_on: Vec<String>,
+    pub(crate) depends_on: HashSet<String>,
 }
 
 impl From<ModelType> for String {
