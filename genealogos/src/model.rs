@@ -131,11 +131,14 @@ impl From<ModelLicense> for cyclonedx::LicenseChoiceUrlVariant0ItemUrl {
 
 impl From<ModelDependency> for cyclonedx::Dependency {
     fn from(model_dependency: ModelDependency) -> Self {
-        let depends_on: Vec<serde_json::Value> = model_dependency
-            .depends_on
-            .into_iter()
-            .map(Into::into)
-            .collect();
+        let mut depends_on: Vec<String> = model_dependency.depends_on.into_iter().collect();
+
+        // For testing, we need deterministic output, so we sort the strings before conversion
+        if cfg!(test) {
+            depends_on.sort_unstable();
+        }
+
+        let depends_on: Vec<serde_json::Value> = depends_on.into_iter().map(Into::into).collect();
 
         cyclonedx::DependencyBuilder::default()
             .ref_(model_dependency.r#ref)
@@ -154,11 +157,20 @@ impl From<Model> for cyclonedx::CycloneDx {
         let dependencies: Vec<cyclonedx::Dependency> =
             model.dependencies.into_iter().map(Into::into).collect();
 
-        cyclonedx::CycloneDxBuilder::default()
+        let mut cyclonedx = cyclonedx::CycloneDxBuilder::default();
+        cyclonedx
             .bom_format("CycloneDX")
             .spec_version("1.5")
-            .version(1)
-            .serial_number(format!("urn:uuid:{}", uuid::Uuid::new_v4()))
+            .version(1);
+
+        if cfg!(test) {
+            // Deterministic
+            cyclonedx.serial_number("urn:uuid:00000000-0000-0000-0000-000000000000");
+        } else {
+            cyclonedx.serial_number(format!("urn:uuid:{}", uuid::Uuid::new_v4()));
+        }
+
+        cyclonedx
             .components(components)
             .dependencies(dependencies)
             .build()

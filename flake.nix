@@ -23,8 +23,8 @@
         packages = {
           default = naersk-lib.buildPackage {
             src = ./.;
+            doCheck = true;
           };
-          inherit cyclonedx;
         };
         devShells = {
           default =
