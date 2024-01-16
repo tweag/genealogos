@@ -23,6 +23,7 @@ buildDotnetModule rec {
     {
       homepage = "https://github.com/CycloneDX/cyclonedx-cli";
       description = "tool for SBOM analysis, merging, diffs and format conversions";
+      mainProgram = "cyclonedx";
       license = licenses.asl20;
     };
 }

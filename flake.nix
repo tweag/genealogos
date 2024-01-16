@@ -25,13 +25,13 @@
             src = ./.;
             doCheck = true;
           };
+          inherit cyclonedx;
         };
         devShells = {
           default =
             pkgs.mkShell {
               buildInputs = with pkgs; [
                 cargo
-                cyclonedx
                 rust-analyzer
                 rustPackages.clippy
                 rustc
