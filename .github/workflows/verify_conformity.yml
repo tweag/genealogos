@@ -12,7 +12,9 @@ jobs:
       - name: Verifying output files
         run: |
           for f in ./genealogos/tests/fixtures/nixtract/success/*.out; do
+            echo "$f"
             OUT=$(nix run .#cyclonedx --extra-experimental-features 'nix-command flakes' -- validate --input-format json --input-version v1_5 --input-file "$f")
+            echo "$OUT"
             # Fail if the cyclonedx tool did not output a message containing "successfully"
             [[ "$OUT" =~ .*successfully.* ]] || exit 1
           done || exit 1
