@@ -158,7 +158,7 @@ impl From<ModelDependency> for cyclonedx::Dependency {
         let mut depends_on: Vec<String> = model_dependency.depends_on.into_iter().collect();
 
         // For testing, we need deterministic output, so we sort the strings before conversion
-        if cfg!(test) {
+        if cfg!(test) || std::env::var("GENEALOGOS_DETERMINISTIC").is_ok() {
             depends_on.sort_unstable();
         }
 
@@ -187,7 +187,7 @@ impl From<Model> for cyclonedx::CycloneDx {
             .spec_version("1.5")
             .version(1);
 
-        if cfg!(test) {
+        if cfg!(test) || std::env::var("GENEALOGOS_DETERMINISTIC").is_ok() {
             // Deterministic
             cyclonedx.serial_number("urn:uuid:00000000-0000-0000-0000-000000000000");
         } else {
