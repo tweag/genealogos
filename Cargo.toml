@@ -1,14 +1,21 @@
-[package]
+[workspace.package]
 name = "genealogos"
+description = "Converts Nix-tracing tool output into CycloneDX"
 version = "0.1.0"
 edition = "2021"
 authors = ["Tweag I/O"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[workspace]
+members = ["genealogos", "genealogos-cli"]
 
-[dependencies]
+[workspace.dependencies]
 clap = { version = "4.4.14", features = ["derive"] }
+log = "0.4"
 serde = { version = "1.0", features = ["derive"] }
 serde-cyclonedx = "0.8"
 serde_json = "1.0"
 uuid = { version = "1.6", features = ["v4"] }
+
+env_logger = "0.10"
+predicates = "3.1"
+test-log = "0.2"

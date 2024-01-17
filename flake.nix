@@ -5,24 +5,41 @@
     utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    utils,
-    naersk,
-  }:
-    utils.lib.eachDefaultSystem (system: let
-      pkgs = import nixpkgs {inherit system;};
-      naersk-lib = pkgs.callPackage naersk {};
-    in {
-      defaultPackage = naersk-lib.buildPackage {
-        src = ./.;
-      };
-      devShell = with pkgs;
-        mkShell {
-          buildInputs = [cargo rustc rustfmt rustPackages.clippy rust-analyzer];
-          RUST_SRC_PATH = rustPlatform.rustLibSrc;
-          RUST_BACKTRACE = 1;
+  outputs =
+    { self
+    , nixpkgs
+    , utils
+    , naersk
+    ,
+    }:
+    utils.lib.eachDefaultSystem
+      (system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+        naersk-lib = pkgs.callPackage naersk { };
+        cyclonedx = pkgs.callPackage ./nix/cyclonedx.nix { };
+      in
+      {
+        packages = {
+          default = naersk-lib.buildPackage {
+            src = ./.;
+            doCheck = true;
+          };
+          inherit cyclonedx;
         };
-    });
+        devShells = {
+          default =
+            pkgs.mkShell {
+              buildInputs = with pkgs; [
+                cargo
+                rust-analyzer
+                rustPackages.clippy
+                rustc
+                rustfmt
+              ];
+              RUST_SRC_PATH = pkgs.rustPlatform.rustLibSrc;
+              RUST_BACKTRACE = 1;
+            };
+        };
+      });
 }

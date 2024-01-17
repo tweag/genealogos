@@ -1,0 +1,14 @@
+[package]
+name = "genealogos-cli"
+description.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[[bin]]
+name = "genealogos"
+path = "src/main.rs"
+
+[dependencies]
+clap = { workspace = true }
+genealogos = { path = "../genealogos" }

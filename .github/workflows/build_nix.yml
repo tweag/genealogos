@@ -10,4 +10,4 @@ jobs:
       - uses: actions/checkout@v2
       - uses: cachix/install-nix-action@v12
       - name: Building package
-        run: nix build .#defaultPackage.x86_64-linux --extra-experimental-features 'nix-command flakes'
+        run: nix build . --extra-experimental-features 'nix-command flakes'
