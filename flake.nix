@@ -19,13 +19,23 @@
         naersk-lib = pkgs.callPackage naersk { };
         cyclonedx = pkgs.callPackage ./nix/cyclonedx.nix { };
       in
-      {
-        packages = {
-          default = naersk-lib.buildPackage {
+      rec {
+        packages = rec {
+          default = genealogos;
+          genealogos = naersk-lib.buildPackage {
             src = ./.;
             doCheck = true;
           };
-          inherit cyclonedx;
+          update-fixture-files = pkgs.writeShellApplication {
+            name = "update-fixture-files";
+            runtimeInputs = [ genealogos ];
+            text = builtins.readFile ./scripts/update-fixture-files.sh;
+          };
+          verify-fixture-files = pkgs.writeShellApplication {
+            name = "verify-fixture-files";
+            runtimeInputs = [ cyclonedx ];
+            text = builtins.readFile ./scripts/verify-fixture-files.sh;
+          };
         };
         devShells = {
           default =
@@ -36,6 +46,9 @@
                 rustPackages.clippy
                 rustc
                 rustfmt
+
+                packages.update-fixture-files
+                packages.verify-fixture-files
               ];
               RUST_SRC_PATH = pkgs.rustPlatform.rustLibSrc;
               RUST_BACKTRACE = 1;

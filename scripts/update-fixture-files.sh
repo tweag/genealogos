@@ -7,5 +7,6 @@ fi
 
 for input_file in ./genealogos/tests/fixtures/nixtract/success/*.in; do
   output_file=${input_file%.in}.out
+  echo "Updating: $output_file"
   GENEALOGOS_DETERMINISTIC=1 genealogos "$input_file" > "$output_file"
 done
