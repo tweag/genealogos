@@ -10,7 +10,7 @@ use serde::Deserialize;
 
 use crate::model::{
     Model, ModelComponent, ModelDependency, ModelExternalReference, ModelExternalReferenceType,
-    ModelLicense, ModelType,
+    ModelLicense, ModelSource, ModelType,
 };
 
 #[derive(Deserialize, Debug)]
@@ -31,6 +31,7 @@ pub(crate) struct NixtractEntry {
     pub(crate) _name: String,
     pub(crate) parsed_name: NixtractParsedName,
     pub(crate) nixpkgs_metadata: NixtractNixpkgsMetadata,
+    pub(crate) src: Option<NixtractSource>,
     pub(crate) build_inputs: Vec<NixtractBuiltInput>,
 }
 
@@ -59,6 +60,13 @@ pub(crate) struct NixtractNixpkgsMetadata {
     pub(crate) _broken: bool,
     pub(crate) homepage: String,
     pub(crate) licenses: Option<Vec<NixtractLicense>>,
+}
+
+#[derive(Deserialize, Debug)]
+pub(crate) struct NixtractSource {
+    pub(crate) git_repo_url: String,
+    // Revision or tag of the git repo
+    pub(crate) rev: String,
 }
 
 #[derive(Deserialize, Debug)]
@@ -99,6 +107,11 @@ impl From<Nixtract> for Model {
                     .as_ref()
                     .map(|v| v.iter().map(Into::into).collect());
 
+                let src = entry.src.as_ref().map(|src| ModelSource {
+                    git_repo_url: src.git_repo_url.clone(),
+                    rev: src.rev.clone(),
+                });
+
                 ModelComponent {
                     r#type: ModelType::Application,
                     name: entry.parsed_name.name.clone(),
@@ -107,6 +120,7 @@ impl From<Nixtract> for Model {
                     description: entry.nixpkgs_metadata.description.clone(),
                     external_references,
                     licenses,
+                    src,
                 }
             })
             .collect();

@@ -20,6 +20,8 @@ pub(crate) struct ModelComponent {
     pub(crate) description: String,
     pub(crate) external_references: Vec<ModelExternalReference>,
     pub(crate) licenses: Option<Vec<ModelLicense>>,
+    // Not directly taken from the cycloneDX spec, but part of the purl
+    pub(crate) src: Option<ModelSource>,
 }
 
 #[derive(Debug)]
@@ -51,6 +53,12 @@ pub(crate) struct ModelLicense {
 }
 
 #[derive(Debug)]
+pub(crate) struct ModelSource {
+    pub(crate) git_repo_url: String,
+    pub(crate) rev: String,
+}
+
+#[derive(Debug)]
 pub(crate) struct ModelDependency {
     pub(crate) r#ref: String,
     pub(crate) depends_on: HashSet<String>,
@@ -78,7 +86,7 @@ impl From<ModelComponent> for cyclonedx::Component {
         let mut builder = cyclonedx::ComponentBuilder::default();
         let mut builder = builder
             .type_(model_component.r#type)
-            .name(model_component.name)
+            .name(model_component.name.clone())
             .bom_ref(model_component.r#ref)
             .description(model_component.description);
 
@@ -98,6 +106,22 @@ impl From<ModelComponent> for cyclonedx::Component {
         }
 
         builder.external_references(external_references);
+
+        if !model_component.name.is_empty() && !model_component.version.is_empty() {
+            let purl: String = if let Some(src) = model_component.src {
+                format!(
+                    "pkg:generic/{}?vcs_url=git+{}@{}",
+                    model_component.name, src.git_repo_url, src.rev
+                )
+            } else {
+                format!(
+                    "pkg:generic/{}@{}",
+                    model_component.name, model_component.version
+                )
+            }
+            .to_owned();
+            builder = builder.purl(purl);
+        }
 
         builder.build().unwrap()
     }
