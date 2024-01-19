@@ -46,12 +46,16 @@
                 rustPackages.clippy
                 rustc
                 rustfmt
-
-                packages.update-fixture-files
-                packages.verify-fixture-files
               ];
               RUST_SRC_PATH = pkgs.rustPlatform.rustLibSrc;
               RUST_BACKTRACE = 1;
+            };
+          scripts =
+            pkgs.mkShell {
+              buildInputs = with packages; [
+                update-fixture-files
+                verify-fixture-files
+              ];
             };
         };
       });

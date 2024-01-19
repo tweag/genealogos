@@ -1,5 +1,4 @@
 [workspace.package]
-name = "genealogos"
 description = "Converts Nix-tracing tool output into CycloneDX"
 version = "0.1.0"
 edition = "2021"
@@ -7,6 +6,7 @@ authors = ["Tweag I/O"]
 
 [workspace]
 members = ["genealogos", "genealogos-cli"]
+resolver = "2"
 
 [workspace.dependencies]
 clap = { version = "4.4.14", features = ["derive"] }
