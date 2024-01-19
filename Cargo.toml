@@ -3,6 +3,10 @@ description = "Converts Nix-tracing tool output into CycloneDX"
 version = "0.1.0"
 edition = "2021"
 authors = ["Tweag I/O"]
+license = "MIT"
+repository = "https://github.com/Tweag/genealogos"
+keywords = ["nix", "cyclonedx", "conversion"]
+readme = "README.md"
 
 [workspace]
 members = ["genealogos", "genealogos-cli"]
