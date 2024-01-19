@@ -14,18 +14,37 @@ This section assumes you are using the latest `main` version version of [nixtrac
 
 ### Analyzing a package from your system nixpkgs channel
 ```fish
-nixtract --target-attribute-path hello - | genealogos
+nixtract --target-attribute-path hello - > /tmp/out && genealogos /tmp/out
 ```
 
 ### Analyzing a local flake
 ```fish
-nixtract --target-flake-ref /path/to/your/local/flake - | genealogos
+nixtract --target-flake-ref /path/to/your/local/flake - > /tmp/out | genealogos /tmp/out
 ```
 
 For more `nixtract` arguments, see `nixtract --help`.
 
 ## Building Genealogos
 `nix build` or `cargo build`. A development shell is present via `nix devel`.
+
+## Testing
+Genealogos is tested against fixtures in `genealogos/tests/fixtures/nixtract/success/`.
+With each `.in` file containing `nixtract` output and each `.out` file
+containing the corresponding expected `genealogos` output. Running these tests
+is done automatically by `nix build`, but can also manually be performed using
+`cargo test`. Typically, `genealogos` output is non-deterministic (the UUID is
+random, and the order of elements in lists is random), which makes testing a
+little more annoying. To overcome this hurdle, when running `cargo test`, or
+when setting the `GENEALOGOS_DETERMINISTIC` environment variable, the output of
+`genealogos` is made deterministc. This is done by setting the UUID to all
+zeroes, and sorting the `dependsOn` lists.
+
+In order to make working with these fixtures a little nicer, the `nix
+develop .#scripts` devShell provides two scripts. `verify-fixture-files`, which
+verifies the `.out` files with the `cyclonedx-cli` tool to ensure `genealogos`
+produces valid CycloneDX. And `update-fixture-files`, which should be ran when
+an update to `genealogos` changes its output. Note that this second script
+requires that the `cyclonedx-cli` tool is buildable.
 
 [cyclonedx]: https://cyclonedx.org/
 [nixtract]: https://github.com/tweag/nixtract/
