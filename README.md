@@ -19,7 +19,7 @@ nixtract --target-attribute-path hello - > /tmp/out && genealogos /tmp/out
 
 ### Analyzing a local flake
 ```fish
-nixtract --target-flake-ref /path/to/your/local/flake - > /tmp/out | genealogos /tmp/out
+nixtract --target-flake-ref /path/to/your/local/flake - > /tmp/out && genealogos /tmp/out
 ```
 
 For more `nixtract` arguments, see `nixtract --help`.
