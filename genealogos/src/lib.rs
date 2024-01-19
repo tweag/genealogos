@@ -1,25 +1,46 @@
+//! Genealogos is a tool that takes nixtract output and creates a (`CycloneDX`)[cyclonedx] compatible sbom file.
+//! This output file can then be used by external tools for further analysis.
+//!
+//! [cyclonedx]: https://cyclonedx.org/
 use serde_cyclonedx::cyclonedx::v_1_5 as cyclonedx;
 
 use crate::model::Model;
 use crate::nixtract::Nixtract;
 
+// Export the Error type for external users
+pub use self::error::{Error, Result};
+
+mod error;
 pub mod model;
 pub mod nixtract;
 
-pub fn genealogos(input_entries: impl IntoIterator<Item = impl AsRef<str>>) -> String {
+/// Converts Nixtract entries to CycloneDX model and serializes it to JSON.
+///
+/// # Arguments
+///
+/// * `input_entries`: A collection of Nixtract entries, represented as `impl IntoIterator<Item = impl AsRef<str>>`
+///   (or any iterator that contains things that can be referenced as `str`).
+///
+/// # Returns
+///
+/// A JSON-formatted string representation of the CycloneDX sbom.
+///
+/// # Panics
+///
+/// Panics if any of the input entries cannot be parsed as Nixtract entries.
+pub fn genealogos(input_entries: impl IntoIterator<Item = impl AsRef<str>>) -> Result<String> {
     let mut entries = vec![];
 
     for input_entry in input_entries {
-        let entry: nixtract::NixtractEntry =
-            serde_json::from_str(input_entry.as_ref().trim()).unwrap();
+        let entry: nixtract::NixtractEntry = serde_json::from_str(input_entry.as_ref().trim())?;
         entries.push(entry);
     }
     let nixtract: Nixtract = Nixtract { entries };
 
     let model: Model = nixtract.into();
-    let cyclonedx: cyclonedx::CycloneDx = model.into();
+    let cyclonedx: cyclonedx::CycloneDx = model.try_into()?;
 
-    serde_json::to_string(&cyclonedx).unwrap()
+    Ok(serde_json::to_string(&cyclonedx)?)
 }
 
 #[cfg(test)]
@@ -42,7 +63,8 @@ mod tests {
                 let input_file = fs::File::open(&input_path).unwrap();
 
                 let output =
-                    crate::genealogos(std::io::BufReader::new(input_file).lines().flatten());
+                    crate::genealogos(std::io::BufReader::new(input_file).lines().flatten())
+                        .unwrap();
 
                 let mut expected_path = input_path.clone();
                 expected_path.set_extension("out");

@@ -1,5 +1,4 @@
 [workspace.package]
-name = "genealogos"
 description = "Converts Nix-tracing tool output into CycloneDX"
 version = "0.1.0"
 edition = "2021"

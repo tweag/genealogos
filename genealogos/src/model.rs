@@ -4,6 +4,8 @@ use std::collections::HashSet;
 
 use serde_cyclonedx::cyclonedx::v_1_5 as cyclonedx;
 
+use crate::{Error, Result};
+
 #[derive(Debug)]
 pub(crate) struct Model {
     pub(crate) components: Vec<ModelComponent>,
@@ -80,9 +82,10 @@ impl From<ModelExternalReferenceType> for String {
     }
 }
 
-impl From<ModelComponent> for cyclonedx::Component {
-    // TODO: Error
-    fn from(model_component: ModelComponent) -> Self {
+impl TryFrom<ModelComponent> for cyclonedx::Component {
+    type Error = Error;
+
+    fn try_from(model_component: ModelComponent) -> Result<Self> {
         let mut builder = cyclonedx::ComponentBuilder::default();
         let mut builder = builder
             .type_(model_component.r#type)
@@ -97,11 +100,15 @@ impl From<ModelComponent> for cyclonedx::Component {
         let external_references: Vec<cyclonedx::ExternalReference> = model_component
             .external_references
             .into_iter()
-            .map(Into::into)
-            .collect();
+            .map(TryInto::try_into)
+            .collect::<Result<Vec<_>>>()?;
 
         if let Some(model_licenses) = model_component.licenses {
-            let licenses = model_licenses.into_iter().map(Into::into).collect();
+            let licenses = model_licenses
+                .into_iter()
+                .map(TryInto::try_into)
+                .collect::<Result<Vec<_>>>()?;
+
             builder.licenses(cyclonedx::LicenseChoiceUrl::Variant0(licenses));
         }
 
@@ -123,22 +130,25 @@ impl From<ModelComponent> for cyclonedx::Component {
             builder = builder.purl(purl);
         }
 
-        builder.build().unwrap()
+        Ok(builder.build()?)
     }
 }
 
-impl From<ModelExternalReference> for cyclonedx::ExternalReference {
-    fn from(model_external_reference: ModelExternalReference) -> Self {
-        cyclonedx::ExternalReferenceBuilder::default()
+impl TryFrom<ModelExternalReference> for cyclonedx::ExternalReference {
+    type Error = Error;
+
+    fn try_from(model_external_reference: ModelExternalReference) -> Result<Self> {
+        Ok(cyclonedx::ExternalReferenceBuilder::default()
             .url(model_external_reference.url)
             .type_(model_external_reference.r#type)
-            .build()
-            .unwrap()
+            .build()?)
     }
 }
 
-impl From<ModelLicense> for cyclonedx::LicenseChoiceUrlVariant0ItemUrl {
-    fn from(model_license: ModelLicense) -> Self {
+impl TryFrom<ModelLicense> for cyclonedx::LicenseChoiceUrlVariant0ItemUrl {
+    type Error = Error;
+
+    fn try_from(model_license: ModelLicense) -> Result<Self> {
         let mut builder = cyclonedx::LicenseBuilder::default();
 
         if let Some(id) = model_license.id {
@@ -147,14 +157,16 @@ impl From<ModelLicense> for cyclonedx::LicenseChoiceUrlVariant0ItemUrl {
         if let Some(name) = model_license.name {
             builder.name(name);
         }
-        cyclonedx::LicenseChoiceUrlVariant0ItemUrl {
-            license: builder.build().unwrap(),
-        }
+        Ok(cyclonedx::LicenseChoiceUrlVariant0ItemUrl {
+            license: builder.build()?,
+        })
     }
 }
 
-impl From<ModelDependency> for cyclonedx::Dependency {
-    fn from(model_dependency: ModelDependency) -> Self {
+impl TryFrom<ModelDependency> for cyclonedx::Dependency {
+    type Error = Error;
+
+    fn try_from(model_dependency: ModelDependency) -> Result<Self> {
         let mut depends_on: Vec<String> = model_dependency.depends_on.into_iter().collect();
 
         // For testing, we need deterministic output, so we sort the strings before conversion
@@ -164,22 +176,28 @@ impl From<ModelDependency> for cyclonedx::Dependency {
 
         let depends_on: Vec<serde_json::Value> = depends_on.into_iter().map(Into::into).collect();
 
-        cyclonedx::DependencyBuilder::default()
+        Ok(cyclonedx::DependencyBuilder::default()
             .ref_(model_dependency.r#ref)
             .depends_on(depends_on)
-            .build()
-            .unwrap()
+            .build()?)
     }
 }
 
-impl From<Model> for cyclonedx::CycloneDx {
-    // TODO: Error
-    fn from(model: Model) -> Self {
-        let components: Vec<cyclonedx::Component> =
-            model.components.into_iter().map(Into::into).collect();
+impl TryFrom<Model> for cyclonedx::CycloneDx {
+    type Error = Error;
 
-        let dependencies: Vec<cyclonedx::Dependency> =
-            model.dependencies.into_iter().map(Into::into).collect();
+    fn try_from(model: Model) -> Result<Self> {
+        let components: Vec<cyclonedx::Component> = model
+            .components
+            .into_iter()
+            .map(TryInto::try_into)
+            .collect::<Result<Vec<_>>>()?;
+
+        let dependencies: Vec<cyclonedx::Dependency> = model
+            .dependencies
+            .into_iter()
+            .map(TryInto::try_into)
+            .collect::<Result<Vec<_>>>()?;
 
         let mut cyclonedx = cyclonedx::CycloneDxBuilder::default();
         cyclonedx
@@ -194,10 +212,9 @@ impl From<Model> for cyclonedx::CycloneDx {
             cyclonedx.serial_number(format!("urn:uuid:{}", uuid::Uuid::new_v4()));
         }
 
-        cyclonedx
+        Ok(cyclonedx
             .components(components)
             .dependencies(dependencies)
-            .build()
-            .unwrap()
+            .build()?)
     }
 }
