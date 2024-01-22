@@ -14,12 +14,12 @@ This section assumes you are using the latest `main` version version of [nixtrac
 
 ### Analyzing a package from your system nixpkgs channel
 ```fish
-nixtract --target-attribute-path hello - > /tmp/out && genealogos /tmp/out
+nixtract --target-attribute-path hello /tmp/out && genealogos /tmp/out
 ```
 
 ### Analyzing a local flake
 ```fish
-nixtract --target-flake-ref /path/to/your/local/flake - > /tmp/out && genealogos /tmp/out
+nixtract --target-flake-ref /path/to/your/local/flake /tmp/out && genealogos /tmp/out
 ```
 
 For more `nixtract` arguments, see `nixtract --help`.
