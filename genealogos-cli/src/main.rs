@@ -1,6 +1,5 @@
 use std::error::Error;
 use std::fs;
-use std::io::{self, BufRead};
 use std::path;
 
 use clap::Parser;
@@ -12,28 +11,47 @@ use genealogos::genealogos;
 #[command(author, version, about)]
 struct Args {
     /// Path to the input nixtract file
-    file: path::PathBuf,
+    #[arg(short, long, required_unless_present = "flake_ref")]
+    file: Option<path::PathBuf>,
+
+    /// Flake reference (e.g. `nixpkgs`)
+    #[arg(long, required_unless_present = "file")]
+    flake_ref: Option<String>,
+
+    /// Attribute path (e.g. `hello`)
+    #[arg(long, required_unless_present = "file")]
+    attribute_path: Option<String>,
 
     /// Optional path to the output CycloneDX file (default: stdout)
     output_file: Option<path::PathBuf>,
+
+    /// Backend to use for Nix evaluation tracing
+    #[arg(long, default_value = "nixtract")]
+    backend: genealogos::backend::Backend,
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
     // Parse command-line arguments
     let args = Args::parse();
 
-    let file = fs::File::open(args.file)?;
+    // If a file was specified, use that as the input file as the Source, otherwise use the flake reference and attribute path
+    let source = if let Some(file) = args.file {
+        genealogos::Source::TraceFile(file)
+    } else {
+        genealogos::Source::Flake {
+            flake_ref: args.flake_ref.unwrap(),
+            attribute_path: args.attribute_path,
+        }
+    };
 
-    // Read lines from the input file and flatten into a single iterator
-    let lines = io::BufReader::new(file).lines().flatten();
+    // Generate the CycloneDX output
+    let output = genealogos(args.backend, source)?;
 
-    // Process the input data using `genealogos` and generate CycloneDX JSON
-    let json_out = genealogos(lines)?;
-
-    // Write the CycloneDX JSON to either the specified output file or stdout
-    match args.output_file {
-        Some(path) => fs::write(path.into_os_string(), json_out)?,
-        None => println!("{}", json_out),
+    // Write the output to the specified file, or stdout if no file was specified
+    if let Some(output_file) = args.output_file {
+        fs::write(output_file, output)?;
+    } else {
+        println!("{}", output);
     }
 
     Ok(())

@@ -22,3 +22,9 @@ uuid.workspace = true
 env_logger.workspace = true
 predicates.workspace = true
 test-log.workspace = true
+pretty_assertions.workspace = true
+
+[features]
+# This feature should be enabled when running tests in a Nix environment.
+# It disables all tests that require a working internet connection.
+nix = []

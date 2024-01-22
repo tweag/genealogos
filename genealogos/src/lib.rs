@@ -4,15 +4,21 @@
 //! [cyclonedx]: https://cyclonedx.org/
 use serde_cyclonedx::cyclonedx::v_1_5 as cyclonedx;
 
-use crate::model::Model;
-use crate::nixtract::Nixtract;
-
 // Export the Error type for external users
 pub use self::error::{Error, Result};
 
+pub mod backend;
 mod error;
 pub mod model;
-pub mod nixtract;
+
+#[derive(Debug)]
+pub enum Source {
+    Flake {
+        flake_ref: String,
+        attribute_path: Option<String>,
+    },
+    TraceFile(std::path::PathBuf),
+}
 
 /// Converts Nixtract entries to CycloneDX model and serializes it to JSON.
 ///
@@ -28,30 +34,42 @@ pub mod nixtract;
 /// # Panics
 ///
 /// Panics if any of the input entries cannot be parsed as Nixtract entries.
-pub fn genealogos(input_entries: impl IntoIterator<Item = impl AsRef<str>>) -> Result<String> {
-    let mut entries = vec![];
+pub fn genealogos(backend: crate::backend::Backend, source: Source) -> Result<String> {
+    // Convert the input entries to a `Model`
+    let model = match source {
+        Source::Flake {
+            flake_ref,
+            attribute_path,
+        } => backend.from_flake_ref(flake_ref, attribute_path)?,
+        Source::TraceFile(file_path) => backend.from_trace_file(file_path)?,
+    };
 
-    for input_entry in input_entries {
-        let entry: nixtract::NixtractEntry = serde_json::from_str(input_entry.as_ref().trim())?;
-        entries.push(entry);
-    }
-    let nixtract: Nixtract = Nixtract { entries };
+    // Convert `Model` to `CycloneDx`
+    let cyclonedx = cyclonedx::CycloneDx::try_from(model)?;
 
-    let model: Model = nixtract.into();
-    let cyclonedx: cyclonedx::CycloneDx = model.try_into()?;
+    // Serialize the `Model` to JSON
+    let json = serde_json::to_string_pretty(&cyclonedx)?;
 
-    Ok(serde_json::to_string(&cyclonedx)?)
+    Ok(json)
 }
 
 #[cfg(test)]
 mod tests {
     use log::info;
-    use std::{fs, io::BufRead};
+    use pretty_assertions::assert_eq;
+    use serde::Deserialize;
+    use std::fs;
     use test_log::test;
 
+    #[derive(Deserialize, Debug)]
+    pub struct FlakeArgs {
+        flake_ref: String,
+        attribute_path: Option<String>,
+    }
+
     #[test]
-    fn test_fixtures() {
-        let input_dir = fs::read_dir("tests/fixtures/nixtract/success/").unwrap();
+    fn test_trace_files() {
+        let input_dir = fs::read_dir("tests/fixtures/nixtract/trace-files/").unwrap();
 
         for input_file in input_dir {
             let input_file = input_file.unwrap();
@@ -60,11 +78,45 @@ mod tests {
             if input_path.extension().unwrap().to_string_lossy() == "in" {
                 info!("testing: {}", input_path.to_string_lossy());
 
-                let input_file = fs::File::open(&input_path).unwrap();
+                let output = super::genealogos(
+                    crate::backend::Backend::default(),
+                    super::Source::TraceFile(input_path.clone()),
+                )
+                .unwrap();
 
-                let output =
-                    crate::genealogos(std::io::BufReader::new(input_file).lines().flatten())
-                        .unwrap();
+                let mut expected_path = input_path.clone();
+                expected_path.set_extension("out");
+
+                let expected_output = fs::read_to_string(expected_path).unwrap();
+
+                assert_eq!(output, expected_output.trim());
+            }
+        }
+    }
+
+    #[test]
+    #[cfg_attr(feature = "nix", ignore)]
+    fn test_flakes() {
+        let input_dir = fs::read_dir("tests/fixtures/nixtract/flakes/").unwrap();
+
+        for input_file in input_dir {
+            let input_file = input_file.unwrap();
+            let input_path = input_file.path();
+
+            if input_path.extension().unwrap().to_string_lossy() == "in" {
+                info!("testing: {}", input_path.to_string_lossy());
+
+                let input = fs::read_to_string(input_path.clone()).unwrap();
+                let flake_args: FlakeArgs = serde_json::from_str(&input).unwrap();
+
+                let output = super::genealogos(
+                    crate::backend::Backend::default(),
+                    super::Source::Flake {
+                        flake_ref: flake_args.flake_ref,
+                        attribute_path: flake_args.attribute_path,
+                    },
+                )
+                .unwrap();
 
                 let mut expected_path = input_path.clone();
                 expected_path.set_extension("out");

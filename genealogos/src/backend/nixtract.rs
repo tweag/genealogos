@@ -85,6 +85,67 @@ pub(crate) struct NixtractBuiltInput {
     pub(crate) output_path: Option<String>,
 }
 
+impl crate::backend::BackendTrait for Nixtract {
+    fn from_flake_ref(
+        flake_ref: impl AsRef<str>,
+        attribute_path: Option<impl AsRef<str>>,
+    ) -> crate::Result<Model> {
+        // Check if `nixtract` is available in $PATH
+        if !std::process::Command::new("which")
+            .arg("nixtract")
+            .output()?
+            .status
+            .success()
+        {
+            return Err(crate::Error::NixtractCommand(
+                "nixtract is not available in $PATH".to_string(),
+            ));
+        }
+
+        // Call `nixtract` from $PATH, providing the `flake_ref` and `attribute_path` as arguments
+        let mut command = std::process::Command::new("nixtract");
+        command.arg("--target-flake-ref").arg(flake_ref.as_ref());
+        if let Some(attr_path) = attribute_path {
+            command
+                .arg("--target-attribute-path")
+                .arg(attr_path.as_ref());
+        }
+        command.arg("-");
+
+        // Execute the command and capture the output
+        let output = command.output()?;
+        let stdout = String::from_utf8_lossy(&output.stdout);
+
+        // Split stdout into lines
+        let lines = stdout.lines();
+
+        // Convert the lines into a `Model`
+        Self::from_lines(lines)
+    }
+
+    fn from_trace_file(file_path: impl AsRef<std::path::Path>) -> crate::Result<Model> {
+        // Read the file contents and split them into individual lines
+        let file_contents = std::fs::read_to_string(file_path)?;
+        let lines = file_contents.lines();
+        Self::from_lines(lines)
+    }
+
+    fn from_lines(lines: impl Iterator<Item = impl AsRef<str>>) -> crate::Result<Model> {
+        // Parse each line as a Nixtract entry
+        let entries: Vec<NixtractEntry> = lines
+            .map(|line| serde_json::from_str(line.as_ref()))
+            .collect::<Result<Vec<NixtractEntry>, _>>()?;
+
+        // Convert the Nixtract entries into Nitract
+        let nixtract = Nixtract { entries };
+
+        // Convert the Nixtract to a Genealogos model
+        let model = Model::from(nixtract);
+
+        Ok(model)
+    }
+}
+
 impl From<Nixtract> for Model {
     fn from(nixtract: Nixtract) -> Self {
         let components: Vec<ModelComponent> = nixtract
