@@ -12,7 +12,6 @@
     , utils
     , naersk
     , nixtract
-    ,
     }:
     utils.lib.eachDefaultSystem
       (system:
@@ -20,6 +19,7 @@
         pkgs = import nixpkgs { inherit system; };
         naersk-lib = pkgs.callPackage naersk { };
         cyclonedx = pkgs.callPackage ./nix/cyclonedx.nix { };
+        nixtract-cli = nixtract.packages.${system}.default;
       in
       rec {
         packages = rec {
@@ -30,8 +30,11 @@
 
             nativeBuildInputs = [ pkgs.makeWrapper ];
 
+            # Setting this feature flag to disable tests that require recursive nix/an internet connection
+            cargoTestOptions = x: x ++ [ "--features" "nix" ];
+
             postInstall = ''
-              wrapProgram "$out/bin/genealogos" --prefix PATH : ${pkgs.lib.makeBinPath [ nixtract.packages.${system}.default ]}
+              wrapProgram "$out/bin/genealogos" --prefix PATH : ${pkgs.lib.makeBinPath [ nixtract-cli ]}
             '';
           };
           update-fixture-files = pkgs.writeShellApplication {
@@ -55,7 +58,7 @@
                 rustc
                 rustfmt
 
-                nixtract.packages.${system}.default
+                nixtract-cli
               ];
               RUST_SRC_PATH = pkgs.rustPlatform.rustLibSrc;
               RUST_BACKTRACE = 1;

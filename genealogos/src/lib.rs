@@ -95,6 +95,7 @@ mod tests {
     }
 
     #[test]
+    #[cfg_attr(feature = "nix", ignore)]
     fn test_flakes() {
         let input_dir = fs::read_dir("tests/fixtures/nixtract/flakes/").unwrap();
 
