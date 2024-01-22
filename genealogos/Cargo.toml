@@ -22,3 +22,4 @@ uuid.workspace = true
 env_logger.workspace = true
 predicates.workspace = true
 test-log.workspace = true
+pretty_assertions.workspace = true

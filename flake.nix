@@ -3,6 +3,7 @@
     naersk.url = "github:nix-community/naersk/master";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     utils.url = "github:numtide/flake-utils";
+    nixtract.url = "github:tweag/nixtract";
   };
 
   outputs =
@@ -10,6 +11,7 @@
     , nixpkgs
     , utils
     , naersk
+    , nixtract
     ,
     }:
     utils.lib.eachDefaultSystem
@@ -25,10 +27,16 @@
           genealogos = naersk-lib.buildPackage {
             src = ./.;
             doCheck = true;
+
+            nativeBuildInputs = [ pkgs.makeWrapper ];
+
+            postInstall = ''
+              wrapProgram "$out/bin/genealogos" --prefix PATH : ${pkgs.lib.makeBinPath [ nixtract.packages.${system}.default ]}
+            '';
           };
           update-fixture-files = pkgs.writeShellApplication {
             name = "update-fixture-files";
-            runtimeInputs = [ (genealogos.overrideAttrs (_: { doCheck = false; })) ];
+            runtimeInputs = [ (genealogos.overrideAttrs (_: { doCheck = false; })) pkgs.jq ];
             text = builtins.readFile ./scripts/update-fixture-files.sh;
           };
           verify-fixture-files = pkgs.writeShellApplication {
@@ -46,6 +54,8 @@
                 rustPackages.clippy
                 rustc
                 rustfmt
+
+                nixtract.packages.${system}.default
               ];
               RUST_SRC_PATH = pkgs.rustPlatform.rustLibSrc;
               RUST_BACKTRACE = 1;

@@ -1,0 +1,4 @@
+{
+	"flake_ref": "github:NixOS/nixpkgs?rev=ec045843b9981281bb8b676ed4af8e349fce820f",
+	"attribute_path": "hello"
+}

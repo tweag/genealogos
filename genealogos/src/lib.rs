@@ -56,12 +56,20 @@ pub fn genealogos(backend: crate::backend::Backend, source: Source) -> Result<St
 #[cfg(test)]
 mod tests {
     use log::info;
+    use pretty_assertions::assert_eq;
+    use serde::Deserialize;
     use std::fs;
     use test_log::test;
 
+    #[derive(Deserialize, Debug)]
+    pub struct FlakeArgs {
+        flake_ref: String,
+        attribute_path: Option<String>,
+    }
+
     #[test]
-    fn test_fixtures() {
-        let input_dir = fs::read_dir("tests/fixtures/nixtract/success/").unwrap();
+    fn test_trace_files() {
+        let input_dir = fs::read_dir("tests/fixtures/nixtract/trace-files/").unwrap();
 
         for input_file in input_dir {
             let input_file = input_file.unwrap();
@@ -73,6 +81,39 @@ mod tests {
                 let output = super::genealogos(
                     crate::backend::Backend::default(),
                     super::Source::TraceFile(input_path.clone()),
+                )
+                .unwrap();
+
+                let mut expected_path = input_path.clone();
+                expected_path.set_extension("out");
+
+                let expected_output = fs::read_to_string(expected_path).unwrap();
+
+                assert_eq!(output, expected_output.trim());
+            }
+        }
+    }
+
+    #[test]
+    fn test_flakes() {
+        let input_dir = fs::read_dir("tests/fixtures/nixtract/flakes/").unwrap();
+
+        for input_file in input_dir {
+            let input_file = input_file.unwrap();
+            let input_path = input_file.path();
+
+            if input_path.extension().unwrap().to_string_lossy() == "in" {
+                info!("testing: {}", input_path.to_string_lossy());
+
+                let input = fs::read_to_string(input_path.clone()).unwrap();
+                let flake_args: FlakeArgs = serde_json::from_str(&input).unwrap();
+
+                let output = super::genealogos(
+                    crate::backend::Backend::default(),
+                    super::Source::Flake {
+                        flake_ref: flake_args.flake_ref,
+                        attribute_path: flake_args.attribute_path,
+                    },
                 )
                 .unwrap();
 

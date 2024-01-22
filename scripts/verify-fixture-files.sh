@@ -5,7 +5,7 @@ if ! builtin type -P "cyclonedx" &> /dev/null; then
   exit 1
 fi
 
-for f in ./genealogos/tests/fixtures/nixtract/success/*.out; do
+for f in ./genealogos/tests/fixtures/nixtract/trace-files/*.out; do
   echo "$f"
   OUT=$(cyclonedx validate --input-format json --input-version v1_5 --input-file "$f")
   echo "$OUT"

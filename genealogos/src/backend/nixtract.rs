@@ -90,6 +90,18 @@ impl crate::backend::BackendTrait for Nixtract {
         flake_ref: impl AsRef<str>,
         attribute_path: Option<impl AsRef<str>>,
     ) -> crate::Result<Model> {
+        // Check if `nixtract` is available in $PATH
+        if !std::process::Command::new("which")
+            .arg("nixtract")
+            .output()?
+            .status
+            .success()
+        {
+            return Err(crate::Error::NixtractCommand(
+                "nixtract is not available in $PATH".to_string(),
+            ));
+        }
+
         // Call `nixtract` from $PATH, providing the `flake_ref` and `attribute_path` as arguments
         let mut command = std::process::Command::new("nixtract");
         command.arg("--target-flake-ref").arg(flake_ref.as_ref());
