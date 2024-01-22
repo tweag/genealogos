@@ -261,6 +261,7 @@ dependencies = [
  "serde-cyclonedx",
  "serde_json",
  "test-log",
+ "thiserror",
  "uuid",
 ]
 
