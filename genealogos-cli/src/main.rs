@@ -1,6 +1,5 @@
 use std::error::Error;
 use std::fs;
-use std::io::{self, BufRead};
 use std::path;
 
 use clap::Parser;
@@ -16,19 +15,17 @@ struct Args {
 
     /// Optional path to the output CycloneDX file (default: stdout)
     output_file: Option<path::PathBuf>,
+
+    /// Backend to use for Nix evaluation tracing
+    #[arg(short, long, default_value = "nixtract")]
+    backend: genealogos::backend::Backend,
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
     // Parse command-line arguments
     let args = Args::parse();
 
-    let file = fs::File::open(args.file)?;
-
-    // Read lines from the input file and flatten into a single iterator
-    let lines = io::BufReader::new(file).lines().flatten();
-
-    // Process the input data using `genealogos` and generate CycloneDX JSON
-    let json_out = genealogos(lines)?;
+    let json_out = genealogos(args.backend, genealogos::Source::TraceFile(args.file))?;
 
     // Write the CycloneDX JSON to either the specified output file or stdout
     match args.output_file {

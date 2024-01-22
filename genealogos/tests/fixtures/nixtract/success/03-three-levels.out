@@ -1,1 +1,156 @@
-{"bomFormat":"CycloneDX","components":[{"bom-ref":"/nix/store/rri8k9b41xb321wflgnj0i8ksiciidqh-pkg3","description":"","externalReferences":[],"name":"pkg3","type":"application"},{"bom-ref":"/nix/store/z9glndf97icja62srzm1i1l6hb0x7kmj-bash-5.1-p16-dev","description":"GNU Bourne-Again Shell, the de facto standard shell on Linux","externalReferences":[{"type":"website","url":"https://www.gnu.org/software/bash/"}],"licenses":[{"license":{"id":"GPL-3.0-or-later"}}],"name":"bash","purl":"pkg:generic/bash@5.1","type":"application","version":"5.1"},{"bom-ref":"/nix/store/rap4q86aahlzybjsz00cldsi726rhqz2-pkg2","description":"","externalReferences":[],"name":"pkg2","type":"application"},{"bom-ref":"/nix/store/1cn8i753d9zh2s1k00lr2mvrpwsszrj7-bison-3.8.2","description":"Yacc-compatible parser generator","externalReferences":[{"type":"website","url":"https://www.gnu.org/software/bison/"}],"licenses":[{"license":{"id":"GPL-3.0-or-later"}}],"name":"bison","purl":"pkg:generic/bison@3.8.2","type":"application","version":"3.8.2"},{"bom-ref":"/nix/store/xbf81kdkib219ipd8xff3gvpz59zyqxy-pkg1","description":"","externalReferences":[],"name":"pkg1","type":"application"},{"bom-ref":"/nix/store/i6kydfv80qsdhv4m4ibadqfkicmwa7rh-gnum4-1.4.19","description":"GNU M4, a macro processor","externalReferences":[{"type":"website","url":"https://www.gnu.org/software/m4/"}],"licenses":[{"license":{"id":"GPL-3.0-or-later"}}],"name":"gnum4","purl":"pkg:generic/gnum4@1.4.19","type":"application","version":"1.4.19"},{"bom-ref":"/nix/store/qdl6nnskrrdm8yddy1f31vk8a6lfkqdi-perl-5.36.0","description":"The standard implementation of the Perl 5 programmming language","externalReferences":[{"type":"website","url":"https://www.perl.org/"}],"licenses":[{"license":{"id":"Artistic-1.0"}}],"name":"perl","purl":"pkg:generic/perl@5.36.0","type":"application","version":"5.36.0"}],"dependencies":[{"dependsOn":["/nix/store/rap4q86aahlzybjsz00cldsi726rhqz2-pkg2","/nix/store/z9glndf97icja62srzm1i1l6hb0x7kmj-bash-5.1-p16-dev"],"ref":"/nix/store/rri8k9b41xb321wflgnj0i8ksiciidqh-pkg3"},{"dependsOn":["/nix/store/1cn8i753d9zh2s1k00lr2mvrpwsszrj7-bison-3.8.2"],"ref":"/nix/store/z9glndf97icja62srzm1i1l6hb0x7kmj-bash-5.1-p16-dev"},{"dependsOn":["/nix/store/xbf81kdkib219ipd8xff3gvpz59zyqxy-pkg1","/nix/store/z9glndf97icja62srzm1i1l6hb0x7kmj-bash-5.1-p16-dev"],"ref":"/nix/store/rap4q86aahlzybjsz00cldsi726rhqz2-pkg2"},{"dependsOn":["/nix/store/i6kydfv80qsdhv4m4ibadqfkicmwa7rh-gnum4-1.4.19","/nix/store/qdl6nnskrrdm8yddy1f31vk8a6lfkqdi-perl-5.36.0"],"ref":"/nix/store/1cn8i753d9zh2s1k00lr2mvrpwsszrj7-bison-3.8.2"},{"dependsOn":["/nix/store/z9glndf97icja62srzm1i1l6hb0x7kmj-bash-5.1-p16-dev"],"ref":"/nix/store/xbf81kdkib219ipd8xff3gvpz59zyqxy-pkg1"},{"dependsOn":[],"ref":"/nix/store/i6kydfv80qsdhv4m4ibadqfkicmwa7rh-gnum4-1.4.19"},{"dependsOn":[],"ref":"/nix/store/qdl6nnskrrdm8yddy1f31vk8a6lfkqdi-perl-5.36.0"}],"serialNumber":"urn:uuid:00000000-0000-0000-0000-000000000000","specVersion":"1.5","version":1}
+{
+  "bomFormat": "CycloneDX",
+  "components": [
+    {
+      "bom-ref": "/nix/store/rri8k9b41xb321wflgnj0i8ksiciidqh-pkg3",
+      "description": "",
+      "externalReferences": [],
+      "name": "pkg3",
+      "type": "application"
+    },
+    {
+      "bom-ref": "/nix/store/z9glndf97icja62srzm1i1l6hb0x7kmj-bash-5.1-p16-dev",
+      "description": "GNU Bourne-Again Shell, the de facto standard shell on Linux",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/bash/"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
+        }
+      ],
+      "name": "bash",
+      "purl": "pkg:generic/bash@5.1",
+      "type": "application",
+      "version": "5.1"
+    },
+    {
+      "bom-ref": "/nix/store/rap4q86aahlzybjsz00cldsi726rhqz2-pkg2",
+      "description": "",
+      "externalReferences": [],
+      "name": "pkg2",
+      "type": "application"
+    },
+    {
+      "bom-ref": "/nix/store/1cn8i753d9zh2s1k00lr2mvrpwsszrj7-bison-3.8.2",
+      "description": "Yacc-compatible parser generator",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/bison/"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
+        }
+      ],
+      "name": "bison",
+      "purl": "pkg:generic/bison@3.8.2",
+      "type": "application",
+      "version": "3.8.2"
+    },
+    {
+      "bom-ref": "/nix/store/xbf81kdkib219ipd8xff3gvpz59zyqxy-pkg1",
+      "description": "",
+      "externalReferences": [],
+      "name": "pkg1",
+      "type": "application"
+    },
+    {
+      "bom-ref": "/nix/store/i6kydfv80qsdhv4m4ibadqfkicmwa7rh-gnum4-1.4.19",
+      "description": "GNU M4, a macro processor",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/m4/"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
+        }
+      ],
+      "name": "gnum4",
+      "purl": "pkg:generic/gnum4@1.4.19",
+      "type": "application",
+      "version": "1.4.19"
+    },
+    {
+      "bom-ref": "/nix/store/qdl6nnskrrdm8yddy1f31vk8a6lfkqdi-perl-5.36.0",
+      "description": "The standard implementation of the Perl 5 programmming language",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.perl.org/"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Artistic-1.0"
+          }
+        }
+      ],
+      "name": "perl",
+      "purl": "pkg:generic/perl@5.36.0",
+      "type": "application",
+      "version": "5.36.0"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependsOn": [
+        "/nix/store/rap4q86aahlzybjsz00cldsi726rhqz2-pkg2",
+        "/nix/store/z9glndf97icja62srzm1i1l6hb0x7kmj-bash-5.1-p16-dev"
+      ],
+      "ref": "/nix/store/rri8k9b41xb321wflgnj0i8ksiciidqh-pkg3"
+    },
+    {
+      "dependsOn": [
+        "/nix/store/1cn8i753d9zh2s1k00lr2mvrpwsszrj7-bison-3.8.2"
+      ],
+      "ref": "/nix/store/z9glndf97icja62srzm1i1l6hb0x7kmj-bash-5.1-p16-dev"
+    },
+    {
+      "dependsOn": [
+        "/nix/store/xbf81kdkib219ipd8xff3gvpz59zyqxy-pkg1",
+        "/nix/store/z9glndf97icja62srzm1i1l6hb0x7kmj-bash-5.1-p16-dev"
+      ],
+      "ref": "/nix/store/rap4q86aahlzybjsz00cldsi726rhqz2-pkg2"
+    },
+    {
+      "dependsOn": [
+        "/nix/store/i6kydfv80qsdhv4m4ibadqfkicmwa7rh-gnum4-1.4.19",
+        "/nix/store/qdl6nnskrrdm8yddy1f31vk8a6lfkqdi-perl-5.36.0"
+      ],
+      "ref": "/nix/store/1cn8i753d9zh2s1k00lr2mvrpwsszrj7-bison-3.8.2"
+    },
+    {
+      "dependsOn": [
+        "/nix/store/z9glndf97icja62srzm1i1l6hb0x7kmj-bash-5.1-p16-dev"
+      ],
+      "ref": "/nix/store/xbf81kdkib219ipd8xff3gvpz59zyqxy-pkg1"
+    },
+    {
+      "dependsOn": [],
+      "ref": "/nix/store/i6kydfv80qsdhv4m4ibadqfkicmwa7rh-gnum4-1.4.19"
+    },
+    {
+      "dependsOn": [],
+      "ref": "/nix/store/qdl6nnskrrdm8yddy1f31vk8a6lfkqdi-perl-5.36.0"
+    }
+  ],
+  "serialNumber": "urn:uuid:00000000-0000-0000-0000-000000000000",
+  "specVersion": "1.5",
+  "version": 1
+}

@@ -85,6 +85,34 @@ pub(crate) struct NixtractBuiltInput {
     pub(crate) output_path: Option<String>,
 }
 
+impl crate::backend::BackendTrait for Nixtract {
+    fn from_flake_ref(
+        _flake_ref: impl AsRef<str>,
+        _attribute_path: Option<impl AsRef<str>>,
+    ) -> crate::Result<Model> {
+        todo!()
+    }
+
+    fn from_trace_file(file_path: impl AsRef<std::path::Path>) -> crate::Result<Model> {
+        // Read the file contents and split them into individual lines
+        let file_contents = std::fs::read_to_string(file_path)?;
+        let lines = file_contents.lines();
+
+        // Parse each line as a Nixtract entry
+        let entries: Vec<NixtractEntry> = lines
+            .map(|line| serde_json::from_str(line))
+            .collect::<Result<Vec<NixtractEntry>, _>>()?;
+
+        // Convert the Nixtract entries into Nitract
+        let nixtract = Nixtract { entries };
+
+        // Convert the Nixtract to a Genealogos model
+        let model = Model::from(nixtract);
+
+        Ok(model)
+    }
+}
+
 impl From<Nixtract> for Model {
     fn from(nixtract: Nixtract) -> Self {
         let components: Vec<ModelComponent> = nixtract

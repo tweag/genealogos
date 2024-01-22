@@ -28,7 +28,7 @@
           };
           update-fixture-files = pkgs.writeShellApplication {
             name = "update-fixture-files";
-            runtimeInputs = [ genealogos ];
+            runtimeInputs = [ (genealogos.overrideAttrs (_: { doCheck = false; })) ];
             text = builtins.readFile ./scripts/update-fixture-files.sh;
           };
           verify-fixture-files = pkgs.writeShellApplication {

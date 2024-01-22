@@ -8,6 +8,12 @@ pub enum Error {
 
     #[error("Errors constructing CycloneDX output: {0}")]
     CycloneDX(#[source] Box<dyn std::error::Error + Send + Sync + 'static>),
+
+    #[error("Nixtract exited with a non-zero exit code: {0}")]
+    NixtractCommand(String),
+
+    #[error("Genealogos encountered an IO error: {0}")]
+    Io(#[from] std::io::Error),
 }
 
 macro_rules! impl_from_for_error {
