@@ -116,6 +116,18 @@ impl crate::backend::BackendTrait for Nixtract {
         let output = command.output()?;
         let stdout = String::from_utf8_lossy(&output.stdout);
 
+        // Check if the command was successful
+        if !output.status.success() {
+            return Err(crate::Error::NixtractCommand(format!(
+                "nixtract exited with status code {}",
+                output.status
+            )));
+        } else if output.stdout.is_empty() {
+            return Err(crate::Error::NixtractCommand(
+                "nixtract produced no output".to_string(),
+            ));
+        }
+
         // Split stdout into lines
         let lines = stdout.lines();
 
