@@ -10,16 +10,21 @@ The project is still very early stages, so the output may as of yet be of little
 use.
 
 ## Using Genealogos
-This section assumes you are using the latest `main` version version of [nixtract][nixtract].
-
-### Analyzing a package from your system nixpkgs channel
-```fish
-nixtract --target-attribute-path hello /tmp/out && genealogos /tmp/out
-```
-
 ### Analyzing a local flake
 ```fish
-nixtract --target-flake-ref /path/to/your/local/flake /tmp/out && genealogos /tmp/out
+genealogos --flake-ref /path/to/your/local/flake
+```
+
+### Analyzing `hello` from nixpkgs
+```fish
+genealogos --flake-ref nixpkgs --attribute-path hello
+```
+
+### Using a trace file
+This section assumes you are using the latest `main` version version of [nixtract][nixtract].
+
+```fish
+nixtract --target-attribute-path hello /tmp/out && genealogos /tmp/out
 ```
 
 For more `nixtract` arguments, see `nixtract --help`.
