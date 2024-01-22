@@ -1,0 +1,18 @@
+[package]
+name = "genealogos-web"
+description.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+keywords.workspace = true
+readme.workspace = true
+
+[[bin]]
+name = "genealogos"
+path = "src/main.rs"
+
+[dependencies]
+rocket.workspace = true
+genealogos.path = "../genealogos"
