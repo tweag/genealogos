@@ -7,7 +7,7 @@ mod nixtract;
 /// Every backend must be able to generate a `Model` from a flake reference and
 /// an optional attribute path, or from a trace file.
 ///
-/// Generating from a trace file is preferred, as it is much faster. Generating
+/// Generating from a trace file or lines is preferred, as it is much faster. Generating
 /// from a flake reference is slower, as it requires a full Nix evaluation.
 pub(crate) trait BackendTrait {
     fn from_flake_ref(
@@ -15,6 +15,7 @@ pub(crate) trait BackendTrait {
         attribute_path: Option<impl AsRef<str>>,
     ) -> Result<Model>;
     fn from_trace_file(file_path: impl AsRef<path::Path>) -> Result<Model>;
+    fn from_lines(lines: impl Iterator<Item = impl AsRef<str>>) -> Result<Model>;
 }
 
 #[derive(Debug, Clone)]
