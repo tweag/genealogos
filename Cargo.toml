@@ -7,6 +7,7 @@ license = "MIT"
 repository = "https://github.com/Tweag/genealogos"
 keywords = ["nix", "cyclonedx", "conversion"]
 readme = "README.md"
+default-run = "genealogos"
 
 [workspace]
 members = ["genealogos", "genealogos-cli", "genealogos-api"]
@@ -26,3 +27,4 @@ env_logger = "0.10"
 predicates = "3.1"
 pretty_assertions = "1.4"
 test-log = "0.2"
+urlencoding = "2.1"
