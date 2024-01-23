@@ -83,14 +83,15 @@ mod tests {
 
                 assert_eq!(response.status(), Status::Ok);
 
-                let mut expected_path = input_path.clone();
-                expected_path.set_extension("out");
+                let response_string = response.into_string();
 
-                let expected_output = std::fs::read_to_string(expected_path).unwrap();
-
+                // 1.5
+                let mut expected_path_1_5 = input_path.clone();
+                expected_path_1_5.set_extension("1_5.out");
+                let expected_output_1_5 = std::fs::read_to_string(expected_path_1_5).unwrap();
                 assert_eq!(
-                    response.into_string(),
-                    Some(expected_output.trim().to_string())
+                    response_string,
+                    Some(expected_output_1_5.trim().to_string())
                 );
             }
         }

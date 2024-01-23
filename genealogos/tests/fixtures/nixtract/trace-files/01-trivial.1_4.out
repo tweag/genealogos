@@ -1,0 +1,21 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [
+    {
+      "bom-ref": "/nix/store/ys4vhl5izaahsx7mwiblsbbrlcw03w83-trivial-1.0",
+      "description": "",
+      "externalReferences": [],
+      "name": "trivial",
+      "type": "application"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependsOn": [],
+      "ref": "/nix/store/ys4vhl5izaahsx7mwiblsbbrlcw03w83-trivial-1.0"
+    }
+  ],
+  "serialNumber": "urn:uuid:00000000-0000-0000-0000-000000000000",
+  "specVersion": "1.4",
+  "version": 1
+}
