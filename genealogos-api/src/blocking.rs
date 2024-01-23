@@ -91,20 +91,36 @@ pub fn result(
     jobid: JobId,
     job_map: &rocket::State<JobMap>,
 ) -> Result<String, response::status::Custom<String>> {
-    let locked_map = job_map.try_lock().map_err(|_| {
+    let mut locked_map = job_map.try_lock().map_err(|_| {
         response::status::Custom(
             Status::InternalServerError,
             "Could not lock job map".to_string(),
         )
     })?;
 
-    let status = locked_map.get(&jobid).unwrap_or(&JobStatus::Stopped);
+    let mut result = String::new();
 
-    match status {
-        JobStatus::Done(s) => Ok(s.clone()),
-        _ => Err(response::status::Custom(
+    {
+        let status = locked_map.get(&jobid).ok_or(response::status::Custom(
             Status::InternalServerError,
-            "Job not done yet".to_string(),
-        )),
+            "Job not found".to_string(),
+        ))?;
+
+        match status {
+            JobStatus::Done(s) => {
+                result = s.clone();
+                Ok(())
+            }
+            _ => Err(response::status::Custom(
+                Status::InternalServerError,
+                "Job not done yet".to_string(),
+            )),
+        }?
     }
+
+    // Delete the entry from the job map
+    // This prevents having a huge job map over time
+    locked_map.remove(&jobid);
+
+    Ok(result)
 }
