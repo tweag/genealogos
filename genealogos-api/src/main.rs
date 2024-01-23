@@ -1,4 +1,4 @@
-use genealogos::genealogos;
+use genealogos::{cyclonedx, genealogos};
 use rocket::http::Status;
 use rocket::response::status;
 use rocket::Request;
@@ -19,8 +19,12 @@ fn analyze(flake_ref: &str, attribute_path: &str) -> Result<String, status::Cust
         attribute_path: Some(attribute_path.to_string()),
     };
 
-    let output = genealogos(genealogos::backend::Backend::Nixtract, source)
-        .map_err(|err| status::Custom(Status::InternalServerError, err.to_string()))?;
+    let output = genealogos(
+        genealogos::backend::Backend::Nixtract,
+        source,
+        cyclonedx::Version::default(),
+    )
+    .map_err(|err| status::Custom(Status::InternalServerError, err.to_string()))?;
 
     Ok(output)
 }

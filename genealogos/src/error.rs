@@ -14,6 +14,9 @@ pub enum Error {
 
     #[error("Genealogos encountered an IO error: {0}")]
     Io(#[from] std::io::Error),
+
+    #[error("The provided CycloneDX version is invalid: {0}")]
+    InvalidCycloneDXVersion(String),
 }
 
 macro_rules! impl_from_for_error {
@@ -31,3 +34,10 @@ impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_5::ExternalReferenceBuilder
 impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_5::LicenseBuilderError);
 impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_5::DependencyBuilderError);
 impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_5::CycloneDxBuilderError);
+
+impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_4::ComponentBuilderError);
+impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_4::ExternalReferenceBuilderError);
+impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_4::LicenseBuilderError);
+impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_4::LicenseChoiceBuilderError);
+impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_4::DependencyBuilderError);
+impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_4::CycloneDxBuilderError);

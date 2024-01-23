@@ -2,12 +2,14 @@
 //! This output file can then be used by external tools for further analysis.
 //!
 //! [cyclonedx]: https://cyclonedx.org/
-use serde_cyclonedx::cyclonedx::v_1_5 as cyclonedx;
+
+use cyclonedx::CycloneDX;
 
 // Export the Error type for external users
 pub use self::error::{Error, Result};
 
 pub mod backend;
+pub mod cyclonedx;
 mod error;
 pub mod model;
 
@@ -34,7 +36,11 @@ pub enum Source {
 /// # Panics
 ///
 /// Panics if any of the input entries cannot be parsed as Nixtract entries.
-pub fn genealogos(backend: crate::backend::Backend, source: Source) -> Result<String> {
+pub fn genealogos(
+    backend: crate::backend::Backend,
+    source: Source,
+    version: cyclonedx::Version,
+) -> Result<String> {
     // Convert the input entries to a `Model`
     let model = match source {
         Source::Flake {
@@ -45,7 +51,7 @@ pub fn genealogos(backend: crate::backend::Backend, source: Source) -> Result<St
     };
 
     // Convert `Model` to `CycloneDx`
-    let cyclonedx = cyclonedx::CycloneDx::try_from(model)?;
+    let cyclonedx = CycloneDX::from_model(model, version)?;
 
     // Serialize the `Model` to JSON
     let json = serde_json::to_string_pretty(&cyclonedx)?;
@@ -81,6 +87,7 @@ mod tests {
                 let output = super::genealogos(
                     crate::backend::Backend::default(),
                     super::Source::TraceFile(input_path.clone()),
+                    super::cyclonedx::Version::default(),
                 )
                 .unwrap();
 
@@ -115,6 +122,7 @@ mod tests {
                         flake_ref: flake_args.flake_ref,
                         attribute_path: flake_args.attribute_path,
                     },
+                    super::cyclonedx::Version::default(),
                 )
                 .unwrap();
 
