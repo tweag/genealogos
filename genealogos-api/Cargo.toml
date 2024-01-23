@@ -1,0 +1,32 @@
+[package]
+name = "genealogos-api"
+description.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+keywords.workspace = true
+readme.workspace = true
+
+[[bin]]
+name = "genealogos-api"
+path = "src/main.rs"
+
+[dependencies]
+rocket.workspace = true
+genealogos.path = "../genealogos"
+
+[dev-dependencies]
+env_logger.workspace = true
+test-log.workspace = true
+log.workspace = true
+serde_json.workspace = true
+serde.workspace = true
+urlencoding.workspace = true
+pretty_assertions.workspace = true
+
+[features]
+# This feature should be enabled when running tests in a Nix environment.
+# It disables all tests that require a working internet connection.
+nix = []
