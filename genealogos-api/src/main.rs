@@ -1,7 +1,13 @@
+use std::sync::{atomic, Arc};
+
 use genealogos::{cyclonedx, genealogos};
+
 use rocket::http::Status;
 use rocket::response::status;
+use rocket::tokio::sync::Mutex;
 use rocket::Request;
+
+mod blocking;
 
 #[rocket::catch(default)]
 fn handle_errors(req: &Request) -> status::Custom<String> {
@@ -36,8 +42,18 @@ fn analyze(
 #[rocket::launch]
 fn rocket() -> _ {
     rocket::build()
-        .mount("/", rocket::routes![analyze])
-        .register("/", rocket::catchers![handle_errors])
+        .mount("/api/blocking", rocket::routes![analyze])
+        .register("/api/blocking", rocket::catchers![handle_errors])
+        .mount(
+            "/api/unblocking/",
+            rocket::routes![blocking::create, blocking::status, blocking::result],
+        )
+        .register("/api/unblocking", rocket::catchers![handle_errors])
+        .manage(Arc::new(Mutex::new(std::collections::HashMap::<
+            blocking::JobId,
+            blocking::JobStatus,
+        >::new())))
+        .manage(atomic::AtomicU16::new(0))
 }
 
 #[cfg(test)]
