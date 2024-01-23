@@ -1,3 +1,8 @@
+//! CycloneDX version enum
+//!
+//! This module contains the `Version` enum, which represents the CycloneDX version to use
+//! when generating CycloneDX output.
+
 use clap::ValueEnum;
 
 #[derive(Debug, Clone)]
@@ -6,6 +11,8 @@ pub enum Version {
     V1_5,
 }
 
+/// This trait is used to convert a `Version` into a `PossibleValue` for clap
+/// And ensures that clap can display the possible values for `Version`
 impl ValueEnum for Version {
     fn value_variants<'a>() -> &'a [Self] {
         &[Version::V1_4, Version::V1_5]
