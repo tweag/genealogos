@@ -29,6 +29,11 @@ nixtract --target-attribute-path hello /tmp/out && genealogos /tmp/out
 
 For more `nixtract` arguments, see `nixtract --help`.
 
+## Using Genealogos as a server
+Genealogos can also run as an API server using the `genealogos-api` binary.
+Currently, this API has only a single endpoint: `/api/analyze/<flake_ref>/<attribute_path>`.
+By default, `genealogos-api` binds itself on `localhost:8000`.
+
 ## Building Genealogos
 `nix build` or `cargo build`. A development shell is present via `nix devel`.
 

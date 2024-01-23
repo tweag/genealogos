@@ -7,7 +7,6 @@ license = "MIT"
 repository = "https://github.com/Tweag/genealogos"
 keywords = ["nix", "cyclonedx", "conversion"]
 readme = "README.md"
-default-run = "genealogos"
 
 [workspace]
 members = ["genealogos", "genealogos-cli", "genealogos-api"]

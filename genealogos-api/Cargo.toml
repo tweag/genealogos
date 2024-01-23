@@ -1,5 +1,5 @@
 [package]
-name = "genealogos-web"
+name = "genealogos-api"
 description.workspace = true
 version.workspace = true
 edition.workspace = true
@@ -10,7 +10,7 @@ keywords.workspace = true
 readme.workspace = true
 
 [[bin]]
-name = "genealogos-web"
+name = "genealogos-api"
 path = "src/main.rs"
 
 [dependencies]
