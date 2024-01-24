@@ -11,7 +11,7 @@ fn handle_errors(req: &Request) -> status::Custom<String> {
     )
 }
 
-#[rocket::get("/api/analyze/<flake_ref>/<attribute_path>")]
+#[rocket::get("/api/analyze?<flake_ref>&<attribute_path>")]
 fn analyze(flake_ref: &str, attribute_path: &str) -> Result<String, status::Custom<String>> {
     // Construct the Source from the flake reference and attribute path
     let source = genealogos::Source::Flake {
@@ -78,7 +78,10 @@ mod tests {
                 let attribute_path = urlencoding::encode(&attribute_path);
 
                 let response = client
-                    .get(format!("/api/analyze/{}/{}/", flake_ref, attribute_path))
+                    .get(format!(
+                        "/api/analyze?flake_ref={}&attribute_path={}",
+                        flake_ref, attribute_path
+                    ))
                     .dispatch();
 
                 assert_eq!(response.status(), Status::Ok);
