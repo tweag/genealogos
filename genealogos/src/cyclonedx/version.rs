@@ -5,9 +5,11 @@
 
 use clap::ValueEnum;
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Default)]
+#[cfg_attr(feature = "rocket", derive(rocket::FromFormField))]
 pub enum Version {
     V1_4,
+    #[default]
     V1_5,
 }
 
@@ -23,11 +25,5 @@ impl ValueEnum for Version {
             Version::V1_4 => Some(clap::builder::PossibleValue::new("1.4")),
             Version::V1_5 => Some(clap::builder::PossibleValue::new("1.5")),
         }
-    }
-}
-
-impl Default for Version {
-    fn default() -> Self {
-        Version::V1_5
     }
 }

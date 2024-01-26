@@ -534,6 +534,7 @@ dependencies = [
  "log",
  "predicates",
  "pretty_assertions",
+ "rocket",
  "serde",
  "serde-cyclonedx",
  "serde_json",

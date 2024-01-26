@@ -11,18 +11,22 @@ fn handle_errors(req: &Request) -> status::Custom<String> {
     )
 }
 
-#[rocket::get("/api/analyze?<flake_ref>&<attribute_path>")]
-fn analyze(flake_ref: &str, attribute_path: &str) -> Result<String, status::Custom<String>> {
+#[rocket::get("/api/analyze?<flake_ref>&<attribute_path>&<cyclonedx_version>")]
+fn analyze(
+    flake_ref: &str,
+    attribute_path: Option<&str>,
+    cyclonedx_version: cyclonedx::Version,
+) -> Result<String, status::Custom<String>> {
     // Construct the Source from the flake reference and attribute path
     let source = genealogos::Source::Flake {
         flake_ref: flake_ref.to_string(),
-        attribute_path: Some(attribute_path.to_string()),
+        attribute_path: attribute_path.map(str::to_string),
     };
 
     let output = genealogos(
         genealogos::backend::Backend::Nixtract,
         source,
-        cyclonedx::Version::default(),
+        cyclonedx_version,
     )
     .map_err(|err| status::Custom(Status::InternalServerError, err.to_string()))?;
 
