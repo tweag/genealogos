@@ -15,7 +15,7 @@ fn handle_errors(req: &Request) -> status::Custom<String> {
 fn analyze(
     flake_ref: &str,
     attribute_path: Option<&str>,
-    cyclonedx_version: cyclonedx::Version,
+    cyclonedx_version: Option<cyclonedx::Version>,
 ) -> Result<String, status::Custom<String>> {
     // Construct the Source from the flake reference and attribute path
     let source = genealogos::Source::Flake {
@@ -26,7 +26,7 @@ fn analyze(
     let output = genealogos(
         genealogos::backend::Backend::Nixtract,
         source,
-        cyclonedx_version,
+        cyclonedx_version.unwrap_or_default(),
     )
     .map_err(|err| status::Custom(Status::InternalServerError, err.to_string()))?;
 
