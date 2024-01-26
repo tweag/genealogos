@@ -15,7 +15,7 @@ path = "src/main.rs"
 
 [dependencies]
 rocket.workspace = true
-genealogos.path = "../genealogos"
+genealogos = { path = "../genealogos", features = ["rocket"] }
 
 [dev-dependencies]
 env_logger.workspace = true

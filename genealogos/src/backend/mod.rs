@@ -1,5 +1,7 @@
 use std::path;
 
+use clap::ValueEnum;
+
 use crate::{error::Result, model::Model};
 mod nixtract;
 
@@ -25,12 +27,14 @@ pub enum Backend {
     Nixtract,
 }
 
-/// Converts a string to a `Backend`. Used to parse the `--backend` CLI argument.
-impl From<String> for Backend {
-    fn from(backend: String) -> Self {
-        match backend.as_ref() {
-            "nixtract" => Backend::Nixtract,
-            _ => Backend::Nixtract,
+impl ValueEnum for Backend {
+    fn value_variants<'a>() -> &'a [Self] {
+        &[Backend::Nixtract]
+    }
+
+    fn to_possible_value(&self) -> Option<clap::builder::PossibleValue> {
+        match self {
+            Backend::Nixtract => Some(clap::builder::PossibleValue::new("nixtract")),
         }
     }
 }

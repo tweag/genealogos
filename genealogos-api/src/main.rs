@@ -1,4 +1,4 @@
-use genealogos::genealogos;
+use genealogos::{cyclonedx, genealogos};
 use rocket::http::Status;
 use rocket::response::status;
 use rocket::Request;
@@ -11,16 +11,24 @@ fn handle_errors(req: &Request) -> status::Custom<String> {
     )
 }
 
-#[rocket::get("/api/analyze/<flake_ref>/<attribute_path>")]
-fn analyze(flake_ref: &str, attribute_path: &str) -> Result<String, status::Custom<String>> {
+#[rocket::get("/api/analyze?<flake_ref>&<attribute_path>&<cyclonedx_version>")]
+fn analyze(
+    flake_ref: &str,
+    attribute_path: Option<&str>,
+    cyclonedx_version: Option<cyclonedx::Version>,
+) -> Result<String, status::Custom<String>> {
     // Construct the Source from the flake reference and attribute path
     let source = genealogos::Source::Flake {
         flake_ref: flake_ref.to_string(),
-        attribute_path: Some(attribute_path.to_string()),
+        attribute_path: attribute_path.map(str::to_string),
     };
 
-    let output = genealogos(genealogos::backend::Backend::Nixtract, source)
-        .map_err(|err| status::Custom(Status::InternalServerError, err.to_string()))?;
+    let output = genealogos(
+        genealogos::backend::Backend::Nixtract,
+        source,
+        cyclonedx_version.unwrap_or_default(),
+    )
+    .map_err(|err| status::Custom(Status::InternalServerError, err.to_string()))?;
 
     Ok(output)
 }
@@ -74,19 +82,23 @@ mod tests {
                 let attribute_path = urlencoding::encode(&attribute_path);
 
                 let response = client
-                    .get(format!("/api/analyze/{}/{}/", flake_ref, attribute_path))
+                    .get(format!(
+                        "/api/analyze?flake_ref={}&attribute_path={}",
+                        flake_ref, attribute_path
+                    ))
                     .dispatch();
 
                 assert_eq!(response.status(), Status::Ok);
 
-                let mut expected_path = input_path.clone();
-                expected_path.set_extension("out");
+                let response_string = response.into_string();
 
-                let expected_output = std::fs::read_to_string(expected_path).unwrap();
-
+                // 1.5
+                let mut expected_path_1_5 = input_path.clone();
+                expected_path_1_5.set_extension("1_5.out");
+                let expected_output_1_5 = std::fs::read_to_string(expected_path_1_5).unwrap();
                 assert_eq!(
-                    response.into_string(),
-                    Some(expected_output.trim().to_string())
+                    response_string,
+                    Some(expected_output_1_5.trim().to_string())
                 );
             }
         }

@@ -18,6 +18,9 @@ serde_json.workspace = true
 thiserror.workspace = true
 uuid.workspace = true
 
+# If the `rocket` feature is enabled, `FromForm` will be derived for `cyclonedx::Version`
+rocket = { workspace = true, optional = true }
+
 [dev-dependencies]
 env_logger.workspace = true
 predicates.workspace = true

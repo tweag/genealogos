@@ -4,6 +4,7 @@ use std::path;
 
 use clap::Parser;
 
+use genealogos::cyclonedx;
 use genealogos::genealogos;
 
 /// `cli` application for processing data files and generating CycloneDX output
@@ -28,6 +29,10 @@ struct Args {
     /// Backend to use for Nix evaluation tracing
     #[arg(long, default_value = "nixtract")]
     backend: genealogos::backend::Backend,
+
+    /// Optional CycloneDX version to use
+    #[arg(long, default_value = "1.5")]
+    cyclonedx_version: cyclonedx::Version,
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
@@ -45,7 +50,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     };
 
     // Generate the CycloneDX output
-    let output = genealogos(args.backend, source)?;
+    let output = genealogos(args.backend, source, args.cyclonedx_version)?;
 
     // Write the output to the specified file, or stdout if no file was specified
     if let Some(output_file) = args.output_file {
