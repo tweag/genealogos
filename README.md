@@ -31,11 +31,24 @@ For more `nixtract` arguments, see `nixtract --help`.
 
 ## Using Genealogos as a server
 Genealogos can also run as an API server using the `genealogos-api` binary.
-Currently, this API has only a single endpoint: `/api/analyze/<flake_ref>/<attribute_path>`.
+Currently, this API has only a single endpoint: `/api/analyze?flake_ref=<flake_ref>&attribute_path=<attribute_path>`.
 By default, `genealogos-api` binds itself on `localhost:8000`.
 
+For example, using curl, the api can be invoked like this:
+```fish
+curl "http://localhost:8000/api/analyze?flake_ref=nixpkgs&attribute_path=hello"
+```
+
+Additionally an optional `cyclonedx_version` query parameter can be provided to specify the CycloneDX version to use.
+Example:
+```fish
+curl "http://localhost:8000/api/analyze?flake_ref=nixpkgs&attribute_path=hello&cyclonedx_version=v1_4"
+```
+
+Currently supported are `v1_4` and `v1_5`. If no version is specified, `v1_5` is used.
+
 ## Building Genealogos
-`nix build` or `cargo build`. A development shell is present via `nix devel`.
+`nix build` or `cargo build`. A development shell is provided via `nix devel`.
 
 ## Testing
 Genealogos is tested against fixtures in `genealogos/tests/fixtures/nixtract/success/`.
