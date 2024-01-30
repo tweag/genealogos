@@ -7,7 +7,7 @@ use rocket::response::status;
 use rocket::tokio::sync::Mutex;
 use rocket::Request;
 
-mod blocking;
+mod jobs;
 
 #[rocket::catch(default)]
 fn handle_errors(req: &Request) -> status::Custom<String> {
@@ -42,16 +42,16 @@ fn analyze(
 #[rocket::launch]
 fn rocket() -> _ {
     rocket::build()
-        .mount("/api/blocking", rocket::routes![analyze])
-        .register("/api/blocking", rocket::catchers![handle_errors])
+        .mount("/api", rocket::routes![analyze])
+        .register("/api", rocket::catchers![handle_errors])
         .mount(
-            "/api/unblocking/",
-            rocket::routes![blocking::create, blocking::status, blocking::result],
+            "/api/jobs/",
+            rocket::routes![jobs::create, jobs::status, jobs::result],
         )
-        .register("/api/unblocking", rocket::catchers![handle_errors])
+        .register("/api/jobs/", rocket::catchers![handle_errors])
         .manage(Arc::new(Mutex::new(std::collections::HashMap::<
-            blocking::JobId,
-            blocking::JobStatus,
+            jobs::JobId,
+            jobs::JobStatus,
         >::new())))
         .manage(atomic::AtomicU16::new(0))
 }
