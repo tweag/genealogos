@@ -37,8 +37,21 @@ pub struct ErrResponse {
 
 #[derive(serde::Serialize)]
 pub struct Metadata {
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub job_id: Option<u16>,
     pub timestamp: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub time_taken: Option<std::time::Duration>,
+}
+
+impl Default for Metadata {
+    fn default() -> Self {
+        Metadata {
+            job_id: None,
+            timestamp: chrono::Utc::now().to_rfc3339(),
+            time_taken: None,
+        }
+    }
 }
 
 impl Metadata {
@@ -46,6 +59,7 @@ impl Metadata {
         Metadata {
             job_id,
             timestamp: chrono::Utc::now().to_rfc3339(),
+            time_taken: None,
         }
     }
 }

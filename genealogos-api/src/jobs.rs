@@ -1,4 +1,5 @@
 use std::sync::{atomic, Arc};
+use std::time;
 
 use rocket::serde::json::Json;
 use rocket::tokio;
@@ -15,7 +16,7 @@ pub type JobMap = Arc<rocket::tokio::sync::Mutex<std::collections::HashMap<JobId
 pub enum JobStatus {
     Stopped,
     Running,
-    Done(genealogos::cyclonedx::CycloneDX),
+    Done(genealogos::cyclonedx::CycloneDX, time::Duration),
     Error(String),
 }
 
@@ -23,7 +24,7 @@ impl ToString for JobStatus {
     fn to_string(&self) -> String {
         match self {
             JobStatus::Running => "running".to_string(),
-            JobStatus::Done(_) => "done".to_string(),
+            JobStatus::Done(_, _) => "done".to_string(),
             JobStatus::Stopped => "stopped".to_string(),
             JobStatus::Error(e) => format!("error: {}", e),
         }
@@ -40,6 +41,7 @@ pub async fn create(
 ) -> Result<messages::CreateResponse> {
     // Create random jobID
     let job_id = job_counter.fetch_add(1, atomic::Ordering::SeqCst);
+    let start_time = time::Instant::now();
 
     job_map
         .try_lock()
@@ -69,7 +71,7 @@ pub async fn create(
         job_map_clone.try_lock().unwrap().insert(
             job_id,
             match output {
-                Ok(c) => JobStatus::Done(c),
+                Ok(c) => JobStatus::Done(c, start_time.elapsed()),
                 Err(e) => JobStatus::Error(e.to_string()),
             },
         );
@@ -121,8 +123,8 @@ pub fn result(job_id: JobId, job_map: &rocket::State<JobMap>) -> Result<messages
         message: "Job not found".to_owned(),
     }))?;
 
-    let sbom = match status {
-        JobStatus::Done(s) => Ok(s.clone()),
+    let (sbom, elapsed) = match status {
+        JobStatus::Done(s, elapsed) => Ok((s.clone(), *elapsed)),
         _ => Err(messages::ErrResponse {
             metadata: messages::Metadata::new(Some(job_id)),
             message: "Job not yet done".to_owned(),
@@ -134,7 +136,11 @@ pub fn result(job_id: JobId, job_map: &rocket::State<JobMap>) -> Result<messages
     locked_map.remove(&job_id);
 
     let json = Json(messages::OkResponse {
-        metadata: messages::Metadata::new(Some(job_id)),
+        metadata: messages::Metadata {
+            job_id: Some(job_id),
+            time_taken: Some(elapsed),
+            ..Default::default()
+        },
         data: messages::AnalyzeResponse { sbomb: sbom },
     });
 
