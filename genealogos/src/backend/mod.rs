@@ -20,10 +20,11 @@ pub(crate) trait BackendTrait {
     fn from_lines(lines: impl Iterator<Item = impl AsRef<str>>) -> Result<Model>;
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Default)]
 /// Represents a backend that can be used to generate a `Model` from.
 /// Used to specify which backend to use when generating a `Model`.
 pub enum Backend {
+    #[default]
     Nixtract,
 }
 
@@ -40,7 +41,7 @@ impl ValueEnum for Backend {
 }
 
 impl Backend {
-    pub(crate) fn from_flake_ref(
+    pub(crate) fn to_model_from_flake_ref(
         &self,
         flake_ref: impl AsRef<str>,
         attribute_path: Option<impl AsRef<str>>,
@@ -50,15 +51,12 @@ impl Backend {
         }
     }
 
-    pub(crate) fn from_trace_file(&self, file_path: impl AsRef<path::Path>) -> Result<Model> {
+    pub(crate) fn to_model_from_trace_file(
+        &self,
+        file_path: impl AsRef<path::Path>,
+    ) -> Result<Model> {
         match self {
             Backend::Nixtract => nixtract::Nixtract::from_trace_file(file_path),
         }
-    }
-}
-
-impl Default for Backend {
-    fn default() -> Self {
-        Backend::Nixtract
     }
 }

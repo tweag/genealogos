@@ -1,13 +1,17 @@
 use std::sync::{atomic, Arc};
 
-use genealogos::{cyclonedx, genealogos};
+use genealogos::cyclonedx;
 
 use rocket::http::Status;
 use rocket::response::status;
+use rocket::serde::json::Json;
 use rocket::tokio::sync::Mutex;
 use rocket::Request;
 
 mod jobs;
+mod messages;
+
+use messages::Result;
 
 #[rocket::catch(default)]
 fn handle_errors(req: &Request) -> status::Custom<String> {
@@ -17,26 +21,34 @@ fn handle_errors(req: &Request) -> status::Custom<String> {
     )
 }
 
-#[rocket::get("/api/analyze?<flake_ref>&<attribute_path>&<cyclonedx_version>")]
+#[rocket::get("/analyze?<flake_ref>&<attribute_path>&<cyclonedx_version>")]
 fn analyze(
     flake_ref: &str,
     attribute_path: Option<&str>,
     cyclonedx_version: Option<cyclonedx::Version>,
-) -> Result<String, status::Custom<String>> {
+) -> Result<messages::AnalyzeResponse> {
     // Construct the Source from the flake reference and attribute path
     let source = genealogos::Source::Flake {
         flake_ref: flake_ref.to_string(),
         attribute_path: attribute_path.map(str::to_string),
     };
 
-    let output = genealogos(
+    let sbom = cyclonedx(
         genealogos::backend::Backend::Nixtract,
         source,
         cyclonedx_version.unwrap_or_default(),
     )
-    .map_err(|err| status::Custom(Status::InternalServerError, err.to_string()))?;
+    .map_err(|err| messages::ErrResponse {
+        metadata: messages::Metadata::new(None),
+        message: err.to_string(),
+    })?;
 
-    Ok(output)
+    let json = Json(messages::OkResponse {
+        metadata: messages::Metadata::new(None),
+        data: messages::AnalyzeResponse { sbomb: sbom },
+    });
+
+    Ok(json)
 }
 
 #[rocket::launch]
