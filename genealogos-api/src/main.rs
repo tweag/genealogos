@@ -27,6 +27,8 @@ fn analyze(
     attribute_path: Option<&str>,
     cyclonedx_version: Option<cyclonedx::Version>,
 ) -> Result<messages::AnalyzeResponse> {
+    let start_time = std::time::Instant::now();
+
     // Construct the Source from the flake reference and attribute path
     let source = genealogos::Source::Flake {
         flake_ref: flake_ref.to_string(),
@@ -44,7 +46,10 @@ fn analyze(
     })?;
 
     let json = Json(messages::OkResponse {
-        metadata: messages::Metadata::new(None),
+        metadata: messages::Metadata {
+            time_taken: Some(start_time.elapsed()),
+            ..Default::default()
+        },
         data: messages::AnalyzeResponse { sbomb: sbom },
     });
 
