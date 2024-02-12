@@ -31,7 +31,11 @@ For more `nixtract` arguments, see `nixtract --help`.
 
 ## Using Genealogos as a server
 Genealogos can also run as an API server using the `genealogos-api` binary.
-Currently, this API has only a single endpoint: `/api/analyze?flake_ref=<flake_ref>&attribute_path=<attribute_path>`.
+`genealogos-api` provides two categories of endpoints.
+A blocking endpoint and one based on jobs.
+
+### Blocking
+Currently, there is only a single blocking endpoint: `/api/analyze?flake_ref=<flake_ref>&attribute_path=<attribute_path>`.
 By default, `genealogos-api` binds itself on `localhost:8000`.
 
 For example, using curl, the api can be invoked like this:
@@ -46,6 +50,28 @@ curl "http://localhost:8000/api/analyze?flake_ref=nixpkgs&attribute_path=hello&c
 ```
 
 Currently supported are `v1_4` and `v1_5`. If no version is specified, `v1_5` is used.
+
+### Jobs
+The jobs based API consists of three endpoints: `/api/jobs/create`, `/api/jobs/status`, and `/api/jobs/result`.
+
+Creating a job is done in a similar fashion to the blocking api:
+```fish
+curl "http://localhost:8000/api/jobs/create?flake_ref=nixpkgs&attribute_path=hello"
+```
+This endpoint also supports the `cyclonedx_version` query parameter.
+The response of this API call is a `job_id`, which needs to be passed to further calls to indentify the desired job.
+
+Getting the status of a job is done as such:
+```fish
+curl "http://localhost:8000/api/jobs/status/0"
+```
+where 0 was the `job_id` provided in the previous call.
+This API can return one of `stopped`, `running` and `done`.
+
+Finally, getting the result is done with the `result` endpoint:
+```fish
+curl "http://localhost:8000/api/jobs/result/0"
+```
 
 ## Building Genealogos
 `nix build` or `cargo build`. A development shell is provided via `nix devel`.

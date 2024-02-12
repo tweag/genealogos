@@ -50,7 +50,7 @@ fn analyze(
             time_taken: Some(start_time.elapsed()),
             ..Default::default()
         },
-        data: messages::AnalyzeResponse { sbomb: sbom },
+        data: messages::AnalyzeResponse { sbom },
     });
 
     Ok(json)
@@ -123,16 +123,21 @@ mod tests {
 
                 assert_eq!(response.status(), Status::Ok);
 
-                let response_string = response.into_string();
+                // Extract the somb from the response
+                let response_json: serde_json::Value = response.into_json().unwrap();
+                let response_sbom = response_json.get("sbom").unwrap().to_string();
 
                 // 1.5
                 let mut expected_path_1_5 = input_path.clone();
                 expected_path_1_5.set_extension("1_5.out");
                 let expected_output_1_5 = std::fs::read_to_string(expected_path_1_5).unwrap();
-                assert_eq!(
-                    response_string,
-                    Some(expected_output_1_5.trim().to_string())
-                );
+
+                // Convert from and to json to remove the pretty printed stuff
+                let expected_json_1_5: serde_json::Value =
+                    serde_json::from_str(&expected_output_1_5).unwrap();
+                let expected_output_1_5 = serde_json::to_string(&expected_json_1_5).unwrap();
+
+                assert_eq!(response_sbom, expected_output_1_5.trim().to_string());
             }
         }
     }

@@ -26,7 +26,7 @@ impl ToString for JobStatus {
             JobStatus::Running => "running".to_string(),
             JobStatus::Done(_, _) => "done".to_string(),
             JobStatus::Stopped => "stopped".to_string(),
-            JobStatus::Error(e) => format!("error: {}", e),
+            JobStatus::Error(e) => e.to_owned(),
         }
     }
 }
@@ -90,7 +90,7 @@ pub async fn status(
     job_id: JobId,
     job_map: &rocket::State<JobMap>,
 ) -> Result<messages::StatusResponse> {
-    let locked_map = job_map.try_lock().map_err(|_| {
+    let mut locked_map = job_map.try_lock().map_err(|_| {
         Json(messages::ErrResponse {
             metadata: messages::Metadata::new(Some(job_id)),
             message: "Could not lock job map".to_owned(),
@@ -99,11 +99,25 @@ pub async fn status(
 
     let status = locked_map.get(&job_id).unwrap_or(&JobStatus::Stopped);
 
+    let status = match status {
+        JobStatus::Error(message) => Err(Json(messages::ErrResponse {
+            metadata: messages::Metadata::new(Some(job_id)),
+            message: message.to_owned(),
+        })),
+        s => Ok(s.to_string()),
+    };
+
+    if status.is_err() {
+        // Remove the job if it was an error
+        locked_map.remove(&job_id);
+    }
+
+    // Propagate errors
+    let status = status?;
+
     let json = Json(messages::OkResponse {
         metadata: messages::Metadata::new(Some(job_id)),
-        data: messages::StatusResponse {
-            status: status.to_string(),
-        },
+        data: messages::StatusResponse { status },
     });
 
     Ok(json)
@@ -141,7 +155,7 @@ pub fn result(job_id: JobId, job_map: &rocket::State<JobMap>) -> Result<messages
             time_taken: Some(elapsed),
             ..Default::default()
         },
-        data: messages::AnalyzeResponse { sbomb: sbom },
+        data: messages::AnalyzeResponse { sbom },
     });
 
     Ok(json)
