@@ -53,6 +53,7 @@
             pkgs.mkShell {
               buildInputs = with pkgs; [
                 cargo
+                cargo-dist
                 rust-analyzer
                 rustPackages.clippy
                 rustc
