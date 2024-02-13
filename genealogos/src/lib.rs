@@ -36,27 +36,37 @@ pub enum Source {
 /// # Panics
 ///
 /// Panics if any of the input entries cannot be parsed as Nixtract entries.
-pub fn genealogos(
+pub fn json_string(
     backend: crate::backend::Backend,
     source: Source,
     version: cyclonedx::Version,
 ) -> Result<String> {
-    // Convert the input entries to a `Model`
-    let model = match source {
-        Source::Flake {
-            flake_ref,
-            attribute_path,
-        } => backend.from_flake_ref(flake_ref, attribute_path)?,
-        Source::TraceFile(file_path) => backend.from_trace_file(file_path)?,
-    };
-
     // Convert `Model` to `CycloneDx`
-    let cyclonedx = CycloneDX::from_model(model, version)?;
+    let cyclonedx = cyclonedx(backend, source, version)?;
 
     // Serialize the `Model` to JSON
     let json = serde_json::to_string_pretty(&cyclonedx)?;
 
     Ok(json)
+}
+
+pub fn cyclonedx(
+    backend: crate::backend::Backend,
+    source: Source,
+    version: cyclonedx::Version,
+) -> Result<CycloneDX> {
+    // Convert the input entries to a `Model`
+    let model = match source {
+        Source::Flake {
+            flake_ref,
+            attribute_path,
+        } => backend.to_model_from_flake_ref(flake_ref, attribute_path)?,
+        Source::TraceFile(file_path) => backend.to_model_from_trace_file(file_path)?,
+    };
+
+    // Convert `Model` to `CycloneDx`
+    let cyclonedx = CycloneDX::from_model(model, version)?;
+    Ok(cyclonedx)
 }
 
 #[cfg(test)]
@@ -84,14 +94,14 @@ mod tests {
             if input_path.extension().unwrap().to_string_lossy() == "in" {
                 info!("testing: {}", input_path.to_string_lossy());
 
-                let output_1_4 = super::genealogos(
+                let output_1_4 = super::json_string(
                     crate::backend::Backend::default(),
                     super::Source::TraceFile(input_path.clone()),
                     super::cyclonedx::Version::V1_4,
                 )
                 .unwrap();
 
-                let output_1_5 = super::genealogos(
+                let output_1_5 = super::json_string(
                     crate::backend::Backend::default(),
                     super::Source::TraceFile(input_path.clone()),
                     super::cyclonedx::Version::V1_5,
@@ -130,7 +140,7 @@ mod tests {
                 let input = fs::read_to_string(input_path.clone()).unwrap();
                 let flake_args: FlakeArgs = serde_json::from_str(&input).unwrap();
 
-                let output_1_4 = super::genealogos(
+                let output_1_4 = super::json_string(
                     crate::backend::Backend::default(),
                     super::Source::Flake {
                         flake_ref: flake_args.flake_ref.clone(),
@@ -140,7 +150,7 @@ mod tests {
                 )
                 .unwrap();
 
-                let output_1_5 = super::genealogos(
+                let output_1_5 = super::json_string(
                     crate::backend::Backend::default(),
                     super::Source::Flake {
                         flake_ref: flake_args.flake_ref,

@@ -5,7 +5,7 @@ use std::path;
 use clap::Parser;
 
 use genealogos::cyclonedx;
-use genealogos::genealogos;
+use genealogos::json_string;
 
 /// `cli` application for processing data files and generating CycloneDX output
 #[derive(Parser, Debug)]
@@ -50,7 +50,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     };
 
     // Generate the CycloneDX output
-    let output = genealogos(args.backend, source, args.cyclonedx_version)?;
+    let output = json_string(args.backend, source, args.cyclonedx_version)?;
 
     // Write the output to the specified file, or stdout if no file was specified
     if let Some(output_file) = args.output_file {

@@ -14,8 +14,11 @@ name = "genealogos-api"
 path = "src/main.rs"
 
 [dependencies]
+chrono.workspace = true
 rocket.workspace = true
 genealogos = { path = "../genealogos", features = ["rocket"] }
+serde_json.workspace = true
+serde.workspace = true
 
 [dev-dependencies]
 env_logger.workspace = true
