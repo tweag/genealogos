@@ -108,14 +108,25 @@ impl TryFrom<Model> for cyclonedx::CycloneDx {
     type Error = Error;
 
     fn try_from(model: Model) -> Result<Self> {
-        let components: Vec<cyclonedx::Component> = model
+        let mut components: Vec<cyclonedx::Component> = model
             .components
             .into_iter()
             .map(TryInto::try_into)
             .collect::<Result<Vec<_>>>()?;
 
-        let dependencies: Vec<cyclonedx::Dependency> = model
-            .dependencies
+        // Sort components by bom_ref for deterministic output if testing or GENEALOGOS_DETERMINISTIC is set
+        if cfg!(test) || std::env::var("GENEALOGOS_DETERMINISTIC").is_ok() {
+            components.sort_by(|a, b| a.bom_ref.cmp(&b.bom_ref));
+        }
+
+        // Sort model dependencies by ref for deterministic output if testing or GENEALOGOS_DETERMINISTIC is set
+        // We need to sort the dependencies before we convert them to cyclonedx::Dependency
+        let mut dependencies: Vec<ModelDependency> = model.dependencies;
+        if cfg!(test) || std::env::var("GENEALOGOS_DETERMINISTIC").is_ok() {
+            dependencies.sort_by(|a, b| a.r#ref.cmp(&b.r#ref));
+        }
+
+        let dependencies: Vec<cyclonedx::Dependency> = dependencies
             .into_iter()
             .map(TryInto::try_into)
             .collect::<Result<Vec<_>>>()?;
