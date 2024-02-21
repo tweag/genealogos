@@ -3,7 +3,7 @@
     naersk.url = "github:nix-community/naersk/master";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     utils.url = "github:numtide/flake-utils";
-    nixtract.url = "github:tweag/nixtract";
+    nixtract.url = "github:tweag/nixtract/snake_case-descriptions";
   };
 
   outputs =
@@ -19,7 +19,7 @@
         pkgs = import nixpkgs { inherit system; };
         naersk-lib = pkgs.callPackage naersk { };
         cyclonedx = pkgs.callPackage ./nix/cyclonedx.nix { };
-        nixtract-cli = nixtract.packages.${system}.default;
+        nixtract-cli = nixtract.defaultPackage.${system};
       in
       rec {
         packages = rec {
@@ -37,10 +37,15 @@
               wrapProgram "$out/bin/genealogos" --prefix PATH : ${pkgs.lib.makeBinPath [ nixtract-cli ]}
             '';
           };
-          update-fixture-files = pkgs.writeShellApplication {
-            name = "update-fixture-files";
+          update-fixture-output-files = pkgs.writeShellApplication {
+            name = "update-fixture-output-files";
             runtimeInputs = [ (genealogos.overrideAttrs (_: { doCheck = false; })) pkgs.jq ];
-            text = builtins.readFile ./scripts/update-fixture-files.sh;
+            text = builtins.readFile ./scripts/update-fixture-output-files.sh;
+          };
+          update-fixture-input-files = pkgs.writeShellApplication {
+            name = "update-fixture-input-files";
+            runtimeInputs = [ nixtract-cli ];
+            text = builtins.readFile ./scripts/update-fixture-input-files.sh;
           };
           verify-fixture-files = pkgs.writeShellApplication {
             name = "verify-fixture-files";
@@ -67,7 +72,8 @@
           scripts =
             pkgs.mkShell {
               buildInputs = with packages; [
-                update-fixture-files
+                update-fixture-input-files
+                update-fixture-output-files
                 verify-fixture-files
               ];
             };

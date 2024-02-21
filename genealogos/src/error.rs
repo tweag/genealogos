@@ -10,7 +10,7 @@ pub enum Error {
     CycloneDX(#[source] Box<dyn std::error::Error + Send + Sync + 'static>),
 
     #[error("Nixtract failed: {0}")]
-    NixtractCommand(String),
+    Nixtract(#[from] nixtract::error::Error),
 
     #[error("Genealogos encountered an IO error: {0}")]
     Io(#[from] std::io::Error),
