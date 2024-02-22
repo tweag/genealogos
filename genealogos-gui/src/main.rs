@@ -6,15 +6,32 @@ use eframe::egui;
 use reqwest::Client;
 use serde_json::Value;
 
+enum RequestState {
+    Nothing,
+    Loading,
+    Sbom(String),
+}
+
 struct GenealogosApp {
     // State
     flake_ref: String,
     attribute_path: String,
-    sbom: Option<String>,
+    request_state: RequestState,
 
     // Sender/Receiver for async notifications.
-    tx: Sender<Option<String>>,
-    rx: Receiver<Option<String>>,
+    request_tx: Sender<RequestState>,
+    request_rx: Receiver<RequestState>,
+}
+impl GenealogosApp {
+    fn show_sbom(&self, ui: &mut egui::Ui, sbom: &String) -> eframe::egui::InnerResponse<()> {
+        let layout = egui::Layout::top_down(egui::Align::Min);
+        ui.allocate_ui_with_layout(ui.available_size(), layout, |ui| {
+            egui::ScrollArea::both().show(ui, |ui| {
+                let sbom_label = ui.label("SBOM:");
+                ui.code(sbom).labelled_by(sbom_label.id);
+            });
+        })
+    }
 }
 
 impl Default for GenealogosApp {
@@ -24,10 +41,10 @@ impl Default for GenealogosApp {
         Self {
             flake_ref: "nixpkgs".to_owned(),
             attribute_path: "hello".to_owned(),
-            sbom: None,
+            request_state: RequestState::Nothing,
 
-            tx,
-            rx,
+            request_tx: tx,
+            request_rx: rx,
         }
     }
 }
@@ -44,8 +61,8 @@ async fn main() -> Result<(), impl std::error::Error> {
 
 impl eframe::App for GenealogosApp {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
-        if let Ok(Some(sbom)) = self.rx.try_recv() {
-            self.sbom = Some(sbom);
+        if let Ok(state) = self.request_rx.try_recv() {
+            self.request_state = state;
         }
 
         egui::CentralPanel::default().show(ctx, |ui| {
@@ -65,18 +82,21 @@ impl eframe::App for GenealogosApp {
                 send_req(
                     self.flake_ref.clone(),
                     self.attribute_path.clone(),
-                    self.tx.clone(),
+                    self.request_tx.clone(),
                     ctx.clone(),
                 );
             }
-            let layout = egui::Layout::top_down(egui::Align::Min);
-            ui.allocate_ui_with_layout(ui.available_size(), layout, |ui| {
-                egui::ScrollArea::both().show(ui, |ui| {
-                    let sbom_label = ui.label("SBOM:");
-                    ui.code(self.sbom.as_deref().unwrap_or("No sbomb yet"))
-                        .labelled_by(sbom_label.id);
-                });
-            })
+            match &self.request_state {
+                RequestState::Nothing => {
+                    ui.label("No sbom yet");
+                }
+                RequestState::Loading => {
+                    ui.spinner();
+                }
+                RequestState::Sbom(sbom) => {
+                    self.show_sbom(ui, sbom);
+                }
+            }
         });
     }
 }
@@ -84,10 +104,12 @@ impl eframe::App for GenealogosApp {
 fn send_req(
     flake_ref: String,
     attribute_path: String,
-    tx: Sender<Option<String>>,
+    tx: Sender<RequestState>,
     context: egui::Context,
 ) {
     tokio::spawn(async move {
+        let _ = tx.send(RequestState::Loading);
+
         let json: Value = Client::default()
             .get(format!(
                 "http://127.0.0.1:8000/api/analyze?flake_ref={}&attribute_path={}",
@@ -104,8 +126,15 @@ fn send_req(
             .get("sbom")
             .map(|sbom| serde_json::to_string_pretty(sbom).unwrap());
 
-        // After parsing the response, notify the GUI thread of the increment value.
-        let _ = tx.send(sbom);
+        match sbom {
+            Some(sbom) => {
+                let _ = tx.send(RequestState::Sbom(sbom));
+            }
+            None => {
+                let _ = tx.send(RequestState::Nothing);
+            }
+        }
+
         context.request_repaint();
     });
 }
