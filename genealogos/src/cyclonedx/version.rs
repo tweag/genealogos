@@ -27,3 +27,15 @@ impl ValueEnum for Version {
         }
     }
 }
+
+impl TryFrom<&str> for Version {
+    type Error = String;
+
+    fn try_from(value: &str) -> Result<Self, Self::Error> {
+        match value {
+            "1.4" => Ok(Version::V1_4),
+            "1.5" => Ok(Version::V1_5),
+            _ => Err(format!("Invalid CycloneDX version: {}", value)),
+        }
+    }
+}

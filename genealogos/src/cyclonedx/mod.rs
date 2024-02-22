@@ -41,3 +41,25 @@ impl serde::Serialize for CycloneDX {
         }
     }
 }
+
+impl<'de> serde::Deserialize<'de> for CycloneDX {
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        let value = serde_json::Value::deserialize(deserializer)?;
+        let version = value
+            .get("bomFormat")
+            .and_then(|v| v.as_str())
+            .and_then(|v| Version::try_from(v).ok())
+            .ok_or_else(|| serde::de::Error::custom("Invalid CycloneDX version"))?;
+        match version {
+            Version::V1_4 => Ok(CycloneDX::V1_4(
+                serde_json::from_value(value).map_err(serde::de::Error::custom)?,
+            )),
+            Version::V1_5 => Ok(CycloneDX::V1_5(
+                serde_json::from_value(value).map_err(serde::de::Error::custom)?,
+            )),
+        }
+    }
+}
