@@ -20,6 +20,15 @@
         naersk-lib = pkgs.callPackage naersk { };
         cyclonedx = pkgs.callPackage ./nix/cyclonedx.nix { };
         nixtract-cli = nixtract.defaultPackage.${system};
+        genealogosNativeBuildInputs = with pkgs; [
+          pkg-config
+        ];
+        genealogosBuildInputs = with pkgs; [
+          libxkbcommon
+          libGL
+          wayland
+          openssl.dev
+        ];
       in
       rec {
         packages = rec {
@@ -28,14 +37,10 @@
             src = ./.;
             doCheck = true;
 
-            nativeBuildInputs = [ pkgs.makeWrapper ];
+            buildInputs = genealogosBuildInputs;
 
             # Setting this feature flag to disable tests that require recursive nix/an internet connection
             cargoTestOptions = x: x ++ [ "--features" "nix" ];
-
-            postInstall = ''
-              wrapProgram "$out/bin/genealogos" --prefix PATH : ${pkgs.lib.makeBinPath [ nixtract-cli ]}
-            '';
           };
           update-fixture-output-files = pkgs.writeShellApplication {
             name = "update-fixture-output-files";
@@ -55,18 +60,20 @@
         };
         devShells = {
           default =
-            pkgs.mkShell {
+            pkgs.mkShell rec {
+              nativeBuildInputs = genealogosNativeBuildInputs;
               buildInputs = with pkgs; [
                 cargo
                 cargo-dist
+                clippy
                 rust-analyzer
-                rustPackages.clippy
                 rustc
                 rustfmt
 
                 nixtract-cli
-              ];
+              ] ++ genealogosBuildInputs;
               RUST_SRC_PATH = pkgs.rustPlatform.rustLibSrc;
+              LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath buildInputs}";
               RUST_BACKTRACE = 1;
             };
           scripts =

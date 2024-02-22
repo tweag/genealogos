@@ -1,0 +1,22 @@
+[package]
+name = "genealogos-gui"
+description.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+keywords.workspace = true
+readme.workspace = true
+
+[[bin]]
+name = "genealogos-gui"
+path = "src/main.rs"
+
+[dependencies]
+genealogos.path = "../genealogos"
+serde_json.workspace = true
+eframe.workspace = true
+env_logger.workspace = true
+reqwest = { workspace = true, features = ["json", "blocking"] }
+tokio = { workspace = true, features = ["rt", "sync", "macros"] }

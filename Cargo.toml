@@ -9,18 +9,21 @@ keywords = ["nix", "cyclonedx", "conversion"]
 readme = "README.md"
 
 [workspace]
-members = ["genealogos", "genealogos-cli", "genealogos-api"]
+members = ["genealogos", "genealogos-cli", "genealogos-api", "genealogos-gui"]
 resolver = "2"
 
 [workspace.dependencies]
 chrono = "0.4.34"
 clap = { version = "4.4.14", features = ["derive"] }
+eframe = "0.26.2"
 log = "0.4.20"
+reqwest = "0.11.24"
 rocket = { version = "0.5.0", features = ["json"] }
 serde = { version = "1.0.196", features = ["derive"] }
 serde_json = "1.0.113"
 serde-cyclonedx = "0.8.4"
 thiserror = "1.0.57"
+tokio = "1.36.0"
 uuid = { version = "1.7.0", features = ["v4"] }
 
 # Non-crates.io dependencies
