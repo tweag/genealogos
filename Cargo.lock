@@ -1350,6 +1350,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "egui_graphs"
+version = "0.18.0"
+source = "git+https://github.com/blitzarx1/egui_graphs.git#113570d79c6b7b4364ed1d5c328f03174bf50f0d"
+dependencies = [
+ "egui",
+ "petgraph",
+ "rand",
+]
+
+[[package]]
 name = "either"
 version = "1.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1560,6 +1570,12 @@ dependencies = [
  "uncased",
  "version_check",
 ]
+
+[[package]]
+name = "fixedbitset"
+version = "0.4.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0ce7134b9999ecaf8bcd65542e436736ef32ddca1b3e06094cb6ec5755203b80"
 
 [[package]]
 name = "flate2"
@@ -1790,9 +1806,12 @@ name = "genealogos-gui"
 version = "0.1.0"
 dependencies = [
  "eframe",
+ "egui_graphs",
  "env_logger 0.11.2",
  "genealogos",
+ "petgraph",
  "reqwest",
+ "serde-cyclonedx",
  "serde_json",
  "tokio",
 ]
@@ -2946,6 +2965,16 @@ name = "percent-encoding"
 version = "2.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e3148f5046208a5d56bcfc03053e3ca6334e51da8dfb19b6cdc8b306fae3283e"
+
+[[package]]
+name = "petgraph"
+version = "0.6.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e1d3afd2628e69da2be385eb6f2fd57c8ac7977ceeff6dc166ff1657b0e386a9"
+dependencies = [
+ "fixedbitset",
+ "indexmap",
+]
 
 [[package]]
 name = "pin-project-lite"

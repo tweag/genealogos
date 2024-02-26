@@ -16,7 +16,10 @@ path = "src/main.rs"
 [dependencies]
 genealogos.path = "../genealogos"
 serde_json.workspace = true
+serde-cyclonedx.workspace = true
 eframe.workspace = true
+egui_graphs.workspace = true
 env_logger.workspace = true
+petgraph.workspace = true
 reqwest = { workspace = true, features = ["json", "blocking"] }
 tokio = { workspace = true, features = ["rt", "sync", "macros"] }

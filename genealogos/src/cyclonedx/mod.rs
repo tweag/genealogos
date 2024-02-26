@@ -5,7 +5,7 @@
 mod version;
 
 use crate::Result;
-use serde_cyclonedx::cyclonedx;
+pub use serde_cyclonedx::cyclonedx;
 pub use version::Version;
 
 use crate::model::Model;
@@ -49,7 +49,7 @@ impl<'de> serde::Deserialize<'de> for CycloneDX {
     {
         let value = serde_json::Value::deserialize(deserializer)?;
         let version = value
-            .get("bomFormat")
+            .get("specVersion")
             .and_then(|v| v.as_str())
             .and_then(|v| Version::try_from(v).ok())
             .ok_or_else(|| serde::de::Error::custom("Invalid CycloneDX version"))?;
