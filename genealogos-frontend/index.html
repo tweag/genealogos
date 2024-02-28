@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Genealogos</title>
+    <!-- include a stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <label for="flake-ref">Flake Ref:</label>
+    <input type="text" id="flake-ref" name="flake-ref" value="nixpkgs"><br>
+    
+    <label for="attribute-path">Attribute Path:</label>
+    <input type="text" id="attribute-path" name="attribute-path" value="hello"><br>
+    
+    <button class="generate-sbom-btn" onclick="generateSBOM()">Generate SBOM</button>    
+
+    <div id="sbom-container">
+        <pre><code id="sbom-section">No SBOM yet</code></pre>
+    </div>
+
+    <div class="bottom-buttons">
+        <button class="copy-sbom-btn" onclick="copySBOM()" disabled>Copy SBOM to Clipboard</button>
+        <button class="save-sbom-btn" onclick="saveSBOM()" disabled>Save SBOM</button>
+    </div>
+
+    <script>
+        function generateSBOM() {
+            // Get the flake ref and attribute path from the input fields
+            const flakeRef = document.getElementById("flake-ref").value;
+            const attributePath = document.getElementById("attribute-path").value;
+            
+            // Set the content of the sbom-container to a loading message
+            document.getElementById("sbom-section").textContent = "Loading...";
+            // Disable the generate SBOM button
+            document.querySelector(".generate-sbom-btn").disabled = true;
+
+            // Make a request to 127.0.0.1:8080/api/analyze with flake_ref and attribute_path as get parameters
+            const response = fetch(`http://127.0.0.1:8000/api/analyze?flake_ref=${flakeRef}&attribute_path=${attributePath}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Convert the response to a JSON string
+                    const sbom = JSON.stringify(data, null, 2);
+
+                    console.log(sbom);
+
+                    // Display the SBOM in the code section
+                    document.getElementById("sbom-section").textContent = sbom;
+
+                    // Enable the generate SBOM button
+                    document.querySelector(".generate-sbom-btn").disabled = false;
+                    // Enable the copy and save SBOM buttons
+                    document.querySelector(".copy-sbom-btn").disabled = false;
+                    document.querySelector(".save-sbom-btn").disabled = false;
+                });
+
+        }
+
+        function copySBOM() {
+            // Get the SBOM text
+            const sbomText = document.getElementById("sbom-section").textContent;
+
+            // Create a textarea element
+            const textarea = document.createElement("textarea");
+            textarea.value = sbomText;
+
+            // Append the textarea to the body
+            document.body.appendChild(textarea);
+
+            // Select the text in the textarea
+            textarea.select();
+            textarea.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the text to the clipboard
+            document.execCommand("copy");
+
+            // Remove the textarea
+            document.body.removeChild(textarea);
+
+            // Show a success message
+            alert("SBOM copied to clipboard!");
+        }
+
+        function saveSBOM() {
+            // Get the SBOM text
+            const sbomText = document.getElementById("sbom-section").textContent;
+
+            // Create a blob with the SBOM text
+            const blob = new Blob([sbomText], { type: "text/plain;charset=utf-8" });
+
+            // Create a temporary anchor element
+            const anchor = document.createElement("a");
+            anchor.href = URL.createObjectURL(blob);
+            anchor.download = `sbom_${flakeRef}_${attributePath}.sbom.json`;
+
+            // Programmatically click the anchor element to trigger the download
+            anchor.click();
+
+            // Clean up the temporary anchor element
+            URL.revokeObjectURL(anchor.href);
+        }
+        
+    </script>
+</body>
+</html>
