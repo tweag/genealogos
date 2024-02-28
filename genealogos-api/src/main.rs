@@ -59,6 +59,14 @@ fn analyze(
 #[rocket::launch]
 fn rocket() -> _ {
     rocket::build()
+        .attach(rocket::fairing::AdHoc::on_response("cors", |_req, resp| {
+            Box::pin(async move {
+                resp.set_header(rocket::http::Header::new(
+                    "Access-Control-Allow-Origin",
+                    "*",
+                ));
+            })
+        }))
         .mount("/api", rocket::routes![analyze])
         .register("/api", rocket::catchers![handle_errors])
         .mount(
