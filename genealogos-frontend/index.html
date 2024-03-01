@@ -58,13 +58,16 @@
         // Global variables for flake ref and attribute path
         let latestFlakeRef = "";
         let latestAttributePath = "";
+
         // Always set the copy and save button to disabled on page load, this fixes a firefox bug
         document.querySelector(".btn-secondary:first-of-type").disabled = true;
         document.querySelector(".btn-secondary:last-of-type").disabled = true;
+
         function generateSBOM() {
             // Get the flake ref and attribute path from the input fields
             const flakeRef = document.getElementById("flake-ref").value;
             const attributePath = document.getElementById("attribute-path").value;
+            const cycloneDxVer = document.getElementById("sbom-version").value;
 
             // Set the content of the sbom-container to a loading spinner
             document.getElementById("sbom-container").innerHTML = `
@@ -78,7 +81,7 @@
             document.querySelector(".btn-primary").disabled = true;
 
             // Make a request to 127.0.0.1:8080/api/analyze with flake_ref and attribute_path as get parameters
-            const response = fetch(`http://127.0.0.1:8000/api/analyze?flake_ref=${flakeRef}&attribute_path=${attributePath}`)
+            const response = fetch(`http://127.0.0.1:8000/api/analyze?flake_ref=${flakeRef}&attribute_path=${attributePath}&cyclonedx_version=v${cycloneDxVer}`)
                 .then(response => response.json())
                 .then(data => {
                     // Convert the response to a JSON string
