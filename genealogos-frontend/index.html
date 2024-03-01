@@ -55,6 +55,9 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script>
+        // Global variables for flake ref and attribute path
+        let latestFlakeRef = "";
+        let latestAttributePath = "";
         // Always set the copy and save button to disabled on page load, this fixes a firefox bug
         document.querySelector(".btn-secondary:first-of-type").disabled = true;
         document.querySelector(".btn-secondary:last-of-type").disabled = true;
@@ -91,6 +94,11 @@
                     // Enable the copy and save SBOM buttons
                     document.querySelector(".btn-secondary:first-of-type").disabled = false;
                     document.querySelector(".btn-secondary:last-of-type").disabled = false;
+
+                    // Set the global variables
+                    latestFlakeRef = flakeRef;
+                    latestAttributePath = attributePath;
+
                 });
 
         }
@@ -130,7 +138,7 @@
             // Create a temporary anchor element
             const anchor = document.createElement("a");
             anchor.href = URL.createObjectURL(blob);
-            anchor.download = `sbom_${flakeRef}_${attributePath}.sbom.json`;
+            anchor.download = `${latestFlakeRef}_${latestAttributePath}.sbom.json`;
 
             // Programmatically click the anchor element to trigger the download
             anchor.click();
