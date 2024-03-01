@@ -10,6 +10,11 @@
 </head>
 
 <body>
+    <script>
+        // Set the data-bs-theme tag of the html object to light/dark depending on the browser settings
+        const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-bs-theme', prefersDarkMode ? 'dark' : 'light');
+    </script>
     <div class="container-lg">
         <div class="row">
             <div class="col">
