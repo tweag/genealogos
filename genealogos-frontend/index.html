@@ -55,6 +55,9 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script>
+        // Always set the copy and save button to disabled on page load, this fixes a firefox bug
+        document.querySelector(".btn-secondary:first-of-type").disabled = true;
+        document.querySelector(".btn-secondary:last-of-type").disabled = true;
         function generateSBOM() {
             // Get the flake ref and attribute path from the input fields
             const flakeRef = document.getElementById("flake-ref").value;
