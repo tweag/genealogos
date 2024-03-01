@@ -19,25 +19,33 @@
         <div class="row">
             <div class="col">
                 <h1 class="text-center mt-5">Genealogos</h1>
-                <form>
-                    <div class="mb-3">
-                        <label for="flake-ref">Flake Ref</label>
-                        <input type="text" class="form-control" id="flake-ref" name="flake-ref" placeholder="nixpkgs">
+                <p> Genealogos is a tool to generate a Software Bill of Materials (SBOM) for a given flake ref and
+                    attribute path. It uses the nixtract to analyze the flake and generate the dependency tree. The SBOM
+                    is generated in JSON format and can be copied to the clipboard or saved as a file.</p>
+                <div class="mb-3">
+                    <label for="flake-ref">Flake Ref</label>
+                    <input type="text" class="form-control" id="flake-ref" name="flake-ref" placeholder="nixpkgs">
+                </div>
+                <div class="mb-3">
+                    <label for="attribute-path">Attribute Path</label>
+                    <input type="text" class="form-control" id="attribute-path" name="attribute-path"
+                        placeholder="hello">
+                </div>
+                <div class="mb-3">
+                    <label for="sbom-version">SBOM Version</label>
+                    <select class="form-select" id="sbom-version" name="sbom-version">
+                        <option value="1_4">CycloneDX 1.4</option>
+                        <option value="1_5" selected>CycloneDX 1.5</option>
+                    </select>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button class="btn btn-primary mb-3" onclick="generateSBOM()">Generate SBOM</button>
+                    <div>
+                        <button class="btn btn-secondary" onclick="copySBOM()" disabled>Copy SBOM to
+                            Clipboard</button>
+                        <button class="btn btn-secondary" onclick="saveSBOM()" disabled>Save SBOM</button>
                     </div>
-                    <div class="mb-3">
-                        <label for="attribute-path">Attribute Path</label>
-                        <input type="text" class="form-control" id="attribute-path" name="attribute-path"
-                            placeholder="hello">
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <button class="btn btn-primary mb-3" onclick="generateSBOM()">Generate SBOM</button>
-                        <div>
-                            <button class="btn btn-secondary me-2" onclick="copySBOM()" disabled>Copy SBOM to
-                                Clipboard</button>
-                            <button class="btn btn-secondary" onclick="saveSBOM()" disabled>Save SBOM</button>
-                        </div>
-                    </div>
-                </form>
+                </div>
                 <pre id="sbom-container">No SBOM yet</pre>
             </div>
         </div>
