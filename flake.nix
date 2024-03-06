@@ -28,14 +28,13 @@
             src = ./.;
             doCheck = true;
 
-            nativeBuildInputs = [ pkgs.makeWrapper ];
+            # Genealogos uses the reqwest crate to query for narinfo on the substituters.
+            # reqwest depends on openssl.
+            nativeBuildInputs = with pkgs; [ pkg-config ];
+            buildInputs = with pkgs; [ openssl ];
 
             # Setting this feature flag to disable tests that require recursive nix/an internet connection
             cargoTestOptions = x: x ++ [ "--features" "nix" ];
-
-            postInstall = ''
-              wrapProgram "$out/bin/genealogos" --prefix PATH : ${pkgs.lib.makeBinPath [ nixtract-cli ]}
-            '';
           };
           update-fixture-output-files = pkgs.writeShellApplication {
             name = "update-fixture-output-files";
@@ -65,6 +64,9 @@
                 rustfmt
 
                 nixtract-cli
+
+                pkg-config
+                openssl
               ];
               RUST_SRC_PATH = pkgs.rustPlatform.rustLibSrc;
               RUST_BACKTRACE = 1;

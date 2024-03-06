@@ -8,7 +8,7 @@
 
 use crate::model::{
     Model, ModelComponent, ModelDependency, ModelExternalReference, ModelExternalReferenceType,
-    ModelLicense, ModelSource, ModelType,
+    ModelLicense, ModelSource, ModelType, ModelProperties,
 };
 
 pub struct Nixtract {}
@@ -26,6 +26,8 @@ impl crate::backend::BackendTrait for Nixtract {
             None::<String>,
             attribute_path.as_ref().map(AsRef::as_ref),
             false,
+            true,
+            None,
         )?;
 
         // Convert the nixtract output into a Genealogos model
@@ -89,6 +91,62 @@ where
                     rev: src.rev.clone(),
                 });
 
+                // Convert the narinfo field of the DerivationDescription into a properties hashmap
+                let properties = {
+                    let mut acc = std::collections::HashMap::new();
+                    if let Some(narinfo) = &entry.nar_info {
+                        // These macros add the provided fields to the acc map. The first macro works with basic types. The second works with Options. The final one works with Vec<impl Display>.
+                        // TODO: Consider if this should be a Trait instead
+                        macro_rules! insert_into_map {
+                            ($($key:ident),+) => {
+                                $(
+                                    acc.insert(Some(format!("nix:narinfo:{}", stringify!($key))), Some(narinfo.$key.clone().to_string()));
+                                )+
+                            }
+                        }
+
+                        macro_rules! insert_into_map_option {
+                            ($($key:ident),+) => {
+                                $(
+                                    acc.insert(Some(format!("nix:narinfo:{}", stringify!($key))), narinfo.$key.clone().map(|v| v.to_string()));
+                                )+
+                            }
+                        }
+
+                        macro_rules! insert_into_map_vec {
+                            ($($key:ident),+) => {
+                                $(
+                                    acc.insert(Some(format!("nix:narinfo:{}", stringify!($key))), narinfo.$key.clone().map(|v| v.join(" ")));
+                                )+
+                            }
+                        }
+
+                        insert_into_map!(
+                            store_path,
+                            url,
+                            nar_hash,
+                            nar_size,
+                            compression
+                        );
+
+                        insert_into_map_option!(
+                            file_hash,
+                            file_size,
+                            deriver,
+                            system,
+                            sig,
+                            ca
+                        );
+
+                        insert_into_map_vec!(
+                            references
+                        );
+
+                        
+                    }
+                    ModelProperties { properties: acc }
+                };
+
                 Some(ModelComponent {
                     r#type: ModelType::Application,
                     name: entry.parsed_name.name.clone(),
@@ -98,6 +156,7 @@ where
                     external_references,
                     licenses,
                     src,
+                    properties,
                 })
             })
             .collect();
