@@ -8,7 +8,7 @@
 
 use crate::model::{
     Model, ModelComponent, ModelDependency, ModelExternalReference, ModelExternalReferenceType,
-    ModelLicense, ModelSource, ModelType,
+    ModelLicense, ModelProperties, ModelSource, ModelType,
 };
 
 pub struct Nixtract {}
@@ -26,6 +26,8 @@ impl crate::backend::BackendTrait for Nixtract {
             None::<String>,
             attribute_path.as_ref().map(AsRef::as_ref),
             false,
+            true,
+            None,
         )?;
 
         // Convert the nixtract output into a Genealogos model
@@ -89,6 +91,65 @@ where
                     rev: src.rev.clone(),
                 });
 
+                // Convert the narinfo field of the DerivationDescription into a properties hashmap
+                let properties = {
+                    let map = if let Some(narinfo) = &entry.nar_info {
+                        std::collections::HashMap::from([
+                            (
+                                Some(concat!("nix:narinfo:", "store_path").to_owned()),
+                                Some(narinfo.store_path.clone().to_string()),
+                            ),
+                            (
+                                Some(concat!("nix:narinfo:", "url").to_owned()),
+                                Some(narinfo.url.clone().to_string()),
+                            ),
+                            (
+                                Some(concat!("nix:narinfo:", "nar_hash").to_owned()),
+                                Some(narinfo.nar_hash.clone().to_string()),
+                            ),
+                            (
+                                Some(concat!("nix:narinfo:", "nar_size").to_owned()),
+                                Some(narinfo.nar_size.clone().to_string()),
+                            ),
+                            (
+                                Some(concat!("nix:narinfo:", "compression").to_owned()),
+                                Some(narinfo.compression.clone().to_string()),
+                            ),
+                            (
+                                Some(concat!("nix:narinfo:", "file_hash").to_owned()),
+                                narinfo.file_hash.clone().map(|v| v.to_string()),
+                            ),
+                            (
+                                Some(concat!("nix:narinfo:", "file_size").to_owned()),
+                                narinfo.file_size.map(|v| v.to_string()),
+                            ),
+                            (
+                                Some(concat!("nix:narinfo:", "deriver").to_owned()),
+                                narinfo.deriver.clone().map(|v| v.to_string()),
+                            ),
+                            (
+                                Some(concat!("nix:narinfo:", "system").to_owned()),
+                                narinfo.system.clone().map(|v| v.to_string()),
+                            ),
+                            (
+                                Some(concat!("nix:narinfo:", "sig").to_owned()),
+                                narinfo.sig.clone().map(|v| v.to_string()),
+                            ),
+                            (
+                                Some(concat!("nix:narinfo:", "ca").to_owned()),
+                                narinfo.ca.clone().map(|v| v.to_string()),
+                            ),
+                            (
+                                Some(concat!("nix:narinfo:", "references").to_owned()),
+                                narinfo.references.clone().map(|v| v.join(" ")),
+                            ),
+                        ])
+                    } else {
+                        std::collections::HashMap::new()
+                    };
+                    ModelProperties { properties: map }
+                };
+
                 Some(ModelComponent {
                     r#type: ModelType::Application,
                     name: entry.parsed_name.name.clone(),
@@ -98,6 +159,7 @@ where
                     external_references,
                     licenses,
                     src,
+                    properties,
                 })
             })
             .collect();

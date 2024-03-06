@@ -12,7 +12,8 @@ impl TryFrom<ModelComponent> for cyclonedx::Component {
             .type_(model_component.r#type)
             .name(model_component.name.clone())
             .bom_ref(model_component.r#ref)
-            .description(model_component.description);
+            .description(model_component.description)
+            .properties(model_component.properties);
 
         if !model_component.version.is_empty() {
             builder = builder.version(model_component.version.clone());
@@ -161,5 +162,15 @@ impl TryFrom<Model> for cyclonedx::CycloneDx {
             .components(components)
             .dependencies(dependencies)
             .build()?)
+    }
+}
+
+impl From<ModelProperties> for Vec<cyclonedx::Property> {
+    fn from(model_properties: ModelProperties) -> Self {
+        model_properties
+            .properties
+            .into_iter()
+            .map(|(key, value)| cyclonedx::Property { name: key, value })
+            .collect()
     }
 }
