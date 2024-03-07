@@ -95,6 +95,14 @@
                         <label for="api-address">Genealogos API Address</label>
                         <input type="text" class="form-control" id="api-address" name="api-address"
                             placeholder="http://localhost:8000/api">
+                        <small class="form-text text-muted">Enter the address of the Genealogos API. This is the
+                            endpoint where the flake ref, attribute path, and any other settings will be send for
+                            processing. For example:
+                            <ul>
+                                <li>https://genealogos.tweag.io/api</li>
+                                <li>https://127.0.0.1:8000/api</li>
+                            </ul>
+                        </small>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -124,6 +132,8 @@
             const attributePath = document.getElementById("attribute-path").value;
             const cycloneDxVer = document.getElementById("sbom-version").value;
 
+            document.getElementById("sbom-container").classList.remove("alert", "alert-warning"); // Remove error class if present
+
             // Set the content of the sbom-container to a loading spinner
             document.getElementById("sbom-container").innerHTML = `
                 <div class="text-center">
@@ -139,26 +149,45 @@
             const response = fetch(`${apiAddress}/analyze?flake_ref=${flakeRef}&attribute_path=${attributePath}&cyclonedx_version=v${cycloneDxVer}`)
                 .then(response => response.json())
                 .then(data => {
-                    // Convert the response to a JSON string
-                    const sbom = JSON.stringify(data, null, 2);
+                    if (data.sbom) {
+                        // Convert the response to a JSON string
+                        const sbom = JSON.stringify(data.sbom, null, 2);
 
-                    console.log(sbom);
+                        // Display the SBOM in the code container
+                        document.getElementById("sbom-container").textContent = sbom;
 
-                    // Display the SBOM in the code container
-                    document.getElementById("sbom-container").textContent = sbom;
+                        // Enable the generate SBOM button
+                        document.querySelector(".btn-primary").disabled = false;
+                        // Enable the copy and save SBOM buttons
+                        document.querySelector(".btn-secondary:first-of-type").disabled = false;
+                        document.querySelector(".btn-secondary:last-of-type").disabled = false;
+
+                        // Set the global variables
+                        latestFlakeRef = flakeRef;
+                        latestAttributePath = attributePath;
+                    } else if (data.message) {
+                        // Display the error message in the code container
+                        document.getElementById("sbom-container").textContent = "Error: " + data.message;
+                        document.getElementById("sbom-container").classList.add("alert", "alert-warning"); // Add error classes
+
+                        // Enable the generate SBOM button
+                        document.querySelector(".btn-primary").disabled = false;
+                        // Disable the copy and save SBOM buttons
+                        document.querySelector(".btn-secondary:first-of-type").disabled = true;
+                        document.querySelector(".btn-secondary:last-of-type").disabled = true;
+                    }
+                })
+                .catch(error => {
+                    // Display the error message in the code container
+                    document.getElementById("sbom-container").textContent = "Error: " + error;
+                    document.getElementById("sbom-container").classList.add("alert", "alert-warning"); // Add error classes
 
                     // Enable the generate SBOM button
                     document.querySelector(".btn-primary").disabled = false;
-                    // Enable the copy and save SBOM buttons
-                    document.querySelector(".btn-secondary:first-of-type").disabled = false;
-                    document.querySelector(".btn-secondary:last-of-type").disabled = false;
-
-                    // Set the global variables
-                    latestFlakeRef = flakeRef;
-                    latestAttributePath = attributePath;
-
+                    // Disable the copy and save SBOM buttons
+                    document.querySelector(".btn-secondary:first-of-type").disabled = true;
+                    document.querySelector(".btn-secondary:last-of-type").disabled = true;
                 });
-
         }
 
         function copySBOM() {
