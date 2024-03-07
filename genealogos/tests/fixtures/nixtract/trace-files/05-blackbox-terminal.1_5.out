@@ -23,6 +23,7 @@
         }
       ],
       "name": "raptor2-unstable",
+      "properties": [],
       "purl": "pkg:generic/raptor2-unstable@unstable-2022-06-06",
       "type": "application",
       "version": "unstable-2022-06-06"
@@ -44,6 +45,7 @@
         }
       ],
       "name": "libelf",
+      "properties": [],
       "purl": "pkg:generic/libelf@0.8.13",
       "type": "application",
       "version": "0.8.13"
@@ -70,6 +72,7 @@
         }
       ],
       "name": "v4l-utils",
+      "properties": [],
       "purl": "pkg:generic/v4l-utils@1.24.1",
       "type": "application",
       "version": "1.24.1"
@@ -91,6 +94,7 @@
         }
       ],
       "name": "popt",
+      "properties": [],
       "purl": "pkg:generic/popt@1.19",
       "type": "application",
       "version": "1.19"
@@ -112,6 +116,7 @@
         }
       ],
       "name": "polkit",
+      "properties": [],
       "purl": "pkg:generic/polkit@123",
       "type": "application",
       "version": "123"
@@ -133,6 +138,7 @@
         }
       ],
       "name": "libmbim",
+      "properties": [],
       "purl": "pkg:generic/libmbim@1.28.4",
       "type": "application",
       "version": "1.28.4"
@@ -154,6 +160,7 @@
         }
       ],
       "name": "libass",
+      "properties": [],
       "purl": "pkg:generic/libass@0.17.1",
       "type": "application",
       "version": "0.17.1"
@@ -180,6 +187,7 @@
         }
       ],
       "name": "perl5.38.2-File-ShareDir-Install",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-File-ShareDir-Install@0.14",
       "type": "application",
       "version": "0.14"
@@ -189,6 +197,7 @@
       "description": "",
       "externalReferences": [],
       "name": "die-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -208,6 +217,7 @@
         }
       ],
       "name": "swig",
+      "properties": [],
       "purl": "pkg:generic/swig@3.0.12",
       "type": "application",
       "version": "3.0.12"
@@ -229,6 +239,7 @@
         }
       ],
       "name": "python3.11-platformdirs",
+      "properties": [],
       "purl": "pkg:generic/python3.11-platformdirs@3.10.0",
       "type": "application",
       "version": "3.10.0"
@@ -238,6 +249,7 @@
       "description": "The default build environment for Unix packages in Nixpkgs",
       "externalReferences": [],
       "name": "stdenv-linux",
+      "properties": [],
       "type": "application"
     },
     {
@@ -257,6 +269,7 @@
         }
       ],
       "name": "libdv",
+      "properties": [],
       "purl": "pkg:generic/libdv@1.0.0",
       "type": "application",
       "version": "1.0.0"
@@ -278,6 +291,7 @@
         }
       ],
       "name": "python3.11-pytest-asyncio",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pytest-asyncio@0.21.1",
       "type": "application",
       "version": "0.21.1"
@@ -299,6 +313,7 @@
         }
       ],
       "name": "libxcrypt",
+      "properties": [],
       "purl": "pkg:generic/libxcrypt@4.4.36",
       "type": "application",
       "version": "4.4.36"
@@ -320,6 +335,7 @@
         }
       ],
       "name": "libxslt",
+      "properties": [],
       "purl": "pkg:generic/libxslt@1.1.38",
       "type": "application",
       "version": "1.1.38"
@@ -341,6 +357,7 @@
         }
       ],
       "name": "flac",
+      "properties": [],
       "purl": "pkg:generic/flac@1.4.3",
       "type": "application",
       "version": "1.4.3"
@@ -350,6 +367,7 @@
       "description": "",
       "externalReferences": [],
       "name": "prune-libtool-files",
+      "properties": [],
       "type": "application"
     },
     {
@@ -369,6 +387,7 @@
         }
       ],
       "name": "gupnp",
+      "properties": [],
       "purl": "pkg:generic/gupnp@1.4.4",
       "type": "application",
       "version": "1.4.4"
@@ -390,6 +409,7 @@
         }
       ],
       "name": "libdeflate",
+      "properties": [],
       "purl": "pkg:generic/libdeflate@1.19",
       "type": "application",
       "version": "1.19"
@@ -416,6 +436,7 @@
         }
       ],
       "name": "perl5.38.2-ExtUtils-Config",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-ExtUtils-Config@0.008",
       "type": "application",
       "version": "0.008"
@@ -437,6 +458,7 @@
         }
       ],
       "name": "groff",
+      "properties": [],
       "purl": "pkg:generic/groff@1.23.0",
       "type": "application",
       "version": "1.23.0"
@@ -458,6 +480,7 @@
         }
       ],
       "name": "python3.11-decorator",
+      "properties": [],
       "purl": "pkg:generic/python3.11-decorator@5.1.1",
       "type": "application",
       "version": "5.1.1"
@@ -479,6 +502,7 @@
         }
       ],
       "name": "python3.11-pyudev",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pyudev@0.24.1",
       "type": "application",
       "version": "0.24.1"
@@ -500,6 +524,7 @@
         }
       ],
       "name": "libwebp",
+      "properties": [],
       "purl": "pkg:generic/libwebp@1.3.2",
       "type": "application",
       "version": "1.3.2"
@@ -521,6 +546,7 @@
         }
       ],
       "name": "docbook-xsl-nons",
+      "properties": [],
       "purl": "pkg:generic/docbook-xsl-nons@1.79.2",
       "type": "application",
       "version": "1.79.2"
@@ -547,6 +573,7 @@
         }
       ],
       "name": "perl5.38.2-libwww-perl",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-libwww-perl@6.72",
       "type": "application",
       "version": "6.72"
@@ -556,6 +583,7 @@
       "description": "",
       "externalReferences": [],
       "name": "python-catch-conflicts-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -575,6 +603,7 @@
         }
       ],
       "name": "zstd",
+      "properties": [],
       "purl": "pkg:generic/zstd@1.5.5",
       "type": "application",
       "version": "1.5.5"
@@ -596,6 +625,7 @@
         }
       ],
       "name": "libvmaf",
+      "properties": [],
       "purl": "pkg:generic/libvmaf@2.3.1",
       "type": "application",
       "version": "2.3.1"
@@ -617,6 +647,7 @@
         }
       ],
       "name": "help2man",
+      "properties": [],
       "purl": "pkg:generic/help2man@1.49.3",
       "type": "application",
       "version": "1.49.3"
@@ -638,6 +669,7 @@
         }
       ],
       "name": "opusfile",
+      "properties": [],
       "purl": "pkg:generic/opusfile@0.12",
       "type": "application",
       "version": "0.12"
@@ -659,6 +691,7 @@
         }
       ],
       "name": "python3.11-iniconfig",
+      "properties": [],
       "purl": "pkg:generic/python3.11-iniconfig@2.0.0",
       "type": "application",
       "version": "2.0.0"
@@ -680,6 +713,7 @@
         }
       ],
       "name": "pango",
+      "properties": [],
       "purl": "pkg:generic/pango@1.51.0",
       "type": "application",
       "version": "1.51.0"
@@ -689,6 +723,7 @@
       "description": "",
       "externalReferences": [],
       "name": "docbook-xml",
+      "properties": [],
       "purl": "pkg:generic/docbook-xml@4.5",
       "type": "application",
       "version": "4.5"
@@ -710,6 +745,7 @@
         }
       ],
       "name": "libpulseaudio",
+      "properties": [],
       "purl": "pkg:generic/libpulseaudio@16.1",
       "type": "application",
       "version": "16.1"
@@ -731,6 +767,7 @@
         }
       ],
       "name": "python3.11-cffi",
+      "properties": [],
       "purl": "pkg:generic/python3.11-cffi@1.16.0",
       "type": "application",
       "version": "1.16.0"
@@ -752,6 +789,7 @@
         }
       ],
       "name": "python3.11-ply",
+      "properties": [],
       "purl": "pkg:generic/python3.11-ply@3.11",
       "type": "application",
       "version": "3.11"
@@ -773,6 +811,7 @@
         }
       ],
       "name": "python3.11-sphinxcontrib-htmlhelp",
+      "properties": [],
       "purl": "pkg:generic/python3.11-sphinxcontrib-htmlhelp@2.0.4",
       "type": "application",
       "version": "2.0.4"
@@ -794,6 +833,7 @@
         }
       ],
       "name": "libkate",
+      "properties": [],
       "purl": "pkg:generic/libkate@0.4.1",
       "type": "application",
       "version": "0.4.1"
@@ -810,6 +850,7 @@
         }
       ],
       "name": "xvfb-run",
+      "properties": [],
       "purl": "pkg:generic/xvfb-run@1+g87f6705",
       "type": "application",
       "version": "1+g87f6705"
@@ -831,6 +872,7 @@
         }
       ],
       "name": "libffi",
+      "properties": [],
       "purl": "pkg:generic/libffi@3.4.4",
       "type": "application",
       "version": "3.4.4"
@@ -840,6 +882,7 @@
       "description": "",
       "externalReferences": [],
       "name": "unittest-check-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -859,6 +902,7 @@
         }
       ],
       "name": "ffado",
+      "properties": [],
       "purl": "pkg:generic/ffado@2.4.7",
       "type": "application",
       "version": "2.4.7"
@@ -868,6 +912,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXext",
+      "properties": [],
       "purl": "pkg:generic/libXext@1.3.5",
       "type": "application",
       "version": "1.3.5"
@@ -884,6 +929,7 @@
         }
       ],
       "name": "libev",
+      "properties": [],
       "purl": "pkg:generic/libev@4.33",
       "type": "application",
       "version": "4.33"
@@ -905,6 +951,7 @@
         }
       ],
       "name": "python3.11-pytest-mock",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pytest-mock@3.11.1",
       "type": "application",
       "version": "3.11.1"
@@ -926,6 +973,7 @@
         }
       ],
       "name": "python3-minimal",
+      "properties": [],
       "purl": "pkg:generic/python3-minimal@3.11.6",
       "type": "application",
       "version": "3.11.6"
@@ -947,6 +995,7 @@
         }
       ],
       "name": "libxml2",
+      "properties": [],
       "purl": "pkg:generic/libxml2@2.11.7",
       "type": "application",
       "version": "2.11.7"
@@ -968,6 +1017,7 @@
         }
       ],
       "name": "libcap",
+      "properties": [],
       "purl": "pkg:generic/libcap@2.69",
       "type": "application",
       "version": "2.69"
@@ -989,6 +1039,7 @@
         }
       ],
       "name": "libepoxy",
+      "properties": [],
       "purl": "pkg:generic/libepoxy@1.5.10",
       "type": "application",
       "version": "1.5.10"
@@ -1010,6 +1061,7 @@
         }
       ],
       "name": "cryptsetup",
+      "properties": [],
       "purl": "pkg:generic/cryptsetup@2.6.1",
       "type": "application",
       "version": "2.6.1"
@@ -1031,6 +1083,7 @@
         }
       ],
       "name": "python3.11-urllib3",
+      "properties": [],
       "purl": "pkg:generic/python3.11-urllib3@2.0.7",
       "type": "application",
       "version": "2.0.7"
@@ -1057,6 +1110,7 @@
         }
       ],
       "name": "cdparanoia-III",
+      "properties": [],
       "purl": "pkg:generic/cdparanoia-III@10.2",
       "type": "application",
       "version": "10.2"
@@ -1078,6 +1132,7 @@
         }
       ],
       "name": "python3",
+      "properties": [],
       "type": "application"
     },
     {
@@ -1097,6 +1152,7 @@
         }
       ],
       "name": "perl5.38.2-Capture-Tiny",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-Capture-Tiny@0.48",
       "type": "application",
       "version": "0.48"
@@ -1118,6 +1174,7 @@
         }
       ],
       "name": "perl5.38.2-HTTP-CookieJar",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-HTTP-CookieJar@0.014",
       "type": "application",
       "version": "0.014"
@@ -1139,6 +1196,7 @@
         }
       ],
       "name": "python3.11-sphinxcontrib-qthelp",
+      "properties": [],
       "purl": "pkg:generic/python3.11-sphinxcontrib-qthelp@1.0.6",
       "type": "application",
       "version": "1.0.6"
@@ -1160,6 +1218,7 @@
         }
       ],
       "name": "libva-minimal",
+      "properties": [],
       "purl": "pkg:generic/libva-minimal@2.20.0",
       "type": "application",
       "version": "2.20.0"
@@ -1181,6 +1240,7 @@
         }
       ],
       "name": "nghttp2",
+      "properties": [],
       "purl": "pkg:generic/nghttp2@1.57.0",
       "type": "application",
       "version": "1.57.0"
@@ -1202,6 +1262,7 @@
         }
       ],
       "name": "mutest",
+      "properties": [],
       "purl": "pkg:generic/mutest@0-unstable-2023-02-24",
       "type": "application",
       "version": "0-unstable-2023-02-24"
@@ -1223,6 +1284,7 @@
         }
       ],
       "name": "openexr",
+      "properties": [],
       "purl": "pkg:generic/openexr@2.5.8",
       "type": "application",
       "version": "2.5.8"
@@ -1244,6 +1306,7 @@
         }
       ],
       "name": "mpg123",
+      "properties": [],
       "purl": "pkg:generic/mpg123@1.32.3",
       "type": "application",
       "version": "1.32.3"
@@ -1253,6 +1316,7 @@
       "description": "",
       "externalReferences": [],
       "name": "validate-pkg-config",
+      "properties": [],
       "type": "application"
     },
     {
@@ -1272,6 +1336,7 @@
         }
       ],
       "name": "pcsclite",
+      "properties": [],
       "purl": "pkg:generic/pcsclite@1.9.5",
       "type": "application",
       "version": "1.9.5"
@@ -1293,6 +1358,7 @@
         }
       ],
       "name": "at-spi2-core",
+      "properties": [],
       "purl": "pkg:generic/at-spi2-core@2.50.0",
       "type": "application",
       "version": "2.50.0"
@@ -1314,6 +1380,7 @@
         }
       ],
       "name": "vo-aacenc",
+      "properties": [],
       "purl": "pkg:generic/vo-aacenc@0.1.3",
       "type": "application",
       "version": "0.1.3"
@@ -1335,6 +1402,7 @@
         }
       ],
       "name": "gdbm",
+      "properties": [],
       "purl": "pkg:generic/gdbm@1.23",
       "type": "application",
       "version": "1.23"
@@ -1356,6 +1424,7 @@
         }
       ],
       "name": "libdvdread",
+      "properties": [],
       "purl": "pkg:generic/libdvdread@6.1.3",
       "type": "application",
       "version": "6.1.3"
@@ -1377,6 +1446,7 @@
         }
       ],
       "name": "gcc",
+      "properties": [],
       "purl": "pkg:generic/gcc@12.3.0",
       "type": "application",
       "version": "12.3.0"
@@ -1398,6 +1468,7 @@
         }
       ],
       "name": "graphene",
+      "properties": [],
       "purl": "pkg:generic/graphene@1.10.8",
       "type": "application",
       "version": "1.10.8"
@@ -1407,6 +1478,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXmu",
+      "properties": [],
       "purl": "pkg:generic/libXmu@1.1.4",
       "type": "application",
       "version": "1.1.4"
@@ -1416,6 +1488,7 @@
       "description": "System binary utilities (wrapper script)",
       "externalReferences": [],
       "name": "binutils-patchelfed-ld-wrapper",
+      "properties": [],
       "purl": "pkg:generic/binutils-patchelfed-ld-wrapper@2.40",
       "type": "application",
       "version": "2.40"
@@ -1442,6 +1515,7 @@
         }
       ],
       "name": "perl5.38.2-Test-Needs",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-Test-Needs@0.002010",
       "type": "application",
       "version": "0.002010"
@@ -1463,6 +1537,7 @@
         }
       ],
       "name": "python3.11-flaky",
+      "properties": [],
       "purl": "pkg:generic/python3.11-flaky@3.7.0",
       "type": "application",
       "version": "3.7.0"
@@ -1489,6 +1564,7 @@
         }
       ],
       "name": "python3.11-greenlet",
+      "properties": [],
       "purl": "pkg:generic/python3.11-greenlet@3.0.1",
       "type": "application",
       "version": "3.0.1"
@@ -1510,6 +1586,7 @@
         }
       ],
       "name": "python3.11-faust-cchardet",
+      "properties": [],
       "purl": "pkg:generic/python3.11-faust-cchardet@2.1.19",
       "type": "application",
       "version": "2.1.19"
@@ -1531,6 +1608,7 @@
         }
       ],
       "name": "python3.11-hatch-vcs",
+      "properties": [],
       "purl": "pkg:generic/python3.11-hatch-vcs@0.3.0",
       "type": "application",
       "version": "0.3.0"
@@ -1552,6 +1630,7 @@
         }
       ],
       "name": "libyuv",
+      "properties": [],
       "purl": "pkg:generic/libyuv@1787",
       "type": "application",
       "version": "1787"
@@ -1561,6 +1640,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXdmcp",
+      "properties": [],
       "purl": "pkg:generic/libXdmcp@1.1.4",
       "type": "application",
       "version": "1.1.4"
@@ -1582,6 +1662,7 @@
         }
       ],
       "name": "webrtc-audio-processing",
+      "properties": [],
       "purl": "pkg:generic/webrtc-audio-processing@0.3.1",
       "type": "application",
       "version": "0.3.1"
@@ -1603,6 +1684,7 @@
         }
       ],
       "name": "libpcap",
+      "properties": [],
       "purl": "pkg:generic/libpcap@1.10.4",
       "type": "application",
       "version": "1.10.4"
@@ -1624,6 +1706,7 @@
         }
       ],
       "name": "pcre",
+      "properties": [],
       "purl": "pkg:generic/pcre@8.45",
       "type": "application",
       "version": "8.45"
@@ -1650,6 +1733,7 @@
         }
       ],
       "name": "perl5.38.2-HTML-Tagset",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-HTML-Tagset@3.20",
       "type": "application",
       "version": "3.20"
@@ -1659,6 +1743,7 @@
       "description": "",
       "externalReferences": [],
       "name": "clean-immodules-cache.sh",
+      "properties": [],
       "type": "application"
     },
     {
@@ -1678,6 +1763,7 @@
         }
       ],
       "name": "binutils",
+      "properties": [],
       "purl": "pkg:generic/binutils@2.40",
       "type": "application",
       "version": "2.40"
@@ -1699,6 +1785,7 @@
         }
       ],
       "name": "python3.11-wheezy.template",
+      "properties": [],
       "purl": "pkg:generic/python3.11-wheezy.template@3.1.0",
       "type": "application",
       "version": "3.1.0"
@@ -1720,6 +1807,7 @@
         }
       ],
       "name": "libgpg-error",
+      "properties": [],
       "purl": "pkg:generic/libgpg-error@1.47",
       "type": "application",
       "version": "1.47"
@@ -1741,6 +1829,7 @@
         }
       ],
       "name": "binutils-wrapper",
+      "properties": [],
       "purl": "pkg:generic/binutils-wrapper@2.40",
       "type": "application",
       "version": "2.40"
@@ -1762,6 +1851,7 @@
         }
       ],
       "name": "vte",
+      "properties": [],
       "purl": "pkg:generic/vte@0.74.2",
       "type": "application",
       "version": "0.74.2"
@@ -1783,6 +1873,7 @@
         }
       ],
       "name": "python3.11-pygobject",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pygobject@3.46.0",
       "type": "application",
       "version": "3.46.0"
@@ -1804,6 +1895,7 @@
         }
       ],
       "name": "python3.11-sphinxcontrib-applehelp",
+      "properties": [],
       "purl": "pkg:generic/python3.11-sphinxcontrib-applehelp@1.0.7",
       "type": "application",
       "version": "1.0.7"
@@ -1825,6 +1917,7 @@
         }
       ],
       "name": "python3.11-smartypants",
+      "properties": [],
       "purl": "pkg:generic/python3.11-smartypants@2.0.1",
       "type": "application",
       "version": "2.0.1"
@@ -1846,6 +1939,7 @@
         }
       ],
       "name": "python3.11-idna",
+      "properties": [],
       "purl": "pkg:generic/python3.11-idna@3.4",
       "type": "application",
       "version": "3.4"
@@ -1867,6 +1961,7 @@
         }
       ],
       "name": "file",
+      "properties": [],
       "purl": "pkg:generic/file@5.45",
       "type": "application",
       "version": "5.45"
@@ -1888,6 +1983,7 @@
         }
       ],
       "name": "game-music-emu",
+      "properties": [],
       "purl": "pkg:generic/game-music-emu@0.6.3",
       "type": "application",
       "version": "0.6.3"
@@ -1909,6 +2005,7 @@
         }
       ],
       "name": "python3.11-cython",
+      "properties": [],
       "purl": "pkg:generic/python3.11-cython@3.0.3",
       "type": "application",
       "version": "3.0.3"
@@ -1935,6 +2032,7 @@
         }
       ],
       "name": "lz4",
+      "properties": [],
       "purl": "pkg:generic/lz4@1.9.4",
       "type": "application",
       "version": "1.9.4"
@@ -1956,6 +2054,7 @@
         }
       ],
       "name": "libnl",
+      "properties": [],
       "purl": "pkg:generic/libnl@3.7.0",
       "type": "application",
       "version": "3.7.0"
@@ -1977,6 +2076,7 @@
         }
       ],
       "name": "freetype",
+      "properties": [],
       "purl": "pkg:generic/freetype@2.13.2",
       "type": "application",
       "version": "2.13.2"
@@ -1998,6 +2098,7 @@
         }
       ],
       "name": "autoconf",
+      "properties": [],
       "purl": "pkg:generic/autoconf@2.71",
       "type": "application",
       "version": "2.71"
@@ -2019,6 +2120,7 @@
         }
       ],
       "name": "mpfr",
+      "properties": [],
       "purl": "pkg:generic/mpfr@4.2.1",
       "type": "application",
       "version": "4.2.1"
@@ -2040,6 +2142,7 @@
         }
       ],
       "name": "bzip2",
+      "properties": [],
       "purl": "pkg:generic/bzip2@1.0.8",
       "type": "application",
       "version": "1.0.8"
@@ -2061,6 +2164,7 @@
         }
       ],
       "name": "gsettings-desktop-schemas",
+      "properties": [],
       "purl": "pkg:generic/gsettings-desktop-schemas@45.0",
       "type": "application",
       "version": "45.0"
@@ -2082,6 +2186,7 @@
         }
       ],
       "name": "libopus",
+      "properties": [],
       "purl": "pkg:generic/libopus@1.4",
       "type": "application",
       "version": "1.4"
@@ -2103,6 +2208,7 @@
         }
       ],
       "name": "spandsp",
+      "properties": [],
       "purl": "pkg:generic/spandsp@0.0.6",
       "type": "application",
       "version": "0.0.6"
@@ -2112,6 +2218,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libSM",
+      "properties": [],
       "purl": "pkg:generic/libSM@1.2.4",
       "type": "application",
       "version": "1.2.4"
@@ -2133,6 +2240,7 @@
         }
       ],
       "name": "gtk-doc",
+      "properties": [],
       "purl": "pkg:generic/gtk-doc@1.33.2",
       "type": "application",
       "version": "1.33.2"
@@ -2154,6 +2262,7 @@
         }
       ],
       "name": "celt",
+      "properties": [],
       "purl": "pkg:generic/celt@0.11.3",
       "type": "application",
       "version": "0.11.3"
@@ -2175,6 +2284,7 @@
         }
       ],
       "name": "iso-codes",
+      "properties": [],
       "purl": "pkg:generic/iso-codes@4.15.0",
       "type": "application",
       "version": "4.15.0"
@@ -2196,6 +2306,7 @@
         }
       ],
       "name": "binutils-wrapper",
+      "properties": [],
       "purl": "pkg:generic/binutils-wrapper@2.40",
       "type": "application",
       "version": "2.40"
@@ -2217,6 +2328,7 @@
         }
       ],
       "name": "libmpg123",
+      "properties": [],
       "purl": "pkg:generic/libmpg123@1.32.3",
       "type": "application",
       "version": "1.32.3"
@@ -2238,6 +2350,7 @@
         }
       ],
       "name": "bison",
+      "properties": [],
       "purl": "pkg:generic/bison@3.8.2",
       "type": "application",
       "version": "3.8.2"
@@ -2264,6 +2377,7 @@
         }
       ],
       "name": "perl5.38.2-Clone",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-Clone@0.46",
       "type": "application",
       "version": "0.46"
@@ -2285,6 +2399,7 @@
         }
       ],
       "name": "iproute2",
+      "properties": [],
       "purl": "pkg:generic/iproute2@6.5.0",
       "type": "application",
       "version": "6.5.0"
@@ -2306,6 +2421,7 @@
         }
       ],
       "name": "python3.11-sphinxcontrib-apidoc",
+      "properties": [],
       "purl": "pkg:generic/python3.11-sphinxcontrib-apidoc@0.4.0",
       "type": "application",
       "version": "0.4.0"
@@ -2327,6 +2443,7 @@
         }
       ],
       "name": "ilmbase",
+      "properties": [],
       "purl": "pkg:generic/ilmbase@2.5.8",
       "type": "application",
       "version": "2.5.8"
@@ -2348,6 +2465,7 @@
         }
       ],
       "name": "dejagnu",
+      "properties": [],
       "purl": "pkg:generic/dejagnu@1.6.3",
       "type": "application",
       "version": "1.6.3"
@@ -2369,6 +2487,7 @@
         }
       ],
       "name": "libkrb5",
+      "properties": [],
       "purl": "pkg:generic/libkrb5@1.20.2",
       "type": "application",
       "version": "1.20.2"
@@ -2390,6 +2509,7 @@
         }
       ],
       "name": "srt",
+      "properties": [],
       "purl": "pkg:generic/srt@1.5.2",
       "type": "application",
       "version": "1.5.2"
@@ -2416,6 +2536,7 @@
         }
       ],
       "name": "perl5.38.2-HTTP-Message",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-HTTP-Message@6.45",
       "type": "application",
       "version": "6.45"
@@ -2437,6 +2558,7 @@
         }
       ],
       "name": "ninja",
+      "properties": [],
       "purl": "pkg:generic/ninja@1.11.1",
       "type": "application",
       "version": "1.11.1"
@@ -2463,6 +2585,7 @@
         }
       ],
       "name": "libqmi",
+      "properties": [],
       "purl": "pkg:generic/libqmi@1.32.4",
       "type": "application",
       "version": "1.32.4"
@@ -2484,6 +2607,7 @@
         }
       ],
       "name": "libevent",
+      "properties": [],
       "purl": "pkg:generic/libevent@2.1.12",
       "type": "application",
       "version": "2.1.12"
@@ -2505,6 +2629,7 @@
         }
       ],
       "name": "libossp-uuid",
+      "properties": [],
       "purl": "pkg:generic/libossp-uuid@1.6.2",
       "type": "application",
       "version": "1.6.2"
@@ -2514,6 +2639,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libidn2",
+      "properties": [],
       "type": "application"
     },
     {
@@ -2533,6 +2659,7 @@
         }
       ],
       "name": "wayland-protocols",
+      "properties": [],
       "purl": "pkg:generic/wayland-protocols@1.32",
       "type": "application",
       "version": "1.32"
@@ -2542,6 +2669,7 @@
       "description": "",
       "externalReferences": [],
       "name": "setuptools-setup-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -2561,6 +2689,7 @@
         }
       ],
       "name": "python3.11-tomli-w",
+      "properties": [],
       "purl": "pkg:generic/python3.11-tomli-w@1.0.0",
       "type": "application",
       "version": "1.0.0"
@@ -2587,6 +2716,7 @@
         }
       ],
       "name": "perl5.38.2-Encode-Locale",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-Encode-Locale@1.05",
       "type": "application",
       "version": "1.05"
@@ -2608,6 +2738,7 @@
         }
       ],
       "name": "python3",
+      "properties": [],
       "type": "application"
     },
     {
@@ -2632,6 +2763,7 @@
         }
       ],
       "name": "libapparmor",
+      "properties": [],
       "purl": "pkg:generic/libapparmor@3.1.6",
       "type": "application",
       "version": "3.1.6"
@@ -2653,6 +2785,7 @@
         }
       ],
       "name": "rsync",
+      "properties": [],
       "purl": "pkg:generic/rsync@3.2.7",
       "type": "application",
       "version": "3.2.7"
@@ -2674,6 +2807,7 @@
         }
       ],
       "name": "vala",
+      "properties": [],
       "purl": "pkg:generic/vala@0.56.14",
       "type": "application",
       "version": "0.56.14"
@@ -2695,6 +2829,7 @@
         }
       ],
       "name": "python3.11-dbus-deviation",
+      "properties": [],
       "purl": "pkg:generic/python3.11-dbus-deviation@0.6.1",
       "type": "application",
       "version": "0.6.1"
@@ -2716,6 +2851,7 @@
         }
       ],
       "name": "marble-unstable",
+      "properties": [],
       "purl": "pkg:generic/marble-unstable@unstable-2023-05-11",
       "type": "application",
       "version": "unstable-2023-05-11"
@@ -2747,6 +2883,7 @@
         }
       ],
       "name": "ffmpeg-headless",
+      "properties": [],
       "purl": "pkg:generic/ffmpeg-headless@6.0",
       "type": "application",
       "version": "6.0"
@@ -2768,6 +2905,7 @@
         }
       ],
       "name": "libwacom",
+      "properties": [],
       "purl": "pkg:generic/libwacom@2.8.0",
       "type": "application",
       "version": "2.8.0"
@@ -2794,6 +2932,7 @@
         }
       ],
       "name": "xxHash",
+      "properties": [],
       "purl": "pkg:generic/xxHash@0.8.2",
       "type": "application",
       "version": "0.8.2"
@@ -2815,6 +2954,7 @@
         }
       ],
       "name": "vulkan-headers",
+      "properties": [],
       "purl": "pkg:generic/vulkan-headers@1.3.268.0",
       "type": "application",
       "version": "1.3.268.0"
@@ -2836,6 +2976,7 @@
         }
       ],
       "name": "keyutils",
+      "properties": [],
       "purl": "pkg:generic/keyutils@1.6.3",
       "type": "application",
       "version": "1.6.3"
@@ -2857,6 +2998,7 @@
         }
       ],
       "name": "python3.11-filelock",
+      "properties": [],
       "purl": "pkg:generic/python3.11-filelock@3.12.4",
       "type": "application",
       "version": "3.12.4"
@@ -2878,6 +3020,7 @@
         }
       ],
       "name": "pixman",
+      "properties": [],
       "purl": "pkg:generic/pixman@0.42.2",
       "type": "application",
       "version": "0.42.2"
@@ -2887,6 +3030,7 @@
       "description": "Locale information for the GNU C Library",
       "externalReferences": [],
       "name": "glibc-locales",
+      "properties": [],
       "purl": "pkg:generic/glibc-locales@2.38",
       "type": "application",
       "version": "2.38"
@@ -2908,6 +3052,7 @@
         }
       ],
       "name": "autoconf",
+      "properties": [],
       "purl": "pkg:generic/autoconf@2.71",
       "type": "application",
       "version": "2.71"
@@ -2929,6 +3074,7 @@
         }
       ],
       "name": "cmocka",
+      "properties": [],
       "purl": "pkg:generic/cmocka@1.1.7",
       "type": "application",
       "version": "1.1.7"
@@ -2950,6 +3096,7 @@
         }
       ],
       "name": "libkrb5",
+      "properties": [],
       "purl": "pkg:generic/libkrb5@1.20.2",
       "type": "application",
       "version": "1.20.2"
@@ -2971,6 +3118,7 @@
         }
       ],
       "name": "libsepol",
+      "properties": [],
       "purl": "pkg:generic/libsepol@3.5",
       "type": "application",
       "version": "3.5"
@@ -2992,6 +3140,7 @@
         }
       ],
       "name": "libdecor",
+      "properties": [],
       "purl": "pkg:generic/libdecor@0.1.1",
       "type": "application",
       "version": "0.1.1"
@@ -3013,6 +3162,7 @@
         }
       ],
       "name": "unbound",
+      "properties": [],
       "purl": "pkg:generic/unbound@1.18.0",
       "type": "application",
       "version": "1.18.0"
@@ -3034,6 +3184,7 @@
         }
       ],
       "name": "python3",
+      "properties": [],
       "type": "application"
     },
     {
@@ -3053,6 +3204,7 @@
         }
       ],
       "name": "boost",
+      "properties": [],
       "purl": "pkg:generic/boost@1.81.0",
       "type": "application",
       "version": "1.81.0"
@@ -3074,6 +3226,7 @@
         }
       ],
       "name": "python3.11-brotlicffi",
+      "properties": [],
       "purl": "pkg:generic/python3.11-brotlicffi@1.1.0.0",
       "type": "application",
       "version": "1.1.0.0"
@@ -3095,6 +3248,7 @@
         }
       ],
       "name": "fdk-aac",
+      "properties": [],
       "purl": "pkg:generic/fdk-aac@2.0.2",
       "type": "application",
       "version": "2.0.2"
@@ -3121,6 +3275,7 @@
         }
       ],
       "name": "perl5.38.2-File-ShareDir",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-File-ShareDir@1.118",
       "type": "application",
       "version": "1.118"
@@ -3142,6 +3297,7 @@
         }
       ],
       "name": "libva",
+      "properties": [],
       "purl": "pkg:generic/libva@2.20.0",
       "type": "application",
       "version": "2.20.0"
@@ -3163,6 +3319,7 @@
         }
       ],
       "name": "automake",
+      "properties": [],
       "purl": "pkg:generic/automake@1.16.5",
       "type": "application",
       "version": "1.16.5"
@@ -3172,6 +3329,7 @@
       "description": "",
       "externalReferences": [],
       "name": "make-shell-wrapper-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -3191,6 +3349,7 @@
         }
       ],
       "name": "python3.11-imagesize",
+      "properties": [],
       "purl": "pkg:generic/python3.11-imagesize@1.4.1",
       "type": "application",
       "version": "1.4.1"
@@ -3212,6 +3371,7 @@
         }
       ],
       "name": "nv-codec-headers",
+      "properties": [],
       "purl": "pkg:generic/nv-codec-headers@11.1.5.2",
       "type": "application",
       "version": "11.1.5.2"
@@ -3238,6 +3398,7 @@
         }
       ],
       "name": "gmp",
+      "properties": [],
       "purl": "pkg:generic/gmp@6.3.0",
       "type": "application",
       "version": "6.3.0"
@@ -3247,6 +3408,7 @@
       "description": "",
       "externalReferences": [],
       "name": "getent-glibc",
+      "properties": [],
       "type": "application"
     },
     {
@@ -3271,6 +3433,7 @@
         }
       ],
       "name": "perl5.38.2-Test-RequiresInternet",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-Test-RequiresInternet@0.05",
       "type": "application",
       "version": "0.05"
@@ -3292,6 +3455,7 @@
         }
       ],
       "name": "libvorbis",
+      "properties": [],
       "purl": "pkg:generic/libvorbis@1.3.7",
       "type": "application",
       "version": "1.3.7"
@@ -3313,6 +3477,7 @@
         }
       ],
       "name": "mtdev",
+      "properties": [],
       "purl": "pkg:generic/mtdev@1.1.6",
       "type": "application",
       "version": "1.1.6"
@@ -3329,6 +3494,7 @@
         }
       ],
       "name": "linux-headers",
+      "properties": [],
       "purl": "pkg:generic/linux-headers@6.5",
       "type": "application",
       "version": "6.5"
@@ -3350,6 +3516,7 @@
         }
       ],
       "name": "python3.11-calver",
+      "properties": [],
       "purl": "pkg:generic/python3.11-calver@2022.06.26",
       "type": "application",
       "version": "2022.06.26"
@@ -3371,6 +3538,7 @@
         }
       ],
       "name": "serd",
+      "properties": [],
       "purl": "pkg:generic/serd@0.30.16",
       "type": "application",
       "version": "0.30.16"
@@ -3392,6 +3560,7 @@
         }
       ],
       "name": "libnetfilter_conntrack",
+      "properties": [],
       "purl": "pkg:generic/libnetfilter_conntrack@1.0.9",
       "type": "application",
       "version": "1.0.9"
@@ -3413,6 +3582,7 @@
         }
       ],
       "name": "zlib",
+      "properties": [],
       "purl": "pkg:generic/zlib@1.3",
       "type": "application",
       "version": "1.3"
@@ -3464,6 +3634,7 @@
         }
       ],
       "name": "util-linux-minimal",
+      "properties": [],
       "purl": "pkg:generic/util-linux-minimal@2.39.2",
       "type": "application",
       "version": "2.39.2"
@@ -3485,6 +3656,7 @@
         }
       ],
       "name": "zxing-cpp",
+      "properties": [],
       "purl": "pkg:generic/zxing-cpp@2.1.0",
       "type": "application",
       "version": "2.1.0"
@@ -3506,6 +3678,7 @@
         }
       ],
       "name": "bzip2",
+      "properties": [],
       "purl": "pkg:generic/bzip2@1.0.8",
       "type": "application",
       "version": "1.0.8"
@@ -3527,6 +3700,7 @@
         }
       ],
       "name": "texinfo",
+      "properties": [],
       "purl": "pkg:generic/texinfo@7.0.3",
       "type": "application",
       "version": "7.0.3"
@@ -3553,6 +3727,7 @@
         }
       ],
       "name": "fuse",
+      "properties": [],
       "purl": "pkg:generic/fuse@2.9.9",
       "type": "application",
       "version": "2.9.9"
@@ -3574,6 +3749,7 @@
         }
       ],
       "name": "gengetopt",
+      "properties": [],
       "purl": "pkg:generic/gengetopt@2.23",
       "type": "application",
       "version": "2.23"
@@ -3595,6 +3771,7 @@
         }
       ],
       "name": "ibm-sw-tpm2",
+      "properties": [],
       "purl": "pkg:generic/ibm-sw-tpm2@1682",
       "type": "application",
       "version": "1682"
@@ -3604,6 +3781,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXtst",
+      "properties": [],
       "purl": "pkg:generic/libXtst@1.2.4",
       "type": "application",
       "version": "1.2.4"
@@ -3630,6 +3808,7 @@
         }
       ],
       "name": "bluez",
+      "properties": [],
       "purl": "pkg:generic/bluez@5.70",
       "type": "application",
       "version": "5.70"
@@ -3651,6 +3830,7 @@
         }
       ],
       "name": "libcamera",
+      "properties": [],
       "purl": "pkg:generic/libcamera@0.0.5",
       "type": "application",
       "version": "0.0.5"
@@ -3672,6 +3852,7 @@
         }
       ],
       "name": "libogg",
+      "properties": [],
       "purl": "pkg:generic/libogg@1.3.5",
       "type": "application",
       "version": "1.3.5"
@@ -3693,6 +3874,7 @@
         }
       ],
       "name": "libvisual",
+      "properties": [],
       "purl": "pkg:generic/libvisual@0.4.1",
       "type": "application",
       "version": "0.4.1"
@@ -3714,6 +3896,7 @@
         }
       ],
       "name": "glib",
+      "properties": [],
       "purl": "pkg:generic/glib@2.78.4",
       "type": "application",
       "version": "2.78.4"
@@ -3730,6 +3913,7 @@
         }
       ],
       "name": "python3.11-dbus-python",
+      "properties": [],
       "purl": "pkg:generic/python3.11-dbus-python@1.2.18",
       "type": "application",
       "version": "1.2.18"
@@ -3751,6 +3935,7 @@
         }
       ],
       "name": "libcbor-unstable",
+      "properties": [],
       "purl": "pkg:generic/libcbor-unstable@unstable-2023-01-29",
       "type": "application",
       "version": "unstable-2023-01-29"
@@ -3772,6 +3957,7 @@
         }
       ],
       "name": "python3",
+      "properties": [],
       "purl": "pkg:generic/python3@3.11.6",
       "type": "application",
       "version": "3.11.6"
@@ -3793,6 +3979,7 @@
         }
       ],
       "name": "gfortran-wrapper",
+      "properties": [],
       "purl": "pkg:generic/gfortran-wrapper@12.3.0",
       "type": "application",
       "version": "12.3.0"
@@ -3814,6 +4001,7 @@
         }
       ],
       "name": "unzip",
+      "properties": [],
       "purl": "pkg:generic/unzip@6.0",
       "type": "application",
       "version": "6.0"
@@ -3835,6 +4023,7 @@
         }
       ],
       "name": "itstool",
+      "properties": [],
       "purl": "pkg:generic/itstool@2.0.7",
       "type": "application",
       "version": "2.0.7"
@@ -3856,6 +4045,7 @@
         }
       ],
       "name": "libgee",
+      "properties": [],
       "purl": "pkg:generic/libgee@0.20.6",
       "type": "application",
       "version": "0.20.6"
@@ -3877,6 +4067,7 @@
         }
       ],
       "name": "cups",
+      "properties": [],
       "purl": "pkg:generic/cups@2.4.7",
       "type": "application",
       "version": "2.4.7"
@@ -3898,6 +4089,7 @@
         }
       ],
       "name": "sharutils",
+      "properties": [],
       "purl": "pkg:generic/sharutils@4.15.2",
       "type": "application",
       "version": "4.15.2"
@@ -3919,6 +4111,7 @@
         }
       ],
       "name": "gst-plugins-base",
+      "properties": [],
       "purl": "pkg:generic/gst-plugins-base@1.22.8",
       "type": "application",
       "version": "1.22.8"
@@ -3940,6 +4133,7 @@
         }
       ],
       "name": "flite",
+      "properties": [],
       "purl": "pkg:generic/flite@2.2",
       "type": "application",
       "version": "2.2"
@@ -3949,6 +4143,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libpciaccess",
+      "properties": [],
       "purl": "pkg:generic/libpciaccess@0.17",
       "type": "application",
       "version": "0.17"
@@ -3970,6 +4165,7 @@
         }
       ],
       "name": "python3",
+      "properties": [],
       "type": "application"
     },
     {
@@ -3977,6 +4173,7 @@
       "description": "",
       "externalReferences": [],
       "name": "xcb-util",
+      "properties": [],
       "purl": "pkg:generic/xcb-util@0.4.1",
       "type": "application",
       "version": "0.4.1"
@@ -3998,6 +4195,7 @@
         }
       ],
       "name": "automake",
+      "properties": [],
       "purl": "pkg:generic/automake@1.16.5",
       "type": "application",
       "version": "1.16.5"
@@ -4019,6 +4217,7 @@
         }
       ],
       "name": "python3.11-typogrify",
+      "properties": [],
       "purl": "pkg:generic/python3.11-typogrify@2.0.7",
       "type": "application",
       "version": "2.0.7"
@@ -4028,6 +4227,7 @@
       "description": "",
       "externalReferences": [],
       "name": "xxd-vim",
+      "properties": [],
       "type": "application"
     },
     {
@@ -4047,6 +4247,7 @@
         }
       ],
       "name": "python3.11-tomli",
+      "properties": [],
       "purl": "pkg:generic/python3.11-tomli@2.0.1",
       "type": "application",
       "version": "2.0.1"
@@ -4068,6 +4269,7 @@
         }
       ],
       "name": "modemmanager",
+      "properties": [],
       "purl": "pkg:generic/modemmanager@1.20.6",
       "type": "application",
       "version": "1.20.6"
@@ -4089,6 +4291,7 @@
         }
       ],
       "name": "gdk-pixbuf",
+      "properties": [],
       "purl": "pkg:generic/gdk-pixbuf@2.42.10",
       "type": "application",
       "version": "2.42.10"
@@ -4110,6 +4313,7 @@
         }
       ],
       "name": "python3.11-pexpect",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pexpect@4.8.0",
       "type": "application",
       "version": "4.8.0"
@@ -4131,6 +4335,7 @@
         }
       ],
       "name": "dbus-cplusplus",
+      "properties": [],
       "purl": "pkg:generic/dbus-cplusplus@0.9.0",
       "type": "application",
       "version": "0.9.0"
@@ -4152,6 +4357,7 @@
         }
       ],
       "name": "python3.11-libevdev",
+      "properties": [],
       "purl": "pkg:generic/python3.11-libevdev@0.11",
       "type": "application",
       "version": "0.11"
@@ -4161,6 +4367,7 @@
       "description": "",
       "externalReferences": [],
       "name": "docbook-xml",
+      "properties": [],
       "purl": "pkg:generic/docbook-xml@4.3",
       "type": "application",
       "version": "4.3"
@@ -4182,6 +4389,7 @@
         }
       ],
       "name": "gupnp-igd",
+      "properties": [],
       "purl": "pkg:generic/gupnp-igd@1.2.0",
       "type": "application",
       "version": "1.2.0"
@@ -4196,6 +4404,7 @@
         }
       ],
       "name": "getopt",
+      "properties": [],
       "purl": "pkg:generic/getopt@1.1.6",
       "type": "application",
       "version": "1.1.6"
@@ -4217,6 +4426,7 @@
         }
       ],
       "name": "libselinux",
+      "properties": [],
       "purl": "pkg:generic/libselinux@3.3",
       "type": "application",
       "version": "3.3"
@@ -4238,6 +4448,7 @@
         }
       ],
       "name": "zlib",
+      "properties": [],
       "purl": "pkg:generic/zlib@1.3",
       "type": "application",
       "version": "1.3"
@@ -4259,6 +4470,7 @@
         }
       ],
       "name": "bash",
+      "properties": [],
       "purl": "pkg:generic/bash@5.2",
       "type": "application",
       "version": "5.2"
@@ -4280,6 +4492,7 @@
         }
       ],
       "name": "libmpc",
+      "properties": [],
       "purl": "pkg:generic/libmpc@1.3.1",
       "type": "application",
       "version": "1.3.1"
@@ -4301,6 +4514,7 @@
         }
       ],
       "name": "python3.11-editables",
+      "properties": [],
       "purl": "pkg:generic/python3.11-editables@0.5",
       "type": "application",
       "version": "0.5"
@@ -4322,6 +4536,7 @@
         }
       ],
       "name": "acl",
+      "properties": [],
       "purl": "pkg:generic/acl@2.3.1",
       "type": "application",
       "version": "2.3.1"
@@ -4348,6 +4563,7 @@
         }
       ],
       "name": "perl5.38.2-XML-NamespaceSupport",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-XML-NamespaceSupport@1.12",
       "type": "application",
       "version": "1.12"
@@ -4369,6 +4585,7 @@
         }
       ],
       "name": "libtool",
+      "properties": [],
       "purl": "pkg:generic/libtool@2.4.7",
       "type": "application",
       "version": "2.4.7"
@@ -4405,6 +4622,7 @@
         }
       ],
       "name": "qtquickcontrols",
+      "properties": [],
       "purl": "pkg:generic/qtquickcontrols@5.15.12",
       "type": "application",
       "version": "5.15.12"
@@ -4426,6 +4644,7 @@
         }
       ],
       "name": "python3.11-build",
+      "properties": [],
       "purl": "pkg:generic/python3.11-build@1.0.3",
       "type": "application",
       "version": "1.0.3"
@@ -4447,6 +4666,7 @@
         }
       ],
       "name": "python3.11-pathspec",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pathspec@0.11.2",
       "type": "application",
       "version": "0.11.2"
@@ -4468,6 +4688,7 @@
         }
       ],
       "name": "systemd-minimal",
+      "properties": [],
       "purl": "pkg:generic/systemd-minimal@254.6",
       "type": "application",
       "version": "254.6"
@@ -4489,6 +4710,7 @@
         }
       ],
       "name": "python3.11-toml",
+      "properties": [],
       "purl": "pkg:generic/python3.11-toml@0.10.2",
       "type": "application",
       "version": "0.10.2"
@@ -4510,6 +4732,7 @@
         }
       ],
       "name": "imath",
+      "properties": [],
       "purl": "pkg:generic/imath@3.1.9",
       "type": "application",
       "version": "3.1.9"
@@ -4531,6 +4754,7 @@
         }
       ],
       "name": "sbc",
+      "properties": [],
       "purl": "pkg:generic/sbc@2.0",
       "type": "application",
       "version": "2.0"
@@ -4552,6 +4776,7 @@
         }
       ],
       "name": "libsigc++",
+      "properties": [],
       "purl": "pkg:generic/libsigc++@2.12.1",
       "type": "application",
       "version": "2.12.1"
@@ -4573,6 +4798,7 @@
         }
       ],
       "name": "re2c",
+      "properties": [],
       "purl": "pkg:generic/re2c@3.1",
       "type": "application",
       "version": "3.1"
@@ -4594,6 +4820,7 @@
         }
       ],
       "name": "harfbuzz",
+      "properties": [],
       "purl": "pkg:generic/harfbuzz@7.3.0",
       "type": "application",
       "version": "7.3.0"
@@ -4615,6 +4842,7 @@
         }
       ],
       "name": "mpfr",
+      "properties": [],
       "purl": "pkg:generic/mpfr@4.2.1",
       "type": "application",
       "version": "4.2.1"
@@ -4636,6 +4864,7 @@
         }
       ],
       "name": "git",
+      "properties": [],
       "purl": "pkg:generic/git@2.42.0",
       "type": "application",
       "version": "2.42.0"
@@ -4657,6 +4886,7 @@
         }
       ],
       "name": "which",
+      "properties": [],
       "purl": "pkg:generic/which@2.21",
       "type": "application",
       "version": "2.21"
@@ -4678,6 +4908,7 @@
         }
       ],
       "name": "libmad",
+      "properties": [],
       "purl": "pkg:generic/libmad@0.15.1b",
       "type": "application",
       "version": "0.15.1b"
@@ -4704,6 +4935,7 @@
         }
       ],
       "name": "libnice",
+      "properties": [],
       "purl": "pkg:generic/libnice@0.1.21",
       "type": "application",
       "version": "0.1.21"
@@ -4725,6 +4957,7 @@
         }
       ],
       "name": "python3",
+      "properties": [],
       "type": "application"
     },
     {
@@ -4759,6 +4992,7 @@
         }
       ],
       "name": "qtwebchannel",
+      "properties": [],
       "purl": "pkg:generic/qtwebchannel@5.15.12",
       "type": "application",
       "version": "5.15.12"
@@ -4780,6 +5014,7 @@
         }
       ],
       "name": "nghttp2",
+      "properties": [],
       "purl": "pkg:generic/nghttp2@1.57.0",
       "type": "application",
       "version": "1.57.0"
@@ -4806,6 +5041,7 @@
         }
       ],
       "name": "perl5.38.2-LWP-MediaTypes",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-LWP-MediaTypes@6.04",
       "type": "application",
       "version": "6.04"
@@ -4827,6 +5063,7 @@
         }
       ],
       "name": "uthash",
+      "properties": [],
       "purl": "pkg:generic/uthash@2.3.0",
       "type": "application",
       "version": "2.3.0"
@@ -4848,6 +5085,7 @@
         }
       ],
       "name": "nv-codec-headers",
+      "properties": [],
       "purl": "pkg:generic/nv-codec-headers@9.1.23.1",
       "type": "application",
       "version": "9.1.23.1"
@@ -4869,6 +5107,7 @@
         }
       ],
       "name": "libseccomp",
+      "properties": [],
       "purl": "pkg:generic/libseccomp@2.5.4",
       "type": "application",
       "version": "2.5.4"
@@ -4890,6 +5129,7 @@
         }
       ],
       "name": "ragel",
+      "properties": [],
       "purl": "pkg:generic/ragel@6.10",
       "type": "application",
       "version": "6.10"
@@ -4911,6 +5151,7 @@
         }
       ],
       "name": "openexr",
+      "properties": [],
       "purl": "pkg:generic/openexr@3.2.1",
       "type": "application",
       "version": "3.2.1"
@@ -4932,6 +5173,7 @@
         }
       ],
       "name": "tpm2-tss",
+      "properties": [],
       "purl": "pkg:generic/tpm2-tss@4.0.1",
       "type": "application",
       "version": "4.0.1"
@@ -4953,6 +5195,7 @@
         }
       ],
       "name": "libnftnl",
+      "properties": [],
       "purl": "pkg:generic/libnftnl@1.2.6",
       "type": "application",
       "version": "1.2.6"
@@ -4974,6 +5217,7 @@
         }
       ],
       "name": "python3.11-bootstrap-installer",
+      "properties": [],
       "purl": "pkg:generic/python3.11-bootstrap-installer@0.7.0",
       "type": "application",
       "version": "0.7.0"
@@ -4983,6 +5227,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXt",
+      "properties": [],
       "purl": "pkg:generic/libXt@1.3.0",
       "type": "application",
       "version": "1.3.0"
@@ -5004,6 +5249,7 @@
         }
       ],
       "name": "speex",
+      "properties": [],
       "purl": "pkg:generic/speex@1.2.1",
       "type": "application",
       "version": "1.2.1"
@@ -5025,6 +5271,7 @@
         }
       ],
       "name": "glu",
+      "properties": [],
       "purl": "pkg:generic/glu@9.0.3",
       "type": "application",
       "version": "9.0.3"
@@ -5046,6 +5293,7 @@
         }
       ],
       "name": "gnutls",
+      "properties": [],
       "purl": "pkg:generic/gnutls@3.8.3",
       "type": "application",
       "version": "3.8.3"
@@ -5067,6 +5315,7 @@
         }
       ],
       "name": "libdrm",
+      "properties": [],
       "purl": "pkg:generic/libdrm@2.4.118",
       "type": "application",
       "version": "2.4.118"
@@ -5088,6 +5337,7 @@
         }
       ],
       "name": "python3.11-poetry-core",
+      "properties": [],
       "purl": "pkg:generic/python3.11-poetry-core@1.7.0",
       "type": "application",
       "version": "1.7.0"
@@ -5109,6 +5359,7 @@
         }
       ],
       "name": "dbus",
+      "properties": [],
       "purl": "pkg:generic/dbus@1.14.10",
       "type": "application",
       "version": "1.14.10"
@@ -5135,6 +5386,7 @@
         }
       ],
       "name": "python3.11-pycairo",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pycairo@1.24.0",
       "type": "application",
       "version": "1.24.0"
@@ -5156,6 +5408,7 @@
         }
       ],
       "name": "directfb",
+      "properties": [],
       "purl": "pkg:generic/directfb@1.7.7",
       "type": "application",
       "version": "1.7.7"
@@ -5177,6 +5430,7 @@
         }
       ],
       "name": "expect",
+      "properties": [],
       "purl": "pkg:generic/expect@5.45.4",
       "type": "application",
       "version": "5.45.4"
@@ -5198,6 +5452,7 @@
         }
       ],
       "name": "libevdev",
+      "properties": [],
       "purl": "pkg:generic/libevdev@1.13.1",
       "type": "application",
       "version": "1.13.1"
@@ -5219,6 +5474,7 @@
         }
       ],
       "name": "vulkan-loader",
+      "properties": [],
       "purl": "pkg:generic/vulkan-loader@1.3.268.0",
       "type": "application",
       "version": "1.3.268.0"
@@ -5240,6 +5496,7 @@
         }
       ],
       "name": "python3.11-six",
+      "properties": [],
       "purl": "pkg:generic/python3.11-six@1.16.0",
       "type": "application",
       "version": "1.16.0"
@@ -5249,6 +5506,7 @@
       "description": "",
       "externalReferences": [],
       "name": "wrap-python-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -5268,6 +5526,7 @@
         }
       ],
       "name": "libsrtp",
+      "properties": [],
       "purl": "pkg:generic/libsrtp@2.5.0",
       "type": "application",
       "version": "2.5.0"
@@ -5277,6 +5536,7 @@
       "description": "",
       "externalReferences": [],
       "name": "xcb-util-wm",
+      "properties": [],
       "purl": "pkg:generic/xcb-util-wm@0.4.2",
       "type": "application",
       "version": "0.4.2"
@@ -5298,6 +5558,7 @@
         }
       ],
       "name": "libsndfile",
+      "properties": [],
       "purl": "pkg:generic/libsndfile@1.2.2",
       "type": "application",
       "version": "1.2.2"
@@ -5319,6 +5580,7 @@
         }
       ],
       "name": "gettext",
+      "properties": [],
       "purl": "pkg:generic/gettext@0.21.1",
       "type": "application",
       "version": "0.21.1"
@@ -5340,6 +5602,7 @@
         }
       ],
       "name": "guile",
+      "properties": [],
       "purl": "pkg:generic/guile@2.2.7",
       "type": "application",
       "version": "2.2.7"
@@ -5361,6 +5624,7 @@
         }
       ],
       "name": "libxkbcommon",
+      "properties": [],
       "purl": "pkg:generic/libxkbcommon@1.5.0",
       "type": "application",
       "version": "1.5.0"
@@ -5382,6 +5646,7 @@
         }
       ],
       "name": "python3.11-trove-classifiers",
+      "properties": [],
       "purl": "pkg:generic/python3.11-trove-classifiers@2023.8.7",
       "type": "application",
       "version": "2023.8.7"
@@ -5403,6 +5668,7 @@
         }
       ],
       "name": "nasm",
+      "properties": [],
       "purl": "pkg:generic/nasm@2.16.01",
       "type": "application",
       "version": "2.16.01"
@@ -5424,6 +5690,7 @@
         }
       ],
       "name": "wildmidi",
+      "properties": [],
       "purl": "pkg:generic/wildmidi@0.4.5",
       "type": "application",
       "version": "0.4.5"
@@ -5450,6 +5717,7 @@
         }
       ],
       "name": "tzdata",
+      "properties": [],
       "purl": "pkg:generic/tzdata@2024a",
       "type": "application",
       "version": "2024a"
@@ -5471,6 +5739,7 @@
         }
       ],
       "name": "python3",
+      "properties": [],
       "type": "application"
     },
     {
@@ -5490,6 +5759,7 @@
         }
       ],
       "name": "curl",
+      "properties": [],
       "purl": "pkg:generic/curl@8.4.0",
       "type": "application",
       "version": "8.4.0"
@@ -5511,6 +5781,7 @@
         }
       ],
       "name": "libxml2",
+      "properties": [],
       "purl": "pkg:generic/libxml2@2.11.7",
       "type": "application",
       "version": "2.11.7"
@@ -5532,6 +5803,7 @@
         }
       ],
       "name": "attr",
+      "properties": [],
       "purl": "pkg:generic/attr@2.5.1",
       "type": "application",
       "version": "2.5.1"
@@ -5553,6 +5825,7 @@
         }
       ],
       "name": "db",
+      "properties": [],
       "purl": "pkg:generic/db@5.3.28",
       "type": "application",
       "version": "5.3.28"
@@ -5574,6 +5847,7 @@
         }
       ],
       "name": "python3.11-sphinxcontrib-jsmath",
+      "properties": [],
       "purl": "pkg:generic/python3.11-sphinxcontrib-jsmath@1.0.1",
       "type": "application",
       "version": "1.0.1"
@@ -5595,6 +5869,7 @@
         }
       ],
       "name": "tinycompress",
+      "properties": [],
       "purl": "pkg:generic/tinycompress@1.2.8",
       "type": "application",
       "version": "1.2.8"
@@ -5616,6 +5891,7 @@
         }
       ],
       "name": "python3.11-pyproject-hooks",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pyproject-hooks@1.0.0",
       "type": "application",
       "version": "1.0.0"
@@ -5625,6 +5901,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXxf86vm",
+      "properties": [],
       "purl": "pkg:generic/libXxf86vm@1.1.5",
       "type": "application",
       "version": "1.1.5"
@@ -5646,6 +5923,7 @@
         }
       ],
       "name": "openssl",
+      "properties": [],
       "purl": "pkg:generic/openssl@3.0.13",
       "type": "application",
       "version": "3.0.13"
@@ -5667,6 +5945,7 @@
         }
       ],
       "name": "readline",
+      "properties": [],
       "purl": "pkg:generic/readline@8.2p7",
       "type": "application",
       "version": "8.2p7"
@@ -5688,6 +5967,7 @@
         }
       ],
       "name": "faad2",
+      "properties": [],
       "purl": "pkg:generic/faad2@2.10.1",
       "type": "application",
       "version": "2.10.1"
@@ -5709,6 +5989,7 @@
         }
       ],
       "name": "SDL",
+      "properties": [],
       "purl": "pkg:generic/SDL@1.2.15",
       "type": "application",
       "version": "1.2.15"
@@ -5730,6 +6011,7 @@
         }
       ],
       "name": "perl",
+      "properties": [],
       "purl": "pkg:generic/perl@5.38.2",
       "type": "application",
       "version": "5.38.2"
@@ -5751,6 +6033,7 @@
         }
       ],
       "name": "libsoup",
+      "properties": [],
       "purl": "pkg:generic/libsoup@2.74.3",
       "type": "application",
       "version": "2.74.3"
@@ -5777,6 +6060,7 @@
         }
       ],
       "name": "dbus-glib",
+      "properties": [],
       "purl": "pkg:generic/dbus-glib@0.112",
       "type": "application",
       "version": "0.112"
@@ -5798,6 +6082,7 @@
         }
       ],
       "name": "intltool",
+      "properties": [],
       "purl": "pkg:generic/intltool@0.51.0",
       "type": "application",
       "version": "0.51.0"
@@ -5824,6 +6109,7 @@
         }
       ],
       "name": "gmp-with-cxx",
+      "properties": [],
       "purl": "pkg:generic/gmp-with-cxx@6.3.0",
       "type": "application",
       "version": "6.3.0"
@@ -5833,6 +6119,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXScrnSaver",
+      "properties": [],
       "purl": "pkg:generic/libXScrnSaver@1.2.4",
       "type": "application",
       "version": "1.2.4"
@@ -5854,6 +6141,7 @@
         }
       ],
       "name": "c-ares",
+      "properties": [],
       "purl": "pkg:generic/c-ares@1.19.1",
       "type": "application",
       "version": "1.19.1"
@@ -5875,6 +6163,7 @@
         }
       ],
       "name": "duktape",
+      "properties": [],
       "purl": "pkg:generic/duktape@2.7.0",
       "type": "application",
       "version": "2.7.0"
@@ -5896,6 +6185,7 @@
         }
       ],
       "name": "python3.11-typing-extensions",
+      "properties": [],
       "purl": "pkg:generic/python3.11-typing-extensions@4.7.1",
       "type": "application",
       "version": "4.7.1"
@@ -5905,6 +6195,7 @@
       "description": "",
       "externalReferences": [],
       "name": "pypa-build-hook.sh",
+      "properties": [],
       "type": "application"
     },
     {
@@ -5924,6 +6215,7 @@
         }
       ],
       "name": "perl5.38.2-Try-Tiny",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-Try-Tiny@0.31",
       "type": "application",
       "version": "0.31"
@@ -5945,6 +6237,7 @@
         }
       ],
       "name": "tremor-unstable",
+      "properties": [],
       "purl": "pkg:generic/tremor-unstable@unstable-2018-03-16",
       "type": "application",
       "version": "unstable-2018-03-16"
@@ -5954,6 +6247,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXpm",
+      "properties": [],
       "purl": "pkg:generic/libXpm@3.5.17",
       "type": "application",
       "version": "3.5.17"
@@ -5975,6 +6269,7 @@
         }
       ],
       "name": "tcl",
+      "properties": [],
       "purl": "pkg:generic/tcl@8.6.13",
       "type": "application",
       "version": "8.6.13"
@@ -5996,6 +6291,7 @@
         }
       ],
       "name": "libxcrypt",
+      "properties": [],
       "purl": "pkg:generic/libxcrypt@4.4.36",
       "type": "application",
       "version": "4.4.36"
@@ -6017,6 +6313,7 @@
         }
       ],
       "name": "texinfo",
+      "properties": [],
       "purl": "pkg:generic/texinfo@7.0.3",
       "type": "application",
       "version": "7.0.3"
@@ -6038,6 +6335,7 @@
         }
       ],
       "name": "umockdev",
+      "properties": [],
       "purl": "pkg:generic/umockdev@0.17.18",
       "type": "application",
       "version": "0.17.18"
@@ -6079,6 +6377,7 @@
         }
       ],
       "name": "libmd",
+      "properties": [],
       "purl": "pkg:generic/libmd@1.1.0",
       "type": "application",
       "version": "1.1.0"
@@ -6100,6 +6399,7 @@
         }
       ],
       "name": "libyaml",
+      "properties": [],
       "purl": "pkg:generic/libyaml@0.2.5",
       "type": "application",
       "version": "0.2.5"
@@ -6121,6 +6421,7 @@
         }
       ],
       "name": "python3.11-pbr",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pbr@5.11.1",
       "type": "application",
       "version": "5.11.1"
@@ -6130,6 +6431,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXrandr",
+      "properties": [],
       "purl": "pkg:generic/libXrandr@1.5.4",
       "type": "application",
       "version": "1.5.4"
@@ -6151,6 +6453,7 @@
         }
       ],
       "name": "libvpx",
+      "properties": [],
       "purl": "pkg:generic/libvpx@1.13.1",
       "type": "application",
       "version": "1.13.1"
@@ -6160,6 +6463,7 @@
       "description": "",
       "externalReferences": [],
       "name": "wrap-qt5-apps-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -6184,6 +6488,7 @@
         }
       ],
       "name": "xz",
+      "properties": [],
       "purl": "pkg:generic/xz@5.4.4",
       "type": "application",
       "version": "5.4.4"
@@ -6193,6 +6498,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libpthread-stubs",
+      "properties": [],
       "purl": "pkg:generic/libpthread-stubs@0.5",
       "type": "application",
       "version": "0.5"
@@ -6214,6 +6520,7 @@
         }
       ],
       "name": "python3.11-pyyaml",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pyyaml@6.0.1",
       "type": "application",
       "version": "6.0.1"
@@ -6235,6 +6542,7 @@
         }
       ],
       "name": "libdatrie",
+      "properties": [],
       "purl": "pkg:generic/libdatrie@2019-12-20",
       "type": "application",
       "version": "2019-12-20"
@@ -6256,6 +6564,7 @@
         }
       ],
       "name": "libvdpau",
+      "properties": [],
       "purl": "pkg:generic/libvdpau@1.5",
       "type": "application",
       "version": "1.5"
@@ -6277,6 +6586,7 @@
         }
       ],
       "name": "chromaprint",
+      "properties": [],
       "purl": "pkg:generic/chromaprint@1.5.1",
       "type": "application",
       "version": "1.5.1"
@@ -6286,6 +6596,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libX11",
+      "properties": [],
       "purl": "pkg:generic/libX11@1.8.7",
       "type": "application",
       "version": "1.8.7"
@@ -6312,6 +6623,7 @@
         }
       ],
       "name": "perl5.38.2-Test-Warnings",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-Test-Warnings@0.032",
       "type": "application",
       "version": "0.032"
@@ -6333,6 +6645,7 @@
         }
       ],
       "name": "libbs2b",
+      "properties": [],
       "purl": "pkg:generic/libbs2b@3.1.0",
       "type": "application",
       "version": "3.1.0"
@@ -6354,6 +6667,7 @@
         }
       ],
       "name": "python3",
+      "properties": [],
       "type": "application"
     },
     {
@@ -6378,6 +6692,7 @@
         }
       ],
       "name": "xz",
+      "properties": [],
       "purl": "pkg:generic/xz@5.4.4",
       "type": "application",
       "version": "5.4.4"
@@ -6399,6 +6714,7 @@
         }
       ],
       "name": "tracker",
+      "properties": [],
       "purl": "pkg:generic/tracker@3.6.0",
       "type": "application",
       "version": "3.6.0"
@@ -6420,6 +6736,7 @@
         }
       ],
       "name": "qrencode",
+      "properties": [],
       "purl": "pkg:generic/qrencode@4.1.1",
       "type": "application",
       "version": "4.1.1"
@@ -6441,6 +6758,7 @@
         }
       ],
       "name": "glib",
+      "properties": [],
       "purl": "pkg:generic/glib@2.78.4",
       "type": "application",
       "version": "2.78.4"
@@ -6467,6 +6785,7 @@
         }
       ],
       "name": "perl5.38.2-Test-Requires",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-Test-Requires@0.11",
       "type": "application",
       "version": "0.11"
@@ -6476,6 +6795,7 @@
       "description": "",
       "externalReferences": [],
       "name": "blackbox",
+      "properties": [],
       "purl": "pkg:generic/blackbox@0.14.0",
       "type": "application",
       "version": "0.14.0"
@@ -6497,6 +6817,7 @@
         }
       ],
       "name": "check",
+      "properties": [],
       "purl": "pkg:generic/check@0.15.2",
       "type": "application",
       "version": "0.15.2"
@@ -6518,6 +6839,7 @@
         }
       ],
       "name": "opensp",
+      "properties": [],
       "purl": "pkg:generic/opensp@1.5.2",
       "type": "application",
       "version": "1.5.2"
@@ -6539,6 +6861,7 @@
         }
       ],
       "name": "mandoc",
+      "properties": [],
       "purl": "pkg:generic/mandoc@1.14.6",
       "type": "application",
       "version": "1.14.6"
@@ -6575,6 +6898,7 @@
         }
       ],
       "name": "docutils",
+      "properties": [],
       "purl": "pkg:generic/docutils@0.20.1",
       "type": "application",
       "version": "0.20.1"
@@ -6596,6 +6920,7 @@
         }
       ],
       "name": "python3.11-pytest-timeout",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pytest-timeout@2.1.0",
       "type": "application",
       "version": "2.1.0"
@@ -6605,6 +6930,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXv",
+      "properties": [],
       "purl": "pkg:generic/libXv@1.0.12",
       "type": "application",
       "version": "1.0.12"
@@ -6626,6 +6952,7 @@
         }
       ],
       "name": "libpng-apng",
+      "properties": [],
       "purl": "pkg:generic/libpng-apng@1.6.40",
       "type": "application",
       "version": "1.6.40"
@@ -6635,6 +6962,7 @@
       "description": "",
       "externalReferences": [],
       "name": "python-imports-check-hook.sh",
+      "properties": [],
       "type": "application"
     },
     {
@@ -6642,6 +6970,7 @@
       "description": "",
       "externalReferences": [],
       "name": "remove-references-to",
+      "properties": [],
       "type": "application"
     },
     {
@@ -6661,6 +6990,7 @@
         }
       ],
       "name": "neon",
+      "properties": [],
       "purl": "pkg:generic/neon@0.32.5",
       "type": "application",
       "version": "0.32.5"
@@ -6687,6 +7017,7 @@
         }
       ],
       "name": "perl5.38.2-HTTP-Date",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-HTTP-Date@6.06",
       "type": "application",
       "version": "6.06"
@@ -6696,6 +7027,7 @@
       "description": "",
       "externalReferences": [],
       "name": "setuptools-check-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -6715,6 +7047,7 @@
         }
       ],
       "name": "gd",
+      "properties": [],
       "purl": "pkg:generic/gd@2.3.3",
       "type": "application",
       "version": "2.3.3"
@@ -6736,6 +7069,7 @@
         }
       ],
       "name": "libfreeaptx",
+      "properties": [],
       "purl": "pkg:generic/libfreeaptx@0.1.1",
       "type": "application",
       "version": "0.1.1"
@@ -6772,6 +7106,7 @@
         }
       ],
       "name": "qtsvg",
+      "properties": [],
       "purl": "pkg:generic/qtsvg@5.15.12",
       "type": "application",
       "version": "5.15.12"
@@ -6781,6 +7116,7 @@
       "description": "",
       "externalReferences": [],
       "name": "add-opengl-runpath",
+      "properties": [],
       "type": "application"
     },
     {
@@ -6800,6 +7136,7 @@
         }
       ],
       "name": "libunistring",
+      "properties": [],
       "purl": "pkg:generic/libunistring@1.1",
       "type": "application",
       "version": "1.1"
@@ -6821,6 +7158,7 @@
         }
       ],
       "name": "pkg-config-wrapper",
+      "properties": [],
       "purl": "pkg:generic/pkg-config-wrapper@0.29.2",
       "type": "application",
       "version": "0.29.2"
@@ -6842,6 +7180,7 @@
         }
       ],
       "name": "perl",
+      "properties": [],
       "purl": "pkg:generic/perl@5.38.2",
       "type": "application",
       "version": "5.38.2"
@@ -6863,6 +7202,7 @@
         }
       ],
       "name": "python3.11-coverage",
+      "properties": [],
       "purl": "pkg:generic/python3.11-coverage@7.3.1",
       "type": "application",
       "version": "7.3.1"
@@ -6884,6 +7224,7 @@
         }
       ],
       "name": "pcre2",
+      "properties": [],
       "purl": "pkg:generic/pcre2@10.42",
       "type": "application",
       "version": "10.42"
@@ -6905,6 +7246,7 @@
         }
       ],
       "name": "linux-pam",
+      "properties": [],
       "purl": "pkg:generic/linux-pam@1.5.2",
       "type": "application",
       "version": "1.5.2"
@@ -6926,6 +7268,7 @@
         }
       ],
       "name": "lzo",
+      "properties": [],
       "purl": "pkg:generic/lzo@2.10",
       "type": "application",
       "version": "2.10"
@@ -6947,6 +7290,7 @@
         }
       ],
       "name": "libfido2",
+      "properties": [],
       "purl": "pkg:generic/libfido2@1.13.0",
       "type": "application",
       "version": "1.13.0"
@@ -6973,6 +7317,7 @@
         }
       ],
       "name": "perl5.38.2-XML-SAX",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-XML-SAX@1.02",
       "type": "application",
       "version": "1.02"
@@ -6994,6 +7339,7 @@
         }
       ],
       "name": "openal-soft",
+      "properties": [],
       "purl": "pkg:generic/openal-soft@1.23.1",
       "type": "application",
       "version": "1.23.1"
@@ -7020,6 +7366,7 @@
         }
       ],
       "name": "xz",
+      "properties": [],
       "purl": "pkg:generic/xz@5.4.4",
       "type": "application",
       "version": "5.4.4"
@@ -7041,6 +7388,7 @@
         }
       ],
       "name": "bash",
+      "properties": [],
       "purl": "pkg:generic/bash@5.2",
       "type": "application",
       "version": "5.2"
@@ -7055,6 +7403,7 @@
         }
       ],
       "name": "boehm-gc",
+      "properties": [],
       "purl": "pkg:generic/boehm-gc@8.2.2",
       "type": "application",
       "version": "8.2.2"
@@ -7064,6 +7413,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXi",
+      "properties": [],
       "purl": "pkg:generic/libXi@1.8.1",
       "type": "application",
       "version": "1.8.1"
@@ -7085,6 +7435,7 @@
         }
       ],
       "name": "libjxl",
+      "properties": [],
       "purl": "pkg:generic/libjxl@0.8.2",
       "type": "application",
       "version": "0.8.2"
@@ -7106,6 +7457,7 @@
         }
       ],
       "name": "libjack2",
+      "properties": [],
       "purl": "pkg:generic/libjack2@1.9.22",
       "type": "application",
       "version": "1.9.22"
@@ -7115,6 +7467,7 @@
       "description": "",
       "externalReferences": [],
       "name": "find-xml-catalogs-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -7139,6 +7492,7 @@
         }
       ],
       "name": "perl5.38.2-TimeDate",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-TimeDate@2.33",
       "type": "application",
       "version": "2.33"
@@ -7148,6 +7502,7 @@
       "description": "",
       "externalReferences": [],
       "name": "wrap-gapps-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -7167,6 +7522,7 @@
         }
       ],
       "name": "yasm",
+      "properties": [],
       "purl": "pkg:generic/yasm@1.3.0",
       "type": "application",
       "version": "1.3.0"
@@ -7188,6 +7544,7 @@
         }
       ],
       "name": "libarchive",
+      "properties": [],
       "purl": "pkg:generic/libarchive@3.7.2",
       "type": "application",
       "version": "3.7.2"
@@ -7209,6 +7566,7 @@
         }
       ],
       "name": "texinfo",
+      "properties": [],
       "purl": "pkg:generic/texinfo@7.0.3",
       "type": "application",
       "version": "7.0.3"
@@ -7230,6 +7588,7 @@
         }
       ],
       "name": "cracklib",
+      "properties": [],
       "purl": "pkg:generic/cracklib@2.9.11",
       "type": "application",
       "version": "2.9.11"
@@ -7251,6 +7610,7 @@
         }
       ],
       "name": "ladspa.h",
+      "properties": [],
       "purl": "pkg:generic/ladspa.h@1.15",
       "type": "application",
       "version": "1.15"
@@ -7272,6 +7632,7 @@
         }
       ],
       "name": "libcanberra",
+      "properties": [],
       "purl": "pkg:generic/libcanberra@0.30",
       "type": "application",
       "version": "0.30"
@@ -7293,6 +7654,7 @@
         }
       ],
       "name": "python3.11-webencodings",
+      "properties": [],
       "purl": "pkg:generic/python3.11-webencodings@0.5.1",
       "type": "application",
       "version": "0.5.1"
@@ -7319,6 +7681,7 @@
         }
       ],
       "name": "perl5.38.2-WWW-RobotRules",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-WWW-RobotRules@6.02",
       "type": "application",
       "version": "6.02"
@@ -7340,6 +7703,7 @@
         }
       ],
       "name": "python3.11-ptyprocess",
+      "properties": [],
       "purl": "pkg:generic/python3.11-ptyprocess@0.7.0",
       "type": "application",
       "version": "0.7.0"
@@ -7361,6 +7725,7 @@
         }
       ],
       "name": "libsass",
+      "properties": [],
       "purl": "pkg:generic/libsass@3.6.5",
       "type": "application",
       "version": "3.6.5"
@@ -7382,6 +7747,7 @@
         }
       ],
       "name": "python3.11-snowballstemmer",
+      "properties": [],
       "purl": "pkg:generic/python3.11-snowballstemmer@2.2.0",
       "type": "application",
       "version": "2.2.0"
@@ -7403,6 +7769,7 @@
         }
       ],
       "name": "python3.11-pystemmer",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pystemmer@2.2.0",
       "type": "application",
       "version": "2.2.0"
@@ -7424,6 +7791,7 @@
         }
       ],
       "name": "cpio",
+      "properties": [],
       "purl": "pkg:generic/cpio@2.14",
       "type": "application",
       "version": "2.14"
@@ -7445,6 +7813,7 @@
         }
       ],
       "name": "rhash",
+      "properties": [],
       "purl": "pkg:generic/rhash@1.4.4",
       "type": "application",
       "version": "1.4.4"
@@ -7454,6 +7823,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXfixes",
+      "properties": [],
       "purl": "pkg:generic/libXfixes@6.0.1",
       "type": "application",
       "version": "6.0.1"
@@ -7475,6 +7845,7 @@
         }
       ],
       "name": "libqrtr-glib",
+      "properties": [],
       "purl": "pkg:generic/libqrtr-glib@1.2.2",
       "type": "application",
       "version": "1.2.2"
@@ -7484,6 +7855,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXinerama",
+      "properties": [],
       "purl": "pkg:generic/libXinerama@1.1.5",
       "type": "application",
       "version": "1.1.5"
@@ -7505,6 +7877,7 @@
         }
       ],
       "name": "gcc-wrapper",
+      "properties": [],
       "purl": "pkg:generic/gcc-wrapper@12.3.0",
       "type": "application",
       "version": "12.3.0"
@@ -7526,6 +7899,7 @@
         }
       ],
       "name": "file",
+      "properties": [],
       "purl": "pkg:generic/file@5.45",
       "type": "application",
       "version": "5.45"
@@ -7547,6 +7921,7 @@
         }
       ],
       "name": "python3.11-setuptools-git",
+      "properties": [],
       "purl": "pkg:generic/python3.11-setuptools-git@1.2",
       "type": "application",
       "version": "1.2"
@@ -7556,6 +7931,7 @@
       "description": "",
       "externalReferences": [],
       "name": "python-relax-deps-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -7563,6 +7939,7 @@
       "description": "",
       "externalReferences": [],
       "name": "cargo-setup-hook.sh",
+      "properties": [],
       "type": "application"
     },
     {
@@ -7582,6 +7959,7 @@
         }
       ],
       "name": "llvm",
+      "properties": [],
       "purl": "pkg:generic/llvm@16.0.6",
       "type": "application",
       "version": "16.0.6"
@@ -7603,6 +7981,7 @@
         }
       ],
       "name": "libipt",
+      "properties": [],
       "purl": "pkg:generic/libipt@2.0.6",
       "type": "application",
       "version": "2.0.6"
@@ -7624,6 +8003,7 @@
         }
       ],
       "name": "dav1d",
+      "properties": [],
       "purl": "pkg:generic/dav1d@1.2.1",
       "type": "application",
       "version": "1.2.1"
@@ -7645,6 +8025,7 @@
         }
       ],
       "name": "libxslt",
+      "properties": [],
       "purl": "pkg:generic/libxslt@1.1.38",
       "type": "application",
       "version": "1.1.38"
@@ -7666,6 +8047,7 @@
         }
       ],
       "name": "python3.11-lxml",
+      "properties": [],
       "purl": "pkg:generic/python3.11-lxml@4.9.3-3",
       "type": "application",
       "version": "4.9.3-3"
@@ -7687,6 +8069,7 @@
         }
       ],
       "name": "python3.11-charset-normalizer",
+      "properties": [],
       "purl": "pkg:generic/python3.11-charset-normalizer@3.2.0",
       "type": "application",
       "version": "3.2.0"
@@ -7696,6 +8079,7 @@
       "description": "",
       "externalReferences": [],
       "name": "autoreconf-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -7715,6 +8099,7 @@
         }
       ],
       "name": "python3.11-execnet",
+      "properties": [],
       "purl": "pkg:generic/python3.11-execnet@2.0.2",
       "type": "application",
       "version": "2.0.2"
@@ -7736,6 +8121,7 @@
         }
       ],
       "name": "blackbox",
+      "properties": [],
       "purl": "pkg:generic/blackbox@0.14.0",
       "type": "application",
       "version": "0.14.0"
@@ -7745,6 +8131,7 @@
       "description": "",
       "externalReferences": [],
       "name": "autoreconf-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -7764,6 +8151,7 @@
         }
       ],
       "name": "python3.11-appdirs",
+      "properties": [],
       "purl": "pkg:generic/python3.11-appdirs@1.4.4",
       "type": "application",
       "version": "1.4.4"
@@ -7785,6 +8173,7 @@
         }
       ],
       "name": "json-glib",
+      "properties": [],
       "purl": "pkg:generic/json-glib@1.8.0",
       "type": "application",
       "version": "1.8.0"
@@ -7806,6 +8195,7 @@
         }
       ],
       "name": "glibc",
+      "properties": [],
       "purl": "pkg:generic/glibc@2.38",
       "type": "application",
       "version": "2.38"
@@ -7827,6 +8217,7 @@
         }
       ],
       "name": "libcap-ng",
+      "properties": [],
       "purl": "pkg:generic/libcap-ng@0.8.3",
       "type": "application",
       "version": "0.8.3"
@@ -7848,6 +8239,7 @@
         }
       ],
       "name": "rtmpdump-unstable",
+      "properties": [],
       "purl": "pkg:generic/rtmpdump-unstable@unstable-2021-02-19",
       "type": "application",
       "version": "unstable-2021-02-19"
@@ -7857,6 +8249,7 @@
       "description": "",
       "externalReferences": [],
       "name": "pytest-check-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -7876,6 +8269,7 @@
         }
       ],
       "name": "python3.11-flit-core",
+      "properties": [],
       "purl": "pkg:generic/python3.11-flit-core@3.9.0",
       "type": "application",
       "version": "3.9.0"
@@ -7897,6 +8291,7 @@
         }
       ],
       "name": "sox-unstable",
+      "properties": [],
       "purl": "pkg:generic/sox-unstable@unstable-2021-05-09",
       "type": "application",
       "version": "unstable-2021-05-09"
@@ -7918,6 +8313,7 @@
         }
       ],
       "name": "wavpack",
+      "properties": [],
       "purl": "pkg:generic/wavpack@5.6.0",
       "type": "application",
       "version": "5.6.0"
@@ -7927,6 +8323,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libICE",
+      "properties": [],
       "purl": "pkg:generic/libICE@1.1.1",
       "type": "application",
       "version": "1.1.1"
@@ -7943,6 +8340,7 @@
         }
       ],
       "name": "libpfm",
+      "properties": [],
       "purl": "pkg:generic/libpfm@4.13.0",
       "type": "application",
       "version": "4.13.0"
@@ -7964,6 +8362,7 @@
         }
       ],
       "name": "expat",
+      "properties": [],
       "purl": "pkg:generic/expat@2.5.0",
       "type": "application",
       "version": "2.5.0"
@@ -7985,6 +8384,7 @@
         }
       ],
       "name": "adwaita-icon-theme",
+      "properties": [],
       "purl": "pkg:generic/adwaita-icon-theme@45.0",
       "type": "application",
       "version": "45.0"
@@ -8011,6 +8411,7 @@
         }
       ],
       "name": "python3.11-packaging",
+      "properties": [],
       "purl": "pkg:generic/python3.11-packaging@23.1",
       "type": "application",
       "version": "23.1"
@@ -8032,6 +8433,7 @@
         }
       ],
       "name": "audit",
+      "properties": [],
       "purl": "pkg:generic/audit@3.1.2",
       "type": "application",
       "version": "3.1.2"
@@ -8053,6 +8455,7 @@
         }
       ],
       "name": "libdaemon",
+      "properties": [],
       "purl": "pkg:generic/libdaemon@0.14",
       "type": "application",
       "version": "0.14"
@@ -8089,6 +8492,7 @@
         }
       ],
       "name": "ppp",
+      "properties": [],
       "purl": "pkg:generic/ppp@2.5.0",
       "type": "application",
       "version": "2.5.0"
@@ -8110,6 +8514,7 @@
         }
       ],
       "name": "libsamplerate",
+      "properties": [],
       "purl": "pkg:generic/libsamplerate@0.1.9",
       "type": "application",
       "version": "0.1.9"
@@ -8131,6 +8536,7 @@
         }
       ],
       "name": "meson",
+      "properties": [],
       "purl": "pkg:generic/meson@1.2.3",
       "type": "application",
       "version": "1.2.3"
@@ -8162,6 +8568,7 @@
         }
       ],
       "name": "elfutils",
+      "properties": [],
       "purl": "pkg:generic/elfutils@0.190",
       "type": "application",
       "version": "0.190"
@@ -8183,6 +8590,7 @@
         }
       ],
       "name": "python3.11-freezegun",
+      "properties": [],
       "purl": "pkg:generic/python3.11-freezegun@1.2.2",
       "type": "application",
       "version": "1.2.2"
@@ -8209,6 +8617,7 @@
         }
       ],
       "name": "numactl",
+      "properties": [],
       "purl": "pkg:generic/numactl@2.0.16",
       "type": "application",
       "version": "2.0.16"
@@ -8230,6 +8639,7 @@
         }
       ],
       "name": "lcms2",
+      "properties": [],
       "purl": "pkg:generic/lcms2@2.15",
       "type": "application",
       "version": "2.15"
@@ -8251,6 +8661,7 @@
         }
       ],
       "name": "gts",
+      "properties": [],
       "purl": "pkg:generic/gts@0.7.6",
       "type": "application",
       "version": "0.7.6"
@@ -8272,6 +8683,7 @@
         }
       ],
       "name": "python3.11-cython",
+      "properties": [],
       "purl": "pkg:generic/python3.11-cython@0.29.36",
       "type": "application",
       "version": "0.29.36"
@@ -8298,6 +8710,7 @@
         }
       ],
       "name": "rustc-bootstrap",
+      "properties": [],
       "purl": "pkg:generic/rustc-bootstrap@1.72.1",
       "type": "application",
       "version": "1.72.1"
@@ -8319,6 +8732,7 @@
         }
       ],
       "name": "abseil-cpp",
+      "properties": [],
       "purl": "pkg:generic/abseil-cpp@20230125.3",
       "type": "application",
       "version": "20230125.3"
@@ -8340,6 +8754,7 @@
         }
       ],
       "name": "python3.11-zope.interface",
+      "properties": [],
       "purl": "pkg:generic/python3.11-zope.interface@5.5.2",
       "type": "application",
       "version": "5.5.2"
@@ -8366,6 +8781,7 @@
         }
       ],
       "name": "python3.11-feedgen",
+      "properties": [],
       "purl": "pkg:generic/python3.11-feedgen@0.9.0",
       "type": "application",
       "version": "0.9.0"
@@ -8387,6 +8803,7 @@
         }
       ],
       "name": "openssl",
+      "properties": [],
       "purl": "pkg:generic/openssl@3.0.13",
       "type": "application",
       "version": "3.0.13"
@@ -8413,6 +8830,7 @@
         }
       ],
       "name": "libargon2",
+      "properties": [],
       "purl": "pkg:generic/libargon2@20190702",
       "type": "application",
       "version": "20190702"
@@ -8434,6 +8852,7 @@
         }
       ],
       "name": "eigen",
+      "properties": [],
       "purl": "pkg:generic/eigen@3.4.0",
       "type": "application",
       "version": "3.4.0"
@@ -8455,6 +8874,7 @@
         }
       ],
       "name": "python3.11-pygments",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pygments@2.16.1",
       "type": "application",
       "version": "2.16.1"
@@ -8476,6 +8896,7 @@
         }
       ],
       "name": "python3.11-pytest-freezegun",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pytest-freezegun@0.4.2",
       "type": "application",
       "version": "0.4.2"
@@ -8502,6 +8923,7 @@
         }
       ],
       "name": "auditable-cargo",
+      "properties": [],
       "type": "application"
     },
     {
@@ -8521,6 +8943,7 @@
         }
       ],
       "name": "libxml++",
+      "properties": [],
       "purl": "pkg:generic/libxml++@3.0.1",
       "type": "application",
       "version": "3.0.1"
@@ -8547,6 +8970,7 @@
         }
       ],
       "name": "xz",
+      "properties": [],
       "purl": "pkg:generic/xz@5.4.4",
       "type": "application",
       "version": "5.4.4"
@@ -8556,6 +8980,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXau",
+      "properties": [],
       "purl": "pkg:generic/libXau@1.0.11",
       "type": "application",
       "version": "1.0.11"
@@ -8577,6 +9002,7 @@
         }
       ],
       "name": "libtool",
+      "properties": [],
       "purl": "pkg:generic/libtool@2.4.7",
       "type": "application",
       "version": "2.4.7"
@@ -8598,6 +9024,7 @@
         }
       ],
       "name": "giflib",
+      "properties": [],
       "purl": "pkg:generic/giflib@5.2.1",
       "type": "application",
       "version": "5.2.1"
@@ -8607,6 +9034,7 @@
       "description": "",
       "externalReferences": [],
       "name": "docbook-xml",
+      "properties": [],
       "purl": "pkg:generic/docbook-xml@4.1.2",
       "type": "application",
       "version": "4.1.2"
@@ -8628,6 +9056,7 @@
         }
       ],
       "name": "libxmlb",
+      "properties": [],
       "purl": "pkg:generic/libxmlb@0.3.10",
       "type": "application",
       "version": "0.3.10"
@@ -8637,6 +9066,7 @@
       "description": "",
       "externalReferences": [],
       "name": "clean-immodules-cache.sh",
+      "properties": [],
       "type": "application"
     },
     {
@@ -8656,6 +9086,7 @@
         }
       ],
       "name": "openssl",
+      "properties": [],
       "purl": "pkg:generic/openssl@3.0.13",
       "type": "application",
       "version": "3.0.13"
@@ -8677,6 +9108,7 @@
         }
       ],
       "name": "python3.11-time-machine",
+      "properties": [],
       "purl": "pkg:generic/python3.11-time-machine@2.12.0",
       "type": "application",
       "version": "2.12.0"
@@ -8698,6 +9130,7 @@
         }
       ],
       "name": "coreutils",
+      "properties": [],
       "purl": "pkg:generic/coreutils@9.3",
       "type": "application",
       "version": "9.3"
@@ -8707,6 +9140,7 @@
       "description": "",
       "externalReferences": [],
       "name": "python-namespaces-hook.sh",
+      "properties": [],
       "type": "application"
     },
     {
@@ -8726,6 +9160,7 @@
         }
       ],
       "name": "findutils",
+      "properties": [],
       "purl": "pkg:generic/findutils@4.9.0",
       "type": "application",
       "version": "4.9.0"
@@ -8747,6 +9182,7 @@
         }
       ],
       "name": "shared-mime-info",
+      "properties": [],
       "purl": "pkg:generic/shared-mime-info@2.4",
       "type": "application",
       "version": "2.4"
@@ -8768,6 +9204,7 @@
         }
       ],
       "name": "sqlite",
+      "properties": [],
       "purl": "pkg:generic/sqlite@3.43.2",
       "type": "application",
       "version": "3.43.2"
@@ -8794,6 +9231,7 @@
         }
       ],
       "name": "sord",
+      "properties": [],
       "purl": "pkg:generic/sord@0.16.14",
       "type": "application",
       "version": "0.16.14"
@@ -8815,6 +9253,7 @@
         }
       ],
       "name": "wayland",
+      "properties": [],
       "purl": "pkg:generic/wayland@1.22.0",
       "type": "application",
       "version": "1.22.0"
@@ -8836,6 +9275,7 @@
         }
       ],
       "name": "xmlto",
+      "properties": [],
       "purl": "pkg:generic/xmlto@0.0.28",
       "type": "application",
       "version": "0.0.28"
@@ -8862,6 +9302,7 @@
         }
       ],
       "name": "perl5.38.2-File-Listing",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-File-Listing@6.16",
       "type": "application",
       "version": "6.16"
@@ -8883,6 +9324,7 @@
         }
       ],
       "name": "python3.11-pyqt-builder",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pyqt-builder@1.15.3",
       "type": "application",
       "version": "1.15.3"
@@ -8892,6 +9334,7 @@
       "description": "",
       "externalReferences": [],
       "name": "glibc-iconv",
+      "properties": [],
       "type": "application"
     },
     {
@@ -8916,6 +9359,7 @@
         }
       ],
       "name": "perl5.38.2-HTTP-Cookies",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-HTTP-Cookies@6.10",
       "type": "application",
       "version": "6.10"
@@ -8937,6 +9381,7 @@
         }
       ],
       "name": "gnum4",
+      "properties": [],
       "purl": "pkg:generic/gnum4@1.4.19",
       "type": "application",
       "version": "1.4.19"
@@ -8946,6 +9391,7 @@
       "description": "",
       "externalReferences": [],
       "name": "source",
+      "properties": [],
       "type": "application"
     },
     {
@@ -8970,6 +9416,7 @@
         }
       ],
       "name": "perl5.38.2-PadWalker",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-PadWalker@2.5",
       "type": "application",
       "version": "2.5"
@@ -8991,6 +9438,7 @@
         }
       ],
       "name": "lv2",
+      "properties": [],
       "purl": "pkg:generic/lv2@1.18.10",
       "type": "application",
       "version": "1.18.10"
@@ -9012,6 +9460,7 @@
         }
       ],
       "name": "xapian",
+      "properties": [],
       "purl": "pkg:generic/xapian@1.4.24",
       "type": "application",
       "version": "1.4.24"
@@ -9033,6 +9482,7 @@
         }
       ],
       "name": "which",
+      "properties": [],
       "purl": "pkg:generic/which@2.21",
       "type": "application",
       "version": "2.21"
@@ -9059,6 +9509,7 @@
         }
       ],
       "name": "gmp-with-cxx",
+      "properties": [],
       "purl": "pkg:generic/gmp-with-cxx@6.3.0",
       "type": "application",
       "version": "6.3.0"
@@ -9080,6 +9531,7 @@
         }
       ],
       "name": "openjpeg",
+      "properties": [],
       "purl": "pkg:generic/openjpeg@2.5.0",
       "type": "application",
       "version": "2.5.0"
@@ -9101,6 +9553,7 @@
         }
       ],
       "name": "python3.11-setuptools",
+      "properties": [],
       "purl": "pkg:generic/python3.11-setuptools@68.2.2",
       "type": "application",
       "version": "68.2.2"
@@ -9110,6 +9563,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXdamage",
+      "properties": [],
       "purl": "pkg:generic/libXdamage@1.1.6",
       "type": "application",
       "version": "1.1.6"
@@ -9131,6 +9585,7 @@
         }
       ],
       "name": "flux",
+      "properties": [],
       "purl": "pkg:generic/flux@2013-09-20",
       "type": "application",
       "version": "2013-09-20"
@@ -9140,6 +9595,7 @@
       "description": "Locale information for the GNU C Library",
       "externalReferences": [],
       "name": "glibc-locales",
+      "properties": [],
       "purl": "pkg:generic/glibc-locales@2.38",
       "type": "application",
       "version": "2.38"
@@ -9161,6 +9617,7 @@
         }
       ],
       "name": "libtheora",
+      "properties": [],
       "purl": "pkg:generic/libtheora@1.1.1",
       "type": "application",
       "version": "1.1.1"
@@ -9187,6 +9644,7 @@
         }
       ],
       "name": "perl5.38.2-XML-Parser",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-XML-Parser@2.46",
       "type": "application",
       "version": "2.46"
@@ -9208,6 +9666,7 @@
         }
       ],
       "name": "SDL2",
+      "properties": [],
       "purl": "pkg:generic/SDL2@2.28.4",
       "type": "application",
       "version": "2.28.4"
@@ -9229,6 +9688,7 @@
         }
       ],
       "name": "gst-plugins-bad",
+      "properties": [],
       "purl": "pkg:generic/gst-plugins-bad@1.22.8",
       "type": "application",
       "version": "1.22.8"
@@ -9250,6 +9710,7 @@
         }
       ],
       "name": "openh264",
+      "properties": [],
       "purl": "pkg:generic/openh264@2.3.1",
       "type": "application",
       "version": "2.3.1"
@@ -9271,6 +9732,7 @@
         }
       ],
       "name": "mjpegtools",
+      "properties": [],
       "purl": "pkg:generic/mjpegtools@2.2.1",
       "type": "application",
       "version": "2.2.1"
@@ -9280,6 +9742,7 @@
       "description": "",
       "externalReferences": [],
       "name": "lndir",
+      "properties": [],
       "purl": "pkg:generic/lndir@1.0.4",
       "type": "application",
       "version": "1.0.4"
@@ -9301,6 +9764,7 @@
         }
       ],
       "name": "libmnl",
+      "properties": [],
       "purl": "pkg:generic/libmnl@1.0.5",
       "type": "application",
       "version": "1.0.5"
@@ -9322,6 +9786,7 @@
         }
       ],
       "name": "python3.11-mock",
+      "properties": [],
       "purl": "pkg:generic/python3.11-mock@5.1.0",
       "type": "application",
       "version": "5.1.0"
@@ -9343,6 +9808,7 @@
         }
       ],
       "name": "libgcrypt",
+      "properties": [],
       "purl": "pkg:generic/libgcrypt@1.10.2",
       "type": "application",
       "version": "1.10.2"
@@ -9364,6 +9830,7 @@
         }
       ],
       "name": "gi-docgen",
+      "properties": [],
       "purl": "pkg:generic/gi-docgen@2023.1",
       "type": "application",
       "version": "2023.1"
@@ -9385,6 +9852,7 @@
         }
       ],
       "name": "gettext",
+      "properties": [],
       "purl": "pkg:generic/gettext@0.21.1",
       "type": "application",
       "version": "0.21.1"
@@ -9394,6 +9862,7 @@
       "description": "",
       "externalReferences": [],
       "name": "nuke-references",
+      "properties": [],
       "type": "application"
     },
     {
@@ -9413,6 +9882,7 @@
         }
       ],
       "name": "liburcu",
+      "properties": [],
       "purl": "pkg:generic/liburcu@0.14.0",
       "type": "application",
       "version": "0.14.0"
@@ -9434,6 +9904,7 @@
         }
       ],
       "name": "libdvdcss",
+      "properties": [],
       "purl": "pkg:generic/libdvdcss@1.4.3",
       "type": "application",
       "version": "1.4.3"
@@ -9455,6 +9926,7 @@
         }
       ],
       "name": "libmpeg2",
+      "properties": [],
       "purl": "pkg:generic/libmpeg2@0.5.1",
       "type": "application",
       "version": "0.5.1"
@@ -9476,6 +9948,7 @@
         }
       ],
       "name": "autoconf-archive",
+      "properties": [],
       "purl": "pkg:generic/autoconf-archive@2023.02.20",
       "type": "application",
       "version": "2023.02.20"
@@ -9497,6 +9970,7 @@
         }
       ],
       "name": "p11-kit",
+      "properties": [],
       "purl": "pkg:generic/p11-kit@0.25.0",
       "type": "application",
       "version": "0.25.0"
@@ -9518,6 +9992,7 @@
         }
       ],
       "name": "x265",
+      "properties": [],
       "purl": "pkg:generic/x265@3.5",
       "type": "application",
       "version": "3.5"
@@ -9544,6 +10019,7 @@
         }
       ],
       "name": "perl5.38.2-ExtUtils-InstallPaths",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-ExtUtils-InstallPaths@0.012",
       "type": "application",
       "version": "0.012"
@@ -9565,6 +10041,7 @@
         }
       ],
       "name": "perl",
+      "properties": [],
       "purl": "pkg:generic/perl@5.38.2",
       "type": "application",
       "version": "5.38.2"
@@ -9586,6 +10063,7 @@
         }
       ],
       "name": "libmicrohttpd",
+      "properties": [],
       "purl": "pkg:generic/libmicrohttpd@0.9.71",
       "type": "application",
       "version": "0.9.71"
@@ -9607,6 +10085,7 @@
         }
       ],
       "name": "libstemmer",
+      "properties": [],
       "purl": "pkg:generic/libstemmer@2.2.0",
       "type": "application",
       "version": "2.2.0"
@@ -9628,6 +10107,7 @@
         }
       ],
       "name": "postgresql",
+      "properties": [],
       "purl": "pkg:generic/postgresql@15.6",
       "type": "application",
       "version": "15.6"
@@ -9637,6 +10117,7 @@
       "description": "",
       "externalReferences": [],
       "name": "tcl-package-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -9661,6 +10142,7 @@
         }
       ],
       "name": "perl5.38.2-HTML-Parser",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-HTML-Parser@3.81",
       "type": "application",
       "version": "3.81"
@@ -9682,6 +10164,7 @@
         }
       ],
       "name": "python3.11-certifi",
+      "properties": [],
       "purl": "pkg:generic/python3.11-certifi@2023.07.22",
       "type": "application",
       "version": "2023.07.22"
@@ -9691,6 +10174,7 @@
       "description": "",
       "externalReferences": [],
       "name": "util-macros",
+      "properties": [],
       "purl": "pkg:generic/util-macros@1.20.0",
       "type": "application",
       "version": "1.20.0"
@@ -9700,6 +10184,7 @@
       "description": "",
       "externalReferences": [],
       "name": "pypa-build-hook.sh",
+      "properties": [],
       "type": "application"
     },
     {
@@ -9719,6 +10204,7 @@
         }
       ],
       "name": "iptables",
+      "properties": [],
       "purl": "pkg:generic/iptables@1.8.10",
       "type": "application",
       "version": "1.8.10"
@@ -9740,6 +10226,7 @@
         }
       ],
       "name": "soundtouch",
+      "properties": [],
       "purl": "pkg:generic/soundtouch@2.3.2",
       "type": "application",
       "version": "2.3.2"
@@ -9761,6 +10248,7 @@
         }
       ],
       "name": "libtiff",
+      "properties": [],
       "purl": "pkg:generic/libtiff@4.6.0",
       "type": "application",
       "version": "4.6.0"
@@ -9782,6 +10270,7 @@
         }
       ],
       "name": "libical",
+      "properties": [],
       "purl": "pkg:generic/libical@3.0.17",
       "type": "application",
       "version": "3.0.17"
@@ -9791,6 +10280,7 @@
       "description": "",
       "externalReferences": [],
       "name": "qmake-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -9798,6 +10288,7 @@
       "description": "",
       "externalReferences": [],
       "name": "make-binary-wrapper-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -9817,6 +10308,7 @@
         }
       ],
       "name": "brotli",
+      "properties": [],
       "purl": "pkg:generic/brotli@1.1.0",
       "type": "application",
       "version": "1.1.0"
@@ -9838,6 +10330,7 @@
         }
       ],
       "name": "webrtc-audio-processing",
+      "properties": [],
       "purl": "pkg:generic/webrtc-audio-processing@1.3",
       "type": "application",
       "version": "1.3"
@@ -9869,6 +10362,7 @@
         }
       ],
       "name": "lvm2",
+      "properties": [],
       "purl": "pkg:generic/lvm2@2.03.22",
       "type": "application",
       "version": "2.03.22"
@@ -9895,6 +10389,7 @@
         }
       ],
       "name": "perl5.38.2-ExtUtils-Helpers",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-ExtUtils-Helpers@0.026",
       "type": "application",
       "version": "0.026"
@@ -9916,6 +10411,7 @@
         }
       ],
       "name": "pipewire",
+      "properties": [],
       "purl": "pkg:generic/pipewire@1.0.1",
       "type": "application",
       "version": "1.0.1"
@@ -9942,6 +10438,7 @@
         }
       ],
       "name": "libssh2",
+      "properties": [],
       "purl": "pkg:generic/libssh2@1.11.0",
       "type": "application",
       "version": "1.11.0"
@@ -9963,6 +10460,7 @@
         }
       ],
       "name": "python3.11-pyqt5-sip",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pyqt5-sip@12.11.0",
       "type": "application",
       "version": "12.11.0"
@@ -9984,6 +10482,7 @@
         }
       ],
       "name": "python3.11-toposort",
+      "properties": [],
       "purl": "pkg:generic/python3.11-toposort@1.10",
       "type": "application",
       "version": "1.10"
@@ -10005,6 +10504,7 @@
         }
       ],
       "name": "gsm",
+      "properties": [],
       "purl": "pkg:generic/gsm@1.0.22",
       "type": "application",
       "version": "1.0.22"
@@ -10026,6 +10526,7 @@
         }
       ],
       "name": "openfec",
+      "properties": [],
       "purl": "pkg:generic/openfec@1.4.2.9",
       "type": "application",
       "version": "1.4.2.9"
@@ -10035,6 +10536,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXcomposite",
+      "properties": [],
       "purl": "pkg:generic/libXcomposite@0.4.6",
       "type": "application",
       "version": "0.4.6"
@@ -10044,6 +10546,7 @@
       "description": "",
       "externalReferences": [],
       "name": "xorgproto",
+      "properties": [],
       "purl": "pkg:generic/xorgproto@2023.2",
       "type": "application",
       "version": "2023.2"
@@ -10065,6 +10568,7 @@
         }
       ],
       "name": "expat",
+      "properties": [],
       "purl": "pkg:generic/expat@2.5.0",
       "type": "application",
       "version": "2.5.0"
@@ -10074,6 +10578,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXft",
+      "properties": [],
       "purl": "pkg:generic/libXft@2.3.8",
       "type": "application",
       "version": "2.3.8"
@@ -10095,6 +10600,7 @@
         }
       ],
       "name": "gtk4",
+      "properties": [],
       "purl": "pkg:generic/gtk4@4.12.5",
       "type": "application",
       "version": "4.12.5"
@@ -10116,6 +10622,7 @@
         }
       ],
       "name": "x264-unstable",
+      "properties": [],
       "purl": "pkg:generic/x264-unstable@unstable-2021-06-13",
       "type": "application",
       "version": "unstable-2021-06-13"
@@ -10137,6 +10644,7 @@
         }
       ],
       "name": "libaio",
+      "properties": [],
       "purl": "pkg:generic/libaio@0.3.113",
       "type": "application",
       "version": "0.3.113"
@@ -10158,6 +10666,7 @@
         }
       ],
       "name": "python3.11-sphinxcontrib-websupport",
+      "properties": [],
       "purl": "pkg:generic/python3.11-sphinxcontrib-websupport@1.2.6",
       "type": "application",
       "version": "1.2.6"
@@ -10179,6 +10688,7 @@
         }
       ],
       "name": "python3.11-setuptools-scm",
+      "properties": [],
       "purl": "pkg:generic/python3.11-setuptools-scm@7.1.0",
       "type": "application",
       "version": "7.1.0"
@@ -10200,6 +10710,7 @@
         }
       ],
       "name": "systemd-minimal-libs",
+      "properties": [],
       "purl": "pkg:generic/systemd-minimal-libs@254.6",
       "type": "application",
       "version": "254.6"
@@ -10221,6 +10732,7 @@
         }
       ],
       "name": "python3.11-attrs",
+      "properties": [],
       "purl": "pkg:generic/python3.11-attrs@23.1.0",
       "type": "application",
       "version": "23.1.0"
@@ -10242,6 +10754,7 @@
         }
       ],
       "name": "nghttp2",
+      "properties": [],
       "purl": "pkg:generic/nghttp2@1.57.0",
       "type": "application",
       "version": "1.57.0"
@@ -10263,6 +10776,7 @@
         }
       ],
       "name": "libadwaita",
+      "properties": [],
       "purl": "pkg:generic/libadwaita@1.4.2",
       "type": "application",
       "version": "1.4.2"
@@ -10284,6 +10798,7 @@
         }
       ],
       "name": "python3.11-html5lib",
+      "properties": [],
       "purl": "pkg:generic/python3.11-html5lib@1.1",
       "type": "application",
       "version": "1.1"
@@ -10305,6 +10820,7 @@
         }
       ],
       "name": "glibmm",
+      "properties": [],
       "purl": "pkg:generic/glibmm@2.66.6",
       "type": "application",
       "version": "2.66.6"
@@ -10326,6 +10842,7 @@
         }
       ],
       "name": "python3.11-pycparser",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pycparser@2.21",
       "type": "application",
       "version": "2.21"
@@ -10347,6 +10864,7 @@
         }
       ],
       "name": "curl",
+      "properties": [],
       "purl": "pkg:generic/curl@8.4.0",
       "type": "application",
       "version": "8.4.0"
@@ -10368,6 +10886,7 @@
         }
       ],
       "name": "clang-wrapper",
+      "properties": [],
       "purl": "pkg:generic/clang-wrapper@16.0.6",
       "type": "application",
       "version": "16.0.6"
@@ -10389,6 +10908,7 @@
         }
       ],
       "name": "libsodium",
+      "properties": [],
       "purl": "pkg:generic/libsodium@1.0.18",
       "type": "application",
       "version": "1.0.18"
@@ -10410,6 +10930,7 @@
         }
       ],
       "name": "libtool",
+      "properties": [],
       "purl": "pkg:generic/libtool@2.4.7",
       "type": "application",
       "version": "2.4.7"
@@ -10431,6 +10952,7 @@
         }
       ],
       "name": "libffi",
+      "properties": [],
       "purl": "pkg:generic/libffi@3.4.4",
       "type": "application",
       "version": "3.4.4"
@@ -10457,6 +10979,7 @@
         }
       ],
       "name": "autogen",
+      "properties": [],
       "purl": "pkg:generic/autogen@5.18.16",
       "type": "application",
       "version": "5.18.16"
@@ -10478,6 +11001,7 @@
         }
       ],
       "name": "lrdf",
+      "properties": [],
       "purl": "pkg:generic/lrdf@0.6.1",
       "type": "application",
       "version": "0.6.1"
@@ -10499,6 +11023,7 @@
         }
       ],
       "name": "python3.11-virtualenv",
+      "properties": [],
       "purl": "pkg:generic/python3.11-virtualenv@20.24.5",
       "type": "application",
       "version": "20.24.5"
@@ -10520,6 +11045,7 @@
         }
       ],
       "name": "python3.11-sphinxcontrib-devhelp",
+      "properties": [],
       "purl": "pkg:generic/python3.11-sphinxcontrib-devhelp@1.0.5",
       "type": "application",
       "version": "1.0.5"
@@ -10541,6 +11067,7 @@
         }
       ],
       "name": "python3.11-schema",
+      "properties": [],
       "purl": "pkg:generic/python3.11-schema@0.7.5",
       "type": "application",
       "version": "0.7.5"
@@ -10567,6 +11094,7 @@
         }
       ],
       "name": "libssh2",
+      "properties": [],
       "purl": "pkg:generic/libssh2@1.11.0",
       "type": "application",
       "version": "1.11.0"
@@ -10588,6 +11116,7 @@
         }
       ],
       "name": "librsvg",
+      "properties": [],
       "purl": "pkg:generic/librsvg@2.57.0",
       "type": "application",
       "version": "2.57.0"
@@ -10609,6 +11138,7 @@
         }
       ],
       "name": "libavc1394",
+      "properties": [],
       "purl": "pkg:generic/libavc1394@0.5.4",
       "type": "application",
       "version": "0.5.4"
@@ -10630,6 +11160,7 @@
         }
       ],
       "name": "avahi",
+      "properties": [],
       "purl": "pkg:generic/avahi@0.8",
       "type": "application",
       "version": "0.8"
@@ -10656,6 +11187,7 @@
         }
       ],
       "name": "perl5.38.2-Module-Build",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-Module-Build@0.4234",
       "type": "application",
       "version": "0.4234"
@@ -10677,6 +11209,7 @@
         }
       ],
       "name": "gnum4",
+      "properties": [],
       "purl": "pkg:generic/gnum4@1.4.19",
       "type": "application",
       "version": "1.4.19"
@@ -10698,6 +11231,7 @@
         }
       ],
       "name": "bison",
+      "properties": [],
       "purl": "pkg:generic/bison@3.8.2",
       "type": "application",
       "version": "3.8.2"
@@ -10719,6 +11253,7 @@
         }
       ],
       "name": "python3.11-requests",
+      "properties": [],
       "purl": "pkg:generic/python3.11-requests@2.31.0",
       "type": "application",
       "version": "2.31.0"
@@ -10740,6 +11275,7 @@
         }
       ],
       "name": "roc-toolkit",
+      "properties": [],
       "purl": "pkg:generic/roc-toolkit@0.3.0",
       "type": "application",
       "version": "0.3.0"
@@ -10761,6 +11297,7 @@
         }
       ],
       "name": "cmake",
+      "properties": [],
       "purl": "pkg:generic/cmake@3.27.7",
       "type": "application",
       "version": "3.27.7"
@@ -10782,6 +11319,7 @@
         }
       ],
       "name": "libpaper",
+      "properties": [],
       "purl": "pkg:generic/libpaper@1.1.28",
       "type": "application",
       "version": "1.1.28"
@@ -10808,6 +11346,7 @@
         }
       ],
       "name": "perl5.38.2-HTTP-Daemon",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-HTTP-Daemon@6.16",
       "type": "application",
       "version": "6.16"
@@ -10829,6 +11368,7 @@
         }
       ],
       "name": "net-tools",
+      "properties": [],
       "purl": "pkg:generic/net-tools@2.10",
       "type": "application",
       "version": "2.10"
@@ -10850,6 +11390,7 @@
         }
       ],
       "name": "sphinx",
+      "properties": [],
       "purl": "pkg:generic/sphinx@7.2.6",
       "type": "application",
       "version": "7.2.6"
@@ -10859,6 +11400,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXaw",
+      "properties": [],
       "purl": "pkg:generic/libXaw@1.0.15",
       "type": "application",
       "version": "1.0.15"
@@ -10880,6 +11422,7 @@
         }
       ],
       "name": "db",
+      "properties": [],
       "purl": "pkg:generic/db@4.8.30",
       "type": "application",
       "version": "4.8.30"
@@ -10901,6 +11444,7 @@
         }
       ],
       "name": "libthai",
+      "properties": [],
       "purl": "pkg:generic/libthai@0.1.29",
       "type": "application",
       "version": "0.1.29"
@@ -10922,6 +11466,7 @@
         }
       ],
       "name": "desktop-file-utils",
+      "properties": [],
       "purl": "pkg:generic/desktop-file-utils@0.26",
       "type": "application",
       "version": "0.26"
@@ -10943,6 +11488,7 @@
         }
       ],
       "name": "python3.11-pytest",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pytest@7.4.3",
       "type": "application",
       "version": "7.4.3"
@@ -10964,6 +11510,7 @@
         }
       ],
       "name": "gssdp",
+      "properties": [],
       "purl": "pkg:generic/gssdp@1.4.1",
       "type": "application",
       "version": "1.4.1"
@@ -10973,6 +11520,7 @@
       "description": "",
       "externalReferences": [],
       "name": "auto-patchelf-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -10997,6 +11545,7 @@
         }
       ],
       "name": "kmod",
+      "properties": [],
       "purl": "pkg:generic/kmod@31",
       "type": "application",
       "version": "31"
@@ -11018,6 +11567,7 @@
         }
       ],
       "name": "systemd",
+      "properties": [],
       "purl": "pkg:generic/systemd@254.6",
       "type": "application",
       "version": "254.6"
@@ -11039,6 +11589,7 @@
         }
       ],
       "name": "python3.11-ninja",
+      "properties": [],
       "purl": "pkg:generic/python3.11-ninja@1.11.1",
       "type": "application",
       "version": "1.11.1"
@@ -11060,6 +11611,7 @@
         }
       ],
       "name": "sassc",
+      "properties": [],
       "purl": "pkg:generic/sassc@3.6.2",
       "type": "application",
       "version": "3.6.2"
@@ -11096,6 +11648,7 @@
         }
       ],
       "name": "qtwayland",
+      "properties": [],
       "purl": "pkg:generic/qtwayland@5.15.12",
       "type": "application",
       "version": "5.15.12"
@@ -11117,6 +11670,7 @@
         }
       ],
       "name": "autoconf-archive",
+      "properties": [],
       "purl": "pkg:generic/autoconf-archive@2023.02.20",
       "type": "application",
       "version": "2023.02.20"
@@ -11143,6 +11697,7 @@
         }
       ],
       "name": "perl5.38.2-XML-SAX-Base",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-XML-SAX-Base@1.09",
       "type": "application",
       "version": "1.09"
@@ -11152,6 +11707,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libxcb",
+      "properties": [],
       "purl": "pkg:generic/libxcb@1.16",
       "type": "application",
       "version": "1.16"
@@ -11173,6 +11729,7 @@
         }
       ],
       "name": "isl",
+      "properties": [],
       "purl": "pkg:generic/isl@0.20",
       "type": "application",
       "version": "0.20"
@@ -11194,6 +11751,7 @@
         }
       ],
       "name": "wayland",
+      "properties": [],
       "purl": "pkg:generic/wayland@1.22.0",
       "type": "application",
       "version": "1.22.0"
@@ -11220,6 +11778,7 @@
         }
       ],
       "name": "orc",
+      "properties": [],
       "purl": "pkg:generic/orc@0.4.34",
       "type": "application",
       "version": "0.4.34"
@@ -11241,6 +11800,7 @@
         }
       ],
       "name": "lzip",
+      "properties": [],
       "purl": "pkg:generic/lzip@1.23",
       "type": "application",
       "version": "1.23"
@@ -11282,6 +11842,7 @@
         }
       ],
       "name": "libGL",
+      "properties": [],
       "purl": "pkg:generic/libGL@1.7.0",
       "type": "application",
       "version": "1.7.0"
@@ -11303,6 +11864,7 @@
         }
       ],
       "name": "gtk+3",
+      "properties": [],
       "purl": "pkg:generic/gtk+3@3.24.41",
       "type": "application",
       "version": "3.24.41"
@@ -11324,6 +11886,7 @@
         }
       ],
       "name": "dbus",
+      "properties": [],
       "purl": "pkg:generic/dbus@1.14.10",
       "type": "application",
       "version": "1.14.10"
@@ -11345,6 +11908,7 @@
         }
       ],
       "name": "ell",
+      "properties": [],
       "purl": "pkg:generic/ell@0.59",
       "type": "application",
       "version": "0.59"
@@ -11366,6 +11930,7 @@
         }
       ],
       "name": "libmysofa",
+      "properties": [],
       "purl": "pkg:generic/libmysofa@1.3.2",
       "type": "application",
       "version": "1.3.2"
@@ -11387,6 +11952,7 @@
         }
       ],
       "name": "python3.11-gevent",
+      "properties": [],
       "purl": "pkg:generic/python3.11-gevent@22.10.2",
       "type": "application",
       "version": "22.10.2"
@@ -11413,6 +11979,7 @@
         }
       ],
       "name": "perl5.38.2-Class-Inspector",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-Class-Inspector@1.36",
       "type": "application",
       "version": "1.36"
@@ -11434,6 +12001,7 @@
         }
       ],
       "name": "python3.11-markupsafe",
+      "properties": [],
       "purl": "pkg:generic/python3.11-markupsafe@2.1.3",
       "type": "application",
       "version": "2.1.3"
@@ -11443,6 +12011,7 @@
       "description": "",
       "externalReferences": [],
       "name": "install-shell-files",
+      "properties": [],
       "type": "application"
     },
     {
@@ -11462,6 +12031,7 @@
         }
       ],
       "name": "python3.11-nose",
+      "properties": [],
       "purl": "pkg:generic/python3.11-nose@1.3.7",
       "type": "application",
       "version": "1.3.7"
@@ -11483,6 +12053,7 @@
         }
       ],
       "name": "fribidi",
+      "properties": [],
       "purl": "pkg:generic/fribidi@1.0.13",
       "type": "application",
       "version": "1.0.13"
@@ -11504,6 +12075,7 @@
         }
       ],
       "name": "python3.11-wheel",
+      "properties": [],
       "purl": "pkg:generic/python3.11-wheel@0.41.1",
       "type": "application",
       "version": "0.41.1"
@@ -11525,6 +12097,7 @@
         }
       ],
       "name": "graphviz",
+      "properties": [],
       "purl": "pkg:generic/graphviz@9.0.0",
       "type": "application",
       "version": "9.0.0"
@@ -11551,6 +12124,7 @@
         }
       ],
       "name": "svt-av1",
+      "properties": [],
       "purl": "pkg:generic/svt-av1@1.7.0",
       "type": "application",
       "version": "1.7.0"
@@ -11572,6 +12146,7 @@
         }
       ],
       "name": "libmodplug",
+      "properties": [],
       "purl": "pkg:generic/libmodplug@0.8.9.0",
       "type": "application",
       "version": "0.8.9.0"
@@ -11593,6 +12168,7 @@
         }
       ],
       "name": "bash-interactive",
+      "properties": [],
       "purl": "pkg:generic/bash-interactive@5.2",
       "type": "application",
       "version": "5.2"
@@ -11607,6 +12183,7 @@
         }
       ],
       "name": "icu4c",
+      "properties": [],
       "type": "application"
     },
     {
@@ -11626,6 +12203,7 @@
         }
       ],
       "name": "python3.11-distlib",
+      "properties": [],
       "purl": "pkg:generic/python3.11-distlib@0.3.7",
       "type": "application",
       "version": "0.3.7"
@@ -11642,6 +12220,7 @@
         }
       ],
       "name": "python3.11-pysocks",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pysocks@1.7.1",
       "type": "application",
       "version": "1.7.1"
@@ -11668,6 +12247,7 @@
         }
       ],
       "name": "perl5.38.2-HTTP-Negotiate",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-HTTP-Negotiate@6.01",
       "type": "application",
       "version": "6.01"
@@ -11689,6 +12269,7 @@
         }
       ],
       "name": "zimg",
+      "properties": [],
       "purl": "pkg:generic/zimg@3.0.5",
       "type": "application",
       "version": "3.0.5"
@@ -11710,6 +12291,7 @@
         }
       ],
       "name": "hotdoc",
+      "properties": [],
       "purl": "pkg:generic/hotdoc@0.15",
       "type": "application",
       "version": "0.15"
@@ -11731,6 +12313,7 @@
         }
       ],
       "name": "fftw-single",
+      "properties": [],
       "purl": "pkg:generic/fftw-single@3.3.10",
       "type": "application",
       "version": "3.3.10"
@@ -11757,6 +12340,7 @@
         }
       ],
       "name": "perl5.38.2-Module-Build-Tiny",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-Module-Build-Tiny@0.047",
       "type": "application",
       "version": "0.047"
@@ -11783,6 +12367,7 @@
         }
       ],
       "name": "rustc",
+      "properties": [],
       "purl": "pkg:generic/rustc@1.73.0",
       "type": "application",
       "version": "1.73.0"
@@ -11792,6 +12377,7 @@
       "description": "",
       "externalReferences": [],
       "name": "docbook-xml",
+      "properties": [],
       "purl": "pkg:generic/docbook-xml@4.2",
       "type": "application",
       "version": "4.2"
@@ -11828,6 +12414,7 @@
         }
       ],
       "name": "qtbase",
+      "properties": [],
       "purl": "pkg:generic/qtbase@5.15.12",
       "type": "application",
       "version": "5.15.12"
@@ -11849,6 +12436,7 @@
         }
       ],
       "name": "bpftools",
+      "properties": [],
       "purl": "pkg:generic/bpftools@6.5",
       "type": "application",
       "version": "6.5"
@@ -11870,6 +12458,7 @@
         }
       ],
       "name": "libffi",
+      "properties": [],
       "purl": "pkg:generic/libffi@3.4.4",
       "type": "application",
       "version": "3.4.4"
@@ -11891,6 +12480,7 @@
         }
       ],
       "name": "python3.11-babel",
+      "properties": [],
       "purl": "pkg:generic/python3.11-babel@2.12.1",
       "type": "application",
       "version": "2.12.1"
@@ -11917,6 +12507,7 @@
         }
       ],
       "name": "perl5.38.2-Test-Deep",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-Test-Deep@1.204",
       "type": "application",
       "version": "1.204"
@@ -11933,6 +12524,7 @@
         }
       ],
       "name": "linux-headers",
+      "properties": [],
       "purl": "pkg:generic/linux-headers@6.5",
       "type": "application",
       "version": "6.5"
@@ -11954,6 +12546,7 @@
         }
       ],
       "name": "lame",
+      "properties": [],
       "purl": "pkg:generic/lame@3.100",
       "type": "application",
       "version": "3.100"
@@ -11975,6 +12568,7 @@
         }
       ],
       "name": "libaom",
+      "properties": [],
       "purl": "pkg:generic/libaom@3.7.1",
       "type": "application",
       "version": "3.7.1"
@@ -12001,6 +12595,7 @@
         }
       ],
       "name": "libhwy",
+      "properties": [],
       "purl": "pkg:generic/libhwy@1.0.7",
       "type": "application",
       "version": "1.0.7"
@@ -12022,6 +12617,7 @@
         }
       ],
       "name": "soxr",
+      "properties": [],
       "purl": "pkg:generic/soxr@0.1.3",
       "type": "application",
       "version": "0.1.3"
@@ -12043,6 +12639,7 @@
         }
       ],
       "name": "libsoup",
+      "properties": [],
       "purl": "pkg:generic/libsoup@3.4.4",
       "type": "application",
       "version": "3.4.4"
@@ -12064,6 +12661,7 @@
         }
       ],
       "name": "libao",
+      "properties": [],
       "purl": "pkg:generic/libao@1.2.2",
       "type": "application",
       "version": "1.2.2"
@@ -12085,6 +12683,7 @@
         }
       ],
       "name": "automake",
+      "properties": [],
       "purl": "pkg:generic/automake@1.16.5",
       "type": "application",
       "version": "1.16.5"
@@ -12106,6 +12705,7 @@
         }
       ],
       "name": "valgrind",
+      "properties": [],
       "purl": "pkg:generic/valgrind@3.22.0",
       "type": "application",
       "version": "3.22.0"
@@ -12127,6 +12727,7 @@
         }
       ],
       "name": "libinput",
+      "properties": [],
       "purl": "pkg:generic/libinput@1.24.0",
       "type": "application",
       "version": "1.24.0"
@@ -12148,6 +12749,7 @@
         }
       ],
       "name": "file",
+      "properties": [],
       "purl": "pkg:generic/file@5.45",
       "type": "application",
       "version": "5.45"
@@ -12169,6 +12771,7 @@
         }
       ],
       "name": "ncurses",
+      "properties": [],
       "purl": "pkg:generic/ncurses@6.4",
       "type": "application",
       "version": "6.4"
@@ -12210,6 +12813,7 @@
         }
       ],
       "name": "libuv",
+      "properties": [],
       "purl": "pkg:generic/libuv@1.48.0",
       "type": "application",
       "version": "1.48.0"
@@ -12236,6 +12840,7 @@
         }
       ],
       "name": "perl5.38.2-CPAN-Meta-Check",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-CPAN-Meta-Check@0.018",
       "type": "application",
       "version": "0.018"
@@ -12257,6 +12862,7 @@
         }
       ],
       "name": "usbutils",
+      "properties": [],
       "purl": "pkg:generic/usbutils@017",
       "type": "application",
       "version": "017"
@@ -12278,6 +12884,7 @@
         }
       ],
       "name": "python3.11-alabaster",
+      "properties": [],
       "purl": "pkg:generic/python3.11-alabaster@0.7.13",
       "type": "application",
       "version": "0.7.13"
@@ -12299,6 +12906,7 @@
         }
       ],
       "name": "lilv",
+      "properties": [],
       "purl": "pkg:generic/lilv@0.24.20",
       "type": "application",
       "version": "0.24.20"
@@ -12308,6 +12916,7 @@
       "description": "",
       "externalReferences": [],
       "name": "docbook-xml",
+      "properties": [],
       "purl": "pkg:generic/docbook-xml@4.4",
       "type": "application",
       "version": "4.4"
@@ -12329,6 +12938,7 @@
         }
       ],
       "name": "libnfnetlink",
+      "properties": [],
       "purl": "pkg:generic/libnfnetlink@1.0.2",
       "type": "application",
       "version": "1.0.2"
@@ -12350,6 +12960,7 @@
         }
       ],
       "name": "portaudio",
+      "properties": [],
       "purl": "pkg:generic/portaudio@190700_20210406",
       "type": "application",
       "version": "190700_20210406"
@@ -12371,6 +12982,7 @@
         }
       ],
       "name": "python3",
+      "properties": [],
       "type": "application"
     },
     {
@@ -12415,6 +13027,7 @@
         }
       ],
       "name": "libbsd-unstable",
+      "properties": [],
       "purl": "pkg:generic/libbsd-unstable@unstable-2023-04-29",
       "type": "application",
       "version": "unstable-2023-04-29"
@@ -12436,6 +13049,7 @@
         }
       ],
       "name": "automake",
+      "properties": [],
       "purl": "pkg:generic/automake@1.15.1",
       "type": "application",
       "version": "1.15.1"
@@ -12462,6 +13076,7 @@
         }
       ],
       "name": "python3.11-python-dateutil",
+      "properties": [],
       "purl": "pkg:generic/python3.11-python-dateutil@2.8.2",
       "type": "application",
       "version": "2.8.2"
@@ -12483,6 +13098,7 @@
         }
       ],
       "name": "python3.11-sip",
+      "properties": [],
       "purl": "pkg:generic/python3.11-sip@6.7.12",
       "type": "application",
       "version": "6.7.12"
@@ -12509,6 +13125,7 @@
         }
       ],
       "name": "perl5.38.2-Test-Fatal",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-Test-Fatal@0.017",
       "type": "application",
       "version": "0.017"
@@ -12535,6 +13152,7 @@
         }
       ],
       "name": "perl5.38.2-B-COW",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-B-COW@0.007",
       "type": "application",
       "version": "0.007"
@@ -12556,6 +13174,7 @@
         }
       ],
       "name": "python3.11-pkgconfig",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pkgconfig@1.5.5",
       "type": "application",
       "version": "1.5.5"
@@ -12577,6 +13196,7 @@
         }
       ],
       "name": "python3.11-pluggy",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pluggy@1.3.0",
       "type": "application",
       "version": "1.3.0"
@@ -12593,6 +13213,7 @@
         }
       ],
       "name": "mariadb-connector-c",
+      "properties": [],
       "purl": "pkg:generic/mariadb-connector-c@3.3.5",
       "type": "application",
       "version": "3.3.5"
@@ -12614,6 +13235,7 @@
         }
       ],
       "name": "procps",
+      "properties": [],
       "purl": "pkg:generic/procps@3.3.17",
       "type": "application",
       "version": "3.3.17"
@@ -12623,6 +13245,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXrender",
+      "properties": [],
       "purl": "pkg:generic/libXrender@0.9.11",
       "type": "application",
       "version": "0.9.11"
@@ -12644,6 +13267,7 @@
         }
       ],
       "name": "python3-minimal",
+      "properties": [],
       "purl": "pkg:generic/python3-minimal@3.11.6",
       "type": "application",
       "version": "3.11.6"
@@ -12665,6 +13289,7 @@
         }
       ],
       "name": "libconfig",
+      "properties": [],
       "purl": "pkg:generic/libconfig@1.7.3",
       "type": "application",
       "version": "1.7.3"
@@ -12691,6 +13316,7 @@
         }
       ],
       "name": "gobject-introspection-wrapped",
+      "properties": [],
       "purl": "pkg:generic/gobject-introspection-wrapped@1.78.1",
       "type": "application",
       "version": "1.78.1"
@@ -12712,6 +13338,7 @@
         }
       ],
       "name": "scons",
+      "properties": [],
       "purl": "pkg:generic/scons@4.5.2",
       "type": "application",
       "version": "4.5.2"
@@ -12721,6 +13348,7 @@
       "description": "",
       "externalReferences": [],
       "name": "wrap-gapps-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -12740,6 +13368,7 @@
         }
       ],
       "name": "doxygen",
+      "properties": [],
       "purl": "pkg:generic/doxygen@1.9.7",
       "type": "application",
       "version": "1.9.7"
@@ -12761,6 +13390,7 @@
         }
       ],
       "name": "gstreamer",
+      "properties": [],
       "purl": "pkg:generic/gstreamer@1.22.8",
       "type": "application",
       "version": "1.22.8"
@@ -12770,6 +13400,7 @@
       "description": "",
       "externalReferences": [],
       "name": "python-remove-tests-dir-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -12777,6 +13408,7 @@
       "description": "",
       "externalReferences": [],
       "name": "pypa-install-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -12796,6 +13428,7 @@
         }
       ],
       "name": "python3.11-hatchling",
+      "properties": [],
       "purl": "pkg:generic/python3.11-hatchling@1.18.0",
       "type": "application",
       "version": "1.18.0"
@@ -12817,6 +13450,7 @@
         }
       ],
       "name": "bash",
+      "properties": [],
       "purl": "pkg:generic/bash@5.2",
       "type": "application",
       "version": "5.2"
@@ -12838,6 +13472,7 @@
         }
       ],
       "name": "xvidcore",
+      "properties": [],
       "purl": "pkg:generic/xvidcore@1.3.7",
       "type": "application",
       "version": "1.3.7"
@@ -12864,6 +13499,7 @@
         }
       ],
       "name": "xz",
+      "properties": [],
       "purl": "pkg:generic/xz@5.4.4",
       "type": "application",
       "version": "5.4.4"
@@ -12885,6 +13521,7 @@
         }
       ],
       "name": "python3.11-pytest-xdist",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pytest-xdist@3.3.1",
       "type": "application",
       "version": "3.3.1"
@@ -12906,6 +13543,7 @@
         }
       ],
       "name": "python3.11-cmake",
+      "properties": [],
       "purl": "pkg:generic/python3.11-cmake@3.27.7",
       "type": "application",
       "version": "3.27.7"
@@ -12927,6 +13565,7 @@
         }
       ],
       "name": "appstream",
+      "properties": [],
       "purl": "pkg:generic/appstream@0.15.5",
       "type": "application",
       "version": "0.15.5"
@@ -12936,6 +13575,7 @@
       "description": "",
       "externalReferences": [],
       "name": "python-remove-bin-bytecode-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -12943,6 +13583,7 @@
       "description": "",
       "externalReferences": [],
       "name": "xcb-proto",
+      "properties": [],
       "purl": "pkg:generic/xcb-proto@1.16.0",
       "type": "application",
       "version": "1.16.0"
@@ -12964,6 +13605,7 @@
         }
       ],
       "name": "autoconf",
+      "properties": [],
       "purl": "pkg:generic/autoconf@2.71",
       "type": "application",
       "version": "2.71"
@@ -12985,6 +13627,7 @@
         }
       ],
       "name": "pkg-config-wrapper",
+      "properties": [],
       "purl": "pkg:generic/pkg-config-wrapper@0.29.2",
       "type": "application",
       "version": "0.29.2"
@@ -13006,6 +13649,7 @@
         }
       ],
       "name": "docbook2X",
+      "properties": [],
       "purl": "pkg:generic/docbook2X@0.8.8",
       "type": "application",
       "version": "0.8.8"
@@ -13027,6 +13671,7 @@
         }
       ],
       "name": "jpylyzer",
+      "properties": [],
       "purl": "pkg:generic/jpylyzer@2.1.0",
       "type": "application",
       "version": "2.1.0"
@@ -13048,6 +13693,7 @@
         }
       ],
       "name": "hicolor-icon-theme",
+      "properties": [],
       "purl": "pkg:generic/hicolor-icon-theme@0.17",
       "type": "application",
       "version": "0.17"
@@ -13069,6 +13715,7 @@
         }
       ],
       "name": "libjpeg-turbo",
+      "properties": [],
       "purl": "pkg:generic/libjpeg-turbo@2.1.5.1",
       "type": "application",
       "version": "2.1.5.1"
@@ -13090,6 +13737,7 @@
         }
       ],
       "name": "ldacBT",
+      "properties": [],
       "purl": "pkg:generic/ldacBT@2.0.2.3",
       "type": "application",
       "version": "2.0.2.3"
@@ -13111,6 +13759,7 @@
         }
       ],
       "name": "fontconfig",
+      "properties": [],
       "purl": "pkg:generic/fontconfig@2.14.2",
       "type": "application",
       "version": "2.14.2"
@@ -13120,6 +13769,7 @@
       "description": "",
       "externalReferences": [],
       "name": "python-output-dist-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -13139,6 +13789,7 @@
         }
       ],
       "name": "audiofile",
+      "properties": [],
       "purl": "pkg:generic/audiofile@0.3.6",
       "type": "application",
       "version": "0.3.6"
@@ -13165,6 +13816,7 @@
         }
       ],
       "name": "xz",
+      "properties": [],
       "purl": "pkg:generic/xz@5.4.4",
       "type": "application",
       "version": "5.4.4"
@@ -13191,6 +13843,7 @@
         }
       ],
       "name": "perl5.38.2-gettext",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-gettext@1.07",
       "type": "application",
       "version": "1.07"
@@ -13212,6 +13865,7 @@
         }
       ],
       "name": "nettle",
+      "properties": [],
       "purl": "pkg:generic/nettle@3.9.1",
       "type": "application",
       "version": "3.9.1"
@@ -13233,6 +13887,7 @@
         }
       ],
       "name": "libdvdnav",
+      "properties": [],
       "purl": "pkg:generic/libdvdnav@6.1.1",
       "type": "application",
       "version": "6.1.1"
@@ -13254,6 +13909,7 @@
         }
       ],
       "name": "libdc1394",
+      "properties": [],
       "purl": "pkg:generic/libdc1394@2.2.7",
       "type": "application",
       "version": "2.2.7"
@@ -13275,6 +13931,7 @@
         }
       ],
       "name": "liblc3",
+      "properties": [],
       "purl": "pkg:generic/liblc3@1.0.4",
       "type": "application",
       "version": "1.0.4"
@@ -13296,6 +13953,7 @@
         }
       ],
       "name": "sratom",
+      "properties": [],
       "purl": "pkg:generic/sratom@0.6.14",
       "type": "application",
       "version": "0.6.14"
@@ -13317,6 +13975,7 @@
         }
       ],
       "name": "kexec-tools",
+      "properties": [],
       "purl": "pkg:generic/kexec-tools@2.0.26",
       "type": "application",
       "version": "2.0.26"
@@ -13353,6 +14012,7 @@
         }
       ],
       "name": "e2fsprogs",
+      "properties": [],
       "purl": "pkg:generic/e2fsprogs@1.47.0",
       "type": "application",
       "version": "1.47.0"
@@ -13362,6 +14022,7 @@
       "description": "",
       "externalReferences": [],
       "name": "sysctl-procps",
+      "properties": [],
       "type": "application"
     },
     {
@@ -13369,6 +14030,7 @@
       "description": "",
       "externalReferences": [],
       "name": "xcb-util-keysyms",
+      "properties": [],
       "purl": "pkg:generic/xcb-util-keysyms@0.4.1",
       "type": "application",
       "version": "0.4.1"
@@ -13378,6 +14040,7 @@
       "description": "",
       "externalReferences": [],
       "name": "ensure-newer-sources-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -13397,6 +14060,7 @@
         }
       ],
       "name": "python3.11-sphinxcontrib-serializinghtml",
+      "properties": [],
       "purl": "pkg:generic/python3.11-sphinxcontrib-serializinghtml@1.1.9",
       "type": "application",
       "version": "1.1.9"
@@ -13418,6 +14082,7 @@
         }
       ],
       "name": "speexdsp",
+      "properties": [],
       "purl": "pkg:generic/speexdsp@1.2.1",
       "type": "application",
       "version": "1.2.1"
@@ -13439,6 +14104,7 @@
         }
       ],
       "name": "graphite2",
+      "properties": [],
       "purl": "pkg:generic/graphite2@1.3.14",
       "type": "application",
       "version": "1.3.14"
@@ -13460,6 +14126,7 @@
         }
       ],
       "name": "python3.11-pytz",
+      "properties": [],
       "purl": "pkg:generic/python3.11-pytz@2023.3.post1",
       "type": "application",
       "version": "2023.3.post1"
@@ -13481,6 +14148,7 @@
         }
       ],
       "name": "libiec61883",
+      "properties": [],
       "purl": "pkg:generic/libiec61883@1.2.0",
       "type": "application",
       "version": "1.2.0"
@@ -13512,6 +14180,7 @@
         }
       ],
       "name": "lttng-ust",
+      "properties": [],
       "purl": "pkg:generic/lttng-ust@2.13.6",
       "type": "application",
       "version": "2.13.6"
@@ -13533,6 +14202,7 @@
         }
       ],
       "name": "boost-build-boost",
+      "properties": [],
       "purl": "pkg:generic/boost-build-boost@boost-1.81.0",
       "type": "application",
       "version": "boost-1.81.0"
@@ -13554,6 +14224,7 @@
         }
       ],
       "name": "alsa-lib",
+      "properties": [],
       "purl": "pkg:generic/alsa-lib@1.2.9",
       "type": "application",
       "version": "1.2.9"
@@ -13563,6 +14234,7 @@
       "description": "",
       "externalReferences": [],
       "name": "pypa-install-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -13582,6 +14254,7 @@
         }
       ],
       "name": "libunwind",
+      "properties": [],
       "purl": "pkg:generic/libunwind@1.6.2",
       "type": "application",
       "version": "1.6.2"
@@ -13603,6 +14276,7 @@
         }
       ],
       "name": "CUnit",
+      "properties": [],
       "purl": "pkg:generic/CUnit@2.1-3",
       "type": "application",
       "version": "2.1-3"
@@ -13612,6 +14286,7 @@
       "description": "",
       "externalReferences": [],
       "name": "xcb-util-image",
+      "properties": [],
       "purl": "pkg:generic/xcb-util-image@0.4.1",
       "type": "application",
       "version": "0.4.1"
@@ -13633,6 +14308,7 @@
         }
       ],
       "name": "usrsctp",
+      "properties": [],
       "purl": "pkg:generic/usrsctp@0.9.5.0",
       "type": "application",
       "version": "0.9.5.0"
@@ -13654,6 +14330,7 @@
         }
       ],
       "name": "python3",
+      "properties": [],
       "type": "application"
     },
     {
@@ -13673,6 +14350,7 @@
         }
       ],
       "name": "python3.11-py",
+      "properties": [],
       "purl": "pkg:generic/python3.11-py@1.11.0",
       "type": "application",
       "version": "1.11.0"
@@ -13694,6 +14372,7 @@
         }
       ],
       "name": "gperf",
+      "properties": [],
       "purl": "pkg:generic/gperf@3.1",
       "type": "application",
       "version": "3.1"
@@ -13715,6 +14394,7 @@
         }
       ],
       "name": "gperftools",
+      "properties": [],
       "purl": "pkg:generic/gperftools@2.10",
       "type": "application",
       "version": "2.10"
@@ -13736,6 +14416,7 @@
         }
       ],
       "name": "gdb",
+      "properties": [],
       "purl": "pkg:generic/gdb@13.2",
       "type": "application",
       "version": "13.2"
@@ -13762,6 +14443,7 @@
         }
       ],
       "name": "libbpf",
+      "properties": [],
       "purl": "pkg:generic/libbpf@1.2.2",
       "type": "application",
       "version": "1.2.2"
@@ -13783,6 +14465,7 @@
         }
       ],
       "name": "python3.11-markdown",
+      "properties": [],
       "purl": "pkg:generic/python3.11-markdown@3.4.4",
       "type": "application",
       "version": "3.4.4"
@@ -13804,6 +14487,7 @@
         }
       ],
       "name": "shadow",
+      "properties": [],
       "purl": "pkg:generic/shadow@4.14.2",
       "type": "application",
       "version": "4.14.2"
@@ -13825,6 +14509,7 @@
         }
       ],
       "name": "python3.11-importlib-metadata",
+      "properties": [],
       "purl": "pkg:generic/python3.11-importlib-metadata@6.8.0",
       "type": "application",
       "version": "6.8.0"
@@ -13846,6 +14531,7 @@
         }
       ],
       "name": "python3.11-zipp",
+      "properties": [],
       "purl": "pkg:generic/python3.11-zipp@3.16.2",
       "type": "application",
       "version": "3.16.2"
@@ -13867,6 +14553,7 @@
         }
       ],
       "name": "libssh",
+      "properties": [],
       "purl": "pkg:generic/libssh@0.10.6",
       "type": "application",
       "version": "0.10.6"
@@ -13876,6 +14563,7 @@
       "description": "",
       "externalReferences": [],
       "name": "nuke-references",
+      "properties": [],
       "type": "application"
     },
     {
@@ -13895,6 +14583,7 @@
         }
       ],
       "name": "fluidsynth",
+      "properties": [],
       "purl": "pkg:generic/fluidsynth@2.3.4",
       "type": "application",
       "version": "2.3.4"
@@ -13904,6 +14593,7 @@
       "description": "A setup hook for using Waf in Nixpkgs",
       "externalReferences": [],
       "name": "waf-setup-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -13923,6 +14613,7 @@
         }
       ],
       "name": "python3.11-zope.event",
+      "properties": [],
       "purl": "pkg:generic/python3.11-zope.event@4.6",
       "type": "application",
       "version": "4.6"
@@ -13959,6 +14650,7 @@
         }
       ],
       "name": "qtdeclarative",
+      "properties": [],
       "purl": "pkg:generic/qtdeclarative@5.15.12",
       "type": "application",
       "version": "5.15.12"
@@ -13968,6 +14660,7 @@
       "description": "",
       "externalReferences": [],
       "name": "xcb-util-renderutil",
+      "properties": [],
       "purl": "pkg:generic/xcb-util-renderutil@0.3.10",
       "type": "application",
       "version": "0.3.10"
@@ -13989,6 +14682,7 @@
         }
       ],
       "name": "libsysprof-capture",
+      "properties": [],
       "purl": "pkg:generic/libsysprof-capture@45.1",
       "type": "application",
       "version": "45.1"
@@ -14010,6 +14704,7 @@
         }
       ],
       "name": "libusb",
+      "properties": [],
       "purl": "pkg:generic/libusb@1.0.26",
       "type": "application",
       "version": "1.0.26"
@@ -14031,6 +14726,7 @@
         }
       ],
       "name": "python3.11-PyQt5",
+      "properties": [],
       "purl": "pkg:generic/python3.11-PyQt5@5.15.9",
       "type": "application",
       "version": "5.15.9"
@@ -14062,6 +14758,7 @@
         }
       ],
       "name": "ffmpeg",
+      "properties": [],
       "purl": "pkg:generic/ffmpeg@4.4.4",
       "type": "application",
       "version": "4.4.4"
@@ -14083,6 +14780,7 @@
         }
       ],
       "name": "libtasn1",
+      "properties": [],
       "purl": "pkg:generic/libtasn1@4.19.0",
       "type": "application",
       "version": "4.19.0"
@@ -14104,6 +14802,7 @@
         }
       ],
       "name": "bash-completion",
+      "properties": [],
       "purl": "pkg:generic/bash-completion@2.11",
       "type": "application",
       "version": "2.11"
@@ -14130,6 +14829,7 @@
         }
       ],
       "name": "perl5.38.2-Net-HTTP",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-Net-HTTP@6.23",
       "type": "application",
       "version": "6.23"
@@ -14151,6 +14851,7 @@
         }
       ],
       "name": "libgudev",
+      "properties": [],
       "purl": "pkg:generic/libgudev@238",
       "type": "application",
       "version": "238"
@@ -14172,6 +14873,7 @@
         }
       ],
       "name": "python3.11-installer",
+      "properties": [],
       "purl": "pkg:generic/python3.11-installer@0.7.0",
       "type": "application",
       "version": "0.7.0"
@@ -14193,6 +14895,7 @@
         }
       ],
       "name": "autoconf",
+      "properties": [],
       "purl": "pkg:generic/autoconf@2.69",
       "type": "application",
       "version": "2.69"
@@ -14214,6 +14917,7 @@
         }
       ],
       "name": "bash",
+      "properties": [],
       "purl": "pkg:generic/bash@5.2",
       "type": "application",
       "version": "5.2"
@@ -14235,6 +14939,7 @@
         }
       ],
       "name": "json-c",
+      "properties": [],
       "purl": "pkg:generic/json-c@0.16",
       "type": "application",
       "version": "0.16"
@@ -14256,6 +14961,7 @@
         }
       ],
       "name": "valgrind",
+      "properties": [],
       "purl": "pkg:generic/valgrind@3.22.0",
       "type": "application",
       "version": "3.22.0"
@@ -14282,6 +14988,7 @@
         }
       ],
       "name": "perl5.38.2-URI",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-URI@5.21",
       "type": "application",
       "version": "5.21"
@@ -14291,6 +14998,7 @@
       "description": "",
       "externalReferences": [],
       "name": "autoreconf-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -14310,6 +15018,7 @@
         }
       ],
       "name": "libde265",
+      "properties": [],
       "purl": "pkg:generic/libde265@1.0.15",
       "type": "application",
       "version": "1.0.15"
@@ -14319,6 +15028,7 @@
       "description": "",
       "externalReferences": [],
       "name": "autoreconf-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -14338,6 +15048,7 @@
         }
       ],
       "name": "cmake-minimal",
+      "properties": [],
       "purl": "pkg:generic/cmake-minimal@3.27.7",
       "type": "application",
       "version": "3.27.7"
@@ -14359,6 +15070,7 @@
         }
       ],
       "name": "graphviz",
+      "properties": [],
       "purl": "pkg:generic/graphviz@9.0.0",
       "type": "application",
       "version": "9.0.0"
@@ -14385,6 +15097,7 @@
         }
       ],
       "name": "perl5.38.2-IO-HTML",
+      "properties": [],
       "purl": "pkg:generic/perl5.38.2-IO-HTML@1.004",
       "type": "application",
       "version": "1.004"
@@ -14406,6 +15119,7 @@
         }
       ],
       "name": "source-highlight",
+      "properties": [],
       "purl": "pkg:generic/source-highlight@3.1.9",
       "type": "application",
       "version": "3.1.9"
@@ -14432,6 +15146,7 @@
         }
       ],
       "name": "cairo",
+      "properties": [],
       "purl": "pkg:generic/cairo@1.18.0",
       "type": "application",
       "version": "1.18.0"
@@ -14453,6 +15168,7 @@
         }
       ],
       "name": "libpsl",
+      "properties": [],
       "purl": "pkg:generic/libpsl@0.21.2",
       "type": "application",
       "version": "0.21.2"
@@ -14474,6 +15190,7 @@
         }
       ],
       "name": "pkg-config",
+      "properties": [],
       "purl": "pkg:generic/pkg-config@0.29.2",
       "type": "application",
       "version": "0.29.2"
@@ -14495,6 +15212,7 @@
         }
       ],
       "name": "asciidoc",
+      "properties": [],
       "purl": "pkg:generic/asciidoc@10.2.0",
       "type": "application",
       "version": "10.2.0"
@@ -14516,6 +15234,7 @@
         }
       ],
       "name": "gtest",
+      "properties": [],
       "purl": "pkg:generic/gtest@1.12.1",
       "type": "application",
       "version": "1.12.1"
@@ -14525,6 +15244,7 @@
       "description": "",
       "externalReferences": [],
       "name": "xtrans",
+      "properties": [],
       "purl": "pkg:generic/xtrans@1.5.0",
       "type": "application",
       "version": "1.5.0"
@@ -14546,6 +15266,7 @@
         }
       ],
       "name": "libraw1394",
+      "properties": [],
       "purl": "pkg:generic/libraw1394@2.1.2",
       "type": "application",
       "version": "2.1.2"
@@ -14567,6 +15288,7 @@
         }
       ],
       "name": "curl",
+      "properties": [],
       "purl": "pkg:generic/curl@8.4.0",
       "type": "application",
       "version": "8.4.0"
@@ -14588,6 +15310,7 @@
         }
       ],
       "name": "publicsuffix-list-unstable",
+      "properties": [],
       "purl": "pkg:generic/publicsuffix-list-unstable@unstable-2023-02-16",
       "type": "application",
       "version": "unstable-2023-02-16"
@@ -14597,6 +15320,7 @@
       "description": "",
       "externalReferences": [],
       "name": "xkeyboard-config",
+      "properties": [],
       "purl": "pkg:generic/xkeyboard-config@2.40",
       "type": "application",
       "version": "2.40"
@@ -14618,6 +15342,7 @@
         }
       ],
       "name": "libdatrie",
+      "properties": [],
       "purl": "pkg:generic/libdatrie@2019-12-20",
       "type": "application",
       "version": "2019-12-20"
@@ -14627,6 +15352,7 @@
       "description": "",
       "externalReferences": [],
       "name": "update-autotools-gnu-config-scripts-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -14634,6 +15360,7 @@
       "description": "",
       "externalReferences": [],
       "name": "libXcursor",
+      "properties": [],
       "purl": "pkg:generic/libXcursor@1.2.1",
       "type": "application",
       "version": "1.2.1"
@@ -14655,6 +15382,7 @@
         }
       ],
       "name": "libavif",
+      "properties": [],
       "purl": "pkg:generic/libavif@1.0.1",
       "type": "application",
       "version": "1.0.1"
@@ -14676,6 +15404,7 @@
         }
       ],
       "name": "libopenmpt",
+      "properties": [],
       "purl": "pkg:generic/libopenmpt@0.7.3",
       "type": "application",
       "version": "0.7.3"
@@ -14697,6 +15426,7 @@
         }
       ],
       "name": "python3.11-Jinja2",
+      "properties": [],
       "purl": "pkg:generic/python3.11-Jinja2@3.1.3",
       "type": "application",
       "version": "3.1.3"
@@ -14718,6 +15448,7 @@
         }
       ],
       "name": "flex",
+      "properties": [],
       "purl": "pkg:generic/flex@2.6.4",
       "type": "application",
       "version": "2.6.4"
@@ -14727,6 +15458,7 @@
       "description": "",
       "externalReferences": [],
       "name": "setup-debug-info-dirs-hook",
+      "properties": [],
       "type": "application"
     },
     {
@@ -14746,6 +15478,7 @@
         }
       ],
       "name": "python3.11-networkx",
+      "properties": [],
       "purl": "pkg:generic/python3.11-networkx@3.1",
       "type": "application",
       "version": "3.1"
