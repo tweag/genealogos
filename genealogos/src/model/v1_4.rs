@@ -167,10 +167,17 @@ impl TryFrom<Model> for cyclonedx::CycloneDx {
 
 impl From<ModelProperties> for Vec<cyclonedx::Property> {
     fn from(model_properties: ModelProperties) -> Self {
-        model_properties
+        let mut properties: Vec<cyclonedx::Property> = model_properties
             .properties
             .into_iter()
             .map(|(key, value)| cyclonedx::Property { name: key, value })
-            .collect()
+            .collect();
+
+        // For testing, we need deterministic output
+        if cfg!(test) || std::env::var("GENEALOGOS_DETERMINISTIC").is_ok() {
+            properties.sort_by_key(|v| v.name.clone());
+        }
+
+        properties
     }
 }
