@@ -1,12 +1,13 @@
 use std::sync::{atomic, Arc};
 use std::time;
 
+use genealogos::backend::BackendHandleTrait;
 use rocket::serde::json::Json;
 use rocket::tokio;
 
 use genealogos::{self, cyclonedx};
 
-use crate::messages::{self, Result};
+use crate::messages::{self, Result, StatusEnum, StatusResponse};
 
 pub type JobId = u16;
 
@@ -15,7 +16,9 @@ pub type JobMap = Arc<rocket::tokio::sync::Mutex<std::collections::HashMap<JobId
 
 pub enum JobStatus {
     Stopped,
-    Running,
+    /// The job is still running, the receiver is used receive status messages from worker threads
+    // Running(genealogos::backend::nixtract_backend::Nixtract),
+    Running(genealogos::backend::BackendHandle),
     Done(genealogos::cyclonedx::CycloneDX, time::Duration),
     Error(String),
 }
@@ -23,7 +26,7 @@ pub enum JobStatus {
 impl ToString for JobStatus {
     fn to_string(&self) -> String {
         match self {
-            JobStatus::Running => "running".to_string(),
+            JobStatus::Running(_) => "running".to_string(),
             JobStatus::Done(_, _) => "done".to_string(),
             JobStatus::Stopped => "stopped".to_string(),
             JobStatus::Error(e) => e.to_owned(),
@@ -43,6 +46,9 @@ pub async fn create(
     let job_id = job_counter.fetch_add(1, atomic::Ordering::SeqCst);
     let start_time = time::Instant::now();
 
+    // Create backend
+    let (backend, backend_handle) = genealogos::backend::BackendEnum::default().get_backend();
+
     job_map
         .try_lock()
         .map_err(|_| {
@@ -52,7 +58,7 @@ pub async fn create(
                 message: "Could not lock job map".to_owned(),
             })
         })?
-        .insert(job_id, JobStatus::Running);
+        .insert(job_id, JobStatus::Running(backend_handle));
 
     // Spawn a new thread to call `genealogos` and store the result in the job map
     let job_map_clone = Arc::clone(job_map);
@@ -60,7 +66,7 @@ pub async fn create(
     let attribute_path = attribute_path.to_string();
     tokio::spawn(async move {
         let output = genealogos::cyclonedx(
-            genealogos::backend::Backend::Nixtract,
+            backend,
             genealogos::Source::Flake {
                 flake_ref,
                 attribute_path: Some(attribute_path),
@@ -99,25 +105,47 @@ pub async fn status(
 
     let status = locked_map.get(&job_id).unwrap_or(&JobStatus::Stopped);
 
-    let status = match status {
+    let response = match status {
         JobStatus::Error(message) => Err(Json(messages::ErrResponse {
             metadata: messages::Metadata::new(Some(job_id)),
             message: message.to_owned(),
         })),
-        s => Ok(s.to_string()),
+        JobStatus::Running(backend) => {
+            let messages = backend.get_new_messages().map_err(|e| {
+                Json(messages::ErrResponse {
+                    metadata: messages::Metadata::new(Some(job_id)),
+                    message: e.to_string(),
+                })
+            })?;
+
+            // Show the last message if there are multiple with the same id
+            let mut messages: Vec<nixtract::message::Message> = messages.into_iter().collect();
+            messages.sort_by_key(|m| m.id);
+            messages.dedup_by_key(|m| m.id);
+
+            Ok(StatusResponse {
+                status: StatusEnum::LogMessages(messages),
+            })
+        }
+        JobStatus::Done(_, _) => Ok(StatusResponse {
+            status: StatusEnum::Done,
+        }),
+        JobStatus::Stopped => Ok(StatusResponse {
+            status: StatusEnum::Stopped,
+        }),
     };
 
-    if status.is_err() {
+    if response.is_err() {
         // Remove the job if it was an error
         locked_map.remove(&job_id);
     }
 
     // Propagate errors
-    let status = status?;
+    let messages = response?;
 
     let json = Json(messages::OkResponse {
         metadata: messages::Metadata::new(Some(job_id)),
-        data: messages::StatusResponse { status },
+        data: messages,
     });
 
     Ok(json)

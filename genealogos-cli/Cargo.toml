@@ -15,4 +15,9 @@ path = "src/main.rs"
 
 [dependencies]
 clap.workspace = true
+clap-verbosity-flag.workspace = true
+env_logger.workspace = true
+indicatif.workspace = true
+indicatif-log-bridge.workspace = true
 genealogos.path = "../genealogos"
+nixtract.workspace = true

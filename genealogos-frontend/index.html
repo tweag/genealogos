@@ -78,7 +78,7 @@
                         <button class="btn btn-secondary" onclick="saveSBOM()" disabled>Save SBOM</button>
                     </div>
                 </div>
-                <pre id="sbom-container">No SBOM yet</pre>
+                <pre id="main-content">No SBOM yet</pre>
             </div>
         </div>
     </div>
@@ -126,73 +126,127 @@
         document.querySelector(".btn-secondary:first-of-type").disabled = true;
         document.querySelector(".btn-secondary:last-of-type").disabled = true;
 
+        function toggleButtons(on) {
+            // Enable or disable the generate SBOM button
+            document.querySelector(".btn-primary").disabled = !on;
+            // Enable or disable the copy and save SBOM buttons
+            document.querySelector(".btn-secondary:first-of-type").disabled = !on;
+            document.querySelector(".btn-secondary:last-of-type").disabled = !on;
+        }
+
+        function handleError(error) {
+            // Display the error message in the code container
+            document.getElementById("main-content").textContent = "Error: " + error;
+            document.getElementById("main-content").classList.add("alert", "alert-warning"); // Add error classes
+
+            // Enable the generate SBOM button
+            document.querySelector(".btn-primary").disabled = false;
+            // Disable the copy and save SBOM buttons
+            document.querySelector(".btn-secondary:first-of-type").disabled = true;
+            document.querySelector(".btn-secondary:last-of-type").disabled = true;
+        }
+
         function generateSBOM() {
             // Get the flake ref and attribute path from the input fields
             const flakeRef = document.getElementById("flake-ref").value;
             const attributePath = document.getElementById("attribute-path").value;
             const cycloneDxVer = document.getElementById("sbom-version").value;
 
-            document.getElementById("sbom-container").classList.remove("alert", "alert-warning"); // Remove error class if present
+            // Create a hashmap where we will store a map from thread id to log message
+            // This will allow us to show them in order and only the latest message for each thread
+            let logMessages = {};
 
-            // Set the content of the sbom-container to a loading spinner
-            document.getElementById("sbom-container").innerHTML = `
+            document.getElementById("main-content").classList.remove("alert", "alert-warning"); // Remove error class if present
+
+            // Set the content of the main-content to a loading spinner
+            document.getElementById("main-content").innerHTML = `
                 <div class="text-center">
                     <div class="spinner-border" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
                 </div>
             `;
-            // Disable the generate SBOM button
-            document.querySelector(".btn-primary").disabled = true;
 
-            // Make a request to the API with flake_ref and attribute_path as get parameters
-            const response = fetch(`${apiAddress}/analyze?flake_ref=${flakeRef}&attribute_path=${attributePath}&cyclonedx_version=v${cycloneDxVer}`)
+            toggleButtons(false);
+
+            // Make a request to the API to create a job
+            fetch(`${apiAddress}/jobs/create?flake_ref=${flakeRef}&attribute_path=${attributePath}&cyclonedx_version=v${cycloneDxVer}`)
                 .then(response => response.json())
                 .then(data => {
-                    if (data.sbom) {
-                        // Convert the response to a JSON string
-                        const sbom = JSON.stringify(data.sbom, null, 2);
+                    if (data.job_id !== undefined && data.job_id !== null) {
+                        // Reset the logMessages
+                        logMessages = {};
 
-                        // Display the SBOM in the code container
-                        document.getElementById("sbom-container").textContent = sbom;
+                        // Retrieve the job status periodically
+                        const intervalId = setInterval(() => {
+                            fetch(`${apiAddress}/jobs/status/${data.job_id}`)
+                                .then(response => response.json())
+                                .then(statusData => {
+                                    // if statusData.status.LogMessages exists, log the log messages one by one
+                                    if (statusData.status.LogMessages) {
+                                        // Add the log messages to the hashmap
+                                        statusData.status.LogMessages.forEach(logMessage => {
+                                            logMessages[logMessage.id] = logMessage;
+                                        });
 
-                        // Enable the generate SBOM button
-                        document.querySelector(".btn-primary").disabled = false;
-                        // Enable the copy and save SBOM buttons
-                        document.querySelector(".btn-secondary:first-of-type").disabled = false;
-                        document.querySelector(".btn-secondary:last-of-type").disabled = false;
+                                        // Display the log messages in the code container in the format: "{id}: {status} {path}"
+                                        document.getElementById("main-content").textContent = Object.values(logMessages).map(logMessage => `${logMessage.id}: ${logMessage.status} ${logMessage.path}`).join("\n");
 
-                        // Set the global variables
-                        latestFlakeRef = flakeRef;
-                        latestAttributePath = attributePath;
-                    } else if (data.message) {
-                        // Display the error message in the code container
-                        document.getElementById("sbom-container").textContent = "Error: " + data.message;
-                        document.getElementById("sbom-container").classList.add("alert", "alert-warning"); // Add error classes
+                                    } else if (statusData.status === "Done") {
+                                        // Retrieve the SBOM
+                                        fetch(`${apiAddress}/jobs/result/${data.job_id}`)
+                                            .then(response => response.json())
+                                            .then(sbomData => {
+                                                if (sbomData.sbom) {
+                                                    // Convert the response to a JSON string
+                                                    const sbom = JSON.stringify(sbomData.sbom, null, 2);
 
-                        // Enable the generate SBOM button
-                        document.querySelector(".btn-primary").disabled = false;
-                        // Disable the copy and save SBOM buttons
-                        document.querySelector(".btn-secondary:first-of-type").disabled = true;
-                        document.querySelector(".btn-secondary:last-of-type").disabled = true;
+                                                    // Display the SBOM in the code container
+                                                    document.getElementById("main-content").textContent = sbom;
+
+                                                    // Enable buttons
+                                                    toggleButtons(true);
+
+                                                    // Set the global variables
+                                                    latestFlakeRef = flakeRef;
+                                                    latestAttributePath = attributePath;
+
+                                                    // Clear the interval
+                                                    clearInterval(intervalId);
+                                                } else {
+                                                    handleError("SBOM not found");
+
+                                                    // Clear the interval
+                                                    clearInterval(intervalId);
+                                                }
+                                            })
+                                            .catch(error => {
+                                                handleError(error);
+
+                                                // Clear the interval
+                                                clearInterval(intervalId);
+                                            });
+                                    }
+                                })
+                                .catch(error => {
+                                    handleError(error);
+
+                                    // Clear the interval
+                                    clearInterval(intervalId);
+                                });
+                        }, 1000); // Check status every second
+                    } else {
+                        handleError("Job creation failed");
                     }
                 })
                 .catch(error => {
-                    // Display the error message in the code container
-                    document.getElementById("sbom-container").textContent = "Error: " + error;
-                    document.getElementById("sbom-container").classList.add("alert", "alert-warning"); // Add error classes
-
-                    // Enable the generate SBOM button
-                    document.querySelector(".btn-primary").disabled = false;
-                    // Disable the copy and save SBOM buttons
-                    document.querySelector(".btn-secondary:first-of-type").disabled = true;
-                    document.querySelector(".btn-secondary:last-of-type").disabled = true;
+                    handleError(error);
                 });
         }
 
         function copySBOM() {
             // Get the SBOM text
-            const sbomText = document.getElementById("sbom-container").textContent;
+            const sbomText = document.getElementById("main-content").textContent;
 
             // Create a textarea element
             const textarea = document.createElement("textarea");
@@ -217,7 +271,7 @@
 
         function saveSBOM() {
             // Get the SBOM text
-            const sbomText = document.getElementById("sbom-container").textContent;
+            const sbomText = document.getElementById("main-content").textContent;
 
             // Create a blob with the SBOM text
             const blob = new Blob([sbomText], { type: "text/plain;charset=utf-8" });

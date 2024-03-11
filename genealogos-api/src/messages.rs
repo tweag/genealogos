@@ -19,7 +19,14 @@ pub struct CreateResponse {
 
 #[derive(serde::Serialize)]
 pub struct StatusResponse {
-    pub status: String,
+    pub status: StatusEnum,
+}
+
+#[derive(serde::Serialize)]
+pub enum StatusEnum {
+    LogMessages(Vec<nixtract::message::Message>),
+    Done,
+    Stopped,
 }
 
 #[derive(serde::Serialize)]
