@@ -3,6 +3,7 @@
 //!
 //! [cyclonedx]: https://cyclonedx.org/
 
+use backend::{BackendHandleTrait, BackendTrait};
 use cyclonedx::CycloneDX;
 
 // Export the Error type for external users
@@ -60,8 +61,8 @@ pub fn cyclonedx(
         Source::Flake {
             flake_ref,
             attribute_path,
-        } => backend.to_model_from_flake_ref(flake_ref, attribute_path)?,
-        Source::TraceFile(file_path) => backend.to_model_from_trace_file(file_path)?,
+        } => backend.parse_flake_ref(flake_ref, attribute_path)?,
+        Source::TraceFile(file_path) => backend.parse_trace_file(file_path)?,
     };
 
     // Convert `Model` to `CycloneDx`
@@ -94,15 +95,17 @@ mod tests {
             if input_path.extension().unwrap().to_string_lossy() == "in" {
                 info!("testing: {}", input_path.to_string_lossy());
 
+                let (backend, _) = crate::backend::BackendEnum::default().get_backend();
+
                 let output_1_4 = super::json_string(
-                    crate::backend::Backend::default(),
+                    backend.clone(),
                     super::Source::TraceFile(input_path.clone()),
                     super::cyclonedx::Version::V1_4,
                 )
                 .unwrap();
 
                 let output_1_5 = super::json_string(
-                    crate::backend::Backend::default(),
+                    backend,
                     super::Source::TraceFile(input_path.clone()),
                     super::cyclonedx::Version::V1_5,
                 )
@@ -140,8 +143,10 @@ mod tests {
                 let input = fs::read_to_string(input_path.clone()).unwrap();
                 let flake_args: FlakeArgs = serde_json::from_str(&input).unwrap();
 
+                let (backend, _) = crate::backend::BackendEnum::default().get_backend();
+
                 let output_1_4 = super::json_string(
-                    crate::backend::Backend::default(),
+                    backend.clone(),
                     super::Source::Flake {
                         flake_ref: flake_args.flake_ref.clone(),
                         attribute_path: flake_args.attribute_path.clone(),
@@ -151,7 +156,7 @@ mod tests {
                 .unwrap();
 
                 let output_1_5 = super::json_string(
-                    crate::backend::Backend::default(),
+                    backend,
                     super::Source::Flake {
                         flake_ref: flake_args.flake_ref,
                         attribute_path: flake_args.attribute_path,

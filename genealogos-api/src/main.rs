@@ -35,15 +35,15 @@ fn analyze(
         attribute_path: attribute_path.map(str::to_string),
     };
 
-    let sbom = cyclonedx(
-        genealogos::backend::Backend::Nixtract,
-        source,
-        cyclonedx_version.unwrap_or_default(),
-    )
-    .map_err(|err| messages::ErrResponse {
-        metadata: messages::Metadata::new(None),
-        message: err.to_string(),
-    })?;
+    let (backend, _) = genealogos::backend::BackendEnum::Nixtract.get_backend();
+
+    let sbom =
+        cyclonedx(backend, source, cyclonedx_version.unwrap_or_default()).map_err(|err| {
+            messages::ErrResponse {
+                metadata: messages::Metadata::new(None),
+                message: err.to_string(),
+            }
+        })?;
 
     let json = Json(messages::OkResponse {
         metadata: messages::Metadata {
