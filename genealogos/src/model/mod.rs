@@ -1,6 +1,6 @@
 //! This module contains Genealogos' internal representation of incomming data.
 //! Since the initial target of Genealogos is CycloneDX, this model is largely based on their representation.
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
 
 pub mod v1_4;
 pub mod v1_5;
@@ -23,6 +23,8 @@ pub(crate) struct ModelComponent {
     pub(crate) licenses: Option<Vec<ModelLicense>>,
     // Not directly taken from the cycloneDX spec, but part of the purl
     pub(crate) src: Option<ModelSource>,
+    /// We use the properties field of the component to store the narinfo data
+    pub(crate) properties: ModelProperties,
 }
 
 #[derive(Debug)]
@@ -57,6 +59,11 @@ pub(crate) struct ModelLicense {
 pub(crate) struct ModelSource {
     pub(crate) git_repo_url: String,
     pub(crate) rev: String,
+}
+
+#[derive(Debug)]
+pub(crate) struct ModelProperties {
+    pub(crate) properties: HashMap<Option<String>, Option<String>>,
 }
 
 #[derive(Debug)]

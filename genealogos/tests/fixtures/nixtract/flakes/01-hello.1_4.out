@@ -18,6 +18,54 @@
         }
       ],
       "name": "zlib",
+      "properties": [
+        {
+          "name": "nix:narinfo:ca"
+        },
+        {
+          "name": "nix:narinfo:compression",
+          "value": "xz"
+        },
+        {
+          "name": "nix:narinfo:deriver",
+          "value": "rgds783n348z427r9hlc1n5afzl86ynj-zlib-1.3.drv"
+        },
+        {
+          "name": "nix:narinfo:file_hash",
+          "value": "sha256:1njg857vrznm5hnafc456ahvzcjnv72fq18a0spxhffk2971r1ai"
+        },
+        {
+          "name": "nix:narinfo:file_size",
+          "value": "27396"
+        },
+        {
+          "name": "nix:narinfo:nar_hash",
+          "value": "sha256:0xdnzp83xnxqlsrb4vyn2ykzdd1w5ah8fn9fy9c3shwcxg74b3hj"
+        },
+        {
+          "name": "nix:narinfo:nar_size",
+          "value": "115376"
+        },
+        {
+          "name": "nix:narinfo:references",
+          "value": "1hjv10489fm00lckiicwsv3nlcm07njy-zlib-1.3-dev mrzfvc2gjy2mia0k4vrb95f2iff6xcxm-zlib-1.3"
+        },
+        {
+          "name": "nix:narinfo:sig",
+          "value": "cache.nixos.org-1:JsknQwUBP5QezW++WqCSQI4cCEcbts8y9FFh3KBMkU4dVKaiV3xu1Il1odeAtudzZPvAkkXEH9tOQ2Im/CyCBg=="
+        },
+        {
+          "name": "nix:narinfo:store_path",
+          "value": "/nix/store/1hjv10489fm00lckiicwsv3nlcm07njy-zlib-1.3-dev"
+        },
+        {
+          "name": "nix:narinfo:system"
+        },
+        {
+          "name": "nix:narinfo:url",
+          "value": "nar/1njg857vrznm5hnafc456ahvzcjnv72fq18a0spxhffk2971r1ai.nar.xz"
+        }
+      ],
       "purl": "pkg:generic/zlib@1.3",
       "type": "application",
       "version": "1.3"
@@ -27,6 +75,54 @@
       "description": "",
       "externalReferences": [],
       "name": "die-hook",
+      "properties": [
+        {
+          "name": "nix:narinfo:ca"
+        },
+        {
+          "name": "nix:narinfo:compression",
+          "value": "xz"
+        },
+        {
+          "name": "nix:narinfo:deriver",
+          "value": "nyjg18g347l3hgw16gdv04i333a7sdnw-die-hook.drv"
+        },
+        {
+          "name": "nix:narinfo:file_hash",
+          "value": "sha256:0b0dp6i8cw0ar9mx1fp9kj39q1hjlc1s2srrm63bcwxvi21xm39s"
+        },
+        {
+          "name": "nix:narinfo:file_size",
+          "value": "456"
+        },
+        {
+          "name": "nix:narinfo:nar_hash",
+          "value": "sha256:16frzbml5k28hcf58a0s0m57zhgmgla7gn4vr1zaxngwdbcg7sfi"
+        },
+        {
+          "name": "nix:narinfo:nar_size",
+          "value": "928"
+        },
+        {
+          "name": "nix:narinfo:references",
+          "value": ""
+        },
+        {
+          "name": "nix:narinfo:sig",
+          "value": "cache.nixos.org-1:TCB+RUVOKVHUbVX34kN5Q5mjLnZ/u2NDYYSWwv9P0GjDya8Dr4PcGfby0aWkOfuJXNliCXD96NynF/9E4K2uBw=="
+        },
+        {
+          "name": "nix:narinfo:store_path",
+          "value": "/nix/store/26v33fxjpdn5wd06jqqjc8qbl3sc3sqp-die-hook"
+        },
+        {
+          "name": "nix:narinfo:system"
+        },
+        {
+          "name": "nix:narinfo:url",
+          "value": "nar/0b0dp6i8cw0ar9mx1fp9kj39q1hjlc1s2srrm63bcwxvi21xm39s.nar.xz"
+        }
+      ],
       "type": "application"
     },
     {
@@ -34,6 +130,54 @@
       "description": "",
       "externalReferences": [],
       "name": "make-shell-wrapper-hook",
+      "properties": [
+        {
+          "name": "nix:narinfo:ca"
+        },
+        {
+          "name": "nix:narinfo:compression",
+          "value": "xz"
+        },
+        {
+          "name": "nix:narinfo:deriver",
+          "value": "383byzg2kflh24sf95dfkr7bc56z294d-make-shell-wrapper-hook.drv"
+        },
+        {
+          "name": "nix:narinfo:file_hash",
+          "value": "sha256:0cna7i6njwbll65y9mz93fyqvfxf9160qz3g8mx352xx4kh8x44y"
+        },
+        {
+          "name": "nix:narinfo:file_size",
+          "value": "2780"
+        },
+        {
+          "name": "nix:narinfo:nar_hash",
+          "value": "sha256:0yhm176cj25xchkq85f862v5n9xqrky62hhn9vpn9zym2ixkswn2"
+        },
+        {
+          "name": "nix:narinfo:nar_size",
+          "value": "9824"
+        },
+        {
+          "name": "nix:narinfo:references",
+          "value": "26v33fxjpdn5wd06jqqjc8qbl3sc3sqp-die-hook 9vafkkic27k7m4934fpawl6yip3a6k4h-bash-5.2-p21"
+        },
+        {
+          "name": "nix:narinfo:sig",
+          "value": "cache.nixos.org-1:vsVj2q3KyeDUHxu0ZYzHEGIWjbGlVQkvsCmf1j0HZhxpTb8o9QU9SUtt8QRU5n5p4Mb5225ucSSAxF2W2XSMDw=="
+        },
+        {
+          "name": "nix:narinfo:store_path",
+          "value": "/nix/store/2kq5jql90fn5y2pd6c9vnjqffmf9ndjm-make-shell-wrapper-hook"
+        },
+        {
+          "name": "nix:narinfo:system"
+        },
+        {
+          "name": "nix:narinfo:url",
+          "value": "nar/0cna7i6njwbll65y9mz93fyqvfxf9160qz3g8mx352xx4kh8x44y.nar.xz"
+        }
+      ],
       "type": "application"
     },
     {
@@ -53,6 +197,54 @@
         }
       ],
       "name": "libxcrypt",
+      "properties": [
+        {
+          "name": "nix:narinfo:ca"
+        },
+        {
+          "name": "nix:narinfo:compression",
+          "value": "xz"
+        },
+        {
+          "name": "nix:narinfo:deriver",
+          "value": "8d6dd7hh9y57149wilzivyxmhpbhyh9j-libxcrypt-4.4.36.drv"
+        },
+        {
+          "name": "nix:narinfo:file_hash",
+          "value": "sha256:1grwp4g5q27qlilm75zpp8kqs47iiczq33lcnccmmhpah9njkxc8"
+        },
+        {
+          "name": "nix:narinfo:file_size",
+          "value": "60172"
+        },
+        {
+          "name": "nix:narinfo:nar_hash",
+          "value": "sha256:047pn83i14wy9r349pb1m78djqb729jv7raymjsv8vdm31f2hfmk"
+        },
+        {
+          "name": "nix:narinfo:nar_size",
+          "value": "131096"
+        },
+        {
+          "name": "nix:narinfo:references",
+          "value": "3wvj2nbynari4iirc4yx3mhf26hbjr9s-libxcrypt-4.4.36 p3jshbwxiwifm1py0yq544fmdyy98j8a-glibc-2.38-27"
+        },
+        {
+          "name": "nix:narinfo:sig",
+          "value": "cache.nixos.org-1:pEGBXKl1zUOayyu78WBhGa20KcoXRKqD7bOc+CZV989V1R0HAgfn8qNJs9ZJdePM7B7XOFj8BYfekY9y8sSvDQ=="
+        },
+        {
+          "name": "nix:narinfo:store_path",
+          "value": "/nix/store/3wvj2nbynari4iirc4yx3mhf26hbjr9s-libxcrypt-4.4.36"
+        },
+        {
+          "name": "nix:narinfo:system"
+        },
+        {
+          "name": "nix:narinfo:url",
+          "value": "nar/1grwp4g5q27qlilm75zpp8kqs47iiczq33lcnccmmhpah9njkxc8.nar.xz"
+        }
+      ],
       "purl": "pkg:generic/libxcrypt@4.4.36",
       "type": "application",
       "version": "4.4.36"
@@ -79,6 +271,54 @@
         }
       ],
       "name": "libssh2",
+      "properties": [
+        {
+          "name": "nix:narinfo:ca"
+        },
+        {
+          "name": "nix:narinfo:compression",
+          "value": "xz"
+        },
+        {
+          "name": "nix:narinfo:deriver",
+          "value": "y9871pa7plvig2avawjmc2ndzxyninfz-libssh2-1.11.0.drv"
+        },
+        {
+          "name": "nix:narinfo:file_hash",
+          "value": "sha256:08bz2735p8yxrvr9bf011a1mq9d4kh07lxcihpszc4ga9symlf2s"
+        },
+        {
+          "name": "nix:narinfo:file_size",
+          "value": "15000"
+        },
+        {
+          "name": "nix:narinfo:nar_hash",
+          "value": "sha256:114is1qmhn0a5yzck69chji5zic6lnyk4jr32i5bzlph00qkdaa9"
+        },
+        {
+          "name": "nix:narinfo:nar_size",
+          "value": "82848"
+        },
+        {
+          "name": "nix:narinfo:references",
+          "value": "35dg3ychf4xijdbz4krivf89dsyzi3c4-libssh2-1.11.0 4jk7xwmpdb02cnv0w8jknprhxkbr8dyw-libssh2-1.11.0-dev m8w6di2fqgblimidllyfc3fypgysrpgn-openssl-3.0.12-dev"
+        },
+        {
+          "name": "nix:narinfo:sig",
+          "value": "cache.nixos.org-1:IBqFnQ9T1bL5UM/8T+XLqeSGa5BD5lkHp1cSG+Y83Y3/AUWwNaXmjYtlcvHfPmDyY1wyHh70qr03l2U517OCAQ=="
+        },
+        {
+          "name": "nix:narinfo:store_path",
+          "value": "/nix/store/4jk7xwmpdb02cnv0w8jknprhxkbr8dyw-libssh2-1.11.0-dev"
+        },
+        {
+          "name": "nix:narinfo:system"
+        },
+        {
+          "name": "nix:narinfo:url",
+          "value": "nar/08bz2735p8yxrvr9bf011a1mq9d4kh07lxcihpszc4ga9symlf2s.nar.xz"
+        }
+      ],
       "purl": "pkg:generic/libssh2@1.11.0",
       "type": "application",
       "version": "1.11.0"
@@ -100,6 +340,54 @@
         }
       ],
       "name": "keyutils",
+      "properties": [
+        {
+          "name": "nix:narinfo:ca"
+        },
+        {
+          "name": "nix:narinfo:compression",
+          "value": "xz"
+        },
+        {
+          "name": "nix:narinfo:deriver",
+          "value": "hh2f2x66vk45gfsbqah80ihr3fnfxl2p-keyutils-1.6.3.drv"
+        },
+        {
+          "name": "nix:narinfo:file_hash",
+          "value": "sha256:1q6w293nvyvpbwymkjkfhwlkw22f04cflis93nck5ykhaajpkjjg"
+        },
+        {
+          "name": "nix:narinfo:file_size",
+          "value": "3600"
+        },
+        {
+          "name": "nix:narinfo:nar_hash",
+          "value": "sha256:1dw7vwbhrykxdypfvnnbnd2zmzpx5xmb18v7mrw6vpymyb0ffa9h"
+        },
+        {
+          "name": "nix:narinfo:nar_size",
+          "value": "13608"
+        },
+        {
+          "name": "nix:narinfo:references",
+          "value": "75nqgjskxzfzmq99rdl4isbpgkc1gjgf-keyutils-1.6.3-dev i28b60ahqiwfpaqicxdlpvvh63j3s05g-keyutils-1.6.3-lib wlq2lc7hraa4fndif11la4b26y67mpr9-keyutils-1.6.3"
+        },
+        {
+          "name": "nix:narinfo:sig",
+          "value": "cache.nixos.org-1:Ct7wEjR+3bG7GLCB4/06IysxCyojM0+RGXy6YjDBpBD3869l7tCy4K7eVPEdYUsZ8VesJKC8VIWBLu+8xcqoDQ=="
+        },
+        {
+          "name": "nix:narinfo:store_path",
+          "value": "/nix/store/75nqgjskxzfzmq99rdl4isbpgkc1gjgf-keyutils-1.6.3-dev"
+        },
+        {
+          "name": "nix:narinfo:system"
+        },
+        {
+          "name": "nix:narinfo:url",
+          "value": "nar/1q6w293nvyvpbwymkjkfhwlkw22f04cflis93nck5ykhaajpkjjg.nar.xz"
+        }
+      ],
       "purl": "pkg:generic/keyutils@1.6.3",
       "type": "application",
       "version": "1.6.3"
@@ -121,6 +409,54 @@
         }
       ],
       "name": "nghttp2",
+      "properties": [
+        {
+          "name": "nix:narinfo:ca"
+        },
+        {
+          "name": "nix:narinfo:compression",
+          "value": "xz"
+        },
+        {
+          "name": "nix:narinfo:deriver",
+          "value": "pdfcmv7p9x4x2p16xdd20f0xgww8vgny-nghttp2-1.57.0.drv"
+        },
+        {
+          "name": "nix:narinfo:file_hash",
+          "value": "sha256:0laslpnwf6rvsq88hvk8d5axb7l77jbnfzhzx1h61xdwhsxv0q61"
+        },
+        {
+          "name": "nix:narinfo:file_size",
+          "value": "32944"
+        },
+        {
+          "name": "nix:narinfo:nar_hash",
+          "value": "sha256:0z3dahixmck26q7hzxflcq7dpzhm3qb0jr05qc1m930xln2fblbf"
+        },
+        {
+          "name": "nix:narinfo:nar_size",
+          "value": "210056"
+        },
+        {
+          "name": "nix:narinfo:references",
+          "value": "fpm6dfr2f288vgq3fmvfz9lmm7k6xlhq-nghttp2-1.57.0-dev hjf2311mfp5fwrphxacb87y7p3p01i6n-nghttp2-1.57.0 mzn2n7ndqi1r7wjjchy83jp71pvk6z7r-nghttp2-1.57.0-lib"
+        },
+        {
+          "name": "nix:narinfo:sig",
+          "value": "cache.nixos.org-1:j5DchzOxng8RbPfy160Tnv3YK20CCPPlcD6bYuJJG3Gs3FfnMrMB1PW/I1sH4tcOwqiPZgtSQM8MOn/rfN5vAA=="
+        },
+        {
+          "name": "nix:narinfo:store_path",
+          "value": "/nix/store/fpm6dfr2f288vgq3fmvfz9lmm7k6xlhq-nghttp2-1.57.0-dev"
+        },
+        {
+          "name": "nix:narinfo:system"
+        },
+        {
+          "name": "nix:narinfo:url",
+          "value": "nar/0laslpnwf6rvsq88hvk8d5axb7l77jbnfzhzx1h61xdwhsxv0q61.nar.xz"
+        }
+      ],
       "purl": "pkg:generic/nghttp2@1.57.0",
       "type": "application",
       "version": "1.57.0"
@@ -142,6 +478,54 @@
         }
       ],
       "name": "hello",
+      "properties": [
+        {
+          "name": "nix:narinfo:ca"
+        },
+        {
+          "name": "nix:narinfo:compression",
+          "value": "xz"
+        },
+        {
+          "name": "nix:narinfo:deriver",
+          "value": "9nx2vicp5jls5y2vxlb3jr3jf5pbamka-hello-2.12.1.drv"
+        },
+        {
+          "name": "nix:narinfo:file_hash",
+          "value": "sha256:1j1kjkkwcijggdjw6zpziscz7j6936xs3l8fb1c14acrg0j16nzz"
+        },
+        {
+          "name": "nix:narinfo:file_size",
+          "value": "50232"
+        },
+        {
+          "name": "nix:narinfo:nar_hash",
+          "value": "sha256:1ix5hm1jhjqdjcfas6cv68b3ncpbpbpg8ghm6kiahxklibj4lm1f"
+        },
+        {
+          "name": "nix:narinfo:nar_size",
+          "value": "226560"
+        },
+        {
+          "name": "nix:narinfo:references",
+          "value": "h92a9jd0lhhniv2q417hpwszd4jhys7q-hello-2.12.1 p3jshbwxiwifm1py0yq544fmdyy98j8a-glibc-2.38-27"
+        },
+        {
+          "name": "nix:narinfo:sig",
+          "value": "cache.nixos.org-1:Sy+ZMDfzr3J9c2RL65rBWnBbCAX7AW92rsnjZFSMSZ+nOgk4CnLDggWgZQC1UEkW1taTpRP0rrIF8IFedzFvDw=="
+        },
+        {
+          "name": "nix:narinfo:store_path",
+          "value": "/nix/store/h92a9jd0lhhniv2q417hpwszd4jhys7q-hello-2.12.1"
+        },
+        {
+          "name": "nix:narinfo:system"
+        },
+        {
+          "name": "nix:narinfo:url",
+          "value": "nar/1j1kjkkwcijggdjw6zpziscz7j6936xs3l8fb1c14acrg0j16nzz.nar.xz"
+        }
+      ],
       "purl": "pkg:generic/hello@2.12.1",
       "type": "application",
       "version": "2.12.1"
@@ -163,6 +547,54 @@
         }
       ],
       "name": "openssl",
+      "properties": [
+        {
+          "name": "nix:narinfo:ca"
+        },
+        {
+          "name": "nix:narinfo:compression",
+          "value": "xz"
+        },
+        {
+          "name": "nix:narinfo:deriver",
+          "value": "9jyy80wya8dwszpk0yjskw9494i1gpbc-openssl-3.0.12.drv"
+        },
+        {
+          "name": "nix:narinfo:file_hash",
+          "value": "sha256:0bmccd8042y15zyv9vdfg1w8mlhiikhcmllxnfp9q0wfasfhrg6m"
+        },
+        {
+          "name": "nix:narinfo:file_size",
+          "value": "249664"
+        },
+        {
+          "name": "nix:narinfo:nar_hash",
+          "value": "sha256:1103bf5mawy7a60qy4pxmrgp209bkypmijq6kvix9kn0cmslzmm5"
+        },
+        {
+          "name": "nix:narinfo:nar_size",
+          "value": "1990904"
+        },
+        {
+          "name": "nix:narinfo:references",
+          "value": "6b74vr1n6562g3v3g26cxgjjjq5jwq2k-openssl-3.0.12 m8w6di2fqgblimidllyfc3fypgysrpgn-openssl-3.0.12-dev sif819v9xdk3kwhsm3r1391f9px2hf9w-openssl-3.0.12-bin"
+        },
+        {
+          "name": "nix:narinfo:sig",
+          "value": "cache.nixos.org-1:AB0Iqxrt8/jhiixNwToYW0pdGPvqKCz/MBUIktM25zf/vQX80mwib/rn2IZMnzV5TUcY5401FpfZBIFehR7pAQ=="
+        },
+        {
+          "name": "nix:narinfo:store_path",
+          "value": "/nix/store/m8w6di2fqgblimidllyfc3fypgysrpgn-openssl-3.0.12-dev"
+        },
+        {
+          "name": "nix:narinfo:system"
+        },
+        {
+          "name": "nix:narinfo:url",
+          "value": "nar/0bmccd8042y15zyv9vdfg1w8mlhiikhcmllxnfp9q0wfasfhrg6m.nar.xz"
+        }
+      ],
       "purl": "pkg:generic/openssl@3.0.12",
       "type": "application",
       "version": "3.0.12"
@@ -184,6 +616,54 @@
         }
       ],
       "name": "libkrb5",
+      "properties": [
+        {
+          "name": "nix:narinfo:ca"
+        },
+        {
+          "name": "nix:narinfo:compression",
+          "value": "xz"
+        },
+        {
+          "name": "nix:narinfo:deriver",
+          "value": "irmzqiifi33fya7cbwxlcsv5kbdh720y-libkrb5-1.21.2.drv"
+        },
+        {
+          "name": "nix:narinfo:file_hash",
+          "value": "sha256:13zb1wrgi6x0qkwhd31wfc7psqyq9qc8p30ghcvkwxrcx996z9dr"
+        },
+        {
+          "name": "nix:narinfo:file_size",
+          "value": "117128"
+        },
+        {
+          "name": "nix:narinfo:nar_hash",
+          "value": "sha256:0hp9daccp775sfs0zs931fmj7qfvjgg14yy3fhq83n1cyg1pk7rs"
+        },
+        {
+          "name": "nix:narinfo:nar_size",
+          "value": "762680"
+        },
+        {
+          "name": "nix:narinfo:references",
+          "value": "9vafkkic27k7m4934fpawl6yip3a6k4h-bash-5.2-p21 ml1nkm5dvlmyp19vlbi4b2cxzky78qfb-libkrb5-1.21.2-dev wd2af3rrxvrxz0djrrwgyyw4sl030gf8-libkrb5-1.21.2"
+        },
+        {
+          "name": "nix:narinfo:sig",
+          "value": "cache.nixos.org-1:PnAMnPRWMc3x/nZJnBHCOL90fKA/Rpyrcue+21UyxQwlIVsbu61RAAS+hO6O4AxlYOk3kPR1F7RNplGmELgUAA=="
+        },
+        {
+          "name": "nix:narinfo:store_path",
+          "value": "/nix/store/ml1nkm5dvlmyp19vlbi4b2cxzky78qfb-libkrb5-1.21.2-dev"
+        },
+        {
+          "name": "nix:narinfo:system"
+        },
+        {
+          "name": "nix:narinfo:url",
+          "value": "nar/13zb1wrgi6x0qkwhd31wfc7psqyq9qc8p30ghcvkwxrcx996z9dr.nar.xz"
+        }
+      ],
       "purl": "pkg:generic/libkrb5@1.21.2",
       "type": "application",
       "version": "1.21.2"
@@ -193,6 +673,55 @@
       "description": "",
       "externalReferences": [],
       "name": "hello",
+      "properties": [
+        {
+          "name": "nix:narinfo:ca",
+          "value": "fixed:sha256:086vqwk2wl8zfs47sq2xpjc9k066ilmb8z6dn0q6ymwjzlm196cd"
+        },
+        {
+          "name": "nix:narinfo:compression",
+          "value": "xz"
+        },
+        {
+          "name": "nix:narinfo:deriver",
+          "value": "dyivpmlaq2km6c11i0s6bi6mbsx0ylqf-hello-2.12.1.tar.gz.drv"
+        },
+        {
+          "name": "nix:narinfo:file_hash",
+          "value": "sha256:1zjrhzhaizsrlsvdkqfl073vivmxcqnzkff4s50i0cdf541ary1r"
+        },
+        {
+          "name": "nix:narinfo:file_size",
+          "value": "1033524"
+        },
+        {
+          "name": "nix:narinfo:nar_hash",
+          "value": "sha256:1lvqpbk2k1sb39z8jfxixf7p7v8sj4z6mmpa44nnmff3w1y6h8lh"
+        },
+        {
+          "name": "nix:narinfo:nar_size",
+          "value": "1033416"
+        },
+        {
+          "name": "nix:narinfo:references",
+          "value": ""
+        },
+        {
+          "name": "nix:narinfo:sig",
+          "value": "cache.nixos.org-1:ywnIG629nQZQhEr6/HLDrLT/mUEp5J1LC6NmWSlJRWL/nM7oGItJQUYWGLvYGhSQvHrhIuvMpjNmBNh/WWqCDg=="
+        },
+        {
+          "name": "nix:narinfo:store_path",
+          "value": "/nix/store/pa10z4ngm0g83kx9mssrqzz30s84vq7k-hello-2.12.1.tar.gz"
+        },
+        {
+          "name": "nix:narinfo:system"
+        },
+        {
+          "name": "nix:narinfo:url",
+          "value": "nar/1zjrhzhaizsrlsvdkqfl073vivmxcqnzkff4s50i0cdf541ary1r.nar.xz"
+        }
+      ],
       "type": "application"
     },
     {
@@ -212,6 +741,54 @@
         }
       ],
       "name": "perl",
+      "properties": [
+        {
+          "name": "nix:narinfo:ca"
+        },
+        {
+          "name": "nix:narinfo:compression",
+          "value": "xz"
+        },
+        {
+          "name": "nix:narinfo:deriver",
+          "value": "d5jakkw05n6mbm3m7vi76ph6214wg1vg-perl-5.38.2.drv"
+        },
+        {
+          "name": "nix:narinfo:file_hash",
+          "value": "sha256:19xkwmm6llsks5qr6c2w0rrxgq6m6j41gvwgvj5fhvfm44k6aj02"
+        },
+        {
+          "name": "nix:narinfo:file_size",
+          "value": "9115188"
+        },
+        {
+          "name": "nix:narinfo:nar_hash",
+          "value": "sha256:037a71ka5h68w2yp8zcb3gmz4hx42hhw368bhqldq4x90fnfgy5s"
+        },
+        {
+          "name": "nix:narinfo:nar_size",
+          "value": "58405456"
+        },
+        {
+          "name": "nix:narinfo:references",
+          "value": "khndnv11g1rmzhzymm1s5dw7l2ld45bc-coreutils-9.4 mrzfvc2gjy2mia0k4vrb95f2iff6xcxm-zlib-1.3 p3jshbwxiwifm1py0yq544fmdyy98j8a-glibc-2.38-27 qy4h1wl3awid78vbbyvnn0div02kjv71-perl-5.38.2"
+        },
+        {
+          "name": "nix:narinfo:sig",
+          "value": "cache.nixos.org-1:4bQPjETSukxuOv+3DldC6WXah3sTz1Vod0WlAOAKcRCLg5ezELmKrNN9iW/usOt5Ehdh2m9xOEqolPP+C/OiDA=="
+        },
+        {
+          "name": "nix:narinfo:store_path",
+          "value": "/nix/store/qy4h1wl3awid78vbbyvnn0div02kjv71-perl-5.38.2"
+        },
+        {
+          "name": "nix:narinfo:system"
+        },
+        {
+          "name": "nix:narinfo:url",
+          "value": "nar/19xkwmm6llsks5qr6c2w0rrxgq6m6j41gvwgvj5fhvfm44k6aj02.nar.xz"
+        }
+      ],
       "purl": "pkg:generic/perl@5.38.2",
       "type": "application",
       "version": "5.38.2"
@@ -233,6 +810,54 @@
         }
       ],
       "name": "perl",
+      "properties": [
+        {
+          "name": "nix:narinfo:ca"
+        },
+        {
+          "name": "nix:narinfo:compression",
+          "value": "xz"
+        },
+        {
+          "name": "nix:narinfo:deriver",
+          "value": "gi5w9vrf6sdmvg3s0vd3dhhaiqwn7rxi-perl-5.38.2.drv"
+        },
+        {
+          "name": "nix:narinfo:file_hash",
+          "value": "sha256:07900cj4mq0knnrl9y9vwjr2bkj6n8b5hbl103m7a8rbfv1pzqhm"
+        },
+        {
+          "name": "nix:narinfo:file_size",
+          "value": "9103940"
+        },
+        {
+          "name": "nix:narinfo:nar_hash",
+          "value": "sha256:036id49dx0j1dmscwbmnj8d2pxikk40mrhwy2293cvpaxs2agi7p"
+        },
+        {
+          "name": "nix:narinfo:nar_size",
+          "value": "58406112"
+        },
+        {
+          "name": "nix:narinfo:references",
+          "value": "3wvj2nbynari4iirc4yx3mhf26hbjr9s-libxcrypt-4.4.36 khndnv11g1rmzhzymm1s5dw7l2ld45bc-coreutils-9.4 mrzfvc2gjy2mia0k4vrb95f2iff6xcxm-zlib-1.3 p3jshbwxiwifm1py0yq544fmdyy98j8a-glibc-2.38-27 sjm6zhcjq1l6ghcal55vmpy48zd0rhm7-perl-5.38.2"
+        },
+        {
+          "name": "nix:narinfo:sig",
+          "value": "cache.nixos.org-1:8JpzQf/df3zPHcnY2UN19nIbtO50X75yZyru3SjnUKQqpb4ls/d9Ar5JSf9GUIvpQXF41c9IK+54uTjyH75JBw=="
+        },
+        {
+          "name": "nix:narinfo:store_path",
+          "value": "/nix/store/sjm6zhcjq1l6ghcal55vmpy48zd0rhm7-perl-5.38.2"
+        },
+        {
+          "name": "nix:narinfo:system"
+        },
+        {
+          "name": "nix:narinfo:url",
+          "value": "nar/07900cj4mq0knnrl9y9vwjr2bkj6n8b5hbl103m7a8rbfv1pzqhm.nar.xz"
+        }
+      ],
       "purl": "pkg:generic/perl@5.38.2",
       "type": "application",
       "version": "5.38.2"
@@ -242,6 +867,54 @@
       "description": "The default build environment for Unix packages in Nixpkgs",
       "externalReferences": [],
       "name": "stdenv-linux",
+      "properties": [
+        {
+          "name": "nix:narinfo:ca"
+        },
+        {
+          "name": "nix:narinfo:compression",
+          "value": "xz"
+        },
+        {
+          "name": "nix:narinfo:deriver",
+          "value": "9x98di5isv1faqar1h8pgwynyjvam3i8-stdenv-linux.drv"
+        },
+        {
+          "name": "nix:narinfo:file_hash",
+          "value": "sha256:057v3w6v1jnh3vaxzz3mzsmx7f7x8290f280ygjd0cy9f12c78dm"
+        },
+        {
+          "name": "nix:narinfo:file_size",
+          "value": "14188"
+        },
+        {
+          "name": "nix:narinfo:nar_hash",
+          "value": "sha256:167rlcc6m9lmav8v3s260b295pcdb8yaycb53lwwsm5357nlx4b9"
+        },
+        {
+          "name": "nix:narinfo:nar_size",
+          "value": "51184"
+        },
+        {
+          "name": "nix:narinfo:references",
+          "value": "20rsi77ny2i4i1rbd63h4392a245j5dz-gnutar-1.35 3i90ns2cvw81zkp1g76grgn1g4zbnj6n-bzip2-1.0.8-bin 43f3a13z1256s37825a6am9y21lysg2a-file-5.45 5yzw0vhkyszf2d179m0qfkgxmp5wjjx4-move-docs.sh 7iyzsc224ax9dm71fv4grndixylcn7kh-findutils-4.9.0 98hrpcnb9xq9675js8ilr8cpgnfadln1-patch-2.7.6 9vafkkic27k7m4934fpawl6yip3a6k4h-bash-5.2-p21 bfb70iaascrajr78mfmr5kzspv0p7i6d-gawk-5.2.2 cickvswrvann041nqxb0rxilc46svw1n-prune-libtool-files.sh fa3xxlazac50wwlnpwsh6ffwlpnvigar-patchelf-0.15.0 fp4fd51gpjdw0pxq42fwydyjjw4saw8a-diffutils-3.10 fyaryjvghbkpfnsyw97hb3lyb37s1pd6-move-lib64.sh grll1f1qj7yw6yq42qigkw5fvyjz2rjw-gnumake-4.4.1 h9lc1dpi14z7is86ffhl3ld569138595-audit-tmpdir.sh jd7nvwsmkry0hbh6rn9jafpz2pm56ilw-xz-5.4.5-bin jivxp510zxakaaic7qkrb7v1dd2rdbw9-multiple-outputs.sh kd4xwxjpjxi71jkm6ka0np72if9rm3y0-move-sbin.sh khndnv11g1rmzhzymm1s5dw7l2ld45bc-coreutils-9.4 m54bmrhj6fqz8nds5zcj97w9s9bckc9v-compress-man-pages.sh mmsb0ivm355r4l3yjbpaiirkf673n66v-gnugrep-3.11 nbsz4b0kdh5a2b9h2cr9ngxskfqx575k-gnused-4.9 ngg1cv31c8c7bcm2n8ww4g06nq7s4zhm-set-source-date-epoch-to-latest.sh pag6l61paj1dc9sv15l7bm5c17xn5kyk-move-systemd-user-units.sh r990yl8mna5rzdbj5af3zzjjg3qfg7wy-update-autotools-gnu-config-scripts-hook wgrbkkaldkrlrni33ccvm3b6vbxzb656-make-symlinks-relative.sh wmknncrif06fqxa16hpdldhixk95nds0-strip.sh wzdsbnv2ba3nj91aql8jjdddfmkkdh7h-patch-shebangs.sh xq8920m5mbd83vdlydwli7qsh67gfm5v-gcc-wrapper-13.2.0 xyff06pkhki3qy1ls77w10s0v79c9il0-reproducible-builds.sh zbzbcqjsfv9d6svzl7rcvjdijkdsqib2-gzip-1.13"
+        },
+        {
+          "name": "nix:narinfo:sig",
+          "value": "cache.nixos.org-1:hgIv1wpdMwXsd8cq3QeoSUFJ12a+CzNIqhl4nCoURp2CI1ejRV2E0JrbXHmgfzKuhRfzAN7+HwgZgE4H0sDuBQ=="
+        },
+        {
+          "name": "nix:narinfo:store_path",
+          "value": "/nix/store/v5irq7wvkr7kih0hhnch5nnv2dcq8c4f-stdenv-linux"
+        },
+        {
+          "name": "nix:narinfo:system"
+        },
+        {
+          "name": "nix:narinfo:url",
+          "value": "nar/057v3w6v1jnh3vaxzz3mzsmx7f7x8290f280ygjd0cy9f12c78dm.nar.xz"
+        }
+      ],
       "type": "application"
     },
     {
@@ -261,6 +934,54 @@
         }
       ],
       "name": "pkg-config-wrapper",
+      "properties": [
+        {
+          "name": "nix:narinfo:ca"
+        },
+        {
+          "name": "nix:narinfo:compression",
+          "value": "xz"
+        },
+        {
+          "name": "nix:narinfo:deriver",
+          "value": "s3cnlml918lvsw0zi2872i8jckxbb5hw-pkg-config-wrapper-0.29.2.drv"
+        },
+        {
+          "name": "nix:narinfo:file_hash",
+          "value": "sha256:01gkcb83blrfaq7v9jpw646z5pia64bcq62syjv7hy3wh94z73cd"
+        },
+        {
+          "name": "nix:narinfo:file_size",
+          "value": "3324"
+        },
+        {
+          "name": "nix:narinfo:nar_hash",
+          "value": "sha256:0izgmp3npywa2yxvv6yh2fqjbfsdc3sbkyl8z2z2svxrxz3b7vlk"
+        },
+        {
+          "name": "nix:narinfo:nar_size",
+          "value": "11312"
+        },
+        {
+          "name": "nix:narinfo:references",
+          "value": "9vafkkic27k7m4934fpawl6yip3a6k4h-bash-5.2-p21 cbzrpbqk2yrkqz20jrhv6234avpgxdq9-pkg-config-0.29.2 v6n306xw0v850dn01s9fdd0qjwh2j082-pkg-config-wrapper-0.29.2 wmknncrif06fqxa16hpdldhixk95nds0-strip.sh"
+        },
+        {
+          "name": "nix:narinfo:sig",
+          "value": "cache.nixos.org-1:i4yIOts5/aGs9PMdSb5k/WVYVRLQnvqxh+kP6KXIdNs75dPAkWqIqcpb2GWseySo+4LIRJdNW3UYdiL6mTLOCQ=="
+        },
+        {
+          "name": "nix:narinfo:store_path",
+          "value": "/nix/store/v6n306xw0v850dn01s9fdd0qjwh2j082-pkg-config-wrapper-0.29.2"
+        },
+        {
+          "name": "nix:narinfo:system"
+        },
+        {
+          "name": "nix:narinfo:url",
+          "value": "nar/01gkcb83blrfaq7v9jpw646z5pia64bcq62syjv7hy3wh94z73cd.nar.xz"
+        }
+      ],
       "purl": "pkg:generic/pkg-config-wrapper@0.29.2",
       "type": "application",
       "version": "0.29.2"
@@ -270,6 +991,54 @@
       "description": "",
       "externalReferences": [],
       "name": "hello",
+      "properties": [
+        {
+          "name": "nix:narinfo:ca"
+        },
+        {
+          "name": "nix:narinfo:compression",
+          "value": "xz"
+        },
+        {
+          "name": "nix:narinfo:deriver",
+          "value": "2wvyqin60zvpvvb17iy7svm6jf3adlqx-hello-2.12.1.drv"
+        },
+        {
+          "name": "nix:narinfo:file_hash",
+          "value": "sha256:1k3bx1j8p01wvcf18syhpsd9xcr004bkx7s8mwjq3yhqqxcf6i12"
+        },
+        {
+          "name": "nix:narinfo:file_size",
+          "value": "748"
+        },
+        {
+          "name": "nix:narinfo:nar_hash",
+          "value": "sha256:01az44wdmj3f2lkscjpd58yaqyjsy02sccw89rjlb2wzshrcgqd5"
+        },
+        {
+          "name": "nix:narinfo:nar_size",
+          "value": "1872"
+        },
+        {
+          "name": "nix:narinfo:references",
+          "value": "9vafkkic27k7m4934fpawl6yip3a6k4h-bash-5.2-p21 pa10z4ngm0g83kx9mssrqzz30s84vq7k-hello-2.12.1.tar.gz v5irq7wvkr7kih0hhnch5nnv2dcq8c4f-stdenv-linux v6x3cs394jgqfbi0a42pam708flxaphh-default-builder.sh ylriv849va759pz6sf9j06v9mwmh91w1-hello-2.12.1"
+        },
+        {
+          "name": "nix:narinfo:sig",
+          "value": "cache.nixos.org-1:TeBQxcaSi/BBymDckCjG8v/0gUyCPHoWQr4uD9X5um3QzEdDRFt3160ORGRVF71+Hubd14QSuYvcb2UBWXrgBQ=="
+        },
+        {
+          "name": "nix:narinfo:store_path",
+          "value": "/nix/store/ylriv849va759pz6sf9j06v9mwmh91w1-hello-2.12.1"
+        },
+        {
+          "name": "nix:narinfo:system"
+        },
+        {
+          "name": "nix:narinfo:url",
+          "value": "nar/1k3bx1j8p01wvcf18syhpsd9xcr004bkx7s8mwjq3yhqqxcf6i12.nar.xz"
+        }
+      ],
       "purl": "pkg:generic/hello@2.12.1",
       "type": "application",
       "version": "2.12.1"
@@ -291,6 +1060,54 @@
         }
       ],
       "name": "curl",
+      "properties": [
+        {
+          "name": "nix:narinfo:ca"
+        },
+        {
+          "name": "nix:narinfo:compression",
+          "value": "xz"
+        },
+        {
+          "name": "nix:narinfo:deriver",
+          "value": "51jyp1r6hr9fj5kz25ksnjx9q3fd3q68-curl-8.4.0.drv"
+        },
+        {
+          "name": "nix:narinfo:file_hash",
+          "value": "sha256:1q6a61dcgd5nhwb9c85cq9gavf2g3lbfmb2f1kw3x680fkn8fmgi"
+        },
+        {
+          "name": "nix:narinfo:file_size",
+          "value": "48384"
+        },
+        {
+          "name": "nix:narinfo:nar_hash",
+          "value": "sha256:1i41wxq2rrsw5kcmhavb7gxs69q2f24pq83dnnfspwzh0zmm67kl"
+        },
+        {
+          "name": "nix:narinfo:nar_size",
+          "value": "260512"
+        },
+        {
+          "name": "nix:narinfo:references",
+          "value": "1hjv10489fm00lckiicwsv3nlcm07njy-zlib-1.3-dev 3mp74hw0c1cvqdymph9m4kh218ax147d-curl-8.4.0-bin 4jk7xwmpdb02cnv0w8jknprhxkbr8dyw-libssh2-1.11.0-dev 6b74vr1n6562g3v3g26cxgjjjq5jwq2k-openssl-3.0.12 7mg30rrygdc9i893wz47msfcj5x4169w-curl-8.4.0-man 9vafkkic27k7m4934fpawl6yip3a6k4h-bash-5.2-p21 fpm6dfr2f288vgq3fmvfz9lmm7k6xlhq-nghttp2-1.57.0-dev i5q9h26clmk4izcn2nb7nr3l0vnr9m9q-curl-8.4.0 m8w6di2fqgblimidllyfc3fypgysrpgn-openssl-3.0.12-dev ml1nkm5dvlmyp19vlbi4b2cxzky78qfb-libkrb5-1.21.2-dev mrzfvc2gjy2mia0k4vrb95f2iff6xcxm-zlib-1.3 mzn2n7ndqi1r7wjjchy83jp71pvk6z7r-nghttp2-1.57.0-lib wd2af3rrxvrxz0djrrwgyyw4sl030gf8-libkrb5-1.21.2 ypwhx9x3k8is4qmq1sgbzaggm5lcylhk-curl-8.4.0-dev"
+        },
+        {
+          "name": "nix:narinfo:sig",
+          "value": "cache.nixos.org-1:ONzXGCylSrv1SZuSp8dN5aLBOHhqZb7yNVjPqXW/Ss8WNcIe69sGP5zqJYdc0Eqg7XNyRMhuo5PMG0kyRv3IDg=="
+        },
+        {
+          "name": "nix:narinfo:store_path",
+          "value": "/nix/store/ypwhx9x3k8is4qmq1sgbzaggm5lcylhk-curl-8.4.0-dev"
+        },
+        {
+          "name": "nix:narinfo:system"
+        },
+        {
+          "name": "nix:narinfo:url",
+          "value": "nar/1q6a61dcgd5nhwb9c85cq9gavf2g3lbfmb2f1kw3x680fkn8fmgi.nar.xz"
+        }
+      ],
       "purl": "pkg:generic/curl@8.4.0",
       "type": "application",
       "version": "8.4.0"
