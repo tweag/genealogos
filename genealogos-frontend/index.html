@@ -152,7 +152,7 @@
             const attributePath = document.getElementById("attribute-path").value;
             const cycloneDxVer = document.getElementById("sbom-version").value;
 
-            // Create a hashmap where we will store a map from thread id to log message
+            // Create a map where we will store a map from thread id to log message
             // This will allow us to show them in order and only the latest message for each thread
             let logMessages = {};
 
@@ -184,7 +184,7 @@
                                 .then(statusData => {
                                     // if statusData.status.LogMessages exists, log the log messages one by one
                                     if (statusData.status.LogMessages) {
-                                        // Add the log messages to the hashmap
+                                        // Add the log messages to the map
                                         statusData.status.LogMessages.forEach(logMessage => {
                                             logMessages[logMessage.id] = logMessage;
                                         });
@@ -231,12 +231,13 @@
                                 .catch(error => {
                                     handleError(error);
 
-                                    // Clear the interval
+                                    // Stop refreshing the status messages
                                     clearInterval(intervalId);
                                 });
                         }, 1000); // Check status every second
                     } else {
-                        handleError("Job creation failed");
+                        // Pass the data, which contains the error message
+                        handleError(data);
                     }
                 })
                 .catch(error => {
@@ -244,29 +245,17 @@
                 });
         }
 
+        // Copy the generated sbom to clipboard
         function copySBOM() {
-            // Get the SBOM text
             const sbomText = document.getElementById("main-content").textContent;
 
-            // Create a textarea element
-            const textarea = document.createElement("textarea");
-            textarea.value = sbomText;
-
-            // Append the textarea to the body
-            document.body.appendChild(textarea);
-
-            // Select the text in the textarea
-            textarea.select();
-            textarea.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text to the clipboard
-            document.execCommand("copy");
-
-            // Remove the textarea
-            document.body.removeChild(textarea);
-
-            // Show a success message
-            alert("SBOM copied to clipboard!");
+            navigator.clipboard.writeText(sbomText)
+                .then(() => {
+                    alert("SBOM copied to clipboard!");
+                })
+                .catch(err => {
+                    handleError(err);
+                });
         }
 
         function saveSBOM() {
