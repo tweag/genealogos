@@ -146,7 +146,7 @@
             document.querySelector(".btn-primary").disabled = true;
 
             // Make a request to the API with flake_ref and attribute_path as get parameters
-            const response = fetch(`${apiAddress}/analyze?flake_ref=${flakeRef}&attribute_path=${attributePath}&cyclonedx_version=v${cycloneDxVer}`)
+            fetch(`${apiAddress}/analyze?flake_ref=${flakeRef}&attribute_path=${attributePath}&cyclonedx_version=v${cycloneDxVer}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.sbom) {
