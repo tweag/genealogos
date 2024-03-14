@@ -73,6 +73,13 @@ Finally, getting the result is done with the `result` endpoint:
 curl "http://localhost:8000/api/jobs/result/0"
 ```
 
+## Using the Geanlogos Web UI
+Genealogos ships with a pure html/javascript web frontend.
+By default, this frontend uses `127.0.0.1` to connect to the `genealogos-api`.
+Changing this default can be done using the settings button in the top of the webpage.
+
+The Web UI currently only supports analyzing from a flake ref and attribute path, analyzing from a trace file is not yet supported.
+
 ## Building Genealogos
 `nix build` or `cargo build`. A development shell is provided via `nix devel`.
 
