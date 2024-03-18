@@ -6,17 +6,37 @@
 // In this module, one might see that we do deserialize unused fields. This is
 // to ensure we stay complient with nixtract output.
 
+use std::sync::mpsc::{Sender, Receiver};
+
 use crate::model::{
     Model, ModelComponent, ModelDependency, ModelExternalReference, ModelExternalReferenceType,
     ModelLicense, ModelProperties, ModelSource, ModelType,
 };
 
-pub struct Nixtract {}
+#[derive(Debug)]
+pub struct NixtractHandle {
+    receiver: Receiver<nixtract::message::Message>,
+}
+
+#[derive(Debug, Clone)]
+pub struct Nixtract {
+    sender: Sender<nixtract::message::Message>,
+}
 
 use nixtract::{nixtract, DerivationDescription, License};
 
+impl Nixtract {
+    // Create a new Nixtract backend given the Sender
+    pub fn new() -> (Self, NixtractHandle) {
+        let (sender, receiver) = std::sync::mpsc::channel();
+        (Self { sender }, NixtractHandle { receiver })
+    }
+
+}
+
 impl crate::backend::BackendTrait for Nixtract {
-    fn from_flake_ref(
+    fn parse_flake_ref(
+        &self,
         flake_ref: impl AsRef<str>,
         attribute_path: Option<impl AsRef<str>>,
     ) -> crate::Result<Model> {
@@ -28,6 +48,7 @@ impl crate::backend::BackendTrait for Nixtract {
             false,
             true,
             None,
+            Some(self.sender.clone()),
         )?;
 
         // Convert the nixtract output into a Genealogos model
@@ -36,14 +57,14 @@ impl crate::backend::BackendTrait for Nixtract {
         Ok(model)
     }
 
-    fn from_trace_file(file_path: impl AsRef<std::path::Path>) -> crate::Result<Model> {
+    fn parse_trace_file(&self, file_path: impl AsRef<std::path::Path>) -> crate::Result<Model> {
         // Read the file contents and split them into individual lines
         let file_contents = std::fs::read_to_string(file_path)?;
         let lines = file_contents.lines();
-        Self::from_lines(lines)
+        self.parse_lines(lines)
     }
 
-    fn from_lines(lines: impl Iterator<Item = impl AsRef<str>>) -> crate::Result<Model> {
+    fn parse_lines(&self, lines: impl Iterator<Item = impl AsRef<str>>) -> crate::Result<Model> {
         // Parse each line as a Nixtract entry
         let entries: Vec<DerivationDescription> = lines
             .map(|line| serde_json::from_str(line.as_ref()))
@@ -53,6 +74,26 @@ impl crate::backend::BackendTrait for Nixtract {
         let model = Model::from(entries);
 
         Ok(model)
+    }
+}
+
+impl crate::BackendHandleTrait for NixtractHandle {
+    fn get_new_messages(&self) -> crate::Result<Vec<nixtract::message::Message>> {
+        // Get all current messages from the receiver
+        let messages: Vec<nixtract::message::Message> = self
+            .receiver
+            .try_iter()
+            .collect();
+
+        Ok(messages)
+    }
+
+    fn get_messages(&self) -> crate::Result<impl Iterator<Item = nixtract::message::Message>> {
+        Ok(self.receiver.iter())
+    }
+
+    fn get_num_ids(&self) -> usize {
+        rayon::current_num_threads()
     }
 }
 

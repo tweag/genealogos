@@ -4,6 +4,7 @@ use std::path;
 
 use clap::Parser;
 
+use genealogos::backend::BackendHandleTrait;
 use genealogos::cyclonedx;
 use genealogos::json_string;
 
@@ -28,11 +29,14 @@ struct Args {
 
     /// Backend to use for Nix evaluation tracing
     #[arg(long, default_value = "nixtract")]
-    backend: genealogos::backend::Backend,
+    backend: genealogos::backend::BackendEnum,
 
     /// Optional CycloneDX version to use
     #[arg(long, default_value = "1.5")]
     cyclonedx_version: cyclonedx::Version,
+
+    #[command(flatten)]
+    verbose: clap_verbosity_flag::Verbosity,
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
@@ -49,8 +53,62 @@ fn main() -> Result<(), Box<dyn Error>> {
         }
     };
 
-    // Generate the CycloneDX output
-    let output = json_string(args.backend, source, args.cyclonedx_version)?;
+    // Initialize the backend and get access to the status update messages
+    let (backend, handle) = args.backend.get_backend();
+    let messages = handle.get_messages()?;
+
+    // Create the indicatif multi progress bar
+    let multi = indicatif::MultiProgress::new();
+
+    // Initialize the logger using the indicatif log bridge
+    let mut log_builder = env_logger::Builder::new();
+    log_builder.filter_level(args.verbose.log_level_filter());
+    let logger = log_builder.build();
+    indicatif_log_bridge::LogWrapper::new(multi.clone(), logger)
+        .try_init()
+        .unwrap();
+
+    let spinner_style =
+        indicatif::ProgressStyle::with_template("{prefix:.bold.dim} {spinner} {wide_msg}")?
+            .tick_chars("⠁⠂⠄⡀⢀⠠⠐⠈");
+
+    // Start a thread to generate the CycloneDX output
+    let thread_handle =
+        std::thread::spawn(move || json_string(backend, source, args.cyclonedx_version));
+
+    // Spawn a new thread that will update the TUI
+    // Create a progress bar for rayon thread in the global thread pool
+    let mut progress_bars = Vec::new();
+    for _ in 0..handle.get_num_ids() {
+        let pb = multi.add(indicatif::ProgressBar::new(0));
+        pb.set_style(spinner_style.clone());
+        progress_bars.push(pb);
+    }
+
+    for message in messages {
+        match message.status {
+            nixtract::message::Status::Started => {
+                progress_bars[message.id].set_message(format!("Processing {}", message.path));
+            }
+            nixtract::message::Status::Completed => {
+                progress_bars[message.id].set_message(format!("Processed {}", message.path));
+                progress_bars[message.id].inc(1);
+            }
+            nixtract::message::Status::Skipped => {
+                progress_bars[message.id].set_message(format!("Skipped {}", message.path));
+            }
+        }
+    }
+
+    for pb in progress_bars {
+        pb.finish();
+    }
+
+    multi.clear().expect("Failed to clear the progress bar");
+
+    let output = thread_handle
+        .join()
+        .expect("Failed to join the generation thread")?;
 
     // Write the output to the specified file, or stdout if no file was specified
     if let Some(output_file) = args.output_file {

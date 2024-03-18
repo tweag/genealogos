@@ -19,6 +19,7 @@ rocket.workspace = true
 genealogos = { path = "../genealogos", features = ["rocket"] }
 serde_json.workspace = true
 serde.workspace = true
+nixtract.workspace = true
 
 [dev-dependencies]
 env_logger.workspace = true
