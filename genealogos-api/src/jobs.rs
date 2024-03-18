@@ -1,7 +1,7 @@
 use std::sync::{atomic, Arc};
 use std::time;
 
-use genealogos::backend::BackendHandleTrait;
+use genealogos::backend::BackendHandle;
 use rocket::serde::json::Json;
 use rocket::tokio;
 

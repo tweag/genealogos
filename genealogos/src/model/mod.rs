@@ -2,9 +2,6 @@
 //! Since the initial target of Genealogos is CycloneDX, this model is largely based on their representation.
 use std::collections::{HashMap, HashSet};
 
-pub mod v1_4;
-pub mod v1_5;
-
 #[derive(Debug)]
 pub struct Model {
     pub components: Vec<ModelComponent>,
@@ -63,7 +60,7 @@ pub struct ModelSource {
 
 #[derive(Debug)]
 pub struct ModelProperties {
-    pub properties: HashMap<Option<String>, Option<String>>,
+    pub properties: HashMap<String, String>,
 }
 
 #[derive(Debug)]

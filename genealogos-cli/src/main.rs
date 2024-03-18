@@ -4,7 +4,7 @@ use std::path;
 
 use clap::Parser;
 
-use genealogos::backend::BackendHandleTrait;
+use genealogos::backend::BackendHandle;
 use genealogos::cyclonedx;
 use genealogos::json_string;
 
