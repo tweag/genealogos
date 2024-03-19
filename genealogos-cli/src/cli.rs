@@ -15,7 +15,6 @@ impl BackendArg {
             BackendArg::Nixtract => Ok(Box::new(
                 genealogos::backend::nixtract_backend::Nixtract::new(),
             )),
-            _ => todo!(),
         }
     }
 }
@@ -24,7 +23,6 @@ impl std::fmt::Display for BackendArg {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             BackendArg::Nixtract => write!(f, "nixtract"),
-            _ => todo!(),
         }
     }
 }
@@ -42,7 +40,6 @@ impl BomArg {
         match self {
             BomArg::CycloneDX1_3 => Ok(Box::new(genealogos::bom::cyclonedx::CycloneDX::new())),
             BomArg::CycloneDX1_4 => Ok(Box::new(genealogos::bom::cyclonedx::CycloneDX::new())),
-            _ => todo!(),
         }
     }
 }
@@ -52,7 +49,6 @@ impl std::fmt::Display for BomArg {
         match self {
             BomArg::CycloneDX1_3 => write!(f, "cyclonedx1.3"),
             BomArg::CycloneDX1_4 => write!(f, "cyclonedx1.4"),
-            _ => todo!(),
         }
     }
 }
@@ -67,7 +63,6 @@ impl clap::ValueEnum for BomArg {
             match self {
                 BomArg::CycloneDX1_3 => "cyclonedx1.3",
                 BomArg::CycloneDX1_4 => "cyclonedx1.4",
-                _ => todo!(),
             }
             .into(),
         )

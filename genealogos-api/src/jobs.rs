@@ -5,8 +5,6 @@ use genealogos::backend::BackendHandle;
 use rocket::serde::json::Json;
 use rocket::tokio;
 
-use genealogos::{self, cyclonedx};
-
 use crate::messages::{self, Result, StatusEnum, StatusResponse};
 
 pub type JobId = u16;
@@ -17,7 +15,7 @@ pub type JobMap = Arc<rocket::tokio::sync::Mutex<std::collections::HashMap<JobId
 pub enum JobStatus {
     Stopped,
     /// The job is still running, the receiver is used receive status messages from worker threads
-    Running(genealogos::backend::BackendHandle),
+    Running(Box<dyn genealogos::backend::BackendHandle>),
     Done(genealogos::cyclonedx::CycloneDX, time::Duration),
     Error(String),
 }

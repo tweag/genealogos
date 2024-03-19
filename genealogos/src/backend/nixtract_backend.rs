@@ -10,7 +10,7 @@
 //!
 //! The `From<&License>` trait is implemented for `ModelLicense`, converting a nixtract `License` into a `ModelLicense`.
 
-use std::sync::mpsc::{Receiver, Sender};
+use std::sync::mpsc::Receiver;
 
 use crate::model::{
     Model, ModelComponent, ModelDependency, ModelExternalReference, ModelExternalReferenceType,
@@ -28,17 +28,18 @@ pub struct NixtractHandle {
 
 #[derive(Debug, Clone)]
 pub struct Nixtract {
-    sender: Sender<nixtract::message::Message>,
     config: NixtractConfig,
 }
 
 impl Nixtract {
-    // Create a new Nixtract backend given the Sender
     pub fn new() -> (Self, NixtractHandle) {
         let (sender, receiver) = std::sync::mpsc::channel();
-        let config = NixtractConfig::default();
+        let config = NixtractConfig {
+            message_tx: Some(sender),
+            ..NixtractConfig::default()
+        };
 
-        (Self { sender, config }, NixtractHandle { receiver })
+        (Self { config }, NixtractHandle { receiver })
     }
 }
 

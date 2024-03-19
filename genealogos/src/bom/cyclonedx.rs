@@ -48,16 +48,17 @@ impl TryFrom<Model> for Bom {
     type Error = crate::Error;
 
     fn try_from(model: Model) -> Result<Self> {
-        // Construct a BOM with a default version of 1 and serial_number with a random UUID
-        let mut bom = Bom::default();
-
-        bom.components = Some(Components(
-            model
-                .components
-                .into_iter()
-                .map(TryInto::try_into)
-                .collect::<Result<Vec<_>>>()?,
-        ));
+        let bom = Bom {
+            components: Some(Components(
+                model
+                    .components
+                    .into_iter()
+                    .map(TryInto::try_into)
+                    .collect::<Result<Vec<_>>>()?,
+            )),
+            // Constructs a BOM with a default version of 1 and serial_number with a random UUID
+            ..Default::default()
+        };
 
         Ok(bom)
     }
