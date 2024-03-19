@@ -13,6 +13,7 @@ members = ["genealogos", "genealogos-cli", "genealogos-api"]
 resolver = "2"
 
 [workspace.dependencies]
+anyhow = "1.0.81"
 chrono = "0.4.34"
 clap = { version = "4.4.14", features = ["derive"] }
 clap-verbosity-flag = "2.1.2"
@@ -30,6 +31,7 @@ uuid = { version = "1.7.0", features = ["v4"] }
 
 # Non-crates.io dependencies
 nixtract.git = "https://github.com/tweag/nixtract.git"
+genealogos.path = "./genealogos"
 
 # Test dependencies
 predicates = "3.1.0"

@@ -1,12 +1,13 @@
-use std::error::Error;
+use anyhow::Result;
+use genealogos::bom::Bom;
 use std::fs;
 use std::path;
 
 use clap::Parser;
 
-use genealogos::backend::BackendHandle;
-use genealogos::cyclonedx;
-use genealogos::json_string;
+use genealogos::backend::{Backend, BackendHandle};
+
+mod cli;
 
 /// `cli` application for processing data files and generating CycloneDX output
 #[derive(Parser, Debug)]
@@ -28,34 +29,37 @@ struct Args {
     output_file: Option<path::PathBuf>,
 
     /// Backend to use for Nix evaluation tracing
-    #[arg(long, default_value = "nixtract")]
-    backend: genealogos::backend::BackendEnum,
+    #[arg(long, default_value_t)]
+    backend: cli::BackendArg,
 
     /// Optional CycloneDX version to use
-    #[arg(long, default_value = "1.5")]
-    cyclonedx_version: cyclonedx::Version,
+    #[arg(long, default_value_t)]
+    bom: cli::BomArg,
 
     #[command(flatten)]
     verbose: clap_verbosity_flag::Verbosity,
 }
 
-fn main() -> Result<(), Box<dyn Error>> {
+fn main() -> Result<()> {
     // Parse command-line arguments
     let args = Args::parse();
 
     // If a file was specified, use that as the input file as the Source, otherwise use the flake reference and attribute path
     let source = if let Some(file) = args.file {
-        genealogos::Source::TraceFile(file)
+        genealogos::backend::Source::TraceFile(file)
     } else {
-        genealogos::Source::Flake {
+        genealogos::backend::Source::Flake {
             flake_ref: args.flake_ref.unwrap(),
             attribute_path: args.attribute_path,
         }
     };
 
     // Initialize the backend and get access to the status update messages
-    let (backend, handle) = args.backend.get_backend();
+    let (backend, handle) = *args.backend.get_backend()?;
     let messages = handle.get_messages()?;
+
+    // Initialize the frontend (bom)
+    let bom = args.bom.get_bom()?;
 
     // Create the indicatif multi progress bar
     let multi = indicatif::MultiProgress::new();
@@ -73,8 +77,12 @@ fn main() -> Result<(), Box<dyn Error>> {
             .tick_chars("⠁⠂⠄⡀⢀⠠⠐⠈");
 
     // Start a thread to generate the CycloneDX output
-    let thread_handle =
-        std::thread::spawn(move || json_string(backend, source, args.cyclonedx_version));
+    let thread_handle = std::thread::spawn(move || -> Result<String> {
+        let model = backend.to_model_from_source(source)?;
+        let mut out = String::new();
+        bom.write_to_fmt_writer(model, &mut out)?;
+        Ok(out)
+    });
 
     // Spawn a new thread that will update the TUI
     // Create a progress bar for rayon thread in the global thread pool
