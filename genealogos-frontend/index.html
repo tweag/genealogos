@@ -186,11 +186,11 @@
                                     if (statusData.status.LogMessages) {
                                         // Add the log messages to the map
                                         statusData.status.LogMessages.forEach(logMessage => {
-                                            logMessages[logMessage.id] = logMessage;
+                                            logMessages[logMessage.index] = logMessage;
                                         });
 
                                         // Display the log messages in the code container in the format: "{id}: {status} {path}"
-                                        document.getElementById("main-content").textContent = Object.values(logMessages).map(logMessage => `${logMessage.id}: ${logMessage.status} ${logMessage.path}`).join("\n");
+                                        document.getElementById("main-content").textContent = Object.values(logMessages).map(logMessage => `${logMessage.index}: ${logMessage.content}`).join("\n");
 
                                     } else if (statusData.status === "Done") {
                                         // Retrieve the SBOM
@@ -198,11 +198,8 @@
                                             .then(response => response.json())
                                             .then(sbomData => {
                                                 if (sbomData.sbom) {
-                                                    // Convert the response to a JSON string
-                                                    const sbom = JSON.stringify(sbomData.sbom, null, 2);
-
                                                     // Display the SBOM in the code container
-                                                    document.getElementById("main-content").textContent = sbom;
+                                                    document.getElementById("main-content").textContent = sbomData.sbom;
 
                                                     // Enable buttons
                                                     toggleButtons(true);

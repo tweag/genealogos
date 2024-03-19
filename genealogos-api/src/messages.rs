@@ -9,7 +9,7 @@ pub type Result<T> = std::result::Result<Json<OkResponse<T>>, Json<ErrResponse>>
 
 #[derive(serde::Serialize)]
 pub struct AnalyzeResponse {
-    pub sbom: genealogos::cyclonedx::CycloneDX,
+    pub sbom: String,
 }
 
 #[derive(serde::Serialize)]
@@ -24,7 +24,7 @@ pub struct StatusResponse {
 
 #[derive(serde::Serialize)]
 pub enum StatusEnum {
-    LogMessages(Vec<nixtract::message::Message>),
+    LogMessages(Vec<genealogos::backend::Message>),
     Done,
     Stopped,
 }

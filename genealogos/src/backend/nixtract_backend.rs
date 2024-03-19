@@ -80,18 +80,29 @@ impl crate::backend::Backend for Nixtract {
 }
 
 impl super::BackendHandle for NixtractHandle {
-    fn get_new_messages(&self) -> crate::Result<Vec<nixtract::message::Message>> {
+    fn new_messages(&self) -> crate::Result<Vec<super::Message>> {
         // Get all current messages from the receiver
-        let messages: Vec<nixtract::message::Message> = self.receiver.try_iter().collect();
+        let messages: Vec<super::Message> = self
+            .receiver
+            .try_iter()
+            .map(|m| super::Message {
+                index: m.id,
+                content: m.to_string(),
+            })
+            .collect();
 
         Ok(messages)
     }
 
-    fn get_messages(&self) -> crate::Result<impl Iterator<Item = nixtract::message::Message>> {
-        Ok(self.receiver.iter())
+    #[cfg(not(feature = "backend_handle_object"))]
+    fn messages(&self) -> crate::Result<impl Iterator<Item = super::Message>> {
+        Ok(self.receiver.iter().map(|m| super::Message {
+            index: m.id,
+            content: m.to_string(),
+        }))
     }
 
-    fn get_num_ids(&self) -> usize {
+    fn max_index(&self) -> usize {
         rayon::current_num_threads()
     }
 }

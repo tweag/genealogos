@@ -1,7 +1,8 @@
 use std::sync::{atomic, Arc};
 use std::time;
 
-use genealogos::backend::BackendHandle;
+use genealogos::backend::Backend;
+use genealogos::bom::Bom;
 use rocket::serde::json::Json;
 use rocket::tokio;
 
@@ -15,8 +16,8 @@ pub type JobMap = Arc<rocket::tokio::sync::Mutex<std::collections::HashMap<JobId
 pub enum JobStatus {
     Stopped,
     /// The job is still running, the receiver is used receive status messages from worker threads
-    Running(Box<dyn genealogos::backend::BackendHandle>),
-    Done(genealogos::cyclonedx::CycloneDX, time::Duration),
+    Running(Box<dyn genealogos::backend::BackendHandle + Send>),
+    Done(String, time::Duration),
     Error(String),
 }
 
@@ -35,7 +36,8 @@ impl ToString for JobStatus {
 pub async fn create(
     flake_ref: &str,
     attribute_path: &str,
-    cyclonedx_version: Option<cyclonedx::Version>,
+    // TODO: Use version
+    cyclonedx_version: Option<&str>,
     job_map: &rocket::State<JobMap>,
     job_counter: &rocket::State<atomic::AtomicU16>,
 ) -> Result<messages::CreateResponse> {
@@ -44,7 +46,7 @@ pub async fn create(
     let start_time = time::Instant::now();
 
     // Create backend
-    let (backend, backend_handle) = genealogos::backend::BackendEnum::default().get_backend();
+    let (backend, backend_handle) = genealogos::backend::nixtract_backend::Nixtract::new();
 
     job_map
         .try_lock()
@@ -55,26 +57,38 @@ pub async fn create(
                 message: "Could not lock job map".to_owned(),
             })
         })?
-        .insert(job_id, JobStatus::Running(backend_handle));
+        .insert(job_id, JobStatus::Running(Box::new(backend_handle)));
 
     // Spawn a new thread to call `genealogos` and store the result in the job map
     let job_map_clone = Arc::clone(job_map);
     let flake_ref = flake_ref.to_string();
     let attribute_path = attribute_path.to_string();
     tokio::spawn(async move {
-        let output = genealogos::cyclonedx(
-            backend,
-            genealogos::Source::Flake {
-                flake_ref,
-                attribute_path: Some(attribute_path),
-            },
-            cyclonedx_version.unwrap_or_default(),
-        );
+        let source = genealogos::backend::Source::Flake {
+            flake_ref,
+            attribute_path: Some(attribute_path),
+        };
+
+        let model = match backend.to_model_from_source(source) {
+            Ok(m) => m,
+            Err(e) => {
+                job_map_clone
+                    .try_lock()
+                    .unwrap()
+                    .insert(job_id, JobStatus::Error(e.to_string()));
+                return;
+            }
+        };
+
+        let bom = genealogos::bom::cyclonedx::CycloneDX::new();
+
+        let mut buf = String::new();
+        let output = bom.write_to_fmt_writer(model, &mut buf);
 
         job_map_clone.try_lock().unwrap().insert(
             job_id,
             match output {
-                Ok(c) => JobStatus::Done(c, start_time.elapsed()),
+                Ok(_) => JobStatus::Done(buf, start_time.elapsed()),
                 Err(e) => JobStatus::Error(e.to_string()),
             },
         );
@@ -108,7 +122,7 @@ pub async fn status(
             message: message.to_owned(),
         })),
         JobStatus::Running(backend) => {
-            let messages = backend.get_new_messages().map_err(|e| {
+            let messages = backend.new_messages().map_err(|e| {
                 Json(messages::ErrResponse {
                     metadata: messages::Metadata::new(Some(job_id)),
                     message: e.to_string(),
@@ -116,9 +130,9 @@ pub async fn status(
             })?;
 
             // Show the last message if there are multiple with the same id
-            let mut messages: Vec<nixtract::message::Message> = messages.into_iter().collect();
-            messages.sort_by_key(|m| m.id);
-            messages.dedup_by_key(|m| m.id);
+            let mut messages: Vec<genealogos::backend::Message> = messages.into_iter().collect();
+            messages.sort_by_key(|m| m.index);
+            messages.dedup_by_key(|m| m.index);
 
             Ok(StatusResponse {
                 status: StatusEnum::LogMessages(messages),

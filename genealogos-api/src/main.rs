@@ -1,7 +1,7 @@
 use std::sync::{atomic, Arc};
 
-use genealogos::cyclonedx;
-
+use genealogos::backend::Backend;
+use genealogos::bom::Bom;
 use rocket::http::Status;
 use rocket::response::status;
 use rocket::serde::json::Json;
@@ -25,24 +25,31 @@ fn handle_errors(req: &Request) -> status::Custom<String> {
 fn analyze(
     flake_ref: &str,
     attribute_path: Option<&str>,
-    cyclonedx_version: Option<cyclonedx::Version>,
+    cyclonedx_version: Option<&str>,
 ) -> Result<messages::AnalyzeResponse> {
     let start_time = std::time::Instant::now();
 
     // Construct the Source from the flake reference and attribute path
-    let source = genealogos::Source::Flake {
+    let source = genealogos::backend::Source::Flake {
         flake_ref: flake_ref.to_string(),
         attribute_path: attribute_path.map(str::to_string),
     };
 
-    let (backend, _) = genealogos::backend::BackendEnum::Nixtract.get_backend();
+    let (backend, _) = genealogos::backend::nixtract_backend::Nixtract::new();
 
-    let sbom =
-        cyclonedx(backend, source, cyclonedx_version.unwrap_or_default()).map_err(|err| {
-            messages::ErrResponse {
-                metadata: messages::Metadata::new(None),
-                message: err.to_string(),
-            }
+    let model = backend
+        .to_model_from_source(source)
+        .map_err(|err| messages::ErrResponse {
+            metadata: messages::Metadata::new(None),
+            message: err.to_string(),
+        })?;
+
+    let mut buf = String::new();
+    let bom = genealogos::bom::cyclonedx::CycloneDX::new();
+    bom.write_to_fmt_writer(model, &mut buf)
+        .map_err(|err| messages::ErrResponse {
+            metadata: messages::Metadata::new(None),
+            message: err.to_string(),
         })?;
 
     let json = Json(messages::OkResponse {
@@ -50,7 +57,7 @@ fn analyze(
             time_taken: Some(start_time.elapsed()),
             ..Default::default()
         },
-        data: messages::AnalyzeResponse { sbom },
+        data: messages::AnalyzeResponse { sbom: buf },
     });
 
     Ok(json)

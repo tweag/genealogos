@@ -56,7 +56,7 @@ fn main() -> Result<()> {
 
     // Initialize the backend and get access to the status update messages
     let (backend, handle) = *args.backend.get_backend()?;
-    let messages = handle.get_messages()?;
+    let messages = handle.messages()?;
 
     // Initialize the frontend (bom)
     let bom = args.bom.get_bom()?;
@@ -87,25 +87,15 @@ fn main() -> Result<()> {
     // Spawn a new thread that will update the TUI
     // Create a progress bar for rayon thread in the global thread pool
     let mut progress_bars = Vec::new();
-    for _ in 0..handle.get_num_ids() {
+    for _ in 0..handle.max_index() {
         let pb = multi.add(indicatif::ProgressBar::new(0));
         pb.set_style(spinner_style.clone());
         progress_bars.push(pb);
     }
 
     for message in messages {
-        match message.status {
-            nixtract::message::Status::Started => {
-                progress_bars[message.id].set_message(format!("Processing {}", message.path));
-            }
-            nixtract::message::Status::Completed => {
-                progress_bars[message.id].set_message(format!("Processed {}", message.path));
-                progress_bars[message.id].inc(1);
-            }
-            nixtract::message::Status::Skipped => {
-                progress_bars[message.id].set_message(format!("Skipped {}", message.path));
-            }
-        }
+        progress_bars[message.index].set_message(format!("{}: {}", message.index, message.content));
+        progress_bars[message.index].inc(1);
     }
 
     for pb in progress_bars {

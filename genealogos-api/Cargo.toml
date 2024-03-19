@@ -16,7 +16,7 @@ path = "src/main.rs"
 [dependencies]
 chrono.workspace = true
 rocket.workspace = true
-genealogos = { path = "../genealogos", features = ["rocket"] }
+genealogos = { path = "../genealogos", features = ["rocket", "backend_handle_object"] }
 serde_json.workspace = true
 serde.workspace = true
 nixtract.workspace = true

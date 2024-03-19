@@ -129,17 +129,24 @@ pub trait Backend {
     fn to_model_from_lines(&self, lines: impl Iterator<Item = impl AsRef<str>>) -> Result<Model>;
 }
 
+#[derive(Debug, Clone, serde::Serialize)]
+pub struct Message {
+    pub index: usize,
+    pub content: String,
+}
+
 /// `BackendHandle` is a trait that defines the behavior of a backend handle.
 ///
 /// This trait should be implemented by any backend handle that wants to provide
 /// a consistent interface for interacting with the backend.
 pub trait BackendHandle {
     /// Gets all messages that were produced since the previous call to this function
-    fn get_new_messages(&self) -> Result<Vec<nixtract::message::Message>>;
+    fn new_messages(&self) -> Result<Vec<Message>>;
 
     /// Gets an iterator over all messages
-    fn get_messages(&self) -> Result<impl Iterator<Item = nixtract::message::Message>>;
+    #[cfg(not(feature = "backend_handle_object"))]
+    fn messages(&self) -> Result<impl Iterator<Item = Message>>;
 
     /// Gets an upper bound to the number of different ids to expect in the messages
-    fn get_num_ids(&self) -> usize;
+    fn max_index(&self) -> usize;
 }
