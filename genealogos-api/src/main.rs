@@ -45,7 +45,17 @@ fn analyze(
         })?;
 
     let mut buf = String::new();
-    let bom = genealogos::bom::cyclonedx::CycloneDX::new();
+    let bom = match cyclonedx_version {
+        Some(cyclonedx_version) => genealogos::bom::cyclonedx::CycloneDX::parse_version(
+            cyclonedx_version,
+        )
+        .map_err(|err| messages::ErrResponse {
+            metadata: messages::Metadata::new(None),
+            message: err.to_string(),
+        })?,
+        None => genealogos::bom::cyclonedx::CycloneDX::default(),
+    };
+
     bom.write_to_fmt_writer(model, &mut buf)
         .map_err(|err| messages::ErrResponse {
             metadata: messages::Metadata::new(None),

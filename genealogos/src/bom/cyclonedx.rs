@@ -1,3 +1,6 @@
+use std::str::FromStr;
+
+use cyclonedx_bom::models::bom::SpecVersion;
 use cyclonedx_bom::models::component::Classification;
 use cyclonedx_bom::models::external_reference::ExternalReference;
 use cyclonedx_bom::models::external_reference::ExternalReferenceType;
@@ -13,18 +16,36 @@ use cyclonedx_bom::prelude::*;
 use crate::error::*;
 use crate::model::*;
 
-// TODO: Include target version
-pub struct CycloneDX {}
+// TODO: Include output filetype
+pub struct CycloneDX {
+    spec_version: SpecVersion,
+}
 
 impl CycloneDX {
-    pub fn new() -> Self {
-        CycloneDX {}
+    pub fn new(spec_version: SpecVersion) -> Self {
+        CycloneDX { spec_version }
+    }
+
+    /// Parses the given specification version string into a `CycloneDX` instance.
+    ///
+    /// # Arguments
+    ///
+    /// * `spec_version` - A string slice that holds the specification version.
+    ///
+    /// # Returns
+    ///
+    /// * `Result<Self>` - Returns a `Result` which is an `Ok` variant that wraps a `CycloneDX` instance if the parsing is successful,
+    /// or an `Err` variant that contains an error if the parsing fails.
+    pub fn parse_version(spec_version: &str) -> Result<Self> {
+        let spec_version = SpecVersion::from_str(spec_version)?;
+        Ok(CycloneDX { spec_version })
     }
 }
 
 impl Default for CycloneDX {
     fn default() -> Self {
-        Self::new()
+        // TODO: Update to 1_5, or ideally Default (but that's not implemented)
+        Self::new(SpecVersion::V1_4)
     }
 }
 
@@ -34,13 +55,16 @@ impl super::Bom for CycloneDX {
         model: crate::model::Model,
         writer: &mut W,
     ) -> crate::Result<()> {
-        //TODO: Include target version
-
         // Convert the model into a CycloneDX BOM
         let bom = Bom::try_from(model)?;
 
-        // Convert the bom into JSON 1.4
-        Ok(bom.output_as_json_v1_4(writer)?)
+        match self.spec_version {
+            SpecVersion::V1_3 => bom.output_as_json_v1_3(writer)?,
+            SpecVersion::V1_4 => bom.output_as_json_v1_4(writer)?,
+            _ => return Err(Error::CycloneDXUnimplemented(self.spec_version.to_string())),
+        }
+
+        Ok(())
     }
 }
 

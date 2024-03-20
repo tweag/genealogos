@@ -24,6 +24,9 @@ pub enum Error {
     #[error("Errors constructing CycloneDX SPDX expression: {0}")]
     CycloneDXSpdxExpression(#[from] cyclonedx_bom::external_models::spdx::SpdxExpressionError),
 
+    #[error("Genealogos cannot handle CycloneDX version {0} yet")]
+    CycloneDXUnimplemented(String),
+
     #[error("Errors constructing Converting to String output: {0}")]
     FromUtf8Error(#[from] std::string::FromUtf8Error),
 

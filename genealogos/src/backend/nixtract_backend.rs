@@ -94,7 +94,7 @@ impl super::BackendHandle for NixtractHandle {
         Ok(messages)
     }
 
-    #[cfg(not(feature = "backend_handle_object"))]
+    #[cfg(feature = "backend_handle_messages")]
     fn messages(&self) -> crate::Result<impl Iterator<Item = super::Message>> {
         Ok(self.receiver.iter().map(|m| super::Message {
             index: m.id,

@@ -66,8 +66,8 @@
                 <div class="mb-3">
                     <label for="sbom-version">SBOM Version</label>
                     <select class="form-select" id="sbom-version" name="sbom-version">
-                        <option value="1_4">CycloneDX 1.4</option>
-                        <option value="1_5" selected>CycloneDX 1.5</option>
+                        <option value="1.3">CycloneDX 1.3</option>
+                        <option value="1.4" selected>CycloneDX 1.4</option>
                     </select>
                 </div>
                 <div class="d-flex justify-content-between align-items-center">
@@ -170,7 +170,7 @@
             toggleButtons(false);
 
             // Make a request to the API to create a job
-            fetch(`${apiAddress}/jobs/create?flake_ref=${flakeRef}&attribute_path=${attributePath}&cyclonedx_version=v${cycloneDxVer}`)
+            fetch(`${apiAddress}/jobs/create?flake_ref=${flakeRef}&attribute_path=${attributePath}&cyclonedx_version=${cycloneDxVer}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.job_id !== undefined && data.job_id !== null) {

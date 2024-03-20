@@ -21,9 +21,6 @@ uuid.workspace = true
 
 nixtract.workspace = true
 
-# If the `rocket` feature is enabled, `FromForm` will be derived for `cyclonedx::Version`
-rocket = { workspace = true, optional = true }
-
 [dev-dependencies]
 env_logger.workspace = true
 predicates.workspace = true
@@ -38,5 +35,5 @@ default = []
 nix = []
 
 # The messages function of the `BanendHandle` trait violates object safety.
-# For those users of the library that want to use this trait as an object, the following feature ensures this is possible.
-backend_handle_object = []
+# For those users of the library that don't need to use this trait as an object, and would like access to the `messages` function, this feature should be enabled.
+backend_handle_messages = []

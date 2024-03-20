@@ -38,8 +38,12 @@ pub enum BomArg {
 impl BomArg {
     pub fn get_bom(&self) -> Result<Box<impl Bom>> {
         match self {
-            BomArg::CycloneDX1_3 => Ok(Box::new(genealogos::bom::cyclonedx::CycloneDX::new())),
-            BomArg::CycloneDX1_4 => Ok(Box::new(genealogos::bom::cyclonedx::CycloneDX::new())),
+            BomArg::CycloneDX1_3 => Ok(Box::new(genealogos::bom::cyclonedx::CycloneDX::new(
+                cyclonedx_bom::models::bom::SpecVersion::V1_3,
+            ))),
+            BomArg::CycloneDX1_4 => Ok(Box::new(genealogos::bom::cyclonedx::CycloneDX::new(
+                cyclonedx_bom::models::bom::SpecVersion::V1_4,
+            ))),
         }
     }
 }

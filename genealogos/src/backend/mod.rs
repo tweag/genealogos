@@ -144,7 +144,7 @@ pub trait BackendHandle {
     fn new_messages(&self) -> Result<Vec<Message>>;
 
     /// Gets an iterator over all messages
-    #[cfg(not(feature = "backend_handle_object"))]
+    #[cfg(feature = "backend_handle_messages")]
     fn messages(&self) -> Result<impl Iterator<Item = Message>>;
 
     /// Gets an upper bound to the number of different ids to expect in the messages

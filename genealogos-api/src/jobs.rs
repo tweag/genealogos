@@ -36,7 +36,6 @@ impl ToString for JobStatus {
 pub async fn create(
     flake_ref: &str,
     attribute_path: &str,
-    // TODO: Use version
     cyclonedx_version: Option<&str>,
     job_map: &rocket::State<JobMap>,
     job_counter: &rocket::State<atomic::AtomicU16>,
@@ -63,6 +62,7 @@ pub async fn create(
     let job_map_clone = Arc::clone(job_map);
     let flake_ref = flake_ref.to_string();
     let attribute_path = attribute_path.to_string();
+    let cyclonedx_version = cyclonedx_version.map(String::from);
     tokio::spawn(async move {
         let source = genealogos::backend::Source::Flake {
             flake_ref,
@@ -80,7 +80,21 @@ pub async fn create(
             }
         };
 
-        let bom = genealogos::bom::cyclonedx::CycloneDX::new();
+        let bom = match cyclonedx_version {
+            Some(cyclonedx_version) => {
+                match genealogos::bom::cyclonedx::CycloneDX::parse_version(&cyclonedx_version) {
+                    Ok(bom) => bom,
+                    Err(e) => {
+                        job_map_clone
+                            .try_lock()
+                            .unwrap()
+                            .insert(job_id, JobStatus::Error(e.to_string()));
+                        return;
+                    }
+                }
+            }
+            None => genealogos::bom::cyclonedx::CycloneDX::default(),
+        };
 
         let mut buf = String::new();
         let output = bom.write_to_fmt_writer(model, &mut buf);
