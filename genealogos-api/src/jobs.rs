@@ -82,7 +82,10 @@ pub async fn create(
 
         let bom = match cyclonedx_version {
             Some(cyclonedx_version) => {
-                match genealogos::bom::cyclonedx::CycloneDX::parse_version(&cyclonedx_version) {
+                match genealogos::bom::cyclonedx::CycloneDX::parse_version(
+                    &cyclonedx_version,
+                    genealogos::bom::cyclonedx::FileFormat::JSON,
+                ) {
                     Ok(bom) => bom,
                     Err(e) => {
                         job_map_clone

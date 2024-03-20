@@ -1,3 +1,5 @@
+use std::sync::OnceLock;
+
 use anyhow::Result;
 use genealogos::backend::{Backend, BackendHandle};
 use genealogos::bom::Bom;
@@ -27,23 +29,30 @@ impl std::fmt::Display for BackendArg {
     }
 }
 
-#[derive(Clone, Copy, Debug, Default)]
+#[derive(Clone, Copy, Debug)]
 #[non_exhaustive]
 pub enum BomArg {
-    CycloneDX1_3,
-    #[default]
-    CycloneDX1_4,
+    CycloneDX(
+        genealogos::bom::cyclonedx::SpecVersion,
+        genealogos::bom::cyclonedx::FileFormat,
+    ),
+}
+
+impl Default for BomArg {
+    fn default() -> Self {
+        BomArg::CycloneDX(
+            genealogos::bom::cyclonedx::SpecVersion::default(),
+            genealogos::bom::cyclonedx::FileFormat::default(),
+        )
+    }
 }
 
 impl BomArg {
     pub fn get_bom(&self) -> Result<Box<impl Bom>> {
         match self {
-            BomArg::CycloneDX1_3 => Ok(Box::new(genealogos::bom::cyclonedx::CycloneDX::new(
-                cyclonedx_bom::models::bom::SpecVersion::V1_3,
-            ))),
-            BomArg::CycloneDX1_4 => Ok(Box::new(genealogos::bom::cyclonedx::CycloneDX::new(
-                cyclonedx_bom::models::bom::SpecVersion::V1_4,
-            ))),
+            BomArg::CycloneDX(version, file_format) => Ok(Box::new(
+                genealogos::bom::cyclonedx::CycloneDX::new(*version, *file_format),
+            )),
         }
     }
 }
@@ -51,24 +60,32 @@ impl BomArg {
 impl std::fmt::Display for BomArg {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            BomArg::CycloneDX1_3 => write!(f, "cyclonedx1.3"),
-            BomArg::CycloneDX1_4 => write!(f, "cyclonedx1.4"),
+            BomArg::CycloneDX(version, file_format) => {
+                write!(f, "cyclonedx_{version}_{file_format}")
+            }
         }
     }
 }
 
 impl clap::ValueEnum for BomArg {
     fn value_variants<'a>() -> &'a [Self] {
-        &[BomArg::CycloneDX1_3, BomArg::CycloneDX1_4]
+        static BOM_ARG_VARIANTS: OnceLock<Vec<BomArg>> = OnceLock::new();
+        let versions = genealogos::bom::cyclonedx::SpecVersion::value_variants();
+        let file_formats = genealogos::bom::cyclonedx::FileFormat::value_variants();
+
+        // Create the carthesian product of versions and file formats
+        let variants = versions
+            .iter()
+            .flat_map(|v| file_formats.iter().map(move |f| BomArg::CycloneDX(*v, *f)))
+            .collect();
+
+        BOM_ARG_VARIANTS.get_or_init(|| variants)
     }
 
     fn to_possible_value(&self) -> Option<clap::builder::PossibleValue> {
-        Some(
-            match self {
-                BomArg::CycloneDX1_3 => "cyclonedx1.3",
-                BomArg::CycloneDX1_4 => "cyclonedx1.4",
-            }
-            .into(),
-        )
+        let value = match self {
+            BomArg::CycloneDX(v, f) => format!("cyclonedx_{v}_{f}"),
+        };
+        Some(clap::builder::PossibleValue::new(value))
     }
 }

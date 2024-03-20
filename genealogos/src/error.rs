@@ -21,6 +21,9 @@ pub enum Error {
     #[error("Errors constructing CycloneDX JSON output: {0}")]
     CycloneDXJSON(#[from] cyclonedx_bom::errors::JsonWriteError),
 
+    #[error("Errors constructing CycloneDX XML output: {0}")]
+    CycloneDXXML(#[from] cyclonedx_bom::errors::XmlWriteError),
+
     #[error("Errors constructing CycloneDX SPDX expression: {0}")]
     CycloneDXSpdxExpression(#[from] cyclonedx_bom::external_models::spdx::SpdxExpressionError),
 

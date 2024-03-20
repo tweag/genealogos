@@ -1,6 +1,6 @@
+use std::fmt::Display;
 use std::str::FromStr;
 
-use cyclonedx_bom::models::bom::SpecVersion;
 use cyclonedx_bom::models::component::Classification;
 use cyclonedx_bom::models::external_reference::ExternalReference;
 use cyclonedx_bom::models::external_reference::ExternalReferenceType;
@@ -16,14 +16,66 @@ use cyclonedx_bom::prelude::*;
 use crate::error::*;
 use crate::model::*;
 
-// TODO: Include output filetype
+#[derive(Clone, Copy, Debug, Default)]
+#[cfg_attr(feature = "rocket", derive(rocket::FromFormField))]
+#[cfg_attr(feature = "clap", derive(clap::ValueEnum))]
+pub enum FileFormat {
+    #[default]
+    JSON,
+    XML,
+}
+
+impl Display for FileFormat {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            FileFormat::JSON => write!(f, "json"),
+            FileFormat::XML => write!(f, "xml"),
+        }
+    }
+}
+
+#[derive(Clone, Copy, Debug, Default)]
+#[cfg_attr(feature = "rocket", derive(rocket::FromFormField))]
+#[cfg_attr(feature = "clap", derive(clap::ValueEnum))]
+#[non_exhaustive]
+pub enum SpecVersion {
+    V1_3,
+    #[default]
+    V1_4,
+}
+
+impl Display for SpecVersion {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            SpecVersion::V1_3 => write!(f, "1.3"),
+            SpecVersion::V1_4 => write!(f, "1.4"),
+        }
+    }
+}
+
+impl FromStr for SpecVersion {
+    type Err = Error;
+
+    fn from_str(s: &str) -> Result<Self> {
+        match s {
+            "1.3" => Ok(SpecVersion::V1_3),
+            "1.4" => Ok(SpecVersion::V1_4),
+            _ => Err(Error::InvalidCycloneDXVersion(s.to_string())),
+        }
+    }
+}
+
 pub struct CycloneDX {
+    file_format: FileFormat,
     spec_version: SpecVersion,
 }
 
 impl CycloneDX {
-    pub fn new(spec_version: SpecVersion) -> Self {
-        CycloneDX { spec_version }
+    pub fn new(spec_version: SpecVersion, file_format: FileFormat) -> Self {
+        CycloneDX {
+            file_format,
+            spec_version,
+        }
     }
 
     /// Parses the given specification version string into a `CycloneDX` instance.
@@ -36,16 +88,19 @@ impl CycloneDX {
     ///
     /// * `Result<Self>` - Returns a `Result` which is an `Ok` variant that wraps a `CycloneDX` instance if the parsing is successful,
     /// or an `Err` variant that contains an error if the parsing fails.
-    pub fn parse_version(spec_version: &str) -> Result<Self> {
+    pub fn parse_version(spec_version: &str, file_format: FileFormat) -> Result<Self> {
         let spec_version = SpecVersion::from_str(spec_version)?;
-        Ok(CycloneDX { spec_version })
+        Ok(CycloneDX {
+            spec_version,
+            file_format,
+        })
     }
 }
 
 impl Default for CycloneDX {
     fn default() -> Self {
         // TODO: Update to 1_5, or ideally Default (but that's not implemented)
-        Self::new(SpecVersion::V1_4)
+        Self::new(SpecVersion::V1_4, FileFormat::JSON)
     }
 }
 
@@ -59,9 +114,14 @@ impl super::Bom for CycloneDX {
         let bom = Bom::try_from(model)?;
 
         match self.spec_version {
-            SpecVersion::V1_3 => bom.output_as_json_v1_3(writer)?,
-            SpecVersion::V1_4 => bom.output_as_json_v1_4(writer)?,
-            _ => return Err(Error::CycloneDXUnimplemented(self.spec_version.to_string())),
+            SpecVersion::V1_3 => match self.file_format {
+                FileFormat::JSON => bom.output_as_json_v1_3(writer)?,
+                FileFormat::XML => bom.output_as_xml_v1_3(writer)?,
+            },
+            SpecVersion::V1_4 => match self.file_format {
+                FileFormat::JSON => bom.output_as_json_v1_4(writer)?,
+                FileFormat::XML => bom.output_as_xml_v1_4(writer)?,
+            },
         }
 
         Ok(())

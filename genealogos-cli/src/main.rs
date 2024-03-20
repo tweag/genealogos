@@ -32,7 +32,7 @@ struct Args {
     #[arg(long, default_value_t)]
     backend: cli::BackendArg,
 
-    /// Optional CycloneDX version to use
+    /// Optional bom specification to output
     #[arg(long, default_value_t)]
     bom: cli::BomArg,
 

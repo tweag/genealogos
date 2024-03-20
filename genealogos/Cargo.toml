@@ -10,7 +10,7 @@ keywords.workspace = true
 readme.workspace = true
 
 [dependencies]
-clap.workspace = true
+clap = { workspace = true, optional = true }
 cyclonedx-bom.workspace = true
 log.workspace = true
 rayon.workspace = true
