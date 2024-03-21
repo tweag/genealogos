@@ -3,7 +3,7 @@
     naersk.url = "github:nix-community/naersk/master";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     utils.url = "github:numtide/flake-utils";
-    nixtract.url = "github:tweag/nixtract/snake_case-descriptions";
+    nixtract.url = "github:tweag/nixtract";
   };
 
   outputs =
@@ -24,21 +24,41 @@
       rec {
         packages = rec {
           default = genealogos;
-          genealogos = naersk-lib.buildPackage {
+          genealogos = naersk-lib.buildPackage rec {
+            name = "genealogos";
             src = ./.;
             doCheck = true;
 
-            # Genealogos uses the reqwest crate to query for narinfo on the substituters.
-            # reqwest depends on openssl.
-            nativeBuildInputs = with pkgs; [ pkg-config ];
-            buildInputs = with pkgs; [ openssl ];
+            cargoBuildOptions = x: x ++ [ "--package" name ];
 
             # Setting this feature flag to disable tests that require recursive nix/an internet connection
-            cargoTestOptions = x: x ++ [ "--features" "nix" ];
+            cargoTestOptions = x: x ++ [ "--package" name "--features" "nix" ];
+
+            # Genealogos uses the reqwest crate to query for narinfo on the substituters.
+            # reqwest depends on openssl.
+            nativeBuildInputs = with pkgs;
+              [ pkg-config ];
+            buildInputs = with pkgs; [ openssl ];
+          };
+          genealogos-cli = naersk-lib.buildPackage rec {
+            name = "genealogos-cli";
+            src = ./.;
+            doCheck = true;
+
+            cargoBuildOptions = x: x ++ [ "--package" name ];
+
+            # Setting this feature flag to disable tests that require recursive nix/an internet connection
+            cargoTestOptions = x: x ++ [ "--package" name "--features" "nix" ];
+
+            # Genealogos uses the reqwest crate to query for narinfo on the substituters.
+            # reqwest depends on openssl.
+            nativeBuildInputs = with pkgs;
+              [ pkg-config ];
+            buildInputs = with pkgs; [ openssl ];
           };
           update-fixture-output-files = pkgs.writeShellApplication {
             name = "update-fixture-output-files";
-            runtimeInputs = [ (genealogos.overrideAttrs (_: { doCheck = false; })) pkgs.jq ];
+            runtimeInputs = [ (genealogos-cli.overrideAttrs (_: { doCheck = false; })) pkgs.jq ];
             text = builtins.readFile ./scripts/update-fixture-output-files.sh;
           };
           update-fixture-input-files = pkgs.writeShellApplication {
@@ -67,6 +87,9 @@
 
                 pkg-config
                 openssl
+
+                # https://github.com/rust-lang/cargo/issues/4463
+                cargo-hack
               ];
               RUST_SRC_PATH = pkgs.rustPlatform.rustLibSrc;
               RUST_BACKTRACE = 1;

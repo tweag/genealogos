@@ -2,6 +2,8 @@ use std::fmt::Display;
 use std::str::FromStr;
 
 use cyclonedx_bom::models::component::Classification;
+use cyclonedx_bom::models::dependency::Dependencies;
+use cyclonedx_bom::models::dependency::Dependency;
 use cyclonedx_bom::models::external_reference::ExternalReference;
 use cyclonedx_bom::models::external_reference::ExternalReferenceType;
 use cyclonedx_bom::models::external_reference::ExternalReferences;
@@ -132,7 +134,16 @@ impl TryFrom<Model> for Bom {
     type Error = crate::Error;
 
     fn try_from(model: Model) -> Result<Self> {
-        let bom = Bom {
+        let mut model = model;
+        if cfg!(test) || std::env::var("GENEALOGOS_DETERMINISTIC").is_ok() {
+            model.components.sort_by_key(|c| c.r#ref.clone());
+
+            // This only sort the dependencies by key, not the depends on
+            // hashset, that is done later, when it is converted into a vec.
+            model.dependencies.sort_by_key(|c| c.r#ref.clone());
+        }
+
+        let mut bom = Bom {
             components: Some(Components(
                 model
                     .components
@@ -140,9 +151,22 @@ impl TryFrom<Model> for Bom {
                     .map(TryInto::try_into)
                     .collect::<Result<Vec<_>>>()?,
             )),
+            dependencies: Some(Dependencies(
+                model
+                    .dependencies
+                    .into_iter()
+                    .map(Into::into)
+                    .collect::<Vec<_>>(),
+            )),
             // Constructs a BOM with a default version of 1 and serial_number with a random UUID
             ..Default::default()
         };
+
+        if cfg!(test) || std::env::var("GENEALOGOS_DETERMINISTIC").is_ok() {
+            bom.serial_number = Some(
+                UrnUuid::new("urn:uuid:00000000-0000-0000-0000-000000000000".to_owned()).unwrap(),
+            );
+        }
 
         Ok(bom)
     }
@@ -250,6 +274,21 @@ impl From<ModelExternalReferenceType> for ExternalReferenceType {
     fn from(model: ModelExternalReferenceType) -> Self {
         match model {
             ModelExternalReferenceType::Website => ExternalReferenceType::Website,
+        }
+    }
+}
+
+impl From<ModelDependency> for Dependency {
+    fn from(model: ModelDependency) -> Self {
+        let mut dependencies = model.depends_on.into_iter().collect::<Vec<_>>();
+
+        if cfg!(test) || std::env::var("GENEALOGOS_DETERMINISTIC").is_ok() {
+            dependencies.sort_unstable();
+        };
+
+        Dependency {
+            dependency_ref: model.r#ref,
+            dependencies,
         }
     }
 }
