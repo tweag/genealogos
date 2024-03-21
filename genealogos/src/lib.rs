@@ -43,7 +43,7 @@ mod tests {
             if input_path.extension().unwrap().to_string_lossy() == "in" {
                 info!("testing: {}", input_path.to_string_lossy());
 
-                let (backend, _) = crate::backend::nixtract_backend::Nixtract::new();
+                let backend = crate::backend::nixtract_backend::Nixtract::new_without_handle();
                 let model = backend.to_model_from_trace_file(&input_path).unwrap();
                 let bom = crate::bom::cyclonedx::CycloneDX::default();
 
@@ -75,10 +75,11 @@ mod tests {
                 let input = fs::read_to_string(input_path.clone()).unwrap();
                 let flake_args: FlakeArgs = serde_json::from_str(&input).unwrap();
 
-                let (backend, _) = crate::backend::nixtract_backend::Nixtract::new();
+                let backend = crate::backend::nixtract_backend::Nixtract::new_without_handle();
                 let model = backend
                     .to_model_from_flake_ref(flake_args.flake_ref, flake_args.attribute_path)
                     .unwrap();
+
                 let bom = crate::bom::cyclonedx::CycloneDX::default();
 
                 let mut output_1_4 = String::new();

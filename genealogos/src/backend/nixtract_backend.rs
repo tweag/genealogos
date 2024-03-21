@@ -41,6 +41,12 @@ impl Nixtract {
 
         (Self { config }, NixtractHandle { receiver })
     }
+
+    pub fn new_without_handle() -> Self {
+        Self {
+            config: NixtractConfig::default(),
+        }
+    }
 }
 
 impl crate::backend::Backend for Nixtract {
