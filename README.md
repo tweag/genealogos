@@ -43,13 +43,14 @@ For example, using curl, the api can be invoked like this:
 curl "http://localhost:8000/api/analyze?flake_ref=nixpkgs&attribute_path=hello"
 ```
 
-Additionally an optional `cyclonedx_version` query parameter can be provided to specify the CycloneDX version to use.
+Additionally an optional `bom_format` query parameter can be provided to specify the sbom format to use.
 Example:
 ```fish
 curl "http://localhost:8000/api/analyze?flake_ref=nixpkgs&attribute_path=hello&cyclonedx_version=v1_4"
 ```
 
-Currently supported are `v1_4` and `v1_5`. If no version is specified, `v1_5` is used.
+<!-- TODO: Add 1.5 support -->
+Currently supported are `[cyclonedx_1.3_json, cyclonedx_1.3_xml, cyclonedx_1.4_json, cyclonedx_1.4_xml]`, with `cyclonedx_1.4_json` being the default.
 
 ### Jobs
 The jobs based API consists of three endpoints: `/api/jobs/create`, `/api/jobs/status`, and `/api/jobs/result`.
@@ -58,7 +59,7 @@ Creating a job is done in a similar fashion to the blocking api:
 ```fish
 curl "http://localhost:8000/api/jobs/create?flake_ref=nixpkgs&attribute_path=hello"
 ```
-This endpoint also supports the `cyclonedx_version` query parameter.
+This endpoint also supports the `bom_format` query parameter.
 The response of this API call is a `job_id`, which needs to be passed to further calls to indentify the desired job.
 
 Getting the status of a job is done as such:
