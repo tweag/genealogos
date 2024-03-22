@@ -1,7 +1,7 @@
 use std::sync::{atomic, Arc};
 
+use genealogos::args::BomArg;
 use genealogos::backend::Backend;
-use genealogos::bom::cyclonedx::FileFormat;
 use genealogos::bom::Bom;
 use rocket::http::Status;
 use rocket::response::status;
@@ -22,11 +22,11 @@ fn handle_errors(req: &Request) -> status::Custom<String> {
     )
 }
 
-#[rocket::get("/analyze?<flake_ref>&<attribute_path>&<cyclonedx_version>")]
+#[rocket::get("/analyze?<flake_ref>&<attribute_path>&<bom_format>")]
 fn analyze(
     flake_ref: &str,
     attribute_path: Option<&str>,
-    cyclonedx_version: Option<&str>,
+    bom_format: Option<BomArg>,
 ) -> Result<messages::AnalyzeResponse> {
     let start_time = std::time::Instant::now();
 
@@ -46,17 +46,15 @@ fn analyze(
         })?;
 
     let mut buf = String::new();
-    let bom = match cyclonedx_version {
-        Some(cyclonedx_version) => genealogos::bom::cyclonedx::CycloneDX::parse_version(
-            cyclonedx_version,
-            FileFormat::JSON,
-        )
-        .map_err(|err| messages::ErrResponse {
-            metadata: messages::Metadata::new(None),
-            message: err.to_string(),
-        })?,
-        None => genealogos::bom::cyclonedx::CycloneDX::default(),
+    let bom_arg = match bom_format {
+        Some(bom_arg) => bom_arg,
+        None => BomArg::default(),
     };
+
+    let bom = bom_arg.get_bom().map_err(|err| messages::ErrResponse {
+        metadata: messages::Metadata::new(None),
+        message: err.to_string(),
+    })?;
 
     bom.write_to_fmt_writer(model, &mut buf)
         .map_err(|err| messages::ErrResponse {

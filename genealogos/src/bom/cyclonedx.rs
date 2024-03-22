@@ -36,6 +36,18 @@ impl Display for FileFormat {
     }
 }
 
+impl FromStr for FileFormat {
+    type Err = Error;
+
+    fn from_str(s: &str) -> Result<Self> {
+        match s {
+            "json" => Ok(FileFormat::JSON),
+            "xml" => Ok(FileFormat::XML),
+            _ => Err(Error::InvalidCycloneDXFileFormat(s.to_string())),
+        }
+    }
+}
+
 #[derive(Clone, Copy, Debug, Default)]
 #[cfg_attr(feature = "rocket", derive(rocket::FromFormField))]
 #[cfg_attr(feature = "clap", derive(clap::ValueEnum))]
@@ -92,6 +104,15 @@ impl CycloneDX {
     /// or an `Err` variant that contains an error if the parsing fails.
     pub fn parse_version(spec_version: &str, file_format: FileFormat) -> Result<Self> {
         let spec_version = SpecVersion::from_str(spec_version)?;
+        Ok(CycloneDX {
+            spec_version,
+            file_format,
+        })
+    }
+
+    pub fn parse(spec_version: &str, file_format: &str) -> Result<Self> {
+        let spec_version = SpecVersion::from_str(spec_version)?;
+        let file_format = FileFormat::from_str(file_format)?;
         Ok(CycloneDX {
             spec_version,
             file_format,

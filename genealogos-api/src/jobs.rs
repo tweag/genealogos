@@ -1,6 +1,7 @@
 use std::sync::{atomic, Arc};
 use std::time;
 
+use genealogos::args::BomArg;
 use genealogos::backend::Backend;
 use genealogos::bom::Bom;
 use rocket::serde::json::Json;
@@ -32,11 +33,11 @@ impl ToString for JobStatus {
     }
 }
 
-#[rocket::get("/create?<flake_ref>&<attribute_path>&<cyclonedx_version>")]
+#[rocket::get("/create?<flake_ref>&<attribute_path>&<bom_format>")]
 pub async fn create(
     flake_ref: &str,
     attribute_path: &str,
-    cyclonedx_version: Option<&str>,
+    bom_format: Option<BomArg>,
     job_map: &rocket::State<JobMap>,
     job_counter: &rocket::State<atomic::AtomicU16>,
 ) -> Result<messages::CreateResponse> {
@@ -58,11 +59,20 @@ pub async fn create(
         })?
         .insert(job_id, JobStatus::Running(Box::new(backend_handle)));
 
+    let bom_arg = match bom_format {
+        Some(bom_arg) => bom_arg,
+        None => BomArg::default(),
+    };
+
+    let bom = bom_arg.get_bom().map_err(|err| messages::ErrResponse {
+        metadata: messages::Metadata::new(None),
+        message: err.to_string(),
+    })?;
+
     // Spawn a new thread to call `genealogos` and store the result in the job map
     let job_map_clone = Arc::clone(job_map);
     let flake_ref = flake_ref.to_string();
     let attribute_path = attribute_path.to_string();
-    let cyclonedx_version = cyclonedx_version.map(String::from);
     tokio::spawn(async move {
         let source = genealogos::backend::Source::Flake {
             flake_ref,
@@ -78,25 +88,6 @@ pub async fn create(
                     .insert(job_id, JobStatus::Error(e.to_string()));
                 return;
             }
-        };
-
-        let bom = match cyclonedx_version {
-            Some(cyclonedx_version) => {
-                match genealogos::bom::cyclonedx::CycloneDX::parse_version(
-                    &cyclonedx_version,
-                    genealogos::bom::cyclonedx::FileFormat::JSON,
-                ) {
-                    Ok(bom) => bom,
-                    Err(e) => {
-                        job_map_clone
-                            .try_lock()
-                            .unwrap()
-                            .insert(job_id, JobStatus::Error(e.to_string()));
-                        return;
-                    }
-                }
-            }
-            None => genealogos::bom::cyclonedx::CycloneDX::default(),
         };
 
         let mut buf = String::new();

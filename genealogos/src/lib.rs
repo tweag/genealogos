@@ -11,6 +11,8 @@
 // Export the Error type for external users
 pub use self::error::{Error, Result};
 
+#[cfg(feature = "args")]
+pub mod args;
 pub mod backend;
 pub mod bom;
 pub mod error;

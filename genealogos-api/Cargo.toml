@@ -16,7 +16,7 @@ path = "src/main.rs"
 [dependencies]
 chrono.workspace = true
 rocket.workspace = true
-genealogos.workspace = true
+genealogos = { workspace = true, features = [ "rocket" ] }
 serde_json.workspace = true
 serde.workspace = true
 nixtract.workspace = true

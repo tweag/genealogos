@@ -15,6 +15,9 @@ pub enum Error {
     #[error("The provided CycloneDX version is invalid: {0}")]
     InvalidCycloneDXVersion(String),
 
+    #[error("The provided CycloneDX file format is invalid: {0}")]
+    InvalidCycloneDXFileFormat(String),
+
     #[error("Errors constructing CycloneDX output: {0}")]
     CycloneDX(#[from] cyclonedx_bom::errors::BomError),
 

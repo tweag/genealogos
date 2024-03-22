@@ -14,6 +14,7 @@ clap = { workspace = true, optional = true }
 cyclonedx-bom.workspace = true
 log.workspace = true
 rayon.workspace = true
+rocket = { workspace = true, optional = true }
 serde.workspace = true
 serde_json.workspace = true
 thiserror.workspace = true
@@ -37,3 +38,11 @@ nix = []
 # The messages function of the `BanendHandle` trait violates object safety.
 # For those users of the library that don't need to use this trait as an object, and would like access to the `messages` function, this feature should be enabled.
 backend_handle_messages = []
+
+clap = [ "args", "dep:clap" ]
+rocket = [ "args", "dep:rocket" ]
+
+# Enables the `genealogos::args` module, it is typically best to pick either
+# the `clap` or `rocket` features instead, which automatically enable this feature
+# as well. However, if you only need access to the types in this module, use this feature instead.
+args = []

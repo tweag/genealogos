@@ -5,9 +5,8 @@ use std::path;
 
 use clap::Parser;
 
+use genealogos::args;
 use genealogos::backend::{Backend, BackendHandle};
-
-mod cli;
 
 /// `cli` application for processing data files and generating CycloneDX output
 #[derive(Parser, Debug)]
@@ -30,11 +29,11 @@ struct Args {
 
     /// Backend to use for Nix evaluation tracing
     #[arg(long, default_value_t)]
-    backend: cli::BackendArg,
+    backend: args::BackendArg,
 
     /// Optional bom specification to output
     #[arg(long, default_value_t)]
-    bom: cli::BomArg,
+    bom: args::BomArg,
 
     #[command(flatten)]
     verbose: clap_verbosity_flag::Verbosity,

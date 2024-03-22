@@ -651,6 +651,7 @@ dependencies = [
  "predicates",
  "pretty_assertions",
  "rayon",
+ "rocket",
  "serde",
  "serde_json",
  "test-log",
