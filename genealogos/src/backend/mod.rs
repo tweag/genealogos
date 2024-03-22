@@ -127,6 +127,36 @@ pub trait Backend {
     /// A `Result` which is `Ok` if the conversion succeeded, and
     ///`crate:error::Error` otherwise.
     fn to_model_from_lines(&self, lines: impl Iterator<Item = impl AsRef<str>>) -> Result<Model>;
+
+    /// Informs the backend to (from now on) attempt to fetch the narinfo for each derivation.
+    ///
+    /// # Arguments
+    ///
+    /// * `fetch` - A boolean indicating whether to fetch the narinfo for each derivation or not.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use genealogos::backend::Backend;
+    /// let mut backend = genealogos::backend::nixtract_backend::NixtractBackend::new();
+    /// backend.include_narinfo(true);
+    /// ```
+    fn include_narinfo(&mut self, include: bool);
+
+    /// Informs the backend to (from now on) only include runtime dependencies in the model.
+    ///
+    /// # Arguments
+    ///
+    /// * `runtime_only` - A boolean indicating whether to include only runtime dependencies or not.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use genealogos::backend::Backend;
+    /// let mut backend = genealogos::backend::nixtract_backend::NixtractBackend::new();
+    /// backend.runtime_only(true);
+    /// ```
+    fn runtime_only(&mut self, runtime_only: bool);
 }
 
 #[derive(Debug, Clone, serde::Serialize)]
