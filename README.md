@@ -82,7 +82,11 @@ Changing this default can be done using the settings button in the top of the we
 The Web UI currently only supports analyzing from a flake ref and attribute path, analyzing from a trace file is not yet supported.
 
 ## Building Genealogos
-`nix build` or `cargo build`. A development shell is provided via `nix devel`.
+The easiest way to build Genealogos is using nix, simply call `nix build` to build the library or `nix build .#genealogos-cli` for the cli.
+
+If you want to use cargo, you might run into [a cargo issue related to workspaces](https://github.com/rust-lang/cargo/issues/4463).
+As a workaround you can use [cargo-hack](https://github.com/taiki-e/cargo-hack), which is convienently provided in the `nix develop` shell.
+Instead of running `cargo [build,test,doc,etc]`, use `cargo hack [build,test,doc,etc]`.
 
 ## Testing
 Genealogos is tested against fixtures in `genealogos/tests/fixtures/nixtract/success/`.
