@@ -23,3 +23,10 @@ indicatif.workspace = true
 indicatif-log-bridge.workspace = true
 genealogos = { workspace = true, features = [ "backend_handle_messages", "clap" ] }
 nixtract.workspace = true
+
+[features]
+default = []
+
+# This feature should be enabled when running tests in a Nix environment.
+# It disables all tests that require a working internet connection.
+nix = []
