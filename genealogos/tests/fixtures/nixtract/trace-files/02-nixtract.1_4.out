@@ -15,6 +15,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/openssl@3.0.13",
       "externalReferences": [
         {
           "type": "website",
@@ -34,6 +35,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/libxslt@1.1.39",
       "externalReferences": [
         {
           "type": "website",
@@ -53,6 +55,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-pytest-timeout@2.2.0",
       "externalReferences": [
         {
           "type": "website",
@@ -72,6 +75,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/python3.11-trove-classifiers@2024.1.8",
       "externalReferences": [
         {
           "type": "website",
@@ -86,6 +90,7 @@
       "name": "cargo-install-hook.sh",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/cargo-install-hook.sh@",
       "externalReferences": [],
       "properties": []
     },
@@ -103,6 +108,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-ExtUtils-Helpers@0.026",
       "externalReferences": [
         {
           "type": "website",
@@ -122,6 +128,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/lzo@2.10",
       "externalReferences": [
         {
           "type": "website",
@@ -136,6 +143,7 @@
       "name": "docbook-xml",
       "version": "4.1.2",
       "description": "",
+      "purl": "pkg:generic/docbook-xml@4.1.2",
       "externalReferences": [],
       "properties": []
     },
@@ -145,6 +153,7 @@
       "name": "cargo-setup-hook.sh",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/cargo-setup-hook.sh@",
       "externalReferences": [],
       "properties": []
     },
@@ -159,6 +168,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/nghttp2@1.59.0",
       "externalReferences": [
         {
           "type": "website",
@@ -178,6 +188,7 @@
           "expression": "BSD-2-Clause"
         }
       ],
+      "purl": "pkg:generic/file@5.45",
       "externalReferences": [
         {
           "type": "website",
@@ -197,6 +208,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/ninja@1.11.1",
       "externalReferences": [
         {
           "type": "website",
@@ -216,6 +228,7 @@
           "expression": "BSD-3-Clause"
         }
       ],
+      "purl": "pkg:generic/pcre2@10.42",
       "externalReferences": [
         {
           "type": "website",
@@ -235,6 +248,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/swig@3.0.12",
       "externalReferences": [
         {
           "type": "website",
@@ -257,6 +271,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-HTTP-Date@6.06",
       "externalReferences": [
         {
           "type": "website",
@@ -279,6 +294,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-Encode-Locale@1.05",
       "externalReferences": [
         {
           "type": "website",
@@ -293,6 +309,7 @@
       "name": "libidn2",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/libidn2@",
       "externalReferences": [],
       "properties": []
     },
@@ -307,6 +324,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/asciidoc@10.2.0",
       "externalReferences": [
         {
           "type": "website",
@@ -326,6 +344,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-setuptools-scm@8.0.4",
       "externalReferences": [
         {
           "type": "website",
@@ -345,6 +364,7 @@
           "expression": "BSD-2-Clause"
         }
       ],
+      "purl": "pkg:generic/python3.11-pygments@2.17.2",
       "externalReferences": [
         {
           "type": "website",
@@ -367,6 +387,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-Test-Deep@1.204",
       "externalReferences": [
         {
           "type": "website",
@@ -386,6 +407,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/remarshal@0.17.1",
       "externalReferences": [
         {
           "type": "website",
@@ -405,6 +427,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/gcc@13.2.0",
       "externalReferences": [
         {
           "type": "website",
@@ -427,6 +450,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/cargo-bootstrap@1.74.1",
       "externalReferences": [
         {
           "type": "website",
@@ -446,6 +470,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/libtool@2.4.7",
       "externalReferences": [
         {
           "type": "website",
@@ -465,6 +490,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-zipp@3.17.0",
       "externalReferences": [
         {
           "type": "website",
@@ -484,6 +510,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/bison@3.8.2",
       "externalReferences": [
         {
           "type": "website",
@@ -498,6 +525,7 @@
       "name": "python-remove-bin-bytecode-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/python-remove-bin-bytecode-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -515,6 +543,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-HTML-Parser@3.81",
       "externalReferences": [
         {
           "type": "website",
@@ -534,6 +563,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/ncurses@6.4",
       "externalReferences": [
         {
           "type": "website",
@@ -556,6 +586,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/python3.11-bootstrap-packaging@23.2",
       "externalReferences": [
         {
           "type": "website",
@@ -578,6 +609,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-Test-Fatal@0.017",
       "externalReferences": [
         {
           "type": "website",
@@ -597,6 +629,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/audit@3.1.2",
       "externalReferences": [
         {
           "type": "website",
@@ -616,6 +649,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-gevent@23.9.1",
       "externalReferences": [
         {
           "type": "website",
@@ -635,6 +669,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/python3.11-cython@3.0.7",
       "externalReferences": [
         {
           "type": "website",
@@ -657,6 +692,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-gettext@1.07",
       "externalReferences": [
         {
           "type": "website",
@@ -676,6 +712,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/libtool@2.4.7",
       "externalReferences": [
         {
           "type": "website",
@@ -695,6 +732,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/python3.11-sortedcontainers@2.4.0",
       "externalReferences": [
         {
           "type": "website",
@@ -717,6 +755,7 @@
           "expression": "LGPL-2.1-or-later"
         }
       ],
+      "purl": "pkg:generic/xz@5.4.6",
       "externalReferences": [
         {
           "type": "website",
@@ -736,6 +775,7 @@
           "expression": "Python-2.0"
         }
       ],
+      "purl": "pkg:generic/python3.11-distlib@0.3.7",
       "externalReferences": [
         {
           "type": "website",
@@ -755,6 +795,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/opensp@1.5.2",
       "externalReferences": [
         {
           "type": "website",
@@ -769,6 +810,7 @@
       "name": "autoreconf-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/autoreconf-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -786,6 +828,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-XML-NamespaceSupport@1.12",
       "externalReferences": [
         {
           "type": "website",
@@ -805,6 +848,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/binutils-wrapper@2.40",
       "externalReferences": [
         {
           "type": "website",
@@ -827,6 +871,7 @@
           "expression": "LGPL-2.1-or-later"
         }
       ],
+      "purl": "pkg:generic/xz@5.4.6",
       "externalReferences": [
         {
           "type": "website",
@@ -846,6 +891,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/python3.11-calver@2022.06.26",
       "externalReferences": [
         {
           "type": "website",
@@ -865,6 +911,7 @@
           "expression": "curl"
         }
       ],
+      "purl": "pkg:generic/curl@8.6.0",
       "externalReferences": [
         {
           "type": "website",
@@ -884,6 +931,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/lzip@1.23",
       "externalReferences": [
         {
           "type": "website",
@@ -903,6 +951,7 @@
           "expression": "Artistic-1.0"
         }
       ],
+      "purl": "pkg:generic/perl@5.38.2",
       "externalReferences": [
         {
           "type": "website",
@@ -925,6 +974,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-Module-Build@0.4234",
       "externalReferences": [
         {
           "type": "website",
@@ -939,6 +989,7 @@
       "name": "glibc-locales",
       "version": "2.38",
       "description": "Locale information for the GNU C Library",
+      "purl": "pkg:generic/glibc-locales@2.38",
       "externalReferences": [],
       "properties": []
     },
@@ -953,6 +1004,7 @@
           "expression": "BSD-3-Clause"
         }
       ],
+      "purl": "pkg:generic/cmake-minimal@3.27.9",
       "externalReferences": [
         {
           "type": "website",
@@ -972,6 +1024,7 @@
           "expression": "GPL-2.0"
         }
       ],
+      "purl": "pkg:generic/linux-headers@6.7",
       "externalReferences": [],
       "properties": []
     },
@@ -986,6 +1039,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/help2man@1.49.3",
       "externalReferences": [
         {
           "type": "website",
@@ -1000,6 +1054,7 @@
       "name": "python-output-dist-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/python-output-dist-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -1009,6 +1064,7 @@
       "name": "git-dependencies",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/git-dependencies@",
       "externalReferences": [],
       "properties": []
     },
@@ -1018,6 +1074,7 @@
       "name": "wrap-python-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/wrap-python-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -1052,6 +1109,7 @@
           }
         }
       ],
+      "purl": "pkg:generic/util-linux-minimal@2.39.3",
       "externalReferences": [
         {
           "type": "website",
@@ -1066,6 +1124,7 @@
       "name": "getopt",
       "version": "1.1.6",
       "description": "Parses command-line arguments from shell scripts",
+      "purl": "pkg:generic/getopt@1.1.6",
       "externalReferences": [
         {
           "type": "website",
@@ -1085,6 +1144,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-setuptools@69.0.3",
       "externalReferences": [
         {
           "type": "website",
@@ -1099,6 +1159,7 @@
       "name": "cargo-check-hook.sh",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/cargo-check-hook.sh@",
       "externalReferences": [],
       "properties": []
     },
@@ -1113,6 +1174,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-hatch-vcs@0.4.0",
       "externalReferences": [
         {
           "type": "website",
@@ -1135,6 +1197,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-HTTP-Daemon@6.16",
       "externalReferences": [
         {
           "type": "website",
@@ -1154,6 +1217,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-pytest-xdist@3.5.0",
       "externalReferences": [
         {
           "type": "website",
@@ -1173,6 +1237,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/popt@1.19",
       "externalReferences": [
         {
           "type": "website",
@@ -1187,6 +1252,7 @@
       "name": "nuke-references",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/nuke-references@",
       "externalReferences": [],
       "properties": []
     },
@@ -1196,6 +1262,7 @@
       "name": "auto-patchelf-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/auto-patchelf-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -1210,6 +1277,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/acl@2.3.2",
       "externalReferences": [
         {
           "type": "website",
@@ -1229,6 +1297,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/bash@5.2p26",
       "externalReferences": [
         {
           "type": "website",
@@ -1248,6 +1317,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-u-msgpack-python@2.8.0",
       "externalReferences": [
         {
           "type": "website",
@@ -1267,6 +1337,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/autoconf@2.72",
       "externalReferences": [
         {
           "type": "website",
@@ -1286,6 +1357,7 @@
           "expression": "Zlib"
         }
       ],
+      "purl": "pkg:generic/zlib@1.3.1",
       "externalReferences": [
         {
           "type": "website",
@@ -1305,6 +1377,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/bash@5.2p26",
       "externalReferences": [
         {
           "type": "website",
@@ -1324,6 +1397,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-tomlkit@0.12.3",
       "externalReferences": [
         {
           "type": "website",
@@ -1346,6 +1420,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-LWP-MediaTypes@6.04",
       "externalReferences": [
         {
           "type": "website",
@@ -1365,6 +1440,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/libtool@2.4.7",
       "externalReferences": [
         {
           "type": "website",
@@ -1379,6 +1455,7 @@
       "name": "pypa-build-hook.sh",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/pypa-build-hook.sh@",
       "externalReferences": [],
       "properties": []
     },
@@ -1393,6 +1470,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-appdirs@1.4.4",
       "externalReferences": [
         {
           "type": "website",
@@ -1412,6 +1490,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/python3.11-cython@0.29.36",
       "externalReferences": [
         {
           "type": "website",
@@ -1431,6 +1510,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-pytest-mock@3.12.0",
       "externalReferences": [
         {
           "type": "website",
@@ -1450,6 +1530,7 @@
           "expression": "BSD-3-Clause"
         }
       ],
+      "purl": "pkg:generic/libarchive@3.7.2",
       "externalReferences": [
         {
           "type": "website",
@@ -1464,6 +1545,7 @@
       "name": "die-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/die-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -1478,6 +1560,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/texinfo@7.0.3",
       "externalReferences": [
         {
           "type": "website",
@@ -1500,6 +1583,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/rustc-bootstrap-wrapper@1.74.1",
       "externalReferences": [
         {
           "type": "website",
@@ -1514,6 +1598,7 @@
       "name": "docbook-xml",
       "version": "4.3",
       "description": "",
+      "purl": "pkg:generic/docbook-xml@4.3",
       "externalReferences": [],
       "properties": []
     },
@@ -1528,6 +1613,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/docbook-xsl-nons@1.79.2",
       "externalReferences": [
         {
           "type": "website",
@@ -1547,6 +1633,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/gettext@0.21.1",
       "externalReferences": [
         {
           "type": "website",
@@ -1561,6 +1648,7 @@
       "name": "config",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/config@",
       "externalReferences": [],
       "properties": []
     },
@@ -1570,6 +1658,7 @@
       "name": "nuke-references",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/nuke-references@",
       "externalReferences": [],
       "properties": []
     },
@@ -1584,6 +1673,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/autoconf@2.69",
       "externalReferences": [
         {
           "type": "website",
@@ -1598,6 +1688,7 @@
       "name": "docbook-xml",
       "version": "4.5",
       "description": "",
+      "purl": "pkg:generic/docbook-xml@4.5",
       "externalReferences": [],
       "properties": []
     },
@@ -1615,6 +1706,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-Test-Requires@0.11",
       "externalReferences": [
         {
           "type": "website",
@@ -1634,6 +1726,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/xmlto@0.0.28",
       "externalReferences": [
         {
           "type": "website",
@@ -1653,6 +1746,7 @@
           "expression": "Sleepycat"
         }
       ],
+      "purl": "pkg:generic/db@4.8.30",
       "externalReferences": [
         {
           "type": "website",
@@ -1672,6 +1766,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/expat@2.5.0",
       "externalReferences": [
         {
           "type": "website",
@@ -1694,6 +1789,7 @@
           "expression": "GPL-2.0-only"
         }
       ],
+      "purl": "pkg:generic/gmp-with-cxx@6.3.0",
       "externalReferences": [
         {
           "type": "website",
@@ -1708,6 +1804,7 @@
       "name": "lndir",
       "version": "1.0.4",
       "description": "",
+      "purl": "pkg:generic/lndir@1.0.4",
       "externalReferences": [],
       "properties": []
     },
@@ -1722,6 +1819,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/jq@1.7.1",
       "externalReferences": [
         {
           "type": "website",
@@ -1744,6 +1842,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-Test-Warnings@0.032",
       "externalReferences": [
         {
           "type": "website",
@@ -1766,6 +1865,7 @@
           "expression": "GPL-2.0"
         }
       ],
+      "purl": "pkg:generic/xxHash@0.8.2",
       "externalReferences": [
         {
           "type": "website",
@@ -1785,6 +1885,7 @@
           "expression": "LGPL-2.1-or-later"
         }
       ],
+      "purl": "pkg:generic/libxcrypt@4.4.36",
       "externalReferences": [
         {
           "type": "website",
@@ -1804,6 +1905,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/brotli@1.1.0",
       "externalReferences": [
         {
           "type": "website",
@@ -1823,6 +1925,7 @@
           "expression": "MPL-2.0"
         }
       ],
+      "purl": "pkg:generic/python3.11-hypothesis@6.91.0",
       "externalReferences": [
         {
           "type": "website",
@@ -1842,6 +1945,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/bash@5.2p26",
       "externalReferences": [
         {
           "type": "website",
@@ -1861,6 +1965,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-platformdirs@4.0.0",
       "externalReferences": [
         {
           "type": "website",
@@ -1880,6 +1985,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/automake@1.16.5",
       "externalReferences": [
         {
           "type": "website",
@@ -1899,6 +2005,7 @@
           "expression": "BSD-2-Clause"
         }
       ],
+      "purl": "pkg:generic/python3.11-mock@5.1.0",
       "externalReferences": [
         {
           "type": "website",
@@ -1918,6 +2025,7 @@
           "expression": "LGPL-2.1"
         }
       ],
+      "purl": "pkg:generic/cracklib@2.9.11",
       "externalReferences": [
         {
           "type": "website",
@@ -1937,6 +2045,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-pyproject-hooks@1.0.0",
       "externalReferences": [
         {
           "type": "website",
@@ -1959,6 +2068,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-HTML-Tagset@3.20",
       "externalReferences": [
         {
           "type": "website",
@@ -1978,6 +2088,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/keyutils@1.6.3",
       "externalReferences": [
         {
           "type": "website",
@@ -1997,6 +2108,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/bash@5.2p26",
       "externalReferences": [
         {
           "type": "website",
@@ -2016,6 +2128,7 @@
           "expression": "Python-2.0"
         }
       ],
+      "purl": "pkg:generic/python3.11-typing-extensions@4.8.0",
       "externalReferences": [
         {
           "type": "website",
@@ -2035,6 +2148,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-hatchling@1.21.1",
       "externalReferences": [
         {
           "type": "website",
@@ -2054,6 +2168,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/libffi@3.4.4",
       "externalReferences": [
         {
           "type": "website",
@@ -2073,6 +2188,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/coreutils@9.4",
       "externalReferences": [
         {
           "type": "website",
@@ -2092,6 +2208,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-pluggy@1.4.0",
       "externalReferences": [
         {
           "type": "website",
@@ -2111,6 +2228,7 @@
           "expression": "BSD-2-Clause"
         }
       ],
+      "purl": "pkg:generic/flex@2.6.4",
       "externalReferences": [
         {
           "type": "website",
@@ -2125,6 +2243,7 @@
       "name": "install-shell-files",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/install-shell-files@",
       "externalReferences": [],
       "properties": []
     },
@@ -2139,6 +2258,7 @@
           "expression": "BSD-3-Clause"
         }
       ],
+      "purl": "pkg:generic/zstd@1.5.5",
       "externalReferences": [
         {
           "type": "website",
@@ -2158,6 +2278,7 @@
           "expression": "MPL-2.0"
         }
       ],
+      "purl": "pkg:generic/publicsuffix-list@0-unstable-2024-01-07",
       "externalReferences": [
         {
           "type": "website",
@@ -2180,6 +2301,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-HTTP-Message@6.45",
       "externalReferences": [
         {
           "type": "website",
@@ -2199,6 +2321,7 @@
           "expression": "BSD-2-Clause"
         }
       ],
+      "purl": "pkg:generic/libev@4.33",
       "externalReferences": [],
       "properties": []
     },
@@ -2213,6 +2336,7 @@
           "expression": "0BSD"
         }
       ],
+      "purl": "pkg:generic/rhash@1.4.4",
       "externalReferences": [
         {
           "type": "website",
@@ -2235,6 +2359,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-ExtUtils-InstallPaths@0.012",
       "externalReferences": [
         {
           "type": "website",
@@ -2257,6 +2382,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-XML-Parser@2.46",
       "externalReferences": [
         {
           "type": "website",
@@ -2278,6 +2404,7 @@
           }
         }
       ],
+      "purl": "pkg:generic/re2c@3.1",
       "externalReferences": [
         {
           "type": "website",
@@ -2297,6 +2424,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-virtualenv@20.25.0",
       "externalReferences": [
         {
           "type": "website",
@@ -2319,6 +2447,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-libwww-perl@6.72",
       "externalReferences": [
         {
           "type": "website",
@@ -2338,6 +2467,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/rsync@3.2.7",
       "externalReferences": [
         {
           "type": "website",
@@ -2357,6 +2487,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-poetry-core@1.8.1",
       "externalReferences": [
         {
           "type": "website",
@@ -2376,6 +2507,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/python3.11-pytest-asyncio@0.21.1",
       "externalReferences": [
         {
           "type": "website",
@@ -2395,6 +2527,7 @@
           "expression": "BSD-2-Clause"
         }
       ],
+      "purl": "pkg:generic/mpdecimal@2.5.1",
       "externalReferences": [
         {
           "type": "website",
@@ -2414,6 +2547,7 @@
           "expression": "BSD-2-Clause"
         }
       ],
+      "purl": "pkg:generic/oniguruma@6.9.9",
       "externalReferences": [
         {
           "type": "website",
@@ -2433,6 +2567,7 @@
           "expression": "Zlib"
         }
       ],
+      "purl": "pkg:generic/zlib@1.3.1",
       "externalReferences": [
         {
           "type": "website",
@@ -2452,6 +2587,7 @@
           "expression": "MPL-2.0"
         }
       ],
+      "purl": "pkg:generic/python3.11-pathspec@0.11.2",
       "externalReferences": [
         {
           "type": "website",
@@ -2471,6 +2607,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/which@2.21",
       "externalReferences": [
         {
           "type": "website",
@@ -2490,6 +2627,7 @@
           "expression": "Python-2.0"
         }
       ],
+      "purl": "pkg:generic/python3-minimal@3.11.7",
       "externalReferences": [
         {
           "type": "website",
@@ -2509,6 +2647,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/gtk-doc@1.33.2",
       "externalReferences": [
         {
           "type": "website",
@@ -2523,6 +2662,7 @@
       "name": "ensure-newer-sources-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/ensure-newer-sources-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -2537,6 +2677,7 @@
           "expression": "BSD-2-Clause"
         }
       ],
+      "purl": "pkg:generic/file@5.45",
       "externalReferences": [
         {
           "type": "website",
@@ -2556,6 +2697,7 @@
           "expression": "GPL-3.0"
         }
       ],
+      "purl": "pkg:generic/autoconf-archive@2023.02.20",
       "externalReferences": [
         {
           "type": "website",
@@ -2575,6 +2717,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/which@2.21",
       "externalReferences": [
         {
           "type": "website",
@@ -2594,6 +2737,7 @@
           "expression": "Info-ZIP"
         }
       ],
+      "purl": "pkg:generic/unzip@6.0",
       "externalReferences": [
         {
           "type": "website",
@@ -2616,6 +2760,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-Clone@0.46",
       "externalReferences": [
         {
           "type": "website",
@@ -2630,6 +2775,7 @@
       "name": "cargo-build-hook.sh",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/cargo-build-hook.sh@",
       "externalReferences": [],
       "properties": []
     },
@@ -2647,6 +2793,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-File-ShareDir@1.118",
       "externalReferences": [
         {
           "type": "website",
@@ -2669,6 +2816,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-CPAN-Meta-Check@0.018",
       "externalReferences": [
         {
           "type": "website",
@@ -2683,6 +2831,7 @@
       "name": "pypa-install-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/pypa-install-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -2700,6 +2849,7 @@
           "expression": "LGPL-2.1-or-later"
         }
       ],
+      "purl": "pkg:generic/xz@5.4.6",
       "externalReferences": [
         {
           "type": "website",
@@ -2719,6 +2869,7 @@
           "expression": "BSD-3-Clause"
         }
       ],
+      "purl": "pkg:generic/python3.11-flit-core@3.9.0",
       "externalReferences": [
         {
           "type": "website",
@@ -2733,6 +2884,7 @@
       "name": "setuptools-check-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/setuptools-check-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -2747,6 +2899,7 @@
           "expression": "BSD-3-Clause"
         }
       ],
+      "purl": "pkg:generic/cmake@3.27.9",
       "externalReferences": [
         {
           "type": "website",
@@ -2761,6 +2914,7 @@
       "name": "autoreconf-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/autoreconf-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -2778,6 +2932,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-File-Listing@6.16",
       "externalReferences": [
         {
           "type": "website",
@@ -2800,6 +2955,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-File-ShareDir-Install@0.14",
       "externalReferences": [
         {
           "type": "website",
@@ -2824,6 +2980,7 @@
           }
         }
       ],
+      "purl": "pkg:generic/tzdata@2024a",
       "externalReferences": [
         {
           "type": "website",
@@ -2843,6 +3000,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-wheel@0.42.0",
       "externalReferences": [
         {
           "type": "website",
@@ -2865,6 +3023,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-HTTP-Cookies@6.10",
       "externalReferences": [
         {
           "type": "website",
@@ -2884,6 +3043,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-editables@0.5",
       "externalReferences": [
         {
           "type": "website",
@@ -2898,6 +3058,7 @@
       "name": "pytest-check-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/pytest-check-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -2912,6 +3073,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/libyaml@0.2.5",
       "externalReferences": [
         {
           "type": "website",
@@ -2931,6 +3093,7 @@
           "expression": "BSD-3-Clause"
         }
       ],
+      "purl": "pkg:generic/linux-pam@1.6.0",
       "externalReferences": [
         {
           "type": "website",
@@ -2945,6 +3108,7 @@
       "name": "autoreconf-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/autoreconf-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -2959,6 +3123,7 @@
           "expression": "LGPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/glibc@2.38",
       "externalReferences": [
         {
           "type": "website",
@@ -2978,6 +3143,7 @@
           "expression": "ZPL-2.0"
         }
       ],
+      "purl": "pkg:generic/python3.11-zope.event@4.6",
       "externalReferences": [
         {
           "type": "website",
@@ -2997,6 +3163,7 @@
           "expression": "BSD-2-Clause"
         }
       ],
+      "purl": "pkg:generic/mpdecimal@2.5.1",
       "externalReferences": [
         {
           "type": "website",
@@ -3016,6 +3183,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/gnum4@1.4.19",
       "externalReferences": [
         {
           "type": "website",
@@ -3035,6 +3203,7 @@
           "expression": "curl"
         }
       ],
+      "purl": "pkg:generic/curl@8.6.0",
       "externalReferences": [
         {
           "type": "website",
@@ -3054,6 +3223,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/autoconf@2.72",
       "externalReferences": [
         {
           "type": "website",
@@ -3073,6 +3243,7 @@
           "expression": "Artistic-1.0"
         }
       ],
+      "purl": "pkg:generic/perl@5.38.2",
       "externalReferences": [
         {
           "type": "website",
@@ -3092,6 +3263,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/gettext@0.21.1",
       "externalReferences": [
         {
           "type": "website",
@@ -3114,6 +3286,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/python3.11-packaging@23.2",
       "externalReferences": [
         {
           "type": "website",
@@ -3133,6 +3306,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/pkg-config@0.29.2",
       "externalReferences": [
         {
           "type": "website",
@@ -3155,6 +3329,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-Test-Needs@0.002010",
       "externalReferences": [
         {
           "type": "website",
@@ -3177,6 +3352,7 @@
           "expression": "GPL-2.0-only"
         }
       ],
+      "purl": "pkg:generic/gmp@6.3.0",
       "externalReferences": [
         {
           "type": "website",
@@ -3199,6 +3375,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-Test-RequiresInternet@0.05",
       "externalReferences": [
         {
           "type": "website",
@@ -3218,6 +3395,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/pkg-config-wrapper@0.29.2",
       "externalReferences": [
         {
           "type": "website",
@@ -3237,6 +3415,7 @@
           "expression": "GPL-3.0"
         }
       ],
+      "purl": "pkg:generic/autoconf-archive@2023.02.20",
       "externalReferences": [
         {
           "type": "website",
@@ -3256,6 +3435,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/libxml2@2.12.4",
       "externalReferences": [
         {
           "type": "website",
@@ -3275,6 +3455,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-iniconfig@2.0.0",
       "externalReferences": [
         {
           "type": "website",
@@ -3294,6 +3475,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-cffi@1.16.0",
       "externalReferences": [
         {
           "type": "website",
@@ -3313,6 +3495,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-execnet@2.0.2",
       "externalReferences": [
         {
           "type": "website",
@@ -3332,6 +3515,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-pexpect@4.9.0",
       "externalReferences": [
         {
           "type": "website",
@@ -3346,6 +3530,7 @@
       "name": "autoreconf-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/autoreconf-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -3363,6 +3548,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/auditable-cargo-bootstrap@",
       "externalReferences": [
         {
           "type": "website",
@@ -3382,6 +3568,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-build@1.0.3",
       "externalReferences": [
         {
           "type": "website",
@@ -3401,6 +3588,7 @@
           "expression": "Python-2.0"
         }
       ],
+      "purl": "pkg:generic/python3-minimal@3.11.7",
       "externalReferences": [
         {
           "type": "website",
@@ -3420,6 +3608,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/pkg-config-wrapper@0.29.2",
       "externalReferences": [
         {
           "type": "website",
@@ -3439,6 +3628,7 @@
           "expression": "BSD-3-Clause"
         }
       ],
+      "purl": "pkg:generic/python3.11-pycparser@2.21",
       "externalReferences": [
         {
           "type": "website",
@@ -3458,6 +3648,7 @@
           "expression": "LGPL-2.0"
         }
       ],
+      "purl": "pkg:generic/CUnit@2.1-3",
       "externalReferences": [
         {
           "type": "website",
@@ -3477,6 +3668,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/automake@1.16.5",
       "externalReferences": [
         {
           "type": "website",
@@ -3499,6 +3691,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-greenlet@3.0.1",
       "externalReferences": [
         {
           "type": "website",
@@ -3518,6 +3711,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/libxml2@2.12.4",
       "externalReferences": [
         {
           "type": "website",
@@ -3537,6 +3731,7 @@
           "expression": "BSD-3-Clause"
         }
       ],
+      "purl": "pkg:generic/pcre@8.45",
       "externalReferences": [
         {
           "type": "website",
@@ -3556,6 +3751,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/libkrb5@1.21.2",
       "externalReferences": [
         {
           "type": "website",
@@ -3578,6 +3774,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-PadWalker@2.5",
       "externalReferences": [
         {
           "type": "website",
@@ -3597,6 +3794,7 @@
           "expression": "BSD-2-Clause"
         }
       ],
+      "purl": "pkg:generic/file@5.45",
       "externalReferences": [
         {
           "type": "website",
@@ -3616,6 +3814,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/gdbm@1.23",
       "externalReferences": [
         {
           "type": "website",
@@ -3635,6 +3834,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-Try-Tiny@0.31",
       "externalReferences": [
         {
           "type": "website",
@@ -3654,6 +3854,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/python3.11-freezegun@1.3.1",
       "externalReferences": [
         {
           "type": "website",
@@ -3673,6 +3874,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-six@1.16.0",
       "externalReferences": [
         {
           "type": "website",
@@ -3695,6 +3897,7 @@
           "expression": "BSD-3-Clause"
         }
       ],
+      "purl": "pkg:generic/python3.11-python-dateutil@2.8.2",
       "externalReferences": [
         {
           "type": "website",
@@ -3723,6 +3926,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/e2fsprogs@1.47.0",
       "externalReferences": [
         {
           "type": "website",
@@ -3737,6 +3941,7 @@
       "name": "python-remove-tests-dir-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/python-remove-tests-dir-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -3751,6 +3956,7 @@
           "expression": "LGPL-2.1"
         }
       ],
+      "purl": "pkg:generic/libcap-ng@0.8.4",
       "externalReferences": [
         {
           "type": "website",
@@ -3765,6 +3971,7 @@
       "name": "remove-references-to",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/remove-references-to@",
       "externalReferences": [],
       "properties": []
     },
@@ -3782,6 +3989,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-XML-SAX@1.02",
       "externalReferences": [
         {
           "type": "website",
@@ -3801,6 +4009,7 @@
           "expression": "LGPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/mpfr@4.2.1",
       "externalReferences": [
         {
           "type": "website",
@@ -3822,6 +4031,7 @@
           }
         }
       ],
+      "purl": "pkg:generic/expect@5.45.4",
       "externalReferences": [
         {
           "type": "website",
@@ -3836,6 +4046,7 @@
       "name": "unittest-check-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/unittest-check-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -3853,6 +4064,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/lz4@1.9.4",
       "externalReferences": [
         {
           "type": "website",
@@ -3875,6 +4087,7 @@
           "expression": "LGPL-2.1-or-later"
         }
       ],
+      "purl": "pkg:generic/xz@5.4.6",
       "externalReferences": [
         {
           "type": "website",
@@ -3894,6 +4107,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-time-machine@2.13.0",
       "externalReferences": [
         {
           "type": "website",
@@ -3913,6 +4127,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/libxslt@1.1.39",
       "externalReferences": [
         {
           "type": "website",
@@ -3935,6 +4150,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-HTTP-Negotiate@6.01",
       "externalReferences": [
         {
           "type": "website",
@@ -3957,6 +4173,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-Net-HTTP@6.23",
       "externalReferences": [
         {
           "type": "website",
@@ -3971,6 +4188,7 @@
       "name": "nixtract",
       "version": "0.2.0",
       "description": "",
+      "purl": "pkg:generic/nixtract@0.2.0",
       "externalReferences": [],
       "properties": []
     },
@@ -3985,6 +4203,7 @@
           "expression": "LGPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/libunistring@1.1",
       "externalReferences": [
         {
           "type": "website",
@@ -3999,6 +4218,7 @@
       "name": "pypa-install-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/pypa-install-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -4016,6 +4236,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-Module-Build-Tiny@0.047",
       "externalReferences": [
         {
           "type": "website",
@@ -4035,6 +4256,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/sharutils@4.15.2",
       "externalReferences": [
         {
           "type": "website",
@@ -4057,6 +4279,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-IO-HTML@1.004",
       "externalReferences": [
         {
           "type": "website",
@@ -4076,6 +4299,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/attr@2.5.2",
       "externalReferences": [
         {
           "type": "website",
@@ -4095,6 +4319,7 @@
           "expression": "TCL"
         }
       ],
+      "purl": "pkg:generic/tcl@8.6.13",
       "externalReferences": [
         {
           "type": "website",
@@ -4114,6 +4339,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-pytest@7.4.4",
       "externalReferences": [
         {
           "type": "website",
@@ -4136,6 +4362,7 @@
           "expression": "LGPL-2.1-or-later"
         }
       ],
+      "purl": "pkg:generic/xz@5.4.6",
       "externalReferences": [
         {
           "type": "website",
@@ -4150,6 +4377,7 @@
       "name": "python-runtime-deps-check-hook.sh",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/python-runtime-deps-check-hook.sh@",
       "externalReferences": [],
       "properties": []
     },
@@ -4167,6 +4395,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-WWW-RobotRules@6.02",
       "externalReferences": [
         {
           "type": "website",
@@ -4186,6 +4415,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/python3.11-flaky@3.7.0",
       "externalReferences": [
         {
           "type": "website",
@@ -4205,6 +4435,7 @@
           "expression": "GPL-2.0"
         }
       ],
+      "purl": "pkg:generic/linux-headers@6.7",
       "externalReferences": [],
       "properties": []
     },
@@ -4214,6 +4445,7 @@
       "name": "python-imports-check-hook.sh",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/python-imports-check-hook.sh@",
       "externalReferences": [],
       "properties": []
     },
@@ -4228,6 +4460,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-bootstrap-installer@0.7.0",
       "externalReferences": [
         {
           "type": "website",
@@ -4242,6 +4475,7 @@
       "name": "python-namespaces-hook.sh",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/python-namespaces-hook.sh@",
       "externalReferences": [],
       "properties": []
     },
@@ -4256,6 +4490,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-Capture-Tiny@0.48",
       "externalReferences": [
         {
           "type": "website",
@@ -4270,6 +4505,7 @@
       "name": "setuptools-setup-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/setuptools-setup-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -4287,6 +4523,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/cargo@1.75.0",
       "externalReferences": [
         {
           "type": "website",
@@ -4301,6 +4538,7 @@
       "name": "glibc-iconv",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/glibc-iconv@",
       "externalReferences": [],
       "properties": []
     },
@@ -4315,6 +4553,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-attrs@23.1.0",
       "externalReferences": [
         {
           "type": "website",
@@ -4334,6 +4573,7 @@
           "expression": "ZPL-2.0"
         }
       ],
+      "purl": "pkg:generic/python3.11-zope.interface@5.5.2",
       "externalReferences": [
         {
           "type": "website",
@@ -4353,6 +4593,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/groff@1.23.0",
       "externalReferences": [
         {
           "type": "website",
@@ -4377,6 +4618,7 @@
           }
         }
       ],
+      "purl": "pkg:generic/libssh2@1.11.0",
       "externalReferences": [
         {
           "type": "website",
@@ -4399,6 +4641,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-B-COW@0.007",
       "externalReferences": [
         {
           "type": "website",
@@ -4421,6 +4664,7 @@
           "expression": "LGPL-2.1-only"
         }
       ],
+      "purl": "pkg:generic/fuse@2.9.9",
       "externalReferences": [
         {
           "type": "website",
@@ -4440,6 +4684,7 @@
           "expression": "BSD-4-Clause"
         }
       ],
+      "purl": "pkg:generic/bzip2@1.0.8",
       "externalReferences": [
         {
           "type": "website",
@@ -4459,6 +4704,7 @@
           "expression": "LGPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/libmpc@1.3.1",
       "externalReferences": [
         {
           "type": "website",
@@ -4478,6 +4724,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/expat@2.5.0",
       "externalReferences": [
         {
           "type": "website",
@@ -4497,6 +4744,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-HTTP-CookieJar@0.014",
       "externalReferences": [
         {
           "type": "website",
@@ -4516,6 +4764,7 @@
           "expression": "LGPL-2.1"
         }
       ],
+      "purl": "pkg:generic/isl@0.20",
       "externalReferences": [
         {
           "type": "website",
@@ -4530,6 +4779,7 @@
       "name": "find-xml-catalogs-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/find-xml-catalogs-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -4539,6 +4789,7 @@
       "name": "binutils-patchelfed-ld-wrapper",
       "version": "2.40",
       "description": "System binary utilities (wrapper script)",
+      "purl": "pkg:generic/binutils-patchelfed-ld-wrapper@2.40",
       "externalReferences": [],
       "properties": []
     },
@@ -4553,6 +4804,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/docbook2X@0.8.8",
       "externalReferences": [
         {
           "type": "website",
@@ -4567,6 +4819,7 @@
       "name": "tcl-package-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/tcl-package-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -4581,6 +4834,7 @@
           "expression": "BSD-4-Clause"
         }
       ],
+      "purl": "pkg:generic/bzip2@1.0.8",
       "externalReferences": [
         {
           "type": "website",
@@ -4595,6 +4849,7 @@
       "name": "python-catch-conflicts-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/python-catch-conflicts-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -4609,6 +4864,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/dejagnu@1.6.3",
       "externalReferences": [
         {
           "type": "website",
@@ -4623,6 +4879,7 @@
       "name": "python-runtime-deps-check-hook.sh",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/python-runtime-deps-check-hook.sh@",
       "externalReferences": [],
       "properties": []
     },
@@ -4632,6 +4889,7 @@
       "name": "make-shell-wrapper-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/make-shell-wrapper-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -4646,6 +4904,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/texinfo@7.0.3",
       "externalReferences": [
         {
           "type": "website",
@@ -4665,6 +4924,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/bison@3.8.2",
       "externalReferences": [
         {
           "type": "website",
@@ -4686,6 +4946,7 @@
           }
         }
       ],
+      "purl": "pkg:generic/sqlite@3.45.1",
       "externalReferences": [
         {
           "type": "website",
@@ -4705,6 +4966,7 @@
           "expression": "ISC"
         }
       ],
+      "purl": "pkg:generic/python3.11-ptyprocess@0.7.0",
       "externalReferences": [
         {
           "type": "website",
@@ -4724,6 +4986,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/libpsl@0.21.5",
       "externalReferences": [
         {
           "type": "website",
@@ -4738,6 +5001,7 @@
       "name": "nixtract",
       "version": "0.2.0",
       "description": "",
+      "purl": "pkg:generic/nixtract@0.2.0",
       "externalReferences": [],
       "properties": []
     },
@@ -4752,6 +5016,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/c-ares@1.19.1",
       "externalReferences": [
         {
           "type": "website",
@@ -4774,6 +5039,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-URI@5.21",
       "externalReferences": [
         {
           "type": "website",
@@ -4793,6 +5059,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/autoconf@2.72",
       "externalReferences": [
         {
           "type": "website",
@@ -4812,6 +5079,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/automake@1.16.5",
       "externalReferences": [
         {
           "type": "website",
@@ -4831,6 +5099,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-pytest-freezegun@0.4.2",
       "externalReferences": [
         {
           "type": "website",
@@ -4845,6 +5114,7 @@
       "name": "pypa-build-hook.sh",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/pypa-build-hook.sh@",
       "externalReferences": [],
       "properties": []
     },
@@ -4859,6 +5129,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/libffi@3.4.4",
       "externalReferences": [
         {
           "type": "website",
@@ -4878,6 +5149,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/texinfo@7.0.3",
       "externalReferences": [
         {
           "type": "website",
@@ -4897,6 +5169,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/meson@1.3.1",
       "externalReferences": [
         {
           "type": "website",
@@ -4919,6 +5192,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-ExtUtils-Config@0.008",
       "externalReferences": [
         {
           "type": "website",
@@ -4938,6 +5212,7 @@
           "expression": "BSD-3-Clause"
         }
       ],
+      "purl": "pkg:generic/python3.11-lxml@4.9.4",
       "externalReferences": [
         {
           "type": "website",
@@ -4957,6 +5232,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/python3.11-importlib-metadata@6.9.0",
       "externalReferences": [
         {
           "type": "website",
@@ -4976,6 +5252,7 @@
           "expression": "Python-2.0"
         }
       ],
+      "purl": "pkg:generic/python3@3.11.7",
       "externalReferences": [
         {
           "type": "website",
@@ -4995,6 +5272,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-pyyaml@6.0.1",
       "externalReferences": [
         {
           "type": "website",
@@ -5009,6 +5287,7 @@
       "name": "make-binary-wrapper-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/make-binary-wrapper-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -5023,6 +5302,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/libffi@3.4.4",
       "externalReferences": [
         {
           "type": "website",
@@ -5045,6 +5325,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-Class-Inspector@1.36",
       "externalReferences": [
         {
           "type": "website",
@@ -5059,6 +5340,7 @@
       "name": "stdenv-linux",
       "version": "",
       "description": "The default build environment for Unix packages in Nixpkgs",
+      "purl": "pkg:generic/stdenv-linux@",
       "externalReferences": [],
       "properties": []
     },
@@ -5073,6 +5355,7 @@
           "expression": "LGPL-2.1-or-later"
         }
       ],
+      "purl": "pkg:generic/libxcrypt@4.4.36",
       "externalReferences": [
         {
           "type": "website",
@@ -5087,6 +5370,7 @@
       "name": "crates-io-dependencies",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/crates-io-dependencies@",
       "externalReferences": [],
       "properties": []
     },
@@ -5101,6 +5385,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-installer@0.7.0",
       "externalReferences": [
         {
           "type": "website",
@@ -5120,6 +5405,7 @@
           "expression": "Artistic-1.0"
         }
       ],
+      "purl": "pkg:generic/perl@5.38.2",
       "externalReferences": [
         {
           "type": "website",
@@ -5139,6 +5425,7 @@
           "expression": "GPL-3.0"
         }
       ],
+      "purl": "pkg:generic/cpio@2.15",
       "externalReferences": [
         {
           "type": "website",
@@ -5170,6 +5457,7 @@
           "expression": "CC-BY-4.0"
         }
       ],
+      "purl": "pkg:generic/libuv@1.47.0",
       "externalReferences": [
         {
           "type": "website",
@@ -5189,6 +5477,7 @@
           "expression": "GPL-2.0"
         }
       ],
+      "purl": "pkg:generic/git@2.43.0",
       "externalReferences": [
         {
           "type": "website",
@@ -5211,6 +5500,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-XML-SAX-Base@1.09",
       "externalReferences": [
         {
           "type": "website",
@@ -5233,6 +5523,7 @@
           "expression": "LGPL-2.1-or-later"
         }
       ],
+      "purl": "pkg:generic/xz@5.4.6",
       "externalReferences": [
         {
           "type": "website",
@@ -5252,6 +5543,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-cbor2@5.5.1",
       "externalReferences": [
         {
           "type": "website",
@@ -5274,6 +5566,7 @@
           "expression": "GPL-1.0-or-later"
         }
       ],
+      "purl": "pkg:generic/perl5.38.2-TimeDate@2.33",
       "externalReferences": [
         {
           "type": "website",
@@ -5293,6 +5586,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-tomli-w@1.0.0",
       "externalReferences": [
         {
           "type": "website",
@@ -5312,6 +5606,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/gnum4@1.4.19",
       "externalReferences": [
         {
           "type": "website",
@@ -5331,6 +5626,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/python3.11-toml@0.10.2",
       "externalReferences": [
         {
           "type": "website",
@@ -5350,6 +5646,7 @@
           "expression": "Unlicense"
         }
       ],
+      "purl": "pkg:generic/python3.11-filelock@3.13.1",
       "externalReferences": [
         {
           "type": "website",
@@ -5369,6 +5666,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/readline@8.2p10",
       "externalReferences": [
         {
           "type": "website",

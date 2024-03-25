@@ -10,6 +10,7 @@
       "name": "die-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/die-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -19,6 +20,7 @@
       "name": "stdenv-linux",
       "version": "",
       "description": "The default build environment for Unix packages in Nixpkgs",
+      "purl": "pkg:generic/stdenv-linux@",
       "externalReferences": [],
       "properties": []
     },
@@ -33,6 +35,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/nghttp2@1.57.0",
       "externalReferences": [
         {
           "type": "website",
@@ -52,6 +55,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/keyutils@1.6.3",
       "externalReferences": [
         {
           "type": "website",
@@ -71,6 +75,7 @@
           "expression": "MIT"
         }
       ],
+      "purl": "pkg:generic/libkrb5@1.20.2",
       "externalReferences": [
         {
           "type": "website",
@@ -85,6 +90,7 @@
       "name": "make-shell-wrapper-hook",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/make-shell-wrapper-hook@",
       "externalReferences": [],
       "properties": []
     },
@@ -99,6 +105,7 @@
           "expression": "Zlib"
         }
       ],
+      "purl": "pkg:generic/zlib@1.3",
       "externalReferences": [
         {
           "type": "website",
@@ -118,6 +125,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
+      "purl": "pkg:generic/hello@2.12.1",
       "externalReferences": [
         {
           "type": "website",
@@ -137,6 +145,7 @@
           "expression": "Apache-2.0"
         }
       ],
+      "purl": "pkg:generic/openssl@3.0.13",
       "externalReferences": [
         {
           "type": "website",
@@ -156,6 +165,7 @@
           "expression": "Artistic-1.0"
         }
       ],
+      "purl": "pkg:generic/perl@5.38.2",
       "externalReferences": [
         {
           "type": "website",
@@ -175,6 +185,7 @@
           "expression": "LGPL-2.1-or-later"
         }
       ],
+      "purl": "pkg:generic/libxcrypt@4.4.36",
       "externalReferences": [
         {
           "type": "website",
@@ -189,6 +200,7 @@
       "name": "hello",
       "version": "2.12.1",
       "description": "",
+      "purl": "pkg:generic/hello@2.12.1",
       "externalReferences": [],
       "properties": []
     },
@@ -203,6 +215,7 @@
           "expression": "Artistic-1.0"
         }
       ],
+      "purl": "pkg:generic/perl@5.38.2",
       "externalReferences": [
         {
           "type": "website",
@@ -227,6 +240,7 @@
           }
         }
       ],
+      "purl": "pkg:generic/libssh2@1.11.0",
       "externalReferences": [
         {
           "type": "website",
@@ -246,6 +260,7 @@
           "expression": "curl"
         }
       ],
+      "purl": "pkg:generic/curl@8.4.0",
       "externalReferences": [
         {
           "type": "website",
@@ -260,6 +275,7 @@
       "name": "hello",
       "version": "",
       "description": "",
+      "purl": "pkg:generic/hello@",
       "externalReferences": [],
       "properties": []
     },
@@ -274,6 +290,7 @@
           "expression": "GPL-2.0-or-later"
         }
       ],
+      "purl": "pkg:generic/pkg-config-wrapper@0.29.2",
       "externalReferences": [
         {
           "type": "website",

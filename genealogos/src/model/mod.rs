@@ -24,7 +24,7 @@ pub struct ModelComponent {
     pub properties: ModelProperties,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Copy, Clone)]
 pub enum ModelType {
     /// (spec) For software components, classify as application if no more specific
     /// appropriate classification is available or cannot be determined for the
@@ -45,7 +45,7 @@ pub enum ModelExternalReferenceType {
 
 // TODO: Consider if it is worth splitting this struct up into 2 different
 // structs like the cyclone spec. For now, just make id and name both Options
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct ModelLicense {
     // SPDX id
     pub id: Option<String>,

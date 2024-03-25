@@ -200,7 +200,7 @@ impl TryFrom<ModelComponent> for Component {
         Ok(Component {
             component_type: model.r#type.into(),
             mime_type: None,
-            bom_ref: Some(model.r#ref),
+            bom_ref: Some(model.r#ref.clone()),
             supplier: None,
             author: None,
             publisher: None,
@@ -211,7 +211,7 @@ impl TryFrom<ModelComponent> for Component {
             scope: None,
             hashes: None,
             // Remove the match
-            licenses: match model.licenses {
+            licenses: match model.licenses.clone() {
                 None => None,
                 Some(licenses) => {
                     let licenses = licenses
@@ -224,8 +224,7 @@ impl TryFrom<ModelComponent> for Component {
             },
             copyright: None,
             cpe: None,
-            // TODO!
-            purl: None,
+            purl: (&model).into(),
             swid: None,
             modified: None,
             pedigree: None,
@@ -311,5 +310,25 @@ impl From<ModelDependency> for Dependency {
             dependency_ref: model.r#ref,
             dependencies,
         }
+    }
+}
+
+impl From<&ModelComponent> for Option<Purl> {
+    fn from(model: &ModelComponent) -> Self {
+        // the cyclonedx-bom crate uses the packageurl crate under the hood,
+        // but provides no way to contruct a Purl from a packageurl, so we use the FromStr
+        // trait instead, which is not great.
+        let purl_str: String = match &model.src {
+            Some(src) => {
+                format!(
+                    "pkg:generic/{}?vcs_url=git+{}@{}",
+                    model.name, src.git_repo_url, src.rev
+                )
+            }
+            None => format!("pkg:generic/{}@{}", model.name, model.version),
+        }
+        .to_owned();
+
+        Purl::from_str(&purl_str).ok()
     }
 }
