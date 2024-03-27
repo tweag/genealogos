@@ -1,13 +1,12 @@
 # Genealogos
-The Genealogos project is a tool that takes output from Nix evaluation tools
-and produces SBOM files. Currently, it takes input from [nixtract][nixtract]
-and produces json output compliant with the [CycloneDX][cyclonedx] 1.5
-specification. Output from Genealogos can be used by various other tools to
-perform further analysis. Any tool that takes JSON in the CycloneDX format
-should accept Genealogos' output.
+The Genealogos project is a tool that takes output from Nix evaluation tools and produces BOM files.
+Currently, it takes input from [nixtract][nixtract] and produces json output compliant with the [CycloneDX][cyclonedx] 1.3 or 1.4 specification.<!-- TODO: 1.5 -->
+Output from Genealogos can be used by various other tools to perform further analysis.
 
-The project is still very early stages, so the output may as of yet be of little
-use.
+Note Nix is mainly just suitable for Software, and so the BOM output by Genealogos is nearly always an SBOM.
+However, for consistency, we will refer to the output as a BOM.
+
+The project is still very early stages, so the output may as of yet be of little use.
 
 ## Using Genealogos
 ### Analyzing a local flake
@@ -43,7 +42,7 @@ For example, using curl, the api can be invoked like this:
 curl "http://localhost:8000/api/analyze?flake_ref=nixpkgs&attribute_path=hello"
 ```
 
-Additionally an optional `bom_format` query parameter can be provided to specify the sbom format to use.
+Additionally an optional `bom_format` query parameter can be provided to specify the bom format to use.
 Example:
 ```fish
 curl "http://localhost:8000/api/analyze?flake_ref=nixpkgs&attribute_path=hello&cyclonedx_version=v1_4"

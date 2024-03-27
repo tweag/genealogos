@@ -1,4 +1,4 @@
-//! Genealogos is a tool that takes nixtract output and creates an sbom file.
+//! Genealogos is a tool that takes nixtract output and creates an bom file.
 //! This output file can then be used by external tools for further analysis.
 //! Currently, this crate only supports [cyclonedx],
 //!

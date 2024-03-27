@@ -184,7 +184,7 @@ pub fn result(job_id: JobId, job_map: &rocket::State<JobMap>) -> Result<messages
         message: "Job not found".to_owned(),
     }))?;
 
-    let (sbom, elapsed) = match status {
+    let (bom, elapsed) = match status {
         JobStatus::Done(s, elapsed) => Ok((s.clone(), *elapsed)),
         _ => Err(messages::ErrResponse {
             metadata: messages::Metadata::new(Some(job_id)),
@@ -202,7 +202,7 @@ pub fn result(job_id: JobId, job_map: &rocket::State<JobMap>) -> Result<messages
             time_taken: Some(elapsed),
             ..Default::default()
         },
-        data: messages::AnalyzeResponse { sbom },
+        data: messages::AnalyzeResponse { bom },
     });
 
     Ok(json)

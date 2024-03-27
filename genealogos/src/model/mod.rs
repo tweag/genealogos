@@ -12,7 +12,7 @@ pub struct Model {
 pub struct ModelComponent {
     pub r#type: ModelType,
     pub name: String,
-    /// A unique identifier op the component to be used as a reference elsewhere in the sbom
+    /// A unique identifier op the component to be used as a reference elsewhere in the bom
     pub r#ref: String,
     pub version: String,
     pub description: String,

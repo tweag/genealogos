@@ -9,7 +9,7 @@ pub type Result<T> = std::result::Result<Json<OkResponse<T>>, Json<ErrResponse>>
 
 #[derive(serde::Serialize)]
 pub struct AnalyzeResponse {
-    pub sbom: String,
+    pub bom: String,
 }
 
 #[derive(serde::Serialize)]

@@ -67,7 +67,7 @@ fn analyze(
             time_taken: Some(start_time.elapsed()),
             ..Default::default()
         },
-        data: messages::AnalyzeResponse { sbom: buf },
+        data: messages::AnalyzeResponse { bom: buf },
     });
 
     Ok(json)
@@ -150,11 +150,11 @@ mod tests {
 
                 // Extract the somb from the response
                 let response_json: serde_json::Value = response.into_json().unwrap();
-                let response_sbom = match response_json.get("sbom").unwrap() {
-                    serde_json::Value::String(response_sbom) => response_sbom,
+                let response_bom = match response_json.get("bom").unwrap() {
+                    serde_json::Value::String(response_bom) => response_bom,
                     _ => panic!("Not a string"),
                 };
-                let response_sbom: serde_json::Value = serde_json::from_str(response_sbom).unwrap();
+                let response_bom: serde_json::Value = serde_json::from_str(response_bom).unwrap();
 
                 // 1.4
                 let mut expected_path_1_4 = input_path.clone();
@@ -169,7 +169,7 @@ mod tests {
                 //     serde_json::from_str(&expected_output_1_4).unwrap();
                 // let expected_output_1_4 = serde_json::to_string(&expected_json_1_4).unwrap();
 
-                assert_eq!(response_sbom, expected_output_1_4);
+                assert_eq!(response_bom, expected_output_1_4);
             }
         }
     }
