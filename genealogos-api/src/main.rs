@@ -12,7 +12,7 @@ use rocket::Request;
 mod jobs;
 mod messages;
 
-use messages::Result;
+use messages::{ErrResponse, Result};
 
 #[rocket::catch(default)]
 fn handle_errors(req: &Request) -> status::Custom<String> {
@@ -37,30 +37,15 @@ fn analyze(
     };
 
     let backend = genealogos::backend::nixtract_backend::Nixtract::new_without_handle();
-
     let model = backend
         .to_model_from_source(source)
-        .map_err(|err| messages::ErrResponse {
-            metadata: messages::Metadata::new(None),
-            message: err.to_string(),
-        })?;
-
+        .map_err(Into::<ErrResponse>::into)?;
     let mut buf = String::new();
-    let bom_arg = match bom_format {
-        Some(bom_arg) => bom_arg,
-        None => BomArg::default(),
-    };
-
-    let bom = bom_arg.get_bom().map_err(|err| messages::ErrResponse {
-        metadata: messages::Metadata::new(None),
-        message: err.to_string(),
-    })?;
+    let bom_arg = bom_format.unwrap_or_default();
+    let bom = bom_arg.get_bom().map_err(Into::<ErrResponse>::into)?;
 
     bom.write_to_fmt_writer(model, &mut buf)
-        .map_err(|err| messages::ErrResponse {
-            metadata: messages::Metadata::new(None),
-            message: err.to_string(),
-        })?;
+        .map_err(Into::<ErrResponse>::into)?;
 
     let json = Json(messages::OkResponse {
         metadata: messages::Metadata {

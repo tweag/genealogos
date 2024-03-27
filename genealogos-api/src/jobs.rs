@@ -50,24 +50,14 @@ pub async fn create(
 
     job_map
         .try_lock()
-        .map_err(|_| {
-            // Return a Json(ErrorResponse)
-            Json(messages::ErrResponse {
-                metadata: messages::Metadata::new(Some(job_id)),
-                message: "Could not lock job map".to_owned(),
-            })
-        })?
+        .map_err(|e| messages::ErrResponse::with_job_id(job_id, e))?
         .insert(job_id, JobStatus::Running(Box::new(backend_handle)));
 
-    let bom_arg = match bom_format {
-        Some(bom_arg) => bom_arg,
-        None => BomArg::default(),
-    };
+    let bom_arg = bom_format.unwrap_or_default();
 
-    let bom = bom_arg.get_bom().map_err(|err| messages::ErrResponse {
-        metadata: messages::Metadata::new(None),
-        message: err.to_string(),
-    })?;
+    let bom = bom_arg
+        .get_bom()
+        .map_err(|e| messages::ErrResponse::with_job_id(job_id, e))?;
 
     // Spawn a new thread to call `genealogos` and store the result in the job map
     let job_map_clone = Arc::clone(job_map);
@@ -115,12 +105,9 @@ pub async fn status(
     job_id: JobId,
     job_map: &rocket::State<JobMap>,
 ) -> Result<messages::StatusResponse> {
-    let mut locked_map = job_map.try_lock().map_err(|_| {
-        Json(messages::ErrResponse {
-            metadata: messages::Metadata::new(Some(job_id)),
-            message: "Could not lock job map".to_owned(),
-        })
-    })?;
+    let mut locked_map = job_map
+        .try_lock()
+        .map_err(|e| messages::ErrResponse::with_job_id(job_id, e))?;
 
     let status = locked_map.get(&job_id).unwrap_or(&JobStatus::Stopped);
 
@@ -130,12 +117,9 @@ pub async fn status(
             message: message.to_owned(),
         })),
         JobStatus::Running(backend) => {
-            let messages = backend.new_messages().map_err(|e| {
-                Json(messages::ErrResponse {
-                    metadata: messages::Metadata::new(Some(job_id)),
-                    message: e.to_string(),
-                })
-            })?;
+            let messages = backend
+                .new_messages()
+                .map_err(|e| messages::ErrResponse::with_job_id(job_id, e))?;
 
             // Show the last message if there are multiple with the same id
             let mut messages: Vec<genealogos::backend::Message> = messages.into_iter().collect();
@@ -172,12 +156,9 @@ pub async fn status(
 
 #[rocket::get("/result/<job_id>")]
 pub fn result(job_id: JobId, job_map: &rocket::State<JobMap>) -> Result<messages::AnalyzeResponse> {
-    let mut locked_map = job_map.try_lock().map_err(|_| {
-        Json(messages::ErrResponse {
-            metadata: messages::Metadata::new(Some(job_id)),
-            message: "Could not lock job map".to_owned(),
-        })
-    })?;
+    let mut locked_map = job_map
+        .try_lock()
+        .map_err(|e| messages::ErrResponse::with_job_id(job_id, e))?;
 
     let status = locked_map.get(&job_id).ok_or(Json(messages::ErrResponse {
         metadata: messages::Metadata::new(Some(job_id)),

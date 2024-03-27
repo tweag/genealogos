@@ -42,6 +42,24 @@ pub struct ErrResponse {
     pub message: String,
 }
 
+impl ErrResponse {
+    pub fn with_job_id<T: std::error::Error>(job_id: u16, error: T) -> Self {
+        ErrResponse {
+            metadata: Metadata::new(Some(job_id)),
+            message: error.to_string(),
+        }
+    }
+}
+
+impl From<genealogos::Error> for ErrResponse {
+    fn from(err: genealogos::Error) -> Self {
+        ErrResponse {
+            metadata: Metadata::default(),
+            message: err.to_string(),
+        }
+    }
+}
+
 #[derive(serde::Serialize)]
 pub struct Metadata {
     #[serde(skip_serializing_if = "Option::is_none")]
