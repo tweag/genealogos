@@ -10,19 +10,17 @@ keywords.workspace = true
 readme.workspace = true
 
 [dependencies]
-clap.workspace = true
+clap = { workspace = true, optional = true }
+cyclonedx-bom.workspace = true
 log.workspace = true
 rayon.workspace = true
+rocket = { workspace = true, optional = true }
 serde.workspace = true
-serde-cyclonedx.workspace = true
 serde_json.workspace = true
 thiserror.workspace = true
 uuid.workspace = true
 
 nixtract.workspace = true
-
-# If the `rocket` feature is enabled, `FromForm` will be derived for `cyclonedx::Version`
-rocket = { workspace = true, optional = true }
 
 [dev-dependencies]
 env_logger.workspace = true
@@ -31,6 +29,20 @@ test-log.workspace = true
 pretty_assertions.workspace = true
 
 [features]
+default = []
+
 # This feature should be enabled when running tests in a Nix environment.
 # It disables all tests that require a working internet connection.
 nix = []
+
+# The messages function of the `BanendHandle` trait violates object safety.
+# For those users of the library that don't need to use this trait as an object, and would like access to the `messages` function, this feature should be enabled.
+backend_handle_messages = []
+
+clap = [ "args", "dep:clap" ]
+rocket = [ "args", "dep:rocket" ]
+
+# Enables the `genealogos::args` module, it is typically best to pick either
+# the `clap` or `rocket` features instead, which automatically enable this feature
+# as well. However, if you only need access to the types in this module, use this feature instead.
+args = []

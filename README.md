@@ -1,13 +1,12 @@
 # Genealogos
-The Genealogos project is a tool that takes output from Nix evaluation tools
-and produces SBOM files. Currently, it takes input from [nixtract][nixtract]
-and produces json output compliant with the [CycloneDX][cyclonedx] 1.5
-specification. Output from Genealogos can be used by various other tools to
-perform further analysis. Any tool that takes JSON in the CycloneDX format
-should accept Genealogos' output.
+The Genealogos project is a tool that takes output from Nix evaluation tools and produces BOM files.
+Currently, it takes input from [nixtract][nixtract] and produces json output compliant with the [CycloneDX][cyclonedx] 1.3 or 1.4 specification.<!-- TODO: 1.5 -->
+Output from Genealogos can be used by various other tools to perform further analysis.
 
-The project is still very early stages, so the output may as of yet be of little
-use.
+Note Nix is mainly just suitable for Software, and so the BOM output by Genealogos is nearly always an SBOM.
+However, for consistency, we will refer to the output as a BOM.
+
+The project is still very early stages, so the output may as of yet be of little use.
 
 ## Using Genealogos
 ### Analyzing a local flake
@@ -43,13 +42,14 @@ For example, using curl, the api can be invoked like this:
 curl "http://localhost:8000/api/analyze?flake_ref=nixpkgs&attribute_path=hello"
 ```
 
-Additionally an optional `cyclonedx_version` query parameter can be provided to specify the CycloneDX version to use.
+Additionally an optional `bom_format` query parameter can be provided to specify the bom format to use.
 Example:
 ```fish
 curl "http://localhost:8000/api/analyze?flake_ref=nixpkgs&attribute_path=hello&cyclonedx_version=v1_4"
 ```
 
-Currently supported are `v1_4` and `v1_5`. If no version is specified, `v1_5` is used.
+<!-- TODO: Add 1.5 support -->
+Currently supported are `[cyclonedx_1.3_json, cyclonedx_1.3_xml, cyclonedx_1.4_json, cyclonedx_1.4_xml]`, with `cyclonedx_1.4_json` being the default.
 
 ### Jobs
 The jobs based API consists of three endpoints: `/api/jobs/create`, `/api/jobs/status`, and `/api/jobs/result`.
@@ -58,7 +58,7 @@ Creating a job is done in a similar fashion to the blocking api:
 ```fish
 curl "http://localhost:8000/api/jobs/create?flake_ref=nixpkgs&attribute_path=hello"
 ```
-This endpoint also supports the `cyclonedx_version` query parameter.
+This endpoint also supports the `bom_format` query parameter.
 The response of this API call is a `job_id`, which needs to be passed to further calls to indentify the desired job.
 
 Getting the status of a job is done as such:
@@ -81,7 +81,11 @@ Changing this default can be done using the settings button in the top of the we
 The Web UI currently only supports analyzing from a flake ref and attribute path, analyzing from a trace file is not yet supported.
 
 ## Building Genealogos
-`nix build` or `cargo build`. A development shell is provided via `nix devel`.
+The easiest way to build Genealogos is using nix, simply call `nix build` to build the library or `nix build .#genealogos-cli` for the cli.
+
+If you want to use cargo, you might run into [a cargo issue related to workspaces](https://github.com/rust-lang/cargo/issues/4463).
+As a workaround you can use [cargo-hack](https://github.com/taiki-e/cargo-hack), which is convienently provided in the `nix develop` shell.
+Instead of running `cargo [build,test,doc,etc]`, use `cargo hack [build,test,doc,etc]`.
 
 ## Testing
 Genealogos is tested against fixtures in `genealogos/tests/fixtures/nixtract/success/`.

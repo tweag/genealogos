@@ -1,7 +1,8 @@
 use std::sync::{atomic, Arc};
 
-use genealogos::cyclonedx;
-
+use genealogos::args::BomArg;
+use genealogos::backend::Backend;
+use genealogos::bom::Bom;
 use rocket::http::Status;
 use rocket::response::status;
 use rocket::serde::json::Json;
@@ -11,7 +12,7 @@ use rocket::Request;
 mod jobs;
 mod messages;
 
-use messages::Result;
+use messages::{ErrResponse, Result};
 
 #[rocket::catch(default)]
 fn handle_errors(req: &Request) -> status::Custom<String> {
@@ -21,36 +22,37 @@ fn handle_errors(req: &Request) -> status::Custom<String> {
     )
 }
 
-#[rocket::get("/analyze?<flake_ref>&<attribute_path>&<cyclonedx_version>")]
+#[rocket::get("/analyze?<flake_ref>&<attribute_path>&<bom_format>")]
 fn analyze(
     flake_ref: &str,
     attribute_path: Option<&str>,
-    cyclonedx_version: Option<cyclonedx::Version>,
+    bom_format: Option<BomArg>,
 ) -> Result<messages::AnalyzeResponse> {
     let start_time = std::time::Instant::now();
 
     // Construct the Source from the flake reference and attribute path
-    let source = genealogos::Source::Flake {
+    let source = genealogos::backend::Source::Flake {
         flake_ref: flake_ref.to_string(),
         attribute_path: attribute_path.map(str::to_string),
     };
 
-    let (backend, _) = genealogos::backend::BackendEnum::Nixtract.get_backend();
+    let backend = genealogos::backend::nixtract_backend::Nixtract::new_without_handle();
+    let model = backend
+        .to_model_from_source(source)
+        .map_err(Into::<ErrResponse>::into)?;
+    let mut buf = String::new();
+    let bom_arg = bom_format.unwrap_or_default();
+    let bom = bom_arg.get_bom().map_err(Into::<ErrResponse>::into)?;
 
-    let sbom =
-        cyclonedx(backend, source, cyclonedx_version.unwrap_or_default()).map_err(|err| {
-            messages::ErrResponse {
-                metadata: messages::Metadata::new(None),
-                message: err.to_string(),
-            }
-        })?;
+    bom.write_to_fmt_writer(model, &mut buf)
+        .map_err(Into::<ErrResponse>::into)?;
 
     let json = Json(messages::OkResponse {
         metadata: messages::Metadata {
             time_taken: Some(start_time.elapsed()),
             ..Default::default()
         },
-        data: messages::AnalyzeResponse { sbom },
+        data: messages::AnalyzeResponse { bom: buf },
     });
 
     Ok(json)
@@ -133,19 +135,26 @@ mod tests {
 
                 // Extract the somb from the response
                 let response_json: serde_json::Value = response.into_json().unwrap();
-                let response_sbom = response_json.get("sbom").unwrap().to_string();
+                let response_bom = match response_json.get("bom").unwrap() {
+                    serde_json::Value::String(response_bom) => response_bom,
+                    _ => panic!("Not a string"),
+                };
+                let response_bom: serde_json::Value = serde_json::from_str(response_bom).unwrap();
 
-                // 1.5
-                let mut expected_path_1_5 = input_path.clone();
-                expected_path_1_5.set_extension("1_5.out");
-                let expected_output_1_5 = std::fs::read_to_string(expected_path_1_5).unwrap();
+                // 1.4
+                let mut expected_path_1_4 = input_path.clone();
+                expected_path_1_4.set_extension("1_4.out");
+                // Read expected_path_1_4 to a string
+                let expected_string_1_4 = std::fs::read_to_string(expected_path_1_4).unwrap();
+                let expected_output_1_4: serde_json::Value =
+                    serde_json::from_str(&expected_string_1_4).unwrap();
 
                 // Convert from and to json to remove the pretty printed stuff
-                let expected_json_1_5: serde_json::Value =
-                    serde_json::from_str(&expected_output_1_5).unwrap();
-                let expected_output_1_5 = serde_json::to_string(&expected_json_1_5).unwrap();
+                // let expected_json_1_4: serde_json::Value =
+                //     serde_json::from_str(&expected_output_1_4).unwrap();
+                // let expected_output_1_4 = serde_json::to_string(&expected_json_1_4).unwrap();
 
-                assert_eq!(response_sbom, expected_output_1_5.trim().to_string());
+                assert_eq!(response_bom, expected_output_1_4);
             }
         }
     }

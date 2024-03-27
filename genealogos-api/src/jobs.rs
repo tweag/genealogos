@@ -1,11 +1,11 @@
 use std::sync::{atomic, Arc};
 use std::time;
 
-use genealogos::backend::BackendHandleTrait;
+use genealogos::args::BomArg;
+use genealogos::backend::Backend;
+use genealogos::bom::Bom;
 use rocket::serde::json::Json;
 use rocket::tokio;
-
-use genealogos::{self, cyclonedx};
 
 use crate::messages::{self, Result, StatusEnum, StatusResponse};
 
@@ -17,8 +17,8 @@ pub type JobMap = Arc<rocket::tokio::sync::Mutex<std::collections::HashMap<JobId
 pub enum JobStatus {
     Stopped,
     /// The job is still running, the receiver is used receive status messages from worker threads
-    Running(genealogos::backend::BackendHandle),
-    Done(genealogos::cyclonedx::CycloneDX, time::Duration),
+    Running(Box<dyn genealogos::backend::BackendHandle + Send>),
+    Done(String, time::Duration),
     Error(String),
 }
 
@@ -33,11 +33,11 @@ impl ToString for JobStatus {
     }
 }
 
-#[rocket::get("/create?<flake_ref>&<attribute_path>&<cyclonedx_version>")]
+#[rocket::get("/create?<flake_ref>&<attribute_path>&<bom_format>")]
 pub async fn create(
     flake_ref: &str,
     attribute_path: &str,
-    cyclonedx_version: Option<cyclonedx::Version>,
+    bom_format: Option<BomArg>,
     job_map: &rocket::State<JobMap>,
     job_counter: &rocket::State<atomic::AtomicU16>,
 ) -> Result<messages::CreateResponse> {
@@ -46,37 +46,47 @@ pub async fn create(
     let start_time = time::Instant::now();
 
     // Create backend
-    let (backend, backend_handle) = genealogos::backend::BackendEnum::default().get_backend();
+    let (backend, backend_handle) = genealogos::backend::nixtract_backend::Nixtract::new();
 
     job_map
         .try_lock()
-        .map_err(|_| {
-            // Return a Json(ErrorResponse)
-            Json(messages::ErrResponse {
-                metadata: messages::Metadata::new(Some(job_id)),
-                message: "Could not lock job map".to_owned(),
-            })
-        })?
-        .insert(job_id, JobStatus::Running(backend_handle));
+        .map_err(|e| messages::ErrResponse::with_job_id(job_id, e))?
+        .insert(job_id, JobStatus::Running(Box::new(backend_handle)));
+
+    let bom_arg = bom_format.unwrap_or_default();
+
+    let bom = bom_arg
+        .get_bom()
+        .map_err(|e| messages::ErrResponse::with_job_id(job_id, e))?;
 
     // Spawn a new thread to call `genealogos` and store the result in the job map
     let job_map_clone = Arc::clone(job_map);
     let flake_ref = flake_ref.to_string();
     let attribute_path = attribute_path.to_string();
     tokio::spawn(async move {
-        let output = genealogos::cyclonedx(
-            backend,
-            genealogos::Source::Flake {
-                flake_ref,
-                attribute_path: Some(attribute_path),
-            },
-            cyclonedx_version.unwrap_or_default(),
-        );
+        let source = genealogos::backend::Source::Flake {
+            flake_ref,
+            attribute_path: Some(attribute_path),
+        };
+
+        let model = match backend.to_model_from_source(source) {
+            Ok(m) => m,
+            Err(e) => {
+                job_map_clone
+                    .try_lock()
+                    .unwrap()
+                    .insert(job_id, JobStatus::Error(e.to_string()));
+                return;
+            }
+        };
+
+        let mut buf = String::new();
+        let output = bom.write_to_fmt_writer(model, &mut buf);
 
         job_map_clone.try_lock().unwrap().insert(
             job_id,
             match output {
-                Ok(c) => JobStatus::Done(c, start_time.elapsed()),
+                Ok(_) => JobStatus::Done(buf, start_time.elapsed()),
                 Err(e) => JobStatus::Error(e.to_string()),
             },
         );
@@ -95,12 +105,9 @@ pub async fn status(
     job_id: JobId,
     job_map: &rocket::State<JobMap>,
 ) -> Result<messages::StatusResponse> {
-    let mut locked_map = job_map.try_lock().map_err(|_| {
-        Json(messages::ErrResponse {
-            metadata: messages::Metadata::new(Some(job_id)),
-            message: "Could not lock job map".to_owned(),
-        })
-    })?;
+    let mut locked_map = job_map
+        .try_lock()
+        .map_err(|e| messages::ErrResponse::with_job_id(job_id, e))?;
 
     let status = locked_map.get(&job_id).unwrap_or(&JobStatus::Stopped);
 
@@ -110,17 +117,14 @@ pub async fn status(
             message: message.to_owned(),
         })),
         JobStatus::Running(backend) => {
-            let messages = backend.get_new_messages().map_err(|e| {
-                Json(messages::ErrResponse {
-                    metadata: messages::Metadata::new(Some(job_id)),
-                    message: e.to_string(),
-                })
-            })?;
+            let messages = backend
+                .new_messages()
+                .map_err(|e| messages::ErrResponse::with_job_id(job_id, e))?;
 
             // Show the last message if there are multiple with the same id
-            let mut messages: Vec<nixtract::message::Message> = messages.into_iter().collect();
-            messages.sort_by_key(|m| m.id);
-            messages.dedup_by_key(|m| m.id);
+            let mut messages: Vec<genealogos::backend::Message> = messages.into_iter().collect();
+            messages.sort_by_key(|m| m.index);
+            messages.dedup_by_key(|m| m.index);
 
             Ok(StatusResponse {
                 status: StatusEnum::LogMessages(messages),
@@ -152,19 +156,16 @@ pub async fn status(
 
 #[rocket::get("/result/<job_id>")]
 pub fn result(job_id: JobId, job_map: &rocket::State<JobMap>) -> Result<messages::AnalyzeResponse> {
-    let mut locked_map = job_map.try_lock().map_err(|_| {
-        Json(messages::ErrResponse {
-            metadata: messages::Metadata::new(Some(job_id)),
-            message: "Could not lock job map".to_owned(),
-        })
-    })?;
+    let mut locked_map = job_map
+        .try_lock()
+        .map_err(|e| messages::ErrResponse::with_job_id(job_id, e))?;
 
     let status = locked_map.get(&job_id).ok_or(Json(messages::ErrResponse {
         metadata: messages::Metadata::new(Some(job_id)),
         message: "Job not found".to_owned(),
     }))?;
 
-    let (sbom, elapsed) = match status {
+    let (bom, elapsed) = match status {
         JobStatus::Done(s, elapsed) => Ok((s.clone(), *elapsed)),
         _ => Err(messages::ErrResponse {
             metadata: messages::Metadata::new(Some(job_id)),
@@ -182,7 +183,7 @@ pub fn result(job_id: JobId, job_map: &rocket::State<JobMap>) -> Result<messages
             time_taken: Some(elapsed),
             ..Default::default()
         },
-        data: messages::AnalyzeResponse { sbom },
+        data: messages::AnalyzeResponse { bom },
     });
 
     Ok(json)

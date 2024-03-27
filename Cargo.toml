@@ -13,23 +13,25 @@ members = ["genealogos", "genealogos-cli", "genealogos-api"]
 resolver = "2"
 
 [workspace.dependencies]
+anyhow = "1.0.81"
 chrono = "0.4.34"
 clap = { version = "4.4.14", features = ["derive"] }
 clap-verbosity-flag = "2.1.2"
 env_logger = "0.11.1"
 indicatif = "0.17.8"
 indicatif-log-bridge = "0.2.2"
+cyclonedx-bom = "0.5.0"
 log = "0.4.20"
 rayon = "1.8.1"
 rocket = { version = "0.5.0", features = ["json"] }
 serde = { version = "1.0.196", features = ["derive"] }
 serde_json = "1.0.113"
-serde-cyclonedx = "0.8.4"
 thiserror = "1.0.57"
 uuid = { version = "1.7.0", features = ["v4"] }
 
 # Non-crates.io dependencies
 nixtract.git = "https://github.com/tweag/nixtract.git"
+genealogos.path = "./genealogos"
 
 # Test dependencies
 predicates = "3.1.0"

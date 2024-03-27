@@ -3,7 +3,7 @@
     naersk.url = "github:nix-community/naersk/master";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     utils.url = "github:numtide/flake-utils";
-    nixtract.url = "github:tweag/nixtract/snake_case-descriptions";
+    nixtract.url = "github:tweag/nixtract";
   };
 
   outputs =
@@ -22,36 +22,7 @@
         nixtract-cli = nixtract.defaultPackage.${system};
       in
       rec {
-        packages = rec {
-          default = genealogos;
-          genealogos = naersk-lib.buildPackage {
-            src = ./.;
-            doCheck = true;
-
-            # Genealogos uses the reqwest crate to query for narinfo on the substituters.
-            # reqwest depends on openssl.
-            nativeBuildInputs = with pkgs; [ pkg-config ];
-            buildInputs = with pkgs; [ openssl ];
-
-            # Setting this feature flag to disable tests that require recursive nix/an internet connection
-            cargoTestOptions = x: x ++ [ "--features" "nix" ];
-          };
-          update-fixture-output-files = pkgs.writeShellApplication {
-            name = "update-fixture-output-files";
-            runtimeInputs = [ (genealogos.overrideAttrs (_: { doCheck = false; })) pkgs.jq ];
-            text = builtins.readFile ./scripts/update-fixture-output-files.sh;
-          };
-          update-fixture-input-files = pkgs.writeShellApplication {
-            name = "update-fixture-input-files";
-            runtimeInputs = [ nixtract-cli ];
-            text = builtins.readFile ./scripts/update-fixture-input-files.sh;
-          };
-          verify-fixture-files = pkgs.writeShellApplication {
-            name = "verify-fixture-files";
-            runtimeInputs = [ cyclonedx ];
-            text = builtins.readFile ./scripts/verify-fixture-files.sh;
-          };
-        };
+        packages = import ./nix/packages.nix { inherit pkgs naersk-lib cyclonedx nixtract-cli; };
         devShells = {
           default =
             pkgs.mkShell {
@@ -67,6 +38,9 @@
 
                 pkg-config
                 openssl
+
+                # https://github.com/rust-lang/cargo/issues/4463
+                cargo-hack
               ];
               RUST_SRC_PATH = pkgs.rustPlatform.rustLibSrc;
               RUST_BACKTRACE = 1;

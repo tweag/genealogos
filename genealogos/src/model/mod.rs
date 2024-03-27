@@ -2,9 +2,6 @@
 //! Since the initial target of Genealogos is CycloneDX, this model is largely based on their representation.
 use std::collections::{HashMap, HashSet};
 
-pub mod v1_4;
-pub mod v1_5;
-
 #[derive(Debug)]
 pub struct Model {
     pub components: Vec<ModelComponent>,
@@ -15,7 +12,7 @@ pub struct Model {
 pub struct ModelComponent {
     pub r#type: ModelType,
     pub name: String,
-    /// A unique identifier op the component to be used as a reference elsewhere in the sbom
+    /// A unique identifier op the component to be used as a reference elsewhere in the bom
     pub r#ref: String,
     pub version: String,
     pub description: String,
@@ -27,7 +24,7 @@ pub struct ModelComponent {
     pub properties: ModelProperties,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Copy, Clone)]
 pub enum ModelType {
     /// (spec) For software components, classify as application if no more specific
     /// appropriate classification is available or cannot be determined for the
@@ -48,7 +45,7 @@ pub enum ModelExternalReferenceType {
 
 // TODO: Consider if it is worth splitting this struct up into 2 different
 // structs like the cyclone spec. For now, just make id and name both Options
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct ModelLicense {
     // SPDX id
     pub id: Option<String>,
@@ -63,7 +60,7 @@ pub struct ModelSource {
 
 #[derive(Debug)]
 pub struct ModelProperties {
-    pub properties: HashMap<Option<String>, Option<String>>,
+    pub properties: HashMap<String, String>,
 }
 
 #[derive(Debug)]

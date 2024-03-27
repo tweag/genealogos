@@ -1,18 +1,26 @@
-//! This module contains the code related to nixtract
-//! it is responsible for:
-//!   - Parsing the incoming output of Nixtract
-//!   - Converting that input into the internal representation of Genealogos
+//! This module provides a backend for nixtract, a tool for extracting information from Nix derivations.
+//! It implements the `Backend` trait for the `Nixtract` struct, providing methods to convert
+//! nixtract output into a Genealogos model. It also implements the BackendHandle trait for the equivalently named NixtractHandle.
+//!
+//! The `Nixtract` struct hold the configuration and any other state state required by the nixtract backend.
+//! Similarly, the `NixtractHandle` struct holds the state required to communicate with the nixtract backend.
+//!
+//! The `From<T>` trait is implemented for `Model` where `T` is an iterator over `DerivationDescription`.
+//! This implementation converts a collection of `DerivationDescription` into a `Model`.
+//!
+//! The `From<&License>` trait is implemented for `ModelLicense`, converting a nixtract `License` into a `ModelLicense`.
 
-// In this module, one might see that we do deserialize unused fields. This is
-// to ensure we stay complient with nixtract output.
-
-use std::sync::mpsc::{Sender, Receiver};
+use std::sync::mpsc::Receiver;
 
 use crate::model::{
     Model, ModelComponent, ModelDependency, ModelExternalReference, ModelExternalReferenceType,
     ModelLicense, ModelProperties, ModelSource, ModelType,
 };
 
+use nixtract::{nixtract, DerivationDescription, License, NixtractConfig};
+
+/// `NixtractHandle` is a structure all that is needed to communicate to the
+/// Nixtract backend
 #[derive(Debug)]
 pub struct NixtractHandle {
     receiver: Receiver<nixtract::message::Message>,
@@ -20,22 +28,29 @@ pub struct NixtractHandle {
 
 #[derive(Debug, Clone)]
 pub struct Nixtract {
-    sender: Sender<nixtract::message::Message>,
+    config: NixtractConfig,
 }
-
-use nixtract::{nixtract, DerivationDescription, License};
 
 impl Nixtract {
-    // Create a new Nixtract backend given the Sender
     pub fn new() -> (Self, NixtractHandle) {
         let (sender, receiver) = std::sync::mpsc::channel();
-        (Self { sender }, NixtractHandle { receiver })
+        let config = NixtractConfig {
+            message_tx: Some(sender),
+            ..NixtractConfig::default()
+        };
+
+        (Self { config }, NixtractHandle { receiver })
     }
 
+    pub fn new_without_handle() -> Self {
+        Self {
+            config: NixtractConfig::default(),
+        }
+    }
 }
 
-impl crate::backend::BackendTrait for Nixtract {
-    fn parse_flake_ref(
+impl crate::backend::Backend for Nixtract {
+    fn to_model_from_flake_ref(
         &self,
         flake_ref: impl AsRef<str>,
         attribute_path: Option<impl AsRef<str>>,
@@ -45,10 +60,7 @@ impl crate::backend::BackendTrait for Nixtract {
             flake_ref.as_ref(),
             None::<String>,
             attribute_path.as_ref().map(AsRef::as_ref),
-            false,
-            true,
-            None,
-            Some(self.sender.clone()),
+            self.config.clone(),
         )?;
 
         // Convert the nixtract output into a Genealogos model
@@ -57,14 +69,10 @@ impl crate::backend::BackendTrait for Nixtract {
         Ok(model)
     }
 
-    fn parse_trace_file(&self, file_path: impl AsRef<std::path::Path>) -> crate::Result<Model> {
-        // Read the file contents and split them into individual lines
-        let file_contents = std::fs::read_to_string(file_path)?;
-        let lines = file_contents.lines();
-        self.parse_lines(lines)
-    }
-
-    fn parse_lines(&self, lines: impl Iterator<Item = impl AsRef<str>>) -> crate::Result<Model> {
+    fn to_model_from_lines(
+        &self,
+        lines: impl Iterator<Item = impl AsRef<str>>,
+    ) -> crate::Result<Model> {
         // Parse each line as a Nixtract entry
         let entries: Vec<DerivationDescription> = lines
             .map(|line| serde_json::from_str(line.as_ref()))
@@ -77,22 +85,30 @@ impl crate::backend::BackendTrait for Nixtract {
     }
 }
 
-impl crate::BackendHandleTrait for NixtractHandle {
-    fn get_new_messages(&self) -> crate::Result<Vec<nixtract::message::Message>> {
+impl super::BackendHandle for NixtractHandle {
+    fn new_messages(&self) -> crate::Result<Vec<super::Message>> {
         // Get all current messages from the receiver
-        let messages: Vec<nixtract::message::Message> = self
+        let messages: Vec<super::Message> = self
             .receiver
             .try_iter()
+            .map(|m| super::Message {
+                index: m.id,
+                content: m.to_string(),
+            })
             .collect();
 
         Ok(messages)
     }
 
-    fn get_messages(&self) -> crate::Result<impl Iterator<Item = nixtract::message::Message>> {
-        Ok(self.receiver.iter())
+    #[cfg(feature = "backend_handle_messages")]
+    fn messages(&self) -> crate::Result<impl Iterator<Item = super::Message>> {
+        Ok(self.receiver.iter().map(|m| super::Message {
+            index: m.id,
+            content: m.to_string(),
+        }))
     }
 
-    fn get_num_ids(&self) -> usize {
+    fn max_index(&self) -> usize {
         rayon::current_num_threads()
     }
 }
@@ -135,56 +151,34 @@ where
                 // Convert the narinfo field of the DerivationDescription into a properties hashmap
                 let properties = {
                     let map = if let Some(narinfo) = &entry.nar_info {
-                        std::collections::HashMap::from([
-                            (
-                                Some(concat!("nix:narinfo:", "store_path").to_owned()),
-                                Some(narinfo.store_path.clone().to_string()),
-                            ),
-                            (
-                                Some(concat!("nix:narinfo:", "url").to_owned()),
-                                Some(narinfo.url.clone().to_string()),
-                            ),
-                            (
-                                Some(concat!("nix:narinfo:", "nar_hash").to_owned()),
-                                Some(narinfo.nar_hash.clone().to_string()),
-                            ),
-                            (
-                                Some(concat!("nix:narinfo:", "nar_size").to_owned()),
-                                Some(narinfo.nar_size.clone().to_string()),
-                            ),
-                            (
-                                Some(concat!("nix:narinfo:", "compression").to_owned()),
-                                Some(narinfo.compression.clone().to_string()),
-                            ),
-                            (
-                                Some(concat!("nix:narinfo:", "file_hash").to_owned()),
-                                narinfo.file_hash.clone().map(|v| v.to_string()),
-                            ),
-                            (
-                                Some(concat!("nix:narinfo:", "file_size").to_owned()),
-                                narinfo.file_size.map(|v| v.to_string()),
-                            ),
-                            (
-                                Some(concat!("nix:narinfo:", "deriver").to_owned()),
-                                narinfo.deriver.clone().map(|v| v.to_string()),
-                            ),
-                            (
-                                Some(concat!("nix:narinfo:", "system").to_owned()),
-                                narinfo.system.clone().map(|v| v.to_string()),
-                            ),
-                            (
-                                Some(concat!("nix:narinfo:", "sig").to_owned()),
-                                narinfo.sig.clone().map(|v| v.to_string()),
-                            ),
-                            (
-                                Some(concat!("nix:narinfo:", "ca").to_owned()),
-                                narinfo.ca.clone().map(|v| v.to_string()),
-                            ),
-                            (
-                                Some(concat!("nix:narinfo:", "references").to_owned()),
-                                narinfo.references.clone().map(|v| v.join(" ")),
-                            ),
-                        ])
+                        fn insert_if_some<T: ToString>(
+                            map: &mut std::collections::HashMap<String, String>,
+                            key: &str,
+                            value: Option<T>,
+                        ) {
+                            if let Some(v) = value {
+                                map.insert(format!("nix:narinfo:{}", key), v.to_string());
+                            }
+                        }
+
+                        let mut res = std::collections::HashMap::new();
+                        insert_if_some(&mut res, "store_path", Some(narinfo.store_path.clone()));
+                        insert_if_some(&mut res, "url", Some(narinfo.url.clone()));
+                        insert_if_some(&mut res, "nar_hash", Some(narinfo.nar_hash.clone()));
+                        insert_if_some(&mut res, "nar_size", Some(narinfo.nar_size));
+                        insert_if_some(&mut res, "compression", Some(narinfo.compression.clone()));
+                        insert_if_some(&mut res, "file_hash", narinfo.file_hash.clone());
+                        insert_if_some(&mut res, "file_size", narinfo.file_size);
+                        insert_if_some(&mut res, "deriver", narinfo.deriver.clone());
+                        insert_if_some(&mut res, "system", narinfo.system.clone());
+                        insert_if_some(&mut res, "sig", narinfo.sig.clone());
+                        insert_if_some(&mut res, "ca", narinfo.ca.clone());
+
+                        if let Some(references) = narinfo.references.clone() {
+                            res.insert("nix:narinfo:references".to_owned(), references.join(" "));
+                        }
+
+                        res
                     } else {
                         std::collections::HashMap::new()
                     };

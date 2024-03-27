@@ -9,7 +9,7 @@ pub type Result<T> = std::result::Result<Json<OkResponse<T>>, Json<ErrResponse>>
 
 #[derive(serde::Serialize)]
 pub struct AnalyzeResponse {
-    pub sbom: genealogos::cyclonedx::CycloneDX,
+    pub bom: String,
 }
 
 #[derive(serde::Serialize)]
@@ -24,7 +24,7 @@ pub struct StatusResponse {
 
 #[derive(serde::Serialize)]
 pub enum StatusEnum {
-    LogMessages(Vec<nixtract::message::Message>),
+    LogMessages(Vec<genealogos::backend::Message>),
     Done,
     Stopped,
 }
@@ -40,6 +40,24 @@ pub struct OkResponse<T> {
 pub struct ErrResponse {
     pub metadata: Metadata,
     pub message: String,
+}
+
+impl ErrResponse {
+    pub fn with_job_id<T: std::error::Error>(job_id: u16, error: T) -> Self {
+        ErrResponse {
+            metadata: Metadata::new(Some(job_id)),
+            message: error.to_string(),
+        }
+    }
+}
+
+impl From<genealogos::Error> for ErrResponse {
+    fn from(err: genealogos::Error) -> Self {
+        ErrResponse {
+            metadata: Metadata::default(),
+            message: err.to_string(),
+        }
+    }
 }
 
 #[derive(serde::Serialize)]

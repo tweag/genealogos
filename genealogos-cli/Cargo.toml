@@ -14,10 +14,19 @@ name = "genealogos"
 path = "src/main.rs"
 
 [dependencies]
-clap.workspace = true
+anyhow.workspace = true
+clap = { workspace = true, features = [ "string" ] }
 clap-verbosity-flag.workspace = true
+cyclonedx-bom.workspace = true
 env_logger.workspace = true
 indicatif.workspace = true
 indicatif-log-bridge.workspace = true
-genealogos.path = "../genealogos"
+genealogos = { workspace = true, features = [ "backend_handle_messages", "clap" ] }
 nixtract.workspace = true
+
+[features]
+default = []
+
+# This feature should be enabled when running tests in a Nix environment.
+# It disables all tests that require a working internet connection.
+nix = []

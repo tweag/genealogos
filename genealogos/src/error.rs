@@ -6,9 +6,6 @@ pub enum Error {
     #[error("The provided JSON could not be parsed: {0}")]
     NixtractParsing(#[from] serde_json::Error),
 
-    #[error("Errors constructing CycloneDX output: {0}")]
-    CycloneDX(#[source] Box<dyn std::error::Error + Send + Sync + 'static>),
-
     #[error("Nixtract failed: {0}")]
     Nixtract(#[from] nixtract::error::Error),
 
@@ -17,27 +14,28 @@ pub enum Error {
 
     #[error("The provided CycloneDX version is invalid: {0}")]
     InvalidCycloneDXVersion(String),
+
+    #[error("The provided CycloneDX file format is invalid: {0}")]
+    InvalidCycloneDXFileFormat(String),
+
+    #[error("Errors constructing CycloneDX output: {0}")]
+    CycloneDX(#[from] cyclonedx_bom::errors::BomError),
+
+    #[error("Errors constructing CycloneDX JSON output: {0}")]
+    CycloneDXJSON(#[from] cyclonedx_bom::errors::JsonWriteError),
+
+    #[error("Errors constructing CycloneDX XML output: {0}")]
+    CycloneDXXML(#[from] cyclonedx_bom::errors::XmlWriteError),
+
+    #[error("Errors constructing CycloneDX SPDX expression: {0}")]
+    CycloneDXSpdxExpression(#[from] cyclonedx_bom::external_models::spdx::SpdxExpressionError),
+
+    #[error("Genealogos cannot handle CycloneDX version {0} yet")]
+    CycloneDXUnimplemented(String),
+
+    #[error("Errors constructing Converting to String output: {0}")]
+    FromUtf8Error(#[from] std::string::FromUtf8Error),
+
+    #[error("Errors constructing output: {0}")]
+    Fmt(#[from] std::fmt::Error),
 }
-
-macro_rules! impl_from_for_error {
-    ($error_type:ty) => {
-        impl From<$error_type> for Error {
-            fn from(error: $error_type) -> Self {
-                Self::CycloneDX(Box::new(error))
-            }
-        }
-    };
-}
-
-impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_5::ComponentBuilderError);
-impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_5::ExternalReferenceBuilderError);
-impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_5::LicenseBuilderError);
-impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_5::DependencyBuilderError);
-impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_5::CycloneDxBuilderError);
-
-impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_4::ComponentBuilderError);
-impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_4::ExternalReferenceBuilderError);
-impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_4::LicenseBuilderError);
-impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_4::LicenseChoiceBuilderError);
-impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_4::DependencyBuilderError);
-impl_from_for_error!(serde_cyclonedx::cyclonedx::v_1_4::CycloneDxBuilderError);

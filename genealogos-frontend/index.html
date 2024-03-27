@@ -51,9 +51,9 @@
         <div class="row">
             <div class="col">
                 <h1 class="text-center mt-5">Genealogos</h1>
-                <p> Genealogos is a tool to generate a Software Bill of Materials (SBOM) for a given flake ref and
-                    attribute path. It uses the nixtract to analyze the flake and generate the dependency tree. The SBOM
-                    is generated in JSON format and can be copied to the clipboard or saved as a file.</p>
+                <p> Genealogos is a tool to generate a Bill of Materials (BOM) for a given flake ref and
+                    attribute path. It uses the nixtract to analyze the flake and generate the dependency tree. The BOM
+                    is generated in the specified format and can be copied to the clipboard or saved as a file.</p>
                 <div class="mb-3">
                     <label for="flake-ref">Flake Ref</label>
                     <input type="text" class="form-control" id="flake-ref" name="flake-ref" placeholder="nixpkgs">
@@ -64,21 +64,23 @@
                         placeholder="hello">
                 </div>
                 <div class="mb-3">
-                    <label for="sbom-version">SBOM Version</label>
-                    <select class="form-select" id="sbom-version" name="sbom-version">
-                        <option value="1_4">CycloneDX 1.4</option>
-                        <option value="1_5" selected>CycloneDX 1.5</option>
+                    <label for="bom-format">BOM Format</label>
+                    <select class="form-select" id="bom-format" name="bom-format">
+                        <option value="cyclonedx_1.3_json">CycloneDX 1.3 (JSON)</option>
+                        <option value="cyclonedx_1.3_xml">CycloneDX 1.3 (XML)</option>
+                        <option value="cyclonedx_1.4_json">CycloneDX 1.4 (JSON)</option>
+                        <option value="cyclonedx_1.4_xml">CycloneDX 1.4 (XML)</option>
                     </select>
                 </div>
                 <div class="d-flex justify-content-between align-items-center">
-                    <button class="btn btn-primary mb-3" onclick="generateSBOM()">Generate SBOM</button>
+                    <button class="btn btn-primary mb-3" onclick="generateBOM()">Generate BOM</button>
                     <div>
-                        <button class="btn btn-secondary" onclick="copySBOM()" disabled>Copy SBOM to
+                        <button class="btn btn-secondary" onclick="copyBOM()" disabled>Copy BOM to
                             Clipboard</button>
-                        <button class="btn btn-secondary" onclick="saveSBOM()" disabled>Save SBOM</button>
+                        <button class="btn btn-secondary" onclick="saveBOM()" disabled>Save BOM</button>
                     </div>
                 </div>
-                <pre id="main-content">No SBOM yet</pre>
+                <pre id="main-content">No BOM yet</pre>
             </div>
         </div>
     </div>
@@ -127,9 +129,9 @@
         document.querySelector(".btn-secondary:last-of-type").disabled = true;
 
         function toggleButtons(on) {
-            // Enable or disable the generate SBOM button
+            // Enable or disable the generate BOM button
             document.querySelector(".btn-primary").disabled = !on;
-            // Enable or disable the copy and save SBOM buttons
+            // Enable or disable the copy and save BOM buttons
             document.querySelector(".btn-secondary:first-of-type").disabled = !on;
             document.querySelector(".btn-secondary:last-of-type").disabled = !on;
         }
@@ -139,18 +141,18 @@
             document.getElementById("main-content").textContent = "Error: " + error;
             document.getElementById("main-content").classList.add("alert", "alert-warning"); // Add error classes
 
-            // Enable the generate SBOM button
+            // Enable the generate BOM button
             document.querySelector(".btn-primary").disabled = false;
-            // Disable the copy and save SBOM buttons
+            // Disable the copy and save BOM buttons
             document.querySelector(".btn-secondary:first-of-type").disabled = true;
             document.querySelector(".btn-secondary:last-of-type").disabled = true;
         }
 
-        function generateSBOM() {
+        function generateBOM() {
             // Get the flake ref and attribute path from the input fields
             const flakeRef = document.getElementById("flake-ref").value;
             const attributePath = document.getElementById("attribute-path").value;
-            const cycloneDxVer = document.getElementById("sbom-version").value;
+            const bomFormat = document.getElementById("bom-format").value;
 
             // Create a map where we will store a map from thread id to log message
             // This will allow us to show them in order and only the latest message for each thread
@@ -170,7 +172,7 @@
             toggleButtons(false);
 
             // Make a request to the API to create a job
-            fetch(`${apiAddress}/jobs/create?flake_ref=${flakeRef}&attribute_path=${attributePath}&cyclonedx_version=v${cycloneDxVer}`)
+            fetch(`${apiAddress}/jobs/create?flake_ref=${flakeRef}&attribute_path=${attributePath}&bom_format=${bomFormat}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.job_id !== undefined && data.job_id !== null) {
@@ -186,23 +188,20 @@
                                     if (statusData.status.LogMessages) {
                                         // Add the log messages to the map
                                         statusData.status.LogMessages.forEach(logMessage => {
-                                            logMessages[logMessage.id] = logMessage;
+                                            logMessages[logMessage.index] = logMessage;
                                         });
 
                                         // Display the log messages in the code container in the format: "{id}: {status} {path}"
-                                        document.getElementById("main-content").textContent = Object.values(logMessages).map(logMessage => `${logMessage.id}: ${logMessage.status} ${logMessage.path}`).join("\n");
+                                        document.getElementById("main-content").textContent = Object.values(logMessages).map(logMessage => `${logMessage.index}: ${logMessage.content}`).join("\n");
 
                                     } else if (statusData.status === "Done") {
-                                        // Retrieve the SBOM
+                                        // Retrieve the BOM
                                         fetch(`${apiAddress}/jobs/result/${data.job_id}`)
                                             .then(response => response.json())
-                                            .then(sbomData => {
-                                                if (sbomData.sbom) {
-                                                    // Convert the response to a JSON string
-                                                    const sbom = JSON.stringify(sbomData.sbom, null, 2);
-
-                                                    // Display the SBOM in the code container
-                                                    document.getElementById("main-content").textContent = sbom;
+                                            .then(bomData => {
+                                                if (bomData.bom) {
+                                                    // Display the BOM in the code container
+                                                    document.getElementById("main-content").textContent = bomData.bom;
 
                                                     // Enable buttons
                                                     toggleButtons(true);
@@ -214,7 +213,7 @@
                                                     // Clear the interval
                                                     clearInterval(intervalId);
                                                 } else {
-                                                    handleError("SBOM not found");
+                                                    handleError("BOM not found");
 
                                                     // Clear the interval
                                                     clearInterval(intervalId);
@@ -245,25 +244,25 @@
                 });
         }
 
-        // Copy the generated sbom to clipboard
-        function copySBOM() {
-            const sbomText = document.getElementById("main-content").textContent;
+        // Copy the generated bom to clipboard
+        function copyBOM() {
+            const bomText = document.getElementById("main-content").textContent;
 
-            navigator.clipboard.writeText(sbomText)
+            navigator.clipboard.writeText(bomText)
                 .then(() => {
-                    alert("SBOM copied to clipboard!");
+                    alert("BOM copied to clipboard!");
                 })
                 .catch(err => {
                     handleError(err);
                 });
         }
 
-        function saveSBOM() {
-            // Get the SBOM text
-            const sbomText = document.getElementById("main-content").textContent;
+        function saveBOM() {
+            // Get the BOM text
+            const bomText = document.getElementById("main-content").textContent;
 
-            // Create a blob with the SBOM text
-            const blob = new Blob([sbomText], { type: "text/plain;charset=utf-8" });
+            // Create a blob with the BOM text
+            const blob = new Blob([bomText], { type: "text/plain;charset=utf-8" });
 
             // Create a temporary anchor element
             const anchor = document.createElement("a");
