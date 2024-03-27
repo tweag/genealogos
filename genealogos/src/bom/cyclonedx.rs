@@ -1,18 +1,13 @@
 use std::fmt::Display;
 use std::str::FromStr;
 
-use cyclonedx_bom::models::component::Classification;
-use cyclonedx_bom::models::dependency::Dependencies;
-use cyclonedx_bom::models::dependency::Dependency;
-use cyclonedx_bom::models::external_reference::ExternalReference;
-use cyclonedx_bom::models::external_reference::ExternalReferenceType;
-use cyclonedx_bom::models::external_reference::ExternalReferences;
-use cyclonedx_bom::models::license::License;
-use cyclonedx_bom::models::license::LicenseChoice;
-use cyclonedx_bom::models::license::LicenseIdentifier;
-use cyclonedx_bom::models::license::Licenses;
-use cyclonedx_bom::models::property::Properties;
-use cyclonedx_bom::models::property::Property;
+use cyclonedx_bom::models::{
+    component::Classification,
+    dependency::{Dependencies, Dependency},
+    external_reference::{ExternalReference, ExternalReferenceType, ExternalReferences},
+    license::{License, LicenseChoice, LicenseIdentifier, Licenses},
+    property::{Properties, Property},
+};
 use cyclonedx_bom::prelude::*;
 
 use crate::error::*;
