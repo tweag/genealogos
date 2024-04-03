@@ -2,11 +2,36 @@
 //! This output file can then be used by external tools for further analysis.
 //! Currently, this crate only supports [cyclonedx],
 //!
+//! Conceptually, this library consists of three domains.
+//! The first is the `backend` domain, which is responsible for extracting information from a source.
+//! The second is the `model` domain, which is responsible for representing the extracted information in a structured format.
+//! The third is the `bom` domain, which is responsible for writing the structured information to an output format.
+//!
+//! Using the library will typically go through those three domains in sequence.
+//!
 //! [cyclonedx]: https://cyclonedx.org/
 //!
 //! # Examples
+//! ```no_run
+//! use genealogos::backend::Backend;
+//! use genealogos::bom::Bom;
+//!
+//! fn main() -> Result<(), genealogos::Error> {
+//!
+//!   // Step 1: Construct the backend, we do not care about updates so we construct it without a communication handle
+//!   let backend = genealogos::backend::nixtract_backend::Nixtract::new_without_handle();
+//!
+//!   // Step 2: Extract the information from the backend
+//!   let model = backend.to_model_from_flake_ref("github:NixOS/nixpkgs/nixos-21.05", Some("hello"))?;
+//!
+//!   // Step 3: Write the model to a BOM file
+//!   let bom = genealogos::bom::cyclonedx::CycloneDX::default();
+//!   let mut output = String::new();
+//!   bom.write_to_fmt_writer(model, &mut output)?;
+//!   println!("{}", output);
+//!   Ok(())
+//! }
 //! ```
-//! use genealogos;
 
 // Export the Error type for external users
 pub use self::error::{Error, Result};

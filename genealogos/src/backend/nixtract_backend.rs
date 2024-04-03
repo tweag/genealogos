@@ -5,10 +5,7 @@
 //! The `Nixtract` struct hold the configuration and any other state state required by the nixtract backend.
 //! Similarly, the `NixtractHandle` struct holds the state required to communicate with the nixtract backend.
 //!
-//! The `From<T>` trait is implemented for `Model` where `T` is an iterator over `DerivationDescription`.
-//! This implementation converts a collection of `DerivationDescription` into a `Model`.
-//!
-//! The `From<&License>` trait is implemented for `ModelLicense`, converting a nixtract `License` into a `ModelLicense`.
+//! The `From<T>` trait is implemented for `crate::model::Model` where `T` represents Nixtract's output.
 
 use std::sync::mpsc::Receiver;
 
@@ -26,12 +23,15 @@ pub struct NixtractHandle {
     receiver: Receiver<nixtract::message::Message>,
 }
 
+/// `Nixtract` is a structure that holds the configuration and state required by the Nixtract backend.
+/// It implements the `Backend` trait, providing methods to convert nixtract output into a Genealogos model.
 #[derive(Debug, Clone)]
 pub struct Nixtract {
     config: NixtractConfig,
 }
 
 impl Nixtract {
+    /// Create a new `Nixtract` backend with a corresponding `NixtractHandle` using the default configuration.
     pub fn new() -> (Self, NixtractHandle) {
         let (sender, receiver) = std::sync::mpsc::channel();
         let config = NixtractConfig {
@@ -42,10 +42,16 @@ impl Nixtract {
         (Self { config }, NixtractHandle { receiver })
     }
 
+    /// Create a new `Nixtract` backend without a corresponding `NixtractHandle` using the default configuration.
     pub fn new_without_handle() -> Self {
         Self {
             config: NixtractConfig::default(),
         }
+    }
+
+    /// Create a new `Nixtract` backend with the given configuration.
+    pub fn with_config(config: NixtractConfig) -> Self {
+        Self { config }
     }
 }
 
