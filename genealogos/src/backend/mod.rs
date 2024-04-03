@@ -1,8 +1,13 @@
+//! The `backend` module contains the definition of the `Backend` trait, which is used to
+//! define a common interface for generating a `Model` from a given source, and the `Source`
+//! enum, which represents the source of the data.
+//! It also exports the actual implementations of the backends, in case you need to use just one.
+
 use std::path;
 
 use crate::{error::Result, model::Model};
 
-/// We have an crate dependency that is already called nixtract, to avoid conflict, this module is called nixtract_backend.
+// We have an crate dependency that is already called nixtract, to avoid conflict, this module is called nixtract_backend.
 // TODO: Rename module to `nixtract`, crate to `nixtract-crate`.
 pub mod nixtract_backend;
 
@@ -129,9 +134,19 @@ pub trait Backend {
     fn to_model_from_lines(&self, lines: impl Iterator<Item = impl AsRef<str>>) -> Result<Model>;
 }
 
+/// If a backend was created with a `BackendHandle`, it can be queried for status updates.
+/// In such case, this struct is returned.
+/// Purpose of these messages is to communicate progress to the user.
 #[derive(Debug, Clone, serde::Serialize)]
 pub struct Message {
+    /// Messages can have an index associated with them.
+    /// This is not inteneded to reflect the message itself, but rather the sender.
+    /// In the nixtract backend, this field is used to communicate which thread produced the message, but this index could be used for other purposes.
+    /// The index fields are required to be unique and in the range of 0 to `BackendHandle::max_index()`.
     pub index: usize,
+
+    /// The content of the message.
+    /// The content is intended to be human-readable and can be any string.
     pub content: String,
 }
 

@@ -54,6 +54,7 @@
           genealogos-cli = (common-crane-args // {
             pname = "genealogos-cli";
             cargoExtraArgs = "-p genealogos-cli";
+            passthru.exePath = "/bin/genealogos";
           });
           genealogos-api = (common-crane-args // {
             pname = "genealogos-api";
@@ -111,6 +112,8 @@
 
           packages = with pkgs; [
             rust-analyzer
+
+            # https://github.com/rust-lang/cargo/issues/4463
             cargo-hack
           ];
         };

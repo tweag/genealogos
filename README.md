@@ -1,4 +1,20 @@
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![Discord][discord-shield]][discord-url]
+
 # Genealogos
+<p align="center">
+   <img alt='Genealogos Logo, courtesy of DALL-E 3' src='assets/genealogos.png' width='25%'>
+</p>
+
+## About The Project
+<p align="center">
+   <img alt='Genealogos Screenshot' src='assets/screenshot.png' width='50%'>
+</p>
+
 The Genealogos project is a tool that takes output from Nix evaluation tools and produces BOM files.
 Currently, it takes input from [nixtract][nixtract] and produces json output compliant with the [CycloneDX][cyclonedx] 1.3 or 1.4 specification.<!-- TODO: 1.5 -->
 Output from Genealogos can be used by various other tools to perform further analysis.
@@ -8,18 +24,51 @@ However, for consistency, we will refer to the output as a BOM.
 
 The project is still very early stages, so the output may as of yet be of little use.
 
-## Using Genealogos
-### Analyzing a local flake
+## Installing Genealogos-cli
+Right now, Genealogos is only distributed via our Nix Flake.
+Ensure you have the experimental features `flakes` and `nix-command` enabled, and then run:
+```fish
+# To run once
+nix run github:tweag/genealogos -- --help
+
+# To temporarily add to $PATH
+nix shell github:tweag/genealogos
+```
+
+You can also forgo Nix and use cargo directly instead.
+However, in this case you are sponsible for ensuring the dependencies are available.
+```fish
+cargo install --git https://github.com/tweag/genealogos.git genealogos-cli
+```
+
+## Hacking
+### Prerequisites
+Development of Genealogos requires Cargo, and some other dependencies.
+We additionally recommend the use of `rust-analyzer`, `cargo-hack`, and `nixtract`.
+The easiest way to get these tools it through the Nix development environment.
+```fish
+nix develop
+````
+
+Alternatively you can install the dependencies manually, but in that case you are on your own.
+
+### Building
+Due to [a bug in Cargo](https://github.com/rust-lang/cargo/issues/4463), running `cargo [build, check, clippy, etc]` will fail.
+There are two ways to solve this, either by specifying a specific package `cargo COMMAND -p [genealogos, genealogos-cli, genealogos-api]` or by running `cargo hack COMMAND`.
+
+## Usage
+### `genealogos-cli`
+Analyzing a local flake:
 ```fish
 genealogos --flake-ref /path/to/your/local/flake
 ```
 
-### Analyzing `hello` from nixpkgs
+Analyzing `hello` from nixpkgs:
 ```fish
 genealogos --flake-ref nixpkgs --attribute-path hello
 ```
 
-### Using a trace file
+Using a trace file:
 This section assumes you are using the latest `main` version version of [nixtract][nixtract].
 
 ```fish
@@ -28,12 +77,17 @@ nixtract --target-attribute-path hello /tmp/out && genealogos /tmp/out
 
 For more `nixtract` arguments, see `nixtract --help`.
 
-## Using Genealogos as a server
+For a full set of options, see:
+```fish
+genealogos --help
+```
+
+### `genealogos-api`
 Genealogos can also run as an API server using the `genealogos-api` binary.
 `genealogos-api` provides two categories of endpoints.
 A blocking endpoint and one based on jobs.
 
-### Blocking
+#### Blocking
 Currently, there is only a single blocking endpoint: `/api/analyze?flake_ref=<flake_ref>&attribute_path=<attribute_path>`.
 By default, `genealogos-api` binds itself on `localhost:8000`.
 
@@ -51,7 +105,7 @@ curl "http://localhost:8000/api/analyze?flake_ref=nixpkgs&attribute_path=hello&c
 <!-- TODO: Add 1.5 support -->
 Currently supported are `[cyclonedx_1.3_json, cyclonedx_1.3_xml, cyclonedx_1.4_json, cyclonedx_1.4_xml]`, with `cyclonedx_1.4_json` being the default.
 
-### Jobs
+#### Jobs
 The jobs based API consists of three endpoints: `/api/jobs/create`, `/api/jobs/status`, and `/api/jobs/result`.
 
 Creating a job is done in a similar fashion to the blocking api:
@@ -73,38 +127,53 @@ Finally, getting the result is done with the `result` endpoint:
 curl "http://localhost:8000/api/jobs/result/0"
 ```
 
-## Using the Geanlogos Web UI
+### `genealogos-frontend`
 Genealogos ships with a pure html/javascript web frontend.
 By default, this frontend uses `127.0.0.1` to connect to the `genealogos-api`.
 Changing this default can be done using the settings button in the top of the webpage.
 
 The Web UI currently only supports analyzing from a flake ref and attribute path, analyzing from a trace file is not yet supported.
 
-## Building Genealogos
-The easiest way to build Genealogos is using nix, simply call `nix build` to build the library or `nix build .#genealogos-cli` for the cli.
+## Contributing
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-If you want to use cargo, you might run into [a cargo issue related to workspaces](https://github.com/rust-lang/cargo/issues/4463).
-As a workaround you can use [cargo-hack](https://github.com/taiki-e/cargo-hack), which is convienently provided in the `nix develop` shell.
-Instead of running `cargo [build,test,doc,etc]`, use `cargo hack [build,test,doc,etc]`.
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue.
 
 ## Testing
 Genealogos is tested against fixtures in `genealogos/tests/fixtures/nixtract/success/`.
-With each `.in` file containing `nixtract` output and each `.out` file
-containing the corresponding expected `genealogos` output. Running these tests
-is done automatically by `nix build`, but can also manually be performed using
-`cargo test`. Typically, `genealogos` output is non-deterministic (the UUID is
-random, and the order of elements in lists is random), which makes testing a
-little more annoying. To overcome this hurdle, when running `cargo test`, or
-when setting the `GENEALOGOS_DETERMINISTIC` environment variable, the output of
-`genealogos` is made deterministc. This is done by setting the UUID to all
-zeroes, and sorting the `dependsOn` lists.
+With each `.in` file containing `nixtract` output and each `.out` file containing the corresponding expected `genealogos` output.
+Testing against these fixtures is done automatically by `nix build`, but can also manually be performed using `cargo test`.
+Typically, `genealogos` output is non-deterministic (the UUID is random, and the order of elements in lists is random), which makes testing a little more annoying.
+To overcome this hurdle, when running `cargo test`, or when setting the `GENEALOGOS_DETERMINISTIC` environment variable, the output of `genealogos` is made deterministc.
+This is done by setting the UUID to all zeroes, and sorting the `dependsOn` lists.
 
-In order to make working with these fixtures a little nicer, the `nix
-develop .#scripts` devShell provides two scripts. `verify-fixture-files`, which
-verifies the `.out` files with the `cyclonedx-cli` tool to ensure `genealogos`
-produces valid CycloneDX. And `update-fixture-files`, which should be ran when
-an update to `genealogos` changes its output. Note that this second script
-requires that the `cyclonedx-cli` tool is buildable.
+In order to make working with these fixtures a little nicer, the `nix develop .#scripts` devShell provides two scripts.
+`verify-fixture-files`, which verifies the `.out` files with the `cyclonedx-cli` tool to ensure `genealogos` produces valid CycloneDX.
+And `update-fixture-files`, which should be ran when an update to `genealogos` changes its output.
+Note that this second script requires that `genealogos-cli` is buildable.
 
-[cyclonedx]: https://cyclonedx.org/
-[nixtract]: https://github.com/tweag/nixtract/
+## License
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Contact
+[![Tweag][tweag-logo]][tweag-url]
+
+GitHub: [https://github.com/tweag/genealogos](https://github.com/tweag/genealogos)
+
+[contributors-shield]: https://img.shields.io/github/contributors/tweag/genealogos.svg?style=for-the-badge
+[contributors-url]: https://github.com/tweag/genealogos/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/tweag/genealogos.svg?style=for-the-badge
+[forks-url]: https://github.com/tweag/genealogos/network/members
+[stars-shield]: https://img.shields.io/github/stars/tweag/genealogos.svg?style=for-the-badge
+[stars-url]: https://github.com/tweag/genealogos/stargazers
+[issues-shield]: https://img.shields.io/github/issues/tweag/genealogos.svg?style=for-the-badge
+[issues-url]: https://github.com/tweag/genealogos/issues
+[license-shield]: https://img.shields.io/github/license/tweag/genealogos.svg?style=for-the-badge
+[license-url]: https://github.com/tweag/genealogos/blob/master/LICENSE.txt
+[discord-shield]: https://img.shields.io/badge/-Discord-black.svg?style=for-the-badge&logo=discord&colorB=555
+[discord-url]: https://discord.gg/fFymRGGRDG
+[tweag-logo]: ./assets/tweag.png
+[tweag-url]: https://tweag.io
+
+[screenshot]: ./assets/screenshot.png
+[genealogos-logo]: ./assets/genealogos.png

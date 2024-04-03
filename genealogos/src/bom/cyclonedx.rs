@@ -1,3 +1,7 @@
+//! CycloneDX BOM (Bill of Materials) support.
+//! This module provides a BOM implementation for the CycloneDX format.
+//! The CycloneDX format is a lightweight BOM format that is designed to be easy to create and consume.
+
 use std::fmt::Display;
 use std::str::FromStr;
 
@@ -13,6 +17,7 @@ use cyclonedx_bom::prelude::*;
 use crate::error::*;
 use crate::model::*;
 
+/// Represents the different output formats CycloneDX supports
 #[derive(Clone, Copy, Debug, Default)]
 #[cfg_attr(feature = "rocket", derive(rocket::FromFormField))]
 #[cfg_attr(feature = "clap", derive(clap::ValueEnum))]
@@ -43,6 +48,7 @@ impl FromStr for FileFormat {
     }
 }
 
+/// Defines the supported CycloneDX specification versions that Genealogos supports.
 #[derive(Clone, Copy, Debug, Default)]
 #[cfg_attr(feature = "rocket", derive(rocket::FromFormField))]
 #[cfg_attr(feature = "clap", derive(clap::ValueEnum))]
@@ -74,12 +80,23 @@ impl FromStr for SpecVersion {
     }
 }
 
+/// Holds the configuration for the CycloneDX Bom implementation.
 pub struct CycloneDX {
     file_format: FileFormat,
     spec_version: SpecVersion,
 }
 
 impl CycloneDX {
+    /// Constructs a new `CycloneDX` instance.
+    ///
+    /// # Arguments
+    ///
+    /// * `spec_version` - A `SpecVersion` instance representing the specification version.
+    /// * `file_format` - A `FileFormat` instance representing the file format.
+    ///
+    /// # Returns
+    ///
+    /// A new `CycloneDX` instance.
     pub fn new(spec_version: SpecVersion, file_format: FileFormat) -> Self {
         CycloneDX {
             file_format,
@@ -105,6 +122,17 @@ impl CycloneDX {
         })
     }
 
+    /// Parses the specification version and file format to create a new CycloneDX instance.
+    ///
+    /// # Arguments
+    ///
+    /// * `spec_version` - A string slice that holds the specification version.
+    /// * `file_format` - A string slice that holds the file format.
+    ///
+    /// # Returns
+    ///
+    /// * `Result<Self>` - Returns a `Result` which is an `Ok` variant that wraps a `CycloneDX` instance if the parsing is successful,
+    /// or an `Err` variant that wraps an error if the parsing fails.
     pub fn parse(spec_version: &str, file_format: &str) -> Result<Self> {
         let spec_version = SpecVersion::from_str(spec_version)?;
         let file_format = FileFormat::from_str(file_format)?;
