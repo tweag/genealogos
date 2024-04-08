@@ -31,6 +31,14 @@ struct Args {
     #[arg(long, default_value_t)]
     backend: args::BackendArg,
 
+    /// Attempt to include narinfo data in the bom
+    #[arg(long, default_value_t)]
+    include_narinfo: bool,
+
+    /// Attempt to only include runtime dependencies in the bom
+    #[arg(long, default_value_t)]
+    runtime_only: bool,
+
     /// Optional bom specification to output
     #[arg(long, default_value_t)]
     bom: args::BomArg,
@@ -54,7 +62,12 @@ fn main() -> Result<()> {
     };
 
     // Initialize the backend and get access to the status update messages
-    let (backend, handle) = *args.backend.get_backend()?;
+    let (mut backend, handle) = *args.backend.get_backend()?;
+
+    // Set backend options
+    backend.include_narinfo(args.include_narinfo);
+    backend.runtime_only(args.runtime_only);
+
     let messages = handle.messages()?;
 
     // Initialize the frontend (bom)

@@ -89,6 +89,14 @@ impl crate::backend::Backend for Nixtract {
 
         Ok(model)
     }
+
+    fn include_narinfo(&mut self, include: bool) {
+        self.config.include_nar_info = include;
+    }
+
+    fn runtime_only(&mut self, runtime_only: bool) {
+        self.config.runtime_only = runtime_only
+    }
 }
 
 impl super::BackendHandle for NixtractHandle {

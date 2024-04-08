@@ -77,6 +77,13 @@ nixtract --target-attribute-path hello /tmp/out && genealogos /tmp/out
 
 For more `nixtract` arguments, see `nixtract --help`.
 
+Setting backend options:
+Any type that implements the `Backend` must have a way to include nar info and only include runtime options.
+Genealogos will forward `--include-narinfo` and `--runtime-only` to the backend.
+```fish
+genealogos --flake-ref nixpkgs --attribute-path hello --include-narinfo --runtime-only
+```
+
 For a full set of options, see:
 ```fish
 genealogos --help
