@@ -48,8 +48,8 @@ pub async fn create(
     let (backend, backend_handle) = genealogos::backend::nixtract_backend::Nixtract::new();
 
     job_map
-        .try_lock()
-        .map_err(|e| messages::ErrResponse::with_job_id(job_id, e))?
+        .lock()
+        .await
         .insert(job_id, JobStatus::Running(Box::new(backend_handle)));
 
     let bom_arg = bom_format.unwrap_or_default();
@@ -61,13 +61,14 @@ pub async fn create(
     // Spawn a new thread to call `genealogos` and store the result in the job map
     let job_map_clone = Arc::clone(job_map);
     let installable = installable.to_string();
+
     tokio::spawn(async move {
         let source = match genealogos::backend::Source::parse_installable(installable) {
             Ok(m) => m,
             Err(e) => {
                 job_map_clone
-                    .try_lock()
-                    .unwrap()
+                    .lock()
+                    .await
                     .insert(job_id, JobStatus::Error(e.to_string()));
                 return;
             }
@@ -77,8 +78,8 @@ pub async fn create(
             Ok(m) => m,
             Err(e) => {
                 job_map_clone
-                    .try_lock()
-                    .unwrap()
+                    .lock()
+                    .await
                     .insert(job_id, JobStatus::Error(e.to_string()));
                 return;
             }
@@ -87,7 +88,7 @@ pub async fn create(
         let mut buf = String::new();
         let output = bom.write_to_fmt_writer(model, &mut buf);
 
-        job_map_clone.try_lock().unwrap().insert(
+        job_map_clone.lock().await.insert(
             job_id,
             match output {
                 Ok(_) => JobStatus::Done(buf, start_time.elapsed()),

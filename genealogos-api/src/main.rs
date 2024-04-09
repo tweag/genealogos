@@ -120,7 +120,7 @@ mod tests {
 
                 let response = client
                     .get(format!(
-                        "/api/analyze?installable={}#{}",
+                        "/api/analyze?installable={}%23{}",
                         flake_ref, attribute_path
                     ))
                     .dispatch();
