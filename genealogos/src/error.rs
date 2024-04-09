@@ -46,4 +46,8 @@ pub enum Error {
     /// Wraps the `std::fmt::Error`
     #[error("Errors constructing output: {0}")]
     Fmt(#[from] std::fmt::Error),
+
+    /// Parsing the installable to a Source was impossible
+    #[error("Error parsing the installable")]
+    InstallableParsing(String),
 }

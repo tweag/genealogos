@@ -33,10 +33,9 @@ impl ToString for JobStatus {
     }
 }
 
-#[rocket::get("/create?<flake_ref>&<attribute_path>&<bom_format>")]
+#[rocket::get("/create?<installable>&<bom_format>")]
 pub async fn create(
-    flake_ref: &str,
-    attribute_path: &str,
+    installable: &str,
     bom_format: Option<BomArg>,
     job_map: &rocket::State<JobMap>,
     job_counter: &rocket::State<atomic::AtomicU16>,
@@ -49,8 +48,8 @@ pub async fn create(
     let (backend, backend_handle) = genealogos::backend::nixtract_backend::Nixtract::new();
 
     job_map
-        .try_lock()
-        .map_err(|e| messages::ErrResponse::with_job_id(job_id, e))?
+        .lock()
+        .await
         .insert(job_id, JobStatus::Running(Box::new(backend_handle)));
 
     let bom_arg = bom_format.unwrap_or_default();
@@ -61,20 +60,26 @@ pub async fn create(
 
     // Spawn a new thread to call `genealogos` and store the result in the job map
     let job_map_clone = Arc::clone(job_map);
-    let flake_ref = flake_ref.to_string();
-    let attribute_path = attribute_path.to_string();
+    let installable = installable.to_string();
+
     tokio::spawn(async move {
-        let source = genealogos::backend::Source::Flake {
-            flake_ref,
-            attribute_path: Some(attribute_path),
+        let source = match genealogos::backend::Source::parse_installable(installable) {
+            Ok(m) => m,
+            Err(e) => {
+                job_map_clone
+                    .lock()
+                    .await
+                    .insert(job_id, JobStatus::Error(e.to_string()));
+                return;
+            }
         };
 
         let model = match backend.to_model_from_source(source) {
             Ok(m) => m,
             Err(e) => {
                 job_map_clone
-                    .try_lock()
-                    .unwrap()
+                    .lock()
+                    .await
                     .insert(job_id, JobStatus::Error(e.to_string()));
                 return;
             }
@@ -83,7 +88,7 @@ pub async fn create(
         let mut buf = String::new();
         let output = bom.write_to_fmt_writer(model, &mut buf);
 
-        job_map_clone.try_lock().unwrap().insert(
+        job_map_clone.lock().await.insert(
             job_id,
             match output {
                 Ok(_) => JobStatus::Done(buf, start_time.elapsed()),

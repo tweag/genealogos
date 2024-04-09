@@ -5,7 +5,7 @@
 
 use std::path;
 
-use crate::{error::Result, model::Model};
+use crate::{error::Result, model::Model, Error};
 
 // We have an crate dependency that is already called nixtract, to avoid conflict, this module is called nixtract_backend.
 // TODO: Rename module to `nixtract`, crate to `nixtract-crate`.
@@ -21,14 +21,37 @@ pub mod nixtract_backend;
 ///   the path to the trace file.
 #[derive(Debug)]
 pub enum Source {
-    /// Represents a flake source with a reference and an optional attribute path.
-    Flake {
+    /// Represents a nix installable with a reference and an optional attribute path.
+    Installable {
         flake_ref: String,
         attribute_path: Option<String>,
     },
 
     /// Represents a trace file source with a path.
     TraceFile(std::path::PathBuf),
+}
+
+impl Source {
+    pub fn parse_installable(s: impl AsRef<str>) -> Result<Self> {
+        // Split s on the first #-sign
+        let s = s.as_ref();
+        let parts: Vec<&str> = s.splitn(2, '#').collect();
+
+        // If parts has length 1, we know we only have a flake_ref
+        if parts.len() == 1 {
+            Ok(Source::Installable {
+                flake_ref: parts[0].to_string(),
+                attribute_path: None,
+            })
+        } else if parts.len() == 2 {
+            Ok(Source::Installable {
+                flake_ref: parts[0].to_string(),
+                attribute_path: Some(parts[1].to_string()),
+            })
+        } else {
+            Err(Error::InstallableParsing(s.to_owned()))
+        }
+    }
 }
 
 /// This trait represents a backend that can be used to generate a `Model` from.
@@ -59,7 +82,7 @@ pub trait Backend {
     /// the `Model` fails.
     fn to_model_from_source(&self, source: Source) -> Result<Model> {
         match source {
-            Source::Flake {
+            Source::Installable {
                 flake_ref,
                 attribute_path,
             } => self.to_model_from_flake_ref(flake_ref, attribute_path),

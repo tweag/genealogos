@@ -60,12 +60,12 @@ There are two ways to solve this, either by specifying a specific package `cargo
 ### `genealogos-cli`
 Analyzing a local flake:
 ```fish
-genealogos --flake-ref /path/to/your/local/flake
+genealogos --installable /path/to/your/local/flake
 ```
 
 Analyzing `hello` from nixpkgs:
 ```fish
-genealogos --flake-ref nixpkgs --attribute-path hello
+genealogos --installable nixpkgs#hello
 ```
 
 Using a trace file:
@@ -81,7 +81,7 @@ Setting backend options:
 Any type that implements the `Backend` must have a way to include nar info and only include runtime options.
 Genealogos will forward `--include-narinfo` and `--runtime-only` to the backend.
 ```fish
-genealogos --flake-ref nixpkgs --attribute-path hello --include-narinfo --runtime-only
+genealogos --installable nixpkgs#hello --include-narinfo --runtime-only
 ```
 
 For a full set of options, see:
@@ -95,18 +95,19 @@ Genealogos can also run as an API server using the `genealogos-api` binary.
 A blocking endpoint and one based on jobs.
 
 #### Blocking
-Currently, there is only a single blocking endpoint: `/api/analyze?flake_ref=<flake_ref>&attribute_path=<attribute_path>`.
+Currently, there is only a single blocking endpoint: `/api/analyze?installable=<installable>`.
 By default, `genealogos-api` binds itself on `localhost:8000`.
 
 For example, using curl, the api can be invoked like this:
 ```fish
-curl "http://localhost:8000/api/analyze?flake_ref=nixpkgs&attribute_path=hello"
+curl "http://localhost:8000/api/analyze?installable=nixpkgs%23hello"
 ```
+Note that the `#` in `nixpkgs#hello` is URL Encoded.
 
 Additionally an optional `bom_format` query parameter can be provided to specify the bom format to use.
 Example:
 ```fish
-curl "http://localhost:8000/api/analyze?flake_ref=nixpkgs&attribute_path=hello&cyclonedx_version=v1_4"
+curl "http://localhost:8000/api/analyze?installable=nixpkgs%23hello&cyclonedx_version=v1_4"
 ```
 
 <!-- TODO: Add 1.5 support -->
@@ -117,7 +118,7 @@ The jobs based API consists of three endpoints: `/api/jobs/create`, `/api/jobs/s
 
 Creating a job is done in a similar fashion to the blocking api:
 ```fish
-curl "http://localhost:8000/api/jobs/create?flake_ref=nixpkgs&attribute_path=hello"
+curl "http://localhost:8000/api/jobs/create?installable=nixpkgs%23hello"
 ```
 This endpoint also supports the `bom_format` query parameter.
 The response of this API call is a `job_id`, which needs to be passed to further calls to indentify the desired job.

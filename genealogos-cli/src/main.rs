@@ -1,4 +1,5 @@
 use anyhow::Result;
+use genealogos::backend::Source;
 use genealogos::bom::Bom;
 use std::fs;
 use std::path;
@@ -13,16 +14,12 @@ use genealogos::backend::{Backend, BackendHandle};
 #[command(author, version, about)]
 struct Args {
     /// Path to the input nixtract file
-    #[arg(short, long, required_unless_present = "flake_ref")]
+    #[arg(short, long, required_unless_present = "installable")]
     file: Option<path::PathBuf>,
 
-    /// Flake reference (e.g. `nixpkgs`)
+    /// Nix installable (e.g. `nixpkgs#hello`)
     #[arg(long, required_unless_present = "file")]
-    flake_ref: Option<String>,
-
-    /// Attribute path (e.g. `hello`)
-    #[arg(long, required_unless_present = "file")]
-    attribute_path: Option<String>,
+    installable: Option<String>,
 
     /// Optional path to the output CycloneDX file (default: stdout)
     output_file: Option<path::PathBuf>,
@@ -55,10 +52,7 @@ fn main() -> Result<()> {
     let source = if let Some(file) = args.file {
         genealogos::backend::Source::TraceFile(file)
     } else {
-        genealogos::backend::Source::Flake {
-            flake_ref: args.flake_ref.unwrap(),
-            attribute_path: args.attribute_path,
-        }
+        Source::parse_installable(args.installable.expect("installable not present in args"))?
     };
 
     // Initialize the backend and get access to the status update messages

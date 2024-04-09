@@ -10,3 +10,4 @@
 
 ### Changed
 - [#41](https://github.com/tweag/genealogos/pull/41) reworked the Genealogos fronend, paving the way for supporting other bom formats
+- [#46](https://github.com/tweag/genealogos/pull/46) replaces `Source::Flake` with `Source::Installable` and `--flake-ref, --attribute-path` with `--installable`
