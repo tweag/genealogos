@@ -1,4 +1,5 @@
 use anyhow::Result;
+use genealogos::backend::Source;
 use genealogos::bom::Bom;
 use std::fs;
 use std::path;
@@ -13,16 +14,12 @@ use genealogos::backend::{Backend, BackendHandle};
 #[command(author, version, about)]
 struct Args {
     /// Path to the input nixtract file
-    #[arg(short, long, required_unless_present = "flake_ref")]
+    #[arg(short, long, required_unless_present = "installable")]
     file: Option<path::PathBuf>,
 
-    /// Flake reference (e.g. `nixpkgs`)
+    /// Nix installable (e.g. `nixpkgs#hello`)
     #[arg(long, required_unless_present = "file")]
-    flake_ref: Option<String>,
-
-    /// Attribute path (e.g. `hello`)
-    #[arg(long, required_unless_present = "file")]
-    attribute_path: Option<String>,
+    installable: Option<String>,
 
     /// Optional path to the output CycloneDX file (default: stdout)
     output_file: Option<path::PathBuf>,
@@ -55,10 +52,7 @@ fn main() -> Result<()> {
     let source = if let Some(file) = args.file {
         genealogos::backend::Source::TraceFile(file)
     } else {
-        genealogos::backend::Source::Flake {
-            flake_ref: args.flake_ref.unwrap(),
-            attribute_path: args.attribute_path,
-        }
+        parse_installable(args.installable.expect("installable not present in args"))?
     };
 
     // Initialize the backend and get access to the status update messages
@@ -128,4 +122,25 @@ fn main() -> Result<()> {
     }
 
     Ok(())
+}
+
+fn parse_installable(s: impl AsRef<str>) -> Result<Source> {
+    // Split s on the first #-sign
+    let s = s.as_ref();
+    let parts: Vec<&str> = s.splitn(2, '#').collect();
+
+    // If parts has length 1, we know we onlyhave a flake_ref
+    if parts.len() == 1 {
+        Ok(Source::Installable {
+            flake_ref: parts[0].to_string(),
+            attribute_path: None,
+        })
+    } else if parts.len() == 2 {
+        Ok(Source::Installable {
+            flake_ref: parts[0].to_string(),
+            attribute_path: Some(parts[1].to_string()),
+        })
+    } else {
+        anyhow::bail!(format!("Invalid installable source: {}", s))
+    }
 }

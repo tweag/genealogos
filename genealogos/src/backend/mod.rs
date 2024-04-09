@@ -21,8 +21,8 @@ pub mod nixtract_backend;
 ///   the path to the trace file.
 #[derive(Debug)]
 pub enum Source {
-    /// Represents a flake source with a reference and an optional attribute path.
-    Flake {
+    /// Represents a nix installable with a reference and an optional attribute path.
+    Installable {
         flake_ref: String,
         attribute_path: Option<String>,
     },
@@ -59,7 +59,7 @@ pub trait Backend {
     /// the `Model` fails.
     fn to_model_from_source(&self, source: Source) -> Result<Model> {
         match source {
-            Source::Flake {
+            Source::Installable {
                 flake_ref,
                 attribute_path,
             } => self.to_model_from_flake_ref(flake_ref, attribute_path),

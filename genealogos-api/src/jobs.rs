@@ -64,7 +64,7 @@ pub async fn create(
     let flake_ref = flake_ref.to_string();
     let attribute_path = attribute_path.to_string();
     tokio::spawn(async move {
-        let source = genealogos::backend::Source::Flake {
+        let source = genealogos::backend::Source::Installable {
             flake_ref,
             attribute_path: Some(attribute_path),
         };

@@ -31,7 +31,7 @@ fn analyze(
     let start_time = std::time::Instant::now();
 
     // Construct the Source from the flake reference and attribute path
-    let source = genealogos::backend::Source::Flake {
+    let source = genealogos::backend::Source::Installable {
         flake_ref: flake_ref.to_string(),
         attribute_path: attribute_path.map(str::to_string),
     };
