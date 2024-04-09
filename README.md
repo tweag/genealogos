@@ -60,12 +60,12 @@ There are two ways to solve this, either by specifying a specific package `cargo
 ### `genealogos-cli`
 Analyzing a local flake:
 ```fish
-genealogos --flake-ref /path/to/your/local/flake
+genealogos --installable /path/to/your/local/flake
 ```
 
 Analyzing `hello` from nixpkgs:
 ```fish
-genealogos --flake-ref nixpkgs --attribute-path hello
+genealogos --installable nixpkgs#hello
 ```
 
 Using a trace file:
@@ -81,7 +81,7 @@ Setting backend options:
 Any type that implements the `Backend` must have a way to include nar info and only include runtime options.
 Genealogos will forward `--include-narinfo` and `--runtime-only` to the backend.
 ```fish
-genealogos --flake-ref nixpkgs --attribute-path hello --include-narinfo --runtime-only
+genealogos --installable nixpkgs#hello --include-narinfo --runtime-only
 ```
 
 For a full set of options, see:
