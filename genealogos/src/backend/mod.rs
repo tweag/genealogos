@@ -37,7 +37,7 @@ impl Source {
         let s = s.as_ref();
         let parts: Vec<&str> = s.splitn(2, '#').collect();
 
-        // If parts has length 1, we know we onlyhave a flake_ref
+        // If parts has length 1, we know we only have a flake_ref
         if parts.len() == 1 {
             Ok(Source::Installable {
                 flake_ref: parts[0].to_string(),
