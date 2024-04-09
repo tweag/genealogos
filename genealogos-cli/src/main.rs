@@ -52,7 +52,7 @@ fn main() -> Result<()> {
     let source = if let Some(file) = args.file {
         genealogos::backend::Source::TraceFile(file)
     } else {
-        parse_installable(args.installable.expect("installable not present in args"))?
+        Source::parse_installable(args.installable.expect("installable not present in args"))?
     };
 
     // Initialize the backend and get access to the status update messages
@@ -122,25 +122,4 @@ fn main() -> Result<()> {
     }
 
     Ok(())
-}
-
-fn parse_installable(s: impl AsRef<str>) -> Result<Source> {
-    // Split s on the first #-sign
-    let s = s.as_ref();
-    let parts: Vec<&str> = s.splitn(2, '#').collect();
-
-    // If parts has length 1, we know we onlyhave a flake_ref
-    if parts.len() == 1 {
-        Ok(Source::Installable {
-            flake_ref: parts[0].to_string(),
-            attribute_path: None,
-        })
-    } else if parts.len() == 2 {
-        Ok(Source::Installable {
-            flake_ref: parts[0].to_string(),
-            attribute_path: Some(parts[1].to_string()),
-        })
-    } else {
-        anyhow::bail!(format!("Invalid installable source: {}", s))
-    }
 }

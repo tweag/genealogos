@@ -5,7 +5,7 @@
 
 use std::path;
 
-use crate::{error::Result, model::Model};
+use crate::{error::Result, model::Model, Error};
 
 // We have an crate dependency that is already called nixtract, to avoid conflict, this module is called nixtract_backend.
 // TODO: Rename module to `nixtract`, crate to `nixtract-crate`.
@@ -29,6 +29,29 @@ pub enum Source {
 
     /// Represents a trace file source with a path.
     TraceFile(std::path::PathBuf),
+}
+
+impl Source {
+    pub fn parse_installable(s: impl AsRef<str>) -> Result<Self> {
+        // Split s on the first #-sign
+        let s = s.as_ref();
+        let parts: Vec<&str> = s.splitn(2, '#').collect();
+
+        // If parts has length 1, we know we onlyhave a flake_ref
+        if parts.len() == 1 {
+            Ok(Source::Installable {
+                flake_ref: parts[0].to_string(),
+                attribute_path: None,
+            })
+        } else if parts.len() == 2 {
+            Ok(Source::Installable {
+                flake_ref: parts[0].to_string(),
+                attribute_path: Some(parts[1].to_string()),
+            })
+        } else {
+            Err(Error::InstallableParsing(s.to_owned()))
+        }
+    }
 }
 
 /// This trait represents a backend that can be used to generate a `Model` from.
