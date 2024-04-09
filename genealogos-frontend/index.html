@@ -55,13 +55,8 @@
                     attribute path. It uses the nixtract to analyze the flake and generate the dependency tree. The BOM
                     is generated in the specified format and can be copied to the clipboard or saved as a file.</p>
                 <div class="mb-3">
-                    <label for="flake-ref">Flake Ref</label>
-                    <input type="text" class="form-control" id="flake-ref" name="flake-ref" placeholder="nixpkgs">
-                </div>
-                <div class="mb-3">
-                    <label for="attribute-path">Attribute Path</label>
-                    <input type="text" class="form-control" id="attribute-path" name="attribute-path"
-                        placeholder="hello">
+                    <label for="installable">Nix Installable</label>
+                    <input type="text" class="form-control" id="installable" name="installable" placeholder="nixpkgs#hello">
                 </div>
                 <div class="mb-3">
                     <label for="bom-format">BOM Format</label>
@@ -120,8 +115,7 @@
         crossorigin="anonymous"></script>
     <script>
         // Global variables for flake ref and attribute path
-        let latestFlakeRef = "";
-        let latestAttributePath = "";
+        let latestInstallable = "";
         let apiAddress = "http://localhost:8000/api"; // Default API address
 
         // Always set the copy and save button to disabled on page load, this fixes a firefox bug
@@ -149,9 +143,8 @@
         }
 
         function generateBOM() {
-            // Get the flake ref and attribute path from the input fields
-            const flakeRef = document.getElementById("flake-ref").value;
-            const attributePath = document.getElementById("attribute-path").value;
+            // Get the installable from the input field
+            const installable = encodeURIComponent(document.getElementById("installable").value);
             const bomFormat = document.getElementById("bom-format").value;
 
             // Create a map where we will store a map from thread id to log message
@@ -172,7 +165,7 @@
             toggleButtons(false);
 
             // Make a request to the API to create a job
-            fetch(`${apiAddress}/jobs/create?flake_ref=${flakeRef}&attribute_path=${attributePath}&bom_format=${bomFormat}`)
+            fetch(`${apiAddress}/jobs/create?installable=${installable}&bom_format=${bomFormat}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.job_id !== undefined && data.job_id !== null) {
@@ -207,8 +200,7 @@
                                                     toggleButtons(true);
 
                                                     // Set the global variables
-                                                    latestFlakeRef = flakeRef;
-                                                    latestAttributePath = attributePath;
+                                                    latestInstallable = installable;
 
                                                     // Clear the interval
                                                     clearInterval(intervalId);
@@ -267,7 +259,7 @@
             // Create a temporary anchor element
             const anchor = document.createElement("a");
             anchor.href = URL.createObjectURL(blob);
-            anchor.download = `${latestFlakeRef}_${latestAttributePath}.sbom.json`;
+            anchor.download = `${installable}.sbom.json`;
 
             // Programmatically click the anchor element to trigger the download
             anchor.click();

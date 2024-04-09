@@ -33,10 +33,9 @@ impl ToString for JobStatus {
     }
 }
 
-#[rocket::get("/create?<flake_ref>&<attribute_path>&<bom_format>")]
+#[rocket::get("/create?<installable>&<bom_format>")]
 pub async fn create(
-    flake_ref: &str,
-    attribute_path: &str,
+    installable: &str,
     bom_format: Option<BomArg>,
     job_map: &rocket::State<JobMap>,
     job_counter: &rocket::State<atomic::AtomicU16>,
@@ -61,12 +60,17 @@ pub async fn create(
 
     // Spawn a new thread to call `genealogos` and store the result in the job map
     let job_map_clone = Arc::clone(job_map);
-    let flake_ref = flake_ref.to_string();
-    let attribute_path = attribute_path.to_string();
+    let installable = installable.to_string();
     tokio::spawn(async move {
-        let source = genealogos::backend::Source::Installable {
-            flake_ref,
-            attribute_path: Some(attribute_path),
+        let source = match genealogos::backend::Source::parse_installable(installable) {
+            Ok(m) => m,
+            Err(e) => {
+                job_map_clone
+                    .try_lock()
+                    .unwrap()
+                    .insert(job_id, JobStatus::Error(e.to_string()));
+                return;
+            }
         };
 
         let model = match backend.to_model_from_source(source) {

@@ -22,19 +22,13 @@ fn handle_errors(req: &Request) -> status::Custom<String> {
     )
 }
 
-#[rocket::get("/analyze?<flake_ref>&<attribute_path>&<bom_format>")]
-fn analyze(
-    flake_ref: &str,
-    attribute_path: Option<&str>,
-    bom_format: Option<BomArg>,
-) -> Result<messages::AnalyzeResponse> {
+#[rocket::get("/analyze?<installable>&<bom_format>")]
+fn analyze(installable: &str, bom_format: Option<BomArg>) -> Result<messages::AnalyzeResponse> {
     let start_time = std::time::Instant::now();
 
     // Construct the Source from the flake reference and attribute path
-    let source = genealogos::backend::Source::Installable {
-        flake_ref: flake_ref.to_string(),
-        attribute_path: attribute_path.map(str::to_string),
-    };
+    let source = genealogos::backend::Source::parse_installable(installable)
+        .map_err(Into::<ErrResponse>::into)?;
 
     let backend = genealogos::backend::nixtract_backend::Nixtract::new_without_handle();
     let model = backend
@@ -126,7 +120,7 @@ mod tests {
 
                 let response = client
                     .get(format!(
-                        "/api/analyze?flake_ref={}&attribute_path={}",
+                        "/api/analyze?installable={}#{}",
                         flake_ref, attribute_path
                     ))
                     .dispatch();
