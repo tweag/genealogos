@@ -60,19 +60,19 @@ There are two ways to solve this, either by specifying a specific package `cargo
 ### `genealogos-cli`
 Analyzing a local flake:
 ```fish
-genealogos --installable /path/to/your/local/flake
+genealogos /path/to/your/local/flake
 ```
 
 Analyzing `hello` from nixpkgs:
 ```fish
-genealogos --installable nixpkgs#hello
+genealogos nixpkgs#hello
 ```
 
 Using a trace file:
 This section assumes you are using the latest `main` version version of [nixtract][nixtract].
 
 ```fish
-nixtract --target-attribute-path hello /tmp/out && genealogos /tmp/out
+nixtract --target-attribute-path hello /tmp/out && genealogos -f /tmp/out
 ```
 
 For more `nixtract` arguments, see `nixtract --help`.
@@ -81,7 +81,7 @@ Setting backend options:
 Any type that implements the `Backend` must have a way to include nar info and only include runtime options.
 Genealogos will forward `--include-narinfo` and `--runtime-only` to the backend.
 ```fish
-genealogos --installable nixpkgs#hello --include-narinfo --runtime-only
+genealogos --include-narinfo --runtime-only nixpkgs#hello
 ```
 
 For a full set of options, see:

@@ -18,7 +18,7 @@ struct Args {
     file: Option<path::PathBuf>,
 
     /// Nix installable (e.g. `nixpkgs#hello`)
-    #[arg(long, required_unless_present = "file")]
+    #[arg(required_unless_present = "file")]
     installable: Option<String>,
 
     /// Optional path to the output CycloneDX file (default: stdout)
