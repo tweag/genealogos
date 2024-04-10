@@ -78,7 +78,17 @@
           // builtins.mapAttrs (_: crane-lib.cargoDoc) crates
           # fmt
           // builtins.mapAttrs (_: crane-lib.cargoFmt) crates;
-
+        overlays.default = import ./nix/overlays.nix { inherit pkgs packages; };
+        nixosModules.default = import ./nix/genealogos-module.nix;
+        nixosConfigurations.genealogos = nixpkgs.lib.nixosSystem
+          {
+            pkgs = import nixpkgs { inherit system; overlays = [ overlays.default ]; };
+            inherit system;
+            modules = [
+              ./nix/configuration.nix
+              ./nix/genealogos-module.nix
+            ];
+          };
         packages =
           rust-packages // {
             default = packages.genealogos;

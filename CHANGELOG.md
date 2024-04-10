@@ -7,6 +7,7 @@
 - [#36](https://github.com/tweag/genealogos/pull/36) include nixtract's new narinfo information
 - [#38](https://github.com/tweag/genealogos/pull/38) display nixtract's status information when running
 - [#44](https://github.com/tweag/genealogos/pull/44) adds two functions to the `Backend` trait to set options
+- [#48](https://github.com/tweag/genealogos/pull/48) added a NixOS module to our flake
 
 ### Changed
 - [#41](https://github.com/tweag/genealogos/pull/41) reworked the Genealogos fronend, paving the way for supporting other bom formats
