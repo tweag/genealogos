@@ -55,10 +55,20 @@
             pname = "genealogos-cli";
             cargoExtraArgs = "-p genealogos-cli";
             passthru.exePath = "/bin/genealogos";
+            nativeBuildInputs = common-crane-args.nativeBuildInputs ++ [ pkgs.makeWrapper ];
+            preFixup = ''
+              wrapProgram $out/bin/genealogos \
+                --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.nix ]}
+            '';
           });
           genealogos-api = (common-crane-args // {
             pname = "genealogos-api";
             cargoExtraArgs = "-p genealogos-api";
+            nativeBuildInputs = common-crane-args.nativeBuildInputs ++ [ pkgs.makeWrapper ];
+            preFixup = ''
+              wrapProgram $out/bin/genealogos-api \
+                --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.nix ]}
+            '';
           });
         };
         rust-packages =
