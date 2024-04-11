@@ -1,5 +1,8 @@
 { ... }:
 
+let
+  port = 9000;
+in
 {
   virtualisation.vmVariant = {
     virtualisation = {
@@ -8,8 +11,8 @@
       forwardPorts = [
         {
           from = "host";
-          guest.port = 8000;
-          host.port = 8000;
+          guest.port = port;
+          host.port = port;
         }
       ];
     };
@@ -21,6 +24,14 @@
     password = "genealogos";
   };
 
-  services.genealogos.enable = true;
+  services.genealogos = {
+    enable = true;
+    rocketConfig = {
+      release = {
+        port = port;
+        address = "0.0.0.0";
+      };
+    };
+  };
 }
 
