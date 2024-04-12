@@ -26,7 +26,6 @@ in
     systemd.services.genealogos =
       {
         description = "Genealogos sbom generator";
-        path = [ cfg.package ];
         wantedBy = [ "multi-user.target" ];
 
         serviceConfig.ExecStart = "${cfg.package}/bin/genealogos-api";
