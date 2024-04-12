@@ -71,7 +71,7 @@ rec {
 
   packages =
     rust-packages // {
-      default = packages.genealogos;
+      default = packages.genealogos-cli;
 
       workspace = crane-lib.buildPackage workspace;
 
