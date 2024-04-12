@@ -29,9 +29,7 @@ in
         path = [ cfg.package ];
         wantedBy = [ "multi-user.target" ];
 
-        script = ''
-          ${cfg.package}/bin/genealogos-api
-        '';
+        serviceConfig.ExecStart = "${cfg.package}/bin/genealogos-api";
       };
   };
 }
