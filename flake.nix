@@ -35,7 +35,7 @@
           inherit crane-lib;
         };
         nixosModules.default = import ./nix/genealogos-module.nix;
-        nixosConfigurations.genealogos = nixpkgs.lib.nixosSystem
+        nixosConfigurations.genealogos-test = nixpkgs.lib.nixosSystem
           {
             pkgs = import nixpkgs { inherit system; overlays = [ overlays.default ]; };
             inherit system;
