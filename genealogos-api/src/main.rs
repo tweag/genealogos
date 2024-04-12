@@ -23,10 +23,20 @@ fn handle_errors(req: &Request) -> status::Custom<String> {
 }
 
 #[rocket::get("/")]
+#[cfg(feature = "frontend")]
 fn index() -> status::Custom<content::RawHtml<&'static str>> {
     status::Custom(
         Status::Ok,
         content::RawHtml(include_str!("../../genealogos-frontend/index.html")),
+    )
+}
+
+#[rocket::get("/")]
+#[cfg(not(feature = "frontend"))]
+fn index() -> status::Custom<content::RawHtml<&'static str>> {
+    status::Custom(
+        Status::Ok,
+        content::RawHtml("<h1>Genealogos is running</h1>"),
     )
 }
 
