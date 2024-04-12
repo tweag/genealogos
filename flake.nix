@@ -41,7 +41,7 @@
             inherit system;
             modules = [
               ./nix/configuration.nix
-              ./nix/genealogos-module.nix
+              nixosModules.default
             ];
           };
 
