@@ -1,4 +1,5 @@
-{ config, lib, options, pkgs, ... }:
+{ genealogos-api }:
+{ config, lib, pkgs, ... }:
 
 with lib;
 
@@ -11,7 +12,13 @@ in
       enable = mkEnableOption
         (mdDoc "Genealogos, a Nix sbom generator");
 
-      package = mkPackageOption pkgs "genealogos-api" { };
+      package = mkOption {
+        type = types.package;
+        default = genealogos-api;
+        description = mdDoc ''
+          The genealogos-api package to use.
+        '';
+      };
     };
   };
 

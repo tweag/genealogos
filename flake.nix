@@ -34,10 +34,9 @@
         overlays.default = import ./nix/overlays.nix {
           inherit crane-lib;
         };
-        nixosModules.default = import ./nix/genealogos-module.nix;
+        nixosModules.default = import ./nix/genealogos-module.nix { inherit (crane-outputs.packages) genealogos-api; };
         nixosConfigurations.genealogos-test = nixpkgs.lib.nixosSystem
           {
-            pkgs = import nixpkgs { inherit system; overlays = [ overlays.default ]; };
             inherit system;
             modules = [
               ./nix/configuration.nix
@@ -48,7 +47,6 @@
         apps.default = utils.lib.mkApp {
           drv = crane-outputs.packages.genealogos-cli;
         };
-
 
         devShells.default = crane-lib.devShell {
           inherit (crane-outputs) checks;
