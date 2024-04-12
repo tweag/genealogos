@@ -142,6 +142,16 @@ Changing this default can be done using the settings button in the top of the we
 
 The Web UI currently only supports analyzing from a flake ref and attribute path, analyzing from a trace file is not yet supported.
 
+### NixOS Module
+The flake in this project provides a NixOS Module to host Genealogos.
+Once the module has been added to your NixOS configuration, Genealogos can be enabled with:
+
+```nix
+services.genealogos.enable = true;
+```
+
+For further options see `./nix/genealogos-module.nix`.
+
 ## Contributing
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
