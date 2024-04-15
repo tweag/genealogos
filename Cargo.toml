@@ -20,7 +20,6 @@ clap-verbosity-flag = "2.1.2"
 env_logger = "0.11.1"
 indicatif = "0.17.8"
 indicatif-log-bridge = "0.2.2"
-cyclonedx-bom = "0.5.0"
 log = "0.4.20"
 rayon = "1.8.1"
 rocket = { version = "0.5.0", features = ["json"] }
@@ -30,6 +29,8 @@ thiserror = "1.0.57"
 uuid = { version = "1.7.0", features = ["v4"] }
 
 # Non-crates.io dependencies
+# TODO: Replace with crates.io version once a new version is published
+cyclonedx-bom.git = "https://github.com/CycloneDX/cyclonedx-rust-cargo.git"
 nixtract.git = "https://github.com/tweag/nixtract.git"
 genealogos.path = "./genealogos"
 
