@@ -8,7 +8,7 @@ use std::str::FromStr;
 use cyclonedx_bom::models::{
     component::Classification,
     dependency::{Dependencies, Dependency},
-    external_reference::{ExternalReference, ExternalReferenceType, ExternalReferences},
+    external_reference::{self, ExternalReference, ExternalReferenceType, ExternalReferences},
     license::{License, LicenseChoice, LicenseIdentifier, Licenses},
     property::{Properties, Property},
 };
@@ -306,7 +306,7 @@ impl From<ModelExternalReference> for ExternalReference {
     fn from(model: ModelExternalReference) -> Self {
         ExternalReference {
             external_reference_type: model.r#type.into(),
-            url: Uri::try_from(model.url).expect("Invalid URL"),
+            url: external_reference::Uri::Url(Uri::try_from(model.url).expect("Invalid URL")),
             comment: None,
             hashes: None,
         }
