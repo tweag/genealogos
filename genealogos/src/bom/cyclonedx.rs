@@ -55,8 +55,9 @@ impl FromStr for FileFormat {
 #[non_exhaustive]
 pub enum SpecVersion {
     V1_3,
-    #[default]
     V1_4,
+    #[default]
+    V1_5,
 }
 
 impl Display for SpecVersion {
@@ -64,6 +65,7 @@ impl Display for SpecVersion {
         match self {
             SpecVersion::V1_3 => write!(f, "1.3"),
             SpecVersion::V1_4 => write!(f, "1.4"),
+            SpecVersion::V1_5 => write!(f, "1.5"),
         }
     }
 }
@@ -75,6 +77,7 @@ impl FromStr for SpecVersion {
         match s {
             "1.3" => Ok(SpecVersion::V1_3),
             "1.4" => Ok(SpecVersion::V1_4),
+            "1.5" => Ok(SpecVersion::V1_5),
             _ => Err(Error::InvalidCycloneDXVersion(s.to_string())),
         }
     }
@@ -167,6 +170,10 @@ impl super::Bom for CycloneDX {
             SpecVersion::V1_4 => match self.file_format {
                 FileFormat::JSON => bom.output_as_json_v1_4(writer)?,
                 FileFormat::XML => bom.output_as_xml_v1_4(writer)?,
+            },
+            SpecVersion::V1_5 => match self.file_format {
+                FileFormat::JSON => bom.output_as_json_v1_5(writer)?,
+                FileFormat::XML => bom.output_as_xml_v1_5(writer)?,
             },
         }
 
@@ -272,6 +279,8 @@ impl TryFrom<ModelComponent> for Component {
             components: None,
             evidence: None,
             signature: None,
+            model_card: None,
+            data: None,
         })
     }
 }
@@ -295,6 +304,9 @@ impl TryFrom<ModelLicense> for LicenseChoice {
                 license_identifier: LicenseIdentifier::Name(NormalizedString::new(&name)),
                 text: None,
                 url: None,
+                bom_ref: None,
+                licensing: None,
+                properties: None,
             }))
         } else {
             unreachable!("We only construct ModelLicense with at least id or name")

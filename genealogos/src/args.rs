@@ -55,8 +55,7 @@ impl std::fmt::Display for BackendArg {
 #[derive(Clone, Copy, Debug)]
 #[non_exhaustive]
 pub enum BomArg {
-    /// A subset of the CycloneDX bom format, currently only supporting 1.3 and 1.4, both xml and json output.
-    // TODO: Include 1.5
+    /// A subset of the CycloneDX bom format, currently only supporting 1.3, 1.4, and 1.5, both xml and json output.
     CycloneDX(
         crate::bom::cyclonedx::SpecVersion,
         crate::bom::cyclonedx::FileFormat,

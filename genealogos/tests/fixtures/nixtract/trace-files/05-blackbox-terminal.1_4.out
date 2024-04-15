@@ -10833,7 +10833,7 @@
     {
       "type": "application",
       "bom-ref": "/nix/store/fgdvggb3672n1z4ab8by4j3y2djp6pqv-python3.11-docutils-0.20.1",
-      "name": "python3.11-docutils",
+      "name": "docutils",
       "version": "0.20.1",
       "description": "Python Documentation Utilities",
       "licenses": [
@@ -10852,7 +10852,7 @@
           "expression": "GPL-3.0-or-later"
         }
       ],
-      "purl": "pkg:generic/python3.11-docutils@0.20.1",
+      "purl": "pkg:generic/docutils@0.20.1",
       "externalReferences": [
         {
           "type": "website",
