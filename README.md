@@ -142,7 +142,7 @@ Changing this default can be done using the settings button in the top of the we
 
 The Web UI currently only supports analyzing from a flake ref and attribute path, analyzing from a trace file is not yet supported.
 
-The frontend can be opened by opening the `index.html`file in your favourite webbrowser.
+The frontend can be opened by opening the `index.html`file in your favourite web browser.
 Alternatively, if the `genealogos-api` was built with the `frontend` feature-flag, the frontend can be accessed at the root of wherever the api is hosted (e.g. `http://localhost:8000/`).
 
 ### NixOS Module
