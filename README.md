@@ -16,7 +16,7 @@
 </p>
 
 The Genealogos project is a tool that takes output from Nix evaluation tools and produces BOM files.
-Currently, it takes input from [nixtract][nixtract] and produces json output compliant with the [CycloneDX][cyclonedx] 1.3 or 1.4 specification.<!-- TODO: 1.5 -->
+Currently, it takes input from [nixtract][nixtract-url] and produces json output compliant with the [CycloneDX][cyclonedx-url] 1.3 or 1.4 specification.<!-- TODO: 1.5 -->
 Output from Genealogos can be used by various other tools to perform further analysis.
 
 Note Nix is mainly just suitable for Software, and so the BOM output by Genealogos is nearly always an SBOM.
@@ -195,6 +195,8 @@ GitHub: [https://github.com/tweag/genealogos](https://github.com/tweag/genealogo
 [discord-url]: https://discord.gg/fFymRGGRDG
 [tweag-logo]: ./assets/tweag.png
 [tweag-url]: https://tweag.io
+[nixtract-url]: https://github.com/tweag/nixtract
+[cyclonedx-url]: https://cyclonedx.org/
 
 [screenshot]: ./assets/screenshot.png
 [genealogos-logo]: ./assets/genealogos.png
