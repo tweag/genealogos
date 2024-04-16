@@ -8,7 +8,13 @@
 let
   common-crane-args = {
     pname = "genealogos";
-    src = crane-lib.cleanCargoSource (crane-lib.path ../.);
+
+    # We need to also include the frontend .html file for the include_str macro in the api
+    src = pkgs.lib.cleanSourceWith {
+      src = crane-lib.path ../.;
+      filter = path: type: (crane-lib.filterCargoSources path type) || (builtins.match ".*/genealogos-frontend/index.html" path != null);
+    };
+
     strictDeps = true;
 
     cargoArtifacts = cargo-artifacts;
@@ -71,7 +77,7 @@ rec {
 
   packages =
     rust-packages // {
-      default = packages.genealogos;
+      default = packages.genealogos-cli;
 
       workspace = crane-lib.buildPackage workspace;
 

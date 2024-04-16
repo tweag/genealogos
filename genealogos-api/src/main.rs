@@ -4,7 +4,7 @@ use genealogos::args::BomArg;
 use genealogos::backend::Backend;
 use genealogos::bom::Bom;
 use rocket::http::Status;
-use rocket::response::status;
+use rocket::response::{content, status};
 use rocket::serde::json::Json;
 use rocket::tokio::sync::Mutex;
 use rocket::Request;
@@ -19,6 +19,24 @@ fn handle_errors(req: &Request) -> status::Custom<String> {
     status::Custom(
         Status::InternalServerError,
         format!("An error occurred: {:?}", req),
+    )
+}
+
+#[rocket::get("/")]
+#[cfg(feature = "frontend")]
+fn index() -> status::Custom<content::RawHtml<&'static str>> {
+    status::Custom(
+        Status::Ok,
+        content::RawHtml(include_str!("../../genealogos-frontend/index.html")),
+    )
+}
+
+#[rocket::get("/")]
+#[cfg(not(feature = "frontend"))]
+fn index() -> status::Custom<content::RawHtml<&'static str>> {
+    status::Custom(
+        Status::Ok,
+        content::RawHtml("<h1>Genealogos is running</h1>"),
     )
 }
 
@@ -63,6 +81,7 @@ fn rocket() -> _ {
                 ));
             })
         }))
+        .mount("/", rocket::routes![index])
         .mount("/api", rocket::routes![analyze])
         .register("/api", rocket::catchers![handle_errors])
         .mount(

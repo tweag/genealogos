@@ -14,14 +14,15 @@ use genealogos::backend::{Backend, BackendHandle};
 #[command(author, version, about)]
 struct Args {
     /// Path to the input nixtract file
-    #[arg(short, long, required_unless_present = "installable")]
+    #[arg(short, long, required_unless_present = "installable", group = "input")]
     file: Option<path::PathBuf>,
 
     /// Nix installable (e.g. `nixpkgs#hello`)
-    #[arg(required_unless_present = "file")]
+    #[arg(required_unless_present = "file", group = "input")]
     installable: Option<String>,
 
     /// Optional path to the output CycloneDX file (default: stdout)
+    #[arg(long, short)]
     output_file: Option<path::PathBuf>,
 
     /// Backend to use for Nix evaluation tracing

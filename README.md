@@ -16,7 +16,7 @@
 </p>
 
 The Genealogos project is a tool that takes output from Nix evaluation tools and produces BOM files.
-Currently, it takes input from [nixtract][nixtract] and produces json output compliant with the [CycloneDX][cyclonedx] 1.3 or 1.4 specification.<!-- TODO: 1.5 -->
+Currently, it takes input from [nixtract][nixtract-url] and produces json output compliant with the [CycloneDX][cyclonedx-url] 1.3 or 1.4 specification.<!-- TODO: 1.5 -->
 Output from Genealogos can be used by various other tools to perform further analysis.
 
 Note Nix is mainly just suitable for Software, and so the BOM output by Genealogos is nearly always an SBOM.
@@ -142,6 +142,9 @@ Changing this default can be done using the settings button in the top of the we
 
 The Web UI currently only supports analyzing from a flake ref and attribute path, analyzing from a trace file is not yet supported.
 
+The frontend can be opened by opening the `index.html`file in your favourite web browser.
+Alternatively, if the `genealogos-api` was built with the `frontend` feature-flag, the frontend can be accessed at the root of wherever the api is hosted (e.g. `http://localhost:8000/`).
+
 ### NixOS Module
 The flake in this project provides a NixOS Module to host Genealogos.
 Once the module has been added to your NixOS configuration, Genealogos can be enabled with:
@@ -192,6 +195,8 @@ GitHub: [https://github.com/tweag/genealogos](https://github.com/tweag/genealogo
 [discord-url]: https://discord.gg/fFymRGGRDG
 [tweag-logo]: ./assets/tweag.png
 [tweag-url]: https://tweag.io
+[nixtract-url]: https://github.com/tweag/nixtract
+[cyclonedx-url]: https://cyclonedx.org/
 
 [screenshot]: ./assets/screenshot.png
 [genealogos-logo]: ./assets/genealogos.png

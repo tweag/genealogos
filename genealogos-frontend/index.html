@@ -259,7 +259,7 @@
             // Create a temporary anchor element
             const anchor = document.createElement("a");
             anchor.href = URL.createObjectURL(blob);
-            anchor.download = `${installable}.sbom.json`;
+            anchor.download = `${decodeURIComponent(latestInstallable)}.sbom.json`;
 
             // Programmatically click the anchor element to trigger the download
             anchor.click();
