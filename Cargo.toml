@@ -1,6 +1,6 @@
 [workspace.package]
 description = "Converts Nix-tracing tool output into CycloneDX"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 authors = ["Tweag I/O"]
 license = "MIT"
