@@ -99,6 +99,11 @@ Genealogos will forward `--include-narinfo` and `--runtime-only` to the backend.
 genealogos --include-narinfo --runtime-only nixpkgs#hello
 ```
 
+#### Narinfo
+When the backend is instructed to provide the narinfo via `--include-narinfo`, it is free to choose how to provide it.
+Nixtract, for instance, queries the system and flake configured substituters, and returns provides their narinfo when found.
+Genealogos collects the narinfo, and (for CycloneDX) adds it to the `components.properties` list with the `nix:narinfo:<FIELD_NAME>` name.
+
 For a full set of options, see:
 ```fish
 genealogos --help
