@@ -41,6 +41,21 @@ However, in this case you are sponsible for ensuring the dependencies are availa
 cargo install --git https://github.com/tweag/genealogos.git genealogos-cli
 ```
 
+## Installing Genealogos-api (and frontend)
+The installation methods for the cli can easily be adjusted for the api.
+```fish
+# To run once
+nix run github:tweag/genealogos#genealogos-api
+
+# To temporarily add to $PATH
+nix shell github:tweag/genealogos#genealogos-api
+
+# Cargo install
+cargo install --git https://github.com/tweag/genealogos.git genealogos-api
+```
+
+The `frontend` feature is enabled by default, so once the api is running open `http://localhost:8000/` for the frontend.
+
 ## Hacking
 ### Prerequisites
 Development of Genealogos requires Cargo, and some other dependencies.
