@@ -641,7 +641,7 @@ dependencies = [
 
 [[package]]
 name = "genealogos"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "clap",
  "cyclonedx-bom",
@@ -661,7 +661,7 @@ dependencies = [
 
 [[package]]
 name = "genealogos-api"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "chrono",
  "env_logger",
@@ -678,7 +678,7 @@ dependencies = [
 
 [[package]]
 name = "genealogos-cli"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "anyhow",
  "clap",
