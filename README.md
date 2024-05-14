@@ -59,7 +59,7 @@ The `frontend` feature is enabled by default, so once the api is running open `h
 ## Hacking
 ### Prerequisites
 Development of Genealogos requires Cargo, and some other dependencies.
-We additionally recommend the use of `rust-analyzer`, `cargo-hack`, and `nixtract`.
+We additionally recommend the use of `rust-analyzer` and `nixtract`.
 The easiest way to get these tools it through the Nix development environment.
 ```fish
 nix develop
@@ -68,8 +68,7 @@ nix develop
 Alternatively you can install the dependencies manually, but in that case you are on your own.
 
 ### Building
-Due to [a bug in Cargo](https://github.com/rust-lang/cargo/issues/4463), running `cargo [build, check, clippy, etc]` will fail.
-There are two ways to solve this, either by specifying a specific package `cargo COMMAND -p [genealogos, genealogos-cli, genealogos-api]` or by running `cargo hack COMMAND`.
+Building can be done using Cargo, either by specifying a specific package `cargo COMMAND -p [genealogos, genealogos-cli, genealogos-api]` or by running `cargo COMMAND` for the entire workspace.
 
 ## Usage
 ### `genealogos-cli`
