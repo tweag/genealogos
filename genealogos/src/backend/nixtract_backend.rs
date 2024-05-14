@@ -114,16 +114,17 @@ impl super::BackendHandle for NixtractHandle {
         Ok(messages)
     }
 
-    #[cfg(feature = "backend_handle_messages")]
+    fn max_index(&self) -> usize {
+        rayon::current_num_threads()
+    }
+}
+
+impl super::BackendHandleMessages for NixtractHandle {
     fn messages(&self) -> crate::Result<impl Iterator<Item = super::Message>> {
         Ok(self.receiver.iter().map(|m| super::Message {
             index: m.id,
             content: m.to_string(),
         }))
-    }
-
-    fn max_index(&self) -> usize {
-        rayon::current_num_threads()
     }
 }
 
