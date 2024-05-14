@@ -28,8 +28,8 @@ let
   cargo-artifacts = crane-lib.buildDepsOnly common-crane-args;
 
   workspace = (common-crane-args // {
-    cargoBuildCommand = "${pkgs.cargo-hack}/bin/cargo-hack hack build --profile release";
-    cargoTestCommand = "${pkgs.cargo-hack}/bin/cargo-hack hack test --profile release";
+    cargoBuildCommand = "cargo build --profile release";
+    cargoTestCommand = "cargo test --profile release";
   });
 
   # Crane buildPackage arguments for every crate

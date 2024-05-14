@@ -21,7 +21,7 @@ cyclonedx-bom.workspace = true
 env_logger.workspace = true
 indicatif.workspace = true
 indicatif-log-bridge.workspace = true
-genealogos = { workspace = true, features = [ "backend_handle_messages", "clap" ] }
+genealogos = { workspace = true, features = [ "clap" ] }
 nixtract.workspace = true
 
 [features]

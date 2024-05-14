@@ -8,7 +8,7 @@ use std::str::FromStr as _;
 #[cfg(feature = "clap")]
 use std::sync::OnceLock;
 
-use crate::backend::{Backend, BackendHandle};
+use crate::backend::{Backend, BackendHandle, BackendHandleMessages};
 use crate::bom::Bom;
 use crate::error::*;
 
@@ -26,7 +26,13 @@ pub enum BackendArg {
 }
 
 impl BackendArg {
+    /// Get a backend and handle that is object safe
     pub fn get_backend(&self) -> Result<Box<(impl Backend, impl BackendHandle)>> {
+        self.get_backend_messages()
+    }
+
+    /// Get a backend and handle that is not object safe and implements the `messages` function
+    pub fn get_backend_messages(&self) -> Result<Box<(impl Backend, impl BackendHandleMessages)>> {
         match self {
             BackendArg::Nixtract => Ok(Box::new(crate::backend::nixtract_backend::Nixtract::new())),
         }

@@ -2,6 +2,8 @@
 <!-- We follow the Keep a Changelog standard https://keepachangelog.com/en/1.0.0/ -->
 
 ## [Unreleased]
+### Changed
+- [#55](https://github.com/tweag/genealogos/pull/55) splits of the `messages()` function into its own trait. This resolves many issues caused by a cargo issue.
 
 ## [0.2.0]
 ### Added

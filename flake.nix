@@ -53,9 +53,6 @@
 
           packages = with pkgs; [
             rust-analyzer
-
-            # https://github.com/rust-lang/cargo/issues/4463
-            cargo-hack
           ];
         };
       });

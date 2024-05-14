@@ -7,7 +7,7 @@ use std::path;
 use clap::Parser;
 
 use genealogos::args;
-use genealogos::backend::{Backend, BackendHandle};
+use genealogos::backend::{Backend, BackendHandle, BackendHandleMessages};
 
 /// `cli` application for processing data files and generating CycloneDX output
 #[derive(Parser, Debug)]
@@ -57,7 +57,7 @@ fn main() -> Result<()> {
     };
 
     // Initialize the backend and get access to the status update messages
-    let (mut backend, handle) = *args.backend.get_backend()?;
+    let (mut backend, handle) = *args.backend.get_backend_messages()?;
 
     // Set backend options
     backend.include_narinfo(args.include_narinfo);

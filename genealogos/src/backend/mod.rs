@@ -211,10 +211,13 @@ pub trait BackendHandle {
     /// Gets all messages that were produced since the previous call to this function
     fn new_messages(&self) -> Result<Vec<Message>>;
 
-    /// Gets an iterator over all messages
-    #[cfg(feature = "backend_handle_messages")]
-    fn messages(&self) -> Result<impl Iterator<Item = Message>>;
-
     /// Gets an upper bound to the number of different ids to expect in the messages
     fn max_index(&self) -> usize;
+}
+
+/// `BackendHandleMessages` is a trait that defines additional behaviour of a
+/// backend handle that would otherwise make the `BackendHandle` trait unsafe.
+pub trait BackendHandleMessages: BackendHandle {
+    /// Gets an iterator over all messages
+    fn messages(&self) -> Result<impl Iterator<Item = Message>>;
 }
