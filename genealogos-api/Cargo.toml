@@ -15,11 +15,12 @@ path = "src/main.rs"
 
 [dependencies]
 chrono.workspace = true
-rocket.workspace = true
 genealogos = { workspace = true, features = [ "rocket" ] }
-serde_json.workspace = true
-serde.workspace = true
+log.workspace = true
 nixtract.workspace = true
+rocket.workspace = true
+serde.workspace = true
+serde_json.workspace = true
 
 [dev-dependencies]
 env_logger.workspace = true

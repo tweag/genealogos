@@ -9,29 +9,9 @@ use rocket::tokio;
 
 use crate::messages::{self, Result, StatusEnum, StatusResponse};
 
-pub type JobId = u16;
+pub mod job_map;
 
-/// This JobMap holds the status of all jobs that are currently running
-pub type JobMap = Arc<rocket::tokio::sync::Mutex<std::collections::HashMap<JobId, JobStatus>>>;
-
-pub enum JobStatus {
-    Stopped,
-    /// The job is still running, the receiver is used receive status messages from worker threads
-    Running(Box<dyn genealogos::backend::BackendHandle + Send>),
-    Done(String, time::Duration),
-    Error(String),
-}
-
-impl ToString for JobStatus {
-    fn to_string(&self) -> String {
-        match self {
-            JobStatus::Running(_) => "running".to_string(),
-            JobStatus::Done(_, _) => "done".to_string(),
-            JobStatus::Stopped => "stopped".to_string(),
-            JobStatus::Error(e) => e.to_owned(),
-        }
-    }
-}
+use job_map::{JobId, JobMap, JobStatus};
 
 #[rocket::get("/create?<installable>&<bom_format>")]
 pub async fn create(

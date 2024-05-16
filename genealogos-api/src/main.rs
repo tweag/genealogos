@@ -3,6 +3,7 @@ use std::sync::{atomic, Arc};
 use genealogos::args::BomArg;
 use genealogos::backend::Backend;
 use genealogos::bom::Bom;
+use jobs::job_map::{self, garbage_collector};
 use rocket::http::Status;
 use rocket::response::{content, status};
 use rocket::serde::json::Json;
@@ -72,6 +73,9 @@ fn analyze(installable: &str, bom_format: Option<BomArg>) -> Result<messages::An
 
 #[rocket::launch]
 fn rocket() -> _ {
+    let job_map = Arc::new(Mutex::new(job_map::JobHashMap::new()));
+
+    let job_map_clone = job_map.clone();
     rocket::build()
         .attach(rocket::fairing::AdHoc::on_response("cors", |_req, resp| {
             Box::pin(async move {
@@ -81,6 +85,22 @@ fn rocket() -> _ {
                 ));
             })
         }))
+        .attach(rocket::fairing::AdHoc::on_liftoff(
+            "garbage_collector",
+            |_| {
+                Box::pin(async move {
+                    rocket::tokio::spawn(async move {
+                        let interval = std::time::Duration::from_secs(10);
+                        garbage_collector(
+                            job_map_clone,
+                            interval,
+                            std::time::Duration::from_secs(5 * 60),
+                        )
+                        .await;
+                    });
+                })
+            },
+        ))
         .mount("/", rocket::routes![index])
         .mount("/api", rocket::routes![analyze])
         .register("/api", rocket::catchers![handle_errors])
@@ -89,10 +109,7 @@ fn rocket() -> _ {
             rocket::routes![jobs::create, jobs::status, jobs::result],
         )
         .register("/api/jobs/", rocket::catchers![handle_errors])
-        .manage(Arc::new(Mutex::new(std::collections::HashMap::<
-            jobs::JobId,
-            jobs::JobStatus,
-        >::new())))
+        .manage(job_map)
         .manage(atomic::AtomicU16::new(0))
 }
 
