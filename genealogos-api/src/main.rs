@@ -10,6 +10,7 @@ use rocket::serde::json::Json;
 use rocket::tokio::sync::Mutex;
 use rocket::Request;
 
+mod config;
 mod jobs;
 mod messages;
 
@@ -76,7 +77,13 @@ fn rocket() -> _ {
     let job_map = Arc::new(Mutex::new(job_map::JobHashMap::new()));
 
     let job_map_clone = job_map.clone();
-    rocket::build()
+
+    let rocket = rocket::build();
+    let figment = rocket.figment();
+
+    let config: config::Config = figment.extract().expect("Failed to load configuration");
+
+    rocket
         .attach(rocket::fairing::AdHoc::on_response("cors", |_req, resp| {
             Box::pin(async move {
                 resp.set_header(rocket::http::Header::new(
@@ -90,13 +97,7 @@ fn rocket() -> _ {
             |_| {
                 Box::pin(async move {
                     rocket::tokio::spawn(async move {
-                        let interval = std::time::Duration::from_secs(10);
-                        garbage_collector(
-                            job_map_clone,
-                            interval,
-                            std::time::Duration::from_secs(5 * 60),
-                        )
-                        .await;
+                        garbage_collector(job_map_clone, config.gc).await;
                     });
                 })
             },

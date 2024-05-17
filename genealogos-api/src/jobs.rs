@@ -90,9 +90,7 @@ pub async fn status(
     job_id: JobId,
     job_map: &rocket::State<JobMap>,
 ) -> Result<messages::StatusResponse> {
-    let mut locked_map = job_map
-        .try_lock()
-        .map_err(|e| messages::ErrResponse::with_job_id(job_id, e))?;
+    let mut locked_map = job_map.lock().await;
 
     let status = locked_map.get(&job_id).unwrap_or(&JobStatus::Stopped);
 

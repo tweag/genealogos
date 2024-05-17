@@ -36,7 +36,7 @@ impl ToString for JobStatus {
             JobStatus::Running(_) => "running".to_string(),
             JobStatus::Done(_, _) => "done".to_string(),
             JobStatus::Stopped => "stopped".to_string(),
-            JobStatus::Error(e) => e.to_owned(),
+            JobStatus::Error(e) => format!("Error: {}", e),
         }
     }
 }
@@ -68,6 +68,28 @@ impl JobHashMap {
     }
 }
 
+#[derive(rocket::serde::Deserialize, Debug)]
+#[serde(crate = "rocket::serde")]
+pub struct GCInterval(u64);
+
+#[derive(rocket::serde::Deserialize, Debug)]
+#[serde(crate = "rocket::serde")]
+pub struct GCStaleAfter(u64);
+
+impl Default for GCInterval {
+    fn default() -> Self {
+        // By default, run the garbage collector once every ten seconds
+        Self(10)
+    }
+}
+
+impl Default for GCStaleAfter {
+    fn default() -> Self {
+        // By default, remove a stale job after 1 hour
+        Self(60 * 60)
+    }
+}
+
 /// The garbage collector will check for any stale jobs in the `JobMap` and remove them
 /// after a certain amount of time. The interval is how often the garbage collector
 /// will run, and the remove_after is when a job is considered stale.
@@ -76,26 +98,32 @@ impl JobHashMap {
 ///
 /// # Arguments
 /// * `job_map` - A reference to the `JobMap` that contains all the jobs
-/// * `interval` - How often the garbage collector will run
-/// * `remove_after` - How long after a job is considered stale
-pub async fn garbage_collector(
-    job_map: JobMap,
-    interval: time::Duration,
-    remove_after: time::Duration,
-) {
-    let mut interval = time::interval(interval);
+/// * `gc_config` - The configuration for the garbage collector
+pub async fn garbage_collector(job_map: JobMap, gc_config: crate::config::GCConfig) {
+    let stale_after = time::Duration::from_secs(gc_config.stale_after.0);
+    let mut interval = time::interval(time::Duration::from_secs(gc_config.interval.0));
 
     log::info!("Started the garbage collector");
 
     loop {
-        log::info!("Collecting garbage");
         interval.tick().await;
 
-        for (job_id, job_entry) in job_map.lock().await.0.iter_mut() {
-            if job_entry.last_updated.elapsed() > remove_after {
-                log::info!("Removing a stale job");
-                job_map.lock().await.remove(job_id);
+        let mut count: u16 = 0;
+        let mut job_map = job_map.lock().await;
+        log::info!("Current job count: {}", job_map.0.len());
+
+        // Retain allo jobs that are not stale
+        job_map.0.retain(|_, entry| {
+            if entry.last_updated.elapsed() < stale_after {
+                true
+            } else {
+                count += 1;
+                false
             }
+        });
+
+        if count > 0 {
+            log::info!("Removed {} stale jobs", count);
         }
     }
 }
