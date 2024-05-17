@@ -40,8 +40,11 @@ in
         description = lib.mdDoc ''
           Configuration file for Genealogos.
 
-          Genealogos-api uses rocket as its http implementation.
-          For all configuration options, see https://rocket.rs/guide/v0.5/configuration/#configuration-parameters
+          Genealogos-api uses Rocket as its webserver implementation.
+          For all rocket configuration options, see https://rocket.rs/guide/v0.5/configuration/#configuration-parameters
+
+          Genealogos further defines some custom options.
+          See the projects [README](https://github.com/tweag/genealogos/blob/master/README.md) for more information.
         '';
       };
     };
