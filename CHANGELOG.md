@@ -3,6 +3,9 @@
 
 ## [Unreleased]
 
+### Added
+- [#56](https://github.com/tweag/genealogos/pull/56) adds a garbage collector to the jobs api, to prevent stale jobs from taking up unnecessary memory
+
 ## [0.3.0](https://github.com/tweag/genealogos/compare/v0.2.0...v0.3.0)
 ### Changed
 - [#55](https://github.com/tweag/genealogos/pull/55) splits of the `messages()` function into its own trait. This resolves many issues caused by a cargo issue.

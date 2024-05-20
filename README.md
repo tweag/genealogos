@@ -154,6 +154,17 @@ Finally, getting the result is done with the `result` endpoint:
 curl "http://localhost:8000/api/jobs/result/0"
 ```
 
+#### Configuration
+The `genealogos-api` can be configured through [Rocket](https://rocket.rs)'s configuration mechanism.
+It uses the [default providers](https://rocket.rs/guide/v0.5/configuration/#default-provider) defined by Rocket.
+The [default options](https://rocket.rs/guide/v0.5/configuration/#overview) contain all things related to the webserver itself.
+In addition to those default configuration options, Genealogos extends Rockets' configuration with two additional keys:
+
+| key              | kind               | description                                                        | debug/release default |
+|------------------|--------------------|--------------------------------------------------------------------|-----------------------|
+| `gc_interval`    | `u64` (in seconds) | The interval between two invocations of the garbage collector      | `10`                  |
+| `gc_stale_after` | `u64` (in seconds) | How long after being touched last a job should be considered stale | `60 * 10`             |
+
 ### `genealogos-frontend`
 Genealogos ships with a pure html/javascript web frontend.
 By default, this frontend uses `127.0.0.1` to connect to the `genealogos-api`.
