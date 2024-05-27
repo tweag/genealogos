@@ -10,13 +10,13 @@ in
 {
   options = {
     services.genealogos = {
-      enable = mkEnableOption
-        (mdDoc "Genealogos, a Nix sbom generator");
+      enable = mkEnableOption "Genealogos, a Nix sbom generator";
 
       package = mkOption {
         type = types.package;
         default = genealogos-api;
-        description = mdDoc ''
+        defaultText = literalExpression "pkgs.genealogos-api";
+        description = ''
           The genealogos-api package to use.
         '';
       };
@@ -37,7 +37,7 @@ in
           }
         '';
 
-        description = lib.mdDoc ''
+        description = ''
           Configuration file for Genealogos.
 
           Genealogos-api uses Rocket as its webserver implementation.
