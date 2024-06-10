@@ -22,7 +22,8 @@ Output from Genealogos can be used by various other tools to perform further ana
 Note Nix is mainly just suitable for Software, and so the BOM output by Genealogos is nearly always an SBOM.
 However, for consistency, we will refer to the output as a BOM.
 
-The project is still very early stages, so the output may as of yet be of little use.
+Genealogos may already be used to generate SBOMs but it is important to realize there exist some known issues.
+See the section at the end of this readme for a list of known issues and other limitations.
 
 ## Installing Genealogos-cli
 Right now, Genealogos is only distributed via our Nix Flake.
@@ -202,6 +203,10 @@ In order to make working with these fixtures a little nicer, the `nix develop .#
 `verify-fixture-files`, which verifies the `.out` files with the `cyclonedx-cli` tool to ensure `genealogos` produces valid CycloneDX.
 And `update-fixture-files`, which should be ran when an update to `genealogos` changes its output.
 Note that this second script requires that `genealogos-cli` is buildable.
+
+## Known issues and limitations
+Currently, Genealogos (through nixtract) tries to find all attributes that are input derivation to whatever package is being analyzed.
+This means some inputs can be missed, in particular those that are part of string contexts.
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
