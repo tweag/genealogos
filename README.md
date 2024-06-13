@@ -208,6 +208,9 @@ Note that this second script requires that `genealogos-cli` is buildable.
 Currently, Genealogos (through nixtract) tries to find all attributes that are input derivation to whatever package is being analyzed.
 This means some inputs can be missed, in particular those that are part of string contexts.
 
+Additionally, Nixtract (through Genealogos) restarts nix for every SBOM component.
+When evaluation of your derivation takes a long time, this will result in very slow SBOM generation.
+
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
 

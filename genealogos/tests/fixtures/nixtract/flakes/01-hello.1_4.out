@@ -6,6 +6,159 @@
   "components": [
     {
       "type": "application",
+      "bom-ref": "/nix/store/03ci2vyb84m1g78938aanfbcyz5i8p21-libtool-2.4.7",
+      "name": "libtool",
+      "version": "2.4.7",
+      "description": "GNU Libtool, a generic library support script",
+      "licenses": [
+        {
+          "expression": "GPL-2.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/libtool@2.4.7",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/libtool/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/05d0yccrkp8pl5c6my29cxzzqb7a9az8-glibc-2.38.tar.xz",
+      "name": "glibc",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/glibc@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/05zbwhz8a7i2v79r9j21pl6m6cj0xi8k-libunistring-1.1",
+      "name": "libunistring",
+      "version": "1.1",
+      "description": "Unicode string library",
+      "licenses": [
+        {
+          "expression": "LGPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/libunistring@1.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/libunistring/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/0avnvyc7pkcr4pjqws7hwpy87m6wlnjc-make-4.4.1.tar.gz",
+      "name": "make",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/make@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/0cr4hvmwbfablyhn58ba0lrfb44igq5y-bash52-016",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/0f884mc30cmyy0yvjmsnqhq2q6q8ddpb-gmp-with-cxx-6.3.0-dev",
+      "name": "gmp-with-cxx",
+      "version": "6.3.0",
+      "description": "GNU multiple precision arithmetic library",
+      "licenses": [
+        {
+          "expression": "LGPL-3.0-only"
+        },
+        {
+          "expression": "GPL-2.0-only"
+        }
+      ],
+      "purl": "pkg:generic/gmp-with-cxx@6.3.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://gmplib.org/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/0ngb7bv2lxv826z8qgl497zj6zzr0jlp-expat-2.5.0-dev",
+      "name": "expat",
+      "version": "2.5.0",
+      "description": "A stream-oriented XML parser library written in C",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "purl": "pkg:generic/expat@2.5.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://libexpat.github.io/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/0p42wcqvmjffgr3a5x4amxl451dxn5xg-acl-2.3.1-dev",
+      "name": "acl",
+      "version": "2.3.1",
+      "description": "Library and tools for manipulating access control lists",
+      "licenses": [
+        {
+          "expression": "GPL-2.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/acl@2.3.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://savannah.nongnu.org/projects/acl"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/1dydp86d00qzjbncpi80sdsndf33lc5j-fix-static.patch",
+      "name": "fix-static.patch",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/fix-static.patch@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/1fw5fcsjz9wcbf13a5xs4i2cjfircp3x-bash52-006",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
       "bom-ref": "/nix/store/1hjv10489fm00lckiicwsv3nlcm07njy-zlib-1.3-dev",
       "name": "zlib",
       "version": "1.3",
@@ -26,17 +179,207 @@
     },
     {
       "type": "application",
-      "bom-ref": "/nix/store/26v33fxjpdn5wd06jqqjc8qbl3sc3sqp-die-hook",
-      "name": "die-hook",
+      "bom-ref": "/nix/store/20rsi77ny2i4i1rbd63h4392a245j5dz-gnutar-1.35",
+      "name": "gnutar",
+      "version": "1.35",
+      "description": "GNU implementation of the `tar' archiver",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/gnutar@1.35",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/tar/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/24ygbbc9k6vjc4vhz2j6a9dkdgmqgc6n-bash52-010",
+      "name": "bash52",
       "version": "",
       "description": "",
-      "purl": "pkg:generic/die-hook@",
+      "purl": "pkg:generic/bash52@",
       "externalReferences": [],
       "properties": []
     },
     {
       "type": "application",
-      "bom-ref": "/nix/store/2kq5jql90fn5y2pd6c9vnjqffmf9ndjm-make-shell-wrapper-hook",
+      "bom-ref": "/nix/store/2cvpxhj5gifb9g8hd0w6zbnnqmhl86vk-binutils-wrapper-2.40",
+      "name": "binutils-wrapper",
+      "version": "2.40",
+      "description": "Tools for manipulating binaries (linker, assembler, etc.) (wrapper script)",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/binutils-wrapper@2.40",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/binutils/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/2cxa62ycswpswvysa0nzanmh0qm79ikn-xz-5.4.5.tar.bz2",
+      "name": "xz",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/xz@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/2ds3kha8b07phggryjzqad36q6gzgb23-gawk-5.2.2.tar.xz",
+      "name": "gawk",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/gawk@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/2y4k5a99vfmsw51069fp7ab4hlvbs1ry-gnu-config-2023-09-19",
+      "name": "gnu-config",
+      "version": "2023-09-19",
+      "description": "Attempt to guess a canonical system name",
+      "licenses": [
+        {
+          "expression": "GPL-3.0"
+        }
+      ],
+      "purl": "pkg:generic/gnu-config@2023-09-19",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://savannah.gnu.org/projects/config"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/2ynclzrdl0hy9miy6k8gcwgzw4mhsmd0-bash52-004",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/31559p1w94y01g37dfix30hihc8ppcif-mpfr-4.2.1-dev",
+      "name": "mpfr",
+      "version": "4.2.1",
+      "description": "Library for multiple-precision floating-point arithmetic",
+      "licenses": [
+        {
+          "expression": "LGPL-2.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/mpfr@4.2.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.mpfr.org/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/349f140sh7m12vy9mp1wkp58axyp06c9-which-2.21.tar.gz",
+      "name": "which",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/which@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/3dimjffv8pn3sk48ngd4adz17agpfb4y-gcc-13.2.0-libgcc",
+      "name": "gcc",
+      "version": "13.2.0",
+      "description": "GNU Compiler Collection, version 13.2.0",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/gcc@13.2.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://gcc.gnu.org/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/3drj15y67xgwz9fld37l04bv705448g0-autoreconf-hook",
+      "name": "autoreconf-hook",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/autoreconf-hook@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/3i90ns2cvw81zkp1g76grgn1g4zbnj6n-bzip2-1.0.8-bin",
+      "name": "bzip2",
+      "version": "1.0.8",
+      "description": "High-quality data compression program",
+      "licenses": [
+        {
+          "expression": "BSD-4-Clause"
+        }
+      ],
+      "purl": "pkg:generic/bzip2@1.0.8",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.sourceware.org/bzip2"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/3vkcrwqal8sbvdc1gdi3pcwbqiszv38x-bzip2-1.0.8-dev",
+      "name": "bzip2",
+      "version": "1.0.8",
+      "description": "High-quality data compression program",
+      "licenses": [
+        {
+          "expression": "BSD-4-Clause"
+        }
+      ],
+      "purl": "pkg:generic/bzip2@1.0.8",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.sourceware.org/bzip2"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/43aky07zr5ahpy63faz3pcamzjk8ishn-make-shell-wrapper-hook",
       "name": "make-shell-wrapper-hook",
       "version": "",
       "description": "",
@@ -46,7 +389,539 @@
     },
     {
       "type": "application",
-      "bom-ref": "/nix/store/3wvj2nbynari4iirc4yx3mhf26hbjr9s-libxcrypt-4.4.36",
+      "bom-ref": "/nix/store/43f3a13z1256s37825a6am9y21lysg2a-file-5.45",
+      "name": "file",
+      "version": "5.45",
+      "description": "A program that shows the type of files",
+      "licenses": [
+        {
+          "expression": "BSD-2-Clause"
+        }
+      ],
+      "purl": "pkg:generic/file@5.45",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://darwinsys.com/file"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/447hvnlzzi9myri1iq3bijxgx6v6b592-patchelf-0.15.0.tar.bz2",
+      "name": "patchelf",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/patchelf@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/4vnyjjixvxvafpln9cyfs5j8qzf93rpp-mpfr-4.2.1-dev",
+      "name": "mpfr",
+      "version": "4.2.1",
+      "description": "Library for multiple-precision floating-point arithmetic",
+      "licenses": [
+        {
+          "expression": "LGPL-2.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/mpfr@4.2.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.mpfr.org/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/4ysl1256cdc7wh1jlrgvkyik57ss6644-binutils-patchelfed-ld-2.40",
+      "name": "binutils-patchelfed-ld",
+      "version": "2.40",
+      "description": "",
+      "purl": "pkg:generic/binutils-patchelfed-ld@2.40",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/4zp05qkzh9s3c3k7pp9d36vhiz3x8h9l-gcc-13.2.0-lib",
+      "name": "gcc",
+      "version": "13.2.0",
+      "description": "GNU Compiler Collection, version 13.2.0",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/gcc@13.2.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://gcc.gnu.org/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/5l40jr1linl0zv9j3zscii9pnc7pcc96-Python-3.11.7.tar.xz",
+      "name": "Python",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/Python@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/5rml950ggcn5g8564x7hg2a9mayd08mr-libffi-3.4.4-dev",
+      "name": "libffi",
+      "version": "3.4.4",
+      "description": "A foreign function call interface library",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "purl": "pkg:generic/libffi@3.4.4",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "http://sourceware.org/libffi/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/6782cjv2br9yb4nqvbdrcqsmm0dxjag0-autoconf-2.71",
+      "name": "autoconf",
+      "version": "2.71",
+      "description": "Part of the GNU Build System",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/autoconf@2.71",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/autoconf/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/68qbq5jzwljpl0w6i1qj2l66k129l0ii-glibc-2.38-27-dev",
+      "name": "glibc",
+      "version": "2.38",
+      "description": "The GNU C Library",
+      "licenses": [
+        {
+          "expression": "LGPL-2.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/glibc@2.38",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/libc/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/6l89qmngnn0bb652g6mis0qzlcfmn3kf-xz-5.4.5-bin",
+      "name": "xz",
+      "version": "5.4.5",
+      "description": "A general-purpose data compression software, successor of LZMA",
+      "licenses": [
+        {
+          "expression": "GPL-2.0-or-later"
+        },
+        {
+          "expression": "LGPL-2.1-or-later"
+        }
+      ],
+      "purl": "pkg:generic/xz@5.4.5",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tukaani.org/xz/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/6x5hikvl4rn94zzb53khakj4f85yj4nm-which-2.21",
+      "name": "which",
+      "version": "2.21",
+      "description": "Shows the full path of (shell) commands",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/which@2.21",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/which/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/73l28p4a9iy51wwg5wg6xgd81mds5a9n-xz-5.4.5-dev",
+      "name": "xz",
+      "version": "5.4.5",
+      "description": "A general-purpose data compression software, successor of LZMA",
+      "licenses": [
+        {
+          "expression": "GPL-2.0-or-later"
+        },
+        {
+          "expression": "LGPL-2.1-or-later"
+        }
+      ],
+      "purl": "pkg:generic/xz@5.4.5",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tukaani.org/xz/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/7c07n1bg5xid6w0ffd0warfxpzjjdzzw-bison-3.8.2",
+      "name": "bison",
+      "version": "3.8.2",
+      "description": "Yacc-compatible parser generator",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/bison@3.8.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/bison/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/7cwxm8iwp8iji6nwf2k7y99nfzqm92xp-texinfo-7.0.3",
+      "name": "texinfo",
+      "version": "7.0.3",
+      "description": "The GNU documentation system",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/texinfo@7.0.3",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/texinfo/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/7iyzsc224ax9dm71fv4grndixylcn7kh-findutils-4.9.0",
+      "name": "findutils",
+      "version": "4.9.0",
+      "description": "GNU Find Utilities, the basic directory searching utilities of the GNU operating system",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/findutils@4.9.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/findutils/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/7l2bwydsqmkf6r5mh9cyi9d44b6nw2qz-expat-2.5.0-dev",
+      "name": "expat",
+      "version": "2.5.0",
+      "description": "A stream-oriented XML parser library written in C",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "purl": "pkg:generic/expat@2.5.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://libexpat.github.io/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/7s2kcdbk0n0dpsq9gwkj8dqyw21yfyhp-mpfr-4.2.1.tar.xz",
+      "name": "mpfr",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/mpfr@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/8iqlphbxjpv7lwa1nskc00l6xfl0nic6-libtool-2.4.7",
+      "name": "libtool",
+      "version": "2.4.7",
+      "description": "GNU Libtool, a generic library support script",
+      "licenses": [
+        {
+          "expression": "GPL-2.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/libtool@2.4.7",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/libtool/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/8nvhq3kag7dmpsjp3zl6n9rza2a5wdfk-gmp-6.3.0",
+      "name": "gmp",
+      "version": "6.3.0",
+      "description": "GNU multiple precision arithmetic library",
+      "licenses": [
+        {
+          "expression": "LGPL-3.0-only"
+        },
+        {
+          "expression": "GPL-2.0-only"
+        }
+      ],
+      "purl": "pkg:generic/gmp@6.3.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://gmplib.org/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/8zk99yf1v1gjrrlm62s171vmqsv8jjlp-texinfo-7.0.3",
+      "name": "texinfo",
+      "version": "7.0.3",
+      "description": "The GNU documentation system",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/texinfo@7.0.3",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/texinfo/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/925d6li647rdrjp834ia3isnxq7gw444-python-setup-hook.sh",
+      "name": "python-setup-hook.sh",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/python-setup-hook.sh@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/98hrpcnb9xq9675js8ilr8cpgnfadln1-patch-2.7.6",
+      "name": "patch",
+      "version": "2.7.6",
+      "description": "GNU Patch, a program to apply differences to files",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/patch@2.7.6",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://savannah.gnu.org/projects/patch"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/9cxvxkn4zrcp0rm9mrq1wrqsncagh4kr-gmp-with-cxx-6.3.0",
+      "name": "gmp-with-cxx",
+      "version": "6.3.0",
+      "description": "GNU multiple precision arithmetic library",
+      "licenses": [
+        {
+          "expression": "LGPL-3.0-only"
+        },
+        {
+          "expression": "GPL-2.0-only"
+        }
+      ],
+      "purl": "pkg:generic/gmp-with-cxx@6.3.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://gmplib.org/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/9vafkkic27k7m4934fpawl6yip3a6k4h-bash-5.2-p21",
+      "name": "bash",
+      "version": "5.2",
+      "description": "GNU Bourne-Again Shell, the de facto standard shell on Linux",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/bash@5.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/bash/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/9vapsdndf66l1bfp7210hrd7vs42lvvc-binutils-2.40.tar.bz2",
+      "name": "binutils",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/binutils@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/9vm1ihdg1ysmrjdbb80g834iizzxb4yk-bison-3.8.2.tar.gz",
+      "name": "bison",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bison@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/a01asryprcb7fpjqylbvi8i1cp1wjbdv-nuke-references",
+      "name": "nuke-references",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/nuke-references@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/a2i83vprqrd9nkr116yy1ksrwz5y1vq9-sed-4.9.tar.xz",
+      "name": "sed",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/sed@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/a73wzcks7h2y814qxa1z3kv1hg205mpm-bash52-001",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/ayg5rhjhi9ic73hqw33mjqjxwv59ndym-xgcc-13.2.0-libgcc",
+      "name": "xgcc",
+      "version": "13.2.0",
+      "description": "GNU Compiler Collection, version 13.2.0",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/xgcc@13.2.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://gcc.gnu.org/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/azf9rihy6r20xc0dngl7m4kc2z1z0q1w-libmpc-1.3.1",
+      "name": "libmpc",
+      "version": "1.3.1",
+      "description": "Library for multiprecision complex arithmetic with exact rounding",
+      "licenses": [
+        {
+          "expression": "LGPL-2.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/libmpc@1.3.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.multiprecision.org/mpc/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/b0gi6722kbns0fdpxy0rhlkanvyx58hc-libxcrypt-4.4.36",
       "name": "libxcrypt",
       "version": "4.4.36",
       "description": "Extended crypt library for descrypt, md5crypt, bcrypt, and others",
@@ -66,65 +941,456 @@
     },
     {
       "type": "application",
-      "bom-ref": "/nix/store/4jk7xwmpdb02cnv0w8jknprhxkbr8dyw-libssh2-1.11.0-dev",
-      "name": "libssh2",
-      "version": "1.11.0",
-      "description": "A client-side C library implementing the SSH2 protocol",
+      "bom-ref": "/nix/store/b1blsr9vz8y8fxajgss0yvb899ahwpz9-die-hook",
+      "name": "die-hook",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/die-hook@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/b44vg9nm5f64fihql70jzjj7yd64q0sa-gzip-1.13.tar.xz",
+      "name": "gzip",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/gzip@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/b6zlb9y566rzh0nczhnnw9q9lczws273-bash-5.2-p21-dev",
+      "name": "bash",
+      "version": "5.2",
+      "description": "GNU Bourne-Again Shell, the de facto standard shell on Linux",
       "licenses": [
         {
-          "expression": "BSD-3-Clause"
-        },
-        {
-          "license": {
-            "name": "libssh2 License"
-          }
+          "expression": "GPL-3.0-or-later"
         }
       ],
-      "purl": "pkg:generic/libssh2@1.11.0",
+      "purl": "pkg:generic/bash@5.2",
       "externalReferences": [
         {
           "type": "website",
-          "url": "https://www.libssh2.org"
+          "url": "https://www.gnu.org/software/bash/"
         }
       ],
       "properties": []
     },
     {
       "type": "application",
-      "bom-ref": "/nix/store/75nqgjskxzfzmq99rdl4isbpgkc1gjgf-keyutils-1.6.3-dev",
-      "name": "keyutils",
-      "version": "1.6.3",
-      "description": "Tools used to control the Linux kernel key management system",
+      "bom-ref": "/nix/store/bfb70iaascrajr78mfmr5kzspv0p7i6d-gawk-5.2.2",
+      "name": "gawk",
+      "version": "5.2.2",
+      "description": "GNU implementation of the Awk programming language",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/gawk@5.2.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/gawk/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/c1hg8k7vjy5hxfm39pp30xgiw7qk7xwf-zlib-1.3.tar.gz",
+      "name": "zlib",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/zlib@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/cddj9qpc4l62qjy6vvf7gp50mfqaf506-bash52-014",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/cdhb1yi17m2r0fw8yjsn54j4j7gla6mv-linux-6.6.tar.xz",
+      "name": "linux",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/linux@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/ck70x6hdl1kgqa4a9ps8spw6ph9mfcj8-libtool-2.4.7.tar.gz",
+      "name": "libtool",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/libtool@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/cmfal0ijh83x06zz7wp40c1idd7qv7ay-python3-minimal-3.11.7",
+      "name": "python3-minimal",
+      "version": "3.11.7",
+      "description": "A high-level dynamically-typed programming language",
+      "licenses": [
+        {
+          "expression": "Python-2.0"
+        }
+      ],
+      "purl": "pkg:generic/python3-minimal@3.11.7",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.python.org"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+      "name": "perl",
+      "version": "5.38.2",
+      "description": "The standard implementation of the Perl 5 programming language",
+      "licenses": [
+        {
+          "expression": "Artistic-1.0"
+        }
+      ],
+      "purl": "pkg:generic/perl@5.38.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.perl.org/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/d5qpl3kqrmv99fbw1cd09qj9jr7kb2rr-bash52-019",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/f6q8dgl1mn0aknh6cjyf9pspzncjf10l-autoconf-2.71",
+      "name": "autoconf",
+      "version": "2.71",
+      "description": "Part of the GNU Build System",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/autoconf@2.71",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/autoconf/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/f76sw6av28v3cv6nxmqw190pkpnfnw9b-libxcrypt-4.4.36.tar.xz",
+      "name": "libxcrypt",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/libxcrypt@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/fa3xxlazac50wwlnpwsh6ffwlpnvigar-patchelf-0.15.0",
+      "name": "patchelf",
+      "version": "0.15.0",
+      "description": "A small utility to modify the dynamic linker and RPATH of ELF executables",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/patchelf@0.15.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/NixOS/patchelf"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/fhgq54wng753sikzs5bpflzifmn5qsyr-attr-2.5.1",
+      "name": "attr",
+      "version": "2.5.1",
+      "description": "Library and tools for manipulating extended attributes",
       "licenses": [
         {
           "expression": "GPL-2.0-or-later"
         }
       ],
-      "purl": "pkg:generic/keyutils@1.6.3",
+      "purl": "pkg:generic/attr@2.5.1",
       "externalReferences": [
         {
           "type": "website",
-          "url": "https://people.redhat.com/dhowells/keyutils/"
+          "url": "https://savannah.nongnu.org/projects/attr/"
         }
       ],
       "properties": []
     },
     {
       "type": "application",
-      "bom-ref": "/nix/store/fpm6dfr2f288vgq3fmvfz9lmm7k6xlhq-nghttp2-1.57.0-dev",
-      "name": "nghttp2",
-      "version": "1.57.0",
-      "description": "HTTP/2 C library and tools",
+      "bom-ref": "/nix/store/fhhy01a36lcd0nk2ik381d5shxk7qf55-glibc-locales-2.38-27",
+      "name": "glibc-locales",
+      "version": "2.38",
+      "description": "Locale information for the GNU C Library",
+      "purl": "pkg:generic/glibc-locales@2.38",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/fim96i2pigbmdkkc2rf34f71g9v50i5x-lzip-1.23.tar.gz",
+      "name": "lzip",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/lzip@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/fmli03qqhphbk695kgl3sf2hfh1vc78a-gettext-0.21.1",
+      "name": "gettext",
+      "version": "0.21.1",
+      "description": "Well integrated set of translation tools and documentation",
       "licenses": [
         {
-          "expression": "MIT"
+          "expression": "GPL-2.0-or-later"
         }
       ],
-      "purl": "pkg:generic/nghttp2@1.57.0",
+      "purl": "pkg:generic/gettext@0.21.1",
       "externalReferences": [
         {
           "type": "website",
-          "url": "https://nghttp2.org/"
+          "url": "https://www.gnu.org/software/gettext/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/fp4fd51gpjdw0pxq42fwydyjjw4saw8a-diffutils-3.10",
+      "name": "diffutils",
+      "version": "3.10",
+      "description": "Commands for showing the differences between files (diff, cmp, etc.)",
+      "licenses": [
+        {
+          "expression": "GPL-3.0"
+        }
+      ],
+      "purl": "pkg:generic/diffutils@3.10",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/diffutils/diffutils.html"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/g3pzpdicszf700d5xffyk939jzxa4r2k-autoconf-2.71.tar.xz",
+      "name": "autoconf",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/autoconf@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/gbiffn4mak7bp0izjfkl1n5vqjy1y110-pkg-config-wrapper-0.29.2",
+      "name": "pkg-config-wrapper",
+      "version": "0.29.2",
+      "description": "A tool that allows packages to find out information about other packages (wrapper script)",
+      "licenses": [
+        {
+          "expression": "GPL-2.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/pkg-config-wrapper@0.29.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "http://pkg-config.freedesktop.org/wiki/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/gdzysgylfbzdprqqkvqqmyrn1j4y587k-xz-5.4.5-bin",
+      "name": "xz",
+      "version": "5.4.5",
+      "description": "A general-purpose data compression software, successor of LZMA",
+      "licenses": [
+        {
+          "expression": "GPL-2.0-or-later"
+        },
+        {
+          "expression": "LGPL-2.1-or-later"
+        }
+      ],
+      "purl": "pkg:generic/xz@5.4.5",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tukaani.org/xz/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/gjcj1glfrpx6wanbzjvphm6qqbjzb90d-file-5.45-dev",
+      "name": "file",
+      "version": "5.45",
+      "description": "A program that shows the type of files",
+      "licenses": [
+        {
+          "expression": "BSD-2-Clause"
+        }
+      ],
+      "purl": "pkg:generic/file@5.45",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://darwinsys.com/file"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/gl8g7bvjglm3fawy7nf3bx06rxqyg2yd-xz-5.4.5-dev",
+      "name": "xz",
+      "version": "5.4.5",
+      "description": "A general-purpose data compression software, successor of LZMA",
+      "licenses": [
+        {
+          "expression": "GPL-2.0-or-later"
+        },
+        {
+          "expression": "LGPL-2.1-or-later"
+        }
+      ],
+      "purl": "pkg:generic/xz@5.4.5",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tukaani.org/xz/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/gmaq49vzfrkvr714y4fhfxv100ijihin-automake-1.16.5.tar.xz",
+      "name": "automake",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/automake@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/gnx16vs69p7fggsslnbg6v818497vvxl-bash52-021",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/grll1f1qj7yw6yq42qigkw5fvyjz2rjw-gnumake-4.4.1",
+      "name": "gnumake",
+      "version": "4.4.1",
+      "description": "A tool to control the generation of non-source files from sources",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/gnumake@4.4.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/make/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/gy5cwc2df95rx0gy8iyqf0wgv9kc91y4-bash-5.2-p21-dev",
+      "name": "bash",
+      "version": "5.2",
+      "description": "GNU Bourne-Again Shell, the de facto standard shell on Linux",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/bash@5.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/bash/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/h02zm172d1w692h75cdc022nx3w9icjj-glibc-2.38-27-bin",
+      "name": "glibc",
+      "version": "2.38",
+      "description": "The GNU C Library",
+      "licenses": [
+        {
+          "expression": "LGPL-2.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/glibc@2.38",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/libc/"
         }
       ],
       "properties": []
@@ -151,40 +1417,542 @@
     },
     {
       "type": "application",
-      "bom-ref": "/nix/store/m8w6di2fqgblimidllyfc3fypgysrpgn-openssl-3.0.12-dev",
-      "name": "openssl",
-      "version": "3.0.12",
-      "description": "A cryptographic library that implements the SSL and TLS protocols",
+      "bom-ref": "/nix/store/hl7wxzav5znk5wxfqncdrzpcb3hqy0y0-patch-2.7.6.tar.xz",
+      "name": "patch",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/patch@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/hp60h60jc6n6c0krgmjqi60lqgl7kvij-grep-3.11.tar.xz",
+      "name": "grep",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/grep@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/i3cfzk4l0na9hw27vpx7i6yr58xk71hc-patchelf-0.15.0",
+      "name": "patchelf",
+      "version": "0.15.0",
+      "description": "A small utility to modify the dynamic linker and RPATH of ELF executables",
       "licenses": [
         {
-          "expression": "Apache-2.0"
+          "expression": "GPL-3.0-or-later"
         }
       ],
-      "purl": "pkg:generic/openssl@3.0.12",
+      "purl": "pkg:generic/patchelf@0.15.0",
       "externalReferences": [
         {
           "type": "website",
-          "url": "https://www.openssl.org/"
+          "url": "https://github.com/NixOS/patchelf"
         }
       ],
       "properties": []
     },
     {
       "type": "application",
-      "bom-ref": "/nix/store/ml1nkm5dvlmyp19vlbi4b2cxzky78qfb-libkrb5-1.21.2-dev",
-      "name": "libkrb5",
-      "version": "1.21.2",
-      "description": "MIT Kerberos 5",
+      "bom-ref": "/nix/store/i449xw00j82nwjw4pw4bhjllx441c5qy-gmp-6.3.0-dev",
+      "name": "gmp",
+      "version": "6.3.0",
+      "description": "GNU multiple precision arithmetic library",
+      "licenses": [
+        {
+          "expression": "LGPL-3.0-only"
+        },
+        {
+          "expression": "GPL-2.0-only"
+        }
+      ],
+      "purl": "pkg:generic/gmp@6.3.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://gmplib.org/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/i5siqp4nvqs39jnnal3y17297qmdryix-bash-5.2-p21-dev",
+      "name": "bash",
+      "version": "5.2",
+      "description": "GNU Bourne-Again Shell, the de facto standard shell on Linux",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/bash@5.2",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/bash/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/idlii27m2f92aj2y4pjw86231az1zl86-locales-setup-hook.sh",
+      "name": "locales-setup-hook.sh",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/locales-setup-hook.sh@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/in24890k6ybij0b63jisfmrwmmc6x7pv-bash52-017",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/iwlj49k2lybjlx0vd552f7g3ibkvrz6q-attr-2.5.1-dev",
+      "name": "attr",
+      "version": "2.5.1",
+      "description": "Library and tools for manipulating extended attributes",
+      "licenses": [
+        {
+          "expression": "GPL-2.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/attr@2.5.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://savannah.nongnu.org/projects/attr/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/j70nvvz7pzv21clqapm35f5g64nm6613-automake-1.16.5",
+      "name": "automake",
+      "version": "1.16.5",
+      "description": "GNU standard-compliant makefile generator",
+      "licenses": [
+        {
+          "expression": "GPL-2.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/automake@1.16.5",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/automake/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/j8vipdfzslz4aa7aj0amwd4msxa9hhpl-bash52-009",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/jadk6vcka8fvlqpm602rga0isky043ga-isl-0.20",
+      "name": "isl",
+      "version": "0.20",
+      "description": "A library for manipulating sets and relations of integer points bounded by linear constraints",
+      "licenses": [
+        {
+          "expression": "LGPL-2.1"
+        }
+      ],
+      "purl": "pkg:generic/isl@0.20",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://libisl.sourceforge.io/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/jd7nvwsmkry0hbh6rn9jafpz2pm56ilw-xz-5.4.5-bin",
+      "name": "xz",
+      "version": "5.4.5",
+      "description": "A general-purpose data compression software, successor of LZMA",
+      "licenses": [
+        {
+          "expression": "GPL-2.0-or-later"
+        },
+        {
+          "expression": "LGPL-2.1-or-later"
+        }
+      ],
+      "purl": "pkg:generic/xz@5.4.5",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tukaani.org/xz/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/jn9f2mr2jdm9yn5hi0pws44nbfrah8d3-bash52-008",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/k2pkyqm6rqw7fl78zm3vmys087wavlq1-libunistring-1.1-dev",
+      "name": "libunistring",
+      "version": "1.1",
+      "description": "Unicode string library",
+      "licenses": [
+        {
+          "expression": "LGPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/libunistring@1.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/libunistring/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/khndnv11g1rmzhzymm1s5dw7l2ld45bc-coreutils-9.4",
+      "name": "coreutils",
+      "version": "9.4",
+      "description": "The GNU Core Utilities",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/coreutils@9.4",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/coreutils/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/l5d6bk510mjw5plz2ysnbm7dqlvjdlxr-gnum4-1.4.19",
+      "name": "gnum4",
+      "version": "1.4.19",
+      "description": "GNU M4, a macro processor",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/gnum4@1.4.19",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/m4/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/la8rdnwivnjapn0bmr14pk28qv82d4zb-diffutils-3.10.tar.xz",
+      "name": "diffutils",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/diffutils@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/lflb8b18v6mkczxv95xpd44bf4z8znjf-mpfr-4.2.1",
+      "name": "mpfr",
+      "version": "4.2.1",
+      "description": "Library for multiple-precision floating-point arithmetic",
+      "licenses": [
+        {
+          "expression": "LGPL-2.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/mpfr@4.2.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.mpfr.org/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/ljakxsj6051lv6insc7z351bjxi1yhx9-autoconf-archive-2023.02.20",
+      "name": "autoconf-archive",
+      "version": "2023.02.20",
+      "description": "Archive of autoconf m4 macros",
+      "licenses": [
+        {
+          "expression": "GPL-3.0"
+        }
+      ],
+      "purl": "pkg:generic/autoconf-archive@2023.02.20",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/autoconf-archive/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/lrhdnqjp6rxbwayddmnklhi6gi411135-libxcrypt-4.4.36",
+      "name": "libxcrypt",
+      "version": "4.4.36",
+      "description": "Extended crypt library for descrypt, md5crypt, bcrypt, and others",
+      "licenses": [
+        {
+          "expression": "LGPL-2.1-or-later"
+        }
+      ],
+      "purl": "pkg:generic/libxcrypt@4.4.36",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/besser82/libxcrypt/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/m59xdgkgnjbk8kk6k6vbxmqnf82mk9s0-libidn2-2.3.4",
+      "name": "libidn2",
+      "version": "2.3.4",
+      "description": "Free software implementation of IDNA2008 and TR46",
+      "licenses": [
+        {
+          "expression": "LGPL-3.0-or-later"
+        },
+        {
+          "expression": "GPL-2.0-or-later"
+        },
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/libidn2@2.3.4",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/libidn/#libidn2"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/mcayf992diwks293vs12iwx1ywgm4ijg-m4-1.4.19.tar.bz2",
+      "name": "m4",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/m4@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/mdrv8znlgnysqzq1hnv46vi9jmnsc1bc-mpc-1.3.1.tar.gz",
+      "name": "mpc",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/mpc@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/mmsb0ivm355r4l3yjbpaiirkf673n66v-gnugrep-3.11",
+      "name": "gnugrep",
+      "version": "3.11",
+      "description": "GNU implementation of the Unix grep command",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/gnugrep@3.11",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/grep/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/mp5jcbm1hjqw4ckxvrm7k0pfhhjf3dbg-perl-5.38.2.tar.gz",
+      "name": "perl",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/perl@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/mrps4jkpkcvjkb7ywzkcxzwg2c5c91yv-libffi-3.4.4-dev",
+      "name": "libffi",
+      "version": "3.4.4",
+      "description": "A foreign function call interface library",
       "licenses": [
         {
           "expression": "MIT"
         }
       ],
-      "purl": "pkg:generic/libkrb5@1.21.2",
+      "purl": "pkg:generic/libffi@3.4.4",
       "externalReferences": [
         {
           "type": "website",
-          "url": "http://web.mit.edu/kerberos/"
+          "url": "http://sourceware.org/libffi/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/mrzfvc2gjy2mia0k4vrb95f2iff6xcxm-zlib-1.3",
+      "name": "zlib",
+      "version": "1.3",
+      "description": "Lossless data-compression library",
+      "licenses": [
+        {
+          "expression": "Zlib"
+        }
+      ],
+      "purl": "pkg:generic/zlib@1.3",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://zlib.net"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/mz6mc8s7mrvvzjpl9322agmsq00cyrw5-attr-2.5.1.tar.gz",
+      "name": "attr",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/attr@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/mzrk9gqfnqi9is5ra9ymnif257inlvjx-autoreconf-hook",
+      "name": "autoreconf-hook",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/autoreconf-hook@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/n1djrrflvxnwdd735304l23r2qdnjrm6-gmp-6.3.0.tar.bz2",
+      "name": "gmp",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/gmp@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/n8ay9yxwgl07z3csb5hfp6m80qk3hzyl-pcre2-10.42.tar.bz2",
+      "name": "pcre2",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/pcre2@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/nbsz4b0kdh5a2b9h2cr9ngxskfqx575k-gnused-4.9",
+      "name": "gnused",
+      "version": "4.9",
+      "description": "GNU sed, a batch stream editor",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/gnused@4.9",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/sed/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/nffxsaniz7irz07z79cxwkhz97vgqwrx-bash52-018",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/p3jshbwxiwifm1py0yq544fmdyy98j8a-glibc-2.38-27",
+      "name": "glibc",
+      "version": "2.38",
+      "description": "The GNU C Library",
+      "licenses": [
+        {
+          "expression": "LGPL-2.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/glibc@2.38",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/libc/"
         }
       ],
       "properties": []
@@ -201,40 +1969,396 @@
     },
     {
       "type": "application",
-      "bom-ref": "/nix/store/qy4h1wl3awid78vbbyvnn0div02kjv71-perl-5.38.2",
-      "name": "perl",
-      "version": "5.38.2",
-      "description": "The standard implementation of the Perl 5 programming language",
+      "bom-ref": "/nix/store/pb29f7lahx1j2cp577dvrhgy20nd0xyr-bash-5.2-p21-dev",
+      "name": "bash",
+      "version": "5.2",
+      "description": "GNU Bourne-Again Shell, the de facto standard shell on Linux",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "expression": "GPL-3.0-or-later"
         }
       ],
-      "purl": "pkg:generic/perl@5.38.2",
+      "purl": "pkg:generic/bash@5.2",
       "externalReferences": [
         {
           "type": "website",
-          "url": "https://www.perl.org/"
+          "url": "https://www.gnu.org/software/bash/"
         }
       ],
       "properties": []
     },
     {
       "type": "application",
-      "bom-ref": "/nix/store/sjm6zhcjq1l6ghcal55vmpy48zd0rhm7-perl-5.38.2",
-      "name": "perl",
-      "version": "5.38.2",
-      "description": "The standard implementation of the Perl 5 programming language",
+      "bom-ref": "/nix/store/pcdlxsb3mxfjnclg8rn8xy2ywbb5ra36-bash52-020",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/pgxpq0lmk4bd0yybaxkb82qlcjx55apn-libffi-3.4.4.tar.gz",
+      "name": "libffi",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/libffi@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/pjp935kxwai47zyx1wpwadls00m9nmib-bash52-015",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/pq4bmqcrz01fmb601qkmfk49454dv5m9-autoconf-archive-2023.02.20.tar.xz",
+      "name": "autoconf-archive",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/autoconf-archive@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/pyv061hd2f7zn947kcm4n5bdlmvygddb-bzip2-1.0.8-dev",
+      "name": "bzip2",
+      "version": "1.0.8",
+      "description": "High-quality data compression program",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "expression": "BSD-4-Clause"
         }
       ],
-      "purl": "pkg:generic/perl@5.38.2",
+      "purl": "pkg:generic/bzip2@1.0.8",
       "externalReferences": [
         {
           "type": "website",
-          "url": "https://www.perl.org/"
+          "url": "https://www.sourceware.org/bzip2"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/q9ccnr97sv21jlmzxqsra5jyp71s51dl-texinfo-7.0.3.tar.xz",
+      "name": "texinfo",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/texinfo@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/qx3m44slznqqwd7ih8fjl78wc5ka7mlh-ed-1.19.tar.lz",
+      "name": "ed",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/ed@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/r8c9n9n8mpk9d2i0m34djyiilbg5ly1d-xz-5.4.5",
+      "name": "xz",
+      "version": "5.4.5",
+      "description": "A general-purpose data compression software, successor of LZMA",
+      "licenses": [
+        {
+          "expression": "GPL-2.0-or-later"
+        },
+        {
+          "expression": "LGPL-2.1-or-later"
+        }
+      ],
+      "purl": "pkg:generic/xz@5.4.5",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tukaani.org/xz/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/r990yl8mna5rzdbj5af3zzjjg3qfg7wy-update-autotools-gnu-config-scripts-hook",
+      "name": "update-autotools-gnu-config-scripts-hook",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/update-autotools-gnu-config-scripts-hook@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/r9ncz1y356780yaddaz1z888ayyvh4aa-pcre2-10.42",
+      "name": "pcre2",
+      "version": "10.42",
+      "description": "Perl Compatible Regular Expressions",
+      "licenses": [
+        {
+          "expression": "BSD-3-Clause"
+        }
+      ],
+      "purl": "pkg:generic/pcre2@10.42",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.pcre.org/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/rcqpvazw3b5dbzmmrqacd28snmhp21y5-zlib-1.3-dev",
+      "name": "zlib",
+      "version": "1.3",
+      "description": "Lossless data-compression library",
+      "licenses": [
+        {
+          "expression": "Zlib"
+        }
+      ],
+      "purl": "pkg:generic/zlib@1.3",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://zlib.net"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/rlkmf7im541j4a81n0h8ph1sfl9fq51p-autoconf-archive-2023.02.20",
+      "name": "autoconf-archive",
+      "version": "2023.02.20",
+      "description": "Archive of autoconf m4 macros",
+      "licenses": [
+        {
+          "expression": "GPL-3.0"
+        }
+      ],
+      "purl": "pkg:generic/autoconf-archive@2023.02.20",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/autoconf-archive/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/rmjsgxd4w10wrnnwrrrry2sz5cfpwafq-coreutils-9.4.tar.xz",
+      "name": "coreutils",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/coreutils@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/rs1qdpy1nb3x07g4vqvb4s774qhq9f0w-bash52-007",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/s2094dggqjwpd54c08hvkwlv2wszdr5x-gcc-13.2.0",
+      "name": "gcc",
+      "version": "13.2.0",
+      "description": "GNU Compiler Collection, version 13.2.0",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/gcc@13.2.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://gcc.gnu.org/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/s3vbd8fym3hlfkzyqgx5nb8fcjf4b7jv-libxcrypt-4.4.36",
+      "name": "libxcrypt",
+      "version": "4.4.36",
+      "description": "Extended crypt library for descrypt, md5crypt, bcrypt, and others",
+      "licenses": [
+        {
+          "expression": "LGPL-2.1-or-later"
+        }
+      ],
+      "purl": "pkg:generic/libxcrypt@4.4.36",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/besser82/libxcrypt/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/sim601rd1y3hsap9qkn25cwprsa9aipp-bash52-011",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/sjsxwdwpb4wkj2i7agmc45s5lsw91lpn-glibc-iconv-2.38",
+      "name": "glibc-iconv",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/glibc-iconv@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/slpdqm3wlhwbkzyijjz3xpifa219ac0x-bzip2-1.0.8.tar.gz",
+      "name": "bzip2",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bzip2@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/sm9jbfbn02wnjhh2pmmgpvzwifaphri0-lzip-1.23",
+      "name": "lzip",
+      "version": "1.23",
+      "description": "A lossless data compressor based on the LZMA algorithm",
+      "licenses": [
+        {
+          "expression": "GPL-2.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/lzip@1.23",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.nongnu.org/lzip/lzip.html"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/sxc8xmi7caxaiywzh15za9crpk3bw98z-bash52-003",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/szh64sr0c103vzpi4k8p4n0diqfk8y8j-xz-5.4.5-dev",
+      "name": "xz",
+      "version": "5.4.5",
+      "description": "A general-purpose data compression software, successor of LZMA",
+      "licenses": [
+        {
+          "expression": "GPL-2.0-or-later"
+        },
+        {
+          "expression": "LGPL-2.1-or-later"
+        }
+      ],
+      "purl": "pkg:generic/xz@5.4.5",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tukaani.org/xz/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/v05wnq295i4bvdg75kpycg0rds8qrrv4-binutils-patchelfed-ld-wrapper-2.40",
+      "name": "binutils-patchelfed-ld-wrapper",
+      "version": "2.40",
+      "description": "System binary utilities (wrapper script)",
+      "purl": "pkg:generic/binutils-patchelfed-ld-wrapper@2.40",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/v0m59igyinq3qrbx7fibyal1dx5f6rcq-file-5.45.tar.gz",
+      "name": "file",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/file@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/v28dv6l0qk3j382kp40bksa1v6h7dx9p-bash-5.2.tar.gz",
+      "name": "bash",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/v4h5dh6vwgvnn2x8jyqs33x00krrcjd4-python-setup-hook.sh",
+      "name": "python-setup-hook.sh",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/python-setup-hook.sh@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/v4iwfrkmz890153smi70h3wi6791xlgk-python3-minimal-3.11.7",
+      "name": "python3-minimal",
+      "version": "3.11.7",
+      "description": "A high-level dynamically-typed programming language",
+      "licenses": [
+        {
+          "expression": "Python-2.0"
+        }
+      ],
+      "purl": "pkg:generic/python3-minimal@3.11.7",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.python.org"
         }
       ],
       "properties": []
@@ -251,7 +2375,77 @@
     },
     {
       "type": "application",
-      "bom-ref": "/nix/store/v6n306xw0v850dn01s9fdd0qjwh2j082-pkg-config-wrapper-0.29.2",
+      "bom-ref": "/nix/store/v9wihazrrvl4rpmsyll0y492x1zx9yw0-ed-1.19",
+      "name": "ed",
+      "version": "1.19",
+      "description": "The GNU implementation of the standard Unix editor",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/ed@1.19",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/ed/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/vijsp4ywmsvr6jk5ypbb8hszayn7bwdd-tar-1.35.tar.xz",
+      "name": "tar",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/tar@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/vp4896rkv185vzcda28y4f4k0l0ssilf-libidn2-2.3.4.tar.gz",
+      "name": "libidn2",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/libidn2@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/vp9wdfs479wcscgc0wm11lbqhp9j69r7-acl-2.3.1",
+      "name": "acl",
+      "version": "2.3.1",
+      "description": "Library and tools for manipulating access control lists",
+      "licenses": [
+        {
+          "expression": "GPL-2.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/acl@2.3.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://savannah.nongnu.org/projects/acl"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/wcpqrbsljh2x04qccs6jv9z8c9y1c3cd-bash52-013",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/wdcg9k844sc4xq1d44qbvjx8ksj7k0ni-pkg-config-wrapper-0.29.2",
       "name": "pkg-config-wrapper",
       "version": "0.29.2",
       "description": "A tool that allows packages to find out information about other packages (wrapper script)",
@@ -271,6 +2465,284 @@
     },
     {
       "type": "application",
+      "bom-ref": "/nix/store/ws73d521m0im6x7nhb0836i51z2yd9dq-bzip2-1.0.6.2-autoconfiscated.patch",
+      "name": "bzip2",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bzip2@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/x0qzqwrgbcvf95k27agndhn2xidzrxv4-isl-0.20",
+      "name": "isl",
+      "version": "0.20",
+      "description": "A library for manipulating sets and relations of integer points bounded by linear constraints",
+      "licenses": [
+        {
+          "expression": "LGPL-2.1"
+        }
+      ],
+      "purl": "pkg:generic/isl@0.20",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://libisl.sourceforge.io/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/x1sqwqn02c5mnpi8hbqlxpbm3rahq5dm-bash52-012",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/x638x4d2m96yb0izivf3s6b285dycab5-patchelf-0.15.0",
+      "name": "patchelf",
+      "version": "0.15.0",
+      "description": "A small utility to modify the dynamic linker and RPATH of ELF executables",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/patchelf@0.15.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/NixOS/patchelf"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/x6lnzglgc0cvi3niwq604n71lkm3yifd-linux-headers-6.6",
+      "name": "linux-headers",
+      "version": "6.6",
+      "description": "Header files and scripts for Linux kernel",
+      "licenses": [
+        {
+          "expression": "GPL-2.0"
+        }
+      ],
+      "purl": "pkg:generic/linux-headers@6.6",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/x97sygqdz3avzxh98m0z76nfy31zadcr-expand-response-params",
+      "name": "expand-response-params",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/expand-response-params@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/x9v0hmr76dm68pijzldzxks01iqzag1z-isl-0.20.tar.xz",
+      "name": "isl",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/isl@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/xc3h9isl5566i6a4pvdsgin26rchijrq-bash52-002",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/xdqs45iclhp9dz8zz9pvn5zivjbhid1a-binutils-2.40",
+      "name": "binutils",
+      "version": "2.40",
+      "description": "Tools for manipulating binaries (linker, assembler, etc.)",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/binutils@2.40",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/binutils/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/xnlr80fc679ilzq8y9fqia3pwmfq5cdk-libmpc-1.3.1",
+      "name": "libmpc",
+      "version": "1.3.1",
+      "description": "Library for multiprecision complex arithmetic with exact rounding",
+      "licenses": [
+        {
+          "expression": "LGPL-2.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/libmpc@1.3.1",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.multiprecision.org/mpc/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/xq8920m5mbd83vdlydwli7qsh67gfm5v-gcc-wrapper-13.2.0",
+      "name": "gcc-wrapper",
+      "version": "13.2.0",
+      "description": "GNU Compiler Collection, version 13.2.0 (wrapper script)",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/gcc-wrapper@13.2.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://gcc.gnu.org/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/xv1anrhbamg1bj0jwy96q3zjvcdj3wz6-zlib-1.3-dev",
+      "name": "zlib",
+      "version": "1.3",
+      "description": "Lossless data-compression library",
+      "licenses": [
+        {
+          "expression": "Zlib"
+        }
+      ],
+      "purl": "pkg:generic/zlib@1.3",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://zlib.net"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/y2h7bqjpc4q9g887w8pbwncjrmr4g9sx-gettext-0.21.1.tar.gz",
+      "name": "gettext",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/gettext@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/y3yiminrckvhf35fh9q42vjwi0npznji-acl-2.3.1.tar.gz",
+      "name": "acl",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/acl@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/y954pl28vm03qfhvqrgyspwwv28b5lyi-findutils-4.9.0.tar.xz",
+      "name": "findutils",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/findutils@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/ya47qdk3gvxhb54za3sd0jbcq7dqqqgb-bzip2-1.0.8",
+      "name": "bzip2",
+      "version": "1.0.8",
+      "description": "High-quality data compression program",
+      "licenses": [
+        {
+          "expression": "BSD-4-Clause"
+        }
+      ],
+      "purl": "pkg:generic/bzip2@1.0.8",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.sourceware.org/bzip2"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/yccn06k57v9p3xaa5h291814yyrlllp2-pcre2-10.42-dev",
+      "name": "pcre2",
+      "version": "10.42",
+      "description": "Perl Compatible Regular Expressions",
+      "licenses": [
+        {
+          "expression": "BSD-3-Clause"
+        }
+      ],
+      "purl": "pkg:generic/pcre2@10.42",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.pcre.org/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/yg41slh4c4v14jq8c3129cxszwsb86lz-gmp-6.3.0-dev",
+      "name": "gmp",
+      "version": "6.3.0",
+      "description": "GNU multiple precision arithmetic library",
+      "licenses": [
+        {
+          "expression": "LGPL-3.0-only"
+        },
+        {
+          "expression": "GPL-2.0-only"
+        }
+      ],
+      "purl": "pkg:generic/gmp@6.3.0",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://gmplib.org/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
       "bom-ref": "/nix/store/ylriv849va759pz6sf9j06v9mwmh91w1-hello-2.12.1",
       "name": "hello",
       "version": "2.12.1",
@@ -281,121 +2753,1598 @@
     },
     {
       "type": "application",
-      "bom-ref": "/nix/store/ypwhx9x3k8is4qmq1sgbzaggm5lcylhk-curl-8.4.0-dev",
-      "name": "curl",
-      "version": "8.4.0",
-      "description": "A command line tool for transferring files with URL syntax",
+      "bom-ref": "/nix/store/z0dk90vlwlhm097kka2632wmnjr0izw2-expat-2.5.0.tar.xz",
+      "name": "expat",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/expat@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/z241pijngvxkrxc4wywmiri93gi0bvw6-file-5.45-dev",
+      "name": "file",
+      "version": "5.45",
+      "description": "A program that shows the type of files",
       "licenses": [
         {
-          "expression": "curl"
+          "expression": "BSD-2-Clause"
         }
       ],
-      "purl": "pkg:generic/curl@8.4.0",
+      "purl": "pkg:generic/file@5.45",
       "externalReferences": [
         {
           "type": "website",
-          "url": "https://curl.se/"
+          "url": "https://darwinsys.com/file"
         }
       ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/z2rfzr91cf3n0bysv5jjp8v4jb441wgs-automake-1.16.5",
+      "name": "automake",
+      "version": "1.16.5",
+      "description": "GNU standard-compliant makefile generator",
+      "licenses": [
+        {
+          "expression": "GPL-2.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/automake@1.16.5",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/automake/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/z76vsdh69cvwkwhwg69k7d1znwjmx6hf-bash52-005",
+      "name": "bash52",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/bash52@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/z9fdf582flwcri4ds9fxknyi27w6vi1i-gcc-13.2.0.tar.xz",
+      "name": "gcc",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/gcc@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/zbzbcqjsfv9d6svzl7rcvjdijkdsqib2-gzip-1.13",
+      "name": "gzip",
+      "version": "1.13",
+      "description": "GNU zip compression program",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/gzip@1.13",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/gzip/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/zjqp1amhxdxcsrhjsaxy12xqfh0h56hc-binutils-2.40-lib",
+      "name": "binutils",
+      "version": "2.40",
+      "description": "Tools for manipulating binaries (linker, assembler, etc.)",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "purl": "pkg:generic/binutils@2.40",
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.gnu.org/software/binutils/"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/zkas816mjrr8ijdj29qs4wqyn38l4j12-libunistring-1.1.tar.gz",
+      "name": "libunistring",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/libunistring@",
+      "externalReferences": [],
+      "properties": []
+    },
+    {
+      "type": "application",
+      "bom-ref": "/nix/store/zy2j48wj6a9qwiz46q6cayh1zwcc9fi8-nuke-references",
+      "name": "nuke-references",
+      "version": "",
+      "description": "",
+      "purl": "pkg:generic/nuke-references@",
+      "externalReferences": [],
       "properties": []
     }
   ],
   "dependencies": [
     {
+      "ref": "/nix/store/03ci2vyb84m1g78938aanfbcyz5i8p21-libtool-2.4.7",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/ck70x6hdl1kgqa4a9ps8spw6ph9mfcj8-libtool-2.4.7.tar.gz",
+        "/nix/store/l5d6bk510mjw5plz2ysnbm7dqlvjdlxr-gnum4-1.4.19",
+        "/nix/store/z241pijngvxkrxc4wywmiri93gi0bvw6-file-5.45-dev"
+      ]
+    },
+    {
+      "ref": "/nix/store/05d0yccrkp8pl5c6my29cxzzqb7a9az8-glibc-2.38.tar.xz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/05zbwhz8a7i2v79r9j21pl6m6cj0xi8k-libunistring-1.1",
+      "dependsOn": [
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux",
+        "/nix/store/zkas816mjrr8ijdj29qs4wqyn38l4j12-libunistring-1.1.tar.gz"
+      ]
+    },
+    {
+      "ref": "/nix/store/0avnvyc7pkcr4pjqws7hwpy87m6wlnjc-make-4.4.1.tar.gz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/0cr4hvmwbfablyhn58ba0lrfb44igq5y-bash52-016",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/0f884mc30cmyy0yvjmsnqhq2q6q8ddpb-gmp-with-cxx-6.3.0-dev",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/l5d6bk510mjw5plz2ysnbm7dqlvjdlxr-gnum4-1.4.19",
+        "/nix/store/n1djrrflvxnwdd735304l23r2qdnjrm6-gmp-6.3.0.tar.bz2",
+        "/nix/store/n8wkmy6wxr14mp59kbbiypvcw3yaywxi-bootstrap-stage4-gcc-wrapper-13.2.0"
+      ]
+    },
+    {
+      "ref": "/nix/store/0ngb7bv2lxv826z8qgl497zj6zzr0jlp-expat-2.5.0-dev",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/z0dk90vlwlhm097kka2632wmnjr0izw2-expat-2.5.0.tar.xz"
+      ]
+    },
+    {
+      "ref": "/nix/store/0p42wcqvmjffgr3a5x4amxl451dxn5xg-acl-2.3.1-dev",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/fmli03qqhphbk695kgl3sf2hfh1vc78a-gettext-0.21.1",
+        "/nix/store/iwlj49k2lybjlx0vd552f7g3ibkvrz6q-attr-2.5.1-dev",
+        "/nix/store/y3yiminrckvhf35fh9q42vjwi0npznji-acl-2.3.1.tar.gz"
+      ]
+    },
+    {
+      "ref": "/nix/store/1dydp86d00qzjbncpi80sdsndf33lc5j-fix-static.patch",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/1fw5fcsjz9wcbf13a5xs4i2cjfircp3x-bash52-006",
+      "dependsOn": []
+    },
+    {
       "ref": "/nix/store/1hjv10489fm00lckiicwsv3nlcm07njy-zlib-1.3-dev",
-      "dependsOn": []
-    },
-    {
-      "ref": "/nix/store/26v33fxjpdn5wd06jqqjc8qbl3sc3sqp-die-hook",
-      "dependsOn": []
-    },
-    {
-      "ref": "/nix/store/2kq5jql90fn5y2pd6c9vnjqffmf9ndjm-make-shell-wrapper-hook",
       "dependsOn": [
-        "/nix/store/26v33fxjpdn5wd06jqqjc8qbl3sc3sqp-die-hook"
+        "/nix/store/4i9n25r0qfrd7sq429p032x5pzwap5a9-bootstrap-stage3-stdenv-linux",
+        "/nix/store/c1hg8k7vjy5hxfm39pp30xgiw7qk7xwf-zlib-1.3.tar.gz"
       ]
     },
     {
-      "ref": "/nix/store/3wvj2nbynari4iirc4yx3mhf26hbjr9s-libxcrypt-4.4.36",
+      "ref": "/nix/store/20rsi77ny2i4i1rbd63h4392a245j5dz-gnutar-1.35",
       "dependsOn": [
-        "/nix/store/qy4h1wl3awid78vbbyvnn0div02kjv71-perl-5.38.2"
+        "/nix/store/0p42wcqvmjffgr3a5x4amxl451dxn5xg-acl-2.3.1-dev",
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/vijsp4ywmsvr6jk5ypbb8hszayn7bwdd-tar-1.35.tar.xz"
       ]
     },
     {
-      "ref": "/nix/store/4jk7xwmpdb02cnv0w8jknprhxkbr8dyw-libssh2-1.11.0-dev",
+      "ref": "/nix/store/24ygbbc9k6vjc4vhz2j6a9dkdgmqgc6n-bash52-010",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/2cvpxhj5gifb9g8hd0w6zbnnqmhl86vk-binutils-wrapper-2.40",
       "dependsOn": [
+        "/nix/store/68qbq5jzwljpl0w6i1qj2l66k129l0ii-glibc-2.38-27-dev",
+        "/nix/store/8v1frkj1fylm7isn4jv3yvaa76ja9sqb-bootstrap-stage4-stdenv-linux",
+        "/nix/store/h02zm172d1w692h75cdc022nx3w9icjj-glibc-2.38-27-bin",
+        "/nix/store/khndnv11g1rmzhzymm1s5dw7l2ld45bc-coreutils-9.4",
+        "/nix/store/mmsb0ivm355r4l3yjbpaiirkf673n66v-gnugrep-3.11",
+        "/nix/store/p3jshbwxiwifm1py0yq544fmdyy98j8a-glibc-2.38-27",
+        "/nix/store/xdqs45iclhp9dz8zz9pvn5zivjbhid1a-binutils-2.40"
+      ]
+    },
+    {
+      "ref": "/nix/store/2cxa62ycswpswvysa0nzanmh0qm79ikn-xz-5.4.5.tar.bz2",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/2ds3kha8b07phggryjzqad36q6gzgb23-gawk-5.2.2.tar.xz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/2y4k5a99vfmsw51069fp7ab4hlvbs1ry-gnu-config-2023-09-19",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/2ynclzrdl0hy9miy6k8gcwgzw4mhsmd0-bash52-004",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/31559p1w94y01g37dfix30hihc8ppcif-mpfr-4.2.1-dev",
+      "dependsOn": [
+        "/nix/store/7prd7fc1z38f286fxalsr8s9mjl6i1ck-bootstrap-stage-xgcc-stdenv-linux",
+        "/nix/store/7s2kcdbk0n0dpsq9gwkj8dqyw21yfyhp-mpfr-4.2.1.tar.xz",
+        "/nix/store/yg41slh4c4v14jq8c3129cxszwsb86lz-gmp-6.3.0-dev"
+      ]
+    },
+    {
+      "ref": "/nix/store/349f140sh7m12vy9mp1wkp58axyp06c9-which-2.21.tar.gz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/3dimjffv8pn3sk48ngd4adz17agpfb4y-gcc-13.2.0-libgcc",
+      "dependsOn": [
+        "/nix/store/0aj573ndahyrg65182b8p62hdlhjg602-bootstrap-stage3-gcc-wrapper-13.2.0",
         "/nix/store/1hjv10489fm00lckiicwsv3nlcm07njy-zlib-1.3-dev",
-        "/nix/store/m8w6di2fqgblimidllyfc3fypgysrpgn-openssl-3.0.12-dev"
+        "/nix/store/4i9n25r0qfrd7sq429p032x5pzwap5a9-bootstrap-stage3-stdenv-linux",
+        "/nix/store/4vnyjjixvxvafpln9cyfs5j8qzf93rpp-mpfr-4.2.1-dev",
+        "/nix/store/68qbq5jzwljpl0w6i1qj2l66k129l0ii-glibc-2.38-27-dev",
+        "/nix/store/6x5hikvl4rn94zzb53khakj4f85yj4nm-which-2.21",
+        "/nix/store/7cwxm8iwp8iji6nwf2k7y99nfzqm92xp-texinfo-7.0.3",
+        "/nix/store/azf9rihy6r20xc0dngl7m4kc2z1z0q1w-libmpc-1.3.1",
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/fmli03qqhphbk695kgl3sf2hfh1vc78a-gettext-0.21.1",
+        "/nix/store/i3cfzk4l0na9hw27vpx7i6yr58xk71hc-patchelf-0.15.0",
+        "/nix/store/i449xw00j82nwjw4pw4bhjllx441c5qy-gmp-6.3.0-dev",
+        "/nix/store/jadk6vcka8fvlqpm602rga0isky043ga-isl-0.20",
+        "/nix/store/lrhdnqjp6rxbwayddmnklhi6gi411135-libxcrypt-4.4.36",
+        "/nix/store/v05wnq295i4bvdg75kpycg0rds8qrrv4-binutils-patchelfed-ld-wrapper-2.40",
+        "/nix/store/z9fdf582flwcri4ds9fxknyi27w6vi1i-gcc-13.2.0.tar.xz"
       ]
     },
     {
-      "ref": "/nix/store/75nqgjskxzfzmq99rdl4isbpgkc1gjgf-keyutils-1.6.3-dev",
+      "ref": "/nix/store/3drj15y67xgwz9fld37l04bv705448g0-autoreconf-hook",
+      "dependsOn": [
+        "/nix/store/8iqlphbxjpv7lwa1nskc00l6xfl0nic6-libtool-2.4.7",
+        "/nix/store/f6q8dgl1mn0aknh6cjyf9pspzncjf10l-autoconf-2.71",
+        "/nix/store/fmli03qqhphbk695kgl3sf2hfh1vc78a-gettext-0.21.1",
+        "/nix/store/x5grhyr31b63zh1qwwj76w4xssmixpcz-bootstrap-stage2-stdenv-linux",
+        "/nix/store/z2rfzr91cf3n0bysv5jjp8v4jb441wgs-automake-1.16.5"
+      ]
+    },
+    {
+      "ref": "/nix/store/3i90ns2cvw81zkp1g76grgn1g4zbnj6n-bzip2-1.0.8-bin",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/mzrk9gqfnqi9is5ra9ymnif257inlvjx-autoreconf-hook",
+        "/nix/store/slpdqm3wlhwbkzyijjz3xpifa219ac0x-bzip2-1.0.8.tar.gz",
+        "/nix/store/ws73d521m0im6x7nhb0836i51z2yd9dq-bzip2-1.0.6.2-autoconfiscated.patch"
+      ]
+    },
+    {
+      "ref": "/nix/store/3vkcrwqal8sbvdc1gdi3pcwbqiszv38x-bzip2-1.0.8-dev",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/mzrk9gqfnqi9is5ra9ymnif257inlvjx-autoreconf-hook",
+        "/nix/store/slpdqm3wlhwbkzyijjz3xpifa219ac0x-bzip2-1.0.8.tar.gz",
+        "/nix/store/ws73d521m0im6x7nhb0836i51z2yd9dq-bzip2-1.0.6.2-autoconfiscated.patch"
+      ]
+    },
+    {
+      "ref": "/nix/store/43aky07zr5ahpy63faz3pcamzjk8ishn-make-shell-wrapper-hook",
+      "dependsOn": [
+        "/nix/store/8v1frkj1fylm7isn4jv3yvaa76ja9sqb-bootstrap-stage4-stdenv-linux",
+        "/nix/store/b1blsr9vz8y8fxajgss0yvb899ahwpz9-die-hook"
+      ]
+    },
+    {
+      "ref": "/nix/store/43f3a13z1256s37825a6am9y21lysg2a-file-5.45",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/1hjv10489fm00lckiicwsv3nlcm07njy-zlib-1.3-dev",
+        "/nix/store/v0m59igyinq3qrbx7fibyal1dx5f6rcq-file-5.45.tar.gz"
+      ]
+    },
+    {
+      "ref": "/nix/store/447hvnlzzi9myri1iq3bijxgx6v6b592-patchelf-0.15.0.tar.bz2",
       "dependsOn": []
     },
     {
-      "ref": "/nix/store/fpm6dfr2f288vgq3fmvfz9lmm7k6xlhq-nghttp2-1.57.0-dev",
+      "ref": "/nix/store/4vnyjjixvxvafpln9cyfs5j8qzf93rpp-mpfr-4.2.1-dev",
       "dependsOn": [
-        "/nix/store/v6n306xw0v850dn01s9fdd0qjwh2j082-pkg-config-wrapper-0.29.2"
+        "/nix/store/4i9n25r0qfrd7sq429p032x5pzwap5a9-bootstrap-stage3-stdenv-linux",
+        "/nix/store/7s2kcdbk0n0dpsq9gwkj8dqyw21yfyhp-mpfr-4.2.1.tar.xz",
+        "/nix/store/i449xw00j82nwjw4pw4bhjllx441c5qy-gmp-6.3.0-dev"
+      ]
+    },
+    {
+      "ref": "/nix/store/4ysl1256cdc7wh1jlrgvkyik57ss6644-binutils-patchelfed-ld-2.40",
+      "dependsOn": [
+        "/nix/store/x5grhyr31b63zh1qwwj76w4xssmixpcz-bootstrap-stage2-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/4zp05qkzh9s3c3k7pp9d36vhiz3x8h9l-gcc-13.2.0-lib",
+      "dependsOn": [
+        "/nix/store/0aj573ndahyrg65182b8p62hdlhjg602-bootstrap-stage3-gcc-wrapper-13.2.0",
+        "/nix/store/1hjv10489fm00lckiicwsv3nlcm07njy-zlib-1.3-dev",
+        "/nix/store/4i9n25r0qfrd7sq429p032x5pzwap5a9-bootstrap-stage3-stdenv-linux",
+        "/nix/store/4vnyjjixvxvafpln9cyfs5j8qzf93rpp-mpfr-4.2.1-dev",
+        "/nix/store/68qbq5jzwljpl0w6i1qj2l66k129l0ii-glibc-2.38-27-dev",
+        "/nix/store/6x5hikvl4rn94zzb53khakj4f85yj4nm-which-2.21",
+        "/nix/store/7cwxm8iwp8iji6nwf2k7y99nfzqm92xp-texinfo-7.0.3",
+        "/nix/store/azf9rihy6r20xc0dngl7m4kc2z1z0q1w-libmpc-1.3.1",
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/fmli03qqhphbk695kgl3sf2hfh1vc78a-gettext-0.21.1",
+        "/nix/store/i3cfzk4l0na9hw27vpx7i6yr58xk71hc-patchelf-0.15.0",
+        "/nix/store/i449xw00j82nwjw4pw4bhjllx441c5qy-gmp-6.3.0-dev",
+        "/nix/store/jadk6vcka8fvlqpm602rga0isky043ga-isl-0.20",
+        "/nix/store/lrhdnqjp6rxbwayddmnklhi6gi411135-libxcrypt-4.4.36",
+        "/nix/store/v05wnq295i4bvdg75kpycg0rds8qrrv4-binutils-patchelfed-ld-wrapper-2.40",
+        "/nix/store/z9fdf582flwcri4ds9fxknyi27w6vi1i-gcc-13.2.0.tar.xz"
+      ]
+    },
+    {
+      "ref": "/nix/store/5l40jr1linl0zv9j3zscii9pnc7pcc96-Python-3.11.7.tar.xz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/5rml950ggcn5g8564x7hg2a9mayd08mr-libffi-3.4.4-dev",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/pgxpq0lmk4bd0yybaxkb82qlcjx55apn-libffi-3.4.4.tar.gz"
+      ]
+    },
+    {
+      "ref": "/nix/store/6782cjv2br9yb4nqvbdrcqsmm0dxjag0-autoconf-2.71",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/7cwxm8iwp8iji6nwf2k7y99nfzqm92xp-texinfo-7.0.3",
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/g3pzpdicszf700d5xffyk939jzxa4r2k-autoconf-2.71.tar.xz",
+        "/nix/store/l5d6bk510mjw5plz2ysnbm7dqlvjdlxr-gnum4-1.4.19"
+      ]
+    },
+    {
+      "ref": "/nix/store/68qbq5jzwljpl0w6i1qj2l66k129l0ii-glibc-2.38-27-dev",
+      "dependsOn": [
+        "/nix/store/05d0yccrkp8pl5c6my29cxzzqb7a9az8-glibc-2.38.tar.xz",
+        "/nix/store/7c07n1bg5xid6w0ffd0warfxpzjjdzzw-bison-3.8.2",
+        "/nix/store/as96pzg4r9g2yan52hcq5g8gzjxgdp94-bootstrap-stage2-gcc-wrapper-13.2.0",
+        "/nix/store/cmfal0ijh83x06zz7wp40c1idd7qv7ay-python3-minimal-3.11.7",
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux",
+        "/nix/store/x6lnzglgc0cvi3niwq604n71lkm3yifd-linux-headers-6.6"
+      ]
+    },
+    {
+      "ref": "/nix/store/6l89qmngnn0bb652g6mis0qzlcfmn3kf-xz-5.4.5-bin",
+      "dependsOn": [
+        "/nix/store/2cxa62ycswpswvysa0nzanmh0qm79ikn-xz-5.4.5.tar.bz2",
+        "/nix/store/2nrimc34ymqp6ssdgsasbfag8f659f6m-bootstrap-stage1-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/6x5hikvl4rn94zzb53khakj4f85yj4nm-which-2.21",
+      "dependsOn": [
+        "/nix/store/349f140sh7m12vy9mp1wkp58axyp06c9-which-2.21.tar.gz",
+        "/nix/store/7prd7fc1z38f286fxalsr8s9mjl6i1ck-bootstrap-stage-xgcc-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/73l28p4a9iy51wwg5wg6xgd81mds5a9n-xz-5.4.5-dev",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/2cxa62ycswpswvysa0nzanmh0qm79ikn-xz-5.4.5.tar.bz2"
+      ]
+    },
+    {
+      "ref": "/nix/store/7c07n1bg5xid6w0ffd0warfxpzjjdzzw-bison-3.8.2",
+      "dependsOn": [
+        "/nix/store/2nrimc34ymqp6ssdgsasbfag8f659f6m-bootstrap-stage1-stdenv-linux",
+        "/nix/store/9vm1ihdg1ysmrjdbb80g834iizzxb4yk-bison-3.8.2.tar.gz",
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/l5d6bk510mjw5plz2ysnbm7dqlvjdlxr-gnum4-1.4.19"
+      ]
+    },
+    {
+      "ref": "/nix/store/7cwxm8iwp8iji6nwf2k7y99nfzqm92xp-texinfo-7.0.3",
+      "dependsOn": [
+        "/nix/store/0aj573ndahyrg65182b8p62hdlhjg602-bootstrap-stage3-gcc-wrapper-13.2.0",
+        "/nix/store/4i9n25r0qfrd7sq429p032x5pzwap5a9-bootstrap-stage3-stdenv-linux",
+        "/nix/store/b6zlb9y566rzh0nczhnnw9q9lczws273-bash-5.2-p21-dev",
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/gdzysgylfbzdprqqkvqqmyrn1j4y587k-xz-5.4.5-bin",
+        "/nix/store/q9ccnr97sv21jlmzxqsra5jyp71s51dl-texinfo-7.0.3.tar.xz"
+      ]
+    },
+    {
+      "ref": "/nix/store/7iyzsc224ax9dm71fv4grndixylcn7kh-findutils-4.9.0",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/khndnv11g1rmzhzymm1s5dw7l2ld45bc-coreutils-9.4",
+        "/nix/store/y954pl28vm03qfhvqrgyspwwv28b5lyi-findutils-4.9.0.tar.xz"
+      ]
+    },
+    {
+      "ref": "/nix/store/7l2bwydsqmkf6r5mh9cyi9d44b6nw2qz-expat-2.5.0-dev",
+      "dependsOn": [
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux",
+        "/nix/store/z0dk90vlwlhm097kka2632wmnjr0izw2-expat-2.5.0.tar.xz"
+      ]
+    },
+    {
+      "ref": "/nix/store/7s2kcdbk0n0dpsq9gwkj8dqyw21yfyhp-mpfr-4.2.1.tar.xz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/8iqlphbxjpv7lwa1nskc00l6xfl0nic6-libtool-2.4.7",
+      "dependsOn": [
+        "/nix/store/ck70x6hdl1kgqa4a9ps8spw6ph9mfcj8-libtool-2.4.7.tar.gz",
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux",
+        "/nix/store/gjcj1glfrpx6wanbzjvphm6qqbjzb90d-file-5.45-dev",
+        "/nix/store/l5d6bk510mjw5plz2ysnbm7dqlvjdlxr-gnum4-1.4.19"
+      ]
+    },
+    {
+      "ref": "/nix/store/8nvhq3kag7dmpsjp3zl6n9rza2a5wdfk-gmp-6.3.0",
+      "dependsOn": [
+        "/nix/store/0aj573ndahyrg65182b8p62hdlhjg602-bootstrap-stage3-gcc-wrapper-13.2.0",
+        "/nix/store/4i9n25r0qfrd7sq429p032x5pzwap5a9-bootstrap-stage3-stdenv-linux",
+        "/nix/store/l5d6bk510mjw5plz2ysnbm7dqlvjdlxr-gnum4-1.4.19",
+        "/nix/store/n1djrrflvxnwdd735304l23r2qdnjrm6-gmp-6.3.0.tar.bz2"
+      ]
+    },
+    {
+      "ref": "/nix/store/8zk99yf1v1gjrrlm62s171vmqsv8jjlp-texinfo-7.0.3",
+      "dependsOn": [
+        "/nix/store/2nrimc34ymqp6ssdgsasbfag8f659f6m-bootstrap-stage1-stdenv-linux",
+        "/nix/store/6l89qmngnn0bb652g6mis0qzlcfmn3kf-xz-5.4.5-bin",
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/pb29f7lahx1j2cp577dvrhgy20nd0xyr-bash-5.2-p21-dev",
+        "/nix/store/q9ccnr97sv21jlmzxqsra5jyp71s51dl-texinfo-7.0.3.tar.xz",
+        "/nix/store/v8bsri9qkagqkfznb92gny8mbdqrjzxb-bootstrap-stage1-gcc-wrapper-"
+      ]
+    },
+    {
+      "ref": "/nix/store/925d6li647rdrjp834ia3isnxq7gw444-python-setup-hook.sh",
+      "dependsOn": [
+        "/nix/store/8v1frkj1fylm7isn4jv3yvaa76ja9sqb-bootstrap-stage4-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/98hrpcnb9xq9675js8ilr8cpgnfadln1-patch-2.7.6",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/hl7wxzav5znk5wxfqncdrzpcb3hqy0y0-patch-2.7.6.tar.xz",
+        "/nix/store/mzrk9gqfnqi9is5ra9ymnif257inlvjx-autoreconf-hook",
+        "/nix/store/v9wihazrrvl4rpmsyll0y492x1zx9yw0-ed-1.19"
+      ]
+    },
+    {
+      "ref": "/nix/store/9cxvxkn4zrcp0rm9mrq1wrqsncagh4kr-gmp-with-cxx-6.3.0",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/l5d6bk510mjw5plz2ysnbm7dqlvjdlxr-gnum4-1.4.19",
+        "/nix/store/n1djrrflvxnwdd735304l23r2qdnjrm6-gmp-6.3.0.tar.bz2",
+        "/nix/store/n8wkmy6wxr14mp59kbbiypvcw3yaywxi-bootstrap-stage4-gcc-wrapper-13.2.0"
+      ]
+    },
+    {
+      "ref": "/nix/store/9vafkkic27k7m4934fpawl6yip3a6k4h-bash-5.2-p21",
+      "dependsOn": [
+        "/nix/store/0cr4hvmwbfablyhn58ba0lrfb44igq5y-bash52-016",
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/1dydp86d00qzjbncpi80sdsndf33lc5j-fix-static.patch",
+        "/nix/store/1fw5fcsjz9wcbf13a5xs4i2cjfircp3x-bash52-006",
+        "/nix/store/24ygbbc9k6vjc4vhz2j6a9dkdgmqgc6n-bash52-010",
+        "/nix/store/2ynclzrdl0hy9miy6k8gcwgzw4mhsmd0-bash52-004",
+        "/nix/store/7c07n1bg5xid6w0ffd0warfxpzjjdzzw-bison-3.8.2",
+        "/nix/store/a73wzcks7h2y814qxa1z3kv1hg205mpm-bash52-001",
+        "/nix/store/cddj9qpc4l62qjy6vvf7gp50mfqaf506-bash52-014",
+        "/nix/store/d5qpl3kqrmv99fbw1cd09qj9jr7kb2rr-bash52-019",
+        "/nix/store/gnx16vs69p7fggsslnbg6v818497vvxl-bash52-021",
+        "/nix/store/in24890k6ybij0b63jisfmrwmmc6x7pv-bash52-017",
+        "/nix/store/j8vipdfzslz4aa7aj0amwd4msxa9hhpl-bash52-009",
+        "/nix/store/jn9f2mr2jdm9yn5hi0pws44nbfrah8d3-bash52-008",
+        "/nix/store/n8wkmy6wxr14mp59kbbiypvcw3yaywxi-bootstrap-stage4-gcc-wrapper-13.2.0",
+        "/nix/store/nffxsaniz7irz07z79cxwkhz97vgqwrx-bash52-018",
+        "/nix/store/pcdlxsb3mxfjnclg8rn8xy2ywbb5ra36-bash52-020",
+        "/nix/store/pjp935kxwai47zyx1wpwadls00m9nmib-bash52-015",
+        "/nix/store/rs1qdpy1nb3x07g4vqvb4s774qhq9f0w-bash52-007",
+        "/nix/store/sim601rd1y3hsap9qkn25cwprsa9aipp-bash52-011",
+        "/nix/store/sxc8xmi7caxaiywzh15za9crpk3bw98z-bash52-003",
+        "/nix/store/v28dv6l0qk3j382kp40bksa1v6h7dx9p-bash-5.2.tar.gz",
+        "/nix/store/wcpqrbsljh2x04qccs6jv9z8c9y1c3cd-bash52-013",
+        "/nix/store/x1sqwqn02c5mnpi8hbqlxpbm3rahq5dm-bash52-012",
+        "/nix/store/xc3h9isl5566i6a4pvdsgin26rchijrq-bash52-002",
+        "/nix/store/z76vsdh69cvwkwhwg69k7d1znwjmx6hf-bash52-005"
+      ]
+    },
+    {
+      "ref": "/nix/store/9vapsdndf66l1bfp7210hrd7vs42lvvc-binutils-2.40.tar.bz2",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/9vm1ihdg1ysmrjdbb80g834iizzxb4yk-bison-3.8.2.tar.gz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/a01asryprcb7fpjqylbvi8i1cp1wjbdv-nuke-references",
+      "dependsOn": [
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/x5grhyr31b63zh1qwwj76w4xssmixpcz-bootstrap-stage2-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/a2i83vprqrd9nkr116yy1ksrwz5y1vq9-sed-4.9.tar.xz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/a73wzcks7h2y814qxa1z3kv1hg205mpm-bash52-001",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/ayg5rhjhi9ic73hqw33mjqjxwv59ndym-xgcc-13.2.0-libgcc",
+      "dependsOn": [
+        "/nix/store/0fkjfd7bldpwarjggybbjagsrmjvxia9-bootstrap-stage0-binutils-wrapper-",
+        "/nix/store/31559p1w94y01g37dfix30hihc8ppcif-mpfr-4.2.1-dev",
+        "/nix/store/6x5hikvl4rn94zzb53khakj4f85yj4nm-which-2.21",
+        "/nix/store/7prd7fc1z38f286fxalsr8s9mjl6i1ck-bootstrap-stage-xgcc-stdenv-linux",
+        "/nix/store/8zk99yf1v1gjrrlm62s171vmqsv8jjlp-texinfo-7.0.3",
+        "/nix/store/cfyp5hny6mqlcvaqgfl7j7jq07vfjhx7-bootstrap-stage0-glibc-bootstrapFiles",
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/fmli03qqhphbk695kgl3sf2hfh1vc78a-gettext-0.21.1",
+        "/nix/store/rcqpvazw3b5dbzmmrqacd28snmhp21y5-zlib-1.3-dev",
+        "/nix/store/s3vbd8fym3hlfkzyqgx5nb8fcjf4b7jv-libxcrypt-4.4.36",
+        "/nix/store/wsf274jxzi23lvi76af0s09dwvkwwlz5-bootstrap-stage-xgcc-gcc-wrapper-",
+        "/nix/store/x0qzqwrgbcvf95k27agndhn2xidzrxv4-isl-0.20",
+        "/nix/store/x638x4d2m96yb0izivf3s6b285dycab5-patchelf-0.15.0",
+        "/nix/store/xnlr80fc679ilzq8y9fqia3pwmfq5cdk-libmpc-1.3.1",
+        "/nix/store/yg41slh4c4v14jq8c3129cxszwsb86lz-gmp-6.3.0-dev",
+        "/nix/store/z9fdf582flwcri4ds9fxknyi27w6vi1i-gcc-13.2.0.tar.xz"
+      ]
+    },
+    {
+      "ref": "/nix/store/azf9rihy6r20xc0dngl7m4kc2z1z0q1w-libmpc-1.3.1",
+      "dependsOn": [
+        "/nix/store/4i9n25r0qfrd7sq429p032x5pzwap5a9-bootstrap-stage3-stdenv-linux",
+        "/nix/store/4vnyjjixvxvafpln9cyfs5j8qzf93rpp-mpfr-4.2.1-dev",
+        "/nix/store/i449xw00j82nwjw4pw4bhjllx441c5qy-gmp-6.3.0-dev",
+        "/nix/store/mdrv8znlgnysqzq1hnv46vi9jmnsc1bc-mpc-1.3.1.tar.gz"
+      ]
+    },
+    {
+      "ref": "/nix/store/b0gi6722kbns0fdpxy0rhlkanvyx58hc-libxcrypt-4.4.36",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/f76sw6av28v3cv6nxmqw190pkpnfnw9b-libxcrypt-4.4.36.tar.xz"
+      ]
+    },
+    {
+      "ref": "/nix/store/b1blsr9vz8y8fxajgss0yvb899ahwpz9-die-hook",
+      "dependsOn": [
+        "/nix/store/8v1frkj1fylm7isn4jv3yvaa76ja9sqb-bootstrap-stage4-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/b44vg9nm5f64fihql70jzjj7yd64q0sa-gzip-1.13.tar.xz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/b6zlb9y566rzh0nczhnnw9q9lczws273-bash-5.2-p21-dev",
+      "dependsOn": [
+        "/nix/store/0aj573ndahyrg65182b8p62hdlhjg602-bootstrap-stage3-gcc-wrapper-13.2.0",
+        "/nix/store/0cr4hvmwbfablyhn58ba0lrfb44igq5y-bash52-016",
+        "/nix/store/1dydp86d00qzjbncpi80sdsndf33lc5j-fix-static.patch",
+        "/nix/store/1fw5fcsjz9wcbf13a5xs4i2cjfircp3x-bash52-006",
+        "/nix/store/24ygbbc9k6vjc4vhz2j6a9dkdgmqgc6n-bash52-010",
+        "/nix/store/2ynclzrdl0hy9miy6k8gcwgzw4mhsmd0-bash52-004",
+        "/nix/store/4i9n25r0qfrd7sq429p032x5pzwap5a9-bootstrap-stage3-stdenv-linux",
+        "/nix/store/7c07n1bg5xid6w0ffd0warfxpzjjdzzw-bison-3.8.2",
+        "/nix/store/a73wzcks7h2y814qxa1z3kv1hg205mpm-bash52-001",
+        "/nix/store/cddj9qpc4l62qjy6vvf7gp50mfqaf506-bash52-014",
+        "/nix/store/d5qpl3kqrmv99fbw1cd09qj9jr7kb2rr-bash52-019",
+        "/nix/store/gnx16vs69p7fggsslnbg6v818497vvxl-bash52-021",
+        "/nix/store/in24890k6ybij0b63jisfmrwmmc6x7pv-bash52-017",
+        "/nix/store/j8vipdfzslz4aa7aj0amwd4msxa9hhpl-bash52-009",
+        "/nix/store/jn9f2mr2jdm9yn5hi0pws44nbfrah8d3-bash52-008",
+        "/nix/store/nffxsaniz7irz07z79cxwkhz97vgqwrx-bash52-018",
+        "/nix/store/pcdlxsb3mxfjnclg8rn8xy2ywbb5ra36-bash52-020",
+        "/nix/store/pjp935kxwai47zyx1wpwadls00m9nmib-bash52-015",
+        "/nix/store/rs1qdpy1nb3x07g4vqvb4s774qhq9f0w-bash52-007",
+        "/nix/store/sim601rd1y3hsap9qkn25cwprsa9aipp-bash52-011",
+        "/nix/store/sxc8xmi7caxaiywzh15za9crpk3bw98z-bash52-003",
+        "/nix/store/v28dv6l0qk3j382kp40bksa1v6h7dx9p-bash-5.2.tar.gz",
+        "/nix/store/wcpqrbsljh2x04qccs6jv9z8c9y1c3cd-bash52-013",
+        "/nix/store/x1sqwqn02c5mnpi8hbqlxpbm3rahq5dm-bash52-012",
+        "/nix/store/xc3h9isl5566i6a4pvdsgin26rchijrq-bash52-002",
+        "/nix/store/z76vsdh69cvwkwhwg69k7d1znwjmx6hf-bash52-005"
+      ]
+    },
+    {
+      "ref": "/nix/store/bfb70iaascrajr78mfmr5kzspv0p7i6d-gawk-5.2.2",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/2ds3kha8b07phggryjzqad36q6gzgb23-gawk-5.2.2.tar.xz",
+        "/nix/store/mzrk9gqfnqi9is5ra9ymnif257inlvjx-autoreconf-hook"
+      ]
+    },
+    {
+      "ref": "/nix/store/c1hg8k7vjy5hxfm39pp30xgiw7qk7xwf-zlib-1.3.tar.gz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/cddj9qpc4l62qjy6vvf7gp50mfqaf506-bash52-014",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/cdhb1yi17m2r0fw8yjsn54j4j7gla6mv-linux-6.6.tar.xz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/ck70x6hdl1kgqa4a9ps8spw6ph9mfcj8-libtool-2.4.7.tar.gz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/cmfal0ijh83x06zz7wp40c1idd7qv7ay-python3-minimal-3.11.7",
+      "dependsOn": [
+        "/nix/store/3drj15y67xgwz9fld37l04bv705448g0-autoreconf-hook",
+        "/nix/store/5l40jr1linl0zv9j3zscii9pnc7pcc96-Python-3.11.7.tar.xz",
+        "/nix/store/7l2bwydsqmkf6r5mh9cyi9d44b6nw2qz-expat-2.5.0-dev",
+        "/nix/store/a01asryprcb7fpjqylbvi8i1cp1wjbdv-nuke-references",
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux",
+        "/nix/store/gy5cwc2df95rx0gy8iyqf0wgv9kc91y4-bash-5.2-p21-dev",
+        "/nix/store/lrhdnqjp6rxbwayddmnklhi6gi411135-libxcrypt-4.4.36",
+        "/nix/store/mrps4jkpkcvjkb7ywzkcxzwg2c5c91yv-libffi-3.4.4-dev",
+        "/nix/store/pyv061hd2f7zn947kcm4n5bdlmvygddb-bzip2-1.0.8-dev",
+        "/nix/store/rlkmf7im541j4a81n0h8ph1sfl9fq51p-autoconf-archive-2023.02.20",
+        "/nix/store/szh64sr0c103vzpi4k8p4n0diqfk8y8j-xz-5.4.5-dev",
+        "/nix/store/v4h5dh6vwgvnn2x8jyqs33x00krrcjd4-python-setup-hook.sh",
+        "/nix/store/wdcg9k844sc4xq1d44qbvjx8ksj7k0ni-pkg-config-wrapper-0.29.2",
+        "/nix/store/xv1anrhbamg1bj0jwy96q3zjvcdj3wz6-zlib-1.3-dev"
+      ]
+    },
+    {
+      "ref": "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+      "dependsOn": [
+        "/nix/store/2nrimc34ymqp6ssdgsasbfag8f659f6m-bootstrap-stage1-stdenv-linux",
+        "/nix/store/mp5jcbm1hjqw4ckxvrm7k0pfhhjf3dbg-perl-5.38.2.tar.gz"
+      ]
+    },
+    {
+      "ref": "/nix/store/d5qpl3kqrmv99fbw1cd09qj9jr7kb2rr-bash52-019",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/f6q8dgl1mn0aknh6cjyf9pspzncjf10l-autoconf-2.71",
+      "dependsOn": [
+        "/nix/store/8zk99yf1v1gjrrlm62s171vmqsv8jjlp-texinfo-7.0.3",
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux",
+        "/nix/store/g3pzpdicszf700d5xffyk939jzxa4r2k-autoconf-2.71.tar.xz",
+        "/nix/store/l5d6bk510mjw5plz2ysnbm7dqlvjdlxr-gnum4-1.4.19"
+      ]
+    },
+    {
+      "ref": "/nix/store/f76sw6av28v3cv6nxmqw190pkpnfnw9b-libxcrypt-4.4.36.tar.xz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/fa3xxlazac50wwlnpwsh6ffwlpnvigar-patchelf-0.15.0",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/447hvnlzzi9myri1iq3bijxgx6v6b592-patchelf-0.15.0.tar.bz2"
+      ]
+    },
+    {
+      "ref": "/nix/store/fhgq54wng753sikzs5bpflzifmn5qsyr-attr-2.5.1",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/fmli03qqhphbk695kgl3sf2hfh1vc78a-gettext-0.21.1",
+        "/nix/store/mz6mc8s7mrvvzjpl9322agmsq00cyrw5-attr-2.5.1.tar.gz"
+      ]
+    },
+    {
+      "ref": "/nix/store/fhhy01a36lcd0nk2ik381d5shxk7qf55-glibc-locales-2.38-27",
+      "dependsOn": [
+        "/nix/store/05d0yccrkp8pl5c6my29cxzzqb7a9az8-glibc-2.38.tar.xz",
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/68qbq5jzwljpl0w6i1qj2l66k129l0ii-glibc-2.38-27-dev",
+        "/nix/store/7c07n1bg5xid6w0ffd0warfxpzjjdzzw-bison-3.8.2",
+        "/nix/store/idlii27m2f92aj2y4pjw86231az1zl86-locales-setup-hook.sh",
+        "/nix/store/n8wkmy6wxr14mp59kbbiypvcw3yaywxi-bootstrap-stage4-gcc-wrapper-13.2.0",
+        "/nix/store/p3jshbwxiwifm1py0yq544fmdyy98j8a-glibc-2.38-27",
+        "/nix/store/v4iwfrkmz890153smi70h3wi6791xlgk-python3-minimal-3.11.7",
+        "/nix/store/x6lnzglgc0cvi3niwq604n71lkm3yifd-linux-headers-6.6"
+      ]
+    },
+    {
+      "ref": "/nix/store/fim96i2pigbmdkkc2rf34f71g9v50i5x-lzip-1.23.tar.gz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/fmli03qqhphbk695kgl3sf2hfh1vc78a-gettext-0.21.1",
+      "dependsOn": [
+        "/nix/store/2nrimc34ymqp6ssdgsasbfag8f659f6m-bootstrap-stage1-stdenv-linux",
+        "/nix/store/6l89qmngnn0bb652g6mis0qzlcfmn3kf-xz-5.4.5-bin",
+        "/nix/store/gl8g7bvjglm3fawy7nf3bx06rxqyg2yd-xz-5.4.5-dev",
+        "/nix/store/pb29f7lahx1j2cp577dvrhgy20nd0xyr-bash-5.2-p21-dev",
+        "/nix/store/y2h7bqjpc4q9g887w8pbwncjrmr4g9sx-gettext-0.21.1.tar.gz"
+      ]
+    },
+    {
+      "ref": "/nix/store/fp4fd51gpjdw0pxq42fwydyjjw4saw8a-diffutils-3.10",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/jd7nvwsmkry0hbh6rn9jafpz2pm56ilw-xz-5.4.5-bin",
+        "/nix/store/khndnv11g1rmzhzymm1s5dw7l2ld45bc-coreutils-9.4",
+        "/nix/store/la8rdnwivnjapn0bmr14pk28qv82d4zb-diffutils-3.10.tar.xz"
+      ]
+    },
+    {
+      "ref": "/nix/store/g3pzpdicszf700d5xffyk939jzxa4r2k-autoconf-2.71.tar.xz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/gbiffn4mak7bp0izjfkl1n5vqjy1y110-pkg-config-wrapper-0.29.2",
+      "dependsOn": [
+        "/nix/store/8v1frkj1fylm7isn4jv3yvaa76ja9sqb-bootstrap-stage4-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/gdzysgylfbzdprqqkvqqmyrn1j4y587k-xz-5.4.5-bin",
+      "dependsOn": [
+        "/nix/store/2cxa62ycswpswvysa0nzanmh0qm79ikn-xz-5.4.5.tar.bz2",
+        "/nix/store/4i9n25r0qfrd7sq429p032x5pzwap5a9-bootstrap-stage3-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/gjcj1glfrpx6wanbzjvphm6qqbjzb90d-file-5.45-dev",
+      "dependsOn": [
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux",
+        "/nix/store/v0m59igyinq3qrbx7fibyal1dx5f6rcq-file-5.45.tar.gz",
+        "/nix/store/xv1anrhbamg1bj0jwy96q3zjvcdj3wz6-zlib-1.3-dev"
+      ]
+    },
+    {
+      "ref": "/nix/store/gl8g7bvjglm3fawy7nf3bx06rxqyg2yd-xz-5.4.5-dev",
+      "dependsOn": [
+        "/nix/store/2cxa62ycswpswvysa0nzanmh0qm79ikn-xz-5.4.5.tar.bz2",
+        "/nix/store/2nrimc34ymqp6ssdgsasbfag8f659f6m-bootstrap-stage1-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/gmaq49vzfrkvr714y4fhfxv100ijihin-automake-1.16.5.tar.xz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/gnx16vs69p7fggsslnbg6v818497vvxl-bash52-021",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/grll1f1qj7yw6yq42qigkw5fvyjz2rjw-gnumake-4.4.1",
+      "dependsOn": [
+        "/nix/store/0avnvyc7pkcr4pjqws7hwpy87m6wlnjc-make-4.4.1.tar.gz",
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/gy5cwc2df95rx0gy8iyqf0wgv9kc91y4-bash-5.2-p21-dev",
+      "dependsOn": [
+        "/nix/store/0cr4hvmwbfablyhn58ba0lrfb44igq5y-bash52-016",
+        "/nix/store/1dydp86d00qzjbncpi80sdsndf33lc5j-fix-static.patch",
+        "/nix/store/1fw5fcsjz9wcbf13a5xs4i2cjfircp3x-bash52-006",
+        "/nix/store/24ygbbc9k6vjc4vhz2j6a9dkdgmqgc6n-bash52-010",
+        "/nix/store/2ynclzrdl0hy9miy6k8gcwgzw4mhsmd0-bash52-004",
+        "/nix/store/7c07n1bg5xid6w0ffd0warfxpzjjdzzw-bison-3.8.2",
+        "/nix/store/a73wzcks7h2y814qxa1z3kv1hg205mpm-bash52-001",
+        "/nix/store/as96pzg4r9g2yan52hcq5g8gzjxgdp94-bootstrap-stage2-gcc-wrapper-13.2.0",
+        "/nix/store/cddj9qpc4l62qjy6vvf7gp50mfqaf506-bash52-014",
+        "/nix/store/d5qpl3kqrmv99fbw1cd09qj9jr7kb2rr-bash52-019",
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux",
+        "/nix/store/gnx16vs69p7fggsslnbg6v818497vvxl-bash52-021",
+        "/nix/store/in24890k6ybij0b63jisfmrwmmc6x7pv-bash52-017",
+        "/nix/store/j8vipdfzslz4aa7aj0amwd4msxa9hhpl-bash52-009",
+        "/nix/store/jn9f2mr2jdm9yn5hi0pws44nbfrah8d3-bash52-008",
+        "/nix/store/nffxsaniz7irz07z79cxwkhz97vgqwrx-bash52-018",
+        "/nix/store/pcdlxsb3mxfjnclg8rn8xy2ywbb5ra36-bash52-020",
+        "/nix/store/pjp935kxwai47zyx1wpwadls00m9nmib-bash52-015",
+        "/nix/store/rs1qdpy1nb3x07g4vqvb4s774qhq9f0w-bash52-007",
+        "/nix/store/sim601rd1y3hsap9qkn25cwprsa9aipp-bash52-011",
+        "/nix/store/sxc8xmi7caxaiywzh15za9crpk3bw98z-bash52-003",
+        "/nix/store/v28dv6l0qk3j382kp40bksa1v6h7dx9p-bash-5.2.tar.gz",
+        "/nix/store/wcpqrbsljh2x04qccs6jv9z8c9y1c3cd-bash52-013",
+        "/nix/store/x1sqwqn02c5mnpi8hbqlxpbm3rahq5dm-bash52-012",
+        "/nix/store/xc3h9isl5566i6a4pvdsgin26rchijrq-bash52-002",
+        "/nix/store/z76vsdh69cvwkwhwg69k7d1znwjmx6hf-bash52-005"
+      ]
+    },
+    {
+      "ref": "/nix/store/h02zm172d1w692h75cdc022nx3w9icjj-glibc-2.38-27-bin",
+      "dependsOn": [
+        "/nix/store/05d0yccrkp8pl5c6my29cxzzqb7a9az8-glibc-2.38.tar.xz",
+        "/nix/store/7c07n1bg5xid6w0ffd0warfxpzjjdzzw-bison-3.8.2",
+        "/nix/store/as96pzg4r9g2yan52hcq5g8gzjxgdp94-bootstrap-stage2-gcc-wrapper-13.2.0",
+        "/nix/store/cmfal0ijh83x06zz7wp40c1idd7qv7ay-python3-minimal-3.11.7",
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux",
+        "/nix/store/x6lnzglgc0cvi3niwq604n71lkm3yifd-linux-headers-6.6"
       ]
     },
     {
       "ref": "/nix/store/h92a9jd0lhhniv2q417hpwszd4jhys7q-hello-2.12.1",
-      "dependsOn": []
-    },
-    {
-      "ref": "/nix/store/m8w6di2fqgblimidllyfc3fypgysrpgn-openssl-3.0.12-dev",
       "dependsOn": [
-        "/nix/store/2kq5jql90fn5y2pd6c9vnjqffmf9ndjm-make-shell-wrapper-hook",
-        "/nix/store/sjm6zhcjq1l6ghcal55vmpy48zd0rhm7-perl-5.38.2"
+        "/nix/store/pa10z4ngm0g83kx9mssrqzz30s84vq7k-hello-2.12.1.tar.gz",
+        "/nix/store/v5irq7wvkr7kih0hhnch5nnv2dcq8c4f-stdenv-linux"
       ]
     },
     {
-      "ref": "/nix/store/ml1nkm5dvlmyp19vlbi4b2cxzky78qfb-libkrb5-1.21.2-dev",
+      "ref": "/nix/store/hl7wxzav5znk5wxfqncdrzpcb3hqy0y0-patch-2.7.6.tar.xz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/hp60h60jc6n6c0krgmjqi60lqgl7kvij-grep-3.11.tar.xz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/i3cfzk4l0na9hw27vpx7i6yr58xk71hc-patchelf-0.15.0",
       "dependsOn": [
-        "/nix/store/75nqgjskxzfzmq99rdl4isbpgkc1gjgf-keyutils-1.6.3-dev",
-        "/nix/store/m8w6di2fqgblimidllyfc3fypgysrpgn-openssl-3.0.12-dev",
-        "/nix/store/sjm6zhcjq1l6ghcal55vmpy48zd0rhm7-perl-5.38.2",
-        "/nix/store/v6n306xw0v850dn01s9fdd0qjwh2j082-pkg-config-wrapper-0.29.2"
+        "/nix/store/447hvnlzzi9myri1iq3bijxgx6v6b592-patchelf-0.15.0.tar.bz2",
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/i449xw00j82nwjw4pw4bhjllx441c5qy-gmp-6.3.0-dev",
+      "dependsOn": [
+        "/nix/store/0aj573ndahyrg65182b8p62hdlhjg602-bootstrap-stage3-gcc-wrapper-13.2.0",
+        "/nix/store/4i9n25r0qfrd7sq429p032x5pzwap5a9-bootstrap-stage3-stdenv-linux",
+        "/nix/store/l5d6bk510mjw5plz2ysnbm7dqlvjdlxr-gnum4-1.4.19",
+        "/nix/store/n1djrrflvxnwdd735304l23r2qdnjrm6-gmp-6.3.0.tar.bz2"
+      ]
+    },
+    {
+      "ref": "/nix/store/i5siqp4nvqs39jnnal3y17297qmdryix-bash-5.2-p21-dev",
+      "dependsOn": [
+        "/nix/store/0cr4hvmwbfablyhn58ba0lrfb44igq5y-bash52-016",
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/1dydp86d00qzjbncpi80sdsndf33lc5j-fix-static.patch",
+        "/nix/store/1fw5fcsjz9wcbf13a5xs4i2cjfircp3x-bash52-006",
+        "/nix/store/24ygbbc9k6vjc4vhz2j6a9dkdgmqgc6n-bash52-010",
+        "/nix/store/2ynclzrdl0hy9miy6k8gcwgzw4mhsmd0-bash52-004",
+        "/nix/store/7c07n1bg5xid6w0ffd0warfxpzjjdzzw-bison-3.8.2",
+        "/nix/store/a73wzcks7h2y814qxa1z3kv1hg205mpm-bash52-001",
+        "/nix/store/cddj9qpc4l62qjy6vvf7gp50mfqaf506-bash52-014",
+        "/nix/store/d5qpl3kqrmv99fbw1cd09qj9jr7kb2rr-bash52-019",
+        "/nix/store/gnx16vs69p7fggsslnbg6v818497vvxl-bash52-021",
+        "/nix/store/in24890k6ybij0b63jisfmrwmmc6x7pv-bash52-017",
+        "/nix/store/j8vipdfzslz4aa7aj0amwd4msxa9hhpl-bash52-009",
+        "/nix/store/jn9f2mr2jdm9yn5hi0pws44nbfrah8d3-bash52-008",
+        "/nix/store/n8wkmy6wxr14mp59kbbiypvcw3yaywxi-bootstrap-stage4-gcc-wrapper-13.2.0",
+        "/nix/store/nffxsaniz7irz07z79cxwkhz97vgqwrx-bash52-018",
+        "/nix/store/pcdlxsb3mxfjnclg8rn8xy2ywbb5ra36-bash52-020",
+        "/nix/store/pjp935kxwai47zyx1wpwadls00m9nmib-bash52-015",
+        "/nix/store/rs1qdpy1nb3x07g4vqvb4s774qhq9f0w-bash52-007",
+        "/nix/store/sim601rd1y3hsap9qkn25cwprsa9aipp-bash52-011",
+        "/nix/store/sxc8xmi7caxaiywzh15za9crpk3bw98z-bash52-003",
+        "/nix/store/v28dv6l0qk3j382kp40bksa1v6h7dx9p-bash-5.2.tar.gz",
+        "/nix/store/wcpqrbsljh2x04qccs6jv9z8c9y1c3cd-bash52-013",
+        "/nix/store/x1sqwqn02c5mnpi8hbqlxpbm3rahq5dm-bash52-012",
+        "/nix/store/xc3h9isl5566i6a4pvdsgin26rchijrq-bash52-002",
+        "/nix/store/z76vsdh69cvwkwhwg69k7d1znwjmx6hf-bash52-005"
+      ]
+    },
+    {
+      "ref": "/nix/store/idlii27m2f92aj2y4pjw86231az1zl86-locales-setup-hook.sh",
+      "dependsOn": [
+        "/nix/store/8v1frkj1fylm7isn4jv3yvaa76ja9sqb-bootstrap-stage4-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/in24890k6ybij0b63jisfmrwmmc6x7pv-bash52-017",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/iwlj49k2lybjlx0vd552f7g3ibkvrz6q-attr-2.5.1-dev",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/fmli03qqhphbk695kgl3sf2hfh1vc78a-gettext-0.21.1",
+        "/nix/store/mz6mc8s7mrvvzjpl9322agmsq00cyrw5-attr-2.5.1.tar.gz"
+      ]
+    },
+    {
+      "ref": "/nix/store/j70nvvz7pzv21clqapm35f5g64nm6613-automake-1.16.5",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/6782cjv2br9yb4nqvbdrcqsmm0dxjag0-autoconf-2.71",
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/gmaq49vzfrkvr714y4fhfxv100ijihin-automake-1.16.5.tar.xz"
+      ]
+    },
+    {
+      "ref": "/nix/store/j8vipdfzslz4aa7aj0amwd4msxa9hhpl-bash52-009",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/jadk6vcka8fvlqpm602rga0isky043ga-isl-0.20",
+      "dependsOn": [
+        "/nix/store/4i9n25r0qfrd7sq429p032x5pzwap5a9-bootstrap-stage3-stdenv-linux",
+        "/nix/store/i449xw00j82nwjw4pw4bhjllx441c5qy-gmp-6.3.0-dev",
+        "/nix/store/x9v0hmr76dm68pijzldzxks01iqzag1z-isl-0.20.tar.xz"
+      ]
+    },
+    {
+      "ref": "/nix/store/jd7nvwsmkry0hbh6rn9jafpz2pm56ilw-xz-5.4.5-bin",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/2cxa62ycswpswvysa0nzanmh0qm79ikn-xz-5.4.5.tar.bz2"
+      ]
+    },
+    {
+      "ref": "/nix/store/jn9f2mr2jdm9yn5hi0pws44nbfrah8d3-bash52-008",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/k2pkyqm6rqw7fl78zm3vmys087wavlq1-libunistring-1.1-dev",
+      "dependsOn": [
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux",
+        "/nix/store/zkas816mjrr8ijdj29qs4wqyn38l4j12-libunistring-1.1.tar.gz"
+      ]
+    },
+    {
+      "ref": "/nix/store/khndnv11g1rmzhzymm1s5dw7l2ld45bc-coreutils-9.4",
+      "dependsOn": [
+        "/nix/store/0f884mc30cmyy0yvjmsnqhq2q6q8ddpb-gmp-with-cxx-6.3.0-dev",
+        "/nix/store/0p42wcqvmjffgr3a5x4amxl451dxn5xg-acl-2.3.1-dev",
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/iwlj49k2lybjlx0vd552f7g3ibkvrz6q-attr-2.5.1-dev",
+        "/nix/store/jd7nvwsmkry0hbh6rn9jafpz2pm56ilw-xz-5.4.5-bin",
+        "/nix/store/mzrk9gqfnqi9is5ra9ymnif257inlvjx-autoreconf-hook",
+        "/nix/store/rmjsgxd4w10wrnnwrrrry2sz5cfpwafq-coreutils-9.4.tar.xz"
+      ]
+    },
+    {
+      "ref": "/nix/store/l5d6bk510mjw5plz2ysnbm7dqlvjdlxr-gnum4-1.4.19",
+      "dependsOn": [
+        "/nix/store/2nrimc34ymqp6ssdgsasbfag8f659f6m-bootstrap-stage1-stdenv-linux",
+        "/nix/store/mcayf992diwks293vs12iwx1ywgm4ijg-m4-1.4.19.tar.bz2"
+      ]
+    },
+    {
+      "ref": "/nix/store/la8rdnwivnjapn0bmr14pk28qv82d4zb-diffutils-3.10.tar.xz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/lflb8b18v6mkczxv95xpd44bf4z8znjf-mpfr-4.2.1",
+      "dependsOn": [
+        "/nix/store/4i9n25r0qfrd7sq429p032x5pzwap5a9-bootstrap-stage3-stdenv-linux",
+        "/nix/store/7s2kcdbk0n0dpsq9gwkj8dqyw21yfyhp-mpfr-4.2.1.tar.xz",
+        "/nix/store/i449xw00j82nwjw4pw4bhjllx441c5qy-gmp-6.3.0-dev"
+      ]
+    },
+    {
+      "ref": "/nix/store/ljakxsj6051lv6insc7z351bjxi1yhx9-autoconf-archive-2023.02.20",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/73l28p4a9iy51wwg5wg6xgd81mds5a9n-xz-5.4.5-dev",
+        "/nix/store/pq4bmqcrz01fmb601qkmfk49454dv5m9-autoconf-archive-2023.02.20.tar.xz"
+      ]
+    },
+    {
+      "ref": "/nix/store/lrhdnqjp6rxbwayddmnklhi6gi411135-libxcrypt-4.4.36",
+      "dependsOn": [
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux",
+        "/nix/store/f76sw6av28v3cv6nxmqw190pkpnfnw9b-libxcrypt-4.4.36.tar.xz"
+      ]
+    },
+    {
+      "ref": "/nix/store/m59xdgkgnjbk8kk6k6vbxmqnf82mk9s0-libidn2-2.3.4",
+      "dependsOn": [
+        "/nix/store/as96pzg4r9g2yan52hcq5g8gzjxgdp94-bootstrap-stage2-gcc-wrapper-13.2.0",
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux",
+        "/nix/store/k2pkyqm6rqw7fl78zm3vmys087wavlq1-libunistring-1.1-dev",
+        "/nix/store/vp4896rkv185vzcda28y4f4k0l0ssilf-libidn2-2.3.4.tar.gz"
+      ]
+    },
+    {
+      "ref": "/nix/store/mcayf992diwks293vs12iwx1ywgm4ijg-m4-1.4.19.tar.bz2",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/mdrv8znlgnysqzq1hnv46vi9jmnsc1bc-mpc-1.3.1.tar.gz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/mmsb0ivm355r4l3yjbpaiirkf673n66v-gnugrep-3.11",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/fhhy01a36lcd0nk2ik381d5shxk7qf55-glibc-locales-2.38-27",
+        "/nix/store/hp60h60jc6n6c0krgmjqi60lqgl7kvij-grep-3.11.tar.xz",
+        "/nix/store/sjsxwdwpb4wkj2i7agmc45s5lsw91lpn-glibc-iconv-2.38",
+        "/nix/store/yccn06k57v9p3xaa5h291814yyrlllp2-pcre2-10.42-dev"
+      ]
+    },
+    {
+      "ref": "/nix/store/mp5jcbm1hjqw4ckxvrm7k0pfhhjf3dbg-perl-5.38.2.tar.gz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/mrps4jkpkcvjkb7ywzkcxzwg2c5c91yv-libffi-3.4.4-dev",
+      "dependsOn": [
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux",
+        "/nix/store/pgxpq0lmk4bd0yybaxkb82qlcjx55apn-libffi-3.4.4.tar.gz"
+      ]
+    },
+    {
+      "ref": "/nix/store/mrzfvc2gjy2mia0k4vrb95f2iff6xcxm-zlib-1.3",
+      "dependsOn": [
+        "/nix/store/4i9n25r0qfrd7sq429p032x5pzwap5a9-bootstrap-stage3-stdenv-linux",
+        "/nix/store/c1hg8k7vjy5hxfm39pp30xgiw7qk7xwf-zlib-1.3.tar.gz"
+      ]
+    },
+    {
+      "ref": "/nix/store/mz6mc8s7mrvvzjpl9322agmsq00cyrw5-attr-2.5.1.tar.gz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/mzrk9gqfnqi9is5ra9ymnif257inlvjx-autoreconf-hook",
+      "dependsOn": [
+        "/nix/store/03ci2vyb84m1g78938aanfbcyz5i8p21-libtool-2.4.7",
+        "/nix/store/6782cjv2br9yb4nqvbdrcqsmm0dxjag0-autoconf-2.71",
+        "/nix/store/8v1frkj1fylm7isn4jv3yvaa76ja9sqb-bootstrap-stage4-stdenv-linux",
+        "/nix/store/fmli03qqhphbk695kgl3sf2hfh1vc78a-gettext-0.21.1",
+        "/nix/store/j70nvvz7pzv21clqapm35f5g64nm6613-automake-1.16.5"
+      ]
+    },
+    {
+      "ref": "/nix/store/n1djrrflvxnwdd735304l23r2qdnjrm6-gmp-6.3.0.tar.bz2",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/n8ay9yxwgl07z3csb5hfp6m80qk3hzyl-pcre2-10.42.tar.bz2",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/nbsz4b0kdh5a2b9h2cr9ngxskfqx575k-gnused-4.9",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/a2i83vprqrd9nkr116yy1ksrwz5y1vq9-sed-4.9.tar.xz",
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2"
+      ]
+    },
+    {
+      "ref": "/nix/store/nffxsaniz7irz07z79cxwkhz97vgqwrx-bash52-018",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/p3jshbwxiwifm1py0yq544fmdyy98j8a-glibc-2.38-27",
+      "dependsOn": [
+        "/nix/store/05d0yccrkp8pl5c6my29cxzzqb7a9az8-glibc-2.38.tar.xz",
+        "/nix/store/7c07n1bg5xid6w0ffd0warfxpzjjdzzw-bison-3.8.2",
+        "/nix/store/as96pzg4r9g2yan52hcq5g8gzjxgdp94-bootstrap-stage2-gcc-wrapper-13.2.0",
+        "/nix/store/cmfal0ijh83x06zz7wp40c1idd7qv7ay-python3-minimal-3.11.7",
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux",
+        "/nix/store/x6lnzglgc0cvi3niwq604n71lkm3yifd-linux-headers-6.6"
       ]
     },
     {
       "ref": "/nix/store/pa10z4ngm0g83kx9mssrqzz30s84vq7k-hello-2.12.1.tar.gz",
-      "dependsOn": [
-        "/nix/store/ypwhx9x3k8is4qmq1sgbzaggm5lcylhk-curl-8.4.0-dev"
-      ]
-    },
-    {
-      "ref": "/nix/store/qy4h1wl3awid78vbbyvnn0div02kjv71-perl-5.38.2",
       "dependsOn": []
     },
     {
-      "ref": "/nix/store/sjm6zhcjq1l6ghcal55vmpy48zd0rhm7-perl-5.38.2",
+      "ref": "/nix/store/pb29f7lahx1j2cp577dvrhgy20nd0xyr-bash-5.2-p21-dev",
       "dependsOn": [
-        "/nix/store/3wvj2nbynari4iirc4yx3mhf26hbjr9s-libxcrypt-4.4.36"
+        "/nix/store/0cr4hvmwbfablyhn58ba0lrfb44igq5y-bash52-016",
+        "/nix/store/1dydp86d00qzjbncpi80sdsndf33lc5j-fix-static.patch",
+        "/nix/store/1fw5fcsjz9wcbf13a5xs4i2cjfircp3x-bash52-006",
+        "/nix/store/24ygbbc9k6vjc4vhz2j6a9dkdgmqgc6n-bash52-010",
+        "/nix/store/2nrimc34ymqp6ssdgsasbfag8f659f6m-bootstrap-stage1-stdenv-linux",
+        "/nix/store/2ynclzrdl0hy9miy6k8gcwgzw4mhsmd0-bash52-004",
+        "/nix/store/7c07n1bg5xid6w0ffd0warfxpzjjdzzw-bison-3.8.2",
+        "/nix/store/a73wzcks7h2y814qxa1z3kv1hg205mpm-bash52-001",
+        "/nix/store/cddj9qpc4l62qjy6vvf7gp50mfqaf506-bash52-014",
+        "/nix/store/d5qpl3kqrmv99fbw1cd09qj9jr7kb2rr-bash52-019",
+        "/nix/store/gnx16vs69p7fggsslnbg6v818497vvxl-bash52-021",
+        "/nix/store/in24890k6ybij0b63jisfmrwmmc6x7pv-bash52-017",
+        "/nix/store/j8vipdfzslz4aa7aj0amwd4msxa9hhpl-bash52-009",
+        "/nix/store/jn9f2mr2jdm9yn5hi0pws44nbfrah8d3-bash52-008",
+        "/nix/store/nffxsaniz7irz07z79cxwkhz97vgqwrx-bash52-018",
+        "/nix/store/pcdlxsb3mxfjnclg8rn8xy2ywbb5ra36-bash52-020",
+        "/nix/store/pjp935kxwai47zyx1wpwadls00m9nmib-bash52-015",
+        "/nix/store/rs1qdpy1nb3x07g4vqvb4s774qhq9f0w-bash52-007",
+        "/nix/store/sim601rd1y3hsap9qkn25cwprsa9aipp-bash52-011",
+        "/nix/store/sxc8xmi7caxaiywzh15za9crpk3bw98z-bash52-003",
+        "/nix/store/v28dv6l0qk3j382kp40bksa1v6h7dx9p-bash-5.2.tar.gz",
+        "/nix/store/v8bsri9qkagqkfznb92gny8mbdqrjzxb-bootstrap-stage1-gcc-wrapper-",
+        "/nix/store/wcpqrbsljh2x04qccs6jv9z8c9y1c3cd-bash52-013",
+        "/nix/store/x1sqwqn02c5mnpi8hbqlxpbm3rahq5dm-bash52-012",
+        "/nix/store/xc3h9isl5566i6a4pvdsgin26rchijrq-bash52-002",
+        "/nix/store/z76vsdh69cvwkwhwg69k7d1znwjmx6hf-bash52-005"
+      ]
+    },
+    {
+      "ref": "/nix/store/pcdlxsb3mxfjnclg8rn8xy2ywbb5ra36-bash52-020",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/pgxpq0lmk4bd0yybaxkb82qlcjx55apn-libffi-3.4.4.tar.gz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/pjp935kxwai47zyx1wpwadls00m9nmib-bash52-015",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/pq4bmqcrz01fmb601qkmfk49454dv5m9-autoconf-archive-2023.02.20.tar.xz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/pyv061hd2f7zn947kcm4n5bdlmvygddb-bzip2-1.0.8-dev",
+      "dependsOn": [
+        "/nix/store/3drj15y67xgwz9fld37l04bv705448g0-autoreconf-hook",
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux",
+        "/nix/store/slpdqm3wlhwbkzyijjz3xpifa219ac0x-bzip2-1.0.8.tar.gz",
+        "/nix/store/ws73d521m0im6x7nhb0836i51z2yd9dq-bzip2-1.0.6.2-autoconfiscated.patch"
+      ]
+    },
+    {
+      "ref": "/nix/store/q9ccnr97sv21jlmzxqsra5jyp71s51dl-texinfo-7.0.3.tar.xz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/qx3m44slznqqwd7ih8fjl78wc5ka7mlh-ed-1.19.tar.lz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/r8c9n9n8mpk9d2i0m34djyiilbg5ly1d-xz-5.4.5",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/2cxa62ycswpswvysa0nzanmh0qm79ikn-xz-5.4.5.tar.bz2"
+      ]
+    },
+    {
+      "ref": "/nix/store/r990yl8mna5rzdbj5af3zzjjg3qfg7wy-update-autotools-gnu-config-scripts-hook",
+      "dependsOn": [
+        "/nix/store/2y4k5a99vfmsw51069fp7ab4hlvbs1ry-gnu-config-2023-09-19",
+        "/nix/store/8v1frkj1fylm7isn4jv3yvaa76ja9sqb-bootstrap-stage4-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/r9ncz1y356780yaddaz1z888ayyvh4aa-pcre2-10.42",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/n8ay9yxwgl07z3csb5hfp6m80qk3hzyl-pcre2-10.42.tar.bz2"
+      ]
+    },
+    {
+      "ref": "/nix/store/rcqpvazw3b5dbzmmrqacd28snmhp21y5-zlib-1.3-dev",
+      "dependsOn": [
+        "/nix/store/2nrimc34ymqp6ssdgsasbfag8f659f6m-bootstrap-stage1-stdenv-linux",
+        "/nix/store/c1hg8k7vjy5hxfm39pp30xgiw7qk7xwf-zlib-1.3.tar.gz"
+      ]
+    },
+    {
+      "ref": "/nix/store/rlkmf7im541j4a81n0h8ph1sfl9fq51p-autoconf-archive-2023.02.20",
+      "dependsOn": [
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux",
+        "/nix/store/pq4bmqcrz01fmb601qkmfk49454dv5m9-autoconf-archive-2023.02.20.tar.xz",
+        "/nix/store/szh64sr0c103vzpi4k8p4n0diqfk8y8j-xz-5.4.5-dev"
+      ]
+    },
+    {
+      "ref": "/nix/store/rmjsgxd4w10wrnnwrrrry2sz5cfpwafq-coreutils-9.4.tar.xz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/rs1qdpy1nb3x07g4vqvb4s774qhq9f0w-bash52-007",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/s2094dggqjwpd54c08hvkwlv2wszdr5x-gcc-13.2.0",
+      "dependsOn": [
+        "/nix/store/0aj573ndahyrg65182b8p62hdlhjg602-bootstrap-stage3-gcc-wrapper-13.2.0",
+        "/nix/store/1hjv10489fm00lckiicwsv3nlcm07njy-zlib-1.3-dev",
+        "/nix/store/4i9n25r0qfrd7sq429p032x5pzwap5a9-bootstrap-stage3-stdenv-linux",
+        "/nix/store/4vnyjjixvxvafpln9cyfs5j8qzf93rpp-mpfr-4.2.1-dev",
+        "/nix/store/68qbq5jzwljpl0w6i1qj2l66k129l0ii-glibc-2.38-27-dev",
+        "/nix/store/6x5hikvl4rn94zzb53khakj4f85yj4nm-which-2.21",
+        "/nix/store/7cwxm8iwp8iji6nwf2k7y99nfzqm92xp-texinfo-7.0.3",
+        "/nix/store/azf9rihy6r20xc0dngl7m4kc2z1z0q1w-libmpc-1.3.1",
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/fmli03qqhphbk695kgl3sf2hfh1vc78a-gettext-0.21.1",
+        "/nix/store/i3cfzk4l0na9hw27vpx7i6yr58xk71hc-patchelf-0.15.0",
+        "/nix/store/i449xw00j82nwjw4pw4bhjllx441c5qy-gmp-6.3.0-dev",
+        "/nix/store/jadk6vcka8fvlqpm602rga0isky043ga-isl-0.20",
+        "/nix/store/lrhdnqjp6rxbwayddmnklhi6gi411135-libxcrypt-4.4.36",
+        "/nix/store/v05wnq295i4bvdg75kpycg0rds8qrrv4-binutils-patchelfed-ld-wrapper-2.40",
+        "/nix/store/z9fdf582flwcri4ds9fxknyi27w6vi1i-gcc-13.2.0.tar.xz"
+      ]
+    },
+    {
+      "ref": "/nix/store/s3vbd8fym3hlfkzyqgx5nb8fcjf4b7jv-libxcrypt-4.4.36",
+      "dependsOn": [
+        "/nix/store/7prd7fc1z38f286fxalsr8s9mjl6i1ck-bootstrap-stage-xgcc-stdenv-linux",
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/f76sw6av28v3cv6nxmqw190pkpnfnw9b-libxcrypt-4.4.36.tar.xz"
+      ]
+    },
+    {
+      "ref": "/nix/store/sim601rd1y3hsap9qkn25cwprsa9aipp-bash52-011",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/sjsxwdwpb4wkj2i7agmc45s5lsw91lpn-glibc-iconv-2.38",
+      "dependsOn": [
+        "/nix/store/8v1frkj1fylm7isn4jv3yvaa76ja9sqb-bootstrap-stage4-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/slpdqm3wlhwbkzyijjz3xpifa219ac0x-bzip2-1.0.8.tar.gz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/sm9jbfbn02wnjhh2pmmgpvzwifaphri0-lzip-1.23",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/fim96i2pigbmdkkc2rf34f71g9v50i5x-lzip-1.23.tar.gz"
+      ]
+    },
+    {
+      "ref": "/nix/store/sxc8xmi7caxaiywzh15za9crpk3bw98z-bash52-003",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/szh64sr0c103vzpi4k8p4n0diqfk8y8j-xz-5.4.5-dev",
+      "dependsOn": [
+        "/nix/store/2cxa62ycswpswvysa0nzanmh0qm79ikn-xz-5.4.5.tar.bz2",
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/v05wnq295i4bvdg75kpycg0rds8qrrv4-binutils-patchelfed-ld-wrapper-2.40",
+      "dependsOn": [
+        "/nix/store/4ysl1256cdc7wh1jlrgvkyik57ss6644-binutils-patchelfed-ld-2.40",
+        "/nix/store/68qbq5jzwljpl0w6i1qj2l66k129l0ii-glibc-2.38-27-dev",
+        "/nix/store/dsn6vl7x1hbn1akgpxync19gpx2dzy8w-bootstrap-tools",
+        "/nix/store/h02zm172d1w692h75cdc022nx3w9icjj-glibc-2.38-27-bin",
+        "/nix/store/p3jshbwxiwifm1py0yq544fmdyy98j8a-glibc-2.38-27",
+        "/nix/store/xww019ladnkpbls3y6jicbqcqsl9grjv-bootstrap-stage-xgcc-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/v0m59igyinq3qrbx7fibyal1dx5f6rcq-file-5.45.tar.gz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/v28dv6l0qk3j382kp40bksa1v6h7dx9p-bash-5.2.tar.gz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/v4h5dh6vwgvnn2x8jyqs33x00krrcjd4-python-setup-hook.sh",
+      "dependsOn": [
+        "/nix/store/x5grhyr31b63zh1qwwj76w4xssmixpcz-bootstrap-stage2-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/v4iwfrkmz890153smi70h3wi6791xlgk-python3-minimal-3.11.7",
+      "dependsOn": [
+        "/nix/store/0ngb7bv2lxv826z8qgl497zj6zzr0jlp-expat-2.5.0-dev",
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/1hjv10489fm00lckiicwsv3nlcm07njy-zlib-1.3-dev",
+        "/nix/store/3vkcrwqal8sbvdc1gdi3pcwbqiszv38x-bzip2-1.0.8-dev",
+        "/nix/store/5l40jr1linl0zv9j3zscii9pnc7pcc96-Python-3.11.7.tar.xz",
+        "/nix/store/5rml950ggcn5g8564x7hg2a9mayd08mr-libffi-3.4.4-dev",
+        "/nix/store/73l28p4a9iy51wwg5wg6xgd81mds5a9n-xz-5.4.5-dev",
+        "/nix/store/925d6li647rdrjp834ia3isnxq7gw444-python-setup-hook.sh",
+        "/nix/store/b0gi6722kbns0fdpxy0rhlkanvyx58hc-libxcrypt-4.4.36",
+        "/nix/store/gbiffn4mak7bp0izjfkl1n5vqjy1y110-pkg-config-wrapper-0.29.2",
+        "/nix/store/i5siqp4nvqs39jnnal3y17297qmdryix-bash-5.2-p21-dev",
+        "/nix/store/ljakxsj6051lv6insc7z351bjxi1yhx9-autoconf-archive-2023.02.20",
+        "/nix/store/mzrk9gqfnqi9is5ra9ymnif257inlvjx-autoreconf-hook",
+        "/nix/store/zy2j48wj6a9qwiz46q6cayh1zwcc9fi8-nuke-references"
       ]
     },
     {
       "ref": "/nix/store/v5irq7wvkr7kih0hhnch5nnv2dcq8c4f-stdenv-linux",
+      "dependsOn": [
+        "/nix/store/05zbwhz8a7i2v79r9j21pl6m6cj0xi8k-libunistring-1.1",
+        "/nix/store/20rsi77ny2i4i1rbd63h4392a245j5dz-gnutar-1.35",
+        "/nix/store/2cvpxhj5gifb9g8hd0w6zbnnqmhl86vk-binutils-wrapper-2.40",
+        "/nix/store/2y4k5a99vfmsw51069fp7ab4hlvbs1ry-gnu-config-2023-09-19",
+        "/nix/store/3dimjffv8pn3sk48ngd4adz17agpfb4y-gcc-13.2.0-libgcc",
+        "/nix/store/3i90ns2cvw81zkp1g76grgn1g4zbnj6n-bzip2-1.0.8-bin",
+        "/nix/store/43f3a13z1256s37825a6am9y21lysg2a-file-5.45",
+        "/nix/store/4zp05qkzh9s3c3k7pp9d36vhiz3x8h9l-gcc-13.2.0-lib",
+        "/nix/store/68qbq5jzwljpl0w6i1qj2l66k129l0ii-glibc-2.38-27-dev",
+        "/nix/store/7iyzsc224ax9dm71fv4grndixylcn7kh-findutils-4.9.0",
+        "/nix/store/8nvhq3kag7dmpsjp3zl6n9rza2a5wdfk-gmp-6.3.0",
+        "/nix/store/98hrpcnb9xq9675js8ilr8cpgnfadln1-patch-2.7.6",
+        "/nix/store/9cxvxkn4zrcp0rm9mrq1wrqsncagh4kr-gmp-with-cxx-6.3.0",
+        "/nix/store/9vafkkic27k7m4934fpawl6yip3a6k4h-bash-5.2-p21",
+        "/nix/store/ayg5rhjhi9ic73hqw33mjqjxwv59ndym-xgcc-13.2.0-libgcc",
+        "/nix/store/azf9rihy6r20xc0dngl7m4kc2z1z0q1w-libmpc-1.3.1",
+        "/nix/store/bfb70iaascrajr78mfmr5kzspv0p7i6d-gawk-5.2.2",
+        "/nix/store/dsn6vl7x1hbn1akgpxync19gpx2dzy8w-bootstrap-tools",
+        "/nix/store/fa3xxlazac50wwlnpwsh6ffwlpnvigar-patchelf-0.15.0",
+        "/nix/store/fhgq54wng753sikzs5bpflzifmn5qsyr-attr-2.5.1",
+        "/nix/store/fp4fd51gpjdw0pxq42fwydyjjw4saw8a-diffutils-3.10",
+        "/nix/store/grll1f1qj7yw6yq42qigkw5fvyjz2rjw-gnumake-4.4.1",
+        "/nix/store/h02zm172d1w692h75cdc022nx3w9icjj-glibc-2.38-27-bin",
+        "/nix/store/jadk6vcka8fvlqpm602rga0isky043ga-isl-0.20",
+        "/nix/store/jd7nvwsmkry0hbh6rn9jafpz2pm56ilw-xz-5.4.5-bin",
+        "/nix/store/khndnv11g1rmzhzymm1s5dw7l2ld45bc-coreutils-9.4",
+        "/nix/store/lflb8b18v6mkczxv95xpd44bf4z8znjf-mpfr-4.2.1",
+        "/nix/store/m59xdgkgnjbk8kk6k6vbxmqnf82mk9s0-libidn2-2.3.4",
+        "/nix/store/mmsb0ivm355r4l3yjbpaiirkf673n66v-gnugrep-3.11",
+        "/nix/store/mrzfvc2gjy2mia0k4vrb95f2iff6xcxm-zlib-1.3",
+        "/nix/store/nbsz4b0kdh5a2b9h2cr9ngxskfqx575k-gnused-4.9",
+        "/nix/store/p3jshbwxiwifm1py0yq544fmdyy98j8a-glibc-2.38-27",
+        "/nix/store/r8c9n9n8mpk9d2i0m34djyiilbg5ly1d-xz-5.4.5",
+        "/nix/store/r990yl8mna5rzdbj5af3zzjjg3qfg7wy-update-autotools-gnu-config-scripts-hook",
+        "/nix/store/r9ncz1y356780yaddaz1z888ayyvh4aa-pcre2-10.42",
+        "/nix/store/s2094dggqjwpd54c08hvkwlv2wszdr5x-gcc-13.2.0",
+        "/nix/store/v9wihazrrvl4rpmsyll0y492x1zx9yw0-ed-1.19",
+        "/nix/store/vp9wdfs479wcscgc0wm11lbqhp9j69r7-acl-2.3.1",
+        "/nix/store/x6lnzglgc0cvi3niwq604n71lkm3yifd-linux-headers-6.6",
+        "/nix/store/x97sygqdz3avzxh98m0z76nfy31zadcr-expand-response-params",
+        "/nix/store/xdqs45iclhp9dz8zz9pvn5zivjbhid1a-binutils-2.40",
+        "/nix/store/xq8920m5mbd83vdlydwli7qsh67gfm5v-gcc-wrapper-13.2.0",
+        "/nix/store/ya47qdk3gvxhb54za3sd0jbcq7dqqqgb-bzip2-1.0.8",
+        "/nix/store/zbzbcqjsfv9d6svzl7rcvjdijkdsqib2-gzip-1.13",
+        "/nix/store/zjqp1amhxdxcsrhjsaxy12xqfh0h56hc-binutils-2.40-lib"
+      ]
+    },
+    {
+      "ref": "/nix/store/v9wihazrrvl4rpmsyll0y492x1zx9yw0-ed-1.19",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/qx3m44slznqqwd7ih8fjl78wc5ka7mlh-ed-1.19.tar.lz",
+        "/nix/store/sm9jbfbn02wnjhh2pmmgpvzwifaphri0-lzip-1.23"
+      ]
+    },
+    {
+      "ref": "/nix/store/vijsp4ywmsvr6jk5ypbb8hszayn7bwdd-tar-1.35.tar.xz",
       "dependsOn": []
     },
     {
-      "ref": "/nix/store/v6n306xw0v850dn01s9fdd0qjwh2j082-pkg-config-wrapper-0.29.2",
+      "ref": "/nix/store/vp4896rkv185vzcda28y4f4k0l0ssilf-libidn2-2.3.4.tar.gz",
       "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/vp9wdfs479wcscgc0wm11lbqhp9j69r7-acl-2.3.1",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/fmli03qqhphbk695kgl3sf2hfh1vc78a-gettext-0.21.1",
+        "/nix/store/iwlj49k2lybjlx0vd552f7g3ibkvrz6q-attr-2.5.1-dev",
+        "/nix/store/y3yiminrckvhf35fh9q42vjwi0npznji-acl-2.3.1.tar.gz"
+      ]
+    },
+    {
+      "ref": "/nix/store/wcpqrbsljh2x04qccs6jv9z8c9y1c3cd-bash52-013",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/wdcg9k844sc4xq1d44qbvjx8ksj7k0ni-pkg-config-wrapper-0.29.2",
+      "dependsOn": [
+        "/nix/store/x5grhyr31b63zh1qwwj76w4xssmixpcz-bootstrap-stage2-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/ws73d521m0im6x7nhb0836i51z2yd9dq-bzip2-1.0.6.2-autoconfiscated.patch",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/x0qzqwrgbcvf95k27agndhn2xidzrxv4-isl-0.20",
+      "dependsOn": [
+        "/nix/store/7prd7fc1z38f286fxalsr8s9mjl6i1ck-bootstrap-stage-xgcc-stdenv-linux",
+        "/nix/store/x9v0hmr76dm68pijzldzxks01iqzag1z-isl-0.20.tar.xz",
+        "/nix/store/yg41slh4c4v14jq8c3129cxszwsb86lz-gmp-6.3.0-dev"
+      ]
+    },
+    {
+      "ref": "/nix/store/x1sqwqn02c5mnpi8hbqlxpbm3rahq5dm-bash52-012",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/x638x4d2m96yb0izivf3s6b285dycab5-patchelf-0.15.0",
+      "dependsOn": [
+        "/nix/store/2nrimc34ymqp6ssdgsasbfag8f659f6m-bootstrap-stage1-stdenv-linux",
+        "/nix/store/447hvnlzzi9myri1iq3bijxgx6v6b592-patchelf-0.15.0.tar.bz2"
+      ]
+    },
+    {
+      "ref": "/nix/store/x6lnzglgc0cvi3niwq604n71lkm3yifd-linux-headers-6.6",
+      "dependsOn": [
+        "/nix/store/as96pzg4r9g2yan52hcq5g8gzjxgdp94-bootstrap-stage2-gcc-wrapper-13.2.0",
+        "/nix/store/cdhb1yi17m2r0fw8yjsn54j4j7gla6mv-linux-6.6.tar.xz",
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/x5grhyr31b63zh1qwwj76w4xssmixpcz-bootstrap-stage2-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/x97sygqdz3avzxh98m0z76nfy31zadcr-expand-response-params",
+      "dependsOn": [
+        "/nix/store/4i9n25r0qfrd7sq429p032x5pzwap5a9-bootstrap-stage3-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/x9v0hmr76dm68pijzldzxks01iqzag1z-isl-0.20.tar.xz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/xc3h9isl5566i6a4pvdsgin26rchijrq-bash52-002",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/xdqs45iclhp9dz8zz9pvn5zivjbhid1a-binutils-2.40",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/1hjv10489fm00lckiicwsv3nlcm07njy-zlib-1.3-dev",
+        "/nix/store/7c07n1bg5xid6w0ffd0warfxpzjjdzzw-bison-3.8.2",
+        "/nix/store/9vapsdndf66l1bfp7210hrd7vs42lvvc-binutils-2.40.tar.bz2",
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/fmli03qqhphbk695kgl3sf2hfh1vc78a-gettext-0.21.1",
+        "/nix/store/n8wkmy6wxr14mp59kbbiypvcw3yaywxi-bootstrap-stage4-gcc-wrapper-13.2.0"
+      ]
+    },
+    {
+      "ref": "/nix/store/xnlr80fc679ilzq8y9fqia3pwmfq5cdk-libmpc-1.3.1",
+      "dependsOn": [
+        "/nix/store/31559p1w94y01g37dfix30hihc8ppcif-mpfr-4.2.1-dev",
+        "/nix/store/7prd7fc1z38f286fxalsr8s9mjl6i1ck-bootstrap-stage-xgcc-stdenv-linux",
+        "/nix/store/mdrv8znlgnysqzq1hnv46vi9jmnsc1bc-mpc-1.3.1.tar.gz",
+        "/nix/store/yg41slh4c4v14jq8c3129cxszwsb86lz-gmp-6.3.0-dev"
+      ]
+    },
+    {
+      "ref": "/nix/store/xq8920m5mbd83vdlydwli7qsh67gfm5v-gcc-wrapper-13.2.0",
+      "dependsOn": [
+        "/nix/store/2cvpxhj5gifb9g8hd0w6zbnnqmhl86vk-binutils-wrapper-2.40",
+        "/nix/store/68qbq5jzwljpl0w6i1qj2l66k129l0ii-glibc-2.38-27-dev",
+        "/nix/store/8v1frkj1fylm7isn4jv3yvaa76ja9sqb-bootstrap-stage4-stdenv-linux",
+        "/nix/store/h02zm172d1w692h75cdc022nx3w9icjj-glibc-2.38-27-bin",
+        "/nix/store/khndnv11g1rmzhzymm1s5dw7l2ld45bc-coreutils-9.4",
+        "/nix/store/mmsb0ivm355r4l3yjbpaiirkf673n66v-gnugrep-3.11",
+        "/nix/store/p3jshbwxiwifm1py0yq544fmdyy98j8a-glibc-2.38-27",
+        "/nix/store/s2094dggqjwpd54c08hvkwlv2wszdr5x-gcc-13.2.0"
+      ]
+    },
+    {
+      "ref": "/nix/store/xv1anrhbamg1bj0jwy96q3zjvcdj3wz6-zlib-1.3-dev",
+      "dependsOn": [
+        "/nix/store/c1hg8k7vjy5hxfm39pp30xgiw7qk7xwf-zlib-1.3.tar.gz",
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/y2h7bqjpc4q9g887w8pbwncjrmr4g9sx-gettext-0.21.1.tar.gz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/y3yiminrckvhf35fh9q42vjwi0npznji-acl-2.3.1.tar.gz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/y954pl28vm03qfhvqrgyspwwv28b5lyi-findutils-4.9.0.tar.xz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/ya47qdk3gvxhb54za3sd0jbcq7dqqqgb-bzip2-1.0.8",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/mzrk9gqfnqi9is5ra9ymnif257inlvjx-autoreconf-hook",
+        "/nix/store/slpdqm3wlhwbkzyijjz3xpifa219ac0x-bzip2-1.0.8.tar.gz",
+        "/nix/store/ws73d521m0im6x7nhb0836i51z2yd9dq-bzip2-1.0.6.2-autoconfiscated.patch"
+      ]
+    },
+    {
+      "ref": "/nix/store/yccn06k57v9p3xaa5h291814yyrlllp2-pcre2-10.42-dev",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/n8ay9yxwgl07z3csb5hfp6m80qk3hzyl-pcre2-10.42.tar.bz2"
+      ]
+    },
+    {
+      "ref": "/nix/store/yg41slh4c4v14jq8c3129cxszwsb86lz-gmp-6.3.0-dev",
+      "dependsOn": [
+        "/nix/store/7prd7fc1z38f286fxalsr8s9mjl6i1ck-bootstrap-stage-xgcc-stdenv-linux",
+        "/nix/store/l5d6bk510mjw5plz2ysnbm7dqlvjdlxr-gnum4-1.4.19",
+        "/nix/store/n1djrrflvxnwdd735304l23r2qdnjrm6-gmp-6.3.0.tar.bz2",
+        "/nix/store/wsf274jxzi23lvi76af0s09dwvkwwlz5-bootstrap-stage-xgcc-gcc-wrapper-"
+      ]
     },
     {
       "ref": "/nix/store/ylriv849va759pz6sf9j06v9mwmh91w1-hello-2.12.1",
+      "dependsOn": [
+        "/nix/store/pa10z4ngm0g83kx9mssrqzz30s84vq7k-hello-2.12.1.tar.gz",
+        "/nix/store/v5irq7wvkr7kih0hhnch5nnv2dcq8c4f-stdenv-linux"
+      ]
+    },
+    {
+      "ref": "/nix/store/z0dk90vlwlhm097kka2632wmnjr0izw2-expat-2.5.0.tar.xz",
       "dependsOn": []
     },
     {
-      "ref": "/nix/store/ypwhx9x3k8is4qmq1sgbzaggm5lcylhk-curl-8.4.0-dev",
+      "ref": "/nix/store/z241pijngvxkrxc4wywmiri93gi0bvw6-file-5.45-dev",
       "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
         "/nix/store/1hjv10489fm00lckiicwsv3nlcm07njy-zlib-1.3-dev",
-        "/nix/store/4jk7xwmpdb02cnv0w8jknprhxkbr8dyw-libssh2-1.11.0-dev",
-        "/nix/store/fpm6dfr2f288vgq3fmvfz9lmm7k6xlhq-nghttp2-1.57.0-dev",
-        "/nix/store/m8w6di2fqgblimidllyfc3fypgysrpgn-openssl-3.0.12-dev",
-        "/nix/store/ml1nkm5dvlmyp19vlbi4b2cxzky78qfb-libkrb5-1.21.2-dev",
-        "/nix/store/sjm6zhcjq1l6ghcal55vmpy48zd0rhm7-perl-5.38.2",
-        "/nix/store/v6n306xw0v850dn01s9fdd0qjwh2j082-pkg-config-wrapper-0.29.2"
+        "/nix/store/v0m59igyinq3qrbx7fibyal1dx5f6rcq-file-5.45.tar.gz"
+      ]
+    },
+    {
+      "ref": "/nix/store/z2rfzr91cf3n0bysv5jjp8v4jb441wgs-automake-1.16.5",
+      "dependsOn": [
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/dx3xdgwclaqvp62hz67p1zhmsrag7gkb-bootstrap-stage2-stdenv-linux",
+        "/nix/store/f6q8dgl1mn0aknh6cjyf9pspzncjf10l-autoconf-2.71",
+        "/nix/store/gmaq49vzfrkvr714y4fhfxv100ijihin-automake-1.16.5.tar.xz"
+      ]
+    },
+    {
+      "ref": "/nix/store/z76vsdh69cvwkwhwg69k7d1znwjmx6hf-bash52-005",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/z9fdf582flwcri4ds9fxknyi27w6vi1i-gcc-13.2.0.tar.xz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/zbzbcqjsfv9d6svzl7rcvjdijkdsqib2-gzip-1.13",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/43aky07zr5ahpy63faz3pcamzjk8ishn-make-shell-wrapper-hook",
+        "/nix/store/b44vg9nm5f64fihql70jzjj7yd64q0sa-gzip-1.13.tar.xz",
+        "/nix/store/jd7nvwsmkry0hbh6rn9jafpz2pm56ilw-xz-5.4.5-bin"
+      ]
+    },
+    {
+      "ref": "/nix/store/zjqp1amhxdxcsrhjsaxy12xqfh0h56hc-binutils-2.40-lib",
+      "dependsOn": [
+        "/nix/store/1birn6rffbqb43hv68r1lkz8knnx7r0a-bootstrap-stage4-stdenv-linux",
+        "/nix/store/1hjv10489fm00lckiicwsv3nlcm07njy-zlib-1.3-dev",
+        "/nix/store/7c07n1bg5xid6w0ffd0warfxpzjjdzzw-bison-3.8.2",
+        "/nix/store/9vapsdndf66l1bfp7210hrd7vs42lvvc-binutils-2.40.tar.bz2",
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2",
+        "/nix/store/fmli03qqhphbk695kgl3sf2hfh1vc78a-gettext-0.21.1",
+        "/nix/store/n8wkmy6wxr14mp59kbbiypvcw3yaywxi-bootstrap-stage4-gcc-wrapper-13.2.0"
+      ]
+    },
+    {
+      "ref": "/nix/store/zkas816mjrr8ijdj29qs4wqyn38l4j12-libunistring-1.1.tar.gz",
+      "dependsOn": []
+    },
+    {
+      "ref": "/nix/store/zy2j48wj6a9qwiz46q6cayh1zwcc9fi8-nuke-references",
+      "dependsOn": [
+        "/nix/store/8v1frkj1fylm7isn4jv3yvaa76ja9sqb-bootstrap-stage4-stdenv-linux",
+        "/nix/store/cwmxf0mhn2rkab34ff3k0jpc2h2a9b48-perl-5.38.2"
       ]
     }
   ]
