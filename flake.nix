@@ -21,8 +21,8 @@
       (system:
       let
         pkgs = import nixpkgs { inherit system; };
-        crane-lib = crane.lib.${system};
-        cyclonedx = pkgs.callPackage ./nix/cyclonedx.nix { };
+        crane-lib = crane.mkLib nixpkgs.legacyPackages.${system};
+        cyclonedx = pkgs.cyclonedx-cli;
         nixtract-cli = nixtract.defaultPackage.${system};
 
         crane-outputs = import ./nix/crane.nix {
