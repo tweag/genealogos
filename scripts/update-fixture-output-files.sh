@@ -21,7 +21,7 @@ for input_file in ./genealogos/tests/fixtures/nixtract/flakes/*.in; do
   flake_ref=$(jq -r .flake_ref < "$input_file")
   attribute_path=$(jq -r .attribute_path < "$input_file")
   echo "Updating: $output_file_1_4"
-  GENEALOGOS_DETERMINISTIC=1 genealogos --flake-ref "$flake_ref" --attribute-path "$attribute_path" -o "$output_file_1_4" --bom cyclonedx_1.4_json
+  GENEALOGOS_DETERMINISTIC=1 genealogos "$flake_ref#$attribute_path" -o "$output_file_1_4" --bom cyclonedx_1.4_json
   # echo "Updating: $output_file_1_5"
   # GENEALOGOS_DETERMINISTIC=1 genealogos --flake-ref "$flake_ref" --attribute-path "$attribute_path" "$output_file_1_5" --cyclonedx-version 1.5
 done

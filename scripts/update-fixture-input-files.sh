@@ -16,6 +16,6 @@ nixpkgs_commit="84d981bae8b5e783b3b548de505b22880559515f"
 set -e
 
 # Update the fixture files
-nixtract -f "github:tweag/nixtract?rev=4e170b1c8566356688da15f7bc05ee41474a3b89" "$base_path/02-nixtract.in"
+nixtract -f "github:nixos/nixpkgs?rev=${nixpkgs_commit}" -a "topiary" "$base_path/02-topiary.in"
 nixtract -f "github:nixos/nixpkgs?rev=${nixpkgs_commit}" -a "hello" "$base_path/04-hello.in"
 nixtract -f "github:nixos/nixpkgs?rev=${nixpkgs_commit}" -a "blackbox-terminal" "$base_path/05-blackbox-terminal.in"
