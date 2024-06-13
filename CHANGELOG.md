@@ -3,6 +3,7 @@
 
 ## [Unreleased]
 
+## [0.3.0](https://github.com/tweag/genealogos/compare/v0.3.0...v1.0.0)
 ### Added
 - [#56](https://github.com/tweag/genealogos/pull/56) adds a garbage collector to the jobs api, to prevent stale jobs from taking up unnecessary memory
 
