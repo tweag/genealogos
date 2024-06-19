@@ -37,7 +37,7 @@ nix shell github:tweag/genealogos
 ```
 
 You can also forgo Nix and use cargo directly instead.
-However, in this case you are sponsible for ensuring the dependencies are available.
+However, in this case you are responsible for ensuring the dependencies are available.
 ```fish
 cargo install --git https://github.com/tweag/genealogos.git genealogos-cli
 ```
