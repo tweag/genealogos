@@ -28,9 +28,30 @@
         crane-outputs = import ./nix/crane.nix {
           inherit pkgs crane-lib nixtract-cli cyclonedx;
         };
+        tmp = pkgs.runCommand "tmp" { } ''
+          mkdir $out
+          mkdir -m 1777 $out/tmp
+        '';
+        dockerImage = pkgs.dockerTools.buildLayeredImageWithNixDb {
+          name = "genealogos";
+          tag = "latest";
+          contents = [ crane-outputs.packages.genealogos-api tmp ];
+          config = {
+            EntryPoint = [ "genealogos-api" ];
+            ExposedPorts."8000" = {};
+            Env = [
+              "ROCKET_ADDRESS=0.0.0.0"
+              "ROCKET_PORT=8000"
+              "SSL_CERT_FILE=${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt"
+            ];
+          };
+        };
       in
       rec {
-        inherit (crane-outputs) checks packages;
+        inherit (crane-outputs) checks;
+        packages = crane-outputs.packages // {
+          inherit dockerImage;
+        };
         overlays.default = import ./nix/overlays.nix {
           inherit crane-lib;
         };

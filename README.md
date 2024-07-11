@@ -57,6 +57,25 @@ cargo install --git https://github.com/tweag/genealogos.git genealogos-api
 
 The `frontend` feature is enabled by default, so once the api is running open `http://localhost:8000/` for the frontend.
 
+## Running as a Docker image
+
+Genealogos API and frontend can also be packaged into a Docker image.
+
+To get and run the image,
+
+```fish
+# Produce the image
+nix build github:tweag/genealogos#dockerImage
+
+# Load it into docker
+docker load -i=./result
+
+# Run the image
+# Note: --rm will wipe the nix store inside the container after it quits
+# The service will be available on port 8000
+docker run -it --rm -p 8000:8000 localhost/genealogos
+```
+
 ## Hacking
 ### Prerequisites
 Development of Genealogos requires Cargo, and some other dependencies.
@@ -210,6 +229,20 @@ This means some inputs can be missed, in particular those that are part of strin
 
 Additionally, Nixtract (through Genealogos) restarts nix for every SBOM component.
 When evaluation of your derivation takes a long time, this will result in very slow SBOM generation.
+
+### Security notes
+
+By its very nature, Genealogos API evaluates arbitrary Nix code provided by users.
+If you are planning to run it as a public service, make sure to properly secure the process and set up appropriate serivce management measures, taking into account:
+
+- Potential for Denial of Service attacks by any user, in particular
+   * Unlimited memory usage,
+   * Unlimited storage usage,
+   * Unlimited CPU time usage
+- Reliance on the assumption that Nix Flake evaluation is fully hermetic and pure, and thus safe
+- Reliance on the Nix sandbox to be secure and non-leaking
+
+As such, we recommend running any public Genealogos instance in some containerised setting, such as via the provided [Docker Image](#Running_as_a_Docker_image), and properly limiting the resources available to the container.
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
