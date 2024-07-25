@@ -35,9 +35,9 @@ pub enum Error {
     #[error("Errors constructing CycloneDX XML output: {0}")]
     CycloneDXXML(#[from] cyclonedx_bom::errors::XmlWriteError),
 
-    /// Holds errors encountered while constructing attempting to parse the provided SPDX expression
-    #[error("Errors constructing CycloneDX SPDX expression: {0}")]
-    CycloneDXSpdxExpression(#[from] cyclonedx_bom::external_models::spdx::SpdxExpressionError),
+    /// Holds errors encountered while constructing attempting to parse the provided SPDX identifier
+    #[error("Errors constructing CycloneDX SPDX Identifier: {0}")]
+    CycloneDXSpdxExpression(#[from] cyclonedx_bom::external_models::spdx::SpdxIdentifierError),
 
     /// String conversion error from UTF8 bytes
     #[error("Errors constructing Converting to String output: {0}")]

@@ -12,7 +12,9 @@
       "description": "GNU Libtool, a generic library support script",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/libtool@2.4.7",
@@ -42,7 +44,9 @@
       "description": "Unicode string library",
       "licenses": [
         {
-          "expression": "LGPL-3.0-or-later"
+          "license": {
+            "id": "LGPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/libunistring@1.1",
@@ -82,10 +86,14 @@
       "description": "GNU multiple precision arithmetic library",
       "licenses": [
         {
-          "expression": "LGPL-3.0-only"
+          "license": {
+            "id": "LGPL-3.0-only"
+          }
         },
         {
-          "expression": "GPL-2.0-only"
+          "license": {
+            "id": "GPL-2.0-only"
+          }
         }
       ],
       "purl": "pkg:generic/gmp-with-cxx@6.3.0",
@@ -105,7 +113,9 @@
       "description": "A stream-oriented XML parser library written in C",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/expat@2.5.0",
@@ -125,7 +135,9 @@
       "description": "Library and tools for manipulating access control lists",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/acl@2.3.1",
@@ -165,7 +177,9 @@
       "description": "Lossless data-compression library",
       "licenses": [
         {
-          "expression": "Zlib"
+          "license": {
+            "id": "Zlib"
+          }
         }
       ],
       "purl": "pkg:generic/zlib@1.3",
@@ -185,7 +199,9 @@
       "description": "GNU implementation of the `tar' archiver",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/gnutar@1.35",
@@ -215,7 +231,9 @@
       "description": "Tools for manipulating binaries (linker, assembler, etc.) (wrapper script)",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/binutils-wrapper@2.40",
@@ -255,7 +273,9 @@
       "description": "Attempt to guess a canonical system name",
       "licenses": [
         {
-          "expression": "GPL-3.0"
+          "license": {
+            "id": "GPL-3.0"
+          }
         }
       ],
       "purl": "pkg:generic/gnu-config@2023-09-19",
@@ -285,7 +305,9 @@
       "description": "Library for multiple-precision floating-point arithmetic",
       "licenses": [
         {
-          "expression": "LGPL-2.0-or-later"
+          "license": {
+            "id": "LGPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/mpfr@4.2.1",
@@ -315,7 +337,9 @@
       "description": "GNU Compiler Collection, version 13.2.0",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/gcc@13.2.0",
@@ -345,7 +369,9 @@
       "description": "High-quality data compression program",
       "licenses": [
         {
-          "expression": "BSD-4-Clause"
+          "license": {
+            "id": "BSD-4-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/bzip2@1.0.8",
@@ -365,7 +391,9 @@
       "description": "High-quality data compression program",
       "licenses": [
         {
-          "expression": "BSD-4-Clause"
+          "license": {
+            "id": "BSD-4-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/bzip2@1.0.8",
@@ -395,7 +423,9 @@
       "description": "A program that shows the type of files",
       "licenses": [
         {
-          "expression": "BSD-2-Clause"
+          "license": {
+            "id": "BSD-2-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/file@5.45",
@@ -425,7 +455,9 @@
       "description": "Library for multiple-precision floating-point arithmetic",
       "licenses": [
         {
-          "expression": "LGPL-2.0-or-later"
+          "license": {
+            "id": "LGPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/mpfr@4.2.1",
@@ -455,7 +487,9 @@
       "description": "GNU Compiler Collection, version 13.2.0",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/gcc@13.2.0",
@@ -485,7 +519,9 @@
       "description": "A foreign function call interface library",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/libffi@3.4.4",
@@ -505,7 +541,9 @@
       "description": "Part of the GNU Build System",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/autoconf@2.71",
@@ -525,7 +563,9 @@
       "description": "The GNU C Library",
       "licenses": [
         {
-          "expression": "LGPL-2.0-or-later"
+          "license": {
+            "id": "LGPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/glibc@2.38",
@@ -545,10 +585,14 @@
       "description": "A general-purpose data compression software, successor of LZMA",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         },
         {
-          "expression": "LGPL-2.1-or-later"
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/xz@5.4.5",
@@ -568,7 +612,9 @@
       "description": "Shows the full path of (shell) commands",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/which@2.21",
@@ -588,10 +634,14 @@
       "description": "A general-purpose data compression software, successor of LZMA",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         },
         {
-          "expression": "LGPL-2.1-or-later"
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/xz@5.4.5",
@@ -611,7 +661,9 @@
       "description": "Yacc-compatible parser generator",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/bison@3.8.2",
@@ -631,7 +683,9 @@
       "description": "The GNU documentation system",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/texinfo@7.0.3",
@@ -651,7 +705,9 @@
       "description": "GNU Find Utilities, the basic directory searching utilities of the GNU operating system",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/findutils@4.9.0",
@@ -671,7 +727,9 @@
       "description": "A stream-oriented XML parser library written in C",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/expat@2.5.0",
@@ -701,7 +759,9 @@
       "description": "GNU Libtool, a generic library support script",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/libtool@2.4.7",
@@ -721,10 +781,14 @@
       "description": "GNU multiple precision arithmetic library",
       "licenses": [
         {
-          "expression": "LGPL-3.0-only"
+          "license": {
+            "id": "LGPL-3.0-only"
+          }
         },
         {
-          "expression": "GPL-2.0-only"
+          "license": {
+            "id": "GPL-2.0-only"
+          }
         }
       ],
       "purl": "pkg:generic/gmp@6.3.0",
@@ -744,7 +808,9 @@
       "description": "The GNU documentation system",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/texinfo@7.0.3",
@@ -774,7 +840,9 @@
       "description": "GNU Patch, a program to apply differences to files",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/patch@2.7.6",
@@ -794,10 +862,14 @@
       "description": "GNU multiple precision arithmetic library",
       "licenses": [
         {
-          "expression": "LGPL-3.0-only"
+          "license": {
+            "id": "LGPL-3.0-only"
+          }
         },
         {
-          "expression": "GPL-2.0-only"
+          "license": {
+            "id": "GPL-2.0-only"
+          }
         }
       ],
       "purl": "pkg:generic/gmp-with-cxx@6.3.0",
@@ -817,7 +889,9 @@
       "description": "GNU Bourne-Again Shell, the de facto standard shell on Linux",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/bash@5.2",
@@ -887,7 +961,9 @@
       "description": "GNU Compiler Collection, version 13.2.0",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/xgcc@13.2.0",
@@ -907,7 +983,9 @@
       "description": "Library for multiprecision complex arithmetic with exact rounding",
       "licenses": [
         {
-          "expression": "LGPL-2.0-or-later"
+          "license": {
+            "id": "LGPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/libmpc@1.3.1",
@@ -927,7 +1005,9 @@
       "description": "Extended crypt library for descrypt, md5crypt, bcrypt, and others",
       "licenses": [
         {
-          "expression": "LGPL-2.1-or-later"
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/libxcrypt@4.4.36",
@@ -967,7 +1047,9 @@
       "description": "GNU Bourne-Again Shell, the de facto standard shell on Linux",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/bash@5.2",
@@ -987,7 +1069,9 @@
       "description": "GNU implementation of the Awk programming language",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/gawk@5.2.2",
@@ -1047,7 +1131,9 @@
       "description": "A high-level dynamically-typed programming language",
       "licenses": [
         {
-          "expression": "Python-2.0"
+          "license": {
+            "id": "Python-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3-minimal@3.11.7",
@@ -1067,7 +1153,9 @@
       "description": "The standard implementation of the Perl 5 programming language",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         }
       ],
       "purl": "pkg:generic/perl@5.38.2",
@@ -1097,7 +1185,9 @@
       "description": "Part of the GNU Build System",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/autoconf@2.71",
@@ -1127,7 +1217,9 @@
       "description": "A small utility to modify the dynamic linker and RPATH of ELF executables",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/patchelf@0.15.0",
@@ -1147,7 +1239,9 @@
       "description": "Library and tools for manipulating extended attributes",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/attr@2.5.1",
@@ -1187,7 +1281,9 @@
       "description": "Well integrated set of translation tools and documentation",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/gettext@0.21.1",
@@ -1207,7 +1303,9 @@
       "description": "Commands for showing the differences between files (diff, cmp, etc.)",
       "licenses": [
         {
-          "expression": "GPL-3.0"
+          "license": {
+            "id": "GPL-3.0"
+          }
         }
       ],
       "purl": "pkg:generic/diffutils@3.10",
@@ -1237,7 +1335,9 @@
       "description": "A tool that allows packages to find out information about other packages (wrapper script)",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/pkg-config-wrapper@0.29.2",
@@ -1257,10 +1357,14 @@
       "description": "A general-purpose data compression software, successor of LZMA",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         },
         {
-          "expression": "LGPL-2.1-or-later"
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/xz@5.4.5",
@@ -1280,7 +1384,9 @@
       "description": "A program that shows the type of files",
       "licenses": [
         {
-          "expression": "BSD-2-Clause"
+          "license": {
+            "id": "BSD-2-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/file@5.45",
@@ -1300,10 +1406,14 @@
       "description": "A general-purpose data compression software, successor of LZMA",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         },
         {
-          "expression": "LGPL-2.1-or-later"
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/xz@5.4.5",
@@ -1343,7 +1453,9 @@
       "description": "A tool to control the generation of non-source files from sources",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/gnumake@4.4.1",
@@ -1363,7 +1475,9 @@
       "description": "GNU Bourne-Again Shell, the de facto standard shell on Linux",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/bash@5.2",
@@ -1383,7 +1497,9 @@
       "description": "The GNU C Library",
       "licenses": [
         {
-          "expression": "LGPL-2.0-or-later"
+          "license": {
+            "id": "LGPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/glibc@2.38",
@@ -1403,7 +1519,9 @@
       "description": "A program that produces a familiar, friendly greeting",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/hello@2.12.1",
@@ -1443,7 +1561,9 @@
       "description": "A small utility to modify the dynamic linker and RPATH of ELF executables",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/patchelf@0.15.0",
@@ -1463,10 +1583,14 @@
       "description": "GNU multiple precision arithmetic library",
       "licenses": [
         {
-          "expression": "LGPL-3.0-only"
+          "license": {
+            "id": "LGPL-3.0-only"
+          }
         },
         {
-          "expression": "GPL-2.0-only"
+          "license": {
+            "id": "GPL-2.0-only"
+          }
         }
       ],
       "purl": "pkg:generic/gmp@6.3.0",
@@ -1486,7 +1610,9 @@
       "description": "GNU Bourne-Again Shell, the de facto standard shell on Linux",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/bash@5.2",
@@ -1526,7 +1652,9 @@
       "description": "Library and tools for manipulating extended attributes",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/attr@2.5.1",
@@ -1546,7 +1674,9 @@
       "description": "GNU standard-compliant makefile generator",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/automake@1.16.5",
@@ -1576,7 +1706,9 @@
       "description": "A library for manipulating sets and relations of integer points bounded by linear constraints",
       "licenses": [
         {
-          "expression": "LGPL-2.1"
+          "license": {
+            "id": "LGPL-2.1"
+          }
         }
       ],
       "purl": "pkg:generic/isl@0.20",
@@ -1596,10 +1728,14 @@
       "description": "A general-purpose data compression software, successor of LZMA",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         },
         {
-          "expression": "LGPL-2.1-or-later"
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/xz@5.4.5",
@@ -1629,7 +1765,9 @@
       "description": "Unicode string library",
       "licenses": [
         {
-          "expression": "LGPL-3.0-or-later"
+          "license": {
+            "id": "LGPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/libunistring@1.1",
@@ -1649,7 +1787,9 @@
       "description": "The GNU Core Utilities",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/coreutils@9.4",
@@ -1669,7 +1809,9 @@
       "description": "GNU M4, a macro processor",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/gnum4@1.4.19",
@@ -1699,7 +1841,9 @@
       "description": "Library for multiple-precision floating-point arithmetic",
       "licenses": [
         {
-          "expression": "LGPL-2.0-or-later"
+          "license": {
+            "id": "LGPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/mpfr@4.2.1",
@@ -1719,7 +1863,9 @@
       "description": "Archive of autoconf m4 macros",
       "licenses": [
         {
-          "expression": "GPL-3.0"
+          "license": {
+            "id": "GPL-3.0"
+          }
         }
       ],
       "purl": "pkg:generic/autoconf-archive@2023.02.20",
@@ -1739,7 +1885,9 @@
       "description": "Extended crypt library for descrypt, md5crypt, bcrypt, and others",
       "licenses": [
         {
-          "expression": "LGPL-2.1-or-later"
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/libxcrypt@4.4.36",
@@ -1759,13 +1907,19 @@
       "description": "Free software implementation of IDNA2008 and TR46",
       "licenses": [
         {
-          "expression": "LGPL-3.0-or-later"
+          "license": {
+            "id": "LGPL-3.0-or-later"
+          }
         },
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         },
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/libidn2@2.3.4",
@@ -1805,7 +1959,9 @@
       "description": "GNU implementation of the Unix grep command",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/gnugrep@3.11",
@@ -1835,7 +1991,9 @@
       "description": "A foreign function call interface library",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/libffi@3.4.4",
@@ -1855,7 +2013,9 @@
       "description": "Lossless data-compression library",
       "licenses": [
         {
-          "expression": "Zlib"
+          "license": {
+            "id": "Zlib"
+          }
         }
       ],
       "purl": "pkg:generic/zlib@1.3",
@@ -1915,7 +2075,9 @@
       "description": "GNU sed, a batch stream editor",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/gnused@4.9",
@@ -1945,7 +2107,9 @@
       "description": "The GNU C Library",
       "licenses": [
         {
-          "expression": "LGPL-2.0-or-later"
+          "license": {
+            "id": "LGPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/glibc@2.38",
@@ -1975,7 +2139,9 @@
       "description": "GNU Bourne-Again Shell, the de facto standard shell on Linux",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/bash@5.2",
@@ -2035,7 +2201,9 @@
       "description": "High-quality data compression program",
       "licenses": [
         {
-          "expression": "BSD-4-Clause"
+          "license": {
+            "id": "BSD-4-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/bzip2@1.0.8",
@@ -2075,10 +2243,14 @@
       "description": "A general-purpose data compression software, successor of LZMA",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         },
         {
-          "expression": "LGPL-2.1-or-later"
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/xz@5.4.5",
@@ -2108,7 +2280,9 @@
       "description": "Perl Compatible Regular Expressions",
       "licenses": [
         {
-          "expression": "BSD-3-Clause"
+          "license": {
+            "id": "BSD-3-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/pcre2@10.42",
@@ -2128,7 +2302,9 @@
       "description": "Lossless data-compression library",
       "licenses": [
         {
-          "expression": "Zlib"
+          "license": {
+            "id": "Zlib"
+          }
         }
       ],
       "purl": "pkg:generic/zlib@1.3",
@@ -2148,7 +2324,9 @@
       "description": "Archive of autoconf m4 macros",
       "licenses": [
         {
-          "expression": "GPL-3.0"
+          "license": {
+            "id": "GPL-3.0"
+          }
         }
       ],
       "purl": "pkg:generic/autoconf-archive@2023.02.20",
@@ -2188,7 +2366,9 @@
       "description": "GNU Compiler Collection, version 13.2.0",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/gcc@13.2.0",
@@ -2208,7 +2388,9 @@
       "description": "Extended crypt library for descrypt, md5crypt, bcrypt, and others",
       "licenses": [
         {
-          "expression": "LGPL-2.1-or-later"
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/libxcrypt@4.4.36",
@@ -2258,7 +2440,9 @@
       "description": "A lossless data compressor based on the LZMA algorithm",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/lzip@1.23",
@@ -2288,10 +2472,14 @@
       "description": "A general-purpose data compression software, successor of LZMA",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         },
         {
-          "expression": "LGPL-2.1-or-later"
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/xz@5.4.5",
@@ -2351,7 +2539,9 @@
       "description": "A high-level dynamically-typed programming language",
       "licenses": [
         {
-          "expression": "Python-2.0"
+          "license": {
+            "id": "Python-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3-minimal@3.11.7",
@@ -2381,7 +2571,9 @@
       "description": "The GNU implementation of the standard Unix editor",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/ed@1.19",
@@ -2421,7 +2613,9 @@
       "description": "Library and tools for manipulating access control lists",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/acl@2.3.1",
@@ -2451,7 +2645,9 @@
       "description": "A tool that allows packages to find out information about other packages (wrapper script)",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/pkg-config-wrapper@0.29.2",
@@ -2481,7 +2677,9 @@
       "description": "A library for manipulating sets and relations of integer points bounded by linear constraints",
       "licenses": [
         {
-          "expression": "LGPL-2.1"
+          "license": {
+            "id": "LGPL-2.1"
+          }
         }
       ],
       "purl": "pkg:generic/isl@0.20",
@@ -2511,7 +2709,9 @@
       "description": "A small utility to modify the dynamic linker and RPATH of ELF executables",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/patchelf@0.15.0",
@@ -2531,7 +2731,9 @@
       "description": "Header files and scripts for Linux kernel",
       "licenses": [
         {
-          "expression": "GPL-2.0"
+          "license": {
+            "id": "GPL-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/linux-headers@6.6",
@@ -2576,7 +2778,9 @@
       "description": "Tools for manipulating binaries (linker, assembler, etc.)",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/binutils@2.40",
@@ -2596,7 +2800,9 @@
       "description": "Library for multiprecision complex arithmetic with exact rounding",
       "licenses": [
         {
-          "expression": "LGPL-2.0-or-later"
+          "license": {
+            "id": "LGPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/libmpc@1.3.1",
@@ -2616,7 +2822,9 @@
       "description": "GNU Compiler Collection, version 13.2.0 (wrapper script)",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/gcc-wrapper@13.2.0",
@@ -2636,7 +2844,9 @@
       "description": "Lossless data-compression library",
       "licenses": [
         {
-          "expression": "Zlib"
+          "license": {
+            "id": "Zlib"
+          }
         }
       ],
       "purl": "pkg:generic/zlib@1.3",
@@ -2686,7 +2896,9 @@
       "description": "High-quality data compression program",
       "licenses": [
         {
-          "expression": "BSD-4-Clause"
+          "license": {
+            "id": "BSD-4-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/bzip2@1.0.8",
@@ -2706,7 +2918,9 @@
       "description": "Perl Compatible Regular Expressions",
       "licenses": [
         {
-          "expression": "BSD-3-Clause"
+          "license": {
+            "id": "BSD-3-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/pcre2@10.42",
@@ -2726,10 +2940,14 @@
       "description": "GNU multiple precision arithmetic library",
       "licenses": [
         {
-          "expression": "LGPL-3.0-only"
+          "license": {
+            "id": "LGPL-3.0-only"
+          }
         },
         {
-          "expression": "GPL-2.0-only"
+          "license": {
+            "id": "GPL-2.0-only"
+          }
         }
       ],
       "purl": "pkg:generic/gmp@6.3.0",
@@ -2769,7 +2987,9 @@
       "description": "A program that shows the type of files",
       "licenses": [
         {
-          "expression": "BSD-2-Clause"
+          "license": {
+            "id": "BSD-2-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/file@5.45",
@@ -2789,7 +3009,9 @@
       "description": "GNU standard-compliant makefile generator",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/automake@1.16.5",
@@ -2829,7 +3051,9 @@
       "description": "GNU zip compression program",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/gzip@1.13",
@@ -2849,7 +3073,9 @@
       "description": "Tools for manipulating binaries (linker, assembler, etc.)",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/binutils@2.40",

@@ -297,20 +297,22 @@ impl TryFrom<ModelLicense> for LicenseChoice {
     type Error = Error;
 
     fn try_from(model: ModelLicense) -> Result<Self> {
-        if let Some(id) = model.id {
-            Ok(LicenseChoice::Expression(SpdxExpression::parse_lax(id)?))
+        let identifier = if let Some(id) = model.id {
+            LicenseIdentifier::SpdxId(SpdxIdentifier::try_from(id)?)
         } else if let Some(name) = model.name {
-            Ok(LicenseChoice::License(License {
-                license_identifier: LicenseIdentifier::Name(NormalizedString::new(&name)),
-                text: None,
-                url: None,
-                bom_ref: None,
-                licensing: None,
-                properties: None,
-            }))
+            LicenseIdentifier::Name(NormalizedString::new(&name))
         } else {
             unreachable!("We only construct ModelLicense with at least id or name")
-        }
+        };
+
+        Ok(LicenseChoice::License(License {
+            license_identifier: identifier,
+            text: None,
+            url: None,
+            bom_ref: None,
+            licensing: None,
+            properties: None,
+        }))
     }
 }
 

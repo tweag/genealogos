@@ -12,7 +12,9 @@
       "description": "A cryptographic library that implements the SSL and TLS protocols",
       "licenses": [
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/openssl@3.0.13",
@@ -32,7 +34,9 @@
       "description": "A C library and tools to do XSL transformations",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/libxslt@1.1.39",
@@ -52,7 +56,9 @@
       "description": "Pytest plugin to abort hanging tests",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-pytest-timeout@2.2.0",
@@ -72,7 +78,9 @@
       "description": "Canonical source for classifiers on PyPI",
       "licenses": [
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-trove-classifiers@2024.1.8",
@@ -102,10 +110,14 @@
       "description": "Various portability utilities for module builders",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-ExtUtils-Helpers@0.026",
@@ -125,7 +137,9 @@
       "description": "Real-time data (de)compression library",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/lzo@2.10",
@@ -165,7 +179,9 @@
       "description": "HTTP/2 C library and tools",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/nghttp2@1.59.0",
@@ -185,7 +201,9 @@
       "description": "A program that shows the type of files",
       "licenses": [
         {
-          "expression": "BSD-2-Clause"
+          "license": {
+            "id": "BSD-2-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/file@5.45",
@@ -205,7 +223,9 @@
       "description": "Small build system with a focus on speed",
       "licenses": [
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/ninja@1.11.1",
@@ -225,7 +245,9 @@
       "description": "Perl Compatible Regular Expressions",
       "licenses": [
         {
-          "expression": "BSD-3-Clause"
+          "license": {
+            "id": "BSD-3-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/pcre2@10.42",
@@ -245,7 +267,9 @@
       "description": "An interface compiler that connects C/C++ code to higher-level languages",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/swig@3.0.12",
@@ -265,10 +289,14 @@
       "description": "Date conversion routines",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-HTTP-Date@6.06",
@@ -288,10 +316,14 @@
       "description": "Determine the locale encoding",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-Encode-Locale@1.05",
@@ -321,7 +353,9 @@
       "description": "Text-based document generation system",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/asciidoc@10.2.0",
@@ -341,7 +375,9 @@
       "description": "Handles managing your python package versions in scm metadata",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-setuptools-scm@8.0.4",
@@ -361,7 +397,9 @@
       "description": "A generic syntax highlighter",
       "licenses": [
         {
-          "expression": "BSD-2-Clause"
+          "license": {
+            "id": "BSD-2-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-pygments@2.17.2",
@@ -381,10 +419,14 @@
       "description": "Extremely flexible deep comparison",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-Test-Deep@1.204",
@@ -404,7 +446,9 @@
       "description": "Convert between TOML, YAML and JSON",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/remarshal@0.17.1",
@@ -424,7 +468,9 @@
       "description": "GNU Compiler Collection, version 13.2.0",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/gcc@13.2.0",
@@ -444,10 +490,14 @@
       "description": "The Rust package manager",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         },
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/cargo-bootstrap@1.74.1",
@@ -467,7 +517,9 @@
       "description": "GNU Libtool, a generic library support script",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/libtool@2.4.7",
@@ -487,7 +539,9 @@
       "description": "Pathlib-compatible object wrapper for zip files",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-zipp@3.17.0",
@@ -507,7 +561,9 @@
       "description": "Yacc-compatible parser generator",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/bison@3.8.2",
@@ -537,10 +593,14 @@
       "description": "HTML parser class",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-HTML-Parser@3.81",
@@ -560,7 +620,9 @@
       "description": "Free software emulation of curses in SVR4 and more",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/ncurses@6.4",
@@ -580,10 +642,14 @@
       "description": "Core utilities for Python packages",
       "licenses": [
         {
-          "expression": "BSD-2-Clause"
+          "license": {
+            "id": "BSD-2-Clause"
+          }
         },
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-bootstrap-packaging@23.2",
@@ -603,10 +669,14 @@
       "description": "Incredibly simple helpers for testing code with exceptions",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-Test-Fatal@0.017",
@@ -626,7 +696,9 @@
       "description": "Audit Library",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/audit@3.1.2",
@@ -646,7 +718,9 @@
       "description": "Coroutine-based networking library",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-gevent@23.9.1",
@@ -666,7 +740,9 @@
       "description": "An optimising static compiler for both the Python programming language and the extended Cython programming language",
       "licenses": [
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-cython@3.0.7",
@@ -686,10 +762,14 @@
       "description": "Perl extension for emulating gettext-related API",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-gettext@1.07",
@@ -709,7 +789,9 @@
       "description": "GNU Libtool, a generic library support script",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/libtool@2.4.7",
@@ -729,7 +811,9 @@
       "description": "Python Sorted Container Types: SortedList, SortedDict, and SortedSet",
       "licenses": [
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-sortedcontainers@2.4.0",
@@ -749,10 +833,14 @@
       "description": "A general-purpose data compression software, successor of LZMA",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         },
         {
-          "expression": "LGPL-2.1-or-later"
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/xz@5.4.6",
@@ -772,7 +860,9 @@
       "description": "Low-level components of distutils2/packaging",
       "licenses": [
         {
-          "expression": "Python-2.0"
+          "license": {
+            "id": "Python-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-distlib@0.3.7",
@@ -792,7 +882,9 @@
       "description": "A suite of SGML/XML processing tools",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/opensp@1.5.2",
@@ -822,10 +914,14 @@
       "description": "A simple generic namespace processor",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-XML-NamespaceSupport@1.12",
@@ -845,7 +941,9 @@
       "description": "Tools for manipulating binaries (linker, assembler, etc.) (wrapper script)",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/binutils-wrapper@2.40",
@@ -865,10 +963,14 @@
       "description": "A general-purpose data compression software, successor of LZMA",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         },
         {
-          "expression": "LGPL-2.1-or-later"
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/xz@5.4.6",
@@ -888,7 +990,9 @@
       "description": "Setuptools extension for CalVer package versions",
       "licenses": [
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-calver@2022.06.26",
@@ -908,7 +1012,9 @@
       "description": "A command line tool for transferring files with URL syntax",
       "licenses": [
         {
-          "expression": "curl"
+          "license": {
+            "id": "curl"
+          }
         }
       ],
       "purl": "pkg:generic/curl@8.6.0",
@@ -928,7 +1034,9 @@
       "description": "A lossless data compressor based on the LZMA algorithm",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/lzip@1.23",
@@ -948,7 +1056,9 @@
       "description": "The standard implementation of the Perl 5 programming language",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         }
       ],
       "purl": "pkg:generic/perl@5.38.2",
@@ -968,10 +1078,14 @@
       "description": "Build and install Perl modules",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-Module-Build@0.4234",
@@ -1001,7 +1115,9 @@
       "description": "Cross-platform, open-source build system generator",
       "licenses": [
         {
-          "expression": "BSD-3-Clause"
+          "license": {
+            "id": "BSD-3-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/cmake-minimal@3.27.9",
@@ -1021,7 +1137,9 @@
       "description": "Header files and scripts for Linux kernel",
       "licenses": [
         {
-          "expression": "GPL-2.0"
+          "license": {
+            "id": "GPL-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/linux-headers@6.7",
@@ -1036,7 +1154,9 @@
       "description": "Generate man pages from `--help' output",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/help2man@1.49.3",
@@ -1086,22 +1206,34 @@
       "description": "A set of system utilities for Linux",
       "licenses": [
         {
-          "expression": "GPL-2.0-only"
+          "license": {
+            "id": "GPL-2.0-only"
+          }
         },
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         },
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         },
         {
-          "expression": "LGPL-2.1-or-later"
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
         },
         {
-          "expression": "BSD-3-Clause"
+          "license": {
+            "id": "BSD-3-Clause"
+          }
         },
         {
-          "expression": "BSD-4-Clause-UC"
+          "license": {
+            "id": "BSD-4-Clause-UC"
+          }
         },
         {
           "license": {
@@ -1141,7 +1273,9 @@
       "description": "Utilities to facilitate the installation of Python packages",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-setuptools@69.0.3",
@@ -1171,7 +1305,9 @@
       "description": "A plugin for Hatch that uses your preferred version control system (like Git) to determine project versions",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-hatch-vcs@0.4.0",
@@ -1191,10 +1327,14 @@
       "description": "A simple http server class",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-HTTP-Daemon@6.16",
@@ -1214,7 +1354,9 @@
       "description": "Pytest xdist plugin for distributed testing and loop-on-failing modes",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-pytest-xdist@3.5.0",
@@ -1234,7 +1376,9 @@
       "description": "Command line option parsing library",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/popt@1.19",
@@ -1274,7 +1418,9 @@
       "description": "Library and tools for manipulating access control lists",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/acl@2.3.2",
@@ -1294,7 +1440,9 @@
       "description": "GNU Bourne-Again Shell, the de facto standard shell on Linux",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/bash@5.2p26",
@@ -1314,7 +1462,9 @@
       "description": "A portable, lightweight MessagePack serializer and deserializer written in pure Python",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-u-msgpack-python@2.8.0",
@@ -1334,7 +1484,9 @@
       "description": "Part of the GNU Build System",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/autoconf@2.72",
@@ -1354,7 +1506,9 @@
       "description": "Lossless data-compression library",
       "licenses": [
         {
-          "expression": "Zlib"
+          "license": {
+            "id": "Zlib"
+          }
         }
       ],
       "purl": "pkg:generic/zlib@1.3.1",
@@ -1374,7 +1528,9 @@
       "description": "GNU Bourne-Again Shell, the de facto standard shell on Linux",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/bash@5.2p26",
@@ -1394,7 +1550,9 @@
       "description": "Style-preserving TOML library for Python",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-tomlkit@0.12.3",
@@ -1414,10 +1572,14 @@
       "description": "Guess media type for a file or a URL",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-LWP-MediaTypes@6.04",
@@ -1437,7 +1599,9 @@
       "description": "GNU Libtool, a generic library support script",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/libtool@2.4.7",
@@ -1467,7 +1631,9 @@
       "description": "A python module for determining appropriate platform-specific dirs",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-appdirs@1.4.4",
@@ -1487,7 +1653,9 @@
       "description": "An optimising static compiler for both the Python programming language and the extended Cython programming language",
       "licenses": [
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-cython@0.29.36",
@@ -1507,7 +1675,9 @@
       "description": "Thin wrapper around the mock package for easier use with pytest",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-pytest-mock@3.12.0",
@@ -1527,7 +1697,9 @@
       "description": "Multi-format archive and compression library",
       "licenses": [
         {
-          "expression": "BSD-3-Clause"
+          "license": {
+            "id": "BSD-3-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/libarchive@3.7.2",
@@ -1557,7 +1729,9 @@
       "description": "The GNU documentation system",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/texinfo@7.0.3",
@@ -1577,10 +1751,14 @@
       "description": "A safe, concurrent, practical language (wrapper script)",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         },
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/rustc-bootstrap-wrapper@1.74.1",
@@ -1610,7 +1788,9 @@
       "description": "XSL stylesheets for transforming DocBook documents into HTML and various other formats",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/docbook-xsl-nons@1.79.2",
@@ -1630,7 +1810,9 @@
       "description": "Well integrated set of translation tools and documentation",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/gettext@0.21.1",
@@ -1670,7 +1852,9 @@
       "description": "Part of the GNU Build System",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/autoconf@2.69",
@@ -1700,10 +1884,14 @@
       "description": "Checks to see if the module can be loaded",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-Test-Requires@0.11",
@@ -1723,7 +1911,9 @@
       "description": "Front-end to an XSL toolchain",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/xmlto@0.0.28",
@@ -1743,7 +1933,9 @@
       "description": "Berkeley DB",
       "licenses": [
         {
-          "expression": "Sleepycat"
+          "license": {
+            "id": "Sleepycat"
+          }
         }
       ],
       "purl": "pkg:generic/db@4.8.30",
@@ -1763,7 +1955,9 @@
       "description": "A stream-oriented XML parser library written in C",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/expat@2.5.0",
@@ -1783,10 +1977,14 @@
       "description": "GNU multiple precision arithmetic library",
       "licenses": [
         {
-          "expression": "LGPL-3.0-only"
+          "license": {
+            "id": "LGPL-3.0-only"
+          }
         },
         {
-          "expression": "GPL-2.0-only"
+          "license": {
+            "id": "GPL-2.0-only"
+          }
         }
       ],
       "purl": "pkg:generic/gmp-with-cxx@6.3.0",
@@ -1816,7 +2014,9 @@
       "description": "A lightweight and flexible command-line JSON processor",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/jq@1.7.1",
@@ -1836,10 +2036,14 @@
       "description": "Test for warnings and the lack of them",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-Test-Warnings@0.032",
@@ -1859,10 +2063,14 @@
       "description": "Extremely fast hash algorithm",
       "licenses": [
         {
-          "expression": "BSD-2-Clause"
+          "license": {
+            "id": "BSD-2-Clause"
+          }
         },
         {
-          "expression": "GPL-2.0"
+          "license": {
+            "id": "GPL-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/xxHash@0.8.2",
@@ -1882,7 +2090,9 @@
       "description": "Extended crypt library for descrypt, md5crypt, bcrypt, and others",
       "licenses": [
         {
-          "expression": "LGPL-2.1-or-later"
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/libxcrypt@4.4.36",
@@ -1902,7 +2112,9 @@
       "description": "A generic-purpose lossless compression algorithm and tool",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/brotli@1.1.0",
@@ -1922,7 +2134,9 @@
       "description": "Library for property based testing",
       "licenses": [
         {
-          "expression": "MPL-2.0"
+          "license": {
+            "id": "MPL-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-hypothesis@6.91.0",
@@ -1942,7 +2156,9 @@
       "description": "GNU Bourne-Again Shell, the de facto standard shell on Linux",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/bash@5.2p26",
@@ -1962,7 +2178,9 @@
       "description": "Module for determining appropriate platform-specific directories",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-platformdirs@4.0.0",
@@ -1982,7 +2200,9 @@
       "description": "GNU standard-compliant makefile generator",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/automake@1.16.5",
@@ -2002,7 +2222,9 @@
       "description": "Rolling backport of unittest.mock for all Pythons",
       "licenses": [
         {
-          "expression": "BSD-2-Clause"
+          "license": {
+            "id": "BSD-2-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-mock@5.1.0",
@@ -2022,7 +2244,9 @@
       "description": "A library for checking the strength of passwords",
       "licenses": [
         {
-          "expression": "LGPL-2.1"
+          "license": {
+            "id": "LGPL-2.1"
+          }
         }
       ],
       "purl": "pkg:generic/cracklib@2.9.11",
@@ -2042,7 +2266,9 @@
       "description": "Low-level library for calling build-backends in `pyproject.toml`-based project ",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-pyproject-hooks@1.0.0",
@@ -2062,10 +2288,14 @@
       "description": "Data tables useful in parsing HTML",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-HTML-Tagset@3.20",
@@ -2085,7 +2315,9 @@
       "description": "Tools used to control the Linux kernel key management system",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/keyutils@1.6.3",
@@ -2105,7 +2337,9 @@
       "description": "GNU Bourne-Again Shell, the de facto standard shell on Linux",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/bash@5.2p26",
@@ -2125,7 +2359,9 @@
       "description": "Backported and Experimental Type Hints for Python",
       "licenses": [
         {
-          "expression": "Python-2.0"
+          "license": {
+            "id": "Python-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-typing-extensions@4.8.0",
@@ -2145,7 +2381,9 @@
       "description": "Modern, extensible Python build backend",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-hatchling@1.21.1",
@@ -2165,7 +2403,9 @@
       "description": "A foreign function call interface library",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/libffi@3.4.4",
@@ -2185,7 +2425,9 @@
       "description": "The GNU Core Utilities",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/coreutils@9.4",
@@ -2205,7 +2447,9 @@
       "description": "Plugin and hook calling mechanisms for Python",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-pluggy@1.4.0",
@@ -2225,7 +2469,9 @@
       "description": "A fast lexical analyser generator",
       "licenses": [
         {
-          "expression": "BSD-2-Clause"
+          "license": {
+            "id": "BSD-2-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/flex@2.6.4",
@@ -2255,7 +2501,9 @@
       "description": "Zstandard real-time compression algorithm",
       "licenses": [
         {
-          "expression": "BSD-3-Clause"
+          "license": {
+            "id": "BSD-3-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/zstd@1.5.5",
@@ -2275,7 +2523,9 @@
       "description": "Cross-vendor public domain suffix database",
       "licenses": [
         {
-          "expression": "MPL-2.0"
+          "license": {
+            "id": "MPL-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/publicsuffix-list@0-unstable-2024-01-07",
@@ -2295,10 +2545,14 @@
       "description": "HTTP style message (base class)",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-HTTP-Message@6.45",
@@ -2318,7 +2572,9 @@
       "description": "A high-performance event loop/event model with lots of features",
       "licenses": [
         {
-          "expression": "BSD-2-Clause"
+          "license": {
+            "id": "BSD-2-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/libev@4.33",
@@ -2333,7 +2589,9 @@
       "description": "Console utility and library for computing and verifying hash sums of files",
       "licenses": [
         {
-          "expression": "0BSD"
+          "license": {
+            "id": "0BSD"
+          }
         }
       ],
       "purl": "pkg:generic/rhash@1.4.4",
@@ -2353,10 +2611,14 @@
       "description": "Build.PL install path logic made easy",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-ExtUtils-InstallPaths@0.012",
@@ -2376,10 +2638,14 @@
       "description": "A perl module for parsing XML documents",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-XML-Parser@2.46",
@@ -2421,7 +2687,9 @@
       "description": "A tool to create isolated Python environments",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-virtualenv@20.25.0",
@@ -2441,10 +2709,14 @@
       "description": "The World-Wide Web library for Perl",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-libwww-perl@6.72",
@@ -2464,7 +2736,9 @@
       "description": "Fast incremental file transfer utility",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/rsync@3.2.7",
@@ -2484,7 +2758,9 @@
       "description": "Core utilities for Poetry",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-poetry-core@1.8.1",
@@ -2504,7 +2780,9 @@
       "description": "Library for testing asyncio code with pytest",
       "licenses": [
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-pytest-asyncio@0.21.1",
@@ -2524,7 +2802,9 @@
       "description": "Library for arbitrary precision decimal floating point arithmetic",
       "licenses": [
         {
-          "expression": "BSD-2-Clause"
+          "license": {
+            "id": "BSD-2-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/mpdecimal@2.5.1",
@@ -2544,7 +2824,9 @@
       "description": "Regular expressions library",
       "licenses": [
         {
-          "expression": "BSD-2-Clause"
+          "license": {
+            "id": "BSD-2-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/oniguruma@6.9.9",
@@ -2564,7 +2846,9 @@
       "description": "Lossless data-compression library",
       "licenses": [
         {
-          "expression": "Zlib"
+          "license": {
+            "id": "Zlib"
+          }
         }
       ],
       "purl": "pkg:generic/zlib@1.3.1",
@@ -2584,7 +2868,9 @@
       "description": "Utility library for gitignore-style pattern matching of file paths",
       "licenses": [
         {
-          "expression": "MPL-2.0"
+          "license": {
+            "id": "MPL-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-pathspec@0.11.2",
@@ -2604,7 +2890,9 @@
       "description": "Shows the full path of (shell) commands",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/which@2.21",
@@ -2624,7 +2912,9 @@
       "description": "A high-level dynamically-typed programming language",
       "licenses": [
         {
-          "expression": "Python-2.0"
+          "license": {
+            "id": "Python-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3-minimal@3.11.7",
@@ -2644,7 +2934,9 @@
       "description": "Tools to extract documentation embedded in GTK and GNOME source code",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/gtk-doc@1.33.2",
@@ -2674,7 +2966,9 @@
       "description": "A program that shows the type of files",
       "licenses": [
         {
-          "expression": "BSD-2-Clause"
+          "license": {
+            "id": "BSD-2-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/file@5.45",
@@ -2694,7 +2988,9 @@
       "description": "Archive of autoconf m4 macros",
       "licenses": [
         {
-          "expression": "GPL-3.0"
+          "license": {
+            "id": "GPL-3.0"
+          }
         }
       ],
       "purl": "pkg:generic/autoconf-archive@2023.02.20",
@@ -2714,7 +3010,9 @@
       "description": "Shows the full path of (shell) commands",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/which@2.21",
@@ -2734,7 +3032,9 @@
       "description": "An extraction utility for archives compressed in .zip format",
       "licenses": [
         {
-          "expression": "Info-ZIP"
+          "license": {
+            "id": "Info-ZIP"
+          }
         }
       ],
       "purl": "pkg:generic/unzip@6.0",
@@ -2754,10 +3054,14 @@
       "description": "Recursively copy Perl datatypes",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-Clone@0.46",
@@ -2787,10 +3091,14 @@
       "description": "Locate per-dist and per-module shared files",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-File-ShareDir@1.118",
@@ -2810,10 +3118,14 @@
       "description": "Verify requirements in a CPAN::Meta object",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-CPAN-Meta-Check@0.018",
@@ -2843,10 +3155,14 @@
       "description": "A general-purpose data compression software, successor of LZMA",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         },
         {
-          "expression": "LGPL-2.1-or-later"
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/xz@5.4.6",
@@ -2866,7 +3182,9 @@
       "description": "Distribution-building parts of Flit. See flit package for more information",
       "licenses": [
         {
-          "expression": "BSD-3-Clause"
+          "license": {
+            "id": "BSD-3-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-flit-core@3.9.0",
@@ -2896,7 +3214,9 @@
       "description": "Cross-platform, open-source build system generator",
       "licenses": [
         {
-          "expression": "BSD-3-Clause"
+          "license": {
+            "id": "BSD-3-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/cmake@3.27.9",
@@ -2926,10 +3246,14 @@
       "description": "Parse directory listing",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-File-Listing@6.16",
@@ -2949,10 +3273,14 @@
       "description": "Install shared files",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-File-ShareDir-Install@0.14",
@@ -2972,7 +3300,9 @@
       "description": "Database of current and historical time zones",
       "licenses": [
         {
-          "expression": "BSD-3-Clause"
+          "license": {
+            "id": "BSD-3-Clause"
+          }
         },
         {
           "license": {
@@ -2997,7 +3327,9 @@
       "description": "A built-package format for Python",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-wheel@0.42.0",
@@ -3017,10 +3349,14 @@
       "description": "HTTP cookie jars",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-HTTP-Cookies@6.10",
@@ -3040,7 +3376,9 @@
       "description": "Editable installations",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-editables@0.5",
@@ -3070,7 +3408,9 @@
       "description": "A YAML 1.1 parser and emitter written in C",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/libyaml@0.2.5",
@@ -3090,7 +3430,9 @@
       "description": "Pluggable Authentication Modules, a flexible mechanism for authenticating user",
       "licenses": [
         {
-          "expression": "BSD-3-Clause"
+          "license": {
+            "id": "BSD-3-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/linux-pam@1.6.0",
@@ -3120,7 +3462,9 @@
       "description": "The GNU C Library",
       "licenses": [
         {
-          "expression": "LGPL-2.0-or-later"
+          "license": {
+            "id": "LGPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/glibc@2.38",
@@ -3140,7 +3484,9 @@
       "description": "An event publishing system",
       "licenses": [
         {
-          "expression": "ZPL-2.0"
+          "license": {
+            "id": "ZPL-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-zope.event@4.6",
@@ -3160,7 +3506,9 @@
       "description": "Library for arbitrary precision decimal floating point arithmetic",
       "licenses": [
         {
-          "expression": "BSD-2-Clause"
+          "license": {
+            "id": "BSD-2-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/mpdecimal@2.5.1",
@@ -3180,7 +3528,9 @@
       "description": "GNU M4, a macro processor",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/gnum4@1.4.19",
@@ -3200,7 +3550,9 @@
       "description": "A command line tool for transferring files with URL syntax",
       "licenses": [
         {
-          "expression": "curl"
+          "license": {
+            "id": "curl"
+          }
         }
       ],
       "purl": "pkg:generic/curl@8.6.0",
@@ -3220,7 +3572,9 @@
       "description": "Part of the GNU Build System",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/autoconf@2.72",
@@ -3240,7 +3594,9 @@
       "description": "The standard implementation of the Perl 5 programming language",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         }
       ],
       "purl": "pkg:generic/perl@5.38.2",
@@ -3260,7 +3616,9 @@
       "description": "Well integrated set of translation tools and documentation",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/gettext@0.21.1",
@@ -3280,10 +3638,14 @@
       "description": "Core utilities for Python packages",
       "licenses": [
         {
-          "expression": "BSD-2-Clause"
+          "license": {
+            "id": "BSD-2-Clause"
+          }
         },
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-packaging@23.2",
@@ -3303,7 +3665,9 @@
       "description": "A tool that allows packages to find out information about other packages",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/pkg-config@0.29.2",
@@ -3323,10 +3687,14 @@
       "description": "Skip tests when modules not available",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-Test-Needs@0.002010",
@@ -3346,10 +3714,14 @@
       "description": "GNU multiple precision arithmetic library",
       "licenses": [
         {
-          "expression": "LGPL-3.0-only"
+          "license": {
+            "id": "LGPL-3.0-only"
+          }
         },
         {
-          "expression": "GPL-2.0-only"
+          "license": {
+            "id": "GPL-2.0-only"
+          }
         }
       ],
       "purl": "pkg:generic/gmp@6.3.0",
@@ -3369,10 +3741,14 @@
       "description": "Easily test network connectivity",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-Test-RequiresInternet@0.05",
@@ -3392,7 +3768,9 @@
       "description": "A tool that allows packages to find out information about other packages (wrapper script)",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/pkg-config-wrapper@0.29.2",
@@ -3412,7 +3790,9 @@
       "description": "Archive of autoconf m4 macros",
       "licenses": [
         {
-          "expression": "GPL-3.0"
+          "license": {
+            "id": "GPL-3.0"
+          }
         }
       ],
       "purl": "pkg:generic/autoconf-archive@2023.02.20",
@@ -3432,7 +3812,9 @@
       "description": "XML parsing library for C",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/libxml2@2.12.4",
@@ -3452,7 +3834,9 @@
       "description": "brain-dead simple parsing of ini files",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-iniconfig@2.0.0",
@@ -3472,7 +3856,9 @@
       "description": "Foreign Function Interface for Python calling C code",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-cffi@1.16.0",
@@ -3492,7 +3878,9 @@
       "description": "Distributed Python deployment and communication",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-execnet@2.0.2",
@@ -3512,7 +3900,9 @@
       "description": "Automate interactive console applications such as ssh, ftp, etc",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-pexpect@4.9.0",
@@ -3542,10 +3932,14 @@
       "description": "A tool to make production Rust binaries auditable",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         },
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/auditable-cargo-bootstrap@",
@@ -3565,7 +3959,9 @@
       "description": "Simple, correct PEP517 package builder",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-build@1.0.3",
@@ -3585,7 +3981,9 @@
       "description": "A high-level dynamically-typed programming language",
       "licenses": [
         {
-          "expression": "Python-2.0"
+          "license": {
+            "id": "Python-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3-minimal@3.11.7",
@@ -3605,7 +4003,9 @@
       "description": "A tool that allows packages to find out information about other packages (wrapper script)",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/pkg-config-wrapper@0.29.2",
@@ -3625,7 +4025,9 @@
       "description": "C parser in Python",
       "licenses": [
         {
-          "expression": "BSD-3-Clause"
+          "license": {
+            "id": "BSD-3-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-pycparser@2.21",
@@ -3645,7 +4047,9 @@
       "description": "A Unit Testing Framework for C",
       "licenses": [
         {
-          "expression": "LGPL-2.0"
+          "license": {
+            "id": "LGPL-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/CUnit@2.1-3",
@@ -3665,7 +4069,9 @@
       "description": "GNU standard-compliant makefile generator",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/automake@1.16.5",
@@ -3685,10 +4091,14 @@
       "description": "Module for lightweight in-process concurrent programming",
       "licenses": [
         {
-          "expression": "Python-2.0"
+          "license": {
+            "id": "Python-2.0"
+          }
         },
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-greenlet@3.0.1",
@@ -3708,7 +4118,9 @@
       "description": "XML parsing library for C",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/libxml2@2.12.4",
@@ -3728,7 +4140,9 @@
       "description": "A library for Perl Compatible Regular Expressions",
       "licenses": [
         {
-          "expression": "BSD-3-Clause"
+          "license": {
+            "id": "BSD-3-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/pcre@8.45",
@@ -3748,7 +4162,9 @@
       "description": "MIT Kerberos 5",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/libkrb5@1.21.2",
@@ -3768,10 +4184,14 @@
       "description": "Play with other peoples' lexical variables",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-PadWalker@2.5",
@@ -3791,7 +4211,9 @@
       "description": "A program that shows the type of files",
       "licenses": [
         {
-          "expression": "BSD-2-Clause"
+          "license": {
+            "id": "BSD-2-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/file@5.45",
@@ -3811,7 +4233,9 @@
       "description": "GNU dbm key/value database library",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/gdbm@1.23",
@@ -3831,7 +4255,9 @@
       "description": "Minimal try/catch with proper preservation of $@",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-Try-Tiny@0.31",
@@ -3851,7 +4277,9 @@
       "description": "Library that allows your Python tests to travel through time",
       "licenses": [
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-freezegun@1.3.1",
@@ -3871,7 +4299,9 @@
       "description": "Python 2 and 3 compatibility library",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-six@1.16.0",
@@ -3891,10 +4321,14 @@
       "description": "Powerful extensions to the standard datetime module",
       "licenses": [
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         },
         {
-          "expression": "BSD-3-Clause"
+          "license": {
+            "id": "BSD-3-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-python-dateutil@2.8.2",
@@ -3914,16 +4348,24 @@
       "description": "Tools for creating and checking ext2/ext3/ext4 filesystems",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         },
         {
-          "expression": "LGPL-2.0-or-later"
+          "license": {
+            "id": "LGPL-2.0-or-later"
+          }
         },
         {
-          "expression": "BSD-3-Clause"
+          "license": {
+            "id": "BSD-3-Clause"
+          }
         },
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/e2fsprogs@1.47.0",
@@ -3953,7 +4395,9 @@
       "description": "Library for working with POSIX capabilities",
       "licenses": [
         {
-          "expression": "LGPL-2.1"
+          "license": {
+            "id": "LGPL-2.1"
+          }
         }
       ],
       "purl": "pkg:generic/libcap-ng@0.8.4",
@@ -3983,10 +4427,14 @@
       "description": "Simple API for XML",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-XML-SAX@1.02",
@@ -4006,7 +4454,9 @@
       "description": "Library for multiple-precision floating-point arithmetic",
       "licenses": [
         {
-          "expression": "LGPL-2.0-or-later"
+          "license": {
+            "id": "LGPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/mpfr@4.2.1",
@@ -4058,10 +4508,14 @@
       "description": "Extremely fast compression algorithm",
       "licenses": [
         {
-          "expression": "BSD-2-Clause"
+          "license": {
+            "id": "BSD-2-Clause"
+          }
         },
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/lz4@1.9.4",
@@ -4081,10 +4535,14 @@
       "description": "A general-purpose data compression software, successor of LZMA",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         },
         {
-          "expression": "LGPL-2.1-or-later"
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/xz@5.4.6",
@@ -4104,7 +4562,9 @@
       "description": "Travel through time in your tests",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-time-machine@2.13.0",
@@ -4124,7 +4584,9 @@
       "description": "A C library and tools to do XSL transformations",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/libxslt@1.1.39",
@@ -4144,10 +4606,14 @@
       "description": "Choose a variant to serve",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-HTTP-Negotiate@6.01",
@@ -4167,10 +4633,14 @@
       "description": "Low-level HTTP connection (client)",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-Net-HTTP@6.23",
@@ -4200,7 +4670,9 @@
       "description": "Unicode string library",
       "licenses": [
         {
-          "expression": "LGPL-3.0-or-later"
+          "license": {
+            "id": "LGPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/libunistring@1.1",
@@ -4230,10 +4702,14 @@
       "description": "A tiny replacement for Module::Build",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-Module-Build-Tiny@0.047",
@@ -4253,7 +4729,9 @@
       "description": "Tools for remote synchronization and `shell archives'",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/sharutils@4.15.2",
@@ -4273,10 +4751,14 @@
       "description": "Open an HTML file with automatic charset detection",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-IO-HTML@1.004",
@@ -4296,7 +4778,9 @@
       "description": "Library and tools for manipulating extended attributes",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/attr@2.5.2",
@@ -4316,7 +4800,9 @@
       "description": "The Tcl scripting language",
       "licenses": [
         {
-          "expression": "TCL"
+          "license": {
+            "id": "TCL"
+          }
         }
       ],
       "purl": "pkg:generic/tcl@8.6.13",
@@ -4336,7 +4822,9 @@
       "description": "Framework for writing tests",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-pytest@7.4.4",
@@ -4356,10 +4844,14 @@
       "description": "A general-purpose data compression software, successor of LZMA",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         },
         {
-          "expression": "LGPL-2.1-or-later"
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/xz@5.4.6",
@@ -4389,10 +4881,14 @@
       "description": "Database of robots.txt-derived permissions",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-WWW-RobotRules@6.02",
@@ -4412,7 +4908,9 @@
       "description": "Plugin for nose or py.test that automatically reruns flaky tests",
       "licenses": [
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-flaky@3.7.0",
@@ -4432,7 +4930,9 @@
       "description": "Header files and scripts for Linux kernel",
       "licenses": [
         {
-          "expression": "GPL-2.0"
+          "license": {
+            "id": "GPL-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/linux-headers@6.7",
@@ -4457,7 +4957,9 @@
       "description": "A low-level library for installing a Python package from a wheel distribution",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-bootstrap-installer@0.7.0",
@@ -4487,7 +4989,9 @@
       "description": "Capture STDOUT and STDERR from Perl, XS or external programs",
       "licenses": [
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-Capture-Tiny@0.48",
@@ -4517,10 +5021,14 @@
       "description": "Downloads your Rust project's dependencies and builds your project",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         },
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/cargo@1.75.0",
@@ -4550,7 +5058,9 @@
       "description": "Python attributes without boilerplate",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-attrs@23.1.0",
@@ -4570,7 +5080,9 @@
       "description": "Zope.Interface",
       "licenses": [
         {
-          "expression": "ZPL-2.0"
+          "license": {
+            "id": "ZPL-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-zope.interface@5.5.2",
@@ -4590,7 +5102,9 @@
       "description": "GNU Troff, a typesetting package that reads plain text and produces formatted output",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/groff@1.23.0",
@@ -4610,7 +5124,9 @@
       "description": "A client-side C library implementing the SSH2 protocol",
       "licenses": [
         {
-          "expression": "BSD-3-Clause"
+          "license": {
+            "id": "BSD-3-Clause"
+          }
         },
         {
           "license": {
@@ -4635,10 +5151,14 @@
       "description": "B::COW additional B helpers to check COW status",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-B-COW@0.007",
@@ -4658,10 +5178,14 @@
       "description": "Library that allows filesystems to be implemented in user space",
       "licenses": [
         {
-          "expression": "GPL-2.0-only"
+          "license": {
+            "id": "GPL-2.0-only"
+          }
         },
         {
-          "expression": "LGPL-2.1-only"
+          "license": {
+            "id": "LGPL-2.1-only"
+          }
         }
       ],
       "purl": "pkg:generic/fuse@2.9.9",
@@ -4681,7 +5205,9 @@
       "description": "High-quality data compression program",
       "licenses": [
         {
-          "expression": "BSD-4-Clause"
+          "license": {
+            "id": "BSD-4-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/bzip2@1.0.8",
@@ -4701,7 +5227,9 @@
       "description": "Library for multiprecision complex arithmetic with exact rounding",
       "licenses": [
         {
-          "expression": "LGPL-2.0-or-later"
+          "license": {
+            "id": "LGPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/libmpc@1.3.1",
@@ -4721,7 +5249,9 @@
       "description": "A stream-oriented XML parser library written in C",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/expat@2.5.0",
@@ -4741,7 +5271,9 @@
       "description": "A minimalist HTTP user agent cookie jar",
       "licenses": [
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-HTTP-CookieJar@0.014",
@@ -4761,7 +5293,9 @@
       "description": "A library for manipulating sets and relations of integer points bounded by linear constraints",
       "licenses": [
         {
-          "expression": "LGPL-2.1"
+          "license": {
+            "id": "LGPL-2.1"
+          }
         }
       ],
       "purl": "pkg:generic/isl@0.20",
@@ -4801,7 +5335,9 @@
       "description": "",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/docbook2X@0.8.8",
@@ -4831,7 +5367,9 @@
       "description": "High-quality data compression program",
       "licenses": [
         {
-          "expression": "BSD-4-Clause"
+          "license": {
+            "id": "BSD-4-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/bzip2@1.0.8",
@@ -4861,7 +5399,9 @@
       "description": "Framework for testing other programs",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/dejagnu@1.6.3",
@@ -4901,7 +5441,9 @@
       "description": "The GNU documentation system",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/texinfo@7.0.3",
@@ -4921,7 +5463,9 @@
       "description": "Yacc-compatible parser generator",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/bison@3.8.2",
@@ -4963,7 +5507,9 @@
       "description": "Run a subprocess in a pseudo terminal",
       "licenses": [
         {
-          "expression": "ISC"
+          "license": {
+            "id": "ISC"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-ptyprocess@0.7.0",
@@ -4983,7 +5529,9 @@
       "description": "C library for the Publix Suffix List",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/libpsl@0.21.5",
@@ -5013,7 +5561,9 @@
       "description": "A C library for asynchronous DNS requests",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/c-ares@1.19.1",
@@ -5033,10 +5583,14 @@
       "description": "Uniform Resource Identifiers (absolute and relative)",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-URI@5.21",
@@ -5056,7 +5610,9 @@
       "description": "Part of the GNU Build System",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/autoconf@2.72",
@@ -5076,7 +5632,9 @@
       "description": "GNU standard-compliant makefile generator",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/automake@1.16.5",
@@ -5096,7 +5654,9 @@
       "description": "Wrap tests with fixtures in freeze_time",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-pytest-freezegun@0.4.2",
@@ -5126,7 +5686,9 @@
       "description": "A foreign function call interface library",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/libffi@3.4.4",
@@ -5146,7 +5708,9 @@
       "description": "The GNU documentation system",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/texinfo@7.0.3",
@@ -5166,7 +5730,9 @@
       "description": "An open source, fast and friendly build system made in Python",
       "licenses": [
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/meson@1.3.1",
@@ -5186,10 +5752,14 @@
       "description": "A wrapper for perl's configuration",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-ExtUtils-Config@0.008",
@@ -5209,7 +5779,9 @@
       "description": "Pythonic binding for the libxml2 and libxslt libraries",
       "licenses": [
         {
-          "expression": "BSD-3-Clause"
+          "license": {
+            "id": "BSD-3-Clause"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-lxml@4.9.4",
@@ -5229,7 +5801,9 @@
       "description": "Read metadata from Python packages",
       "licenses": [
         {
-          "expression": "Apache-2.0"
+          "license": {
+            "id": "Apache-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-importlib-metadata@6.9.0",
@@ -5249,7 +5823,9 @@
       "description": "A high-level dynamically-typed programming language",
       "licenses": [
         {
-          "expression": "Python-2.0"
+          "license": {
+            "id": "Python-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/python3@3.11.7",
@@ -5269,7 +5845,9 @@
       "description": "The next generation YAML parser and emitter for Python",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-pyyaml@6.0.1",
@@ -5299,7 +5877,9 @@
       "description": "A foreign function call interface library",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/libffi@3.4.4",
@@ -5319,10 +5899,14 @@
       "description": "Get information about a class and its structure",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-Class-Inspector@1.36",
@@ -5352,7 +5936,9 @@
       "description": "Extended crypt library for descrypt, md5crypt, bcrypt, and others",
       "licenses": [
         {
-          "expression": "LGPL-2.1-or-later"
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/libxcrypt@4.4.36",
@@ -5382,7 +5968,9 @@
       "description": "A low-level library for installing a Python package from a wheel distribution",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-installer@0.7.0",
@@ -5402,7 +5990,9 @@
       "description": "The standard implementation of the Perl 5 programming language",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         }
       ],
       "purl": "pkg:generic/perl@5.38.2",
@@ -5422,7 +6012,9 @@
       "description": "A program to create or extract from cpio archives",
       "licenses": [
         {
-          "expression": "GPL-3.0"
+          "license": {
+            "id": "GPL-3.0"
+          }
         }
       ],
       "purl": "pkg:generic/cpio@2.15",
@@ -5442,19 +6034,29 @@
       "description": "A multi-platform support library with a focus on asynchronous I/O",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         },
         {
-          "expression": "ISC"
+          "license": {
+            "id": "ISC"
+          }
         },
         {
-          "expression": "BSD-2-Clause"
+          "license": {
+            "id": "BSD-2-Clause"
+          }
         },
         {
-          "expression": "BSD-3-Clause"
+          "license": {
+            "id": "BSD-3-Clause"
+          }
         },
         {
-          "expression": "CC-BY-4.0"
+          "license": {
+            "id": "CC-BY-4.0"
+          }
         }
       ],
       "purl": "pkg:generic/libuv@1.47.0",
@@ -5474,7 +6076,9 @@
       "description": "Distributed version control system",
       "licenses": [
         {
-          "expression": "GPL-2.0"
+          "license": {
+            "id": "GPL-2.0"
+          }
         }
       ],
       "purl": "pkg:generic/git@2.43.0",
@@ -5494,10 +6098,14 @@
       "description": "Base class for SAX Drivers and Filters",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-XML-SAX-Base@1.09",
@@ -5517,10 +6125,14 @@
       "description": "A general-purpose data compression software, successor of LZMA",
       "licenses": [
         {
-          "expression": "GPL-2.0-or-later"
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
         },
         {
-          "expression": "LGPL-2.1-or-later"
+          "license": {
+            "id": "LGPL-2.1-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/xz@5.4.6",
@@ -5540,7 +6152,9 @@
       "description": "Python CBOR (de)serializer with extensive tag support",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-cbor2@5.5.1",
@@ -5560,10 +6174,14 @@
       "description": "Miscellaneous timezone manipulations routines",
       "licenses": [
         {
-          "expression": "Artistic-1.0"
+          "license": {
+            "id": "Artistic-1.0"
+          }
         },
         {
-          "expression": "GPL-1.0-or-later"
+          "license": {
+            "id": "GPL-1.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/perl5.38.2-TimeDate@2.33",
@@ -5583,7 +6201,9 @@
       "description": "A write-only counterpart to Tomli, which is a read-only TOML parser",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-tomli-w@1.0.0",
@@ -5603,7 +6223,9 @@
       "description": "GNU M4, a macro processor",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/gnum4@1.4.19",
@@ -5623,7 +6245,9 @@
       "description": "a Python library for parsing and creating TOML",
       "licenses": [
         {
-          "expression": "MIT"
+          "license": {
+            "id": "MIT"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-toml@0.10.2",
@@ -5643,7 +6267,9 @@
       "description": "A platform independent file lock for Python",
       "licenses": [
         {
-          "expression": "Unlicense"
+          "license": {
+            "id": "Unlicense"
+          }
         }
       ],
       "purl": "pkg:generic/python3.11-filelock@3.13.1",
@@ -5663,7 +6289,9 @@
       "description": "Library for interactive line editing",
       "licenses": [
         {
-          "expression": "GPL-3.0-or-later"
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
         }
       ],
       "purl": "pkg:generic/readline@8.2p10",
