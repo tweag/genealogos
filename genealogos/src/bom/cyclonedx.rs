@@ -8,7 +8,7 @@ use std::str::FromStr;
 use cyclonedx_bom::models::{
     component::Classification,
     dependency::{Dependencies, Dependency},
-    external_reference::{ExternalReference, ExternalReferenceType, ExternalReferences},
+    external_reference::{self, ExternalReference, ExternalReferenceType, ExternalReferences},
     license::{License, LicenseChoice, LicenseIdentifier, Licenses},
     property::{Properties, Property},
 };
@@ -55,8 +55,9 @@ impl FromStr for FileFormat {
 #[non_exhaustive]
 pub enum SpecVersion {
     V1_3,
-    #[default]
     V1_4,
+    #[default]
+    V1_5,
 }
 
 impl Display for SpecVersion {
@@ -64,6 +65,7 @@ impl Display for SpecVersion {
         match self {
             SpecVersion::V1_3 => write!(f, "1.3"),
             SpecVersion::V1_4 => write!(f, "1.4"),
+            SpecVersion::V1_5 => write!(f, "1.5"),
         }
     }
 }
@@ -75,6 +77,7 @@ impl FromStr for SpecVersion {
         match s {
             "1.3" => Ok(SpecVersion::V1_3),
             "1.4" => Ok(SpecVersion::V1_4),
+            "1.5" => Ok(SpecVersion::V1_5),
             _ => Err(Error::InvalidCycloneDXVersion(s.to_string())),
         }
     }
@@ -167,6 +170,10 @@ impl super::Bom for CycloneDX {
             SpecVersion::V1_4 => match self.file_format {
                 FileFormat::JSON => bom.output_as_json_v1_4(writer)?,
                 FileFormat::XML => bom.output_as_xml_v1_4(writer)?,
+            },
+            SpecVersion::V1_5 => match self.file_format {
+                FileFormat::JSON => bom.output_as_json_v1_5(writer)?,
+                FileFormat::XML => bom.output_as_xml_v1_5(writer)?,
             },
         }
 
@@ -272,6 +279,8 @@ impl TryFrom<ModelComponent> for Component {
             components: None,
             evidence: None,
             signature: None,
+            model_card: None,
+            data: None,
         })
     }
 }
@@ -288,17 +297,22 @@ impl TryFrom<ModelLicense> for LicenseChoice {
     type Error = Error;
 
     fn try_from(model: ModelLicense) -> Result<Self> {
-        if let Some(id) = model.id {
-            Ok(LicenseChoice::Expression(SpdxExpression::parse_lax(id)?))
+        let identifier = if let Some(id) = model.id {
+            LicenseIdentifier::SpdxId(SpdxIdentifier::try_from(id)?)
         } else if let Some(name) = model.name {
-            Ok(LicenseChoice::License(License {
-                license_identifier: LicenseIdentifier::Name(NormalizedString::new(&name)),
-                text: None,
-                url: None,
-            }))
+            LicenseIdentifier::Name(NormalizedString::new(&name))
         } else {
             unreachable!("We only construct ModelLicense with at least id or name")
-        }
+        };
+
+        Ok(LicenseChoice::License(License {
+            license_identifier: identifier,
+            text: None,
+            url: None,
+            bom_ref: None,
+            licensing: None,
+            properties: None,
+        }))
     }
 }
 
@@ -306,7 +320,7 @@ impl From<ModelExternalReference> for ExternalReference {
     fn from(model: ModelExternalReference) -> Self {
         ExternalReference {
             external_reference_type: model.r#type.into(),
-            url: Uri::try_from(model.url).expect("Invalid URL"),
+            url: external_reference::Uri::Url(Uri::try_from(model.url).expect("Invalid URL")),
             comment: None,
             hashes: None,
         }

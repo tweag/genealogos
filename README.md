@@ -16,7 +16,7 @@
 </p>
 
 The Genealogos project is a tool that takes output from Nix evaluation tools and produces BOM files.
-Currently, it takes input from [nixtract][nixtract-url] and produces json output compliant with the [CycloneDX][cyclonedx-url] 1.3 or 1.4 specification.<!-- TODO: 1.5 -->
+Currently, it takes input from [nixtract][nixtract] and produces json or xml output compliant with the [CycloneDX][cyclonedx] 1.3, 1.4, or 1.5 specification.
 Output from Genealogos can be used by various other tools to perform further analysis.
 
 Note Nix is mainly just suitable for Software, and so the BOM output by Genealogos is nearly always an SBOM.
@@ -149,8 +149,7 @@ Example:
 curl "http://localhost:8000/api/analyze?installable=nixpkgs%23hello&cyclonedx_version=v1_4"
 ```
 
-<!-- TODO: Add 1.5 support -->
-Currently supported are `[cyclonedx_1.3_json, cyclonedx_1.3_xml, cyclonedx_1.4_json, cyclonedx_1.4_xml]`, with `cyclonedx_1.4_json` being the default.
+Currently supported are `[cyclonedx_1.3_json, cyclonedx_1.3_xml, cyclonedx_1.4_json, cyclonedx_1.4_xml, cyclonedx_1.5_json, cyclonedx_1.5_xml]`, with `cyclonedx_1.5_json` being the default.
 
 #### Jobs
 The jobs based API consists of three endpoints: `/api/jobs/create`, `/api/jobs/status`, and `/api/jobs/result`.
