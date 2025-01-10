@@ -1,4 +1,4 @@
-{ genealogos-api }:
+{ mkGenealogosArtifacts }:
 { config, lib, pkgs, ... }:
 
 with lib;
@@ -6,6 +6,7 @@ with lib;
 let
   cfg = config.services.genealogos;
   rocketConfigFormat = pkgs.formats.toml { };
+  genealogos-api = (mkGenealogosArtifacts pkgs).crane-outputs.packages.genealogos-api;
 in
 {
   options = {

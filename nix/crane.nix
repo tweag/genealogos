@@ -3,7 +3,7 @@
 { pkgs
 , crane-lib
 , nixtract-cli ? null
-, cyclonedx ? null
+, cyclonedx-cli ? null
 }:
 let
   common-crane-args = {
@@ -93,7 +93,7 @@ rec {
       };
       verify-fixture-files = pkgs.writeShellApplication {
         name = "verify-fixture-files";
-        runtimeInputs = [ cyclonedx ];
+        runtimeInputs = [ cyclonedx-cli ];
         text = builtins.readFile ../scripts/verify-fixture-files.sh;
       };
     };
