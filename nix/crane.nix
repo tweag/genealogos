@@ -32,14 +32,21 @@ let
     cargoTestCommand = "cargo test --profile release";
   });
 
-  # Crane buildPackage arguments for every crate
-  crates = {
+  # Crane buildPackage arguments for every crate. The whole set takes an
+  # additioinal argument indicating if we're producing a binary or not (the
+  # other possibilities being documentation, derivation that runs clippy, etc.).
+  # Otherwise, the binary-specific gymnastics such as `makeWrapper` errors out
+  # on non-binary derivatives.
+  crates = { binary ? true }: {
     genealogos = (common-crane-args // {
       cargoExtraArgs = "-p genealogos";
     });
+
     genealogos-cli = (common-crane-args // {
       pname = "genealogos-cli";
       cargoExtraArgs = "-p genealogos-cli";
+    }
+      // pkgs.lib.attrsets.optionalAttrs binary {
       passthru.exePath = "/bin/genealogos";
       nativeBuildInputs = common-crane-args.nativeBuildInputs ++ [ pkgs.makeWrapper ];
       preFixup = ''
@@ -47,9 +54,11 @@ let
           --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.nix ]}
       '';
     });
+
     genealogos-api = (common-crane-args // {
       pname = "genealogos-api";
       cargoExtraArgs = "-p genealogos-api";
+    } // pkgs.lib.attrsets.optionalAttrs binary {
       nativeBuildInputs = common-crane-args.nativeBuildInputs ++ [ pkgs.makeWrapper ];
       preFixup = ''
         wrapProgram $out/bin/genealogos-api \
@@ -57,8 +66,16 @@ let
       '';
     });
   };
+
+  # The collection of genealogos crates to be used when producing binary
+  # packages.
+  binaryCrates = crates { binary = true; };
+  # The collection of genealogos crates to be used when deriving non binary
+  # byproducts, such as documentation or checks.
+  nonBinaryCrates = crates { binary = false; };
+
   rust-packages =
-    builtins.mapAttrs (_: crane-lib.buildPackage) crates;
+    builtins.mapAttrs (_: crane-lib.buildPackage) binaryCrates;
 in
 rec {
   checks =
@@ -69,11 +86,11 @@ rec {
       (_: args: crane-lib.cargoClippy (args // {
         cargoClippyExtraArgs = "--all-targets -- --deny warnings";
       }))
-      crates
+      nonBinaryCrates
     # Doc
-    // builtins.mapAttrs (_: crane-lib.cargoDoc) crates
+    // builtins.mapAttrs (_: crane-lib.cargoDoc) nonBinaryCrates
     # fmt
-    // builtins.mapAttrs (_: crane-lib.cargoFmt) crates;
+    // builtins.mapAttrs (_: crane-lib.cargoFmt) nonBinaryCrates;
 
   packages =
     rust-packages // {
