@@ -88,7 +88,7 @@
           default = {
             type = "app";
             program =
-              artifacts.crane-outputs.packages.genealogos-cli.passthru.exePath;
+              pkgs.lib.getExe artifacts.crane-outputs.packages.genealogos-cli;
           };
         });
 
