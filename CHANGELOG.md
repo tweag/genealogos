@@ -2,6 +2,8 @@
 <!-- We follow the Keep a Changelog standard https://keepachangelog.com/en/1.0.0/ -->
 
 ## [Unreleased]
+### Fixed
+- [#70](https://github.com/tweag/genealogos/pull/70) fix 'nix run'
 
 ## [0.3.0](https://github.com/tweag/genealogos/compare/v0.3.0...v1.0.0)
 ### Added

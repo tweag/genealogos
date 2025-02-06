@@ -47,12 +47,17 @@ let
       cargoExtraArgs = "-p genealogos-cli";
     }
       // pkgs.lib.attrsets.optionalAttrs binary {
-      passthru.exePath = "/bin/genealogos";
       nativeBuildInputs = common-crane-args.nativeBuildInputs ++ [ pkgs.makeWrapper ];
       preFixup = ''
         wrapProgram $out/bin/genealogos \
           --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.nix ]}
       '';
+      meta = {
+        description = "Takes output from Nix evaluation tools and produces BOM files.";
+        homepage = "https://github.com/tweag/genealogos";
+        license = pkgs.lib.licenses.mit;
+        mainProgram = "genealogos";
+      };
     });
 
     genealogos-api = (common-crane-args // {
