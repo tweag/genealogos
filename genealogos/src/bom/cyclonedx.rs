@@ -8,7 +8,9 @@ use std::str::FromStr;
 use cyclonedx_bom::models::{
     component::Classification,
     dependency::{Dependencies, Dependency},
-    external_reference::{ExternalReference, ExternalReferenceType, ExternalReferences},
+    external_reference::{
+        ExternalReference, ExternalReferenceType, ExternalReferences, Uri as ExternalReferenceUri,
+    },
     license::{License, LicenseChoice, LicenseIdentifier, Licenses},
     property::{Properties, Property},
 };
@@ -113,7 +115,7 @@ impl CycloneDX {
     /// # Returns
     ///
     /// * `Result<Self>` - Returns a `Result` which is an `Ok` variant that wraps a `CycloneDX` instance if the parsing is successful,
-    /// or an `Err` variant that contains an error if the parsing fails.
+    ///   or an `Err` variant that contains an error if the parsing fails.
     pub fn parse_version(spec_version: &str, file_format: FileFormat) -> Result<Self> {
         let spec_version = SpecVersion::from_str(spec_version)?;
         Ok(CycloneDX {
@@ -132,7 +134,7 @@ impl CycloneDX {
     /// # Returns
     ///
     /// * `Result<Self>` - Returns a `Result` which is an `Ok` variant that wraps a `CycloneDX` instance if the parsing is successful,
-    /// or an `Err` variant that wraps an error if the parsing fails.
+    ///   or an `Err` variant that wraps an error if the parsing fails.
     pub fn parse(spec_version: &str, file_format: &str) -> Result<Self> {
         let spec_version = SpecVersion::from_str(spec_version)?;
         let file_format = FileFormat::from_str(file_format)?;
@@ -272,6 +274,8 @@ impl TryFrom<ModelComponent> for Component {
             components: None,
             evidence: None,
             signature: None,
+            model_card: None,
+            data: None,
         })
     }
 }
@@ -295,6 +299,9 @@ impl TryFrom<ModelLicense> for LicenseChoice {
                 license_identifier: LicenseIdentifier::Name(NormalizedString::new(&name)),
                 text: None,
                 url: None,
+                bom_ref: None,
+                licensing: None,
+                properties: None,
             }))
         } else {
             unreachable!("We only construct ModelLicense with at least id or name")
@@ -306,7 +313,7 @@ impl From<ModelExternalReference> for ExternalReference {
     fn from(model: ModelExternalReference) -> Self {
         ExternalReference {
             external_reference_type: model.r#type.into(),
-            url: Uri::try_from(model.url).expect("Invalid URL"),
+            url: ExternalReferenceUri::Url(Uri::try_from(model.url).expect("Invalid URL")),
             comment: None,
             hashes: None,
         }

@@ -1,4 +1,5 @@
 use rocket::tokio::time;
+use std::fmt::Display;
 
 pub type JobMap = std::sync::Arc<rocket::tokio::sync::Mutex<JobHashMap>>;
 
@@ -30,13 +31,13 @@ pub enum JobStatus {
     Error(String),
 }
 
-impl ToString for JobStatus {
-    fn to_string(&self) -> String {
+impl Display for JobStatus {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            JobStatus::Running(_) => "running".to_string(),
-            JobStatus::Done(_, _) => "done".to_string(),
-            JobStatus::Stopped => "stopped".to_string(),
-            JobStatus::Error(e) => format!("Error: {}", e),
+            JobStatus::Running(_) => write!(f, "running"),
+            JobStatus::Done(_, _) => write!(f, "done"),
+            JobStatus::Stopped => write!(f, "stopped"),
+            JobStatus::Error(e) => write!(f, "Error: {e}"),
         }
     }
 }

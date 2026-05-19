@@ -2893,8 +2893,7 @@
       ]
     },
     {
-      "ref": "/nix/store/05d0yccrkp8pl5c6my29cxzzqb7a9az8-glibc-2.38.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/05d0yccrkp8pl5c6my29cxzzqb7a9az8-glibc-2.38.tar.xz"
     },
     {
       "ref": "/nix/store/05zbwhz8a7i2v79r9j21pl6m6cj0xi8k-libunistring-1.1",
@@ -2904,12 +2903,10 @@
       ]
     },
     {
-      "ref": "/nix/store/0avnvyc7pkcr4pjqws7hwpy87m6wlnjc-make-4.4.1.tar.gz",
-      "dependsOn": []
+      "ref": "/nix/store/0avnvyc7pkcr4pjqws7hwpy87m6wlnjc-make-4.4.1.tar.gz"
     },
     {
-      "ref": "/nix/store/0cr4hvmwbfablyhn58ba0lrfb44igq5y-bash52-016",
-      "dependsOn": []
+      "ref": "/nix/store/0cr4hvmwbfablyhn58ba0lrfb44igq5y-bash52-016"
     },
     {
       "ref": "/nix/store/0f884mc30cmyy0yvjmsnqhq2q6q8ddpb-gmp-with-cxx-6.3.0-dev",
@@ -2937,12 +2934,10 @@
       ]
     },
     {
-      "ref": "/nix/store/1dydp86d00qzjbncpi80sdsndf33lc5j-fix-static.patch",
-      "dependsOn": []
+      "ref": "/nix/store/1dydp86d00qzjbncpi80sdsndf33lc5j-fix-static.patch"
     },
     {
-      "ref": "/nix/store/1fw5fcsjz9wcbf13a5xs4i2cjfircp3x-bash52-006",
-      "dependsOn": []
+      "ref": "/nix/store/1fw5fcsjz9wcbf13a5xs4i2cjfircp3x-bash52-006"
     },
     {
       "ref": "/nix/store/1hjv10489fm00lckiicwsv3nlcm07njy-zlib-1.3-dev",
@@ -2960,8 +2955,7 @@
       ]
     },
     {
-      "ref": "/nix/store/24ygbbc9k6vjc4vhz2j6a9dkdgmqgc6n-bash52-010",
-      "dependsOn": []
+      "ref": "/nix/store/24ygbbc9k6vjc4vhz2j6a9dkdgmqgc6n-bash52-010"
     },
     {
       "ref": "/nix/store/2cvpxhj5gifb9g8hd0w6zbnnqmhl86vk-binutils-wrapper-2.40",
@@ -2976,12 +2970,10 @@
       ]
     },
     {
-      "ref": "/nix/store/2cxa62ycswpswvysa0nzanmh0qm79ikn-xz-5.4.5.tar.bz2",
-      "dependsOn": []
+      "ref": "/nix/store/2cxa62ycswpswvysa0nzanmh0qm79ikn-xz-5.4.5.tar.bz2"
     },
     {
-      "ref": "/nix/store/2ds3kha8b07phggryjzqad36q6gzgb23-gawk-5.2.2.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/2ds3kha8b07phggryjzqad36q6gzgb23-gawk-5.2.2.tar.xz"
     },
     {
       "ref": "/nix/store/2y4k5a99vfmsw51069fp7ab4hlvbs1ry-gnu-config-2023-09-19",
@@ -2990,8 +2982,7 @@
       ]
     },
     {
-      "ref": "/nix/store/2ynclzrdl0hy9miy6k8gcwgzw4mhsmd0-bash52-004",
-      "dependsOn": []
+      "ref": "/nix/store/2ynclzrdl0hy9miy6k8gcwgzw4mhsmd0-bash52-004"
     },
     {
       "ref": "/nix/store/31559p1w94y01g37dfix30hihc8ppcif-mpfr-4.2.1-dev",
@@ -3002,8 +2993,7 @@
       ]
     },
     {
-      "ref": "/nix/store/349f140sh7m12vy9mp1wkp58axyp06c9-which-2.21.tar.gz",
-      "dependsOn": []
+      "ref": "/nix/store/349f140sh7m12vy9mp1wkp58axyp06c9-which-2.21.tar.gz"
     },
     {
       "ref": "/nix/store/3dimjffv8pn3sk48ngd4adz17agpfb4y-gcc-13.2.0-libgcc",
@@ -3070,8 +3060,7 @@
       ]
     },
     {
-      "ref": "/nix/store/447hvnlzzi9myri1iq3bijxgx6v6b592-patchelf-0.15.0.tar.bz2",
-      "dependsOn": []
+      "ref": "/nix/store/447hvnlzzi9myri1iq3bijxgx6v6b592-patchelf-0.15.0.tar.bz2"
     },
     {
       "ref": "/nix/store/4vnyjjixvxvafpln9cyfs5j8qzf93rpp-mpfr-4.2.1-dev",
@@ -3109,8 +3098,7 @@
       ]
     },
     {
-      "ref": "/nix/store/5l40jr1linl0zv9j3zscii9pnc7pcc96-Python-3.11.7.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/5l40jr1linl0zv9j3zscii9pnc7pcc96-Python-3.11.7.tar.xz"
     },
     {
       "ref": "/nix/store/5rml950ggcn5g8564x7hg2a9mayd08mr-libffi-3.4.4-dev",
@@ -3197,8 +3185,7 @@
       ]
     },
     {
-      "ref": "/nix/store/7s2kcdbk0n0dpsq9gwkj8dqyw21yfyhp-mpfr-4.2.1.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/7s2kcdbk0n0dpsq9gwkj8dqyw21yfyhp-mpfr-4.2.1.tar.xz"
     },
     {
       "ref": "/nix/store/8iqlphbxjpv7lwa1nskc00l6xfl0nic6-libtool-2.4.7",
@@ -3285,12 +3272,10 @@
       ]
     },
     {
-      "ref": "/nix/store/9vapsdndf66l1bfp7210hrd7vs42lvvc-binutils-2.40.tar.bz2",
-      "dependsOn": []
+      "ref": "/nix/store/9vapsdndf66l1bfp7210hrd7vs42lvvc-binutils-2.40.tar.bz2"
     },
     {
-      "ref": "/nix/store/9vm1ihdg1ysmrjdbb80g834iizzxb4yk-bison-3.8.2.tar.gz",
-      "dependsOn": []
+      "ref": "/nix/store/9vm1ihdg1ysmrjdbb80g834iizzxb4yk-bison-3.8.2.tar.gz"
     },
     {
       "ref": "/nix/store/a01asryprcb7fpjqylbvi8i1cp1wjbdv-nuke-references",
@@ -3300,12 +3285,10 @@
       ]
     },
     {
-      "ref": "/nix/store/a2i83vprqrd9nkr116yy1ksrwz5y1vq9-sed-4.9.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/a2i83vprqrd9nkr116yy1ksrwz5y1vq9-sed-4.9.tar.xz"
     },
     {
-      "ref": "/nix/store/a73wzcks7h2y814qxa1z3kv1hg205mpm-bash52-001",
-      "dependsOn": []
+      "ref": "/nix/store/a73wzcks7h2y814qxa1z3kv1hg205mpm-bash52-001"
     },
     {
       "ref": "/nix/store/ayg5rhjhi9ic73hqw33mjqjxwv59ndym-xgcc-13.2.0-libgcc",
@@ -3352,8 +3335,7 @@
       ]
     },
     {
-      "ref": "/nix/store/b44vg9nm5f64fihql70jzjj7yd64q0sa-gzip-1.13.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/b44vg9nm5f64fihql70jzjj7yd64q0sa-gzip-1.13.tar.xz"
     },
     {
       "ref": "/nix/store/b6zlb9y566rzh0nczhnnw9q9lczws273-bash-5.2-p21-dev",
@@ -3395,20 +3377,16 @@
       ]
     },
     {
-      "ref": "/nix/store/c1hg8k7vjy5hxfm39pp30xgiw7qk7xwf-zlib-1.3.tar.gz",
-      "dependsOn": []
+      "ref": "/nix/store/c1hg8k7vjy5hxfm39pp30xgiw7qk7xwf-zlib-1.3.tar.gz"
     },
     {
-      "ref": "/nix/store/cddj9qpc4l62qjy6vvf7gp50mfqaf506-bash52-014",
-      "dependsOn": []
+      "ref": "/nix/store/cddj9qpc4l62qjy6vvf7gp50mfqaf506-bash52-014"
     },
     {
-      "ref": "/nix/store/cdhb1yi17m2r0fw8yjsn54j4j7gla6mv-linux-6.6.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/cdhb1yi17m2r0fw8yjsn54j4j7gla6mv-linux-6.6.tar.xz"
     },
     {
-      "ref": "/nix/store/ck70x6hdl1kgqa4a9ps8spw6ph9mfcj8-libtool-2.4.7.tar.gz",
-      "dependsOn": []
+      "ref": "/nix/store/ck70x6hdl1kgqa4a9ps8spw6ph9mfcj8-libtool-2.4.7.tar.gz"
     },
     {
       "ref": "/nix/store/cmfal0ijh83x06zz7wp40c1idd7qv7ay-python3-minimal-3.11.7",
@@ -3437,8 +3415,7 @@
       ]
     },
     {
-      "ref": "/nix/store/d5qpl3kqrmv99fbw1cd09qj9jr7kb2rr-bash52-019",
-      "dependsOn": []
+      "ref": "/nix/store/d5qpl3kqrmv99fbw1cd09qj9jr7kb2rr-bash52-019"
     },
     {
       "ref": "/nix/store/f6q8dgl1mn0aknh6cjyf9pspzncjf10l-autoconf-2.71",
@@ -3451,8 +3428,7 @@
       ]
     },
     {
-      "ref": "/nix/store/f76sw6av28v3cv6nxmqw190pkpnfnw9b-libxcrypt-4.4.36.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/f76sw6av28v3cv6nxmqw190pkpnfnw9b-libxcrypt-4.4.36.tar.xz"
     },
     {
       "ref": "/nix/store/fa3xxlazac50wwlnpwsh6ffwlpnvigar-patchelf-0.15.0",
@@ -3484,8 +3460,7 @@
       ]
     },
     {
-      "ref": "/nix/store/fim96i2pigbmdkkc2rf34f71g9v50i5x-lzip-1.23.tar.gz",
-      "dependsOn": []
+      "ref": "/nix/store/fim96i2pigbmdkkc2rf34f71g9v50i5x-lzip-1.23.tar.gz"
     },
     {
       "ref": "/nix/store/fmli03qqhphbk695kgl3sf2hfh1vc78a-gettext-0.21.1",
@@ -3507,8 +3482,7 @@
       ]
     },
     {
-      "ref": "/nix/store/g3pzpdicszf700d5xffyk939jzxa4r2k-autoconf-2.71.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/g3pzpdicszf700d5xffyk939jzxa4r2k-autoconf-2.71.tar.xz"
     },
     {
       "ref": "/nix/store/gbiffn4mak7bp0izjfkl1n5vqjy1y110-pkg-config-wrapper-0.29.2",
@@ -3539,12 +3513,10 @@
       ]
     },
     {
-      "ref": "/nix/store/gmaq49vzfrkvr714y4fhfxv100ijihin-automake-1.16.5.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/gmaq49vzfrkvr714y4fhfxv100ijihin-automake-1.16.5.tar.xz"
     },
     {
-      "ref": "/nix/store/gnx16vs69p7fggsslnbg6v818497vvxl-bash52-021",
-      "dependsOn": []
+      "ref": "/nix/store/gnx16vs69p7fggsslnbg6v818497vvxl-bash52-021"
     },
     {
       "ref": "/nix/store/grll1f1qj7yw6yq42qigkw5fvyjz2rjw-gnumake-4.4.1",
@@ -3603,12 +3575,10 @@
       ]
     },
     {
-      "ref": "/nix/store/hl7wxzav5znk5wxfqncdrzpcb3hqy0y0-patch-2.7.6.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/hl7wxzav5znk5wxfqncdrzpcb3hqy0y0-patch-2.7.6.tar.xz"
     },
     {
-      "ref": "/nix/store/hp60h60jc6n6c0krgmjqi60lqgl7kvij-grep-3.11.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/hp60h60jc6n6c0krgmjqi60lqgl7kvij-grep-3.11.tar.xz"
     },
     {
       "ref": "/nix/store/i3cfzk4l0na9hw27vpx7i6yr58xk71hc-patchelf-0.15.0",
@@ -3664,8 +3634,7 @@
       ]
     },
     {
-      "ref": "/nix/store/in24890k6ybij0b63jisfmrwmmc6x7pv-bash52-017",
-      "dependsOn": []
+      "ref": "/nix/store/in24890k6ybij0b63jisfmrwmmc6x7pv-bash52-017"
     },
     {
       "ref": "/nix/store/iwlj49k2lybjlx0vd552f7g3ibkvrz6q-attr-2.5.1-dev",
@@ -3685,8 +3654,7 @@
       ]
     },
     {
-      "ref": "/nix/store/j8vipdfzslz4aa7aj0amwd4msxa9hhpl-bash52-009",
-      "dependsOn": []
+      "ref": "/nix/store/j8vipdfzslz4aa7aj0amwd4msxa9hhpl-bash52-009"
     },
     {
       "ref": "/nix/store/jadk6vcka8fvlqpm602rga0isky043ga-isl-0.20",
@@ -3704,8 +3672,7 @@
       ]
     },
     {
-      "ref": "/nix/store/jn9f2mr2jdm9yn5hi0pws44nbfrah8d3-bash52-008",
-      "dependsOn": []
+      "ref": "/nix/store/jn9f2mr2jdm9yn5hi0pws44nbfrah8d3-bash52-008"
     },
     {
       "ref": "/nix/store/k2pkyqm6rqw7fl78zm3vmys087wavlq1-libunistring-1.1-dev",
@@ -3735,8 +3702,7 @@
       ]
     },
     {
-      "ref": "/nix/store/la8rdnwivnjapn0bmr14pk28qv82d4zb-diffutils-3.10.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/la8rdnwivnjapn0bmr14pk28qv82d4zb-diffutils-3.10.tar.xz"
     },
     {
       "ref": "/nix/store/lflb8b18v6mkczxv95xpd44bf4z8znjf-mpfr-4.2.1",
@@ -3772,12 +3738,10 @@
       ]
     },
     {
-      "ref": "/nix/store/mcayf992diwks293vs12iwx1ywgm4ijg-m4-1.4.19.tar.bz2",
-      "dependsOn": []
+      "ref": "/nix/store/mcayf992diwks293vs12iwx1ywgm4ijg-m4-1.4.19.tar.bz2"
     },
     {
-      "ref": "/nix/store/mdrv8znlgnysqzq1hnv46vi9jmnsc1bc-mpc-1.3.1.tar.gz",
-      "dependsOn": []
+      "ref": "/nix/store/mdrv8znlgnysqzq1hnv46vi9jmnsc1bc-mpc-1.3.1.tar.gz"
     },
     {
       "ref": "/nix/store/mmsb0ivm355r4l3yjbpaiirkf673n66v-gnugrep-3.11",
@@ -3791,8 +3755,7 @@
       ]
     },
     {
-      "ref": "/nix/store/mp5jcbm1hjqw4ckxvrm7k0pfhhjf3dbg-perl-5.38.2.tar.gz",
-      "dependsOn": []
+      "ref": "/nix/store/mp5jcbm1hjqw4ckxvrm7k0pfhhjf3dbg-perl-5.38.2.tar.gz"
     },
     {
       "ref": "/nix/store/mrps4jkpkcvjkb7ywzkcxzwg2c5c91yv-libffi-3.4.4-dev",
@@ -3809,8 +3772,7 @@
       ]
     },
     {
-      "ref": "/nix/store/mz6mc8s7mrvvzjpl9322agmsq00cyrw5-attr-2.5.1.tar.gz",
-      "dependsOn": []
+      "ref": "/nix/store/mz6mc8s7mrvvzjpl9322agmsq00cyrw5-attr-2.5.1.tar.gz"
     },
     {
       "ref": "/nix/store/mzrk9gqfnqi9is5ra9ymnif257inlvjx-autoreconf-hook",
@@ -3823,12 +3785,10 @@
       ]
     },
     {
-      "ref": "/nix/store/n1djrrflvxnwdd735304l23r2qdnjrm6-gmp-6.3.0.tar.bz2",
-      "dependsOn": []
+      "ref": "/nix/store/n1djrrflvxnwdd735304l23r2qdnjrm6-gmp-6.3.0.tar.bz2"
     },
     {
-      "ref": "/nix/store/n8ay9yxwgl07z3csb5hfp6m80qk3hzyl-pcre2-10.42.tar.bz2",
-      "dependsOn": []
+      "ref": "/nix/store/n8ay9yxwgl07z3csb5hfp6m80qk3hzyl-pcre2-10.42.tar.bz2"
     },
     {
       "ref": "/nix/store/nbsz4b0kdh5a2b9h2cr9ngxskfqx575k-gnused-4.9",
@@ -3839,8 +3799,7 @@
       ]
     },
     {
-      "ref": "/nix/store/nffxsaniz7irz07z79cxwkhz97vgqwrx-bash52-018",
-      "dependsOn": []
+      "ref": "/nix/store/nffxsaniz7irz07z79cxwkhz97vgqwrx-bash52-018"
     },
     {
       "ref": "/nix/store/p3jshbwxiwifm1py0yq544fmdyy98j8a-glibc-2.38-27",
@@ -3854,8 +3813,7 @@
       ]
     },
     {
-      "ref": "/nix/store/pa10z4ngm0g83kx9mssrqzz30s84vq7k-hello-2.12.1.tar.gz",
-      "dependsOn": []
+      "ref": "/nix/store/pa10z4ngm0g83kx9mssrqzz30s84vq7k-hello-2.12.1.tar.gz"
     },
     {
       "ref": "/nix/store/pb29f7lahx1j2cp577dvrhgy20nd0xyr-bash-5.2-p21-dev",
@@ -3889,20 +3847,16 @@
       ]
     },
     {
-      "ref": "/nix/store/pcdlxsb3mxfjnclg8rn8xy2ywbb5ra36-bash52-020",
-      "dependsOn": []
+      "ref": "/nix/store/pcdlxsb3mxfjnclg8rn8xy2ywbb5ra36-bash52-020"
     },
     {
-      "ref": "/nix/store/pgxpq0lmk4bd0yybaxkb82qlcjx55apn-libffi-3.4.4.tar.gz",
-      "dependsOn": []
+      "ref": "/nix/store/pgxpq0lmk4bd0yybaxkb82qlcjx55apn-libffi-3.4.4.tar.gz"
     },
     {
-      "ref": "/nix/store/pjp935kxwai47zyx1wpwadls00m9nmib-bash52-015",
-      "dependsOn": []
+      "ref": "/nix/store/pjp935kxwai47zyx1wpwadls00m9nmib-bash52-015"
     },
     {
-      "ref": "/nix/store/pq4bmqcrz01fmb601qkmfk49454dv5m9-autoconf-archive-2023.02.20.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/pq4bmqcrz01fmb601qkmfk49454dv5m9-autoconf-archive-2023.02.20.tar.xz"
     },
     {
       "ref": "/nix/store/pyv061hd2f7zn947kcm4n5bdlmvygddb-bzip2-1.0.8-dev",
@@ -3914,12 +3868,10 @@
       ]
     },
     {
-      "ref": "/nix/store/q9ccnr97sv21jlmzxqsra5jyp71s51dl-texinfo-7.0.3.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/q9ccnr97sv21jlmzxqsra5jyp71s51dl-texinfo-7.0.3.tar.xz"
     },
     {
-      "ref": "/nix/store/qx3m44slznqqwd7ih8fjl78wc5ka7mlh-ed-1.19.tar.lz",
-      "dependsOn": []
+      "ref": "/nix/store/qx3m44slznqqwd7ih8fjl78wc5ka7mlh-ed-1.19.tar.lz"
     },
     {
       "ref": "/nix/store/r8c9n9n8mpk9d2i0m34djyiilbg5ly1d-xz-5.4.5",
@@ -3958,12 +3910,10 @@
       ]
     },
     {
-      "ref": "/nix/store/rmjsgxd4w10wrnnwrrrry2sz5cfpwafq-coreutils-9.4.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/rmjsgxd4w10wrnnwrrrry2sz5cfpwafq-coreutils-9.4.tar.xz"
     },
     {
-      "ref": "/nix/store/rs1qdpy1nb3x07g4vqvb4s774qhq9f0w-bash52-007",
-      "dependsOn": []
+      "ref": "/nix/store/rs1qdpy1nb3x07g4vqvb4s774qhq9f0w-bash52-007"
     },
     {
       "ref": "/nix/store/s2094dggqjwpd54c08hvkwlv2wszdr5x-gcc-13.2.0",
@@ -3995,8 +3945,7 @@
       ]
     },
     {
-      "ref": "/nix/store/sim601rd1y3hsap9qkn25cwprsa9aipp-bash52-011",
-      "dependsOn": []
+      "ref": "/nix/store/sim601rd1y3hsap9qkn25cwprsa9aipp-bash52-011"
     },
     {
       "ref": "/nix/store/sjsxwdwpb4wkj2i7agmc45s5lsw91lpn-glibc-iconv-2.38",
@@ -4005,8 +3954,7 @@
       ]
     },
     {
-      "ref": "/nix/store/slpdqm3wlhwbkzyijjz3xpifa219ac0x-bzip2-1.0.8.tar.gz",
-      "dependsOn": []
+      "ref": "/nix/store/slpdqm3wlhwbkzyijjz3xpifa219ac0x-bzip2-1.0.8.tar.gz"
     },
     {
       "ref": "/nix/store/sm9jbfbn02wnjhh2pmmgpvzwifaphri0-lzip-1.23",
@@ -4016,8 +3964,7 @@
       ]
     },
     {
-      "ref": "/nix/store/sxc8xmi7caxaiywzh15za9crpk3bw98z-bash52-003",
-      "dependsOn": []
+      "ref": "/nix/store/sxc8xmi7caxaiywzh15za9crpk3bw98z-bash52-003"
     },
     {
       "ref": "/nix/store/szh64sr0c103vzpi4k8p4n0diqfk8y8j-xz-5.4.5-dev",
@@ -4038,12 +3985,10 @@
       ]
     },
     {
-      "ref": "/nix/store/v0m59igyinq3qrbx7fibyal1dx5f6rcq-file-5.45.tar.gz",
-      "dependsOn": []
+      "ref": "/nix/store/v0m59igyinq3qrbx7fibyal1dx5f6rcq-file-5.45.tar.gz"
     },
     {
-      "ref": "/nix/store/v28dv6l0qk3j382kp40bksa1v6h7dx9p-bash-5.2.tar.gz",
-      "dependsOn": []
+      "ref": "/nix/store/v28dv6l0qk3j382kp40bksa1v6h7dx9p-bash-5.2.tar.gz"
     },
     {
       "ref": "/nix/store/v4h5dh6vwgvnn2x8jyqs33x00krrcjd4-python-setup-hook.sh",
@@ -4129,12 +4074,10 @@
       ]
     },
     {
-      "ref": "/nix/store/vijsp4ywmsvr6jk5ypbb8hszayn7bwdd-tar-1.35.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/vijsp4ywmsvr6jk5ypbb8hszayn7bwdd-tar-1.35.tar.xz"
     },
     {
-      "ref": "/nix/store/vp4896rkv185vzcda28y4f4k0l0ssilf-libidn2-2.3.4.tar.gz",
-      "dependsOn": []
+      "ref": "/nix/store/vp4896rkv185vzcda28y4f4k0l0ssilf-libidn2-2.3.4.tar.gz"
     },
     {
       "ref": "/nix/store/vp9wdfs479wcscgc0wm11lbqhp9j69r7-acl-2.3.1",
@@ -4146,8 +4089,7 @@
       ]
     },
     {
-      "ref": "/nix/store/wcpqrbsljh2x04qccs6jv9z8c9y1c3cd-bash52-013",
-      "dependsOn": []
+      "ref": "/nix/store/wcpqrbsljh2x04qccs6jv9z8c9y1c3cd-bash52-013"
     },
     {
       "ref": "/nix/store/wdcg9k844sc4xq1d44qbvjx8ksj7k0ni-pkg-config-wrapper-0.29.2",
@@ -4156,8 +4098,7 @@
       ]
     },
     {
-      "ref": "/nix/store/ws73d521m0im6x7nhb0836i51z2yd9dq-bzip2-1.0.6.2-autoconfiscated.patch",
-      "dependsOn": []
+      "ref": "/nix/store/ws73d521m0im6x7nhb0836i51z2yd9dq-bzip2-1.0.6.2-autoconfiscated.patch"
     },
     {
       "ref": "/nix/store/x0qzqwrgbcvf95k27agndhn2xidzrxv4-isl-0.20",
@@ -4168,8 +4109,7 @@
       ]
     },
     {
-      "ref": "/nix/store/x1sqwqn02c5mnpi8hbqlxpbm3rahq5dm-bash52-012",
-      "dependsOn": []
+      "ref": "/nix/store/x1sqwqn02c5mnpi8hbqlxpbm3rahq5dm-bash52-012"
     },
     {
       "ref": "/nix/store/x638x4d2m96yb0izivf3s6b285dycab5-patchelf-0.15.0",
@@ -4194,12 +4134,10 @@
       ]
     },
     {
-      "ref": "/nix/store/x9v0hmr76dm68pijzldzxks01iqzag1z-isl-0.20.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/x9v0hmr76dm68pijzldzxks01iqzag1z-isl-0.20.tar.xz"
     },
     {
-      "ref": "/nix/store/xc3h9isl5566i6a4pvdsgin26rchijrq-bash52-002",
-      "dependsOn": []
+      "ref": "/nix/store/xc3h9isl5566i6a4pvdsgin26rchijrq-bash52-002"
     },
     {
       "ref": "/nix/store/xdqs45iclhp9dz8zz9pvn5zivjbhid1a-binutils-2.40",
@@ -4243,16 +4181,13 @@
       ]
     },
     {
-      "ref": "/nix/store/y2h7bqjpc4q9g887w8pbwncjrmr4g9sx-gettext-0.21.1.tar.gz",
-      "dependsOn": []
+      "ref": "/nix/store/y2h7bqjpc4q9g887w8pbwncjrmr4g9sx-gettext-0.21.1.tar.gz"
     },
     {
-      "ref": "/nix/store/y3yiminrckvhf35fh9q42vjwi0npznji-acl-2.3.1.tar.gz",
-      "dependsOn": []
+      "ref": "/nix/store/y3yiminrckvhf35fh9q42vjwi0npznji-acl-2.3.1.tar.gz"
     },
     {
-      "ref": "/nix/store/y954pl28vm03qfhvqrgyspwwv28b5lyi-findutils-4.9.0.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/y954pl28vm03qfhvqrgyspwwv28b5lyi-findutils-4.9.0.tar.xz"
     },
     {
       "ref": "/nix/store/ya47qdk3gvxhb54za3sd0jbcq7dqqqgb-bzip2-1.0.8",
@@ -4287,8 +4222,7 @@
       ]
     },
     {
-      "ref": "/nix/store/z0dk90vlwlhm097kka2632wmnjr0izw2-expat-2.5.0.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/z0dk90vlwlhm097kka2632wmnjr0izw2-expat-2.5.0.tar.xz"
     },
     {
       "ref": "/nix/store/z241pijngvxkrxc4wywmiri93gi0bvw6-file-5.45-dev",
@@ -4308,12 +4242,10 @@
       ]
     },
     {
-      "ref": "/nix/store/z76vsdh69cvwkwhwg69k7d1znwjmx6hf-bash52-005",
-      "dependsOn": []
+      "ref": "/nix/store/z76vsdh69cvwkwhwg69k7d1znwjmx6hf-bash52-005"
     },
     {
-      "ref": "/nix/store/z9fdf582flwcri4ds9fxknyi27w6vi1i-gcc-13.2.0.tar.xz",
-      "dependsOn": []
+      "ref": "/nix/store/z9fdf582flwcri4ds9fxknyi27w6vi1i-gcc-13.2.0.tar.xz"
     },
     {
       "ref": "/nix/store/zbzbcqjsfv9d6svzl7rcvjdijkdsqib2-gzip-1.13",
@@ -4337,8 +4269,7 @@
       ]
     },
     {
-      "ref": "/nix/store/zkas816mjrr8ijdj29qs4wqyn38l4j12-libunistring-1.1.tar.gz",
-      "dependsOn": []
+      "ref": "/nix/store/zkas816mjrr8ijdj29qs4wqyn38l4j12-libunistring-1.1.tar.gz"
     },
     {
       "ref": "/nix/store/zy2j48wj6a9qwiz46q6cayh1zwcc9fi8-nuke-references",
