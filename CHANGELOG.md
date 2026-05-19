@@ -2,6 +2,12 @@
 <!-- We follow the Keep a Changelog standard https://keepachangelog.com/en/1.0.0/ -->
 
 ## [Unreleased]
+### Added
+- [#74](https://github.com/tweag/genealogos/pull/74) adds CycloneDX 1.5 JSON and XML output support.
+
+### Changed
+- [#74](https://github.com/tweag/genealogos/pull/74) updates Rust dependencies and the cargo-dist release tooling.
+
 ### Fixed
 - [#70](https://github.com/tweag/genealogos/pull/70) fix 'nix run'
 
