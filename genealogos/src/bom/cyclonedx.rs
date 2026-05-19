@@ -11,10 +11,10 @@ use cyclonedx_bom::models::{
     external_reference::{
         ExternalReference, ExternalReferenceType, ExternalReferences, Uri as ExternalReferenceUri,
     },
-    license::{License, LicenseChoice, LicenseIdentifier, Licenses},
+    license::{License, LicenseChoice, Licenses},
     property::{Properties, Property},
 };
-use cyclonedx_bom::prelude::*;
+use cyclonedx_bom::{external_models::spdx::SpdxIdentifier, prelude::*};
 
 use crate::error::*;
 use crate::model::*;
@@ -57,8 +57,9 @@ impl FromStr for FileFormat {
 #[non_exhaustive]
 pub enum SpecVersion {
     V1_3,
-    #[default]
     V1_4,
+    #[default]
+    V1_5,
 }
 
 impl Display for SpecVersion {
@@ -66,6 +67,7 @@ impl Display for SpecVersion {
         match self {
             SpecVersion::V1_3 => write!(f, "1.3"),
             SpecVersion::V1_4 => write!(f, "1.4"),
+            SpecVersion::V1_5 => write!(f, "1.5"),
         }
     }
 }
@@ -77,6 +79,7 @@ impl FromStr for SpecVersion {
         match s {
             "1.3" => Ok(SpecVersion::V1_3),
             "1.4" => Ok(SpecVersion::V1_4),
+            "1.5" => Ok(SpecVersion::V1_5),
             _ => Err(Error::InvalidCycloneDXVersion(s.to_string())),
         }
     }
@@ -147,8 +150,7 @@ impl CycloneDX {
 
 impl Default for CycloneDX {
     fn default() -> Self {
-        // TODO: Update to 1_5, or ideally Default (but that's not implemented)
-        Self::new(SpecVersion::V1_4, FileFormat::JSON)
+        Self::new(SpecVersion::default(), FileFormat::default())
     }
 }
 
@@ -169,6 +171,10 @@ impl super::Bom for CycloneDX {
             SpecVersion::V1_4 => match self.file_format {
                 FileFormat::JSON => bom.output_as_json_v1_4(writer)?,
                 FileFormat::XML => bom.output_as_xml_v1_4(writer)?,
+            },
+            SpecVersion::V1_5 => match self.file_format {
+                FileFormat::JSON => bom.output_as_json_v1_5(writer)?,
+                FileFormat::XML => bom.output_as_xml_v1_5(writer)?,
             },
         }
 
@@ -293,16 +299,13 @@ impl TryFrom<ModelLicense> for LicenseChoice {
 
     fn try_from(model: ModelLicense) -> Result<Self> {
         if let Some(id) = model.id {
-            Ok(LicenseChoice::Expression(SpdxExpression::parse_lax(id)?))
+            if SpdxIdentifier::try_from(id.clone()).is_ok() {
+                Ok(LicenseChoice::License(License::license_id(&id)))
+            } else {
+                Ok(LicenseChoice::Expression(SpdxExpression::parse_lax(id)?))
+            }
         } else if let Some(name) = model.name {
-            Ok(LicenseChoice::License(License {
-                license_identifier: LicenseIdentifier::Name(NormalizedString::new(&name)),
-                text: None,
-                url: None,
-                bom_ref: None,
-                licensing: None,
-                properties: None,
-            }))
+            Ok(LicenseChoice::License(License::named_license(&name)))
         } else {
             unreachable!("We only construct ModelLicense with at least id or name")
         }

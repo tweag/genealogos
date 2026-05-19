@@ -172,18 +172,38 @@ mod tests {
                 };
                 let response_bom: serde_json::Value = serde_json::from_str(response_bom).unwrap();
 
+                // 1.5
+                let mut expected_path_1_5 = input_path.clone();
+                expected_path_1_5.set_extension("1_5.out");
+                // Read expected_path_1_5 to a string
+                let expected_string_1_5 = std::fs::read_to_string(expected_path_1_5).unwrap();
+                let expected_output_1_5: serde_json::Value =
+                    serde_json::from_str(&expected_string_1_5).unwrap();
+
+                assert_eq!(response_bom, expected_output_1_5);
+
+                let response = client
+                    .get(format!(
+                        "/api/analyze?installable={}%23{}&bom_format=cyclonedx_1.4_json",
+                        flake_ref, attribute_path
+                    ))
+                    .dispatch();
+
+                assert_eq!(response.status(), Status::Ok);
+
+                let response_json: serde_json::Value = response.into_json().unwrap();
+                let response_bom = match response_json.get("bom").unwrap() {
+                    serde_json::Value::String(response_bom) => response_bom,
+                    _ => panic!("Not a string"),
+                };
+                let response_bom: serde_json::Value = serde_json::from_str(response_bom).unwrap();
+
                 // 1.4
                 let mut expected_path_1_4 = input_path.clone();
                 expected_path_1_4.set_extension("1_4.out");
-                // Read expected_path_1_4 to a string
                 let expected_string_1_4 = std::fs::read_to_string(expected_path_1_4).unwrap();
                 let expected_output_1_4: serde_json::Value =
                     serde_json::from_str(&expected_string_1_4).unwrap();
-
-                // Convert from and to json to remove the pretty printed stuff
-                // let expected_json_1_4: serde_json::Value =
-                //     serde_json::from_str(&expected_output_1_4).unwrap();
-                // let expected_output_1_4 = serde_json::to_string(&expected_json_1_4).unwrap();
 
                 assert_eq!(response_bom, expected_output_1_4);
             }
