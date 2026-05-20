@@ -2,6 +2,8 @@
 <!-- We follow the Keep a Changelog standard https://keepachangelog.com/en/1.0.0/ -->
 
 ## [Unreleased]
+
+## [1.1.0](https://github.com/tweag/genealogos/compare/v1.0.0...v1.1.0) - 2026-05-20
 ### Added
 - [#74](https://github.com/tweag/genealogos/pull/74) adds CycloneDX 1.5 JSON and XML output support.
 
@@ -11,18 +13,18 @@
 ### Fixed
 - [#70](https://github.com/tweag/genealogos/pull/70) fix 'nix run'
 
-## [0.3.0](https://github.com/tweag/genealogos/compare/v0.3.0...v1.0.0)
+## [1.0.0](https://github.com/tweag/genealogos/compare/v0.3.0...v1.0.0) - 2024-06-13
 ### Added
-- [#56](https://github.com/tweag/genealogos/pull/56) adds a garbage collector to the jobs api, to prevent stale jobs from taking up unnecessary memory
+- [#56](https://github.com/tweag/genealogos/pull/56) adds a garbage collector to the jobs api, to prevent stale jobs from taking up memory.
 
 ### Fixed
-- [#61](https://github.com/tweag/genealogos/pull/61) updates our nixtract, resolving related issues including missed dependencies.
+- [#61](https://github.com/tweag/genealogos/pull/61) updates nixtract, resolving related issues including missed dependencies.
 
-## [0.3.0](https://github.com/tweag/genealogos/compare/v0.2.0...v0.3.0)
+## [0.3.0](https://github.com/tweag/genealogos/compare/v0.2.0...v0.3.0) - 2024-05-14
 ### Changed
 - [#55](https://github.com/tweag/genealogos/pull/55) splits of the `messages()` function into its own trait. This resolves many issues caused by a cargo issue.
 
-## [0.2.0](https://github.com/tweag/genealogos/compare/v0.1.0...v0.2.0)
+## [0.2.0](https://github.com/tweag/genealogos/compare/v0.1.0...v0.2.0) - 2024-04-18
 ### Added
 - [#34](https://github.com/tweag/genealogos/pull/34) implements a web-based GUI for Genealogos
 - [#36](https://github.com/tweag/genealogos/pull/36) include nixtract's new narinfo information
