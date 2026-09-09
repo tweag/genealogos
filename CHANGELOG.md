@@ -3,6 +3,13 @@
 
 ## [Unreleased]
 
+## [1.1.1](https://github.com/tweag/genealogos/compare/v1.1.0...v1.1.1) - 2026-09-09
+### Fixed
+- Updates `quinn-proto` to 0.11.16 to address [GHSA-4w2j-m93h-cj5j](https://github.com/advisories/GHSA-4w2j-m93h-cj5j).
+
+### Changed
+- Updates Rust and Nix flake dependencies.
+
 ## [1.1.0](https://github.com/tweag/genealogos/compare/v1.0.0...v1.1.0) - 2026-05-20
 ### Added
 - [#74](https://github.com/tweag/genealogos/pull/74) adds CycloneDX 1.5 JSON and XML output support.
